@@ -217,7 +217,7 @@ h1, h2, h3, p { overflow-wrap: break-word; }
 }
 .path-steps b { color: var(--navy); }
 
-.guide-grid { display: grid; grid-template-columns: 1fr; gap: 16px; }
+.guide-grid { display: grid; grid-template-columns: 1fr; gap: 14px; }
 .guide-card {
   position: relative;
   display: flex;
@@ -227,7 +227,7 @@ h1, h2, h3, p { overflow-wrap: break-word; }
   border: 1px solid var(--line);
   border-radius: 18px;
   background: var(--paper);
-  padding: 18px;
+  padding: 16px;
   box-shadow: 0 8px 24px rgba(13, 39, 64, 0.06);
 }
 .guide-card::before {
@@ -250,15 +250,15 @@ h1, h2, h3, p { overflow-wrap: break-word; }
 .status.ready { background: var(--soft); color: var(--teal); }
 .status.pending { background: #eef1f1; color: #68777c; }
 .guide-card h3 {
-  margin: 15px 0 11px;
+  margin: 13px 0 9px;
   color: var(--navy);
   font-family: Arial, "Noto Sans Hebrew", sans-serif;
   font-size: 1.28rem;
   font-weight: 800;
   line-height: 1.4;
 }
-.guide-facts { margin: 0 0 15px; }
-.guide-facts div { border-top: 1px solid #e3eae8; padding: 8px 0; }
+.guide-facts { margin: 0 0 13px; }
+.guide-facts div { border-top: 1px solid #e3eae8; padding: 9px 0; }
 .guide-facts dt { color: #0d625d; font-size: 14px; font-weight: 900; }
 .guide-facts dd { margin: 2px 0 0; color: #293b43; font-size: 15px; line-height: 1.55; }
 .button {
