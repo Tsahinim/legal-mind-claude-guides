@@ -17,7 +17,11 @@
 
 /* Numbered screenshot annotations */
 .shot-frame{position:relative}
-.shot-marker{position:absolute;z-index:3;display:grid;place-items:center;width:32px;height:32px;border:3px solid #fff;border-radius:50%;background:var(--red);color:#fff;font-size:16px;font-weight:900;line-height:1;box-shadow:0 2px 8px rgba(13,39,64,.35);transform:translate(-50%,-50%)}
+.shot-target{position:absolute;z-index:2;border:3px solid var(--red);border-radius:9px;background:rgba(198,48,48,.07);box-shadow:0 0 0 2px rgba(255,255,255,.82),0 2px 9px rgba(13,39,64,.24);pointer-events:none}
+.shot-target.is-circle{border-radius:999px}
+.shot-target-badge{position:absolute;top:0;left:0;z-index:3;display:grid;place-items:center;width:26px;height:26px;border:2px solid #fff;border-radius:50%;background:var(--red);color:#fff;font-size:14px;font-weight:900;line-height:1;box-shadow:0 2px 8px rgba(13,39,64,.35);transform:translate(-45%,-45%)}
+.shot-target.badge-right>.shot-target-badge{right:0;left:auto;transform:translate(45%,-45%)}
+.shot-target-badge.badge-offset-left{top:50%;left:-18px;transform:translate(-50%,-50%)}
 .shot-caption{margin:9px 0 0;color:var(--muted);font-size:14px;font-weight:700}
-@media(max-width:640px){.shot-marker{width:27px;height:27px;border-width:2px;font-size:14px}}
+@media(max-width:640px){.shot-target{border-width:2px;border-radius:6px;box-shadow:0 0 0 1px rgba(255,255,255,.86),0 1px 5px rgba(13,39,64,.24)}.shot-target-badge{width:20px;height:20px;border-width:1.5px;font-size:11px}.shot-target-badge.badge-offset-left{left:-13px}}
 .center-kicker{display:inline-flex;align-items:center;justify-content:center;margin:0 auto 18px!important;border:1px solid #2bc0b7;border-radius:999px;padding:8px 16px;color:#7ce5dd!important;font-size:13px!important;font-weight:900}.center-subtitle{max-width:900px!important}.platform-note{max-width:960px!important;margin:20px auto 0!important;border:1px solid rgba(124,229,221,.38);border-radius:14px;background:rgba(255,255,255,.06);padding:13px 16px;color:#eefafa!important;font-size:.97rem!important;line-height:1.65}.platform-note strong{color:#86ebe3}
