@@ -1,8 +1,9 @@
 
 document.querySelectorAll('.copy-btn').forEach(btn=>{
+ const original=btn.textContent;
  btn.addEventListener('click', async ()=>{
    const code=btn.parentElement.querySelector('pre code')||btn.parentElement.querySelector('pre');
-   try{await navigator.clipboard.writeText(code.innerText);btn.textContent='הועתק';setTimeout(()=>btn.textContent='העתקת פרומפט',1500)}
+   try{await navigator.clipboard.writeText(code.innerText);btn.textContent='הועתק';setTimeout(()=>btn.textContent=original,1500)}
    catch(e){btn.textContent='סמנו והעתיקו ידנית'}
  });
 });
