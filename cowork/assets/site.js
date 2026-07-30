@@ -31,6 +31,12 @@ document.querySelectorAll('table').forEach(t=>{const w=document.createElement('d
     var y = window.scrollY + 140, cur = map[0];
     map.forEach(function (x) { if (x.t.offsetTop <= y) cur = x; });
     links.forEach(function (a) { a.classList.toggle('current', a === cur.a); });
+    var sb = document.querySelector('.sidebar');
+    if (sb && cur) {
+      var t = cur.a.offsetTop - sb.offsetTop;
+      if (t < sb.scrollTop + 60) sb.scrollTop = Math.max(0, t - 60);
+      else if (t > sb.scrollTop + sb.clientHeight - 80) sb.scrollTop = t - sb.clientHeight + 80;
+    }
   }
   window.addEventListener('scroll', onScroll, { passive: true });
   onScroll();

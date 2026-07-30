@@ -1119,3 +1119,6 @@ article.content p, article.content ul, article.content ol { font-size: 16px; lin
 .hub-card, .hub-note .xref-box { box-shadow: 0 8px 24px rgba(13,39,64,.06); }
 @media (max-width: 900px) { main.surface { padding: 18px 14px 24px; border-radius: 14px; } }
 
+
+/* missing token: used by button/copy-btn hovers and pre blocks */
+:root { --dark: #082E2D; }
