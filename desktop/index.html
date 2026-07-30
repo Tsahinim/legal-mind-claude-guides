@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Claude Desktop לעורכי דין: היכרות, התקנה וההבדל מהדפדפן - Legal Mind</title>
+<link rel="stylesheet" href="claude-desktop.css">
+</head>
+<body>
+
+<header class="masthead">
+  <img class="logo-big" src="legal-mind-logo-tight.png" alt="Legal Mind">
+</header>
+
+<div class="hero" id="top">
+  <div class="hero-grid" aria-hidden="true"></div>
+  <div class="hero-inner">
+    <span class="eyebrow"><span class="dot"></span><bdi>מדריך Legal Mind</bdi></span>
+    <h1 class="hero-title"><bdi dir="ltr">Claude Desktop</bdi> לעורכי דין: היכרות, התקנה וההבדל מהדפדפן</h1>
+    <p class="hero-kicker">למי מיועד המדריך?</p>
+    <p class="hero-sub"><b>מטרת <bdi>Legal Mind</bdi> היא להנגיש חומר מקצועי לעורכי דין ולמשרדי עורכי דין. תוכן מדריך זה אינו מהווה בשום פנים ואופן ייעוץ משפטי, ואינו תחליף להתייעצות עם גורם מוסמך בתוך המשרד או מחוצה לו. <bdi>Legal Mind</bdi> אינה אחראית להחלטות שיתקבלו על בסיס המדריך.</b></p>
+    <p class="hero-sub">המדריך מיועד לעורכי דין ולצוותים משפטיים שכבר משתמשים ב-<bdi>Claude</bdi> בדפדפן, ורוצים להכיר את אפליקציית <bdi>Claude Desktop</bdi>: מה היא נותנת, איך מתקינים אותה בבטחה, ומה ההבדל בינה לבין העבודה בדפדפן.</p>
+    <p class="hero-sub">זהו המדריך הפותח של סדרת מדריכי <bdi>Claude Desktop</bdi> של <bdi>Legal Mind</bdi>. המדריכים הבאים בסדרה מעמיקים ביכולות עצמן, ובראשן <bdi>Cowork</bdi>.</p>
+  </div>
+</div>
+
+<div class="wrap">
+  <nav class="toc-card" aria-label="תוכן העניינים">
+    <h4>תוכן העניינים</h4>
+    <ol>
+      <li><a href="#s1"><span class="toc-num">01</span>מה זה <bdi>Claude Desktop</bdi> ולמה להתקין?</a></li>
+      <li><a href="#s2"><span class="toc-num">02</span><bdi>Claude</bdi> בדפדפן מול <bdi>Claude Desktop</bdi></a></li>
+      <li><a href="#s3"><span class="toc-num">03</span>אבטחת מידע: מה חשוב לדעת</a></li>
+      <li><a href="#s4"><span class="toc-num">04</span>לפני ההתקנה: דרישות מערכת</a></li>
+      <li><a href="#s5"><span class="toc-num">05</span>התקנה שלב אחר שלב</a></li>
+      <li><a href="#s6"><span class="toc-num">06</span>פתיחה ראשונה והתחברות</a></li>
+      <li><a href="#s7"><span class="toc-num">07</span>סיור ראשון באפליקציה</a></li>
+      <li><a href="#s8"><span class="toc-num">08</span>יכולות שקיימות רק ב-<bdi>Desktop</bdi></a></li>
+      <li><a href="#s9"><span class="toc-num">09</span>שאלות נפוצות</a></li>
+      <li><a href="#closing"><span class="toc-num">10</span>נקודת סיום: מה הלאה?</a></li>
+    </ol>
+  </nav>
+
+  <main>
+
+    <section class="sec" id="s1">
+      <div class="sec-head">
+        <span class="sec-num">1</span>
+        <span class="sec-dot"></span>
+        <h2 class="sec-title">מה זה <bdi>Claude Desktop</bdi> ולמה להתקין?</h2>
+      </div>
+      <div class="sec-body">
+        <p><bdi>Claude Desktop</bdi> היא האפליקציה הרשמית של <bdi>Anthropic</bdi> למחשב. זה אותו <bdi>Claude</bdi> שאתם מכירים מהדפדפן - אותו חשבון, אותן שיחות, אותם מודלים - בתוך אפליקציה שמותקנת על המחשב עצמו.</p>
+        <p>ההתקנה לא מפצלת שום דבר. שיחה שהתחלתם בדפדפן תופיע באפליקציה, ולהפך. הכל מסונכרן דרך החשבון שלכם.</p>
+        <p>אז למה בכלל להתקין? כי חלק מהיכולות של <bdi>Claude</bdi> פשוט לא קיימות בדפדפן. חיבור לתוכנות ולקבצים שנמצאים על המחשב, עבודה של <bdi>Claude</bdi> על תיקיות אמיתיות במשרד - כל אלה דורשים את האפליקציה. על כך בהמשך המדריך.</p>
+
+        <h3 class="h2">עמדת <bdi>Legal Mind</bdi></h3>
+        <div class="callout">
+          <p>ההתקנה עצמה היא התקנה רגילה לחלוטין - כמו <bdi>Zoom</bdi> או <bdi>Word</bdi>. היא אינה דורשת ידע טכני, אינה משנה הגדרות במחשב, וניתנת להסרה בכל רגע כמו כל תוכנה אחרת. אין ממה לחשוש - והמדריך הזה מלווה אתכם מסך אחר מסך.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="sec" id="s2">
+      <div class="sec-head">
+        <span class="sec-num">2</span>
+        <span class="sec-dot"></span>
+        <h2 class="sec-title"><bdi>Claude</bdi> בדפדפן מול <bdi>Claude Desktop</bdi>: מה באמת ההבדל?</h2>
+      </div>
+      <div class="sec-body">
+        <p>נתחיל ממה שלא משתנה. החשבון שלכם אחד. ההיסטוריה, הפרויקטים, ה-<bdi>Skills</bdi> והמודלים - הכל אותו דבר, בכל מקום. אפשר להשתמש בדפדפן ובאפליקציה במקביל, באותו יום ואפילו באותה שעה.</p>
+
+        <div class="tbl-wrap">
+          <table class="tbl">
+            <thead>
+              <tr><th></th><th><bdi>Claude</bdi> בדפדפן</th><th><bdi>Claude Desktop</bdi></th></tr>
+            </thead>
+            <tbody>
+              <tr><td>חשבון, שיחות ופרויקטים</td><td>כן</td><td>כן - אותו חשבון, מסונכרן</td></tr>
+              <tr><td>חלון עבודה</td><td>נבלע בין הטאבים</td><td>אפליקציה עצמאית</td></tr>
+              <tr><td>חיבור לתוכנות ולקבצים במחשב</td><td>מוגבל</td><td><bdi>Connectors</bdi> מקומיים</td></tr>
+              <tr><td>עבודת <bdi>Cowork</bdi> על קבצים במחשב</td><td>לא</td><td>כן (מדריך נפרד)</td></tr>
+              <tr><td>עדכוני גרסה</td><td>אוטומטי, תמיד עדכני</td><td>הורדה ידנית מדי פעם</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <p>ואם לסכם בשורה אחת: הדפדפן מצוין לשיחה. האפליקציה הופכת את <bdi>Claude</bdi> לחלק מסביבת העבודה של המשרד.</p>
+        <p>ומה לגבי אפליקציית הטלפון? היא מצוינת לשאלות תוך כדי תנועה, אך יכולות העבודה מול קבצים ותוכנות במחשב שמורות לאפליקציית המחשב בלבד.</p>
+      </div>
+    </section>
+
+    <section class="sec" id="s3">
+      <div class="sec-head">
+        <span class="sec-num">3</span>
+        <span class="sec-dot"></span>
+        <h2 class="sec-title">אבטחת מידע: מה חשוב לדעת לפני</h2>
+      </div>
+      <div class="sec-body">
+        <p>התקנת האפליקציה אינה משנה את מדיניות המידע של החשבון. אותם כללים שחלים על החשבון שלכם בדפדפן חלים גם באפליקציה - סוג המנוי הוא שקובע, לא מקום השימוש.</p>
+
+        <h3 class="h2">עמדת <bdi>Legal Mind</bdi></h3>
+        <div class="callout">
+          <p>במשרד המטפל במידע של לקוחות, המנוי המתאים לעבודה הוא מנוי <bdi>Team</bdi>, הכולל התחייבויות חוזיות של <bdi>Anthropic</bdi> כלפי המשתמשים (<bdi>DPA</bdi>). הנושא כולו - מדוע <bdi>Team</bdi>, מה זה <bdi>DPA</bdi> ואיך עוברים בבטחה - מוסבר בהרחבה במדריך <bdi>Legal Mind</bdi>: <a href="https://tsahinim.github.io/legal-mind-hub/netlify-deploy/" target="_blank" rel="noopener">מעבר בטוח למנוי <bdi>Team</bdi> ב-<bdi>Claude</bdi></a>.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="sec" id="s4">
+      <div class="sec-head">
+        <span class="sec-num">4</span>
+        <span class="sec-dot"></span>
+        <h2 class="sec-title">לפני ההתקנה: דרישות מערכת</h2>
+      </div>
+      <div class="sec-body">
+        <p>הדרישות פשוטות, וכמעט כל מחשב משרדי עומד בהן:</p>
+        <ul class="bullets">
+          <li><bdi>Windows 10</bdi> ומעלה.</li>
+          <li>במחשבי <bdi>Mac</bdi>: <bdi>macOS 11</bdi> ומעלה.</li>
+        </ul>
+        <p>המדריך מדגים את ההתקנה על <bdi>Windows</bdi>, מערכת ההפעלה הנפוצה במשרדים. ב-<bdi>Mac</bdi> התהליך דומה: מורידים, פותחים את הקובץ וגוררים ל-<bdi>Applications</bdi>.</p>
+        <p>הערה למחשבי <bdi>Windows</bdi> עם מעבד <bdi>ARM</bdi> (דגמים מסוימים של מחשבים ניידים חדשים): בעמוד ההורדה יש כפתור נפרד - <bdi dir="ltr">Windows (arm64)</bdi>. אם אינכם בטוחים, הכפתור הרגיל הוא הנכון עבורכם.</p>
+      </div>
+    </section>
+
+    <section class="sec" id="s5">
+      <div class="sec-head">
+        <span class="sec-num">5</span>
+        <span class="sec-dot"></span>
+        <h2 class="sec-title">התקנה שלב אחר שלב</h2>
+      </div>
+      <div class="sec-body">
+
+        <h3 class="h2">שלב 1 - הורדת קובץ ההתקנה</h3>
+        <p>גלשו בדפדפן לעמוד ההורדה הרשמי של <bdi>Anthropic</bdi>:</p>
+        <p><code dir="ltr">claude.com/download</code></p>
+
+        <figure>
+          <img class="shot-real" src="cd-01-download-page-annotated.png" alt="עמוד ההורדה הרשמי עם הכפתור Download for Windows">
+          <figcaption>עמוד ההורדה הרשמי</figcaption>
+        </figure>
+        <ul class="shot-legend">
+          <li><b>1</b><span>לחצו על <bdi>Download for Windows</bdi> להורדת קובץ ההתקנה.</span></li>
+        </ul>
+
+        <h3 class="h2">שלב 2 - איתור הקובץ שהורד</h3>
+        <p>בסיום ההורדה, לחצו על אייקון ההורדות של הדפדפן (החץ כלפי מטה, ליד סרגל הכתובת).</p>
+
+        <figure>
+          <img class="shot-real" src="cd-02-downloaded-file-annotated.png" alt="חלונית ההורדות עם הקובץ Claude Setup">
+          <figcaption>חלונית ההורדות של הדפדפן</figcaption>
+        </figure>
+        <ul class="shot-legend">
+          <li><b>1</b><span>הקובץ <bdi dir="ltr">Claude Setup.exe</bdi> שהורד - לחצו עליו להפעלת ההתקנה.</span></li>
+        </ul>
+
+        <h3 class="h2">שלב 3 - אישור האבטחה של <bdi>Windows</bdi></h3>
+        <p>מיד אחרי הלחיצה יופיע חלון אבטחה של <bdi>Windows</bdi>. זהו חלון תקין וצפוי - כך <bdi>Windows</bdi> מוודאת שאתם מאשרים כל התקנה ביודעין.</p>
+
+        <figure>
+          <img class="shot-real" src="cd-03-uac-prompt-annotated.png" alt="חלון User Account Control עם אישור המפרסם Anthropic PBC">
+          <figcaption>חלון האבטחה של <bdi>Windows</bdi> (צולם בטלפון - <bdi>Windows</bdi> חוסמת צילום מסך של חלון זה)</figcaption>
+        </figure>
+        <ul class="shot-legend">
+          <li><b>1</b><span>השורה החשובה: <bdi dir="ltr">Verified publisher: Anthropic, PBC</bdi> - אישור רשמי של <bdi>Windows</bdi> שהקובץ חתום על ידי <bdi>Anthropic</bdi>. זה הסימן שההתקנה בטוחה.</span></li>
+          <li><b>2</b><span>לאחר שוידאתם - לחצו <bdi>Yes</bdi>.</span></li>
+        </ul>
+
+        <h3 class="h2">שלב 4 - ההתקנה רצה מעצמה</h3>
+        <p>מכאן הכל אוטומטי. ההתקנה מורידה את הרכיבים ומסיימת בעצמה - בדרך כלל דקה או שתיים, תלוי בחיבור האינטרנט.</p>
+
+        <figure>
+          <img class="shot-real" src="cd-04-installer.png" alt="חלון ההתקנה של Claude עם פס התקדמות">
+          <figcaption>ההתקנה רצה - ממתינים לסיום. אין צורך ללחוץ על דבר.</figcaption>
+        </figure>
+
+        <div class="callout warn">
+          <span class="callout-label">שימו לב</span>
+          <p>לאפליקציית <bdi>Claude Desktop</bdi> אין עדכון אוטומטי ב-<bdi>Windows</bdi> וב-<bdi>Mac</bdi>. כאשר יוצאת גרסה חדשה, מורידים אותה ידנית מאותו עמוד הורדה. מומלץ לחזור לעמוד מדי כמה שבועות, או כאשר האפליקציה מציעה זאת.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="sec" id="s6">
+      <div class="sec-head">
+        <span class="sec-num">6</span>
+        <span class="sec-dot"></span>
+        <h2 class="sec-title">פתיחה ראשונה והתחברות</h2>
+      </div>
+      <div class="sec-body">
+
+        <h3 class="h2">פתיחת האפליקציה</h3>
+        <p>בסיום ההתקנה, פותחים את האפליקציה דרך תפריט <bdi>Start</bdi> - בדיוק כמו כל תוכנה:</p>
+
+        <figure>
+          <img class="shot-real" src="cd-05-start-menu-annotated.png" alt="חיפוש Claude בתפריט Start של Windows">
+          <figcaption>פתיחת האפליקציה מתפריט <bdi>Start</bdi></figcaption>
+        </figure>
+        <ul class="shot-legend">
+          <li><b>1</b><span>לחצו על מקש <bdi>Windows</bdi> והקלידו <bdi>claude</bdi>.</span></li>
+          <li><b>2</b><span>האפליקציה מופיעה כתוצאה הראשונה, עם האייקון הכתום.</span></li>
+          <li><b>3</b><span>לחצו <bdi>Open</bdi> (או פשוט <bdi>Enter</bdi>).</span></li>
+        </ul>
+
+        <h3 class="h2">התחברות עם החשבון הקיים</h3>
+        <p>בפתיחה הראשונה תופיע מסך פתיחה קצר:</p>
+
+        <figure>
+          <img class="shot-real" src="cd-06-welcome-get-started-annotated.png" alt="מסך הפתיחה Claude for Windows">
+          <figcaption>מסך הפתיחה הראשון</figcaption>
+        </figure>
+        <ul class="shot-legend">
+          <li><b>1</b><span>לחצו <bdi>Get started</bdi>.</span></li>
+        </ul>
+
+        <p>כעת מסך ההתחברות. חשוב: היכנסו עם <b>אותו חשבון</b> שבו אתם משתמשים ב-<bdi>Claude</bdi> בדפדפן - כך כל השיחות והפרויקטים שלכם יופיעו מיד.</p>
+
+        <figure>
+          <img class="shot-real" src="cd-06-signin-options-annotated.png" alt="מסך Sign In עם אפשרויות התחברות">
+          <figcaption>מסך ההתחברות</figcaption>
+        </figure>
+        <ul class="shot-legend">
+          <li><b>1</b><span>אם החשבון שלכם מחובר ל-<bdi>Google</bdi> - לחצו <bdi>Continue with Google</bdi>.</span></li>
+          <li><b>2</b><span>אחרת - הזינו את כתובת המייל של החשבון ולחצו <bdi>Continue with email</bdi>.</span></li>
+        </ul>
+
+        <p>האימות עצמו נפתח בדפדפן. בסיומו יופיע אישור קצר:</p>
+
+        <figure>
+          <img class="shot-real" src="cd-06-signin-complete.png" alt="אישור Sign in complete בדפדפן">
+          <figcaption>האימות הושלם - סוגרים את חלון הדפדפן וחוזרים לאפליקציה. זהו, אתם מחוברים.</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="sec" id="s7">
+      <div class="sec-head">
+        <span class="sec-num">7</span>
+        <span class="sec-dot"></span>
+        <h2 class="sec-title">סיור ראשון באפליקציה</h2>
+      </div>
+      <div class="sec-body">
+        <p>המסך הראשי ירגיש לכם מוכר מיד - הוא בנוי כמו <bdi>Claude</bdi> בדפדפן, עם כמה תוספות:</p>
+
+        <figure>
+          <img class="shot-real" src="cd-07-app-home-annotated.png" alt="המסך הראשי של Claude Desktop">
+          <figcaption>המסך הראשי של <bdi>Claude Desktop</bdi></figcaption>
+        </figure>
+        <ul class="shot-legend">
+          <li><b>1</b><span>סרגל הצד - השיחות, הפרויקטים וה-<bdi>Artifacts</bdi> שלכם, בדיוק כמו בדפדפן.</span></li>
+          <li><b>2</b><span>שני אזורי עבודה: <bdi>Home</bdi> - השימוש היומיומי, ו-<bdi>Code</bdi> - סביבת פיתוח (מדריך נפרד בהמשך הסדרה).</span></li>
+          <li><b>3</b><span>תיבת הכתיבה - כותבים ל-<bdi>Claude</bdi> בדיוק כמו שאתם רגילים.</span></li>
+          <li><b>4</b><span>המתג בין <bdi>Chat</bdi> (שיחה רגילה) ל-<bdi>Cowork</bdi> (עבודה עצמאית של <bdi>Claude</bdi> על משימות - מדריך מקיף נפרד).</span></li>
+        </ul>
+
+        <h3 class="h2">תפריט החשבון</h3>
+        <p>לחיצה על ראשי התיבות שלכם בפינה השמאלית התחתונה פותחת את תפריט החשבון:</p>
+
+        <figure>
+          <img class="shot-real" src="cd-09-account-menu-annotated.png" alt="תפריט החשבון עם Settings ו-Log out">
+          <figcaption>תפריט החשבון. אם אתם חברים בארגון (מנוי <bdi>Team</bdi>), תראו כאן גם את סביבת הארגון.</figcaption>
+        </figure>
+        <ul class="shot-legend">
+          <li><b>1</b><span><bdi>Settings</bdi> - כניסה להגדרות (או הקיצור <bdi dir="ltr">Ctrl+,</bdi>).</span></li>
+          <li><b>2</b><span><bdi>Log out</bdi> - התנתקות מהחשבון.</span></li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="sec" id="s8">
+      <div class="sec-head">
+        <span class="sec-num">8</span>
+        <span class="sec-dot"></span>
+        <h2 class="sec-title">יכולות שקיימות רק ב-<bdi>Desktop</bdi></h2>
+      </div>
+      <div class="sec-body">
+        <p>סעיף זה הוא סקירה בלבד - כדי שתדעו מה קיים. ההדרכות המפורטות נמצאות במדריכים הייעודיים של הסדרה.</p>
+
+        <h3 class="h2">הגדרות האפליקציה</h3>
+        <p>נפתח את ההגדרות (תפריט החשבון ואז <bdi>Settings</bdi>). כך נראה המסך שנפתח:</p>
+
+        <figure>
+          <img class="shot-real" src="cd-10-settings-general-annotated.png" alt="חלון ההגדרות - עמוד General">
+          <figcaption>חלון ההגדרות</figcaption>
+        </figure>
+        <ul class="shot-legend">
+          <li><b>1</b><span>קטגוריות ההגדרות. שימו לב לקבוצה <bdi>Desktop app</bdi> - הגדרות שקיימות רק באפליקציה.</span></li>
+          <li><b>2</b><span><bdi>Appearance</bdi> - מעבר בין מראה בהיר לכהה, לפי העדפתכם.</span></li>
+        </ul>
+
+        <h3 class="h2">חיבור לשירותים - <bdi>Connectors</bdi></h3>
+        <p><bdi>Connectors</bdi> מאפשרים ל-<bdi>Claude</bdi> להתחבר לשירותים שאתם עובדים איתם - לקרוא מהם מידע ולעבוד איתם ישירות מתוך השיחה:</p>
+
+        <figure>
+          <img class="shot-real" src="cd-11-settings-connectors-annotated.png" alt="עמוד Connectors בהגדרות">
+          <figcaption><bdi>Settings</bdi> ואז <bdi>Connectors</bdi></figcaption>
+        </figure>
+        <ul class="shot-legend">
+          <li><b>1</b><span>הקטגוריה <bdi>Connectors</bdi> בתפריט ההגדרות.</span></li>
+          <li><b>2</b><span>החיבורים הפופולריים: <bdi>Gmail</bdi>, <bdi>Google Drive</bdi> ו-<bdi>Slack</bdi>.</span></li>
+          <li><b>3</b><span>הכפתור <bdi>Add</bdi> - פותח קטלוג של שירותים נוספים שאפשר לחבר.</span></li>
+        </ul>
+
+        <div class="callout">
+          <p>חיבור שירותים בסביבה משרדית הוא החלטה של מדיניות, לא רק של נוחות. לפני חיבור <bdi>Connector</bdi> בארגון - ודאו שהדבר תואם את מדיניות המשרד. ראו הרחבה במדריך המעבר למנוי <bdi>Team</bdi>.</p>
+        </div>
+
+        <h3 class="h2">עוד שתי יכולות ששמורות ל-<bdi>Desktop</bdi></h3>
+        <ul class="bullets">
+          <li><b>גישה מהירה ב-<bdi>Mac</bdi></b> - במחשבי <bdi>Mac</bdi> בלבד, הקשה כפולה על מקש <bdi>Option</bdi> פותחת את <bdi>Claude</bdi> מכל מקום, ויש גם הכתבה קולית. ב-<bdi>Windows</bdi> היכולת הזו אינה זמינה כרגע.</li>
+          <li><b>עבודת <bdi>Cowork</bdi> על הקבצים במחשב</b> - היכולת המשמעותית ביותר של האפליקציה: <bdi>Claude</bdi> עובד בעצמו על תיקיות וקבצים אמיתיים במחשב שלכם ומסיים משימות מקצה לקצה. הנושא הזה מוסבר בהרחבה במדריך המקיף של <bdi>Legal Mind</bdi> על <bdi>Cowork</bdi> לעורכי דין.</li>
+        </ul>
+        <!-- הערת הפקה: כשצחי ימסור את הקישור למדריך ה-Cowork - להוסיף קישור בשורת ה-Cowork למעלה -->
+      </div>
+    </section>
+
+    <section class="sec" id="s9">
+      <div class="sec-head">
+        <span class="sec-num">9</span>
+        <span class="sec-dot"></span>
+        <h2 class="sec-title">שאלות נפוצות</h2>
+      </div>
+      <div class="sec-body">
+        <h3 class="h2">התקנתי את האפליקציה - השיחות שלי מהדפדפן ייעלמו?</h3>
+        <p>לא. הכל מסונכרן דרך החשבון. כל השיחות, הפרויקטים וההגדרות מופיעים גם באפליקציה וגם בדפדפן.</p>
+
+        <h3 class="h2">אפשר להמשיך להשתמש גם בדפדפן?</h3>
+        <p>כן, במקביל וללא הגבלה. רבים עובדים כך: האפליקציה למשימות העומק, הדפדפן לבדיקה מהירה ממחשב אחר.</p>
+
+        <h3 class="h2">איך מעדכנים גרסה?</h3>
+        <p>מורידים את הגרסה החדשה מאותו עמוד: <code dir="ltr">claude.com/download</code>, ומתקינים כרגיל. אין עדכון אוטומטי ב-<bdi>Windows</bdi> וב-<bdi>Mac</bdi>.</p>
+
+        <h3 class="h2">איך מסירים את האפליקציה אם רוצים?</h3>
+        <p>כמו כל תוכנה: <bdi dir="ltr">Settings &gt; Apps</bdi> של <bdi>Windows</bdi>, מאתרים את <bdi>Claude</bdi> ולוחצים <bdi>Uninstall</bdi>. החשבון והשיחות אינם נמחקים - הם נשארים זמינים בדפדפן.</p>
+
+        <h3 class="h2">ההתקנה דורשת הרשאות מנהל מיוחדות?</h3>
+        <p>לא מעבר לאישור הרגיל של <bdi>Windows</bdi> שראינו בשלב 3. במחשבים משרדיים המנוהלים על ידי גורם <bdi>IT</bdi>, ייתכן שתצטרכו את אישורו - כמו לכל התקנת תוכנה.</p>
+      </div>
+    </section>
+
+    <section class="sec" id="closing">
+      <div class="sec-head">
+        <span class="sec-num">10</span>
+        <span class="sec-dot"></span>
+        <h2 class="sec-title">נקודת סיום: מה הלאה?</h2>
+      </div>
+      <div class="sec-body">
+        <p>אם עברתם את המדריך - יש לכם עכשיו:</p>
+        <ul class="checklist">
+          <li>אפליקציית <bdi>Claude Desktop</bdi> מותקנת ומחוברת לחשבון הקיים.</li>
+          <li>היכרות עם המסך הראשי: סרגל הצד, <bdi>Home</bdi> ו-<bdi>Code</bdi>, והמתג בין <bdi>Chat</bdi> ל-<bdi>Cowork</bdi>.</li>
+          <li>ידיעה היכן ההגדרות ומה הם <bdi>Connectors</bdi>.</li>
+        </ul>
+        <p>הצעד הבא בסדרה: המדריך המקיף של <bdi>Legal Mind</bdi> על <bdi>Cowork</bdi> לעורכי דין - שם תלמדו איך <bdi>Claude</bdi> עובד בשבילכם על משימות אמיתיות, בקבצים אמיתיים.</p>
+        <!-- הערת הפקה: להוסיף כאן קישור למדריך ה-Cowork כשיימסר -->
+      </div>
+    </section>
+
+  </main>
+</div>
+
+<footer><bdi>Legal Mind</bdi> · מדריך <bdi dir="ltr">Claude Desktop</bdi> · כל הזכויות שמורות ל<bdi>Legal Mind</bdi></footer>
+
+</body>
+</html>
