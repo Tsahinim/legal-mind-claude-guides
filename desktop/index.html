@@ -8,6 +8,8 @@
 </head>
 <body>
 
+<a class="back-to-series" href="../index.html">← חזרה למרכז המדריכים הראשי של <bdi>Legal Mind</bdi></a>
+
 <header class="masthead">
   <img class="logo-big" src="legal-mind-logo-tight.png" alt="Legal Mind">
 </header>
@@ -333,9 +335,8 @@
         <h3 class="h2">עוד שתי יכולות ששמורות ל-<bdi>Desktop</bdi></h3>
         <ul class="bullets">
           <li><b>גישה מהירה ב-<bdi>Mac</bdi>.</b> במחשבי <bdi>Mac</bdi> בלבד, הקשה כפולה על מקש <bdi>Option</bdi> פותחת חלונית <bdi>Claude</bdi> קטנה מעל כל תוכנה שפתוחה - שואלים, מקבלים תשובה, וממשיכים לעבוד. קיימת גם הכתבה קולית. ב-<bdi>Windows</bdi> היכולות האלה אינן זמינות נכון למועד כתיבת המדריך.</li>
-          <li><b>עבודת <bdi>Cowork</bdi> על הקבצים במחשב</b> (זמינה במנויים בתשלום). היכולת המשמעותית ביותר של האפליקציה, וזו שלשמה התכנסנו: במצב <bdi>Cowork</bdi>, <bdi>Claude</bdi> מקבל מכם משימה שלמה - למשל לארגן תיקיית מסמכים של תיק, להפיק סיכום ממקבץ קבצים, או להכין טיוטה על בסיס חומר קיים - ועובד עליה בעצמו, שלב אחר שלב, עד תוצר מוגמר. הגישה לתיקיות שעל המחשב שלכם מתאפשרת רק דרך האפליקציה, ובשליטתכם המלאה. הנושא הזה, על כל שיקוליו, מוסבר בהרחבה במדריך המקיף של <bdi>Legal Mind</bdi> על <bdi>Cowork</bdi> לעורכי דין - המדריך הבא בסדרה.</li>
+          <li><b>עבודת <bdi>Cowork</bdi> על הקבצים במחשב</b> (זמינה במנויים בתשלום). היכולת המשמעותית ביותר של האפליקציה, וזו שלשמה התכנסנו: במצב <bdi>Cowork</bdi>, <bdi>Claude</bdi> מקבל מכם משימה שלמה - למשל לארגן תיקיית מסמכים של תיק, להפיק סיכום ממקבץ קבצים, או להכין טיוטה על בסיס חומר קיים - ועובד עליה בעצמו, שלב אחר שלב, עד תוצר מוגמר. הגישה לתיקיות שעל המחשב שלכם מתאפשרת רק דרך האפליקציה, ובשליטתכם המלאה. הנושא הזה, על כל שיקוליו, מוסבר בהרחבה ב<a href="../cowork/">מרכז מדריכי <bdi>Cowork</bdi> של <bdi>Legal Mind</bdi> לעורכי דין</a> - ההמשך הישיר של מדריך זה.</li>
         </ul>
-        <!-- הערת הפקה: כשצחי ימסור את הקישור למדריך ה-Cowork - להוסיף קישור בשורת ה-Cowork למעלה -->
       </div>
     </section>
 
@@ -386,8 +387,7 @@
           <li>היכרות עם המסך הראשי: סרגל הצד, <bdi>Home</bdi> ו-<bdi>Code</bdi>, והמתג בין <bdi>Chat</bdi> ל-<bdi>Cowork</bdi>.</li>
           <li>ידיעה היכן ההגדרות, מה הם <bdi>Connectors</bdi>, ומה שיקול המדיניות שסביבם.</li>
         </ul>
-        <p>הצעד הבא בסדרה: המדריך המקיף של <bdi>Legal Mind</bdi> על <bdi>Cowork</bdi> לעורכי דין - שם תלמדו איך להפוך את <bdi>Claude</bdi> משותף לשיחה לעוזר שעובד בשבילכם: על משימות אמיתיות, בקבצים אמיתיים, עם תוצרים מוגמרים.</p>
-        <!-- הערת הפקה: להוסיף כאן קישור למדריך ה-Cowork כשיימסר -->
+        <p>הצעד הבא בסדרה: <a href="../cowork/">מרכז מדריכי <bdi>Cowork</bdi> של <bdi>Legal Mind</bdi> לעורכי דין</a> - שם תלמדו איך להפוך את <bdi>Claude</bdi> משותף לשיחה לעוזר שעובד בשבילכם: על משימות אמיתיות, בקבצים אמיתיים, עם תוצרים מוגמרים.</p>
       </div>
     </section>
 
@@ -396,5 +396,22 @@
 
 <footer><bdi>Legal Mind</bdi> · מדריך <bdi dir="ltr">Claude Desktop</bdi> · כל הזכויות שמורות ל<bdi>Legal Mind</bdi></footer>
 
+<script>
+(function () {
+  var links = Array.prototype.slice.call(document.querySelectorAll('.toc-card a[href^="#"]'));
+  var map = links.map(function (a) {
+    var id = decodeURIComponent(a.getAttribute('href').slice(1));
+    return { a: a, t: document.getElementById(id) };
+  }).filter(function (x) { return x.t; });
+  if (!map.length) return;
+  function onScroll() {
+    var y = window.scrollY + 140, cur = map[0];
+    map.forEach(function (x) { if (x.t.offsetTop <= y) cur = x; });
+    links.forEach(function (a) { a.classList.toggle('current', a === cur.a); });
+  }
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
+})();
+</script>
 </body>
 </html>
