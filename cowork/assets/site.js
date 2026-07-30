@@ -18,26 +18,3 @@ document.querySelectorAll('.toggle-shot').forEach(btn=>{
  });
 });
 document.querySelectorAll('table').forEach(t=>{const w=document.createElement('div');w.className='table-wrapper';t.parentNode.insertBefore(w,t);w.appendChild(t)});
-
-/* scrollspy: highlight the section currently in view in the sidebar TOC */
-(function () {
-  var links = Array.prototype.slice.call(document.querySelectorAll('.sidebar a[href^="#"]'));
-  var map = links.map(function (a) {
-    var id = decodeURIComponent(a.getAttribute('href').slice(1));
-    return { a: a, t: document.getElementById(id) };
-  }).filter(function (x) { return x.t; });
-  if (!map.length) return;
-  function onScroll() {
-    var y = window.scrollY + 140, cur = map[0];
-    map.forEach(function (x) { if (x.t.offsetTop <= y) cur = x; });
-    links.forEach(function (a) { a.classList.toggle('current', a === cur.a); });
-    var sb = document.querySelector('.sidebar');
-    if (sb && cur) {
-      var t = cur.a.offsetTop - sb.offsetTop;
-      if (t < sb.scrollTop + 60) sb.scrollTop = Math.max(0, t - 60);
-      else if (t > sb.scrollTop + sb.clientHeight - 80) sb.scrollTop = t - sb.clientHeight + 80;
-    }
-  }
-  window.addEventListener('scroll', onScroll, { passive: true });
-  onScroll();
-})();
