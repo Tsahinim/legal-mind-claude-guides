@@ -44,3 +44,8 @@
 .shot-legend-num{margin:0;padding:0;list-style:none;display:grid;gap:6px}
 .shot-legend-num li{color:var(--ink);font-size:.92rem;line-height:1.6}
 .shot-legend-num strong{color:var(--teal);font-weight:900;margin-inline-end:4px}
+
+.copy-block ol,.copy-block ul{margin:0;padding-inline-start:22px;background:var(--paper);border:1px solid var(--line);border-radius:8px;padding-block:12px;padding-inline-end:14px;color:var(--ink);font-size:.95rem;line-height:1.75}
+.copy-block>div[id]>p{margin:0 0 8px}
+.copy-block>div[id]{background:var(--paper);border:1px solid var(--line);border-radius:8px;padding:12px 14px}
+.copy-block>div[id] ol,.copy-block>div[id] ul{border:0;padding-block:0;background:transparent}
