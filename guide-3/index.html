@@ -14,7 +14,7 @@ main{min-width:0}.intro,.section,.callout,.prompt{background:#fff;border:1px sol
 .steps{counter-reset:s;list-style:none;padding:0;margin:15px 0}.steps li{counter-increment:s;position:relative;padding:11px 56px 11px 13px;margin:8px 0;border:1px solid var(--line);background:#fbfcfc;border-radius:12px}.steps li:before{content:counter(s);position:absolute;right:13px;top:10px;width:30px;height:30px;border-radius:50%;display:grid;place-items:center;background:var(--teal);color:#fff;font-weight:900}
 .figure{background:#fff;border:1px solid var(--line);border-radius:17px;padding:13px;margin:19px 0 8px;box-shadow:0 8px 23px rgba(16,47,67,.05)}.figure img{display:block;width:100%;height:auto;border-radius:10px}.caption{text-align:center;color:var(--muted);font-size:14px;margin:8px 7px 0}.markers{background:#f8faf9;border:1px solid var(--line);border-radius:13px;padding:12px 15px;margin:9px 0 21px}.marker-line{display:flex;gap:9px;align-items:flex-start;margin:7px 0}.badge{flex:0 0 28px;width:28px;height:28px;border-radius:50%;background:var(--red);color:#fff;display:grid;place-items:center;font-size:14px;font-weight:900}
 .callout{border-right:6px solid var(--teal);background:#eff8f7}.callout.warn{border-right-color:var(--gold);background:#fffaf0}.callout.danger{border-right-color:var(--red);background:#fff4f6}.label{font-size:12px;letter-spacing:.5px;color:var(--teal);font-weight:900}.callout h3{margin-top:4px}
-.prompt{background:var(--navy);color:#fff;border:0;position:relative}.prompt h3{color:#7fe0da;margin-top:0}.prompt pre{white-space:pre-wrap;font-family:Arial,"Noto Sans Hebrew",sans-serif;font-size:16px;line-height:1.75;margin:0}.copy{position:absolute;left:14px;top:14px;background:rgba(255,255,255,.1);color:#fff;border:1px solid rgba(255,255,255,.35);padding:7px 10px;border-radius:8px;cursor:pointer}
+.prompt{background:var(--navy);color:#fff;border:0;position:relative}.prompt h3{color:#7fe0da;margin-top:0}.prompt pre{white-space:pre-wrap;font-family:Arial,"Noto Sans Hebrew",sans-serif;font-size:16px;line-height:1.75;margin:0}.copy{position:absolute;left:14px;top:14px;background:#22b7ae;color:#08202b;border:0;padding:8px 16px;border-radius:8px;cursor:pointer;font:inherit;font-size:.85rem;font-weight:900}.copy:hover{background:#5fd8d0}.copy:focus-visible{outline:2px solid #fff;outline-offset:2px}
 .gcao-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:9px;margin:14px 0}.gc{border:1px solid var(--line);border-top:4px solid var(--teal);border-radius:12px;padding:12px;background:#fbfcfc}.gc b{display:block;color:var(--navy)}.compare{display:grid;grid-template-columns:1fr 1fr;gap:13px}.compare>div{border:1px solid var(--line);border-radius:13px;padding:14px}.bad{border-top:4px solid var(--red)!important;background:#fff6f7}.good{border-top:4px solid var(--teal)!important;background:#f3fbfa}.check{list-style:none;padding:0}.check li{position:relative;padding:7px 34px 7px 0}.check li:before{content:"✓";position:absolute;right:0;color:var(--teal);font-weight:900}.nextprev{display:flex;gap:14px;justify-content:space-between;border-top:1px solid var(--line);padding-top:22px;margin-top:30px}.navbtn{width:48%;padding:15px;border:1px solid #b8cecb;border-radius:12px;background:#fff;text-decoration:none;color:var(--navy)}.navbtn small{display:block;color:#718184;font-size:12px}.footer{text-align:center;color:#6b797e;font-size:13px;padding:25px}
 @media(max-width:900px){.layout{grid-template-columns:1fr}.toc{display:none}.mobile-toc{display:block;background:#fff;border-bottom:1px solid var(--line);padding:9px 15px}.mobile-toc details{max-width:760px;margin:auto}.mobile-toc a{display:block;padding:6px}.hero h1{font-size:40px}.intro-grid,.gcao-grid{grid-template-columns:1fr 1fr}}
 @media(max-width:610px){body{font-size:16px}.hero{padding:48px 16px 65px}.hero h1{font-size:33px}.hero p{font-size:18px}.brand-inner{align-items:flex-start}.intro-grid,.gcao-grid,.compare{grid-template-columns:1fr}.layout{padding-left:13px;padding-right:13px}.section,.intro{padding:18px}.section h2{font-size:28px}.nextprev{flex-direction:column}.navbtn{width:100%}}
@@ -197,7 +197,7 @@ bdi{unicode-bidi:isolate}
 <section class="callout danger"><span class="label">שלושה רכיבים שונים</span>
 <h3>ההבדל בין Artifact, Instructions ומסמך היכרות אישי</h3>
 <div class="layer-stack">
-<div class="layer"><strong>Artifact</strong> - תוצר עובד: מחשבון, טופס, דשבורד או כלי שאפשר להפעיל.</div>
+<div class="layer"><strong>Artifact</strong> - תוצר עובד שנפתח בחלונית לצד השיחה: מחשבון, טופס, מסך מרוכז של נתונים או כלי אחר שאפשר להפעיל ולשנות בו ערכים.</div>
 <div class="layer"><strong>Instructions for Claude</strong> - כללים אישיים רחבים שנכונים כמעט בכל שיחה.</div>
 <div class="layer"><strong>מסמך היכרות אישי</strong> - מסמך נפרד שמרכז מי אתם, כיצד לעבוד איתכם ומה חשוב כרגע; אפשר להעתיק ממנו גרסה קצרה ל־Instructions.</div>
 </div></section>
@@ -231,7 +231,7 @@ bdi{unicode-bidi:isolate}
 <section class="section" id="s3">
 <div class="head"><span class="no">3</span><h2>בניית כלי עובד מתיאור בשפה טבעית</h2></div>
 <p>בדוגמה שלנו נבנה מחשבון שמעריך את העלות השנתית של עבודה ידנית בתהליך קליטת לקוח, את הזמן שניתן לחסוך ואת נקודת האיזון של השקעה באוטומציה. הדוגמה ממחישה חישוב ניהולי של עלות, חיסכון ונקודת איזון; היא אינה חוות דעת פיננסית.</p>
-<div class="prompt"><button class="copy" onclick="copyPrompt('artifactPrompt',this)" type="button">העתקה</button><h3>פרומפט ל־Artifact אינטראקטיבי</h3><pre id="artifactPrompt">בנה Artifact אינטראקטיבי למשרד עורכי דין שבוחן את עלות העבודה הידנית בתהליך קליטת לקוח.
+<div class="prompt"><button class="copy" onclick="copyPrompt('artifactPrompt',this)" type="button">העתקת הטקסט</button><h3>פרומפט ל־Artifact אינטראקטיבי</h3><pre id="artifactPrompt">בנה Artifact אינטראקטיבי למשרד עורכי דין שבוחן את עלות העבודה הידנית בתהליך קליטת לקוח.
 
 קהל יעד:
 בעלי משרד ומנהלי תפעול.
@@ -273,7 +273,7 @@ bdi{unicode-bidi:isolate}
 <h3>בדיקת קישור לפני שיתוף</h3>
 <ol class="steps">
 <li>ודאו שאתם נמצאים בגרסה הנכונה של ה־Artifact.</li>
-<li>לחצו Publish או Share בהתאם למה שמוצג בחשבון.</li>
+<li>בסרגל הפעולות שבראש חלונית ה-<bdi dir="ltr">Artifact</bdi> לחצו על סמל השיתוף, או על שלוש הנקודות, לפי מה שמופיע אצלכם. בתפריט שנפתח בחרו <bdi dir="ltr">Publish artifact</bdi> או <bdi dir="ltr">Share</bdi>. אם אינכם מוצאים את הסמל, הרחיבו את החלונית לתצוגה מלאה - שם סרגל הפעולות מוצג במלואו.</li>
 <li>העתיקו את הקישור ובדקו אותו בחלון פרטי או בחשבון מתאים.</li>
 <li>בדקו אילו קבצים או נספחים מהשיחה זמינים למי שפותח את ה־Artifact.</li>
 <li>השתמשו בתצוגה מלאה כדי לבדוק שהכלי קריא גם מחוץ לשיחה.</li>
@@ -299,7 +299,7 @@ bdi{unicode-bidi:isolate}
 <div class="good"><strong>נכון כמעט תמיד</strong><p>שפה, סגנון, חלוקת תשובה, סימון אי־ודאות, איסור המצאת מקורות, עצירה לפני פעולה רגישה.</p></div>
 <div class="bad"><strong>לא מתאים להוראות האישיות</strong><p>שם לקוח, עובדות תיק, מסמכי מחלקה, תהליך ארוך שחוזר רק במשימה מסוימת או נתון שמשתנה בכל שבוע.</p></div>
 </div>
-<div class="prompt"><button class="copy" onclick="copyPrompt('instructionsPrompt',this)" type="button">העתקה</button><h3>הוראות קבועות לעורך דין</h3><pre id="instructionsPrompt">אני עורך דין בתחום [תחום].
+<div class="prompt"><button class="copy" onclick="copyPrompt('instructionsPrompt',this)" type="button">העתקת הטקסט</button><h3>הוראות קבועות לעורך דין</h3><p style="margin:0 0 10px;font-size:.92rem;opacity:.85">לאחר ההעתקה החליפו כל מה שנמצא בסוגריים המרובעים בפרטים שלכם, ומחקו את הסוגריים עצמם. אל תשאירו טקסט בסוגריים בהוראות הקבועות.</p><pre id="instructionsPrompt">אני עורך דין בתחום [תחום].
 
 כתוב בעברית ברורה, ישירה ומקצועית.
 אם חסר מידע מהותי, שאל לפני יצירת מסקנה.
@@ -309,7 +309,7 @@ bdi{unicode-bidi:isolate}
 אל תבצע פעולה, שליחה או פרסום ללא אישור מפורש.
 
 אל תשתמש בהוראות האלה לשמירת שמות לקוחות, פרטי תיקים או מידע חסוי.</pre></div>
-<div class="callout"><span class="label">איפה שומרים כל סוג מידע</span><p>מידע על דרך העבודה שלכם שייך ל־Instructions. מידע קבוע על עניין או תחום שייך ל־Project. תהליך חוזר עם שלבים ומבנה תוצר קבוע שייך ל־Skill.</p></div>
+<div class="callout"><span class="label">איפה שומרים כל סוג מידע</span><p>מידע על דרך העבודה שלכם שייך ל־Instructions. מידע קבוע על עניין או תחום שייך ל־Project. תהליך חוזר עם שלבים ומבנה תוצר קבוע שייך ל־Skill - תהליך שמור עם שלבים קבועים, שמוסבר במדריך 5.</p></div>
 </section>
 <section class="section" id="s7">
 <div class="head"><span class="no">7</span><h2>בדיקה בשיחה חדשה שההוראות נשמרו</h2></div>
@@ -326,6 +326,13 @@ bdi{unicode-bidi:isolate}
 </div>
 <p><strong>איך יודעים שהצלחתם?</strong> התשובה משקפת כלל שלא חזרתם עליו בפרומפט החדש.</p>
 </section>
+<div class="callout warn"><span class="label">ואם Claude בכל זאת ענה בלי לשאול</span>
+<ol class="steps">
+<li>חזרו ל-<bdi dir="ltr">Settings</bdi> ובדקו שהטקסט אכן מופיע בתיבה ושהשמירה בוצעה.</li>
+<li>ודאו שפתחתם שיחה חדשה ולא המשכתם שיחה קיימת. הוראות קבועות חלות על שיחות חדשות.</li>
+<li>נסחו את הכלל בציווי חד-משמעי: "אם חסר מידע מהותי, אל תכתוב מסקנה. שאל תחילה."</li>
+<li>אם גם אז אין שינוי, כתבו את הכלל בתחילת השיחה עצמה ובדקו שוב. כך תדעו אם הבעיה בניסוח הכלל או בשמירתו.</li>
+</ol></div>
 <section class="section" id="s8">
 <div class="head"><span class="no">8</span><h2>מסמך היכרות אישי: פרטים, מטרות וגבולות לעבודה עם Claude</h2></div>
 <p>AI Operating System אינו שם של כפתור או מוצר נפרד ב־Claude. זהו שם שניתן במדריך למסמך היכרות אישי שמרכז מי אתם, כיצד אתם עובדים, מהן המטרות שלכם ואילו גבולות Claude צריך לכבד. את הגרסה הקצרה והיציבה אפשר לשמור בתוך Instructions for Claude. גרסה ארוכה או זמנית אינה מתאימה להוראות החשבון, משום שהיא עלולה להשפיע על שיחות שאינן קשורות אליה.</p>
@@ -333,16 +340,47 @@ bdi{unicode-bidi:isolate}
 <div class="profile-part"><b>זהות</b>תחום, תפקיד, סוג משרד וסוג לקוחות.</div>
 <div class="profile-part"><b>סגנון</b>איך לכתוב, כמה לפרט ואיך לפתוח תשובה.</div>
 <div class="profile-part"><b>מטרות</b>מה חשוב לכם בתקופה הנוכחית.</div>
-<div class="profile-part"><b>מסגרת זמן</b>מגבלות, לוח זמנים וכללים שאינם נתונים למשא ומתן.</div>
+<div class="profile-part"><b>מסגרת זמן</b>כמה זמן יש לכם, לוחות זמנים קבועים ואילוצים שאי אפשר לשנות.</div>
 <div class="profile-part"><b>גבולות</b>מה לא להמציא, מתי לעצור ומתי לבקש אישור.</div>
 </div>
-<div class="prompt"><button class="copy" onclick="copyPrompt('aiosShort',this)" type="button">העתקה</button><h3>גרסת התחלה - שבעה שדות בלבד</h3><pre id="aiosShort">אני עורך דין בתחום [תחום].
+<div class="prompt"><button class="copy" onclick="copyPrompt('aiosShort',this)" type="button">העתקת הטקסט</button><h3>גרסת התחלה - שבעה שדות בלבד</h3><p style="margin:0 0 10px;font-size:.92rem;opacity:.85">הטקסט הזה מחליף את ההוראות שהדבקתם בסעיף 6, ואינו מתווסף אליהן. הוא כולל אותן ומוסיף עליהן פרטים אישיים. פתחו שוב את <bdi dir="ltr">Instructions for Claude</bdi>, מחקו את התוכן הקודם והדביקו את הטקסט הזה במקומו.</p><pre id="aiosShort">אני עורך דין בתחום [תחום].
 הלקוחות העיקריים שלי הם [סוג לקוחות].
 כתוב בעברית [ישירה / פורמלית / בגובה העיניים].
 המטרות שלי כרגע הן [מטרות].
 מגבלת הזמן שלי היא [מגבלה].
 כאשר חסר בסיס למסקנה, התחל בשאלות ובמידע החסר.
 אל תמציא מקור ואל תבצע פעולה ללא אישור.</pre></div>
+<div class="prompt"><button class="copy" onclick="copyPrompt('aiosFull',this)" type="button">העתקת הטקסט</button><h3>הגרסה המלאה - מסמך ההיכרות האישי</h3><pre id="aiosFull">מסמך היכרות אישי - [השם שלכם]
+עודכן בתאריך: [תאריך]
+
+1. זהות
+התחום שלי: [תחום]
+התפקיד שלי: [שותף / שכיר / עצמאי]
+סוג המשרד: [גודל ואופי]
+הלקוחות העיקריים שלי: [סוג לקוחות]
+
+2. סגנון
+כתוב בעברית [ישירה / פורמלית / בגובה העיניים].
+רמת הפירוט שאני מעדיף: [תמציתי / מפורט / מפורט רק בנקודות מהותיות]
+פתח תשובה ב: [שורה תחתונה תחילה / רקע ואז מסקנה]
+אורך מועדף: [כמה פסקאות או עמודים]
+
+3. מטרות
+מה חשוב לי בתקופה הנוכחית: [מטרות]
+סוגי משימות שאני מבצע הכי הרבה: [משימות]
+
+4. מסגרת זמן
+מגבלת הזמן הרגילה שלי למשימה: [מגבלה]
+מועדים קבועים שחוזרים אצלי: [לוחות זמנים]
+
+5. גבולות
+אל תמציא מקור, פסיקה, חוק או תאריך.
+כאשר חסר בסיס למסקנה, התחל בשאלות ובמידע החסר.
+אל תבצע פעולה חיצונית ללא אישור מפורש ממני.
+אל תכריע במחלוקת משפטית - הצג את הצדדים ואת מה שחסר.
+עצור ובקש אישור כאשר: [מצבים]
+</pre></div>
+<p>הגרסה המלאה נשמרת אצלכם כמסמך, לא בהוראות החשבון. שני המקומות המתאימים: קובץ Word או PDF במחשב המשרד, בתיקייה שאין בה חומר לקוח, או קובץ בתוך <bdi dir="ltr">Project</bdi> אישי נפרד. מ<bdi dir="ltr">Instructions</bdi> מעתיקים רק את הגרסה הקצרה.</p>
 <h3>סדר עבודה מומלץ להכנת המסמך</h3>
 <ol class="steps"><li>ממלאים את הגרסה הקצרה בעשר דקות.</li><li>שומרים ב־Instructions רק גרסה קצרה ויציבה. מסמך ארוך יותר שומרים במסמך פרטי ומאושר או ב־Project אישי ייעודי, ומעתיקים ממנו לחשבון רק את הכללים הכלליים שנחוצים ברוב השיחות.</li><li>בודקים שאלה שתלויה במטרה או במגבלת הזמן.</li><li>מעדכנים כאשר תחום, צוות, מטרה או לוח זמנים משתנים.</li></ol>
 <div class="callout danger"><span class="label">מידע שאסור להכניס</span><p>אל תכניסו למסמך ההיכרות שמות לקוחות, פרטי תיקים, סודות מסחריים או מידע חסוי. זהו מסמך עליכם ועל דרך העבודה שלכם.</p></div>
