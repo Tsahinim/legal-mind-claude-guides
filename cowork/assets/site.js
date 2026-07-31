@@ -35,8 +35,9 @@ document.querySelectorAll('table').forEach(t=>{const w=document.createElement('d
     var sb = document.querySelector('.sidebar');
     if (sb && cur) {
       var t = cur.a.offsetTop - sb.offsetTop;
-      if (t < sb.scrollTop + 60) sb.scrollTop = Math.max(0, t - 60);
-      else if (t > sb.scrollTop + sb.clientHeight - 80) sb.scrollTop = t - sb.clientHeight + 80;
+      if (t < sb.scrollTop + 40 || t > sb.scrollTop + sb.clientHeight - 60) {
+        sb.scrollTo({ top: Math.max(0, t - sb.clientHeight / 2), behavior: "smooth" });
+      }
     }
   }
   window.addEventListener('scroll', onScroll, { passive: true });

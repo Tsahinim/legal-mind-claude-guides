@@ -871,3 +871,7 @@ body { background: #EDF4F2; }
 figure .shot-real { border-radius: 12px; box-shadow: 0 8px 24px rgba(13,39,64,.08); }
 @media (max-width: 900px) { .wrap main { padding: 20px 16px 26px; border-radius: 14px; } }
 
+
+/* toc clears back bar */
+.toc-card { top: 20px; }
+.toc-card a.current { background: var(--brand-wash); border-radius: 6px; }

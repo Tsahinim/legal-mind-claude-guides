@@ -1124,3 +1124,9 @@ article.content p, article.content ul, article.content ol { font-size: 16px; lin
 :root { --dark: #082E2D; }
 
 .shot-note { font-size: 13.5px; color: var(--ink-faint); margin: 8px 0 0; }
+
+/* ===== sticky sidebar must clear the sticky topbar (approx 40px) ===== */
+.sidebar { top: 56px; max-height: calc(100vh - 76px); }
+article.content h3, article.content h4, article.content .sec-head { scroll-margin-top: 64px; }
+.sidebar a.current { background: var(--brand-wash); border-radius: 6px; }
+@media (max-width: 900px) { .sidebar { top: 0; max-height: none; } }
