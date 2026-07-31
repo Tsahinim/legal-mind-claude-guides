@@ -250,6 +250,13 @@ Legal-Mind-Cowork-Practice-Cloud
 <li><code>Manage connectors</code> - מעבר למסך הניהול המלא, זה שראינו בסעיף הקודם.</li>
 <li><b>מתג הפעלה לכל חיבור שכבר מחובר</b> - וזה החלק המעשי בשבילכם. מתג כחול פירושו שהחיבור זמין למשימה הזאת; לחיצה עליו מכבה אותו.</li>
 </ul>
+<figure class="shot-card" data-shot="1">
+  <div class="shot-toolbar"><strong>צילום 1</strong></div>
+  <img class="shot-real" src="../assets/images/annotated/g2-01-connectors-menu-annotated.png" alt="תפריט החיבורים בתוך משימת Cowork, עם מתג הפעלה לכל חיבור"/>
+  <figcaption>
+    <ol class="shot-legend"><li><span class="legend-num">1</span><span>סימן ה-<bdi>+</bdi> שליד תיבת ההודעה. כאן נפתח התפריט.</span></li><li><span class="legend-num">2</span><span>האפשרות <bdi>Connectors</bdi>. מרחפים מעליה עם העכבר, בלי ללחוץ, ונפתחת רשימת המשנה.</span></li><li><span class="legend-num">3</span><span>מתג ההפעלה של כל חיבור. כחול פירושו שהחיבור זמין למשימה הזאת; לחיצה מכבה אותו.</span></li></ol>
+  </figcaption>
+</figure>
 <p>לפני משימה שאסור לה לגעת במקור חיצוני, עברו על הרשימה וכבו כל מתג שאינו נחוץ. זו הפעולה הפשוטה ביותר, והיא לוקחת שניות.</p>
 <p>שימו לב היטב למה שהמתג הזה <b>לא</b> עושה: הוא לא מנתק את החיבור, לא מבטל את הרשאת ה-OAuth בשירות המקור, ולא מצמצם את הרשאות החשבון שלכם שם. הוא רק קובע אם החיבור זמין לשיחה הנוכחית.</p>
 <h4 id="4-1-בחירת-מצב-tool-access-לפי-היקף-המשימה">4.1 הערה על הבדלי גרסאות</h4>
@@ -331,6 +338,13 @@ Legal-Mind-Cowork-Practice-Cloud
 <hr/>
 <h3 id="6-בחירת-תהליכים-שמתאימים-למשימות-מתוזמנות">6. אילו תהליכים מתאימים למשימות מתוזמנות</h3>
 <p>Scheduled tasks, המשימות המתוזמנות שהכרנו בפתיחה, מאפשרות להריץ משימה בשעה או בקצב שקבעתם מראש. הן יכולות להשתמש ב-Connectors, ב-Skills וב-Plugins שהגדרתם.</p>
+<figure class="shot-card" data-shot="2">
+  <div class="shot-toolbar"><strong>צילום 2</strong></div>
+  <img class="shot-real" src="../assets/images/annotated/g2-02-scheduled-list-annotated.png" alt="מסך המשימות המתוזמנות ב-Claude Desktop"/>
+  <figcaption>
+    <ol class="shot-legend"><li><span class="legend-num">1</span><span><bdi>Scheduled</bdi> בסרגל הצד. משם מגיעים למסך הזה.</span></li><li><span class="legend-num">2</span><span>הודעה של Claude שמסבירה שהמשימות רצות בענן, ושחלקן עדיין זקוקות למחשב דלוק.</span></li><li><span class="legend-num">3</span><span>הכפתור <bdi>New task</bdi> ליצירת משימה חדשה. מתחת לרשימה הריקה מופיעות תבניות מוכנות, כמו סיכום שבועי או מיון דואר.</span></li></ol>
+  </figcaption>
+</figure>
 <p>אבל לא כל פעולה משפטית מתאימה לריצה אוטומטית. כלל אצבע: ככל שהפעולה חיצונית יותר וקשה יותר לביטול, כך היא דורשת יותר פיקוח.</p>
 <h4 id="6-1-תהליכים-שמתאימים-לתזמון-לאחר-בדיקה">6.1 תהליכים שכן מתאימים לתזמון, אחרי בדיקה</h4>
 <ul>
@@ -351,7 +365,13 @@ Legal-Mind-Cowork-Practice-Cloud
 </ul>
 <h4 id="6-3-מסלול-ההפעלה-היציב-למשימה-מתוזמנת">6.3 המסלול היציב: משימה מתוזמנת שרצה מרחוק</h4>
 <p>לפי התיעוד של Anthropic, Scheduled tasks רצות מרחוק. כלומר, הן לא דורשות שהמחשב שלכם יהיה דלוק או ש-Claude Desktop יהיה פתוח. הן יכולות להשתמש ב-Connectors, ב-Plugins ובקבצים שנשמרו בחשבון Claude.</p>
-<p>באותו מאמר עזרה מופיעה גם אפשרות לבחור תיקייה מקומית, עם הערה שמשימה שתלויה בקבצים או בתוכנות במחשב תרוץ מקומית. שתי ההנחיות מופיעות כיום זו לצד זו, ולכן סדרת Legal Mind לא מבססת את תרגיל הבסיס על תיקייה מקומית. עד לאימות חזותי בחשבון Team, נלמד כאן רק את המסלול המרוחק, זה שלא תלוי במחשב שלכם.</p>
+<p>ואיך זה נראה בפועל? בטופס יצירת המשימה יש מתג בשם <code>Run on your computer</code>, והוא <b>כבוי כברירת מחדל</b>. לצידו כתוב במפורש: המשימה תרוץ רק בזמן שהמחשב שלכם דלוק, ויש להפעיל את המתג רק אם המשימה זקוקה לקבצים מקומיים או לתוספים שמותקנים על המחשב.</p>
+<p>כלומר יש לכם שני מסלולים, והבחירה ביניהם היא מתג אחד:</p>
+<ul>
+<li><b>מתג כבוי (ברירת המחדל)</b> - המשימה רצה בענן, ופועלת גם כשהמחשב כבוי. זה המסלול שנלמד כאן, והוא המתאים לתרגול.</li>
+<li><b>מתג דלוק</b> - המשימה נוגעת בקבצים שבמחשב, ולכן תרוץ רק כשהמחשב דלוק ו-Claude Desktop פתוח. זה מסלול לשלב מתקדם יותר, אחרי שהנוהל המשרדי ברור.</li>
+</ul>
+<p>לתרגיל שבהמשך: השאירו את המתג כבוי.</p>
 <p>לפני שאתם מתזמנים, בדקו:</p>
 <ul>
 <li>שהמשימה אינה תלויה בתיקייה או ביישום מקומיים.</li>
@@ -378,15 +398,30 @@ Legal-Mind-Cowork-Practice-Cloud
 </code></pre></div>
 <p>בדקו שני דברים: שהפלט הוא טיוטה פנימית בלבד, ושלא הופעל שום כלי חיצוני.</p>
 <h5>עכשיו יוצרים את התזמון בפועל</h5>
+<figure class="shot-card" data-shot="3">
+  <div class="shot-toolbar"><strong>צילום 3</strong></div>
+  <img class="shot-real" src="../assets/images/annotated/g2-03-new-task-menu-annotated.png" alt="שתי האפשרויות שנפתחות בלחיצה על New task"/>
+  <figcaption>
+    <ol class="shot-legend"><li><span class="legend-num">1</span><span>לחיצה על <bdi>New task</bdi> פותחת שתי אפשרויות.</span></li><li><span class="legend-num">2</span><span><bdi>Create with Claude</bdi> - מתארים במילים מה רוצים, ו-Claude בונה את המשימה.</span></li><li><span class="legend-num">3</span><span><bdi>Set up manually</bdi> - ממלאים את השדות בעצמכם. זו האפשרות שנבחר, כדי לראות בדיוק מה נקבע.</span></li></ol>
+  </figcaption>
+</figure>
+<figure class="shot-card" data-shot="4">
+  <div class="shot-toolbar"><strong>צילום 4</strong></div>
+  <img class="shot-real" src="../assets/images/annotated/g2-04-scheduled-form-annotated.png" alt="טופס יצירת משימה מתוזמנת"/>
+  <figcaption>
+    <ol class="shot-legend"><li><span class="legend-num">1</span><span><bdi>Name</bdi> - שם המשימה. שדה חובה. תנו שם שתזהו בעוד חודש.</span></li><li><span class="legend-num">2</span><span>תיבת הפרומפט. כאן מדביקים את ההוראה שכבר בדקתם ידנית.</span></li><li><span class="legend-num">3</span><span>שורת ההגדרות: תיקייה או <bdi>Project</bdi>, מצב האישור, ובחירת מודל. השאירו <bdi>Default model</bdi>.</span></li><li><span class="legend-num">4</span><span><bdi>Frequency</bdi> - התדירות. שימו לב שהמילה <bdi>Manual</bdi> מופיעה בטופס פעמיים: פעם כמצב אישור לפעולות, ופעם כתדירות שפירושה "רק כשאני מפעיל ידנית".</span></li><li><span class="legend-num">5</span><span><bdi>Run on your computer</bdi> - כבוי כברירת מחדל, וכך יש להשאיר אותו. הפעלה שלו פירושה שהמשימה תרוץ רק כשהמחשב דלוק, ונדרשת רק כשצריך גישה לקבצים מקומיים.</span></li></ol>
+  </figcaption>
+</figure>
 <ol>
 <li>פתחו <code>Scheduled</code> בסרגל הצד.</li>
-<li>לחצו <code>New task</code>.</li>
+<li>לחצו <code>New task</code>. ייפתחו שתי אפשרויות: <code>Create with Claude</code> (מתארים במילים מה רוצים ו-Claude בונה את המשימה) ו-<code>Set up manually</code> (ממלאים את השדות בעצמכם). בתרגיל הזה נבחר בשנייה, כדי לראות בדיוק מה נקבע.</li>
 <li>בחרו <code>Set up manually</code>. דרך אחרת: אפשר להתחיל ממשימת Cowork עם הפקודה <code>/schedule</code>.</li>
 <li>תנו למשימה שם ברור.</li>
 <li>הדביקו את הפרומפט שכבר בדקתם ידנית.</li>
 <li>בחרו <code>Manually approve (Manual)</code>. זו ההגדרה החשובה ביותר בתרגיל: היא אומרת ש-Claude יכין את התוצר אבל לא יבצע שום פעולה בלי שתאשרו אותה בעצמכם.</li>
-<li>הגדירו קצב שבועי וזמן הרצה.</li>
-<li>יש שדה לבחירת מודל. אין צורך לגעת בו - השאירו את ברירת המחדל.</li>
+<li>בשדה <code>Frequency</code> הגדירו קצב שבועי וזמן הרצה. שימו לב שהמילה <code>Manual</code> מופיעה בטופס בשני מקומות שונים: פעם כמצב האישור לפעולות, ופעם כתדירות שפירושה "רק כשאני מפעיל ידנית". אלה שני דברים נפרדים.</li>
+<li>יש שדה לבחירת מודל (<code>Default model</code>). אין צורך לגעת בו.</li>
+<li>ודאו שהמתג <code>Run on your computer</code> נשאר <b>כבוי</b>. התרגיל הזה לא נוגע בשום קובץ שבמחשב.</li>
 <li>אל תבחרו תיקייה מקומית ואל תחברו Connector לתרגיל הזה.</li>
 <li>שמרו ובדקו מתי צפויה ההרצה הבאה.</li>
 </ol>
