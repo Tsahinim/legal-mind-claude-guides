@@ -49,3 +49,5 @@
 .copy-block>div[id]>p{margin:0 0 8px}
 .copy-block>div[id]{background:var(--paper);border:1px solid var(--line);border-radius:8px;padding:12px 14px}
 .copy-block>div[id] ol,.copy-block>div[id] ul{border:0;padding-block:0;background:transparent}
+
+.shot-legend{list-style:none;padding:0;margin:9px 0 0}
