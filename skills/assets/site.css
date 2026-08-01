@@ -59,3 +59,9 @@
 .table-wrap tr:nth-child(even) td{background:var(--soft)}
 
 .copy-block>div.copy-plain{white-space:pre-wrap;font-family:ui-monospace,Consolas,monospace;font-size:.85rem;line-height:1.75;direction:rtl;text-align:right;overflow-x:auto}
+
+/* Legal Mind logo - bulb above the wordmark. 130px = about 15% smaller than the main series. */
+.skills-brand{background:#fff;border-bottom:1px solid var(--line);padding:11px 18px;text-align:center}
+.skills-logo{display:inline-block;width:130px;height:auto;object-fit:contain}
+.center-brand{text-align:center}
+@media(max-width:610px){.skills-logo{width:110px}}
