@@ -66,6 +66,50 @@ footer{margin-top:26px;text-align:center;color:var(--muted);font-size:13px}
   <div class="note"><strong>מה השתנה מסביב:</strong> המספור ותוכן העניינים נבנו מחדש. המדריך היה 18 פרקים והוא כעת 19. כל פרק שהיה קודם 03 ומעלה קיבל מספר גבוה באחד. <strong>שום טקסט לא שונה.</strong></div>
 </div>
 
+<!-- ==================== שינוי 2 ==================== -->
+<div class="card" style="border-right:5px solid var(--gold)">
+  <span class="tag" style="background:#FFF1E6;color:var(--gold)">תוקן · באג</span>
+  <h2>שם הקובץ SKILL.md ומגבלת התווים</h2>
+  <p class="where">כל חמשת המדריכים ומרכז המדריכים</p>
+
+  <strong>מה נמצא:</strong>
+  <ul>
+    <li>שם הקובץ נכתב אצלנו <span class="k">skill.md</span> באותיות קטנות ב-<strong>32 מקומות</strong>, ובשניים באותיות גדולות. כלומר גם שגוי וגם לא עקבי.</li>
+    <li>נכתב אצלנו ש-<span class="k">description</span> מוגבל ל-200 תווים.</li>
+  </ul>
+
+  <strong>מה קובע התיעוד הרשמי של Anthropic:</strong>
+  <ul>
+    <li>"Every Skill requires a <span class="k">SKILL.md</span> file with YAML frontmatter" - <strong>באותיות גדולות</strong>.</li>
+    <li><span class="k">description</span>: maximum <strong>1024</strong> characters.</li>
+  </ul>
+
+  <p><strong>מה תוקן:</strong> כל 32 המופעים הוחלפו ל-<span class="k">SKILL.md</span>. מגבלת התווים תוקנה ל-1024, עם המלצה להישאר תמציתי.</p>
+
+  <a class="btn" href="guide-3/index.html#s2">פתח את הפרק "מהו SKILL.md"</a>
+
+  <div class="note"><strong>איך זה נמצא:</strong> לא בבדיקה שלנו, אלא בהשוואה מול ההדרכה של אסף. הוא כתב SKILL.md ואנחנו skill.md, וההכרעה נעשתה מול התיעוד הרשמי. <strong>זה באג פוטנציאלי אמיתי</strong> - שם קובץ שגוי עלול לגרום לסקיל לא להיטען.</div>
+</div>
+
+<!-- ==================== שינוי 3 ==================== -->
+<div class="card new">
+  <span class="tag add">נוסף · תת-פרק</span>
+  <h2>הכלי שתפקידו לבנות סקילים</h2>
+  <p class="where">מדריך 3 (בנייה) · פרק 08 "פתיחת שיחת הבנייה" · לפני "פותחים שיחה חדשה"</p>
+
+  <strong>מה תראה שם:</strong>
+  <ul>
+    <li>הסבר מה זה <span class="k">skill-creator</span> - סקיל מובנה של Anthropic שכל תפקידו לבנות סקילים אחרים</li>
+    <li>בלוק העתקה עם משפט הפתיחה שמפעיל אותו</li>
+    <li>מה משתנה כשמזכירים אותו: שאלות ממוקדות במקום דיון חופשי, ואריזה לפי המבנה הרשמי</li>
+    <li>תיבת "אם הכלי אינו מגיב" - מה עושים אז</li>
+  </ul>
+
+  <a class="btn" href="guide-3/index.html#s6">פתח את הפרק</a>
+
+  <div class="note"><strong>למה זה נכנס:</strong> הכלי הזה לא הופיע אצלנו אפילו פעם אחת. המדריך לימד לבנות דרך שיחה - וזה נכון - אבל לא נתן לקורא את שם הכלי הרשמי. <strong>גם הכרטיס "יצירה בשיחה" בפרק 02 עודכן ומפנה לפרק 08.</strong></div>
+</div>
+
 <!-- ==================== ממתין ==================== -->
 <div class="card pending">
   <span class="tag">ממתין לביצוע</span>
@@ -74,10 +118,10 @@ footer{margin-top:26px;text-align:center;color:var(--muted);font-size:13px}
   <table>
     <thead><tr><th>מה</th><th>לאן</th><th>סטטוס</th></tr></thead>
     <tbody>
-      <tr><td><span class="k">skill-creator</span> - הכלי הרשמי של Anthropic לבניית סקילים</td><td>מדריך 3</td><td>ממתין</td></tr>
       <tr><td>ארבעה פרומפטים מוכנים לפי תחום משפטי</td><td>מדריך 3</td><td>ממתין</td></tr>
-      <tr><td>מאיפה מביאים דוגמאות לקובצי references</td><td>מדריך 3</td><td>ממתין</td></tr>
+      <tr><td>מאיפה מביאים דוגמאות לקובצי עזר</td><td>מדריך 3</td><td>ממתין</td></tr>
       <tr><td>"12 הודעות מול 2" והדגמת description טוב מול גרוע</td><td>מדריך 1 ומדריך 4</td><td>ממתין</td></tr>
+      <tr><td><strong>הכרעה נדרשת:</strong> האם סקיל מותאם ניתן להפצה ארגונית ב-claude.ai</td><td>מדריך 4</td><td>דורש בדיקה בממשק</td></tr>
     </tbody>
   </table>
   <div class="note"><strong>שתי טענות בהמתנה לאימות:</strong> "אין מגבלה על מספר הסקילים" ו"סקילס עובדים באפליקציית המובייל". לא ייכנסו לפני בדיקה מול התיעוד הרשמי של Anthropic.</div>
