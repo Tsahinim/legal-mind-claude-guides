@@ -242,6 +242,10 @@ bdi[dir=ltr],[dir=ltr]{unicode-bidi:isolate}
   box-shadow:0 2px 8px rgba(13,39,64,.35);transform:translate(-45%,-45%)}
 .shot-target.badge-right>.shot-target-badge{right:0;left:auto;transform:translate(45%,-45%)}
 .shot-target-badge.badge-offset-left{top:50%;left:-18px;transform:translate(-50%,-50%)}
+/* keeps the number inside the frame when the box hugs an edge — the frame
+   clips overflow, so a corner badge that sticks out would come back cut */
+.shot-target.badge-inside>.shot-target-badge{top:50%;left:auto;right:7px;transform:translate(0,-50%)}
+.shot-target.badge-inside-left>.shot-target-badge{top:50%;left:7px;right:auto;transform:translate(0,-50%)}
 
 /* merged from two duplicate live rules — cascade result preserved exactly */
 .shot-caption{margin:10px 0 6px;color:var(--muted);font-size:.92rem;
