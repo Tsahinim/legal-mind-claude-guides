@@ -248,8 +248,13 @@ bdi[dir=ltr],[dir=ltr]{unicode-bidi:isolate}
   font-weight:700;line-height:1.65}
 .shot-legend{list-style:none;margin:9px 0 0;padding:0;color:var(--muted);font-size:14px}
 .shot-legend-num{margin:0;padding:0;list-style:none;display:grid;gap:6px}
-.shot-legend-num li{color:var(--ink);font-size:.92rem;line-height:1.6}
-.shot-legend-num strong{color:var(--teal);font-weight:900;margin-inline-end:4px}
+.shot-legend-num li{display:flex;gap:9px;align-items:flex-start;
+  color:var(--ink);font-size:.92rem;line-height:1.6}
+/* the legend number is drawn as the same red badge that marks the screenshot,
+   so the eye pairs them without effort */
+.shot-legend-num strong{flex:0 0 auto;display:grid;place-items:center;
+  width:22px;height:22px;margin-top:2px;border-radius:50%;
+  background:var(--red);color:#fff;font-size:12.5px;font-weight:900;line-height:1}
 
 /* --- PRODUCTION-ONLY: reserved screenshot slot -----------------------------
    Lets a guide be written and laid out before a single screenshot exists.
