@@ -248,12 +248,15 @@ bdi[dir=ltr],[dir=ltr]{unicode-bidi:isolate}
   font-weight:700;line-height:1.65}
 .shot-legend{list-style:none;margin:9px 0 0;padding:0;color:var(--muted);font-size:14px}
 .shot-legend-num{margin:0;padding:0;list-style:none;display:grid;gap:6px}
-.shot-legend-num li{display:flex;gap:9px;align-items:flex-start;
+.shot-legend-num li{position:relative;padding-inline-start:31px;
   color:var(--ink);font-size:.92rem;line-height:1.6}
 /* the legend number is drawn as the same red badge that marks the screenshot,
-   so the eye pairs them without effort */
-.shot-legend-num strong{flex:0 0 auto;display:grid;place-items:center;
-  width:22px;height:22px;margin-top:2px;border-radius:50%;
+   so the eye pairs them without effort. it is positioned, not a flex child —
+   a flex child would split the rest of the sentence into columns wherever it
+   contains a <bdi> or an emphasised word. */
+.shot-legend-num>li>strong:first-child{position:absolute;inset-inline-start:0;top:2px;
+  display:grid;place-items:center;
+  width:22px;height:22px;border-radius:50%;
   background:var(--red);color:#fff;font-size:12.5px;font-weight:900;line-height:1}
 
 /* --- PRODUCTION-ONLY: reserved screenshot slot -----------------------------
