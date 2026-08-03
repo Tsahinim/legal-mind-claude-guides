@@ -135,8 +135,7 @@ bdi[dir=ltr],[dir=ltr]{unicode-bidi:isolate}
 .guide-section{scroll-margin-top:72px;padding:26px 22px}
 .guide-section+.guide-section{border-top:1px solid var(--line)}
 .section-number,.sec-num{display:block;margin:0 0 4px;color:var(--teal);
-  font-size:26px;font-weight:900;letter-spacing:.02em;line-height:1.1;
-  direction:ltr;text-align:right}
+  font-size:26px;font-weight:900;letter-spacing:.02em;line-height:1.1}
 .section-number::after,.sec-num::after{content:"."}
 .guide-section h2,.sec-title{margin:0 0 14px;color:var(--navy);font-family:var(--font-head);
   font-size:clamp(1.5rem,3.5vw,2rem);line-height:1.25}
