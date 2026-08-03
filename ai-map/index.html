@@ -206,13 +206,14 @@ bdi{unicode-bidi:isolate}
   .page{padding:52px 22px 58px}
   h1{font-size:2.3rem}h2{font-size:1.6rem}
   .rail,.terr,.res,.ans,.parity{grid-template-columns:1fr}
-  .map{grid-template-columns:repeat(3,1fr) 86px;gap:0 8px}
+  .map{grid-template-columns:88px repeat(3,1fr);gap:0 8px;min-width:470px}
+  .map > div:last-child{order:-1}
   .mcell b{font-size:.74rem}.mcell small{display:none}
   .map .floor .fl-s{display:none}
   .map-head{font-size:.8rem;gap:5px}.map-head small{display:none}.map-head svg{width:15px;height:15px}
   /* טבלאות ההשוואה במובייל: גלילה אמיתית במקום חיתוך, וטיפוגרפיה שנשארת קריאה */
   .viz{padding:18px;overflow-x:auto;-webkit-overflow-scrolling:touch;position:relative}
-  .viz:has(table)::after{content:"אפשר לגלול את הטבלה לצדדים";display:block;font-size:.72rem;color:var(--muted);padding-top:10px;text-align:center;font-weight:600}
+  .viz:has(table)::before,.viz:has(.map)::before{content:"↔  גררו את הטבלה הצידה כדי לראות את כל העמודות";display:block;font-size:.78rem;color:var(--claude-ink);background:var(--claude-tint);border-radius:9px;padding:8px 10px;margin-bottom:12px;text-align:center;font-weight:700;position:sticky;right:0}
   .dict,.envs{min-width:600px}
   .envs th,.dict th{font-size:1.02rem}
   .envs th:first-child,.dict th:first-child{font-size:.86rem;width:24%}
