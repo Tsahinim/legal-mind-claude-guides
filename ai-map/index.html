@@ -1,0 +1,830 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>מפת ה-AI לעורכי דין: Claude מול ChatGPT מול Gemini | Legal Mind</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;700;800;900&family=Frank+Ruhl+Libre:wght@800;900&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#f7f5f0; --card:#ffffff; --ink:#1a1812; --body:#403d33; --muted:#837f71;
+  --hair:#e8e4d9; --soft:#f1eee6;
+  --claude:#d97757; --claude-ink:#b4532e; --claude-tint:rgba(217,119,87,.08);
+  --gpt:#111111; --gpt-tint:rgba(17,17,17,.045);
+  --gem:#4285f4; --gem-ink:#3367d6; --gem-tint:rgba(66,133,244,.07);
+  --shadow:0 1px 2px rgba(35,30,15,.05),0 10px 30px rgba(35,30,15,.08);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Heebo',sans-serif;background:var(--paper);color:var(--body);line-height:1.8;font-size:1.01rem}
+.page{max-width:1060px;margin-inline:auto;padding:70px 44px 78px;position:relative}
+.page+.page{border-top:1px solid var(--hair)}
+.pnum{position:absolute;top:30px;left:44px;color:var(--muted);font-size:.74rem;font-weight:700;letter-spacing:.08em;direction:ltr}
+.kicker{display:flex;align-items:center;gap:12px;color:var(--muted);font-size:1.56rem;letter-spacing:.12em;font-weight:700;margin-bottom:14px}
+.kicker::before{content:"";width:34px;height:5px;border-radius:3px;background:var(--claude)}
+h1{font-family:'Frank Ruhl Libre',serif;color:var(--ink);font-size:3.3rem;font-weight:900;line-height:1.12;margin-bottom:18px}
+h2{font-family:'Frank Ruhl Libre',serif;color:var(--ink);font-size:2.05rem;font-weight:900;line-height:1.22;margin-bottom:14px}
+.prose{max-width:700px}
+.prose p{margin-bottom:14px}
+.prose b{color:var(--ink)}
+.lede{font-size:1.12rem;color:var(--ink);font-weight:500;max-width:700px;margin-bottom:16px}
+.viz{background:var(--card);border:1px solid var(--hair);border-radius:22px;padding:32px;margin-top:26px;box-shadow:var(--shadow)}
+.note{margin-top:20px;background:var(--card);border:1px solid var(--hair);border-right:5px solid var(--claude);padding:16px 20px;border-radius:12px;font-size:.94rem;max-width:820px}
+.note b{color:var(--ink)}
+bdi{unicode-bidi:isolate}
+
+/* סמלים */
+.mk{width:1.06em;height:1.06em;vertical-align:-.15em;display:inline-block;margin-inline-end:.3em}
+.mk-c{fill:var(--claude)} .mk-o{fill:var(--gpt)}
+.mkbig{width:34px;height:34px}
+
+/* עמוד 1 */
+.hero-marks{display:flex;gap:26px;align-items:center;margin:26px 0 6px}
+.hero-marks .hm{display:flex;align-items:center;gap:9px;font-weight:800;color:var(--ink);font-size:1.05rem;direction:ltr}
+.stack{margin-top:34px}
+.slab{background:var(--card);border:1px solid var(--hair);border-radius:14px;box-shadow:var(--shadow);
+  display:flex;align-items:center;justify-content:space-between;padding:13px 22px;margin-bottom:10px;max-width:640px}
+.slab .sl-name{font-weight:800;color:var(--ink);font-size:.98rem}
+.slab .sl-name small{display:block;font-weight:400;color:var(--muted);font-size:1.52rem}
+.slab .sl-marks{display:flex;gap:12px;align-items:center}
+.slab .sl-marks svg{width:19px;height:19px}
+.stats{display:flex;gap:12px;margin-top:30px;flex-wrap:wrap}
+.chip{background:var(--card);border:1px solid var(--hair);border-radius:30px;padding:8px 18px;font-size:.86rem;color:var(--body)}
+.chip b{color:var(--ink)}
+
+/* עמוד 2: המפה */
+.map{display:grid;grid-template-columns:repeat(3,1fr) 120px;gap:0 14px;position:relative}
+.tower{border-radius:16px;padding:0 10px 10px}
+.tw-c{background:var(--claude-tint)} .tw-o{background:var(--gpt-tint)} .tw-g{background:var(--gem-tint)}
+.map-head{display:flex;align-items:center;justify-content:center;gap:8px;font-weight:900;font-size:1.08rem;color:var(--ink);padding:16px 4px 10px;direction:ltr}
+.map-head svg{width:21px;height:21px}
+.map-head small{font-weight:400;color:var(--muted);font-size:.72rem}
+.mcell{background:var(--card);border:1px solid var(--hair);border-radius:13px;box-shadow:0 1px 2px rgba(35,30,15,.05);
+  padding:12px 12px;margin-top:10px;min-height:76px;display:flex;flex-direction:column;justify-content:center;text-align:center;position:relative}
+.mcell b{color:var(--ink);font-size:.95rem;direction:ltr}
+.mcell small{color:var(--muted);font-size:.74rem}
+.mcell.part{border-style:dashed;background:#fdfcf9}
+.mcell.part::after{content:"חלקית";position:absolute;top:-8px;left:10px;background:var(--card);color:var(--muted);
+  font-size:.6rem;padding:0 7px;border-radius:8px;border:1px solid var(--hair)}
+.map .floor{display:flex;flex-direction:column;justify-content:center;align-items:flex-start;padding:0 4px;margin-top:10px;min-height:76px}
+.map .floor .gnum{font-family:'Frank Ruhl Libre',serif;font-size:1.9rem;font-weight:900;color:rgba(26,24,18,.14);line-height:1;direction:ltr}
+.map .floor .fl-t{font-weight:800;color:var(--ink);font-size:.9rem;line-height:1.3}
+.map .floor .fl-s{color:var(--muted);font-size:.72rem}
+.map .fhead{margin-top:0;min-height:64px}
+
+/* עמוד 3: מילון */
+.dict{width:100%;border-collapse:separate;border-spacing:0 9px}
+.dict th{padding:4px 14px;text-align:center;font-size:1.8rem;color:var(--ink)}
+.dict th .thw{display:inline-flex;align-items:center;gap:7px;direction:ltr;font-weight:900}
+.dict th svg{width:30px;height:30px}
+.dict th:first-child{text-align:right;color:var(--muted);font-weight:600;font-size:1.6rem}
+.dict td{background:var(--card);border-top:1px solid var(--hair);border-bottom:1px solid var(--hair);padding:13px 14px;text-align:center;font-size:1.36rem;direction:ltr;color:var(--ink)}
+.dict td:first-child{text-align:right;direction:rtl;font-weight:700;font-size:.95rem;width:27%;border-right:1px solid var(--hair);border-radius:0 12px 12px 0}
+.dict td:last-child{border-left:1px solid var(--hair);border-radius:12px 0 0 12px}
+.dict small{display:block;color:var(--muted);font-size:1rem;direction:rtl;font-weight:400}
+
+/* עמוד 4 */
+.parity{display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px}
+.pbub{background:var(--card);border:1px solid var(--hair);border-radius:16px;box-shadow:var(--shadow);padding:18px;text-align:center}
+.pbub .pb-h{display:flex;align-items:center;justify-content:center;gap:10px;font-weight:900;color:var(--ink);direction:ltr;font-size:2rem}
+.pbub .pb-h svg{width:36px;height:36px}
+.pbub span{color:var(--muted);font-size:1.6rem}
+.same{margin-top:14px;text-align:center;background:var(--soft);border-radius:12px;padding:10px;font-size:.9rem;color:var(--body)}
+
+/* כרטיסי פלטפורמה */
+.rail{display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px;margin-top:26px}
+.pcard{border-radius:20px;padding:26px 24px;position:relative;overflow:hidden;box-shadow:var(--shadow)}
+.pcard .wm{position:absolute;left:-30px;top:-30px;width:130px;height:130px;opacity:.16;pointer-events:none}
+.pcard .tag{font-size:.66rem;font-weight:700;letter-spacing:.12em;opacity:.6;margin-bottom:4px}
+.pcard .pname{display:flex;align-items:center;gap:9px;font-size:1.3rem;font-weight:900;direction:ltr;justify-content:flex-end;margin-bottom:12px}
+.pcard .pname svg{width:22px;height:22px}
+.pcard ul{list-style:none;font-size:.95rem}
+.pcard li b{display:block;margin-bottom:3px}
+.pcard li span{display:block;font-size:.9em;opacity:.8;line-height:1.5}
+.pcard li{padding:8px 0;border-top:1px solid rgba(128,120,100,.2)}
+.pcard li b{direction:ltr;unicode-bidi:isolate}
+.pc-claude{background:#f5f1e8;color:#3d3a30;border:1px solid #e7e0d0}
+.pc-claude .pname{color:var(--claude-ink)}
+.pc-claude .wm{fill:var(--claude);opacity:.2}
+.pc-gpt{background:#101010;color:#d9d9d9;border:1px solid #101010}
+.pc-gpt .pname{color:#ffffff}
+.pc-gpt .wm{fill:#ffffff;opacity:.1}
+.pc-gpt b{color:#fff}
+.pc-gpt li{border-top-color:rgba(255,255,255,.14)}
+.pc-gem{background:#ffffff;color:#3a3e48;border:1px solid #e4e7f0;border-top:5px solid transparent;
+  background-image:linear-gradient(#fff,#fff),linear-gradient(90deg,#3186ff,#9b72cb,#d6645d,#f5a623);
+  background-origin:border-box;background-clip:padding-box,border-box}
+.pc-gem .pname{background:linear-gradient(90deg,#3186ff,#9b72cb,#d6645d);-webkit-background-clip:text;background-clip:text;color:transparent}
+.pc-gem .wm{opacity:.5}
+.pc-gem b{color:#23262e}
+
+/* עמוד 6: מטריצה */
+.envs{width:100%;border-collapse:separate;border-spacing:0 7px;font-size:.9rem}
+.envs th{padding:4px 12px;text-align:center;color:var(--ink);font-size:1.8rem}
+.envs th .thw{display:inline-flex;align-items:center;gap:7px;direction:ltr;font-weight:900}
+.envs th svg{width:30px;height:30px}
+.envs th:first-child{text-align:right;color:var(--muted);font-weight:600;font-size:1.56rem;width:22%}
+.envs td{background:var(--card);border-top:1px solid var(--hair);border-bottom:1px solid var(--hair);padding:13px 15px;text-align:right;vertical-align:top;width:26%}
+.envs td:first-child{text-align:right;color:var(--ink);font-weight:700;font-size:1.02rem;border-right:1px solid var(--hair);border-inline-start:0;border-radius:0 11px 11px 0;width:22%}
+.envs td:last-child{border-left:1px solid var(--hair);border-radius:11px 0 0 11px}
+.dot{display:inline-block;width:14px;height:14px;border-radius:50%}
+.dot.c{background:var(--claude)}.dot.o{background:var(--gpt)}.dot.g{background:linear-gradient(135deg,#3186ff,#9b72cb)}
+.dot.no{background:transparent;border:2px dashed #d5d0c2}
+.envs .cap{color:var(--body);font-size:.95rem;display:block;line-height:1.45;margin-top:4px;font-weight:400}
+.envs td b{display:block;font-size:1.1rem;font-weight:800}
+.envs td.yes b{color:var(--ink)}
+.envs td.non b{color:var(--muted)}
+.envs td.yes{border-inline-start:3px solid var(--claude)}
+.envs td.oy{border-inline-start:3px solid #111}
+.envs td.gy{border-inline-start:3px solid #4285f4}
+
+/* עמוד 7 */
+.terr{display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px;margin-top:26px}
+.tcard{background:var(--card);border:1px solid var(--hair);border-radius:18px;box-shadow:var(--shadow);padding:22px;border-top:5px solid}
+.tcard.c{border-top-color:var(--claude)}.tcard.o{border-top-color:var(--gpt)}.tcard.g{border-top-color:var(--gem)}
+.tcard h4{display:flex;align-items:center;gap:8px;font-size:1.08rem;font-weight:900;color:var(--ink);direction:ltr;justify-content:flex-end}
+.tcard h4 svg{width:19px;height:19px}
+.tcard .tname{font-size:.82rem;color:var(--muted);margin-bottom:12px}
+.tcard .zone{border-radius:11px;padding:12px 14px;font-size:.86rem;margin-bottom:9px}
+.tcard.c .zone{background:var(--claude-tint)}.tcard.o .zone{background:var(--gpt-tint)}.tcard.g .zone{background:var(--gem-tint)}
+.tcard .zone b{display:block;color:var(--ink)}
+.tcard .warn{font-size:.76rem;color:var(--muted)}
+
+/* עמוד 8: הציר */
+.specwrap{overflow-x:auto}
+.spectrum{position:relative;margin:96px 110px 30px;height:200px;min-width:640px}
+.spec-bar{position:absolute;top:62px;right:0;left:0;height:12px;border-radius:7px;
+  background:linear-gradient(to left,rgba(217,119,87,.15),rgba(217,119,87,.55),rgba(66,133,244,.55),rgba(66,133,244,.95))}
+.spec-end{position:absolute;top:44px;font-size:1.02rem;color:var(--muted);font-weight:700;width:104px;line-height:1.3;text-align:center}
+.spec-end.r{right:-110px}.spec-end.l{left:-110px}
+.spec-item{position:absolute;top:0;height:200px}
+.spec-range{position:absolute;top:84px;right:8%;left:6%;border-top:2px dashed var(--claude);opacity:.75}
+.spec-range span{display:block;text-align:left;padding-top:5px;font-size:.98rem;color:var(--claude-ink);font-weight:700}
+.spec-dot{position:absolute;top:48px;width:44px;height:44px;border-radius:50%;background:var(--card);border:1px solid var(--hair);
+  box-shadow:var(--shadow);transform:translateX(50%);display:flex;align-items:center;justify-content:center}
+.spec-dot svg{width:24px;height:24px}
+.spec-lbl{position:absolute;top:-38px;transform:translateX(50%);text-align:center;width:216px;right:-108px}
+.spec-lbl b{display:block;color:var(--ink);font-size:1.32rem;direction:ltr}
+.spec-lbl small{color:var(--muted);font-size:1.08rem;display:block;line-height:1.35}
+.spec-item.low .spec-lbl{top:124px}
+
+/* עמוד 12 */
+.tl{position:relative;margin:10px 0;padding-right:30px}
+.tl::before{content:"";position:absolute;right:8px;top:8px;bottom:8px;width:3px;border-radius:2px;background:var(--hair)}
+.tl-item{position:relative;padding:10px 20px 10px 0;font-size:.95rem}
+.tl-item::before{content:"";position:absolute;right:-27px;top:19px;width:12px;height:12px;border-radius:50%;border:3px solid var(--card);box-shadow:0 0 0 1px var(--hair)}
+.tl-item.ev-o::before{background:var(--gpt)} .tl-item.ev-g::before{background:var(--gem)} .tl-item.ev-c::before{background:var(--claude)}
+.tl-item b{color:var(--ink)}
+.tl-item .d{color:var(--muted);font-size:.78rem;margin-inline-start:8px}
+.stamp{margin-top:26px;display:inline-block;border:2px solid var(--claude);color:var(--claude-ink);border-radius:12px;padding:10px 22px;font-weight:900;font-size:.98rem;background:var(--card)}
+
+/* החלטה */
+.qrow{background:var(--card);border:1px solid var(--hair);border-radius:16px;box-shadow:var(--shadow);padding:22px 26px;margin-top:16px}
+.qrow h4{font-size:1.08rem;font-weight:900;color:var(--ink);margin-bottom:6px}
+.qrow .qexp{font-size:.92rem;margin-bottom:14px;max-width:760px}
+.ans{display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px}
+.ans div{background:var(--paper);border:1px solid var(--hair);border-radius:11px;padding:11px 14px;font-size:.86rem;border-right:4px solid}
+.ans div:nth-child(1){border-right-color:var(--claude)}
+.ans div:nth-child(2){border-right-color:var(--gpt)}
+.ans div:nth-child(3){border-right-color:var(--gem)}
+.ans b{display:flex;align-items:center;gap:6px;direction:ltr;justify-content:flex-end;color:var(--ink)}
+.ans b svg{width:15px;height:15px}
+
+/* מחקר */
+.res{display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px;margin-top:26px}
+.rcard{background:var(--card);border:1px solid var(--hair);border-radius:16px;box-shadow:var(--shadow);padding:22px;text-align:center}
+.rcard .rn{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;font-size:2.3rem;font-weight:900;color:var(--ink);direction:ltr;line-height:1.15;margin-bottom:6px}
+.rcard .rn svg{width:34px;height:34px}
+.rcard .rv{font-size:1.14rem;color:var(--muted);margin-bottom:10px}
+.rcard p{font-size:1.3rem;text-align:right;line-height:1.55}
+
+.footer{max-width:1060px;margin-inline:auto;padding:36px 44px 64px;color:var(--muted);font-size:.78rem;line-height:1.7;border-top:1px solid var(--hair)}
+
+@media(max-width:860px){
+  html,body{overflow-x:clip}
+  .page{padding:52px 22px 58px}
+  h1{font-size:2.3rem}h2{font-size:1.6rem}
+  .rail,.terr,.res,.ans,.parity{grid-template-columns:1fr}
+  .map{grid-template-columns:repeat(3,1fr) 86px;gap:0 8px}
+  .mcell b{font-size:.74rem}.mcell small{display:none}
+  .map .floor .fl-s{display:none}
+  .map-head{font-size:.8rem;gap:5px}.map-head small{display:none}.map-head svg{width:15px;height:15px}
+  .dict td,.envs td{padding:8px 6px;font-size:.72rem}
+  .dict small{display:none}
+  .viz{padding:18px}
+  .stack .slab{padding:11px 14px}
+  .hero-marks{gap:14px;flex-wrap:wrap}
+}
+
+/* מספר פרק גדול בראש כל עמוד */
+.chnum{position:absolute;top:34px;right:44px;font-family:'Frank Ruhl Libre',serif;
+  font-size:5.2rem;font-weight:900;line-height:1;color:rgba(26,24,18,.07);direction:ltr;pointer-events:none;user-select:none}
+
+/* סרגל פרקים צף */
+.chnav{position:fixed;left:26px;top:50%;transform:translateY(-50%);z-index:50;
+  background:var(--card);border-radius:14px;padding:14px 9px;box-shadow:0 4px 22px rgba(35,30,15,.14)}
+.chnav::before{content:"";position:absolute;top:0;left:10px;right:10px;height:4px;background:#111;border-radius:0 0 4px 4px}
+.chnav::after{content:"";position:absolute;bottom:0;left:10px;right:10px;height:4px;background:#111;border-radius:4px 4px 0 0}
+.chnav .edge-l{position:absolute;left:0;top:10px;bottom:10px;width:4px;background:var(--claude);border-radius:0 4px 4px 0}
+.chnav .edge-r{position:absolute;right:0;top:10px;bottom:10px;width:4px;border-radius:4px 0 0 4px;
+  background:linear-gradient(180deg,#4285f4 0 25%,#ea4335 25% 50%,#fbbc05 50% 75%,#34a853 75% 100%)}
+.chnav ol{list-style:none;display:flex;flex-direction:column;gap:2px}
+.chnav a{display:block;width:158px;padding:6px 12px;border-radius:9px;text-align:right;
+  color:var(--muted);font-size:.8rem;font-weight:600;text-decoration:none;white-space:nowrap;transition:all .15s}
+.chnav a:hover{background:var(--soft);color:var(--ink)}
+.chnav a.on{color:var(--claude);background:var(--claude-tint);font-weight:800}
+@media(max-width:1420px){.chnav{display:none}}
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <linearGradient id="ggrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#3186ff"/><stop offset=".45" stop-color="#9b72cb"/>
+      <stop offset=".8" stop-color="#d6645d"/><stop offset="1" stop-color="#f5a623"/>
+    </linearGradient>
+    <symbol id="i-claude" viewBox="0 0 24 24"><path d="m4.7144 15.9555 4.7174-2.6471.079-.2307-.079-.1275h-.2307l-.7893-.0486-2.6956-.0729-2.3375-.0971-2.2646-.1214-.5707-.1215-.5343-.7042.0546-.3522.4797-.3218.686.0608 1.5179.1032 2.2767.1578 1.6514.0972 2.4468.255h.3886l.0546-.1579-.1336-.0971-.1032-.0972L6.973 9.8356l-2.55-1.6879-1.3356-.9714-.7225-.4918-.3643-.4614-.1578-1.0078.6557-.7225.8803.0607.2246.0607.8925.686 1.9064 1.4754 2.4893 1.8336.3643.3035.1457-.1032.0182-.0728-.164-.2733-1.3539-2.4467-1.445-2.4893-.6435-1.032-.17-.6194c-.0607-.255-.1032-.4674-.1032-.7285L6.287.1335 6.6997 0l.9957.1336.419.3642.6192 1.4147 1.0018 2.2282 1.5543 3.0296.4553.8985.2429.8318.091.255h.1579v-.1457l.1275-1.706.2368-2.0947.2307-2.6957.0789-.7589.3764-.9107.7468-.4918.5828.2793.4797.686-.0668.4433-.2853 1.8517-.5586 2.9021-.3643 1.9429h.2125l.2429-.2429.9835-1.3053 1.6514-2.0643.7286-.8196.85-.9046.5464-.4311h1.0321l.759 1.1293-.34 1.1657-1.0625 1.3478-.8804 1.1414-1.2628 1.7-.7893 1.36.0729.1093.1882-.0183 2.8535-.607 1.5421-.2794 1.8396-.3157.8318.3886.091.3946-.3278.8075-1.967.4857-2.3072.4614-3.4364.8136-.0425.0304.0486.0607 1.5482.1457.6618.0364h1.621l3.0175.2247.7892.522.4736.6376-.079.4857-1.2142.6193-1.6393-.3886-3.825-.9107-1.3113-.3279h-.1822v.1093l1.0929 1.0686 2.0035 1.8092 2.5075 2.3314.1275.5768-.3218.4554-.34-.0486-2.2039-1.6575-.85-.7468-1.9246-1.621h-.1275v.17l.4432.6496 2.3436 3.5214.1214 1.0807-.17.3521-.6071.2125-.6679-.1214-1.3721-1.9246L14.38 17.959l-1.1414-1.9428-.1397.079-.674 7.2552-.3156.3703-.7286.2793-.6071-.4614-.3218-.7468.3218-1.4753.3886-1.9246.3157-1.53.2853-1.9004.17-.6314-.0121-.0425-.1397.0182-1.4328 1.9672-2.1796 2.9446-1.7243 1.8456-.4128.164-.7164-.3704.0667-.6618.4008-.5889 2.386-3.0357 1.4389-1.882.929-1.0868-.0062-.1579h-.0546l-6.3385 4.1164-1.1293.1457-.4857-.4554.0608-.7467.2307-.2429 1.9064-1.3114Z"/></symbol>
+    <symbol id="i-openai" viewBox="0 0 24 24"><path d="M22.2819 9.8211a5.9847 5.9847 0 0 0-.5157-4.9108 6.0462 6.0462 0 0 0-6.5098-2.9A6.0651 6.0651 0 0 0 4.9807 4.1818a5.9847 5.9847 0 0 0-3.9977 2.9 6.0462 6.0462 0 0 0 .7427 7.0966 5.98 5.98 0 0 0 .511 4.9107 6.051 6.051 0 0 0 6.5146 2.9001A5.9847 5.9847 0 0 0 13.2599 24a6.0557 6.0557 0 0 0 5.7718-4.2058 5.9894 5.9894 0 0 0 3.9977-2.9001 6.0557 6.0557 0 0 0-.7475-7.0729zm-9.022 12.6081a4.4755 4.4755 0 0 1-2.8764-1.0408l.1419-.0804 4.7783-2.7582a.7948.7948 0 0 0 .3927-.6813v-6.7369l2.02 1.1686a.071.071 0 0 1 .038.052v5.5826a4.504 4.504 0 0 1-4.4945 4.4944zm-9.6607-4.1254a4.4708 4.4708 0 0 1-.5346-3.0137l.142.0852 4.783 2.7582a.7712.7712 0 0 0 .7806 0l5.8428-3.3685v2.3324a.0804.0804 0 0 1-.0332.0615L9.74 19.9502a4.4992 4.4992 0 0 1-6.1408-1.6464zM2.3408 7.8956a4.485 4.485 0 0 1 2.3655-1.9728V11.6a.7664.7664 0 0 0 .3879.6765l5.8144 3.3543-2.0201 1.1685a.0757.0757 0 0 1-.071 0l-4.8303-2.7865A4.504 4.504 0 0 1 2.3408 7.872zm16.5963 3.8558L13.1038 8.364 15.1192 7.2a.0757.0757 0 0 1 .071 0l4.8303 2.7913a4.4944 4.4944 0 0 1-.6765 8.1042v-5.6772a.79.79 0 0 0-.407-.667zm2.0107-3.0231l-.142-.0852-4.7735-2.7818a.7759.7759 0 0 0-.7854 0L9.409 9.2297V6.8974a.0662.0662 0 0 1 .0284-.0615l4.8303-2.7866a4.4992 4.4992 0 0 1 6.6802 4.66zM8.3065 12.863l-2.02-1.1638a.0804.0804 0 0 1-.038-.0567V6.0742a4.4992 4.4992 0 0 1 7.3757-3.4537l-.142.0805L8.704 5.459a.7948.7948 0 0 0-.3927.6813zm1.0976-2.3654l2.602-1.4998 2.6069 1.4998v2.9994l-2.5974 1.4997-2.6067-1.4997Z"/></symbol>
+    <symbol id="i-gemini" viewBox="0 0 24 24"><path d="M11.04 19.32Q12 21.51 12 24q0-2.49.93-4.68.96-2.19 2.58-3.81t3.81-2.55Q21.51 12 24 12q-2.49 0-4.68-.93a12.3 12.3 0 0 1-3.81-2.58 12.3 12.3 0 0 1-2.58-3.81Q12 2.49 12 0q0 2.49-.96 4.68-.93 2.19-2.55 3.81a12.3 12.3 0 0 1-3.81 2.58Q2.49 12 0 12q2.49 0 4.68.96 2.19.93 3.81 2.55t2.55 3.81" fill="url(#ggrad)"/></symbol>
+  </defs>
+</svg>
+
+<nav class="chnav" aria-label="ניווט פרקים"><span class="edge-l"></span><span class="edge-r"></span><ol>
+  <li><a href="#p1" data-p="p1">שער</a></li>
+  <li><a href="#p2" data-p="p2">המפה המרכזית</a></li>
+  <li><a href="#p3" data-p="p3">מילון כיס</a></li>
+  <li><a href="#p4" data-p="p4">קומה 1: השיחה</a></li>
+  <li><a href="#p5" data-p="p5">קומה 2: עוזר מותאם</a></li>
+  <li><a href="#p6" data-p="p6">קומה 3: סוכן קוד</a></li>
+  <li><a href="#p7" data-p="p7">קומה 4: סוכן עבודה</a></li>
+  <li><a href="#p8" data-p="p8">ציר העצמאות</a></li>
+  <li><a href="#p9" data-p="p9">קומה 5: מחקר עמוק</a></li>
+  <li><a href="#p10" data-p="p10">הקלפים החזקים</a></li>
+  <li><a href="#p11" data-p="p11">שלוש שאלות למשרד</a></li>
+  <li><a href="#p12" data-p="p12">לאן זז החומר</a></li>
+  <li><a href="#p13" data-p="p13">מי רואה מה בשיתוף</a></li>
+  <li><a href="#p14" data-p="p14">תוקף ותאריך</a></li>
+</ol></nav>
+
+<!-- ================= עמוד 1 ================= -->
+<section class="page" id="p1">
+  <div class="pnum">1 / 14</div>
+  <div class="kicker">LEGAL MIND · מפת שוק, לא עוד השוואת צ'אטים</div>
+  <h1>שלוש אימפריות. אותן חמש קומות.</h1>
+  <div class="hero-marks">
+    <span class="hm"><svg class="mkbig mk-c"><use href="#i-claude"/></svg>Claude</span>
+    <span class="hm"><svg class="mkbig mk-o"><use href="#i-openai"/></svg>ChatGPT</span>
+    <span class="hm"><svg class="mkbig"><use href="#i-gemini"/></svg>Gemini</span>
+  </div>
+
+  <div class="prose">
+    <p class="lede">אם אתם חברי הקהילה של <bdi dir="ltr">LEGAL MIND</bdi>, אתם כנראה כבר עובדים עם <bdi dir="ltr">Claude</bdi>. ואז, בפגישה או בכנס, מישהו מזכיר <bdi dir="ltr">Codex</bdi>, מישהי מספרת שבנתה <bdi dir="ltr">Gem</bdi>, ובעיתונות מדווחים על סוכן חדש של <bdi dir="ltr">OpenAI</bdi>. השמות מתרבים מהר מהיכולת לעקוב, וקשה לדעת מה מקביל למה שכבר יש לכם ומה באמת חדש.</p>
+    <p>המסמך הזה עושה סדר בדרך אחת פשוטה: <b>הוא מפסיק להשוות מותגים ומתחיל להשוות קומות.</b> שלוש החברות הגדולות, <bdi dir="ltr">Anthropic</bdi>, <bdi dir="ltr">OpenAI</bdi> ו-<bdi dir="ltr">Google</bdi>, בנו כל אחת מגדל של חמש קומות: שיחה, עוזר מותאם אישית, סוכן קוד, סוכן עבודה, ומחקר עמוק. השמות שונים, הקומות זהות. ומרגע שמחזיקים את המפה, כל שם חדש מתיישב במקומו בשנייה.</p>
+    <p>מה לא תמצאו כאן: דירוגי "מי חכם יותר", בנצ'מרקים והשוואות מחירים. אלה משתנים בכל חודש, והם כמעט אף פעם לא השאלה הנכונה למשרד. מה שכן תמצאו: מה כל מוצר עושה בפועל, מה המקבילה שלו אצל המתחרים, ומה כן שונה באמת. וכן, כתוב כאן גם מה זמין בחשבון עסקי ומה רק בחשבון יחיד, ומה נמצא בבטא או בתצוגה מקדימה. אלה לא שאלות של מחיר, אלה שאלות של מה יעבוד אצלכם מחר.</p>
+  </div>
+  <div class="stack">
+    <div class="slab"><span class="sl-name">מחקר עמוק<small>קומה 5</small></span><span class="sl-marks"><svg class="mk-c"><use href="#i-claude"/></svg><svg class="mk-o"><use href="#i-openai"/></svg><svg><use href="#i-gemini"/></svg></span></div>
+    <div class="slab"><span class="sl-name">סוכן עבודה<small>קומה 4</small></span><span class="sl-marks"><svg class="mk-c"><use href="#i-claude"/></svg><svg class="mk-o"><use href="#i-openai"/></svg><svg><use href="#i-gemini"/></svg></span></div>
+    <div class="slab"><span class="sl-name">סוכן קוד<small>קומה 3</small></span><span class="sl-marks"><svg class="mk-c"><use href="#i-claude"/></svg><svg class="mk-o"><use href="#i-openai"/></svg><svg><use href="#i-gemini"/></svg></span></div>
+    <div class="slab"><span class="sl-name">עוזר מותאם אישית<small>קומה 2</small></span><span class="sl-marks"><svg class="mk-c"><use href="#i-claude"/></svg><svg class="mk-o"><use href="#i-openai"/></svg><svg><use href="#i-gemini"/></svg></span></div>
+    <div class="slab"><span class="sl-name">השיחה<small>קומה 1</small></span><span class="sl-marks"><svg class="mk-c"><use href="#i-claude"/></svg><svg class="mk-o"><use href="#i-openai"/></svg><svg><use href="#i-gemini"/></svg></span></div>
+  </div>
+  <div class="stats">
+    <span class="chip"><b>15</b> משבצות על המפה</span>
+    <span class="chip"><b>14</b> עמודים</span>
+    <span class="chip">כל עובדה נבדקה מול העמודים הרשמיים · <b>3.8.2026</b></span>
+  </div>
+</section>
+
+<!-- ================= עמוד 2 ================= -->
+<section class="page" id="p2">
+  <div class="pnum">2 / 14</div>
+  <div class="kicker">המפה המרכזית</div>
+  <h2>שלושה מגדלים, קומה מול קומה</h2>
+  <div class="prose">
+    <p class="lede">זו כל התמונה בעמוד אחד. כל עמודה היא יצרן, כל שורה היא קומה, וכל כרטיס הוא מוצר שקיים היום. את שאר המסמך אפשר לקרוא כהרחבה של העמוד הזה.</p>
+    <p>שימו לב לקומת הקוד אצל <bdi dir="ltr">Google</bdi>: התפקיד מחולק שם בין שני מוצרים נפרדים, <bdi dir="ltr">Antigravity</bdi> שרץ על המחשב ו-<bdi dir="ltr">Jules</bdi> שרץ בענן, בלי שם אחד שמאחד אותם. אצל שני היצרנים האחרים מוצר אחד עושה את שניהם. ועוד דבר ששווה לדעת: שכבת נהלים בשם <bdi dir="ltr">Skills</bdi> קיימת היום אצל שלושת היצרנים, ואצל כולם כותבים אותה באותו מבנה. ההבדל הוא בטווח: אצל <bdi dir="ltr">Claude</bdi> היא עובדת בכל המוצרים, אצל <bdi dir="ltr">ChatGPT</bdi> בצ'אט וב-<bdi dir="ltr">Codex</bdi>, ואצל <bdi dir="ltr">Google</bdi> רק בתוך <bdi dir="ltr">Spark</bdi>. פירוט בעמוד 5. וחשוב לא פחות: <b>הקומות יציבות הרבה יותר מהשמות.</b> מוצרים החליפו כאן שם השנה יותר מפעם אחת, אבל אף יצרן לא ויתר על קומה.</p>
+  </div>
+  <div class="viz">
+    <div class="map">
+      <div class="tower tw-c">
+        <div class="map-head"><svg class="mk-c" style="width:21px;height:21px"><use href="#i-claude"/></svg>Claude <small>Anthropic</small></div>
+        <div class="mcell"><b>Claude</b></div>
+        <div class="mcell"><b>Projects + Skills</b><small>ידע קבוע + נהלים</small></div>
+        <div class="mcell"><b>Claude Code</b><small>נלמד במדריכי המועדון</small></div>
+        <div class="mcell"><b>Cowork</b><small>קבצים במחשב</small></div>
+        <div class="mcell"><b>Research</b></div>
+      </div>
+      <div class="tower tw-o">
+        <div class="map-head"><svg class="mk-o" style="width:21px;height:21px"><use href="#i-openai"/></svg>ChatGPT <small>OpenAI</small></div>
+        <div class="mcell"><b>ChatGPT</b></div>
+        <div class="mcell"><b>Custom GPTs</b><small>עם Projects ו-Skills</small></div>
+        <div class="mcell"><b>Codex</b></div>
+        <div class="mcell"><b>ChatGPT Work</b><small>תוצרים מוגמרים</small></div>
+        <div class="mcell"><b>Deep research</b></div>
+      </div>
+      <div class="tower tw-g">
+        <div class="map-head"><svg style="width:21px;height:21px"><use href="#i-gemini"/></svg>Gemini <small>Google</small></div>
+        <div class="mcell"><b>Gemini</b></div>
+        <div class="mcell"><b>Gems</b><small>הנחיות וקבצים</small></div>
+        <div class="mcell"><b>Antigravity + Jules</b><small>שני מוצרים: דסקטופ וענן</small></div>
+        <div class="mcell"><b>Gemini Spark</b><small>אפליקציות Google, עם Skills</small></div>
+        <div class="mcell"><b>Deep Research</b></div>
+      </div>
+      <div>
+        <div class="floor fhead"></div>
+        <div class="floor"><span class="gnum">01</span><span class="fl-t">השיחה</span><span class="fl-s">הקומה שכולם מכירים</span></div>
+        <div class="floor"><span class="gnum">02</span><span class="fl-t">עוזר מותאם</span><span class="fl-s">ידע קבוע ונהלים</span></div>
+        <div class="floor"><span class="gnum">03</span><span class="fl-t">סוכן קוד</span><span class="fl-s">עובד על תיקיות</span></div>
+        <div class="floor"><span class="gnum">04</span><span class="fl-t">סוכן עבודה</span><span class="fl-s">משימות שלמות לבד</span></div>
+        <div class="floor"><span class="gnum">05</span><span class="fl-t">מחקר עמוק</span><span class="fl-s">מקורות רבים, דוח אחד</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= עמוד 3 ================= -->
+<section class="page" id="p3">
+  <div class="pnum">3 / 14</div>
+  <div class="kicker">מילון כיס לפגישה הבאה</div>
+  <h2>מישהו זרק שם? תרגמו אותו לקומה</h2>
+  <div class="prose">
+    <p class="lede">היכולת הכי שימושית שהמפה נותנת היא תרגום בזמן אמת: כששומעים שם מוצר, לא שואלים "מה זה" אלא "איזו קומה זו". ברגע שזיהיתם את הקומה, אתם יודעים בדיוק מה המקבילה אצלכם ומה לשאול הלאה.</p>
+    <p>דוגמה מהחיים: קולגה מספר בהתלהבות שהמשרד שלו "בנה <bdi dir="ltr">GPT</bdi> שמכיר את כל הנהלים". תרגום: קומה 2, עוזר מותאם אישית. המקבילה שכבר יש לכם היא <bdi dir="ltr">Project</bdi> עם <bdi dir="ltr">Skills</bdi>: אצלו ההנחיות מוגדרות מראש בתוך הצ'אט, ואצלכם הנהלים גם נשלפים לפי הצורך ועובדים ב-<bdi dir="ltr">Cowork</bdi> וב-<bdi dir="ltr">Claude Code</bdi>. פתאום השיחה לא מאיימת, היא מקצועית.</p>
+  </div>
+  <div class="viz">
+    <table class="dict">
+      <tr><th>כשמדברים על...</th>
+        <th><span class="thw"><svg class="mk-c"><use href="#i-claude"/></svg>Claude</span></th>
+        <th><span class="thw"><svg class="mk-o"><use href="#i-openai"/></svg>ChatGPT</span></th>
+        <th><span class="thw"><svg><use href="#i-gemini"/></svg>Gemini</span></th></tr>
+      <tr><td>הצ'אט היומיומי<small>ואז לשאול: איזו גרסה, וכמה חומר היא מחזיקה בבת אחת</small></td><td>Claude</td><td>ChatGPT</td><td>Gemini</td></tr>
+      <tr><td>עוזר שמכיר את התיק שלכם<small>ואז לשאול: מי עוד רואה את ההנחיות ואת הקבצים</small></td><td>Projects + Skills</td><td>Custom GPTs<small>וגם Projects ו-Skills</small></td><td>Gems</td></tr>
+      <tr><td>סוכן שעובד על תיקיית קבצים<small>ואז לשאול: על איזו תיקייה, ואיפה היא יושבת בזמן העבודה</small></td><td>Claude Code<small>מקומי וגם בענן</small></td><td>Codex<small>מקומי וגם בענן</small></td><td>Antigravity<small>ולענן: Jules</small></td></tr>
+      <tr><td>סוכן שמסיים משימה לבד<small>ואז לשאול: מה הוא עושה בלי לבקש אישור</small></td><td>Cowork</td><td>ChatGPT Work</td><td>Gemini Spark</td></tr>
+      <tr><td>דוח מחקר ממקורות רבים<small>ואז לשאול: אילו מקורות פנימיים הוא קרא</small></td><td>Research</td><td>Deep research</td><td>Deep Research</td></tr>
+    </table>
+  </div>
+  <p class="note"><b>שתי מלכודות שמות ששוות שנייה של תשומת לב.</b> הראשונה: "<bdi dir="ltr">Projects</bdi>" קיים גם אצל <bdi dir="ltr">Claude</bdi> וגם אצל <bdi dir="ltr">ChatGPT</bdi>, ואלה מוצרים דומים אך לא זהים. השנייה: מי שאומר "<bdi dir="ltr">Operator</bdi>" או "<bdi dir="ltr">agent mode</bdi>" מדבר על שמות שכבר אינם קיימים; היורש הרשמי של שניהם הוא <bdi dir="ltr">ChatGPT Work</bdi>. הסיפור המלא בעמוד 14.</p>
+</section>
+
+<!-- ================= עמוד 4 ================= -->
+<section class="page" id="p4">
+  <div class="pnum">4 / 14</div>
+  <div class="kicker">קומה 1 · השיחה</div>
+  <h2>בקומה הראשונה ההבדל אינו באיכות, הוא בהתנהגות</h2>
+  <div class="prose">
+    <p class="lede">שלושת הצ'אטים כותבים היטב, מסכמים היטב ומנתחים היטב, וההבדלים ביניהם בכתיבה מתחלפים עם כל עדכון מודל. לכן "מי חכם יותר החודש" היא שאלה גרועה להחלטת משרד. אבל יש בקומה הזו הבדל אחד שכן יציב, וכמעט אף אחד לא מדבר עליו: <b>מה כל אחד מהם עושה כשדוחפים אותו לקצה.</b></p>
+    <p><b>כשהחומר גדול מדי, שלושתם מתנהגים אחרת לגמרי.</b> <bdi dir="ltr">Claude</bdi> עוצר אתכם מראש: מופיעה הודעה שהחומר חורג מהמותר בשיחה הזו, עם הצעה לצרף פחות קבצים או לפתוח שיחה חדשה. ובשיחה שמתארכת הוא מסכם לעצמו את ההודעות הקודמות כדי להמשיך, ומציג לכם סימון שזה קורה. <bdi dir="ltr">Gemini</bdi> בוחר אחרת: הוא מזהיר בהודעה שהתשובה עלולה לפספס קשרים ופרטים שפזורים בחומר, אבל עונה בכל זאת. ואצל <bdi dir="ltr">ChatGPT</bdi>, התיעוד הרשמי היחיד שקיים בנושא מתאר קטיעה לפי סדר: ממסמך שחורג מהגבול נכנס רק החלק הראשון, מההתחלה, והשאר עובר למנוע חיפוש נפרד. לא תועדה הודעה שמיידעת אתכם שזה קרה.</p>
+    <p><b>ולמה זה משנה דווקא לעורך דין:</b> ההבדל בין הודעת שגיאה לבין קטיעה שקטה הוא ההבדל בין לדעת שהכלי לא קרא את נספח ג', לבין לקבל תשובה בטוחה בעצמה שמבוססת על חצי תיק. כשמעלים תיק שלם, זו אינה שאלה טכנית.</p>
+    <p><b>ועוד עובדה יומיומית: מסמך שיש בו יותר מטקסט.</b> תצהיר עם חותמת, נסח עם טבלה, מסמך שהגיע כתמונה. וכאן נאמר קודם כל מה שאיננו יודעים: <b>אף אחד משלושת היצרנים אינו מתעד במפורש איך הוא מטפל במסמך סרוק או האם הוא מפעיל זיהוי תווים.</b> בדקנו את שלושתם וחיפשנו את המילים האלה, ולא מצאנו. מה שכן מתועד: <bdi dir="ltr">Claude</bdi> מנתח גם את הרכיבים הוויזואליים בעמוד, כלומר תמונות, תרשימים וגרפיקה, בקבצים של עד מאה עמודים; מעבר לכך הוא עובר לטקסט בלבד. אצל <bdi dir="ltr">ChatGPT</bdi> קיימת יכולת בשם <bdi dir="ltr">Visual Retrieval</bdi> שמעבדת את התמונות שבתוך הקובץ לצד הטקסט, והתיעוד משייך אותה לחשבונות ארגוניים; בשאר החשבונות הכלי מחלץ טקסט דיגיטלי ומשליך את התמונות. ומה ששניהם אומרים במפורש: תמונה שמוטמעת בתוך קובץ <bdi dir="ltr">Word</bdi> אינה נקראת, וההמלצה הרשמית היא להמיר ל-<bdi dir="ltr">PDF</bdi> לפני ההעלאה.</p>
+  </div>
+  <div class="viz">
+    <table class="envs">
+      <tr><th>מה קורה כש...</th>
+        <th><span class="thw"><svg class="mk-c"><use href="#i-claude"/></svg>Claude</span></th>
+        <th><span class="thw"><svg class="mk-o"><use href="#i-openai"/></svg>ChatGPT</span></th>
+        <th><span class="thw"><svg><use href="#i-gemini"/></svg>Gemini</span></th></tr>
+      <tr><td>החומר גדול מהמותר</td>
+        <td class="yes"><b>חוסם מראש</b><span class="cap">הודעה לפני השליחה, והצעה לצרף פחות או לפתוח שיחה חדשה</span></td>
+        <td class="oy"><b>קוטע בשקט</b><span class="cap">נכנס רק החלק הראשון של המסמך, השאר עובר לחיפוש. לא תועדה הודעה למשתמש</span></td>
+        <td class="gy"><b>מזהיר וממשיך</b><span class="cap">"התשובה עלולה לפספס קשרים ופרטים", ואז עונה בכל זאת</span></td></tr>
+      <tr><td>השיחה מתארכת</td>
+        <td class="yes"><b>מסכם אחורה</b><span class="cap">מסכם הודעות קודמות כדי להמשיך, ומציג סימון שזה קורה. ההיסטוריה נשמרת</span></td>
+        <td class="oy"><b>לא אומת</b><span class="cap">לא נמצאה שגיאת אורך שיחה בתיעוד הרשמי</span></td>
+        <td class="gy"><b>לא אומת</b><span class="cap">התיעוד מתייחס לגודל הקובץ, לא לאורך השיחה</span></td></tr>
+      <tr><td>מעלים קובץ שיש בו תמונות וטבלאות</td>
+        <td class="yes"><b>מנתח גם ויזואלית</b><span class="cap">עד 100 עמודים; מעבר לכך טקסט בלבד. טיפול בסריקה ובזיהוי תווים לא מתועד</span></td>
+        <td class="oy"><b>Visual Retrieval</b><span class="cap">מעבד את התמונות לצד הטקסט, בחשבונות ארגוניים. באחרים "משליך את התמונות"</span></td>
+        <td class="gy"><b>לא נמצא בתיעוד</b><span class="cap">חיפשנו ולא מצאנו אמירה רשמית. אין להסיק מכך שאינו יודע</span></td></tr>
+      <tr><td>רוצים לדבר במקום להקליד</td>
+        <td class="yes"><b>קיים בכל החשבונות</b><span class="cap">גם במחשב וגם בנייד, בסטטוס בטא</span></td>
+        <td class="oy"><b>שלוש רמות</b><span class="cap">עם מכסות מפורסמות בשעות. אינו מגיע לקבצים מהספרייה בזמן שיחה</span></td>
+        <td class="gy"><b>מובייל בלבד</b><span class="cap">Gemini Live אינו קיים באפליקציית הווב. במחשב רק דרך Chrome</span></td></tr>
+    </table>
+  </div>
+  <p class="note"><b>מה לוקחים מהעמוד הזה:</b> אם המשרד עובד עם מסמכים שאינם טקסט נקי, כדאי לבדוק זאת על מסמך אמיתי שלכם לפני שסומכים על התוצאה, כי דווקא בנקודה הזו התיעוד הרשמי של שלושת היצרנים שותק. ואם אתם מעלים תיקים גדולים, כדאי שתדעו מראש איזה מהשלושה יגיד לכם שהוא לא הצליח לקרוא הכל. שאר ההבדלים בקומה הזו באמת מתחלפים עם כל עדכון מודל, וההשוואה שמכריעה בחירת משרד מתחילה בקומה הבאה.</p>
+</section>
+
+<!-- ================= עמוד 5 ================= -->
+<section class="page" id="p5">
+  <div class="pnum">5 / 14</div>
+  <div class="kicker">קומה 2 · עוזר מותאם אישית</div>
+  <h2>עוזר שכבר מכיר את המשרד, לפני שכתבתם מילה</h2>
+  <div class="prose">
+    <p class="lede">הקומה השנייה פותרת את הבעיה המעצבנת ביותר בעבודה עם צ'אט: לחזור על אותו הסבר בכל שיחה. מגדירים פעם אחת מי אתם, איך אתם עובדים ומה חשוב לכם, וכל שיחה חדשה מתחילה חכמה. הקומה הזו בנויה אצל שלושת היצרנים משני חלקים, ושווה להכיר את שניהם בנפרד.</p>
+    <p><b>החלק הראשון הוא מאגר ידע:</b> המסמכים וההקשר שהעוזר מכיר בלי שתזכירו לו. אצל <bdi dir="ltr">Claude</bdi> זה <bdi dir="ltr">Project</bdi>, אצל <bdi dir="ltr">ChatGPT</bdi> אלה <bdi dir="ltr">Custom GPT</bdi> ו-<bdi dir="ltr">Project</bdi> נפרד לצידו, ואצל <bdi dir="ltr">Gemini</bdi> זו <bdi dir="ltr">Gem</bdi>. <b>והחלק השני הוא שכבת נהלים:</b> ההוראות שאומרות לכלי איך אתם עובדים, ונשלפות כשהמשימה דורשת אותן. שם המוצר אצל שלושתם זהה, <bdi dir="ltr">Skills</bdi>.</p>
+    <p><b>וכאן הנקודה שמשתנה מהר וכדאי לא לטעות בה:</b> נכון להיום שלושת היצרנים תומכים ב-<bdi dir="ltr">Skills</bdi> שאתם כותבים בעצמכם, ושלושתם אימצו את אותו מבנה בדיוק, תיקייה עם קובץ בשם <bdi dir="ltr">SKILL.md</bdi> שמכיל שם, תיאור והוראות. גם <bdi dir="ltr">Google</bdi> מאפשרת להעלות <bdi dir="ltr">SKILL.md</bdi> או קובץ <bdi dir="ltr">zip</bdi>, ואף מפרסמת דף הדרכה נפרד על כתיבת <bdi dir="ltr">Skill</bdi> טוב. ולמעשה זה כבר לא במקרה: התיעוד של <bdi dir="ltr">Anthropic</bdi> עצמה קובע ש-<bdi dir="ltr">Skills</bdi> בנויים על מפרט פתוח וחוצה פלטפורמות, וש<b>נוהל שכתבתם יעבוד בכל פלטפורמה שתאמץ את התקן</b>. מי שיאמר לכם ש"נהלים" הם יכולת של יצרן אחד מצטט מציאות של אשתקד.</p>
+    <p><b>ההבדל האמיתי אינו בקיום אלא בטווח, והוא גדול.</b> אצל <bdi dir="ltr">Claude</bdi> הנוהל שכתבתם עובד בצ'אט, ב-<bdi dir="ltr">Cowork</bdi> וב-<bdi dir="ltr">Claude Code</bdi>, ומנהל בחשבון צוות יכול להעלות אותו פעם אחת ולהפיץ אותו לכל עורכי הדין במשרד, מופעל כברירת מחדל. אצל <bdi dir="ltr">ChatGPT</bdi> הוא עובד בצ'אט וב-<bdi dir="ltr">Codex</bdi>, בחשבונות העבודה. ואצל <bdi dir="ltr">Google</bdi> התמונה שונה מהותית, ובאופן שחשוב למשרד: לפי הדף הרשמי <bdi dir="ltr">Skills</bdi> עובדים רק בתוך <bdi dir="ltr">Spark</bdi>, ורק בחשבון <bdi dir="ltr">Google</bdi> אישי. הניסוח הרשמי מפורש: הפיצ'ר אינו זמין למי שמתחבר עם חשבון עבודה או לימודים. <b>כלומר משרד שעובד על <bdi dir="ltr">Workspace</bdi> אינו יכול להשתמש בהם כלל</b>, וגם באופן פרטי הם חסומים באזור הכלכלי האירופי, בבריטניה ובשווייץ.</p>
+    <p>ועוד הבדל שהמשרד מרגיש ביום הראשון, ולא כולם שמים לב אליו: <b>מה בדיוק רואה מי שקיבל מכם את העוזר.</b> אצל <bdi dir="ltr">Claude</bdi> ואצל <bdi dir="ltr">Gemini</bdi> התיעוד הרשמי מפורש, מי שיש לו גישה רואה גם את ההנחיות וגם את הקבצים. אצל <bdi dir="ltr">ChatGPT</bdi> יש דרגת הרשאה שמאפשרת שימוש בלי לחשוף אותם. הרחבנו על כך בעמוד 13.</p>
+  </div>
+  <div class="viz">
+    <table class="envs">
+      <tr><th>קומה 2, מוצר מול מוצר</th>
+        <th><span class="thw"><svg class="mk-c"><use href="#i-claude"/></svg>Claude</span></th>
+        <th><span class="thw"><svg class="mk-o"><use href="#i-openai"/></svg>ChatGPT</span></th>
+        <th><span class="thw"><svg><use href="#i-gemini"/></svg>Gemini</span></th></tr>
+      <tr><td>איך זה נקרא</td>
+        <td class="yes"><b>Projects + Skills</b><span class="cap">שימו לב: Project בצ'אט ו-Project ב-Cowork הם שני מוצרים שונים. זה שבצ'אט ניתן לשיתוף בחשבון צוות, וזה שב-Cowork יושב על המחשב ואינו משותף</span></td>
+        <td class="oy"><b>Custom GPTs</b><span class="cap">ולצידם Projects נפרד לעבודה אישית</span></td>
+        <td class="gy"><b>Gems</b></td></tr>
+      <tr><td>מאגר הידע: איך הוא מתנהג כשהוא גדל</td>
+        <td class="yes"><b>עובר לחיפוש</b><span class="cap">במקום לטעון הכל, Claude מחפש בתוך הפרויקט ומציג סימון שזה קורה</span></td>
+        <td class="oy"><b>טקסט בלבד</b><span class="cap">קובץ שנשמר לעוזר מעובד כטקסט, גם אם הוא סרוק. אותו קובץ בשיחה עצמה כן נקרא ויזואלית</span></td>
+        <td class="gy"><b>מסתנכרן מ-Drive</b><span class="cap">קובץ שמשנים ב-Drive מתעדכן ב-Gem אוטומטית</span></td></tr>
+      <tr><td>שכבת נהלים שאתם כותבים</td>
+        <td class="yes"><b>כן</b><span class="cap">בקובץ SKILL.md. דורש שהרצת קוד תהיה מופעלת בחשבון</span></td>
+        <td class="oy"><b>כן</b><span class="cap">אותו מבנה, קובץ SKILL.md</span></td>
+        <td class="gy"><b>כן</b><span class="cap">אותו מבנה. אפשר להעלות SKILL.md או קובץ zip</span></td></tr>
+      <tr><td>איפה הנהלים האלה עובדים</td>
+        <td class="yes"><b>בכל המוצרים</b><span class="cap">בצ'אט, ב-Cowork וב-Claude Code</span></td>
+        <td class="oy"><b>בצ'אט וב-Codex</b><span class="cap">בחשבונות העבודה</span></td>
+        <td class="gy"><b>רק בתוך Spark</b><span class="cap">ורק בחשבון אישי. הדף הרשמי קובע שאינו זמין בחשבון עבודה או לימודים</span></td></tr>
+      <tr><td>מנהל מפיץ נוהל לכל המשרד בבת אחת</td>
+        <td class="yes"><b>כן</b><span class="cap">בחשבונות צוות וארגון, ומופעל כברירת מחדל לכולם</span></td>
+        <td class="oy"><b>כן, בהרשאות מנהל</b><span class="cap">קיימות הרשאות נפרדות לפרסום Skill למרחב העבודה ולהתקנתו עבור חברים אחרים</span></td>
+        <td class="gy"><b>לא אומת</b><span class="cap">נמצא רק מתג הפעלה או כיבוי של שיתוף</span></td></tr>
+      <tr><td>מה רואה מי שקיבל את העוזר</td>
+        <td class="yes"><b>הנחיות וקבצים</b><span class="cap">גם בהרשאה הנמוכה ביותר</span></td>
+        <td class="oy"><b>אפשר להסתיר</b><span class="cap">דרגת הרשאה שנותנת שימוש בלי חשיפת ההגדרות</span></td>
+        <td class="gy"><b>הנחיות וקבצים</b><span class="cap">ובשיתוף ציבורי, ה-Gem נמצא גם בחיפוש Google</span></td></tr>
+    </table>
+  </div>
+  <p class="note"><b>מה עושים עם זה במשרד:</b> אם יש לכם נוהל אחד שכל עורכי הדין צריכים, למשל מבנה קבוע לחוות דעת או רשימת בדיקה לפני הגשה, שאלו קודם כל היכן הוא יעבוד ומי יתקין אותו. אצל <bdi dir="ltr">Claude</bdi> מנהל מעלה אותו פעם אחת וכולם מקבלים; בשתי האחרות ההתקנה היא ביוזמת כל אחד. ושני סייגים שכדאי להכיר דווקא בצד של <bdi dir="ltr">Claude</bdi>. הראשון: באפשרות השיתוף הארגונית אין מנגנון אישור, כך שכל חבר בארגון יכול לפרסם <bdi dir="ltr">Skill</bdi> לספרייה בלי בדיקה מוקדמת. השני חמור יותר, ו-<bdi dir="ltr">Anthropic</bdi> אומרת אותו בעצמה: <bdi dir="ltr">Skill</bdi> ממקור לא מוכר עלול להוציא מידע החוצה או להשיג גישה לא מורשית, ולכן יש להתייחס להתקנתו כמו להתקנת תוכנה על מערכת פעילה. בשתי הנקודות האלה המסקנה זהה: נוהל פנימי אחד קצר במשרד, שקובע מי מאשר <bdi dir="ltr">Skill</bdi> לפני שהוא נכנס.</p>
+</section>
+
+<!-- ================= עמוד 6 ================= -->
+<section class="page" id="p6">
+  <div class="pnum">6 / 14</div>
+  <div class="kicker">קומה 3 · סוכן קוד</div>
+  <h2>הקומה שאתם כבר גרים בה, ומה קרה אצל השכנים</h2>
+  <div class="prose">
+    <p class="lede">סוכן קוד הוא הכלי שפותח תיקייה ועובד עליה: קורא מסמכים, נותן שמות, משווה גרסאות, בונה טבלאות. חברי המועדון מכירים את הקומה הזו מקרוב, כי <bdi dir="ltr">Claude Code</bdi> נלמד אצלנו בשני מדריכים מלאים, בלי שורת קוד אחת.</p>
+    <p><b>המקבילה של <bdi dir="ltr">OpenAI</bdi> מלאה ומסודרת.</b> <bdi dir="ltr">Codex</bdi> מוגדר רשמית כסוכן שכותב, בודק ומשחרר קוד, והוא נמצא כמעט בכל מקום: טרמינל, הרחבות ל-<bdi dir="ltr">VS Code</bdi> ול-<bdi dir="ltr">JetBrains</bdi>, אפליקציית הדסקטופ, הדפדפן, אפליקציית המובייל, וגם כסוכן ענן שמקבל משימות ומגיב על שינויי קוד ב-<bdi dir="ltr">GitHub</bdi>. המשפט הרשמי שלהם, "אותו סוכן בכל מקום שאתם כותבים בו", מתאר בדיוק את אותה תפיסה שאתם מכירים מ-<bdi dir="ltr">Claude Code</bdi>.</p>
+    <p><b>אצל <bdi dir="ltr">Google</bdi> הקומה עברה רעידת אדמה ביוני 2026.</b> ב-18 ביוני הפסיקו <bdi dir="ltr">Gemini CLI</bdi> ו-<bdi dir="ltr">Code Assist</bdi> לשרת משתמשים פרטיים, ו-<bdi dir="ltr">Google</bdi> מפנה יחידים למוצר בשם <bdi dir="ltr">Antigravity</bdi>, שהושק בנובמבר 2025 וגרסת 2.0 שלו הוכרזה ב-<bdi dir="ltr">I/O</bdi> במאי 2026: אפליקציית דסקטופ, סביבת עריכה, טרמינל וכלים למתכנתים. לצידו פועל <bdi dir="ltr">Jules</bdi>, סוכן שחי בענן. הוא מקבל משימה על תיקיית פרויקט שנשמרת ב-<bdi dir="ltr">GitHub</bdi>, שירות ענן מקובל אצל מתכנתים, וחוזר עם תוצר. מספר המשימות שלו ליום מוגבל. המשמעות המעשית: מי ששמע פעם "תתקין <bdi dir="ltr">Gemini CLI</bdi>" צריך לדעת שהשירות ליחידים נסגר, וזו תזכורת חיה לעמוד 14.</p>
+  </div>
+  <div class="viz">
+    <table class="envs">
+      <tr><th>איפה הסוכן רץ</th>
+        <th><span class="thw"><svg class="mk-c"><use href="#i-claude"/></svg>Claude Code</span></th>
+        <th><span class="thw"><svg class="mk-o"><use href="#i-openai"/></svg>Codex</span></th>
+        <th><span class="thw"><svg><use href="#i-gemini"/></svg>Antigravity / Jules</span></th></tr>
+      <tr><td>טרמינל (CLI)</td><td class="yes"><b>כן</b><span class="cap">הסביבה המקורית של הכלי</span></td><td class="oy"><b>כן</b></td><td class="gy"><b>כן</b><span class="cap">Antigravity CLI, וגם Jules Tools לשליטה במשימות הענן</span></td></tr>
+      <tr><td>סביבת עריכה (IDE)</td><td class="yes"><b>כן</b><span class="cap">תוסף ל-VS Code ול-JetBrains</span></td><td class="oy"><b>כן</b><span class="cap">תוסף ל-VS Code ול-JetBrains</span></td><td class="gy"><b>כן</b><span class="cap">Antigravity IDE, שהיא סביבה עצמאית ולא תוסף. תוסף Code Assist ליחידים נסגר ביוני 2026</span></td></tr>
+      <tr><td>אפליקציית דסקטופ</td><td class="yes"><b>כן</b><span class="cap">macOS ו-Windows</span></td><td class="oy"><b>כן</b><span class="cap">מצב Codex בתוך אפליקציית ChatGPT</span></td><td class="gy"><b>כן</b><span class="cap">Antigravity 2.0</span></td></tr>
+      <tr><td>דפדפן</td><td class="yes"><b>כן</b><span class="cap">בתצוגה מקדימה</span></td><td class="oy"><b>כן</b></td><td class="non"><b>אין</b><span class="cap">אין נקודת גישה מהדפדפן, אבל הסוכן מפעיל דפדפן ככלי בדיקה ומצרף הקלטה של מה שבדק</span></td></tr>
+      <tr><td>מובייל</td><td class="yes"><b>כן</b><span class="cap">בתצוגה מקדימה</span></td><td class="oy"><b>כן</b><span class="cap">בתוך אפליקציית ChatGPT, לניהול משימות ולאישורן, לא לכתיבה</span></td><td class="non"><b>אין</b></td></tr>
+      <tr><td>סוכן ענן על GitHub</td><td class="yes"><b>כן</b><span class="cap">Claude Code בווב, בתצוגה מקדימה, וגם תיוג @claude בתוך Pull Request</span></td><td class="oy"><b>כן</b><span class="cap">Codex cloud מריץ משימות בענן ומגיב על שינויי קוד</span></td><td class="gy"><b>כן</b><span class="cap">Jules, עם תקרת משימות יומית</span></td></tr>
+    </table>
+  </div>
+  <p class="note"><b>ואיך קוראים את הטבלה הזו בפועל:</b> אם אתם עובדים מהמחשב במשרד, שלושתם עונים על הצורך. ההבדל מתחיל כשאתם לא ליד המחשב. <bdi dir="ltr">Claude Code</bdi> ו-<bdi dir="ltr">Codex</bdi> ממשיכים לרוץ בענן ואפשר לעקוב אחריהם מהנייד, אצל <bdi dir="ltr">Google</bdi> התפקיד הזה עובר ל-<bdi dir="ltr">Jules</bdi> שהוא מוצר אחר עם תקרה יומית. ושימו לב לתצוגות המקדימות: יכולת בתצוגה מקדימה יכולה להשתנות או להיסגר בלי התראה, ולכן לא בונים עליה נוהל משרדי קבוע.</p>
+</section>
+
+<!-- ================= עמוד 7 ================= -->
+<section class="page" id="p7">
+  <div class="pnum">7 / 14</div>
+  <div class="kicker">קומה 4 · סוכן עבודה</div>
+  <h2>שלושה סוכנים, שלושה מגרשים ביתיים</h2>
+  <div class="prose">
+    <p class="lede">זו הקומה הצעירה והסוערת ביותר, וכולם בה מבטיחים את אותו הדבר: תנו משימה, קבלו תוצר. ההבטחות דומות עד כדי כך שהשאלה המבדילה חייבת להיות אחרת: <b>על איזה חומר הסוכן באמת עובד.</b></p>
+    <p><b><bdi dir="ltr">Claude Cowork</bdi> עובד על המחשב שלכם, וכאן חייבים לדייק.</b> הוא בנוי באותה גישה סוכנית של <bdi dir="ltr">Claude Code</bdi> ומכוון לכל עבודה שאינה קוד: נותנים מטרה, והוא עובד על הקבצים והכלים שלכם ומגיש תוצר לבדיקתכם. אבל זה נכון באפליקציית הדסקטופ. לפי התיעוד הרשמי, בווב ובמובייל הסשן רץ בענן של <bdi dir="ltr">Anthropic</bdi>, וגישה לקבצים שבמחשב אפשרית רק כל עוד אפליקציית הדסקטופ פתוחה על אותו מחשב. למשרד עורכי דין זו לא הערת שוליים, זו שאלת הסודיות עצמה. פיצ'ר בשם <bdi dir="ltr">Dispatch</bdi> מאפשר לשלוח משימה מהנייד והיא רצה על מחשב הדסקטופ שלכם. נכון להיום הוא בבטא, אינו זמין בחשבונות הצוות והארגון, ודורש שהמחשב יהיה ער ושהאפליקציה תהיה פתוחה. <bdi dir="ltr">Cowork</bdi> זמין באפליקציית הדסקטופ ל-<bdi dir="ltr">macOS</bdi> ו-<bdi dir="ltr">Windows</bdi>, ובבטא בווב ובמובייל.</p>
+    <p><b><bdi dir="ltr">ChatGPT Work</bdi> מכוון לתוצר המוגמר.</b> ולפני הכל, נקודה שמבלבלת רבים: <bdi dir="ltr">OpenAI</bdi> מחלקת את <bdi dir="ltr">ChatGPT</bdi> לשני מצבים, <bdi dir="ltr">Chat</bdi> ו-<bdi dir="ltr">Work</bdi>. כלומר סוכן העבודה שלה אינו אפליקציה נפרדת אלא מצב בתוך אותה אפליקציה שאתם כבר מכירים, וזו הסיבה שאותו שם מופיע פעמיים על המפה, בקומה 1 ובקומה 4. <bdi dir="ltr">Work</bdi> הוא היורש הרשמי של <bdi dir="ltr">agent mode</bdi>, שהופסק ביולי 2026, והוא בנוי למשימות ארוכות שמסתיימות במשהו מוחשי: מחקר, דפדוף, מצגות, גיליונות, דוחות ואפילו אתרים. יש בו מצב <bdi dir="ltr">Plan</bdi> לאישור תוכנית מראש, ובאפליקציית הדסקטופ הוא ניגש גם לקבצים מקומיים ולאפליקציות במחשב. גם הוא מבקש אישור לפני פעולות בעלות משמעות, ואפשר לעצור אותו או להשתלט על הדפדפן בכל רגע.</p>
+    <p><b><bdi dir="ltr">Gemini Spark</bdi> חי בחשבון <bdi dir="ltr">Google</bdi> שלכם.</b> לפי ההגדרה הרשמית זהו "סוכן אישי שזמין 24/7": עובד על <bdi dir="ltr">Gmail</bdi>, היומן, <bdi dir="ltr">Docs</bdi> וגיליונות, עם משימות, נהלים ותזמונים קבועים. נקודה חשובה לעורכי דין: לפני שליחת הודעות, שינוי נתונים, רכישות או שליחת טפסים הוא עוצר ומבקש אישור. אבל הרשימה הזו סגורה, ומה שאינו בה רץ לבד. <bdi dir="ltr">Google</bdi> מציינת למשל שהוא מבצע פעולות בכמות ברשימות המשימות שלכם בלי לבקש אישור. זמין מגיל 18, במדינות ובחשבונות נבחרים בלבד. ופרט שחשוב למשרד: החיבורים לאפליקציות כבויים כברירת מחדל, ומפעילים אותם ידנית בהגדרות.</p>
+  </div>
+  <div class="terr">
+    <div class="tcard c">
+      <h4><svg class="mk-c"><use href="#i-claude"/></svg>Claude Cowork</h4>
+      <div class="tname">המגרש הביתי: המחשב שלכם</div>
+      <div class="zone"><b>קבצים ותיקיות במחשב</b>אותה גישה סוכנית כמו Claude Code</div>
+      <div class="zone"><b>Dispatch</b>שולחים מהנייד, רץ על הדסקטופ שלכם</div>
+      <p class="warn">דסקטופ: macOS ו-Windows. בווב ובמובייל, בבטא, הסשן רץ בענן של Anthropic.</p>
+    </div>
+    <div class="tcard o">
+      <h4><svg class="mk-o"><use href="#i-openai"/></svg>ChatGPT Work</h4>
+      <div class="tname">המגרש הביתי: תוצרים מוגמרים</div>
+      <div class="zone"><b>מחקר, דפדוף ומסמכים שלמים</b>מצגות, גיליונות, דוחות ואתרים, עם מצב Plan</div>
+      <div class="zone"><b>בדסקטופ: גם קבצים מקומיים</b>ואפליקציות על המחשב</div>
+      <p class="warn">היורש הרשמי של agent mode, מיולי 2026.</p>
+    </div>
+    <div class="tcard g">
+      <h4><svg><use href="#i-gemini"/></svg>Gemini Spark</h4>
+      <div class="tname">המגרש הביתי: החשבון של Google</div>
+      <div class="zone"><b>סוכן 24/7 על Gmail, היומן ו-Docs</b>משימות, נהלים ותזמונים קבועים</div>
+      <div class="zone"><b>עצירה לפני פעולה רגישה</b>הודעות, נתונים, רכישות וטפסים - באישור בלבד</div>
+      <p class="warn">18+, במדינות ובחשבונות נבחרים. החיבורים כבויים כברירת מחדל.</p>
+    </div>
+  </div>
+  <p class="note"><b>ובעיניים של עורך דין:</b> רק אצל סוכן אחד מהשלושה המחשב שלכם הוא המגרש הביתי. אצל <bdi dir="ltr">ChatGPT Work</bdi> הגישה לקבצים מקומיים קיימת דרך אפליקציית הדסקטופ, ו-<bdi dir="ltr">Gemini Spark</bdi> חי כולו בחשבון <bdi dir="ltr">Google</bdi>. ההבחנה הזו משנה גם את שאלת הסודיות וגם את שיטת העבודה. ולמען הדיוק, היא נכונה לקומה הזו בלבד: קומה אחת מתחת, גם <bdi dir="ltr">Codex</bdi> רץ מקומית על התיקיות שלכם.</p>
+</section>
+
+<!-- ================= עמוד 8 ================= -->
+<section class="page" id="p8">
+  <div class="pnum">8 / 14</div>
+  <div class="kicker">הציר שחוצה את כל המפה</div>
+  <h2>ציר העצמאות: מי שואל, מי מודיע, מי פשוט עושה</h2>
+  <div class="prose">
+    <p class="lede">מעבר לקומות יש ציר אחד שחוצה את כל סוכני העבודה והקוד, והוא החשוב ביותר לעבודה מקצועית: כמה הסוכן עושה לבד לפני שאתם רואים משהו. ככל שזזים שמאלה על הציר, העבודה מהירה יותר, והעין שלכם רואה פחות.</p>
+    <p>בקצה הימני יושב <bdi dir="ltr">Claude Code</bdi> במצב ברירת המחדל שלו: חלונית אישור לפני כל שינוי, בדיוק כפי שלמדתם במדריכים. אבל זו נקודת פתיחה, לא תקרה: ל-<bdi dir="ltr">Claude Code</bdi> יש מצבי הרשאות מובנים, ומי שמעביר אותו למצב עצמאי משחרר אותו לעבוד ברצף וברקע, גם כשאתם לא ליד המחשב. כלומר, המיקום שלו על הציר הוא בחירה שלכם, לא גזירה של המוצר. <bdi dir="ltr">Cowork</bdi> צעד שמאלה: עובד ברצף ומגיש תוצר לבדיקה. <bdi dir="ltr">ChatGPT Work</bdi> באמצע: מצב <bdi dir="ltr">Plan</bdi> מאפשר לאשר תוכנית מראש, ואז הוא רץ ברצף. <bdi dir="ltr">Jules</bdi> רחוק יותר, אבל לא כפי שנדמה: הוא אמנם עובד לבד ואפשר לעזוב אותו, אך התיעוד הרשמי מחייב שתאשרו את התוכנית שלו לפני שהוא נוגע בקוד. כלומר שער אחד בהתחלה, ואז ריצה רציפה. ובקצה השמאלי <bdi dir="ltr">Gemini Spark</bdi>, שרץ ברקע יום ולילה, עם שערי אישור רק לפעולות שהוגדרו רגישות.</p>
+  </div>
+  <div class="viz specwrap">
+    <div class="spectrum">
+      <div class="spec-bar"></div>
+      <div class="spec-end r">מאשרים כל פעולה</div>
+      <div class="spec-end l">עצמאות מלאה</div>
+      <div class="spec-range"><span>במצב העצמאי, Claude Code נע על כל הציר</span></div>
+      <div class="spec-item" style="right:8%">
+        <div class="spec-lbl"><b>Claude Code</b><small>ברירת מחדל: אישור פרטני</small></div>
+        <div class="spec-dot"><svg class="mk-c"><use href="#i-claude"/></svg></div>
+      </div>
+      <div class="spec-item low" style="right:26%">
+        <div class="spec-lbl"><b>Cowork</b><small>עובד ברצף, מדווח בסוף</small></div>
+        <div class="spec-dot"><svg class="mk-c"><use href="#i-claude"/></svg></div>
+      </div>
+      <div class="spec-item" style="right:50%">
+        <div class="spec-lbl"><b>ChatGPT Work</b><small>מצב Plan, ואז רצף</small></div>
+        <div class="spec-dot"><svg class="mk-o"><use href="#i-openai"/></svg></div>
+      </div>
+      <div class="spec-item low" style="right:74%">
+        <div class="spec-lbl"><b>Jules</b><small>מאשרים תוכנית, ואז הוא לבד</small></div>
+        <div class="spec-dot"><svg><use href="#i-gemini"/></svg></div>
+      </div>
+      <div class="spec-item" style="right:92%">
+        <div class="spec-lbl"><b>Gemini Spark</b><small>רץ 24/7, עוצר לפעולות רגישות</small></div>
+        <div class="spec-dot"><svg><use href="#i-gemini"/></svg></div>
+      </div>
+    </div>
+  </div>
+  <p class="note"><b>עמדת Legal Mind:</b> על חומר של לקוחות, נקודת הפתיחה היא הצד הימני של הציר: סוכן שמבקש אישור, ועיניים שקוראות כל בקשה. שמאלה זזים בהחלטה מודעת, לא כברירת מחדל. המיקומים על הציר הם הערכה שלנו לפי אופי העבודה מול כל סוכן, לא מדידה רשמית של היצרנים. ולמה <bdi dir="ltr">Cowork</bdi> ימני מ-<bdi dir="ltr">ChatGPT Work</bdi>? כי הוא עובד על קבצים שנשארים במחשב שלכם והתוצר עובר את עיניכם, בעוד מצב <bdi dir="ltr">Plan</bdi> מאשר תוכנית מראש, לא כל צעד בביצוע. ולמען הדיוק: גם ל-<bdi dir="ltr">Codex</bdi> יש מדיניות אישורים מדורגת רשמית.</p>
+</section>
+
+<!-- ================= עמוד 9 ================= -->
+<section class="page" id="p9">
+  <div class="pnum">9 / 14</div>
+  <div class="kicker">קומה 5 · מחקר עמוק</div>
+  <h2>הקומה היחידה שבה כולם כמעט מסכימים על השם</h2>
+  <div class="prose">
+    <p class="lede">בקומה החמישית שלושת היצרנים בנו כלי כמעט זהה: סוכן שמקבל שאלה גדולה, מריץ סדרת חיפושים שנבנים זה על זה, וחוזר אחרי דקות ארוכות עם דוח מסודר ומבוסס מקורות, במקום תשובה מהירה. אפילו השמות כמעט זהים, וזה כשלעצמו סימן שהקטגוריה התבגרה.</p>
+    <p>ונאמר ביושר: בבסיס, שלושתם עושים את אותו הדבר. חיפושים שנבנים זה על זה, ובסופם דוח עם מקורות; <bdi dir="ltr">OpenAI</bdi> ו-<bdi dir="ltr">Google</bdi> אף מציינות רשמית "מאות מקורות", ו-<bdi dir="ltr">Anthropic</bdi> פשוט לא מפרסמת מספר. וגם השאלה שבאמת מעניינת משרד, האם הכלי קורא את החומר הפנימי שלכם ולא רק את הרשת, מקבלת אצל שלושתם תשובה חיובית, ותמיד באישורכם: <bdi dir="ltr">Claude</bdi> דרך <bdi dir="ltr">Connectors</bdi>, <bdi dir="ltr">ChatGPT</bdi> דרך מחברים ל-<bdi dir="ltr">Drive</bdi>, ל-<bdi dir="ltr">Gmail</bdi> ול-<bdi dir="ltr">SharePoint</bdi>, ו-<bdi dir="ltr">Gemini</bdi> דרך <bdi dir="ltr">Gmail</bdi>, <bdi dir="ltr">Drive</bdi> והצ'אט. ההבדל המעשי הוא אילו מערכות כבר מחוברות אצלכם, לא מי מסוגל לקרוא אותן.</p>
+  </div>
+  <div class="res">
+    <div class="rcard">
+      <div class="rn"><svg class="mk-c"><use href="#i-claude"/></svg>Research</div>
+      <div class="rv">Claude</div>
+      <p>מחפש ברשת, וגם ב-<bdi dir="ltr">Gmail</bdi> וב-<bdi dir="ltr">Docs</bdi> שחיברתם.</p>
+    </div>
+    <div class="rcard">
+      <div class="rn"><svg class="mk-o"><use href="#i-openai"/></svg>Deep research</div>
+      <div class="rv">ChatGPT</div>
+      <p>מאות מקורות, ובאישורכם גם מערכות פנימיות שחיברתם.</p>
+    </div>
+    <div class="rcard">
+      <div class="rn"><svg><use href="#i-gemini"/></svg>Deep Research</div>
+      <div class="rv">Gemini</div>
+      <p>סורק מאות אתרים, ובאישורכם גם את <bdi dir="ltr">Gmail</bdi> ו-<bdi dir="ltr">Drive</bdi> שלכם.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ================= עמוד 10 ================= -->
+<section class="page" id="p10">
+  <div class="pnum">10 / 14</div>
+  <div class="kicker">מה משותף ומה באמת שונה</div>
+  <h2>רוב מה שנחשב לייחודי קיים אצל שלושתם</h2>
+  <div class="prose">
+    <p class="lede">זה העמוד שהכי קל לטעות בו, ולכן בדקנו אותו פעמיים מול העמודים הרשמיים. התוצאה הפתיעה גם אותנו: ארבע יכולות שנחשבות בשיח לקלף של יצרן אחד קיימות בפועל אצל שלושתם, פשוט בשמות שונים. מי שמשווה לפי שמות מגיע למסקנה הפוכה מהמציאות.</p>
+    <p>הטבלה הבאה היא בדיוק בשביל הרגע שבו מישהו מנופף באחת מהיכולות האלה כסיבה לעבור ליצרן אחר. התשובה הנכונה היא שהיא קיימת גם אצלכם, ושהשאלה האמיתית אינה אם קיים אלא באיזה היקף, באיזו נוחות, ובאיזה סוג חשבון.</p>
+  </div>
+  <div class="viz">
+    <table class="envs">
+      <tr><th>יכולת שמדברים עליה</th>
+        <th><span class="thw"><svg class="mk-c"><use href="#i-claude"/></svg>Claude</span></th>
+        <th><span class="thw"><svg class="mk-o"><use href="#i-openai"/></svg>ChatGPT</span></th>
+        <th><span class="thw"><svg><use href="#i-gemini"/></svg>Gemini</span></th></tr>
+      <tr><td>תוצר חי בחלון נפרד</td>
+        <td class="yes"><b>Artifacts</b><span class="cap">תוצר שמתעדכן מול העיניים בחלון לצד השיחה</span></td>
+        <td class="oy"><b>Canvas</b><span class="cap">אותו רעיון: חלון נפרד לעריכה משותפת</span></td>
+        <td class="gy"><b>Canvas</b><span class="cap">כולל תצוגה מקדימה של עמוד ווב ושיתוף</span></td></tr>
+      <tr><td>חיבור מערכות חיצוניות בתקן MCP</td>
+        <td class="yes"><b>כן</b><span class="cap">התקן נוצר ב-Anthropic, וחשוף ישירות דרך Connectors</span></td>
+        <td class="oy"><b>כן</b><span class="cap">מחברים מנוהלים ומצב Developer לחיבור שרתי MCP</span></td>
+        <td class="gy"><b>כן</b><span class="cap">תמיכה רשמית, כולל ב-Antigravity</span></td></tr>
+      <tr><td>שכבת נהלים שאתם כותבים (Skills)</td>
+        <td class="yes"><b>בכל המוצרים</b><span class="cap">צ'אט, Cowork ו-Claude Code. מנהל מפיץ לכל הארגון בבת אחת</span></td>
+        <td class="oy"><b>בצ'אט וב-Codex</b><span class="cap">בחשבונות העבודה. אותו מבנה SKILL.md</span></td>
+        <td class="gy"><b>רק בחשבון אישי</b><span class="cap">אותו מבנה SKILL.md, אך רק בתוך Spark ולא בחשבון עבודה</span></td></tr>
+      <tr><td>מחקר עמוק שקורא גם את החומר הפנימי שלכם</td>
+        <td class="yes"><b>כן</b><span class="cap">דרך Connectors, באישורכם</span></td>
+        <td class="oy"><b>כן</b><span class="cap">מחברים ל-Drive, ל-Gmail ול-SharePoint</span></td>
+        <td class="gy"><b>כן</b><span class="cap">Gmail, Drive והצ'אט, באישורכם</span></td></tr>
+    </table>
+  </div>
+  <p class="note"><b>המסקנה המעשית מהטבלה הזו:</b> אף אחת מארבע היכולות האלה אינה סיבה לבדה להחליף יצרן, כי היא קיימת אצל כולם. כשמישהו מציג אחת מהן כנימוק, שאלו אותו במה בדיוק היא טובה יותר אצלו, ולא אם היא קיימת.</p>
+  <div class="prose" style="margin-top:26px">
+    <p class="lede"><b>ומה כן שונה באמת.</b> אחרי שמנקים מהשולחן את מה שקיים אצל כולם, נשארים שלושה הבדלים לכל יצרן. הם קטנים יותר ממה שהשיווק מבטיח, אבל כל אחד מהם באמת משנה משהו ביום העבודה של משרד.</p>
+  </div>
+  <div class="rail">
+    <div class="pcard pc-claude">
+      <svg class="wm"><use href="#i-claude"/></svg>
+      <div class="tag">CLAUDE</div>
+      <div class="pname"><svg class="mk-c"><use href="#i-claude"/></svg>Claude</div>
+      <ul>
+        <li><b>הפצה ארגונית של נהלים</b><span>מנהל מעלה נוהל פעם אחת, וכל עורכי הדין מקבלים אותו</span></li>
+        <li><b>זיכרון נפרד לכל תיק</b><span>חומר של תיק אחד אינו נשפך לתיק אחר</span></li>
+        <li><b>סוכן עבודה על התיקיות שלכם</b><span>בדסקטופ, ישירות על הקבצים שבמחשב</span></li>
+      </ul>
+    </div>
+    <div class="pcard pc-gpt">
+      <svg class="wm"><use href="#i-openai"/></svg>
+      <div class="tag">CHATGPT</div>
+      <div class="pname"><svg style="fill:#fff"><use href="#i-openai"/></svg>ChatGPT</div>
+      <ul>
+        <li><b>חנות עוזרים ציבורית</b><span>GPT Store, שאפשר לדפדף ולחפש בה. לאחרים יש שיתוף בלבד</span></li>
+        <li><b>סוכן קוד בכל הסביבות</b><span>Codex בטרמינל, בעריכה, בדסקטופ, בדפדפן, במובייל ובענן</span></li>
+        <li><b>אתר שלם כתוצר</b><span>Sites מגיש אתר עובד, לא רק מסמך</span></li>
+      </ul>
+    </div>
+    <div class="pcard pc-gem">
+      <svg class="wm"><use href="#i-gemini"/></svg>
+      <div class="tag">GEMINI</div>
+      <div class="pname">Gemini</div>
+      <ul>
+        <li><b>מובנה בתוך Gmail ו-Docs</b><span>לא תוסף שמתקינים, אלא חלק מהכלים שכבר פתוחים אצלכם</span></li>
+        <li><b>קול שרואה את המסך</b><span>Gemini Live משתף מסך ומצלמה בזמן אמת. במובייל בלבד</span></li>
+        <li><b>יצירת תמונות ווידאו</b><span>Nano Banana 2 ו-Gemini Omni. ל-Claude אין יכולת כזו</span></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ================= עמוד 11 ================= -->
+<section class="page" id="p11">
+  <div class="pnum">11 / 14</div>
+  <div class="kicker">ולמשרד עורכי דין</div>
+  <h2>לא "מי הכי טוב". שלוש שאלות במקום</h2>
+  <div class="prose">
+    <p class="lede">"מי הכי טוב" היא, כפי שראינו בעמוד 4, שאלה של הקומה הראשונה, ותשובתה מתיישנת לפני שתהליך הרכש מסתיים. בקומות הסוכניות שואלים שלוש שאלות על המשרד עצמו, והתשובות מצביעות לבד.</p>
+  </div>
+  <div class="qrow">
+    <h4>1. איפה חי החומר של המשרד?</h4>
+    <p class="qexp">זו השאלה החזקה מכולן, כי היא לא משתנה עם גרסאות. משרד שהחומר שלו יושב בתיקיות ובקבצים צריך סוכן שעובד שם. משרד שחי כולו בענן של <bdi dir="ltr">Google</bdi> ירוויח מסוכן שכבר גר שם. והתשובה קובעת גם את שאלת הסודיות: לאן החומר זז כשהסוכן עובד עליו.</p>
+    <div class="ans">
+      <div><b><svg class="mk-c"><use href="#i-claude"/></svg>Claude</b>בקבצים שבמחשב, כשעובדים באפליקציית הדסקטופ</div>
+      <div><b><svg class="mk-o"><use href="#i-openai"/></svg>ChatGPT</b>בענן של OpenAI, ובדסקטופ גם קבצים מקומיים</div>
+      <div><b><svg><use href="#i-gemini"/></svg>Gemini</b>בתוך Gmail, Drive ו-Docs; ובקבצים מקומיים דרך Antigravity</div>
+    </div>
+  </div>
+  <div class="qrow">
+    <h4>2. כמה שליטה אתם דורשים על כל פעולה?</h4>
+    <p class="qexp">חזרו לציר שבעמוד 8, ולהערכת המיקומים שמאחוריו. עבודה על חומר לקוחות מושכת ימינה, אל סוכן ששואל לפני כל שינוי. משימות פנימיות שאינן רגישות יכולות לזוז שמאלה. חשוב שההחלטה הזו תהיה של המשרד, לא ברירת מחדל של מוצר.</p>
+    <div class="ans">
+      <div><b><svg class="mk-c"><use href="#i-claude"/></svg>Claude</b>אישור פרטני כברירת מחדל, עד עצמאות מלאה לפי בחירתכם</div>
+      <div><b><svg class="mk-o"><use href="#i-openai"/></svg>ChatGPT</b>תוכנית לאישור מראש, ואז ריצה רציפה</div>
+      <div><b><svg><use href="#i-gemini"/></svg>Gemini</b>רץ ברקע, עוצר בפעולות שהוגדרו רגישות</div>
+    </div>
+  </div>
+  <div class="qrow">
+    <h4>3. מה הצוות כבר יודע?</h4>
+    <p class="qexp">גם זמן למידה עולה כסף. כלי מצוין שאף אחד לא מכיר יפסיד לכלי טוב שהצוות כבר שולט בו. שאלו מה כבר קיים במשרד: מדריכים שנלמדו, הרגלים שנבנו, סביבות שכבר מותקנות.</p>
+    <div class="ans">
+      <div><b><svg class="mk-c"><use href="#i-claude"/></svg>Claude</b>מי שעבר את מדריכי המועדון מחזיק כבר שיטת עבודה</div>
+      <div><b><svg class="mk-o"><use href="#i-openai"/></svg>ChatGPT</b>הממשק המוכר ביותר לציבור הרחב</div>
+      <div><b><svg><use href="#i-gemini"/></svg>Gemini</b>אפס התקנה למי שחי ממילא ב-Workspace</div>
+    </div>
+  </div>
+  <p class="note"><b>עמדת Legal Mind, בגילוי מלא:</b> ההשוואה הזו נכתבה במועדון שמלמד <bdi dir="ltr">Claude</bdi>, ואנחנו אומרים זאת בקול. הסיבה שבחרנו ללמד דווקא אותו יושבת בשאלות 1 ו-2: החומר של משרד חי בקבצים, והעבודה המשפטית דורשת אישור פרטני. ושתי הסתייגויות שאנחנו חייבים לומר בעצמנו: הטענה שהחומר נשאר בקבצים תקפה במסלול הדסקטופ, ולא בסשן ווב או מובייל שרץ בענן; והאישור הפרטני הוא ברירת מחדל שאפשר לכבות, כלומר נוהל של המשרד ולא ערובה של המוצר. שלוש השאלות הן שלכם, והתשובות של כל משרד הן שלו.</p>
+</section>
+
+<!-- ================= עמוד 12 ================= -->
+<section class="page" id="p12">
+  <div class="pnum">12 / 14</div>
+  <div class="kicker">השאלה שקודמת לכל השאר</div>
+  <h2>לאן זז החומר של הלקוח כשהסוכן עובד עליו</h2>
+  <div class="prose">
+    <p class="lede">כל מה שקראתם עד כאן עוסק במה הכלים עושים. העמוד הזה עוסק בשאלה שקודמת לה במשרד עורכי דין: איפה נמצא הקובץ של הלקוח ברגע שהסוכן פותח אותו. בדקנו את זה מול עמודי האבטחה הרשמיים של שלושת היצרנים, והתשובה שונה ממה שנדמה.</p>
+    <p><b>ההבחנה החשובה אינה בין היצרנים אלא בין המשטחים.</b> אותו מוצר בדיוק מתנהג אחרת באפליקציית הדסקטופ ובדפדפן. <bdi dir="ltr">Cowork</bdi> בדסקטופ מריץ את הסוכן על המכשיר שלכם; אותו <bdi dir="ltr">Cowork</bdi> בווב מריץ אותו על שרתי <bdi dir="ltr">Anthropic</bdi>. <bdi dir="ltr">ChatGPT Work</bdi> בווב רץ בסביבה מתארחת מבודדת, ובאפליקציית הדסקטופ הוא ניגש לקבצים ולאפליקציות שבמחשב. לכן השאלה "האם הכלי הזה מקומי" היא שאלה חסרה. השאלה הנכונה היא באיזה משטח אתם עובדים ברגע הזה.</p>
+    <p><b>ובשאלה שכל שותף שואל, האם החומר שלנו מאמן את המודל:</b> בשלוש הפלטפורמות ברירת המחדל בחשבון עסקי היא שלא. <bdi dir="ltr">Anthropic</bdi> מצהירה שאינה מאמנת מודלים על קוד או על הנחיות שנשלחו תחת תנאים מסחריים, אלא אם הלקוח בחר במפורש למסור את המידע. <bdi dir="ltr">OpenAI</bdi> מצהירה שמידע מחשבונות עסקיים אינו משמש לאימון אלא אם הצטרפתם לכך במפורש. ו-<bdi dir="ltr">Google</bdi> מצהירה שב-<bdi dir="ltr">Workspace</bdi> שיחות וקבצים אינם נבדקים על ידי סוקרים אנושיים ואינם משמשים לאימון מחוץ לדומיין שלכם בלי רשותכם. בחשבון פרטי התמונה שונה, ולכן ההפרדה בין חשבון פרטי לחשבון משרדי אינה עניין של נוחות אלא של מדיניות.</p>
+  </div>
+  <div class="viz">
+    <table class="envs">
+      <tr><th>הסוכן</th><th>איפה הקובץ יושב בזמן העבודה</th><th>מה קורה כשסוגרים את המחשב</th></tr>
+      <tr><td>Claude Code בטרמינל</td>
+        <td class="yes"><b>על המחשב שלכם</b><span class="cap">"Claude Code runs locally", וכותב רק לתיקייה שממנה הופעל ולתיקיות שמתחתיה</span></td>
+        <td class="yes"><b>לא אומת</b><span class="cap">אין הצהרה רשמית. סביר שנעצר, אבל אנחנו לא כותבים מה שלא כתוב</span></td></tr>
+      <tr><td>Claude Code בווב</td>
+        <td class="yes"><b>בענן של Anthropic</b><span class="cap">התיקייה משוכפלת למכונה וירטואלית מבודדת</span></td>
+        <td class="yes"><b>ממשיך</b><span class="cap">אפשר לעקוב גם מאפליקציית המובייל</span></td></tr>
+      <tr><td>Cowork בדסקטופ</td>
+        <td class="yes"><b>על המחשב שלכם</b><span class="cap">הסוכן רץ על המכשיר; הרצת קוד בתוך מכונה וירטואלית מבודדת מקומית</span></td>
+        <td class="yes"><b>נעצר</b><span class="cap">הסשן תלוי במכשיר</span></td></tr>
+      <tr><td>Cowork בווב ובמובייל</td>
+        <td class="yes"><b>בענן של Anthropic</b><span class="cap">הסוכן והרצת הקוד רצים על שרתי Anthropic, והקבצים נשמרים בחשבון שלכם</span></td>
+        <td class="yes"><b>ממשיך, אך מאבד את הקבצים המקומיים</b><span class="cap">"the session keeps running but can't reach your local files"</span></td></tr>
+      <tr><td>Codex בטרמינל ובסביבת עריכה</td>
+        <td class="oy"><b>על המחשב שלכם</b><span class="cap">עם אכיפת בידוד מובנית של מערכת ההפעלה</span></td>
+        <td class="oy"><b>לא אומת</b><span class="cap">אין הצהרה רשמית</span></td></tr>
+      <tr><td>Codex בענן</td>
+        <td class="oy"><b>בקונטיינר של OpenAI</b><span class="cap">"preventing access to your host system or unrelated data". גישה לאינטרנט חסומה כברירת מחדל</span></td>
+        <td class="oy"><b>ממשיך</b><span class="cap">משימות ארוכות מקבלות סביבה ייעודית</span></td></tr>
+      <tr><td>ChatGPT Work</td>
+        <td class="oy"><b>תלוי משטח</b><span class="cap">בווב ובמובייל בסביבה מתארחת מבודדת של OpenAI; בדסקטופ ניגש לקבצים ולאפליקציות שבמחשב</span></td>
+        <td class="oy"><b>ממשיך בענן</b><span class="cap">אבל עבודה מקומית ב-Windows דורשת שהמחשב יישאר פתוח ומחובר</span></td></tr>
+      <tr><td>Antigravity</td>
+        <td class="gy"><b>על המחשב שלכם</b><span class="cap">בתיקיית עבודה מקומית מבודדת. כברירת מחדל קורא וכותב רק בתיקיות הפרויקט</span></td>
+        <td class="gy"><b>לא אומת</b><span class="cap">אין עמוד אבטחה רשמי נגיש למוצר</span></td></tr>
+      <tr><td>Jules</td>
+        <td class="gy"><b>במכונה וירטואלית בענן Google</b><span class="cap">"Each task runs in a fresh virtual machine"</span></td>
+        <td class="gy"><b>ממשיך</b><span class="cap">"You are free to leave Jules while it is running"</span></td></tr>
+      <tr><td>Gemini Spark</td>
+        <td class="gy"><b>במכונה ארעית בענן Google</b><span class="cap">"a fresh, strictly isolated, ephemeral VM to help ensure data never overlaps between sessions"</span></td>
+        <td class="gy"><b>ממשיך</b><span class="cap">"keeps working in the background even when you close your laptop"</span></td></tr>
+    </table>
+  </div>
+  <p class="note"><b>שני דברים שראוי להביא לוועדת הסיכונים של המשרד.</b> הראשון: אצל <bdi dir="ltr">Anthropic</bdi> קיים חליפין מפורש בין הקשחה לזמינות. ארגון שמפעיל שמירת נתונים אפסית מאבד את יכולות הענן, כלומר ההגנה החזקה יותר עולה בוויתור על סוכן שממשיך לעבוד כשהמחשב סגור. השני: <bdi dir="ltr">Anthropic</bdi> גם מזהירה בכנות שגם כשגישת הרשת מנוטרלת, הסוכן עדיין מתקשר עם השרת שלה, ולכן מידע עשוי לצאת מהסביבה המבודדת. חיפשנו הצהרה מקבילה אצל <bdi dir="ltr">OpenAI</bdi> ואצל <bdi dir="ltr">Google</bdi> ולא מצאנו, ואת זה צריך לקרוא נכון: היעדר הצהרה אינו הבטחה שהמצב שם שונה.</p>
+</section>
+
+<!-- ================= עמוד 13 ================= -->
+<section class="page" id="p13">
+  <div class="pnum">13 / 14</div>
+  <div class="kicker">לפני שלוחצים על שיתוף</div>
+  <h2>כשמשתפים עוזר עם הצוות, מי רואה מה בדיוק</h2>
+  <div class="prose">
+    <p class="lede">עוזר מותאם במשרד נבנה כמעט תמיד על חומר רגיש: נהלים פנימיים, תבניות, לפעמים מסמכי תיק. ואז משתפים אותו עם הצוות, וכאן מתגלה הבדל שלא מדובר עליו כמעט בשום מקום.</p>
+    <p><b>רק אצל <bdi dir="ltr">ChatGPT</bdi> קיימת דרגת הרשאה שמאפשרת להשתמש בעוזר בלי לראות מה בתוכו.</b> ההרשאה נקראת <bdi dir="ltr">Can chat</bdi>, ולצידה יש דרגה נפרדת שכן חושפת את ההגדרות. אצל <bdi dir="ltr">Claude</bdi> הניסוח הרשמי מפורש: חבר בפרויקט רואה את התוכן, את מאגר הידע ואת ההנחיות, גם כשאין לו הרשאת עריכה. ואצל <bdi dir="ltr">Gemini</bdi> הניסוח מפורש לא פחות: כל מי שיש לו גישה ל-<bdi dir="ltr">Gem</bdi> יכול לראות את ההנחיות ואת הקבצים שהועלו אליו. במילים פשוטות, בשתי הפלטפורמות האלה שיתוף העוזר הוא גם חשיפת מאגר הידע שבנוי בתוכו.</p>
+    <p>ולצד זה, שתי נקודות טובות לזכות <bdi dir="ltr">Claude</bdi> שכדאי להכיר: השיחות עצמן אינן משותפות. גם בפרויקט שנפתח לכל הארגון, השיחות שלכם בתוכו נשארות פרטיות אלא אם שיתפתם אותן ידנית. וכפי שראינו בעמוד 5, מנהל יכול להפיץ <bdi dir="ltr">Skill</bdi> אחד לכל המשרד בבת אחת, יכולת שלא אותרה בתיעוד הרשמי של שני האחרים.</p>
+  </div>
+  <div class="viz">
+    <table class="envs">
+      <tr><th>השאלה</th>
+        <th><span class="thw"><svg class="mk-c"><use href="#i-claude"/></svg>Claude</span></th>
+        <th><span class="thw"><svg class="mk-o"><use href="#i-openai"/></svg>ChatGPT</span></th>
+        <th><span class="thw"><svg><use href="#i-gemini"/></svg>Gemini</span></th></tr>
+      <tr><td>מי שקיבל גישה רואה את ההנחיות ואת הקבצים?</td>
+        <td class="yes"><b>כן, תמיד</b><span class="cap">גם בהרשאה הנמוכה ביותר</span></td>
+        <td class="oy"><b>אפשר למנוע</b><span class="cap">הרשאת Can chat נותנת שימוש בלי לחשוף את ההגדרות</span></td>
+        <td class="gy"><b>כן, תמיד</b><span class="cap">Google מזהירה בעצמה: אל תשתפו Gem שהעליתם אליו קבצים עם מי שאינכם רוצים שיראה אותם</span></td></tr>
+      <tr><td>השיחות של אחרים נחשפות?</td>
+        <td class="yes"><b>לא</b><span class="cap">"Chats within a project are not shared by default"</span></td>
+        <td class="oy"><b>לא</b><span class="cap">בונה ה-GPT אינו רואה שיחות של משתמשים</span></td>
+        <td class="gy"><b>לא אומת</b><span class="cap">התיעוד הרשמי אינו מתייחס לשאלה</span></td></tr>
+      <tr><td>מנהל יכול להפיץ לכל המשרד בבת אחת?</td>
+        <td class="yes"><b>כן, ל-Skills</b><span class="cap">בחשבונות צוות וארגון, ומופעל כברירת מחדל לכולם</span></td>
+        <td class="oy"><b>כן, בהרשאות מנהל</b><span class="cap">קיימות הרשאות נפרדות לפרסום Skill למרחב העבודה ולהתקנתו עבור חברים אחרים</span></td>
+        <td class="gy"><b>לא אומת</b><span class="cap">נמצא רק מתג הפעלה או כיבוי של שיתוף</span></td></tr>
+      <tr><td>מה קורה כשעורך דין עוזב את המשרד?</td>
+        <td class="yes"><b>פרויקט פרטי הופך בלתי נגיש</b><span class="cap">פרויקט ששותף לארגון נשאר. הוספה מחדש באותו אימייל משחזרת</span></td>
+        <td class="oy"><b>הבעלות עוברת אוטומטית</b><span class="cap">ה-GPT מסומן כלא משויך כדי שהבעלים יבדוק וישייך מחדש</span></td>
+        <td class="gy"><b>חל עליו נוהל Drive</b><span class="cap">ה-Gem והקבצים נשמרים בתיקיית Drive, עם העברת בעלות רגילה</span></td></tr>
+      <tr><td>שימור לצורך הליך משפטי</td>
+        <td class="yes"><b>לא אומת מוצר ייעודי</b><span class="cap">שמירה מותאמת קיימת בחשבון ארגוני</span></td>
+        <td class="oy"><b>לא אומת מוצר ייעודי</b><span class="cap">קיימת מדיניות שמירה מותאמת בחשבון ארגוני</span></td>
+        <td class="gy"><b>כן, Google Vault</b><span class="cap">כולל דף ייעודי לשימור שיחות Gemini, וכללי Vault גוברים על מחיקה</span></td></tr>
+    </table>
+  </div>
+  <p class="note"><b>עמדת Legal Mind:</b> לפני ששולחים לצוות עוזר שבנוי על נהלים פנימיים או על חומר תיק, שאלו את השאלה הראשונה בטבלה. בשתיים מהפלטפורמות התשובה היא שהמקבל רואה הכל, וזו אינה בעיה כשמדובר בעוזר לניסוח מכתבים, אבל היא כן בעיה כשמאגר הידע מכיל חומר של לקוח מסוים. ובאותה נשימה, אצל <bdi dir="ltr">Claude</bdi> באפשרות השיתוף הארגונית אין מנגנון אישור, כך שכל חבר בארגון יכול לפרסם <bdi dir="ltr">Skill</bdi> לספרייה בלי בדיקה. שתי הנקודות האלה מצדיקות נוהל פנימי אחד קצר יותר מכל תהליך רכש.</p>
+</section>
+
+<!-- ================= עמוד 14 ================= -->
+<section class="page" id="p14">
+  <div class="pnum">14 / 14</div>
+  <div class="kicker">תוקף ותאריך</div>
+  <h2>המפה זזה מתחת לרגליים. בכוונה זה העמוד האחרון</h2>
+  <div class="prose">
+    <p class="lede">אם יש דבר אחד שהאימות של המסמך הזה הוכיח, הוא שהשוק מחליף שמות מהר יותר משאנשים מספיקים ללמוד אותם. הנה מה שקרה לאחרונה, בזמן שכולם התווכחו "מי חכם יותר":</p>
+    <p>הסיפור הגדול הוא של סוכן העבודה של <bdi dir="ltr">OpenAI</bdi>, שנשא שלושה שמות בזה אחר זה: <bdi dir="ltr">Operator</bdi> נבלע לתוך <bdi dir="ltr">agent mode</bdi>, ו-<bdi dir="ltr">agent mode</bdi> הופסק לטובת <bdi dir="ltr">ChatGPT Work</bdi>. במקביל, <bdi dir="ltr">Google</bdi> סגרה את <bdi dir="ltr">Gemini CLI</bdi> למשתמשים פרטיים חודש אחרי שהכריזה על <bdi dir="ltr">Antigravity</bdi>, ושינתה את שם <bdi dir="ltr">NotebookLM</bdi>. ו-<bdi dir="ltr">OpenAI</bdi> סגרה את אפליקציית <bdi dir="ltr">Sora</bdi>, מחולל הווידאו שלה, וממשק המפתחים שלה ייסגר בספטמבר 2026. חלק מהשינויים היו שם ואריזה בלבד, וחלקם סגירות של ממש. אבל חמש הקומות של המפה לא זזו מילימטר. <b>הקומות נשארו. השמות התחלפו.</b></p>
+    <p>ולכן ההנחיה לשימוש במסמך: הקומות יציבות, השמות מתכלים. כשתשמעו שם חדש, אל תשאלו "מה זה", שאלו "איזו קומה זו". והמפה הזו תתעדכן במהדורה הבאה.</p>
+  </div>
+  <div class="viz">
+    <div class="tl">
+      <div class="tl-item ev-o"><b>ChatGPT Team הפך ל-Business</b><span class="d">אוגוסט 2025 · שינוי שם בלבד</span></div>
+      <div class="tl-item ev-o"><b>אפליקציית Sora נסגרה</b><span class="d">אפריל 2026 · ממשק המפתחים עד ספטמבר</span></div>
+      <div class="tl-item ev-g"><b>Antigravity 2.0 ו-CLI הוכרזו</b><span class="d">מאי 2026 · Google I/O</span></div>
+      <div class="tl-item ev-g"><b>Gemini CLI ו-Code Assist נסגרו למשתמשים פרטיים</b><span class="d">יוני 2026</span></div>
+      <div class="tl-item ev-o"><b>agent mode הופסק, ChatGPT Work הושק במקומו</b><span class="d">יולי 2026 · הגלגול השלישי של Operator</span></div>
+      <div class="tl-item ev-g"><b>NotebookLM הפך ל-Gemini Notebook</b><span class="d">2026</span></div>
+    </div>
+    <div class="stamp">כל עובדה נבדקה מול העמודים הרשמיים, ומה שלא נמצא בהם כתוב כאן במפורש · 3.8.2026</div>
+  </div>
+</section>
+
+<div class="footer">
+  Legal Mind · מפת ה-AI לעורכי דין · טיוטת עבודה<br>
+  המסמך אינו ייעוץ משפטי ואינו ייעוץ רכש. כל סימני המסחר שייכים לבעליהם; סמלי הפלטפורמות מופיעים לצורך זיהוי בהשוואה בלבד, ואין בכך טענה לחסות או לאישור מצד היצרנים. ההשוואה מבוססת על העמודים הרשמיים של Anthropic, OpenAI ו-Google כפי שנבדקו ב-3.8.2026; יכולות ושמות משתנים תדיר.
+</div>
+
+<script>
+(function(){
+  var links={};document.querySelectorAll('.chnav a').forEach(function(a){links[a.getAttribute('data-p')]=a});
+  var obs=new IntersectionObserver(function(es){
+    es.forEach(function(e){
+      if(e.isIntersecting){
+        document.querySelectorAll('.chnav a.on').forEach(function(x){x.classList.remove('on')});
+        var a=links[e.target.id];if(a)a.classList.add('on');
+      }
+    });
+  },{rootMargin:'-40% 0px -55% 0px'});
+  document.querySelectorAll('section.page').forEach(function(s){obs.observe(s)});
+})();
+</script>
+</body>
+</html>
