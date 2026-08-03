@@ -217,6 +217,11 @@ bdi{unicode-bidi:isolate}
   .hero-marks{gap:14px;flex-wrap:wrap}
 }
 
+/* לוגו Legal Mind, בתקן שאר מדריכי המועדון */
+.lm-brand{margin-bottom:20px}
+.lm-logo{display:inline-block;width:130px;height:auto;object-fit:contain}
+@media(max-width:610px){.lm-logo{width:110px}}
+
 /* מספר פרק גדול בראש כל עמוד */
 .chnum{position:absolute;top:34px;right:44px;font-family:'Frank Ruhl Libre',serif;
   font-size:5.2rem;font-weight:900;line-height:1;color:rgba(26,24,18,.07);direction:ltr;pointer-events:none;user-select:none}
@@ -270,7 +275,8 @@ bdi{unicode-bidi:isolate}
 <!-- ================= עמוד 1 ================= -->
 <section class="page" id="p1">
   <div class="pnum">1 / 14</div>
-  <div class="kicker">LEGAL MIND · מפת שוק, לא עוד השוואת צ'אטים</div>
+  <div class="lm-brand"><img class="lm-logo" src="assets/legal-mind-logo-tight.png" alt="לוגו Legal Mind, נורה מעל שם המותג" decoding="async"></div>
+  <div class="kicker">מפת שוק, לא עוד השוואת צ'אטים</div>
   <h1>שלוש אימפריות. אותן חמש קומות.</h1>
   <div class="hero-marks">
     <span class="hm"><svg class="mkbig mk-c"><use href="#i-claude"/></svg>Claude</span>
@@ -281,7 +287,7 @@ bdi{unicode-bidi:isolate}
   <div class="prose">
     <p class="lede">אם אתם חברי הקהילה של <bdi dir="ltr">LEGAL MIND</bdi>, אתם כנראה כבר עובדים עם <bdi dir="ltr">Claude</bdi>. ואז, בפגישה או בכנס, מישהו מזכיר <bdi dir="ltr">Codex</bdi>, מישהי מספרת שבנתה <bdi dir="ltr">Gem</bdi>, ובעיתונות מדווחים על סוכן חדש של <bdi dir="ltr">OpenAI</bdi>. השמות מתרבים מהר מהיכולת לעקוב, וקשה לדעת מה מקביל למה שכבר יש לכם ומה באמת חדש.</p>
     <p>המסמך הזה עושה סדר בדרך אחת פשוטה: <b>הוא מפסיק להשוות מותגים ומתחיל להשוות קומות.</b> שלוש החברות הגדולות, <bdi dir="ltr">Anthropic</bdi>, <bdi dir="ltr">OpenAI</bdi> ו-<bdi dir="ltr">Google</bdi>, בנו כל אחת מגדל של חמש קומות: שיחה, עוזר מותאם אישית, סוכן קוד, סוכן עבודה, ומחקר עמוק. השמות שונים, הקומות זהות. ומרגע שמחזיקים את המפה, כל שם חדש מתיישב במקומו בשנייה.</p>
-    <p>מה לא תמצאו כאן: דירוגי "מי חכם יותר", בנצ'מרקים והשוואות מחירים. אלה משתנים בכל חודש, והם כמעט אף פעם לא השאלה הנכונה למשרד. מה שכן תמצאו: מה כל מוצר עושה בפועל, מה המקבילה שלו אצל המתחרים, ומה כן שונה באמת. וכן, כתוב כאן גם מה זמין בחשבון עסקי ומה רק בחשבון יחיד, ומה נמצא בבטא או בתצוגה מקדימה. אלה לא שאלות של מחיר, אלה שאלות של מה יעבוד אצלכם מחר.</p>
+    <p>מה לא תמצאו כאן: דירוגי "מי חכם יותר", מבחני ביצועים והשוואות מחירים. אלה משתנים בכל חודש, והם כמעט אף פעם לא השאלה הנכונה למשרד. מה שכן תמצאו: מה כל מוצר עושה בפועל, מה המקבילה שלו אצל המתחרים, ומה כן שונה באמת. וכן, כתוב כאן גם מה זמין בחשבון עסקי ומה רק בחשבון יחיד, ומה נמצא בבטא או בתצוגה מקדימה. אלה לא שאלות של מחיר, אלה שאלות של מה יעבוד אצלכם מחר.</p>
   </div>
   <div class="stack">
     <div class="slab"><span class="sl-name">מחקר עמוק<small>קומה 5</small></span><span class="sl-marks"><svg class="mk-c"><use href="#i-claude"/></svg><svg class="mk-o"><use href="#i-openai"/></svg><svg><use href="#i-gemini"/></svg></span></div>
