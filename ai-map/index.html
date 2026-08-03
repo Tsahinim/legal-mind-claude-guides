@@ -210,9 +210,19 @@ bdi{unicode-bidi:isolate}
   .mcell b{font-size:.74rem}.mcell small{display:none}
   .map .floor .fl-s{display:none}
   .map-head{font-size:.8rem;gap:5px}.map-head small{display:none}.map-head svg{width:15px;height:15px}
-  .dict td,.envs td{padding:8px 6px;font-size:.72rem}
-  .dict small{display:none}
-  .viz{padding:18px}
+  /* טבלאות ההשוואה במובייל: גלילה אמיתית במקום חיתוך, וטיפוגרפיה שנשארת קריאה */
+  .viz{padding:18px;overflow-x:auto;-webkit-overflow-scrolling:touch;position:relative}
+  .viz:has(table)::after{content:"אפשר לגלול את הטבלה לצדדים";display:block;font-size:.72rem;color:var(--muted);padding-top:10px;text-align:center;font-weight:600}
+  .dict,.envs{min-width:600px}
+  .envs th,.dict th{font-size:1.02rem}
+  .envs th:first-child,.dict th:first-child{font-size:.86rem;width:24%}
+  .envs th svg,.dict th svg{width:17px;height:17px}
+  .envs td{padding:9px 8px;width:25%}
+  .envs td b{font-size:.9rem}
+  .envs .cap{font-size:.78rem;line-height:1.4}
+  .dict td{padding:9px 8px;font-size:.88rem}
+  .dict td:first-child,.envs td:first-child{font-size:.84rem;width:24%}
+  .dict small{font-size:.74rem}
   .stack .slab{padding:11px 14px}
   .hero-marks{gap:14px;flex-wrap:wrap}
 }
