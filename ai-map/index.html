@@ -213,7 +213,7 @@ bdi{unicode-bidi:isolate}
   .map-head{font-size:.8rem;gap:5px}.map-head small{display:none}.map-head svg{width:15px;height:15px}
   /* טבלאות ההשוואה במובייל: גלילה אמיתית במקום חיתוך, וטיפוגרפיה שנשארת קריאה */
   .viz{padding:18px;overflow-x:auto;-webkit-overflow-scrolling:touch;position:relative}
-  .viz:has(table)::before,.viz:has(.map)::before{content:"↔  גררו את הטבלה הצידה כדי לראות את כל העמודות";display:block;font-size:.78rem;color:var(--claude-ink);background:var(--claude-tint);border-radius:9px;padding:8px 10px;margin-bottom:12px;text-align:center;font-weight:700;position:sticky;right:0}
+    .viz .scrollhint{display:block}
   .dict,.envs{min-width:600px}
   .envs th,.dict th{font-size:1.02rem}
   .envs th:first-child,.dict th:first-child{font-size:.86rem;width:24%}
@@ -227,6 +227,11 @@ bdi{unicode-bidi:isolate}
   .stack .slab{padding:11px 14px}
   .hero-marks{gap:14px;flex-wrap:wrap}
 }
+
+/* רמז גלילה, מוצג רק במובייל. אלמנט אמיתי ולא סלקטור מודרני, כדי שיעבוד בכל דפדפן */
+.scrollhint{display:none;font-size:.8rem;color:var(--claude-ink);background:var(--claude-tint);
+  border:1px solid rgba(217,119,87,.35);border-radius:10px;padding:9px 12px;margin-bottom:12px;
+  text-align:center;font-weight:700;position:sticky;right:0}
 
 /* לוגו Legal Mind, בתקן שאר מדריכי המועדון */
 .lm-brand{margin-bottom:20px}
@@ -324,6 +329,7 @@ bdi{unicode-bidi:isolate}
     <p>שימו לב לקומת הקוד אצל <bdi dir="ltr">Google</bdi>: התפקיד מחולק שם בין שני מוצרים נפרדים, <bdi dir="ltr">Antigravity</bdi> שרץ על המחשב ו-<bdi dir="ltr">Jules</bdi> שרץ בענן, בלי שם אחד שמאחד אותם. אצל שני היצרנים האחרים מוצר אחד עושה את שניהם. ועוד דבר ששווה לדעת: שכבת נהלים בשם <bdi dir="ltr">Skills</bdi> קיימת היום אצל שלושת היצרנים, ואצל כולם כותבים אותה באותו מבנה. ההבדל הוא בטווח: אצל <bdi dir="ltr">Claude</bdi> היא עובדת בכל המוצרים, אצל <bdi dir="ltr">ChatGPT</bdi> בצ'אט וב-<bdi dir="ltr">Codex</bdi>, ואצל <bdi dir="ltr">Google</bdi> רק בתוך <bdi dir="ltr">Spark</bdi>. פירוט בעמוד 5. וחשוב לא פחות: <b>הקומות יציבות הרבה יותר מהשמות.</b> מוצרים החליפו כאן שם השנה יותר מפעם אחת, אבל אף יצרן לא ויתר על קומה.</p>
   </div>
   <div class="viz">
+    <div class="scrollhint">↔ גררו את המפה הצידה כדי לראות את כל העמודות</div>
     <div class="map">
       <div class="tower tw-c">
         <div class="map-head"><svg class="mk-c" style="width:21px;height:21px"><use href="#i-claude"/></svg>Claude <small>Anthropic</small></div>
@@ -371,6 +377,7 @@ bdi{unicode-bidi:isolate}
     <p>דוגמה מהחיים: קולגה מספר בהתלהבות שהמשרד שלו "בנה <bdi dir="ltr">GPT</bdi> שמכיר את כל הנהלים". מחפשים את <bdi dir="ltr">GPT</bdi> בטבלה ומוצאים אותו בשורה השנייה: עוזר שמכיר את התיק. ובאותה שורה יושבים גם שני השמות האחרים לאותו תפקיד, <bdi dir="ltr">Projects</bdi> עם <bdi dir="ltr">Skills</bdi> ו-<bdi dir="ltr">Gem</bdi>. עכשיו אתם יודעים גם מה הוא בנה, וגם מה השם של אותו דבר בכלי שאתם עובדים אתו. פתאום השיחה לא מאיימת, היא מקצועית.</p>
   </div>
   <div class="viz">
+    <div class="scrollhint">↔ גררו את הטבלה הצידה כדי לראות את כל העמודות</div>
     <table class="dict">
       <tr><th>כשמדברים על...</th>
         <th><span class="thw"><svg class="mk-c"><use href="#i-claude"/></svg>Claude</span></th>
@@ -399,6 +406,7 @@ bdi{unicode-bidi:isolate}
     <p><b>ועוד עובדה יומיומית: מסמך שיש בו יותר מטקסט.</b> תצהיר עם חותמת, נסח עם טבלה, מסמך שהגיע כתמונה. וכאן נאמר קודם כל מה שאיננו יודעים: <b>אף אחד משלושת היצרנים אינו מתעד במפורש איך הוא מטפל במסמך סרוק או האם הוא מפעיל זיהוי תווים.</b> בדקנו את שלושתם וחיפשנו את המילים האלה, ולא מצאנו. מה שכן מתועד: <bdi dir="ltr">Claude</bdi> מנתח גם את הרכיבים הוויזואליים בעמוד, כלומר תמונות, תרשימים וגרפיקה, בקבצים של עד מאה עמודים; מעבר לכך הוא עובר לטקסט בלבד. אצל <bdi dir="ltr">ChatGPT</bdi> קיימת יכולת בשם <bdi dir="ltr">Visual Retrieval</bdi> שמעבדת את התמונות שבתוך הקובץ לצד הטקסט, והתיעוד משייך אותה לחשבונות ארגוניים; בשאר החשבונות הכלי מחלץ טקסט דיגיטלי ומשליך את התמונות. ומה ששניהם אומרים במפורש: תמונה שמוטמעת בתוך קובץ <bdi dir="ltr">Word</bdi> אינה נקראת, וההמלצה הרשמית היא להמיר ל-<bdi dir="ltr">PDF</bdi> לפני ההעלאה.</p>
   </div>
   <div class="viz">
+    <div class="scrollhint">↔ גררו את הטבלה הצידה כדי לראות את כל העמודות</div>
     <table class="envs">
       <tr><th>מה קורה כש...</th>
         <th><span class="thw"><svg class="mk-c"><use href="#i-claude"/></svg>Claude</span></th>
@@ -438,6 +446,7 @@ bdi{unicode-bidi:isolate}
     <p>ועוד הבדל שהמשרד מרגיש ביום הראשון, ולא כולם שמים לב אליו: <b>מה בדיוק רואה מי שקיבל מכם את העוזר.</b> אצל <bdi dir="ltr">Claude</bdi> ואצל <bdi dir="ltr">Gemini</bdi> התיעוד הרשמי מפורש, מי שיש לו גישה רואה גם את ההנחיות וגם את הקבצים. אצל <bdi dir="ltr">ChatGPT</bdi> יש דרגת הרשאה שמאפשרת שימוש בלי לחשוף אותם. הרחבנו על כך בעמוד 13.</p>
   </div>
   <div class="viz">
+    <div class="scrollhint">↔ גררו את הטבלה הצידה כדי לראות את כל העמודות</div>
     <table class="envs">
       <tr><th>קומה 2, מוצר מול מוצר</th>
         <th><span class="thw"><svg class="mk-c"><use href="#i-claude"/></svg>Claude</span></th>
@@ -483,6 +492,7 @@ bdi{unicode-bidi:isolate}
     <p><b>אצל <bdi dir="ltr">Google</bdi> הקומה עברה רעידת אדמה ביוני 2026.</b> ב-18 ביוני הפסיקו <bdi dir="ltr">Gemini CLI</bdi> ו-<bdi dir="ltr">Code Assist</bdi> לשרת משתמשים פרטיים, ו-<bdi dir="ltr">Google</bdi> מפנה יחידים למוצר בשם <bdi dir="ltr">Antigravity</bdi>, שהושק בנובמבר 2025 וגרסת 2.0 שלו הוכרזה ב-<bdi dir="ltr">I/O</bdi> במאי 2026: אפליקציית דסקטופ, סביבת עריכה, טרמינל וכלים למתכנתים. לצידו פועל <bdi dir="ltr">Jules</bdi>, סוכן שחי בענן. הוא מקבל משימה על תיקיית פרויקט שנשמרת ב-<bdi dir="ltr">GitHub</bdi>, שירות ענן מקובל אצל מתכנתים, וחוזר עם תוצר. מספר המשימות שלו ליום מוגבל. המשמעות המעשית: מי ששמע פעם "תתקין <bdi dir="ltr">Gemini CLI</bdi>" צריך לדעת שהשירות ליחידים נסגר, וזו תזכורת חיה לעמוד 14.</p>
   </div>
   <div class="viz">
+    <div class="scrollhint">↔ גררו את הטבלה הצידה כדי לראות את כל העמודות</div>
     <table class="envs">
       <tr><th>איפה הסוכן רץ</th>
         <th><span class="thw"><svg class="mk-c"><use href="#i-claude"/></svg>Claude Code</span></th>
@@ -614,6 +624,7 @@ bdi{unicode-bidi:isolate}
     <p>הטבלה הבאה היא בדיוק בשביל הרגע שבו מישהו מנופף באחת מהיכולות האלה כסיבה לעבור ליצרן אחר. התשובה הנכונה היא שהיא קיימת גם אצלכם, ושהשאלה האמיתית אינה אם קיים אלא באיזה היקף, באיזו נוחות, ובאיזה סוג חשבון.</p>
   </div>
   <div class="viz">
+    <div class="scrollhint">↔ גררו את הטבלה הצידה כדי לראות את כל העמודות</div>
     <table class="envs">
       <tr><th>יכולת שמדברים עליה</th>
         <th><span class="thw"><svg class="mk-c"><use href="#i-claude"/></svg>Claude</span></th>
@@ -695,6 +706,7 @@ bdi{unicode-bidi:isolate}
     <p><b>ובשאלה שכל שותף שואל, האם החומר שלנו מאמן את המודל:</b> בשלוש הפלטפורמות ברירת המחדל בחשבון עסקי היא שלא. <bdi dir="ltr">Anthropic</bdi> מצהירה שאינה מאמנת מודלים על קוד או על הנחיות שנשלחו תחת תנאים מסחריים, אלא אם הלקוח בחר במפורש למסור את המידע. <bdi dir="ltr">OpenAI</bdi> מצהירה שמידע מחשבונות עסקיים אינו משמש לאימון אלא אם הצטרפתם לכך במפורש. ו-<bdi dir="ltr">Google</bdi> מצהירה שב-<bdi dir="ltr">Workspace</bdi> שיחות וקבצים אינם נבדקים על ידי סוקרים אנושיים ואינם משמשים לאימון מחוץ לדומיין שלכם בלי רשותכם. בחשבון פרטי התמונה שונה, ולכן ההפרדה בין חשבון פרטי לחשבון משרדי אינה עניין של נוחות אלא של מדיניות.</p>
   </div>
   <div class="viz">
+    <div class="scrollhint">↔ גררו את הטבלה הצידה כדי לראות את כל העמודות</div>
     <table class="envs">
       <tr><th>הסוכן</th><th>איפה הקובץ יושב בזמן העבודה</th><th>מה קורה כשסוגרים את המחשב</th></tr>
       <tr><td>Claude Code בטרמינל</td>
@@ -749,6 +761,7 @@ bdi{unicode-bidi:isolate}
     <p>ולצד זה, שתי נקודות טובות לזכות <bdi dir="ltr">Claude</bdi> שכדאי להכיר: השיחות עצמן אינן משותפות. גם בפרויקט שנפתח לכל הארגון, השיחות שלכם בתוכו נשארות פרטיות אלא אם שיתפתם אותן ידנית. וכפי שראינו בעמוד 5, מנהל יכול להפיץ <bdi dir="ltr">Skill</bdi> אחד לכל המשרד בבת אחת, יכולת שלא אותרה בתיעוד הרשמי של שני האחרים.</p>
   </div>
   <div class="viz">
+    <div class="scrollhint">↔ גררו את הטבלה הצידה כדי לראות את כל העמודות</div>
     <table class="envs">
       <tr><th>השאלה</th>
         <th><span class="thw"><svg class="mk-c"><use href="#i-claude"/></svg>Claude</span></th>
