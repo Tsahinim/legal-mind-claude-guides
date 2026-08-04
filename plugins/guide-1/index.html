@@ -22,7 +22,7 @@
 <dl class="facts">
 <div><dt>תוצר הלמידה</dt><dd>תבינו מה זה <bdi dir="ltr">Plugin</bdi> ותדעו להתקין אחד, בפועל.</dd></div>
 <div><dt>ידע מוקדם</dt><dd>מומלץ להכיר קודם את מדריך ה-<bdi dir="ltr">Skills</bdi>, אבל לא חובה.</dd></div>
-<div><dt>מבנה</dt><dd>6 פרקים</dd></div>
+<div><dt>מבנה</dt><dd>7 פרקים</dd></div>
 <div><dt>זמן משוער</dt><dd>כ-16 דקות קריאה</dd></div>
 </dl>
 </header>
@@ -33,7 +33,8 @@
 <li><a href="#why-plugin"><span>03</span>למה בכלל להתקין Plugin אם כבר יש Skills</a></li>
 <li><a href="#sources"><span>04</span>מאיפה אפשר להתקין Plugin, לא רק מ-Anthropic</a></li>
 <li><a href="#install"><span>05</span>איך מתקינים <bdi dir="ltr">Plugin</bdi>, צעד אחר צעד</a></li>
-<li><a href="#build-custom"><span>06</span>אפשר גם לבנות Plugin מותאם אישית למשרד</a></li>
+<li><a href="#admin-control"><span>06</span>מי בכלל שולט על ה-Plugin: ההתקנה האישית מול בקרת הארגון</a></li>
+<li><a href="#build-custom"><span>07</span>אפשר גם לבנות Plugin מותאם אישית למשרד</a></li>
 </ol></details></nav>
 
 <div class="layout">
@@ -132,7 +133,7 @@
 </section>
 
 <section class="guide-section" id="install">
-<p class="section-number">04</p>
+<p class="section-number">05</p>
 <h2>איך מתקינים <bdi dir="ltr">Plugin</bdi>, צעד אחר צעד</h2>
 <p>כדי שההסבר הזה לא יישאר תיאורטי, נתקין עכשיו ביחד <bdi dir="ltr">Plugin</bdi> אמיתי וספציפי: <bdi dir="ltr">Plugin</bdi> בשם <bdi dir="ltr">Legal</bdi>, שבו יעסוק כל מדריך 2 בסדרה הזאת.</p>
 <p>ארבעה שלבים, בלי לדלג על אף אחד מהם, כולל השלב הראשון של פתיחת התפריט עצמו.</p>
@@ -193,8 +194,33 @@
 </figure>
 </section>
 
+<section class="guide-section" id="admin-control">
+<p class="section-number">06</p>
+<h2>מי בכלל שולט על ה-Plugin: ההתקנה האישית מול בקרת הארגון</h2>
+<p>כל מה שעשינו בפרק הקודם היה פעולה אישית: אתם, כעורכי דין בודדים, נכנסתם ל-Customize שלכם והתקנתם Plugin לעצמכם. אבל יש שכבת שליטה נוספת, נפרדת לגמרי, שרוב עורכי הדין בכלל לא ניגשים אליה: מסך ניהול ברמת הארגון כולו, שנמצא אצל מי שמנהל את חשבון המשרד (מנהל המערכת או מנהל ה-IT), לא אצל העורך דין הבודד.</p>
+
+<h3>איפה נמצא המסך הזה</h3>
+<p>הגישה אליו שונה לגמרי מהגישה ל-Customize האישי שלכם. בתפריט הצד, מתחת לאזור ה-Customize, יש קישור נפרד בשם הארגון שלכם (למשל שם המשרד), ולידו חץ שמוביל החוצה. לחיצה עליו פותחת עמוד נפרד לגמרי, "Admin settings", שרק למי שיש לו הרשאות ניהול בחשבון יש אליו גישה בכלל. בתוך העמוד הזה, תחת הכותרת "Libraries &amp; Access" בתפריט הצד, יש קישור בשם Plugins, שמוביל לרשימת כל ה-Plugins הזמינים לארגון כולו.</p>
+
+<h3>ארבעה מצבים שמנהל המערכת יכול לקבוע לכל Plugin</h3>
+<p>ליד כל Plugin ברשימה יש תפריט נפתח, עם ארבע אפשרויות:</p>
+<ul>
+<li><strong><bdi dir="ltr">Available to install</bdi>:</strong> ה-Plugin מופיע בקטלוג ההתקנה הרגיל, וכל עורך דין במשרד יכול להתקין או להסיר אותו בעצמו, בכל זמן שירצה. זה המצב שבו בדקנו את ה-Legal Plugin לאורך המדריך הזה.</li>
+<li><strong><bdi dir="ltr">Installed by default</bdi>:</strong> ה-Plugin כבר מותקן מראש אצל כולם, בלי שאף אחד היה צריך לעבור את התהליך שהראינו בפרק הקודם. כל עורך דין עדיין יכול לכבות או להסיר אותו בעצמו אם הוא לא רוצה בו.</li>
+<li><strong><bdi dir="ltr">Not available</bdi>:</strong> ה-Plugin מוסתר לגמרי מהקטלוג. אף עורך דין במשרד לא יראה אותו ולא יוכל להתקין אותו, גם אם ינסה לחפש אותו בעצמו.</li>
+<li><strong><bdi dir="ltr">Required</bdi>:</strong> ה-Plugin מותקן קבוע אצל כולם, וגם נעול. אי אפשר לכבות אותו או להסיר אותו ברמת המשתמש הבודד.</li>
+</ul>
+
+<h3>למה זה חשוב לדעת, גם אם אתם לא מנהלי המערכת</h3>
+<p>אם ניסיתם לעקוב אחרי פרק ההתקנה הקודם, ומצאתם שהמסך אצלכם נראה אחרת (Legal כבר מותקן ומחכה לכם, או שהוא לא מופיע בקטלוג בכלל), הסיבה כנראה נמצאת כאן: מישהו במשרד שלכם, שיש לו הרשאות ניהול, כבר קבע מראש איך ה-Plugin הזה מתנהג עבור כולם. זו אינה תקלה במדריך; זו בדיוק ההשפעה של המסך הזה. אם המצב אצלכם שונה ממה שהראינו, שווה לברר מול מנהל המערכת של המשרד מה בדיוק נקבע ולמה.</p>
+<aside class="content-box info">
+<h3>בבדיקה שביצענו</h3>
+<p>בעת כתיבת המדריך הזה, ה-Legal Plugin היה מוגדר במסך הארגוני כ-Available to install, כלומר ללא הגבלה: לא מותקן בכפייה ולא חסום. כל עורך דין שקרא את פרק ההתקנה הקודם והתקין אותו לבד, עשה בדיוק את מה שהוגדר לו שמותר לעשות.</p>
+</aside>
+</section>
+
 <section class="guide-section" id="build-custom">
-<p class="section-number">05</p>
+<p class="section-number">07</p>
 <h2>אפשר גם לבנות Plugin מותאם אישית למשרד</h2>
 <p>מי שרוצה יותר משליטה על Skill בודד יכול לבנות Plugin משלו, בדיוק כמו שבניתם Skill מותאם אישית במדריך הקודם. כפי שראיתם בפרק 4, לחיצה על הכפתור <bdi dir="ltr">Add</bdi> ואז על האפשרות <bdi dir="ltr">Create with Claude</bdi> פותחת שיחה חדשה שכבר מתחילה במשפט <bdi dir="ltr">Help me create a new plugin</bdi>, ומשם ממשיכים בדיוק כמו בתהליך בניית Skill מותאם אישית שכבר הכרתם.</p>
 <aside class="content-box info">
@@ -218,7 +244,8 @@
 <li><a href="#why-plugin"><span>03</span>למה בכלל להתקין Plugin אם כבר יש Skills</a></li>
 <li><a href="#sources"><span>04</span>מאיפה אפשר להתקין Plugin, לא רק מ-Anthropic</a></li>
 <li><a href="#install"><span>05</span>איך מתקינים <bdi dir="ltr">Plugin</bdi>, צעד אחר צעד</a></li>
-<li><a href="#build-custom"><span>06</span>אפשר גם לבנות Plugin מותאם אישית למשרד</a></li>
+<li><a href="#admin-control"><span>06</span>מי בכלל שולט על ה-Plugin: ההתקנה האישית מול בקרת הארגון</a></li>
+<li><a href="#build-custom"><span>07</span>אפשר גם לבנות Plugin מותאם אישית למשרד</a></li>
 </ol></aside>
 </div>
 
