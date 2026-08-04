@@ -200,7 +200,33 @@
 <p>כל מה שעשינו בפרק הקודם היה פעולה אישית: אתם, כעורכי דין בודדים, נכנסתם ל-Customize שלכם והתקנתם Plugin לעצמכם. אבל יש שכבת שליטה נוספת, נפרדת לגמרי, שרוב עורכי הדין בכלל לא ניגשים אליה: מסך ניהול ברמת הארגון כולו, שנמצא אצל מי שמנהל את חשבון המשרד (מנהל המערכת או מנהל ה-IT), לא אצל העורך דין הבודד.</p>
 
 <h3>איפה נמצא המסך הזה</h3>
-<p>הגישה אליו שונה לגמרי מהגישה ל-Customize האישי שלכם. בתפריט הצד, מתחת לאזור ה-Customize, יש קישור נפרד בשם הארגון שלכם (למשל שם המשרד), ולידו חץ שמוביל החוצה. לחיצה עליו פותחת עמוד נפרד לגמרי, "Admin settings", שרק למי שיש לו הרשאות ניהול בחשבון יש אליו גישה בכלל. בתוך העמוד הזה, תחת הכותרת "Libraries &amp; Access" בתפריט הצד, יש קישור בשם Plugins, שמוביל לרשימת כל ה-Plugins הזמינים לארגון כולו.</p>
+<p>הגישה אליו שונה לגמרי מהגישה ל-Customize האישי שלכם, ויש אליו שתי דרכים אפשריות. הדרך הראשונה: בתפריט הצד, מתחת לאזור ה-Customize, יש קישור נפרד בשם הארגון שלכם (למשל שם המשרד), ולידו חץ שמוביל החוצה. הדרך השנייה, מהירה יותר: לוחצים על השם שלכם למטה בפינת המסך, ובתפריט שנפתח בוחרים <bdi dir="ltr">Organization settings</bdi> ישירות.</p>
+<figure class="shot" style="max-width:360px;">
+<div class="shot-frame" style="aspect-ratio:361/372;">
+<img alt="מסך הבית של Claude, עם כפתור Customize בתפריט הצד" loading="lazy" src="assets/screens/g1-06-org-link.png"/>
+<div class="shot-target" style="left:2%; top:87%; width:96%; height:10%;">
+<span class="shot-target-badge">1</span>
+</div>
+</div>
+<ol class="shot-legend"><li><b>1</b><span>גם דרך Customize וגם דרך התפריט האישי, שתי הדרכים מובילות לאותו מקום.</span></li></ol>
+</figure>
+<p>בשתי הדרכים מגיעים לאותו עמוד נפרד לגמרי, "Admin settings", שרק למי שיש לו הרשאות ניהול בחשבון יש אליו גישה בכלל. בתוך העמוד הזה, תחת הכותרת "Libraries &amp; Access" בתפריט הצד, יש קישור בשם Plugins, שמוביל לרשימת כל ה-Plugins הזמינים לארגון כולו.</p>
+<figure class="shot" style="max-width:620px;">
+<div class="shot-frame" style="aspect-ratio:1902/1034;">
+<img alt="עמוד Admin settings, עם קישור Plugins תחת הכותרת Libraries and Access בתפריט הצד" loading="lazy" src="assets/screens/g1-07-admin-plugins-nav.png"/>
+<div class="shot-target badge-right" style="left:0.8%; top:64%; width:6%; height:3%;">
+<span class="shot-target-badge">2</span>
+</div>
+</div>
+<ol class="shot-legend"><li><b>2</b><span>הקישור Plugins, תחת הכותרת Libraries &amp; Access. אם קשה למצוא אותו, אפשר גם לחפש בדף עם Ctrl+F.</span></li></ol>
+</figure>
+<p>לחיצה על הקישור פותחת את רשימת ה-Plugins של הארגון כולו, עם קטלוג "By Anthropic &amp; Partners" ובו כל ה-Plugins הרשמיים, כולל Legal.</p>
+<figure class="shot" style="max-width:620px;">
+<div class="shot-frame" style="aspect-ratio:1919/1024;">
+<img alt="רשימת ה-Plugins הארגוניים, עם עמודת User access לכל אחד" loading="lazy" src="assets/screens/g1-08-admin-plugins-list.png"/>
+</div>
+<figcaption><p class="shot-caption">רשימת כל ה-Plugins הזמינים לארגון, עם מצב הגישה הנוכחי של כל אחד.</p></figcaption>
+</figure>
 
 <h3>ארבעה מצבים שמנהל המערכת יכול לקבוע לכל Plugin</h3>
 <p>ליד כל Plugin ברשימה יש תפריט נפתח, עם ארבע אפשרויות:</p>
@@ -210,6 +236,12 @@
 <li><strong><bdi dir="ltr">Not available</bdi>:</strong> ה-Plugin מוסתר לגמרי מהקטלוג. אף עורך דין במשרד לא יראה אותו ולא יוכל להתקין אותו, גם אם ינסה לחפש אותו בעצמו.</li>
 <li><strong><bdi dir="ltr">Required</bdi>:</strong> ה-Plugin מותקן קבוע אצל כולם, וגם נעול. אי אפשר לכבות אותו או להסיר אותו ברמת המשתמש הבודד.</li>
 </ul>
+<figure class="shot" style="max-width:560px;">
+<div class="shot-frame" style="aspect-ratio:1058/416;">
+<img alt="התפריט הנפתח ליד השורה Legal, עם ארבע האפשרויות ותיאור קצר לכל אחת" loading="lazy" src="assets/screens/g1-09-plugin-access-dropdown.png"/>
+</div>
+<figcaption><p class="shot-caption">כך נראה התפריט בפועל: ארבע האפשרויות, כל אחת עם הסבר קצר משלה.</p></figcaption>
+</figure>
 
 <h3>למה זה חשוב לדעת, גם אם אתם לא מנהלי המערכת</h3>
 <p>אם ניסיתם לעקוב אחרי פרק ההתקנה הקודם, ומצאתם שהמסך אצלכם נראה אחרת (Legal כבר מותקן ומחכה לכם, או שהוא לא מופיע בקטלוג בכלל), הסיבה כנראה נמצאת כאן: מישהו במשרד שלכם, שיש לו הרשאות ניהול, כבר קבע מראש איך ה-Plugin הזה מתנהג עבור כולם. זו אינה תקלה במדריך; זו בדיוק ההשפעה של המסך הזה. אם המצב אצלכם שונה ממה שהראינו, שווה לברר מול מנהל המערכת של המשרד מה בדיוק נקבע ולמה.</p>
