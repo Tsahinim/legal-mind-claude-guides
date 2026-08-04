@@ -42,6 +42,12 @@ bdi{unicode-bidi:isolate}
 /* עמוד 1 */
 .hero-marks{display:flex;gap:26px;align-items:center;margin:26px 0 6px}
 .hero-marks .hm{display:flex;align-items:center;gap:9px;font-weight:800;color:var(--ink);font-size:1.05rem;direction:ltr}
+/* דסקטופ בלבד: מותחים את שורת הסמלים לרוחב הכותרת ומגדילים אותה בהתאם. המובייל אינו מושפע */
+@media(min-width:861px){
+  .hero-marks{max-width:684px;justify-content:space-between;gap:0;margin-top:30px}
+  .hero-marks .mkbig{width:46px;height:46px}
+  .hero-marks .hm{font-size:1.42rem;gap:12px}
+}
 .stack{margin-top:34px}
 .slab{background:var(--card);border:1px solid var(--hair);border-radius:14px;box-shadow:var(--shadow);
   display:flex;align-items:center;justify-content:space-between;padding:13px 22px;margin-bottom:10px;max-width:640px}
