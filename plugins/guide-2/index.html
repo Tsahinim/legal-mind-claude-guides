@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width,initial-scale=1" name="viewport"/>
-<meta content="מדריך 2: סקירה מעמיקה של "<bdi dir="ltr">Legal Plugin</bdi>" של Anthropic, איך מפעילים בו פקודה, איך לגרום לו לזכור נוהלי משרד, מתי ניסוח משנה התנהגות, דוגמאות מוכנות ומה לא נכלל." name="description"/>
+<meta content="מדריך 2: סקירה מעמיקה של Legal Plugin של Anthropic, איך מפעילים בו פקודה, איך לגרום לו לזכור נוהלי משרד, מתי ניסוח משנה התנהגות, דוגמאות מוכנות ומה לא נכלל." name="description"/>
 <title>"<bdi dir="ltr">Legal Plugin</bdi>" של <bdi dir="ltr">Anthropic</bdi> (בקלוד): שימוש נכון ומגבלות | Legal Mind</title>
 <link href="assets/site.css" rel="stylesheet"/>
 <script defer="" src="assets/site.js"></script>
@@ -146,8 +146,18 @@
 </ol>
 <p>השלב האחרון הזה קריטי: אם ממשיכים להקליד בלי ללחוץ בפועל על ההצעה מהרשימה, הפקודה עלולה להישאר טקסט רגיל, ולא להיקלט ככלי פעיל בכלל.</p>
 <p>איך יודעים שהפקודה נקלטה בהצלחה: ברגע שלוחצים על ההצעה מהרשימה, שם הפקודה בתוך תיבת הכתיבה משתנה. הוא מפסיק להיות טקסט רגיל בצבע שחור, והופך למילה מודגשת בצבע שונה, בדומה לקישור. זהו הסימן הברור והחד-משמעי לכך שהפקודה אכן נקלטה, ואפשר להמשיך.</p>
-<figure class="shot"><div class="shot-frame"><div style="padding:40px;text-align:center;color:#888;border:2px dashed #ccc;">מקום לצילום מסך: מסך השיחה המלא של Claude, כולל תפריט הצד, עם תיבת הכתיבה בתחתית ובה מוקלד הסימן /, והרשימה הנפתחת של הפקודות הזמינות מוצגת מעליה.</div></div><figcaption><p class="shot-caption">הרשימה שנפתחת ברגע שמקלידים את הסימן / בתיבת הכתיבה.</p></figcaption></figure>
-<figure class="shot"><div class="shot-frame"><div style="padding:40px;text-align:center;color:#888;border:2px dashed #ccc;">מקום לצילום מסך: מסך השיחה המלא של Claude, כולל תפריט הצד, עם תיבת הכתיבה בתחתית ובה פקודה שכבר נבחרה מהרשימה, ושם הפקודה מודגש בצבע שונה מהטקסט הרגיל שלידו.</div></div><figcaption><p class="shot-caption">כך נראית פקודה שנקלטה בהצלחה: מודגשת ובצבע שונה, לעומת טקסט רגיל.</p></figcaption></figure>
+<figure class="shot" style="max-width:460px;">
+<div class="shot-frame" style="aspect-ratio:838/514;">
+<img alt="הרשימה הנפתחת בתיבת הכתיבה עם הסימן /, מציגה את הפקודות הזמינות תחת הקבוצה Legal" loading="lazy" src="assets/screens/g2-00-slash-list.png"/>
+</div>
+<figcaption><p class="shot-caption">הרשימה שנפתחת ברגע שמקלידים את הסימן / בתיבת הכתיבה, עם הפקודות מקובצות תחת הכותרת Legal.</p></figcaption>
+</figure>
+<figure class="shot" style="max-width:460px;">
+<div class="shot-frame" style="aspect-ratio:858/231;">
+<img alt="תיבת הכתיבה עם הפקודה triage-nda שנבחרה, מודגשת בכחול" loading="lazy" src="assets/screens/g2-00-command-selected.png"/>
+</div>
+<figcaption><p class="shot-caption">כך נראית פקודה שנקלטה בהצלחה: מודגשת בכחול, לעומת טקסט רגיל.</p></figcaption>
+</figure>
 
 <h3>כותבים את הבקשה עצמה, ואז שולחים</h3>
 <p>אחרי שהפקודה הופיעה כמילה מודגשת, ממשיכים להקליד באותה תיבת כתיבה, ממש אחרי הפקודה, את הבקשה במילים רגילות: מה בדיוק רוצים שהכלי יעשה. לבסוף שולחים הכל יחד, כהודעה אחת, בדיוק כמו שתמיד שולחים הודעה לקלוד: לוחצים על כפתור השליחה, או פשוט לוחצים על מקש Enter.</p>
@@ -182,8 +192,34 @@
 <li>מופיעה רשימה של שבעת החיבורים האפשריים שהוזכרו למעלה, ולצד כל אחד מהם כפתור בשם Add to your team.</li>
 <li>לוחצים על הכפתור הזה ליד החיבור הספציפי שרוצים להוסיף, למשל ליד Gmail.</li>
 </ol>
+<figure class="shot" style="max-width:620px;">
+<div class="shot-frame" style="aspect-ratio:1178/665;">
+<img alt="רשימת ה-Plugins המותקנים, עם השורה Legal" loading="lazy" src="assets/screens/g2-01-plugins-list-legal.png"/>
+<div class="shot-target" style="left:21%; top:19.2%; width:76.4%; height:5.7%;">
+<span class="shot-target-badge">1</span>
+</div>
+</div>
+<ol class="shot-legend"><li><b>1</b><span>לוחצים על השורה Legal כדי להיכנס לעמוד הפרטים שלו.</span></li></ol>
+</figure>
+<figure class="shot" style="max-width:620px;">
+<div class="shot-frame" style="aspect-ratio:1172/687;">
+<img alt="עמוד הפלאגין המותקן, לשונית Skills פעילה, עם לשונית Connectors לידה" loading="lazy" src="assets/screens/g2-02-skills-tab-connectors-marked.png"/>
+<div class="shot-target" style="left:28.7%; top:50.7%; width:9.9%; height:5.5%;">
+<span class="shot-target-badge">2</span>
+</div>
+</div>
+<ol class="shot-legend"><li><b>2</b><span>עוברים מלשונית Skills ללשונית Connectors.</span></li></ol>
+</figure>
 <p>מהשלב הזה ואילך, התהליך ממשיך בכניסה לחשבון של אותה מערכת ובאישור הרשאה, בדיוק כמו כל חיבור מוכר בין שני שירותים, למשל כניסה לאתר חיצוני באמצעות חשבון Google. השלב הזה שונה מעט בין מערכת למערכת, ולכן הוא לא מפורט כאן צעד אחר צעד. הדבר החשוב לזכור הוא שמרגע שלוחצים על Add to your team, זו כבר החלטה אמיתית לתת ל-Claude גישה למידע במערכת הזאת, ולכן כדאי לעצור ולוודא מי במשרד צריך לאשר את זה.</p>
-<figure class="shot"><div class="shot-frame"><div style="padding:40px;text-align:center;color:#888;border:2px dashed #ccc;">מקום לצילום מסך: חלון ההגדרות המלא, כולל תפריט הצד ותפריט המשנה של Customize, פתוח על לשונית Connectors בתוך עמוד הפרטים של ה-<bdi dir="ltr">Plugin</bdi>, עם רשימת שבעת החיבורים וכפתור Add to your team ליד כל אחד מהם.</div></div><figcaption><p class="shot-caption">רשימת החיבורים האפשריים ל-<bdi dir="ltr">Plugin</bdi>, וכפתור להוספת כל אחד מהם.</p></figcaption></figure>
+<figure class="shot" style="max-width:620px;">
+<div class="shot-frame" style="aspect-ratio:1170/874;">
+<img alt="לשונית Connectors עם רשימת שבעת החיבורים, וכפתור Add to your team של Gmail" loading="lazy" src="assets/screens/g2-03-connectors-gmail.png"/>
+<div class="shot-target" style="left:84.6%; top:82.4%; width:13%; height:4.4%;">
+<span class="shot-target-badge">3</span>
+</div>
+</div>
+<ol class="shot-legend"><li><b>3</b><span>רשימת החיבורים האפשריים. לוחצים על הכפתור ליד החיבור הרצוי, למשל Gmail.</span></li></ol>
+</figure>
 </section>
 
 <section class="guide-section" id="whats-new">

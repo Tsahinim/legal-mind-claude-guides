@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width,initial-scale=1" name="viewport"/>
-<meta content="מדריך 1: מה זה Plugin, מה ההבדל בינו לבין Skill ו-Connector, מאיפה מתקינים, ואיך מתקינים <bdi dir="ltr">Plugin</bdi> צעד אחר צעד." name="description"/>
+<meta content="מדריך 1: מה זה Plugin, מה ההבדל בינו לבין Skill ו-Connector, מאיפה מתקינים, ואיך מתקינים Plugin צעד אחר צעד." name="description"/>
 <title>מהו <bdi dir="ltr">Plugin</bdi>: מונחים, השוואות והתקנה | Legal Mind</title>
 <link href="assets/site.css" rel="stylesheet"/>
 <script defer="" src="assets/site.js"></script>
@@ -22,34 +22,75 @@
 <dl class="facts">
 <div><dt>תוצר הלמידה</dt><dd>תבינו מה זה <bdi dir="ltr">Plugin</bdi> ותדעו להתקין אחד, בפועל.</dd></div>
 <div><dt>ידע מוקדם</dt><dd>מומלץ להכיר קודם את מדריך ה-<bdi dir="ltr">Skills</bdi>, אבל לא חובה.</dd></div>
-<div><dt>מבנה</dt><dd>5 פרקים</dd></div>
-<div><dt>זמן משוער</dt><dd>כ-12 דקות קריאה</dd></div>
+<div><dt>מבנה</dt><dd>6 פרקים</dd></div>
+<div><dt>זמן משוער</dt><dd>כ-16 דקות קריאה</dd></div>
 </dl>
 </header>
 
 <nav class="mobile-toc"><details><summary>תוכן המדריך</summary><ol>
-<li><a href="#glossary"><span>01</span>מילון מונחים: מה ההבדל בין Plugin, Skill ו-Connector</a></li>
-<li><a href="#why-plugin"><span>02</span>למה בכלל להתקין Plugin אם כבר יש Skills</a></li>
-<li><a href="#sources"><span>03</span>מאיפה אפשר להתקין Plugin, לא רק מ-Anthropic</a></li>
-<li><a href="#install"><span>04</span>איך מתקינים <bdi dir="ltr">Plugin</bdi>, צעד אחר צעד</a></li>
-<li><a href="#build-custom"><span>05</span>אפשר גם לבנות Plugin מותאם אישית למשרד</a></li>
+<li><a href="#what-is-plugin"><span>01</span>מהו <bdi dir="ltr">Plugin</bdi>: הסבר מלא ומעמיק</a></li>
+<li><a href="#glossary"><span>02</span>מילון מונחים: מה ההבדל בין Plugin, Skill ו-Connector</a></li>
+<li><a href="#why-plugin"><span>03</span>למה בכלל להתקין Plugin אם כבר יש Skills</a></li>
+<li><a href="#sources"><span>04</span>מאיפה אפשר להתקין Plugin, לא רק מ-Anthropic</a></li>
+<li><a href="#install"><span>05</span>איך מתקינים <bdi dir="ltr">Plugin</bdi>, צעד אחר צעד</a></li>
+<li><a href="#build-custom"><span>06</span>אפשר גם לבנות Plugin מותאם אישית למשרד</a></li>
 </ol></details></nav>
 
 <div class="layout">
 <main class="surface" id="main">
 
-<section class="guide-section" id="glossary">
+<section class="guide-section" id="what-is-plugin">
 <p class="section-number">01</p>
+<h2>מהו <bdi dir="ltr">Plugin</bdi>: הסבר מלא ומעמיק</h2>
+
+<p>התשובה הקצרה ביותר: <bdi dir="ltr">Plugin</bdi> הוא חבילה מוכנה, שמתקינים בלחיצה אחת, והיא הופכת את Claude שלכם למומחה מיידי בתחום עיסוק מסוים, כמו עבודה משפטית. ברגע שהיא מותקנת, יש לכם באופן קבוע קבוצה שלמה של פקודות מוכנות לתחום הזה, במקום שיחה כללית שבה צריך להסביר מחדש בכל פעם מה בדיוק רוצים ואיך בדיוק לעשות את זה.</p>
+
+<h3>מה בדיוק יש בתוך Plugin</h3>
+<p>הכי קל לחשוב על Plugin כעל תיקייה סגורה ומסודרת, שמישהו אחר כבר ארז בשבילכם. בתוך התיקייה הזאת יש שני סוגי תכולה אפשריים:</p>
+<ul>
+<li><strong>קבוצה של הוראות עבודה מוכנות</strong>, שכל אחת מהן מלמדת את Claude לבצע משימה ספציפית אחת בדיוק באותה צורה בכל פעם. בפרק הבא נסביר את המונח המדויק לזה, ואיך הוא שונה מ-Plugin עצמו.</li>
+<li><strong>לפעמים גם חיבורים אופציונליים למערכות חיצוניות אמיתיות</strong> שהמשרד כבר משתמש בהן, כמו תיבת מייל או יומן. חיבורים כאלה תמיד דורשים אישור נפרד ומפורש, הם לא פעילים אוטומטית רק כי ה-Plugin מותקן.</li>
+</ul>
+<p>המשמעות המעשית: Plugin אחד יכול להכיל בתוכו תשעה, עשרה או יותר כלים כאלה, כשכולם כבר מתואמים זה עם זה מראש, ומוכנים לשימוש מיד אחרי התקנה אחת בודדת.</p>
+
+<h3>מי בונה Plugin, ומאיפה הוא מגיע</h3>
+<p>ל-Plugin תמיד יש מפרסם: הגורם שבנה אותו ואחראי לתוכן שלו. יכולים להיות ארבעה סוגי מפרסמים:</p>
+<ul>
+<li><strong>Anthropic עצמה</strong>, החברה שמפתחת את Claude. זה המקרה של ה-Plugin שנתקין בהמשך המדריך הזה.</li>
+<li><strong>חברות שותפות</strong> (Partners), שבונות Plugins משלהן ומפרסמות אותם דרך אותו קטלוג רשמי.</li>
+<li><strong>המשרד או הארגון שלכם עצמו</strong>, אם מנהל המערכת שלכם בנה Plugin פנימי ופרסם אותו רק לעובדי הארגון.</li>
+<li><strong>אתם עצמכם</strong>, אם החלטתם לבנות Plugin מותאם אישית. האפשרות הזאת מוסברת בקצרה בפרק האחרון של המדריך הזה.</li>
+</ul>
+
+<h3>מה קורה בפועל כשמתקינים Plugin</h3>
+<p>התקנה של Plugin היא פעולה חד-פעמית, לא הרשמה חוזרת. אחרי שמתקינים אותו פעם אחת, הוא זמין מאותו רגע בכל שיחה חדשה שפותחים בחשבון, בלי צורך להתקין אותו שוב. כל אחד מהכלים שבתוכו מופעל בשתי דרכים אפשריות: או בכתיבת פקודה מפורשת שמתחילה בסימן <bdi dir="ltr">/</bdi> (על זה נרחיב במדריך הבא), או בכך שקלוד עצמו מזהה שהבקשה שלכם מתאימה לאחד הכלים ומציע להפעיל אותו.</p>
+<p>נקודה חשובה שכדאי לזכור: התקנת Plugin לא משנה את הידע הכללי של Claude ולא הופכת אותו "חכם יותר" באופן גורף. היא רק מוסיפה לו קבוצת הוראות עבודה מובנות לתחום ספציפי, וגישה אופציונלית למערכות חיצוניות אם אישרתם זאת.</p>
+
+<h3>מה Plugin הוא לא</h3>
+<p>כדי שלא יישאר שום בלבול, שווה לומר גם במפורש מה זה לא:</p>
+<ul>
+<li>זה לא תוכנה נפרדת שרצה במקום אחר. הכול קורה בתוך אותה שיחה עם Claude, באותו ממשק שאתם כבר מכירים.</li>
+<li>זה לא מודל בינה מלאכותית אחר או נוסף. Claude נשאר אותו Claude; ה-Plugin רק מכוון אותו איך לבצע משימות מסוימות.</li>
+<li>זה לא תוסף דפדפן, ואין לו שום קשר לתוספים שמכירים מ-Chrome או Firefox. השם דומה במקרה, אבל מדובר במושג שונה לגמרי.</li>
+<li>זה לא פעולה אוטומטית שרצה ברקע בלי שביקשתם. כל כלי בתוך Plugin מופעל רק כשאתם, או קלוד לפי בקשתכם, בוחרים להפעיל אותו.</li>
+</ul>
+
+<aside class="content-box info">
+<h3>בשורה אחת</h3>
+<p>Plugin הוא חבילה מוכנה של כלי עבודה לתחום מסוים, שמישהו אחר כבר בנה, ושאתם רק מתקינים כדי לקבל אותם כולם ביחד, מתואמים ומוכנים לשימוש.</p>
+</aside>
+</section>
+
+<section class="guide-section" id="glossary">
+<p class="section-number">02</p>
 <h2>מילון מונחים: מה ההבדל בין Plugin, Skill ו-Connector</h2>
 
 <h3><bdi dir="ltr">Skill</bdi></h3>
 <p>הדרך הכי פשוטה לתאר Skill: זה מעין מתכון לתהליך עבודה שחוזר על עצמו אצלכם במשרד. חושבים על משימה שחוזרת שוב ושוב, כמו בדיקת סעיף אי-תחרות בכל הסכם סודיות, ובמקום להסביר לקלוד מחדש בכל פעם מה לבדוק ואיך, כותבים את ההוראה פעם אחת, ושומרים אותה כ-Skill. מי שכבר בנה Skill מכיר את זה כיחידת הוראה אחת: קובץ שמסביר ל-Claude איך לבצע משימה מסוימת. אתם בונים או מתקינים אותו בשביל משימה ספציפית אחת, והוא נטען אוטומטית ברגע שהוא רלוונטי לבקשה שלכם.</p>
+<p><strong>ההבדל מ-Plugin:</strong> Skill הוא תמיד כלי בודד אחד, למשימה אחת בלבד. Plugin, שכבר הכרתם בפרק הקודם, הוא התיקייה השלמה שיכולה להכיל בתוכה כמה Skills כאלה יחד, ולפעמים גם Connectors, כשכולם כבר ארוזים ומתואמים מראש בהתקנה אחת.</p>
 
 <h3><bdi dir="ltr">Connector</bdi></h3>
 <p><bdi dir="ltr">Connector</bdi> הוא הצינור שדרכו Claude יכול לקרוא, ולפעמים גם לכתוב, למערכת אמיתית שהמשרד כבר משתמש בה, כמו <bdi dir="ltr">Gmail</bdi> או <bdi dir="ltr">Slack</bdi>. בלי חיבור פעיל כזה, Claude יכול לעבוד רק עם מה שהודבק ישירות בתוך השיחה.</p>
-
-<h3><bdi dir="ltr">Plugin</bdi></h3>
-<p><bdi dir="ltr">Plugin</bdi> הוא שלב אחד למעלה מ-Skill בודד: חבילה שאורזת בתוכה כמה Skills יחד, ולפעמים גם כמה Connectors. במילים פשוטות, Plugin הוא כל התיקייה: כמה מתכונים כאלה שכבר ארוזים יחד ומסודרים לעבוד זה עם זה, מוכנים להתקנה בפעולה אחת.</p>
 
 <aside class="content-box info">
 <h3>איפה רואים את זה בממשק</h3>
@@ -58,7 +99,7 @@
 </section>
 
 <section class="guide-section" id="why-plugin">
-<p class="section-number">02</p>
+<p class="section-number">03</p>
 <h2>למה בכלל להתקין Plugin אם כבר יש Skills</h2>
 <p><bdi dir="ltr">Skill</bdi> מותאם אישית נותן שליטה מדויקת: אתם קובעים בדיוק מה הוא בודק, איך הוא מנוסח, ומה הוא צריך להפיק. אפשר גם לשתף אותו הלאה לבד, בלי צורך בשום דבר נוסף. <bdi dir="ltr">Plugin</bdi> נותן משהו אחר: התחלה מהירה. כמה <bdi dir="ltr">Skills</bdi> שכבר מתואמים ביניהם, ולפעמים גם עם חיבורים משלהם למערכות חיצוניות, שעובדים יחד כבר מהרגע הראשון שמתקינים אותם.</p>
 <p>ההבדל המעשי הכי פשוט: במקום לבנות תשעה Skills בנפרד עבור המשרד, מתקינים Plugin אחד ומקבלים את כל התשעה ביחד, כשהם כבר מכוונים לעבוד זה עם זה.</p>
@@ -78,7 +119,7 @@
 </section>
 
 <section class="guide-section" id="sources">
-<p class="section-number">03</p>
+<p class="section-number">04</p>
 <h2>מאיפה אפשר להתקין Plugin, לא רק מ-Anthropic</h2>
 <p>יש שתי דרכים להגיע ל-<bdi dir="ltr">Plugins</bdi>: לעיין בקטלוג המוכן, או להוסיף מקור חדש בעצמכם. תחת <bdi dir="ltr">Settings</bdi>, ואז <bdi dir="ltr">Customize</bdi>, ואז <bdi dir="ltr">Plugins</bdi>, יש כפתור בשם <bdi dir="ltr">Add</bdi> שפותח תפריט עם שלוש אפשרויות. בדקנו את כולן ישירות בממשק:</p>
 <ul>
@@ -94,38 +135,68 @@
 <p class="section-number">04</p>
 <h2>איך מתקינים <bdi dir="ltr">Plugin</bdi>, צעד אחר צעד</h2>
 <p>כדי שההסבר הזה לא יישאר תיאורטי, נתקין עכשיו ביחד <bdi dir="ltr">Plugin</bdi> אמיתי וספציפי: <bdi dir="ltr">Plugin</bdi> בשם <bdi dir="ltr">Legal</bdi>, שבו יעסוק כל מדריך 2 בסדרה הזאת.</p>
-<p>שישה שלבים, בלי לדלג על אף אחד מהם, כולל השלב הראשון של פתיחת התפריט עצמו.</p>
+<p>ארבעה שלבים, בלי לדלג על אף אחד מהם, כולל השלב הראשון של פתיחת התפריט עצמו.</p>
 
 <h3>שלב 1: פותחים את Customize</h3>
 <p>במסך הבית של Claude לוחצים על <bdi dir="ltr">Customize</bdi> בתפריט הצד. זו נקודת הכניסה היחידה לכל ההגדרות של Skills, Connectors ו-Plugins.</p>
-<figure class="shot"><div class="shot-frame"><div style="padding:40px;text-align:center;color:#888;border:2px dashed #ccc;">מקום לצילום מסך: מסך הבית של Claude, עם תפריט הצד פתוח וכפתור Customize מסומן.</div></div><figcaption><p class="shot-caption">לוחצים על Customize בתפריט הצד כדי לפתוח את הגדרות ההתאמה האישית.</p></figcaption></figure>
+<figure class="shot" style="max-width:360px;">
+<div class="shot-frame" style="aspect-ratio:356/376;">
+<img alt="מסך הבית של Claude, עם תפריט הצד" loading="lazy" src="assets/screens/g1-01-home.png"/>
+<div class="shot-target" style="left:2.2%; top:87.8%; width:95.5%; height:9.6%;">
+<span class="shot-target-badge">1</span>
+</div>
+</div>
+<ol class="shot-legend"><li><b>1</b><span>לוחצים על Customize בתפריט הצד כדי לפתוח את הגדרות ההתאמה האישית.</span></li></ol>
+</figure>
 
-<h3>שלב 2: עוברים ללשונית Plugins</h3>
-<p>נפתח חלון הגדרות, ובברירת המחדל הוא פתוח על לשונית <bdi dir="ltr">Skills</bdi>. לוחצים על <bdi dir="ltr">Plugins</bdi> בתפריט המשנה שבצד.</p>
-<figure class="shot"><div class="shot-frame"><div style="padding:40px;text-align:center;color:#888;border:2px dashed #ccc;">מקום לצילום מסך: חלון ההגדרות פתוח על לשונית Skills, עם לשונית Plugins בתפריט המשנה מסומנת.</div></div><figcaption><p class="shot-caption">המעבר מלשונית Skills ללשונית Plugins בתפריט המשנה של Customize.</p></figcaption></figure>
+<h3>שלב 2: עוברים ללשונית Plugins ופותחים את Browse</h3>
+<p>נפתח חלון הגדרות, ובברירת המחדל הוא פתוח על לשונית <bdi dir="ltr">Skills</bdi>. לוחצים על <bdi dir="ltr">Plugins</bdi> בתפריט המשנה שבצד. נפתחת רשימת ה-<bdi dir="ltr">Plugins</bdi> שכבר מותקנים אצלכם. בפעם הראשונה היא תהיה ריקה. לוחצים על הכפתור <bdi dir="ltr">Browse</bdi>, שנמצא למעלה.</p>
+<figure class="shot" style="max-width:620px;">
+<div class="shot-frame" style="aspect-ratio:1183/886;">
+<img alt="לשונית Plugins ריקה, עם כפתור Browse למעלה" loading="lazy" src="assets/screens/g1-02-empty-plugins.png"/>
+<div class="shot-target" style="left:79.8%; top:1.1%; width:6.9%; height:4.3%;">
+<span class="shot-target-badge">1</span>
+</div>
+</div>
+<ol class="shot-legend"><li><b>1</b><span>הרשימה ריקה בפעם הראשונה. לוחצים על Browse כדי לפתוח את קטלוג ההתקנה.</span></li></ol>
+</figure>
 
-<h3>שלב 3: פותחים את Browse</h3>
-<p>נפתחת רשימת ה-<bdi dir="ltr">Plugins</bdi> שכבר מותקנים אצלכם. בפעם הראשונה היא תהיה ריקה. לוחצים על הכפתור <bdi dir="ltr">Browse</bdi>, שנמצא למעלה.</p>
-<figure class="shot"><div class="shot-frame"><div style="padding:40px;text-align:center;color:#888;border:2px dashed #ccc;">מקום לצילום מסך: לשונית Plugins ריקה, עם כפתור Browse מסומן.</div></div><figcaption><p class="shot-caption">רשימת ה-<bdi dir="ltr">Plugins</bdi> המותקנים ריקה, וכפתור Browse שפותח את קטלוג ההתקנה.</p></figcaption></figure>
+<h3>שלב 3: מאתרים את הכרטיס Legal</h3>
+<p>נפתח חלון בשם <bdi dir="ltr">Directory</bdi>, עם שלוש לשוניות: הארגון שלכם, Anthropic ו-Partners. אפשר לגלול ברשימת הכרטיסים של לשונית Anthropic עד שמוצאים את הכרטיס <bdi dir="ltr">Legal</bdi>, אבל יש דרך מהירה יותר: לוחצים על סמל החיפוש שבפינה, ומקלידים בתיבת החיפוש את המילה <bdi dir="ltr">legal</bdi>. הרשימה מצטמצמת מיד לכרטיס הרלוונטי בלבד.</p>
+<figure class="shot" style="max-width:620px;">
+<div class="shot-frame" style="aspect-ratio:1261/913;">
+<img alt="חלון Directory עם חיפוש 'legal', ותוצאה אחת: הכרטיס Legal" loading="lazy" src="assets/screens/g1-03-directory-search.png"/>
+<div class="shot-target" style="left:24.3%; top:21.4%; width:36.6%; height:16.9%;">
+<span class="shot-target-badge">1</span>
+</div>
+</div>
+<ol class="shot-legend"><li><b>1</b><span>במקום לגלול, אפשר לחפש ישירות לפי שם. לוחצים על הכרטיס שמוצג.</span></li></ol>
+</figure>
 
-<h3>שלב 4: עוברים ללשונית Anthropic</h3>
-<p>נפתח חלון בשם <bdi dir="ltr">Directory</bdi>, עם שלוש הלשוניות שהוסברו בפרק הקודם: הארגון שלכם, Anthropic ו-Partners. ברירת המחדל היא לשונית הארגון שלכם, שתוצג ריקה אם המשרד עדיין לא פרסם <bdi dir="ltr">Plugin</bdi> משלו. לוחצים על לשונית <bdi dir="ltr">Anthropic</bdi>.</p>
-<figure class="shot"><div class="shot-frame"><div style="padding:40px;text-align:center;color:#888;border:2px dashed #ccc;">מקום לצילום מסך: חלון Directory פתוח על לשונית הארגון שלכם, ריקה, עם לשונית Anthropic מסומנת לצדה.</div></div><figcaption><p class="shot-caption">שלוש הלשוניות של קטלוג ה-<bdi dir="ltr">Plugins</bdi>, והמעבר ללשונית Anthropic.</p></figcaption></figure>
-
-<h3>שלב 5: מאתרים את הכרטיס Legal</h3>
-<p>מוצגת רשימת כרטיסי <bdi dir="ltr">Plugins</bdi>, מסודרים לפי תפקיד: Legal, Productivity, Design, Marketing ועוד. מאתרים את הכרטיס <bdi dir="ltr">Legal</bdi> ולוחצים עליו.</p>
-<figure class="shot"><div class="shot-frame"><div style="padding:40px;text-align:center;color:#888;border:2px dashed #ccc;">מקום לצילום מסך: רשימת כרטיסי <bdi dir="ltr">Plugins</bdi> של Anthropic לפי תפקיד, עם הכרטיס Legal מסומן.</div></div><figcaption><p class="shot-caption">כרטיסי ה-<bdi dir="ltr">Plugins</bdi> הרשמיים של Anthropic, מסודרים לפי תחום עיסוק.</p></figcaption></figure>
-
-<h3>שלב 6: בודקים את עמוד הפרטים ומתקינים</h3>
+<h3>שלב 4: בודקים את עמוד הפרטים ומתקינים</h3>
 <p>נפתח עמוד פרטים מלא על ה-<bdi dir="ltr">Plugin</bdi>: תיאור קצר שלו, חמש הצעות שימוש מהירות תחת הכותרת <bdi dir="ltr">Try asking</bdi>, רשימה של תשעת ה-Skills שבתוכו, רשימה של שבעת ה-Connectors שהוא תומך בהם, וכפתור התקנה. לוחצים על כפתור ההתקנה.</p>
-<figure class="shot"><div class="shot-frame"><div style="padding:40px;text-align:center;color:#888;border:2px dashed #ccc;">מקום לצילום מסך: עמוד הפרטים המלא של <bdi dir="ltr">Plugin</bdi> Legal, עם התיאור, רשימת Try asking, רשימת ה-Skills, רשימת ה-Connectors וכפתור ההתקנה.</div></div><figcaption><p class="shot-caption">כל מה שה-<bdi dir="ltr">Plugin</bdi> כולל, מוצג עוד לפני שלוחצים על כפתור ההתקנה.</p></figcaption></figure>
+<figure class="shot" style="max-width:620px;">
+<div class="shot-frame" style="aspect-ratio:1261/918;">
+<img alt="עמוד הפרטים המלא של Plugin Legal, עם כפתור Install למעלה" loading="lazy" src="assets/screens/g1-04-details-install.png"/>
+<div class="shot-target badge-right" style="left:90.4%; top:12.5%; width:7%; height:5%;">
+<span class="shot-target-badge">1</span>
+</div>
+</div>
+<ol class="shot-legend"><li><b>1</b><span>כל מה שה-Plugin כולל מוצג עוד לפני שלוחצים על כפתור ההתקנה.</span></li></ol>
+</figure>
 <p>ה-<bdi dir="ltr">Plugin</bdi> מותקן.</p>
+<figure class="shot" style="max-width:340px;">
+<div class="shot-frame" style="aspect-ratio:671/261;">
+<img alt="הודעת אישור: Legal is installed and ready to use" loading="lazy" src="assets/screens/g1-05-install-success.png"/>
+</div>
+<figcaption><p class="shot-caption">כך נראית הודעת האישור על התקנה מוצלחת.</p></figcaption>
+</figure>
 </section>
 
 <section class="guide-section" id="build-custom">
 <p class="section-number">05</p>
 <h2>אפשר גם לבנות Plugin מותאם אישית למשרד</h2>
-<p>מי שרוצה יותר משליטה על Skill בודד יכול לבנות Plugin משלו, בדיוק כמו שבניתם Skill מותאם אישית במדריך הקודם. כפי שראיתם בפרק 3, לחיצה על הכפתור <bdi dir="ltr">Add</bdi> ואז על האפשרות <bdi dir="ltr">Create with Claude</bdi> פותחת שיחה חדשה שכבר מתחילה במשפט <bdi dir="ltr">Help me create a new plugin</bdi>, ומשם ממשיכים בדיוק כמו בתהליך בניית Skill מותאם אישית שכבר הכרתם.</p>
+<p>מי שרוצה יותר משליטה על Skill בודד יכול לבנות Plugin משלו, בדיוק כמו שבניתם Skill מותאם אישית במדריך הקודם. כפי שראיתם בפרק 4, לחיצה על הכפתור <bdi dir="ltr">Add</bdi> ואז על האפשרות <bdi dir="ltr">Create with Claude</bdi> פותחת שיחה חדשה שכבר מתחילה במשפט <bdi dir="ltr">Help me create a new plugin</bdi>, ומשם ממשיכים בדיוק כמו בתהליך בניית Skill מותאם אישית שכבר הכרתם.</p>
 <aside class="content-box info">
 <h3>למה זה לא מוסבר כאן צעד אחר צעד</h3>
 <p>בניית Plugin מלאה, מהתחלה ועד סוף, היא נושא רחב מספיק בשביל מדריך נפרד משלו, במקביל לסדרה הקיימת על בניית Skills. Legal Mind הקדישה למטרה הזאת מדריך שלם ונפרד, מדריך 3 בסדרת המדריכים הזאת על Plugins, שמסביר צעד אחר צעד איך בונים Plugin מותאם אישית. כאן חשוב רק לדעת שהאפשרות הזאת קיימת ואמיתית, ושאפשר לחזור אליה במדריך הנפרד.</p>
@@ -142,11 +213,12 @@
 </main>
 
 <aside class="desktop-toc"><h2>תוכן המדריך</h2><ol>
-<li><a href="#glossary"><span>01</span>מילון מונחים: מה ההבדל בין Plugin, Skill ו-Connector</a></li>
-<li><a href="#why-plugin"><span>02</span>למה בכלל להתקין Plugin אם כבר יש Skills</a></li>
-<li><a href="#sources"><span>03</span>מאיפה אפשר להתקין Plugin, לא רק מ-Anthropic</a></li>
-<li><a href="#install"><span>04</span>איך מתקינים <bdi dir="ltr">Plugin</bdi>, צעד אחר צעד</a></li>
-<li><a href="#build-custom"><span>05</span>אפשר גם לבנות Plugin מותאם אישית למשרד</a></li>
+<li><a href="#what-is-plugin"><span>01</span>מהו <bdi dir="ltr">Plugin</bdi>: הסבר מלא ומעמיק</a></li>
+<li><a href="#glossary"><span>02</span>מילון מונחים: מה ההבדל בין Plugin, Skill ו-Connector</a></li>
+<li><a href="#why-plugin"><span>03</span>למה בכלל להתקין Plugin אם כבר יש Skills</a></li>
+<li><a href="#sources"><span>04</span>מאיפה אפשר להתקין Plugin, לא רק מ-Anthropic</a></li>
+<li><a href="#install"><span>05</span>איך מתקינים <bdi dir="ltr">Plugin</bdi>, צעד אחר צעד</a></li>
+<li><a href="#build-custom"><span>06</span>אפשר גם לבנות Plugin מותאם אישית למשרד</a></li>
 </ol></aside>
 </div>
 
