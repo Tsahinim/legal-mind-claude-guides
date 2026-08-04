@@ -54,7 +54,8 @@ bdi{unicode-bidi:isolate}
 .chip b{color:var(--ink)}
 
 /* עמוד 2: המפה */
-.map{display:grid;grid-template-columns:repeat(3,1fr) 120px;gap:0 14px;position:relative}
+.map{display:grid;grid-template-columns:120px repeat(3,1fr);gap:0 14px;position:relative}
+.map>div:last-child{order:-1}
 .tower{border-radius:16px;padding:0 10px 10px}
 .tw-c{background:var(--claude-tint)} .tw-o{background:var(--gpt-tint)} .tw-g{background:var(--gem-tint)}
 .map-head{display:flex;align-items:center;justify-content:center;gap:8px;font-weight:900;font-size:1.08rem;color:var(--ink);padding:16px 4px 10px;direction:ltr}
