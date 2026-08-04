@@ -71,3 +71,11 @@
 .shot-legend-num li{display:flex;align-items:flex-start;gap:8px}
 .shot-legend-num strong{flex:0 0 auto;display:grid;place-items:center;width:22px;height:22px;border-radius:50%;background:var(--red);color:#fff;font-size:12px;font-weight:900;margin-inline-end:0}
 
+
+.section-number,.sec-num{font-size:36px}
+.section-number::after,.sec-num::after{content:"."}
+
+
+.guide-section h2,.sec-title{font-size:clamp(3rem,7vw,4rem)}
+.guide-section h3,.sec-body h3{font-size:2.3rem}
+
