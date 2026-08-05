@@ -176,10 +176,13 @@
 <h2>חיסיון, הסכמת לקוח ולאן המידע מגיע</h2>
 <p>הפרק הזה גם הוא לפני ההתקנה, כי הוא חומר להחלטה ולא הוראת הפעלה.</p>
 <h3>לאן המידע נוסע</h3>
-<p>כשאתם מבקשים משהו, הנתונים הרלוונטיים מהגיליון נשלחים לענן של <bdi dir="ltr">Anthropic</bdi>, שם הבקשה מעובדת, והתשובה חוזרת לסרגל. זה נכון גם כשהקובץ שמור אצלכם על המחשב. הקובץ עצמו לא מועלה לשום מקום, אבל הנתונים שנדרשים לבקשה כן עוברים.</p>
+<p>כשאתם מבקשים משהו, תוכן הגיליון שנדרש לאותה בקשה נשלח לענן של <bdi dir="ltr">Anthropic</bdi>, שם הבקשה מעובדת, והתשובה חוזרת לסרגל. זה נכון גם כשהקובץ שמור אצלכם על המחשב, וגם כשלא העליתם אותו לשום מקום בעצמכם.</p>
 <h3>מה נשמר, ולכמה זמן</h3>
 <p>לפי התיעוד הרשמי, ברירת המחדל היא שהקלט והפלט נמחקים תוך 30 יום, אלא אם מדיניות שמירת הנתונים של הארגון קובעת אחרת.</p>
-<p>נקודה נוספת שכדאי להכיר: היסטוריית השיחות בסרגל נשמרת מקומית בדפדפן או במחשב שלכם, ולא בשרת. המשמעות המעשית היא שהיא לא עוברת בין מחשבים, ואם מנקים את נתוני הדפדפן היא נעלמת.</p>
+<p>נקודה נוספת שכדאי להכיר: היסטוריית השיחות בסרגל נשמרת מקומית בדפדפן או במחשב שלכם, ולא בשרת. המשמעות המעשית היא שהיא לא עוברת בין מחשבים, ואם מנקים את נתוני הדפדפן היא נעלמת. בתוך <bdi dir="ltr">Excel</bdi> היא כן עוברת בין קבצים שונים.</p>
+<h3>נקודה שחשוב שמנהל המשרד ידע: אין יומן ביקורת ארגוני</h3>
+<p>התיעוד הרשמי מציין במפורש שבמנויים <bdi dir="ltr">Free</bdi>, <bdi dir="ltr">Pro</bdi>, <bdi dir="ltr">Max</bdi> ו-<bdi dir="ltr">Team</bdi> אין יכולת מעקב וביקורת על השימוש בתוסף ב-<bdi dir="ltr">Excel</bdi>, ושהוא אינו נכלל ביומני הביקורת של <bdi dir="ltr">Enterprise</bdi> ואינו מקושר להגדרות שמירת הנתונים המותאמות של הארגון.</p>
+<p>המשמעות המעשית: אין דרך ארגונית לראות בדיעבד מי הפעיל את הכלי על איזה קובץ. התיעוד היחיד שקיים הוא זה שאתם עצמכם מפעילים בתוך הקובץ, גיליון היומן שמוסבר בפרק 8. במשרד שעובד על חומר של לקוחות, זו סיבה טובה להפעיל אותו כברירת מחדל ולא כתוספת.</p>
 <h3>מה שכדאי לסדר לפני שמעלים חומר של לקוח</h3>
 <ul class="bullets">
 <li>לוודא שאתם עובדים בחשבון של המשרד, ולא בחשבון אישי.</li>
@@ -199,20 +202,22 @@
 <h2>התקנת <bdi dir="ltr">Claude</bdi> ב-<bdi dir="ltr">Excel</bdi>, מסך אחר מסך</h2>
 <p>ההתקנה עצמה קצרה, בערך עשר דקות. יש שני מסלולים: התקנה שאתם עושים לעצמכם, והתקנה שמנהל המשרד עושה פעם אחת לכל העובדים.</p>
 <h3>מסלול א', התקנה אישית</h3>
+<p>שם התוסף המדויק הוא <bdi dir="ltr">Claude for Microsoft 365</bdi>, והוא אותו תוסף אחד שמשרת את <bdi dir="ltr">Excel</bdi> ואת שאר יישומי <bdi dir="ltr">Office</bdi>. שווה לדעת את השם, כדי לא להתקין בטעות תוסף אחר בשם דומה.</p>
 <p>חמישה שלבים, בלי לדלג על אף אחד.</p>
 
-<h4>שלב 1: פותחים את תפריט התוספים</h4>
-<p>פותחים <bdi dir="ltr">Excel</bdi> על קובץ חדש וריק. בסרגל העליון לוחצים על <bdi dir="ltr">Home</bdi>, ואז על <bdi dir="ltr">Add-ins</bdi>. ב-<bdi dir="ltr">Mac</bdi> זה נמצא תחת <bdi dir="ltr">Tools</bdi> ואז <bdi dir="ltr">Add-ins</bdi>.</p>
+<h4>שלב 1: נכנסים לחנות של <bdi dir="ltr">Microsoft</bdi> ומוסיפים את התוסף</h4>
+<p>זו הדרך שמופיעה בתיעוד הרשמי: נכנסים לעמוד של <bdi dir="ltr">Claude for Microsoft 365</bdi> בחנות של <bdi dir="ltr">Microsoft</bdi>, ולוחצים על כפתור ההוספה.</p>
+<figure class="shot shot-pending"><div class="shot-frame"><span class="pending-label"><span class="pending-tag">צילום מסך</span>עמוד התוסף בחנות של <bdi dir="ltr">Microsoft</bdi>, עם סימון על כפתור ההוספה</span></div></figure>
+<p>יש גם דרך שנייה, מתוך <bdi dir="ltr">Excel</bdi> עצמו: לוחצים בסרגל העליון על <bdi dir="ltr">Home</bdi> ואז על <bdi dir="ltr">Add-ins</bdi>, וב-<bdi dir="ltr">Mac</bdi> תחת <bdi dir="ltr">Tools</bdi> ואז <bdi dir="ltr">Add-ins</bdi>, ומחפשים שם את התוסף. הדרך הזאת נוחה יותר, אבל היא תלויה בכך שהגישה לחנות התוספים פתוחה בארגון שלכם, ולכן אם היא לא עובדת זה לא סימן לתקלה.</p>
 <figure class="shot shot-pending"><div class="shot-frame"><span class="pending-label"><span class="pending-tag">צילום מסך</span>הסרגל העליון של <bdi dir="ltr">Excel</bdi>, עם סימון על הכפתור <bdi dir="ltr">Add-ins</bdi></span></div></figure>
 
-<h4>שלב 2: מחפשים את התוסף</h4>
-<p>בחלון שנפתח מקלידים <bdi dir="ltr">Claude</bdi> בשורת החיפוש. חשוב לבחור את התוסף הרשמי של <bdi dir="ltr">Anthropic</bdi> ולא תוסף אחר בשם דומה.</p>
-<figure class="shot shot-pending"><div class="shot-frame"><span class="pending-label"><span class="pending-tag">צילום מסך</span>חלון חיפוש התוספים, עם סימון על התוסף הרשמי בתוצאות</span></div></figure>
+<h4>שלב 2: מאשרים את ההרשאה</h4>
+<p>לפני שהתוסף נוסף, <bdi dir="ltr">Microsoft</bdi> מציגה חלון שמפרט מה התוסף יוכל לעשות, למשל לקרוא את המסמך שפתוח. זה חלון של <bdi dir="ltr">Microsoft</bdi> ולא של <bdi dir="ltr">Anthropic</bdi>, וצריך לאשר אותו כדי להמשיך.</p>
+<figure class="shot shot-pending"><div class="shot-frame"><span class="pending-label"><span class="pending-tag">צילום מסך</span>דיאלוג ההרשאה של <bdi dir="ltr">Microsoft</bdi> לפני ההוספה</span></div></figure>
 
-<h4>שלב 3: מוסיפים אותו</h4>
-<p>לוחצים על כפתור ההוספה, ומאשרים.</p>
-<figure class="shot shot-pending"><div class="shot-frame"><span class="pending-label"><span class="pending-tag">צילום מסך</span>דיאלוג ההרשאה של <bdi dir="ltr">Microsoft</bdi> שמופיע לפני ההוספה</span></div></figure>
-<figure class="shot shot-pending"><div class="shot-frame"><span class="pending-label"><span class="pending-tag">צילום מסך</span>עמוד התוסף, עם סימון על כפתור ההוספה</span></div></figure>
+<h4>שלב 3: מפעילים את התוסף בתוך <bdi dir="ltr">Excel</bdi></h4>
+<p>פותחים <bdi dir="ltr">Excel</bdi> על קובץ חדש וריק, ומפעילים את התוסף מתוך <bdi dir="ltr">Home</bdi> ואז <bdi dir="ltr">Add-ins</bdi>.</p>
+<figure class="shot shot-pending"><div class="shot-frame"><span class="pending-label"><span class="pending-tag">צילום מסך</span>התוסף מופיע ברשימת התוספים המותקנים, לפני ההפעלה</span></div></figure>
 
 <h4>שלב 4: נכנסים לחשבון של המשרד</h4>
 <p>הסרגל נפתח ומבקש להיכנס לחשבון. זה השלב שמחבר בין התוסף למנוי, וכאן חשוב להיכנס לחשבון של המשרד ולא לחשבון פרטי.</p>
@@ -223,7 +228,10 @@
 <figure class="shot shot-pending"><div class="shot-frame"><span class="pending-label"><span class="pending-tag">צילום מסך</span>הסרגל אחרי התקנה מוצלחת, עם סימון על שורת הכתיבה</span></div></figure>
 
 <h3>מסלול ב', התקנה לכל המשרד</h3>
-<p>מנהל המשרד יכול להתקין את התוסף פעם אחת לכל העובדים, דרך מרכז הניהול של <bdi dir="ltr">Microsoft 365</bdi>, במקום שכל עורך דין יתקין לעצמו. במקרה כזה התוסף מופיע אצל כולם, וגם מי שאין לו הרשאה להתקין תוספים בעצמו יקבל אותו.</p>
+<p>מנהל המשרד יכול להתקין את התוסף פעם אחת לכל העובדים, במקום שכל עורך דין יתקין לעצמו. במקרה כזה התוסף מופיע אצל כולם, וגם מי שאין לו הרשאה להתקין תוספים בעצמו יקבל אותו. זו פעולה של מנהל מערכת, ולא של עורך דין.</p>
+<p>הנתיב לפי התיעוד הרשמי הוא זה: במרכז הניהול של <bdi dir="ltr">Microsoft 365</bdi> נכנסים ל-<bdi dir="ltr">Settings</bdi>, ואז <bdi dir="ltr">Org Settings</bdi>, ומאפשרים למשתמשים גישה לחנות התוספים. אחר כך נכנסים ל-<bdi dir="ltr">Settings</bdi>, ואז <bdi dir="ltr">Integrated apps</bdi>, ואז <bdi dir="ltr">Add-ins</bdi>, מחפשים שם את <bdi dir="ltr">Claude for Microsoft 365</bdi> ומפיצים אותו.</p>
+<p>בשלב ההפצה בוחרים למי התוסף מגיע, ויש ארבע אפשרויות: לכל הארגון, למשתמשים מסוימים, לקבוצות מסוימות, או רק למנהל עצמו. משרד שרוצה להתחיל בפיילוט קטן יבחר קבוצה או משתמשים מסוימים.</p>
+<p>ודבר אחד שכדאי לדעת מראש כדי לא להיבהל: התוסף אמור להופיע אצל המשתמשים תוך דקות, אבל התיעוד מציין שהפצה מלאה לכל הארגון עשויה לקחת עד 24 שעות. אם הוא לא הופיע מיד אצל כולם, זה לא בהכרח תקלה.</p>
 <figure class="shot shot-pending"><div class="shot-frame"><span class="pending-label"><span class="pending-tag">צילום מסך</span>מרכז הניהול של <bdi dir="ltr">Microsoft 365</bdi>, במסך הוספת תוסף לארגון</span></div></figure>
 <figure class="shot shot-pending"><div class="shot-frame"><span class="pending-label"><span class="pending-tag">צילום מסך</span>מסך בחירת המשתמשים שיקבלו את התוסף</span></div></figure>
 <h3>אם ההתקנה נכשלת</h3>
