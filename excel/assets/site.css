@@ -91,9 +91,9 @@
   box-shadow:0 14px 34px rgba(13,39,64,.22);overflow:hidden}
 .bonus-panel:before{content:"";position:absolute;inset-inline-start:0;top:0;bottom:0;
   width:5px;background:var(--orange)}
-.bonus-tag{display:inline-block;margin-bottom:12px;border-radius:999px;
-  background:var(--orange);color:#fff;padding:5px 15px;
-  font-size:12px;font-weight:900;letter-spacing:.09em}
+.bonus-tag{display:inline-block;margin-bottom:20px;border-radius:999px;
+  background:var(--orange);color:#fff;padding:8px 23px;
+  font-size:18px;font-weight:900;letter-spacing:.09em;line-height:1.25;white-space:nowrap}
 .bonus-panel h2{margin:0 0 8px;color:#fff;
   font-family:Georgia,"Times New Roman",serif;font-size:clamp(1.4rem,3.4vw,1.9rem);
   line-height:1.25}
