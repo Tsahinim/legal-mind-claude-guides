@@ -255,6 +255,7 @@ bdi[dir=ltr],[dir=ltr]{unicode-bidi:isolate}
    clips overflow, so a corner badge that sticks out would come back cut */
 .shot-target.badge-inside>.shot-target-badge{top:50%;left:auto;right:7px;transform:translate(0,-50%)}
 .shot-target.badge-inside-left>.shot-target-badge{top:50%;left:7px;right:auto;transform:translate(0,-50%)}
+.shot-target.badge-outside-left>.shot-target-badge{top:50%;left:0;right:auto;transform:translate(-115%,-50%)}
 /* number above the box, centred - for a marked word on a dense single line
    where any corner placement would land on the word itself */
 .shot-target.badge-above>.shot-target-badge{top:0;left:50%;right:auto;transform:translate(-50%,-118%)}
