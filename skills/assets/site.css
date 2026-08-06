@@ -43,7 +43,7 @@
 .shot-caption{margin:10px 0 6px;color:var(--muted);font-size:.92rem;line-height:1.65}
 .shot-legend-num{margin:0;padding:0;list-style:none;display:grid;gap:6px}
 .shot-legend-num li{color:var(--ink);font-size:.92rem;line-height:1.6}
-.shot-legend-num strong{color:var(--teal);font-weight:900;margin-inline-end:4px}
+.shot-legend-num>li>strong:first-child{color:var(--teal);font-weight:900;margin-inline-end:4px}
 
 .copy-block ol,.copy-block ul{margin:0;padding-inline-start:22px;background:var(--paper);border:1px solid var(--line);border-radius:8px;padding-block:12px;padding-inline-end:14px;color:var(--ink);font-size:.95rem;line-height:1.75}
 .copy-block>div[id]>p{margin:0 0 8px}
@@ -69,5 +69,5 @@
 .shot-legend li{display:flex;align-items:flex-start;gap:8px;margin:6px 0}
 .shot-legend b{flex:0 0 auto;display:grid;place-items:center;width:22px;height:22px;border-radius:50%;background:var(--red);color:#fff;font-size:12px;font-weight:900;font-style:normal;box-shadow:0 1px 3px rgba(13,39,64,.3)}
 .shot-legend-num li{display:flex;align-items:flex-start;gap:8px}
-.shot-legend-num strong{flex:0 0 auto;display:grid;place-items:center;width:22px;height:22px;border-radius:50%;background:var(--red);color:#fff;font-size:12px;font-weight:900;margin-inline-end:0}
+.shot-legend-num>li>strong:first-child{flex:0 0 auto;display:grid;place-items:center;width:22px;height:22px;border-radius:50%;background:var(--red);color:#fff;font-size:12px;font-weight:900;margin-inline-end:0}
 
