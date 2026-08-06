@@ -83,3 +83,31 @@
 
 /* Secondary hero heading, smaller than h1 but still display size */
 .hero-sub{margin:0 0 12px;color:var(--navy2);font-family:Georgia,"Times New Roman",serif;font-size:clamp(1.2rem,2.9vw,1.62rem);font-weight:400;line-height:1.32}
+
+/* --- bonus panel on the series hub -------------------------------------- */
+.bonus-panel{position:relative;margin:26px 0 0;border-radius:18px;
+  background:linear-gradient(135deg,#0d2740 0%,#123a52 100%);
+  color:#eaf3f2;padding:26px 26px 24px;
+  box-shadow:0 14px 34px rgba(13,39,64,.22);overflow:hidden}
+.bonus-panel:before{content:"";position:absolute;inset-inline-start:0;top:0;bottom:0;
+  width:5px;background:var(--orange)}
+.bonus-tag{display:inline-block;margin-bottom:12px;border-radius:999px;
+  background:var(--orange);color:#fff;padding:5px 15px;
+  font-size:12px;font-weight:900;letter-spacing:.09em}
+.bonus-panel h2{margin:0 0 8px;color:#fff;
+  font-family:Georgia,"Times New Roman",serif;font-size:clamp(1.4rem,3.4vw,1.9rem);
+  line-height:1.25}
+.bonus-panel p{margin:0 0 12px;color:#cfe2e0;font-size:1rem;line-height:1.7}
+.bonus-panel p:last-of-type{margin-bottom:0}
+.bonus-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));
+  gap:10px;margin:16px 0 18px}
+.bonus-grid div{border:1px solid rgba(255,255,255,.16);border-radius:12px;
+  background:rgba(255,255,255,.05);padding:11px 13px}
+.bonus-grid b{display:block;color:#fff;font-size:.94rem}
+.bonus-grid span{color:#a9c6c3;font-size:.83rem;line-height:1.5}
+.bonus-actions{display:flex;flex-wrap:wrap;gap:10px;align-items:center}
+.bonus-actions .button{border:0}
+.bonus-actions .button.ghost{background:transparent;border:1px solid rgba(255,255,255,.45);
+  color:#fff}
+.bonus-note{margin-top:14px;color:#9fbcb9;font-size:.83rem;line-height:1.6}
+@media(max-width:640px){.bonus-panel{padding:20px 18px}}
