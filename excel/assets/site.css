@@ -109,5 +109,9 @@
 .bonus-actions .button{border:0}
 .bonus-actions .button.ghost{background:transparent;border:1px solid rgba(255,255,255,.45);
   color:#fff}
-.bonus-note{margin-top:14px;color:#9fbcb9;font-size:.83rem;line-height:1.6}
+.bonus-note{margin-top:14px;color:#9fbcb9;font-size:.83rem;line-height:1.6;
+  padding-inline-start:13px}
+/* the asterisk hangs outside the text column so every line, including the one
+   after the break, starts on the same edge */
+.bonus-note>.note-mark{display:inline-block;width:13px;margin-inline-start:-13px}
 @media(max-width:640px){.bonus-panel{padding:20px 18px}}
