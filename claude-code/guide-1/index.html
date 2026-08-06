@@ -759,7 +759,8 @@
 
 <aside class="content-box warning">
 <h3>שני דברים שיקרו מיד אחרי בחירת התיקייה</h3>
-<p><strong>הראשון:</strong> יקפוץ חלון שמבקש לאשר את התיקייה. אל תפספסו אותו - לחצו <bdi dir="ltr">Yes, I trust the authors</bdi>. אם הוא נסגר בטעות והכוכב של <bdi dir="ltr">Claude</bdi> לא מופיע בסרגל: <bdi dir="ltr">Ctrl+Shift+P</bdi>, להקליד <bdi dir="ltr">Manage Workspace Trust</bdi>, וללחוץ <bdi dir="ltr">Trust</bdi>. הכוכב חוזר.</p>
+<p><strong>הראשון:</strong> תתבקשו לאשר את התיקייה, וזה קורה באחת משתי צורות. <strong>לפעמים יקפוץ חלון באמצע המסך</strong> ואז לוחצים <bdi dir="ltr">Yes, I trust the authors</bdi>. <strong>ולפעמים החלון הזה לא מופיע כלל, ובמקומו יופיע רק פס צר בראש החלון</strong> עם המילה <bdi dir="ltr">Manage</bdi>. לחיצה על <bdi dir="ltr">Manage</bdi> פותחת את אותו מסך אישור בדיוק. שתי הדרכים מובילות לאותו מקום, וזה מוסבר עם צילומי מסך בשלב 2 של פרק 6.</p>
+<p>ואם סגרתם את הפס בטעות והכוכב של <bdi dir="ltr">Claude</bdi> לא מופיע בסרגל: <bdi dir="ltr">Ctrl+Shift+P</bdi>, להקליד <bdi dir="ltr">Manage Workspace Trust</bdi>, וללחוץ <bdi dir="ltr">Trust</bdi>. הכוכב חוזר.</p>
 <p><strong>והשני:</strong> השיחה שהייתה פתוחה תיסגר, ורשימת השיחות תיראה ריקה. זה תקין - הסבר מלא בקופסה הבאה.</p>
 </aside>
 
@@ -775,7 +776,7 @@
 
 <h3>שלב 2 - נותנים אמון בתיקייה, אחרת שום דבר לא יעבוד</h3>
 
-<p>ברגע שהתיקייה נפתחת, יופיע בראש החלון <strong>פס אפור וצנוע</strong> עם המשפט <bdi dir="ltr">Restricted Mode is intended for safe code browsing</bdi>.</p>
+<p>ברגע שהתיקייה נפתחת, יופיע בראש החלון <strong>פס צר וצנוע</strong> עם המשפט <bdi dir="ltr">Restricted Mode is intended for safe code browsing</bdi>. הצבע שלו משתנה לפי ערכת הנושא שלכם, ולכן אל תחפשו צבע מסוים אלא את המשפט. <strong>ואם כבר קפץ לכם חלון האישור ואישרתם אותו, הפס הזה לא יופיע כלל</strong> ואתם יכולים לדלג לשלב 3.</p>
 
 <p>קל מאוד לפספס אותו. <strong>אל תפספסו.</strong></p>
 
@@ -785,7 +786,7 @@
     <div class="shot-target badge-above" style="left:75.9%;top:50%;width:7.4%;height:26%"><span class="shot-target-badge">1</span></div>
   </div>
   <figcaption>
-    <p class="shot-caption">הגדלנו את הפס כדי שתוכלו לקרוא אותו. במסך האמיתי הוא רצועה דקה בראש החלון, אפורה וקלה לפספוס - והיא זו שקובעת אם הכלי יעבוד בכלל.</p>
+    <p class="shot-caption">הגדלנו את הפס כדי שתוכלו לקרוא אותו. במסך האמיתי הוא רצועה דקה בראש החלון, קלה לפספוס - והיא זו שקובעת אם הכלי יעבוד בכלל.</p>
     <ol class="shot-legend-num"><li><strong>1</strong> המילה <bdi dir="ltr">Manage</bdi>. זה מה שלוחצים עליו.</li></ol>
   </figcaption>
 </figure>
@@ -1488,6 +1489,10 @@
 <h3>לחצתי ולא קרה כלום. מה עכשיו?</h3>
 <p>שלוש בדיקות, לפי הסדר. <strong>ראשית, האם התיקייה פתוחה?</strong> אם רשימת הקבצים בצד ריקה, <bdi dir="ltr">Claude</bdi> לא רואה כלום ולכן גם לא יעשה כלום. <strong>שנית, האם השיחה נפתחה</strong>, או שלחצתם על אייקון אחר בסרגל? <strong>שלישית, האם החשבון מחובר?</strong></p>
 <p>ויש עוד אפשרות אחת שקל לפספס: <strong>לפעמים בקשת אישור מסתתרת בתוך השיחה, מעל מה שאתם רואים.</strong> גללו למעלה בשיחה ובדקו שאין שם חלון שממתין לכם.</p>
+
+<h3>פתחתי תיקייה חדשה, והכוכב של <bdi dir="ltr">Claude</bdi> נעלם מהסרגל</h3>
+<p>הוא לא נעלם, הוא כבוי. <strong>כשפותחים תיקייה ש-<bdi dir="ltr">VS Code</bdi> עוד לא מכיר, הוא נכנס למצב <bdi dir="ltr">Restricted Mode</bdi> ומשבית את כל התוספים, כולל <bdi dir="ltr">Claude</bdi>.</strong> בראש החלון יופיע פס צר עם המילה <bdi dir="ltr">Manage</bdi>. לוחצים עליה, מאשרים את התיקייה והכוכב חוזר מיד, בלי להפעיל מחדש. אם סגרתם את הפס בטעות: <bdi dir="ltr">Ctrl+Shift+P</bdi>, להקליד <bdi dir="ltr">Manage Workspace Trust</bdi>, וללחוץ <bdi dir="ltr">Trust</bdi>.</p>
+<p>זה מוסבר עם צילומי מסך בשלב 2 של פרק 6. <strong>וכדאי לדעת שזה יקרה בכל תיקייה חדשה שתפתחו, גם חודשים אחרי ההתקנה.</strong> האישור נשמר לכל תיקייה בנפרד, וזו התנהגות רגילה של <bdi dir="ltr">VS Code</bdi> ולא תקלה.</p>
 
 <h3>מה אם אני לא מבין מה הוא עשה?</h3>
 <p>תשאלו אותו. <em>&ldquo;תסביר לי בעברית פשוטה מה עשית עכשיו&rdquo;</em> זו בקשה לגיטימית לחלוטין, והיא עובדת. <strong>אין שום דבר שאתם אמורים להבין לבד.</strong></p>
