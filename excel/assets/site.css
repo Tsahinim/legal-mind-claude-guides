@@ -99,6 +99,11 @@
   line-height:1.25}
 .bonus-panel p{margin:0 0 12px;color:#cfe2e0;font-size:1rem;line-height:1.7}
 .bonus-panel p:last-of-type{margin-bottom:0}
+/* the line that sends readers to the Skills guide: the one sentence in the
+   panel that has to be read, so it is larger, heavier and pure white */
+.bonus-panel p.bonus-lead{color:#fff;font-size:1.12rem;font-weight:800;
+  line-height:1.62;margin-bottom:14px}
+.bonus-panel p.bonus-lead strong{color:#fff;font-weight:900}
 .bonus-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));
   gap:10px;margin:16px 0 18px}
 .bonus-grid div{border:1px solid rgba(255,255,255,.16);border-radius:12px;
