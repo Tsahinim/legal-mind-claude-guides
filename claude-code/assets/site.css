@@ -160,9 +160,14 @@ bdi[dir=ltr],[dir=ltr]{unicode-bidi:isolate}
 .desktop-toc h2{margin:0 0 10px;color:var(--navy);font-size:1rem}
 .desktop-toc ol{margin:0;padding:0;list-style:none}
 .desktop-toc li+li{border-top:1px solid #edf1f0}
-.desktop-toc a{display:flex;gap:8px;padding:8px 2px;color:var(--teal);
+/* not flex: a flex row turns every <bdi> in the title into its own column,
+   so a wrapped chapter name no longer lines up under itself. the number is
+   positioned instead, which gives a proper hanging indent. */
+.desktop-toc a{display:block;position:relative;padding:8px 2px;
+  padding-inline-start:32px;color:var(--teal);
   font-size:14px;text-decoration:none;line-height:1.4}
-.desktop-toc a span:first-child{flex:0 0 24px;font-weight:900}
+.desktop-toc a span:first-child{position:absolute;inset-inline-start:2px;top:8px;
+  font-weight:900}
 .desktop-toc a[aria-current=location]{color:var(--orange);font-weight:900}
 .mobile-toc{display:none}
 
