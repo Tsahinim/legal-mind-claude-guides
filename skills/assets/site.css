@@ -68,6 +68,4 @@
 
 .shot-legend li{display:flex;align-items:flex-start;gap:8px;margin:6px 0}
 .shot-legend b{flex:0 0 auto;display:grid;place-items:center;width:22px;height:22px;border-radius:50%;background:var(--red);color:#fff;font-size:12px;font-weight:900;font-style:normal;box-shadow:0 1px 3px rgba(13,39,64,.3)}
-.shot-legend-num li{display:flex;align-items:flex-start;gap:8px}
-.shot-legend-num>li>strong:first-child{flex:0 0 auto;display:grid;place-items:center;width:22px;height:22px;border-radius:50%;background:var(--red);color:#fff;font-size:12px;font-weight:900;margin-inline-end:0}
 

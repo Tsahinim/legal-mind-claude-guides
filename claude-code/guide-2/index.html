@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="description" content="מדריך 2 בסדרה: ארבע משימות אמיתיות מהמשרד, איך מנסחים בקשה שמחזירה תוצר שמיש, איך בודקים תוצר, ואיך עוברים לעבוד על תיק אמיתי בבטחה.">
 <title>במה Claude Code יכול לעזור בעבודה של עורך דין | Legal Mind</title>
-<link rel="stylesheet" href="../assets/site.css?v=3">
+<link rel="stylesheet" href="../assets/site.css?v=20260806">
 </head>
 <body>
 
@@ -1501,6 +1501,40 @@
     }
   });
 })();
+
+/* סימון הפרק הפעיל בסרגל הצד, זהה להתנהגות בסדרת Excel */
+(function(){
+  "use strict";
+  var sections = [].slice.call(document.querySelectorAll(".guide-section[id]"));
+  var links = [].slice.call(document.querySelectorAll(".desktop-toc a[href^='#']"));
+  if(!sections.length || !links.length) return;
+  var linked = sections.filter(function(s){
+    return links.some(function(a){ return a.getAttribute("href") === "#" + s.id; });
+  });
+  if(!linked.length) return;
+  var current = null;
+  function set(id){
+    if(id === current) return;
+    current = id;
+    links.forEach(function(a){
+      if(a.getAttribute("href") === "#" + id){ a.setAttribute("aria-current","location"); }
+      else { a.removeAttribute("aria-current"); }
+    });
+  }
+  function pick(){
+    var line = window.innerHeight * 0.25, best = linked[0];
+    for(var i = 0; i < linked.length; i++){
+      if(linked[i].getBoundingClientRect().top <= line){ best = linked[i]; } else { break; }
+    }
+    set(best.id);
+  }
+  pick();
+  window.addEventListener("scroll", pick, {passive:true});
+  window.addEventListener("resize", pick, {passive:true});
+})();
+
+
+
 </script>
 </body>
 </html>
