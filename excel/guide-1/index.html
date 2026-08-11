@@ -221,12 +221,37 @@
 <h3>נקודה שכדאי לדעת: הוא לא בהכרח מוגבל לגיליון</h3>
 <p>אם חיברתם ל-<bdi dir="ltr">Claude</bdi> מערכות חיצוניות, למשל תיבת מייל או אחסון מסמכים, החיבורים האלה עובדים גם מתוך <bdi dir="ltr">Excel</bdi>. כלומר הוא יכול להביא לגיליון מידע שלא נמצא בו, וגם להפך.</p>
 <p>מצד אחד זה שימושי. מצד שני זה מרחיב את מה שנגיש לו בזמן שאתם עובדים על קובץ של לקוח, ולכן כדאי לדעת אילו חיבורים פעילים אצלכם לפני שמתחילים. חיבורים שנבנו בהתאמה אישית, ולא חיבורים רשמיים, דורשים בדיקה נפרדת לפני שמפעילים אותם.</p>
-<p>לפי התיעוד הרשמי, כדי לראות אילו חיבורים זמינים פותחים את הסרגל ובוחרים בסמל החיבורים. הצילום יראה בדיוק איפה הוא נמצא.</p>
-<figure class="shot shot-pending"><div class="shot-frame"><span class="pending-label"><span class="pending-tag">צילום מסך</span>הסרגל, עם סימון על סמל החיבורים ועל רשימת החיבורים הפעילים</span></div></figure>
+<p>לפי התיעוד הרשמי, כדי לראות אילו חיבורים זמינים פותחים את הסרגל, לוחצים על כפתור הפלוס שמתחת לשורת הכתיבה ובוחרים <bdi dir="ltr">Connectors</bdi>. <strong>נושא החיבורים אינו נכנס לסדרה הזאת</strong>, כי הוא נוגע גם בהעברת מידע לצדדים שלישיים ומצריך דיון בפני עצמו.</p>
 <h3>ויש עוד הגדרה אחת שכדאי שמנהל המשרד יכיר</h3>
 <p>ל-<bdi dir="ltr">Claude</bdi> יש יכולת לעבוד בין יישומי <bdi dir="ltr">Office</bdi> שונים, כלומר להעביר הקשר בין <bdi dir="ltr">Excel</bdi>, <bdi dir="ltr">Word</bdi> ו-<bdi dir="ltr">Outlook</bdi> בלי שתעתיקו ביניהם בעצמכם. התיעוד הרשמי מנסח זאת כך: ההקשר עובר בין היישומים אוטומטית.</p>
 <p>והנקודה החשובה למשרד: במנויי <bdi dir="ltr">Team</bdi> ו-<bdi dir="ltr">Enterprise</bdi> ההגדרה הזאת <strong>כבויה כברירת מחדל</strong>, ורק בעל הארגון יכול להפעיל אותה, תחת הגדרות הארגון בסעיף <bdi dir="ltr">Office agents</bdi>. במנויים אישיים בתשלום היא דווקא פעילה כברירת מחדל.</p>
 <p>כלומר אם המשרד שלכם על <bdi dir="ltr">Team</bdi>, ברירת המחדל היא הזהירה יותר, וזה דבר טוב. אבל אם מישהו מפעיל את ההגדרה, המשמעות היא שעבודה על גיליון של לקוח יכולה למשוך הקשר גם מהמייל ומהמסמכים. זו החלטה שכדאי שתתקבל במשרד ביודעין, ולא תתגלה בדיעבד.</p>
+<h3>הוא עובד על כל הקבצים הפתוחים, ויש לזה מתג</h3>
+<p>במסכי הפתיחה של התוסף מופיע מסך שאומר את זה במפורש: <strong><bdi dir="ltr">Claude</bdi> יכול לעבוד על כל המסמכים, חוברות העבודה והמצגות שפתוחים אצלכם, בבת אחת.</strong></p>
+<figure class="shot"><div class="shot-frame" style="max-width:338px;margin-inline:auto"><img src="../assets/shots/g1-install-16-work-across-apps.png" alt="מסך הפתיחה שמסביר שהוא עובד על כל הקבצים הפתוחים" loading="lazy"></div><p class="shot-legend">מסך הפתיחה שמסביר שהוא עובד על כל הקבצים הפתוחים</p></figure>
+<p>המשמעות המעשית ברורה: <strong>אם פתוח אצלכם במקביל חוזה של לקוח אחד וגיליון <bdi dir="ltr">Excel</bdi> של לקוח אחר, שניהם בהישג ידו באותו רגע.</strong></p>
+<p><strong>וזו יכולת שאפשר לכבות.</strong> בהגדרות התוסף יש מתג בשם <bdi dir="ltr">Let Claude work across files</bdi>, והוא <strong>דלוק כברירת מחדל</strong>. מי שרוצה ש-<bdi dir="ltr">Claude</bdi> ייגע רק בקובץ שהוא עומד עליו, מכבה אותו.</p>
+<p>ולכל הפחות, סגרו קבצים של תיקים אחרים לפני שאתם מתחילים לעבוד.</p>
+
+<h3>הוראות מוסתרות בתוך קבצים</h3>
+<p>לפני שהתוסף מתחיל לעבוד הוא מציג מסך אזהרה, וזה המסך היחיד בכל ההתקנה שדורש אישור מפורש ולא רק <bdi dir="ltr">Next</bdi>.</p>
+<figure class="shot"><div class="shot-frame" style="max-width:326px;margin-inline:auto"><img src="../assets/shots/g1-install-17-before-you-continue.png" alt="מסך האזהרה על הוראות מוסתרות, עם הכפתור I understand" loading="lazy"></div><p class="shot-legend">מסך האזהרה על הוראות מוסתרות, עם הכפתור I understand</p></figure>
+<p>זה מה שכתוב בו, בתרגום מדויק:</p>
+<aside class="content-box warning">
+<p><strong>קבצים, מיילים וצרופות יכולים להכיל הוראות מוסתרות שמנסות להכווין את <bdi dir="ltr">Claude</bdi>. השתמשו ב-<bdi dir="ltr">Claude</bdi> רק עם תוכן ממקורות שאתם סומכים עליהם.</strong></p>
+</aside>
+<p>ובתיעוד הרשמי של <bdi dir="ltr">Claude for Excel</bdi> זה מנוסח חזק יותר:</p>
+<aside class="content-box warning">
+<p><strong>השתמשו ב-<bdi dir="ltr">Claude for Excel</bdi> רק עם גיליונות שאתם סומכים עליהם. קבצים ממקורות חיצוניים יכולים להכיל הוראות מוסתרות שמתמרנות את התוסף לחלץ נתונים, לשנות רשומות או לבצע פעולות הרסניות.</strong> בבדיקות זוהו מצבים שבהם ניתן לתמרן את <bdi dir="ltr">Claude for Excel</bdi> לחלץ מידע רגיש, לשנות נתונים קריטיים או לבצע פעולות הרסניות אם הוא מורשה לפעול בלי אימות.</p>
+</aside>
+<p>ולמה זה נוגע לעורך דין יותר מלכל אחד אחר: <strong>עורך דין מקבל קבצים מהצד השני כל יום.</strong> ובגיליון <bdi dir="ltr">Excel</bdi> קל במיוחד להסתיר טקסט, בתא רחוק מחוץ לאזור שרואים, בלשונית מוסתרת, בטקסט בצבע לבן או בהערה בתא. <strong>אתם לא רואים, הוא כן קורא.</strong></p>
+
+<h3>ומה <bdi dir="ltr">Anthropic</bdi> עצמה אומרת שלא מומלץ לעשות</h3>
+<p>שלוש השורות האלה מופיעות בתיעוד הרשמי תחת מגבלות, והן נוגעות ישירות לעבודה משפטית:</p>
+<aside class="content-box warning">
+<p><strong>תוצרים סופיים ללקוח בלי בדיקה אנושית. חישובים קריטיים לביקורת בלי אימות. מודלים שמכילים מידע רגיש או מפוקח בלי בקרות מתאימות.</strong></p>
+</aside>
+
 <p>הכללים האתיים שחלים על עורך דין שמשתמש בכלי בינה מלאכותית הם נושא רחב בפני עצמו, והם לא מיוחדים ל-<bdi dir="ltr">Excel</bdi>. הם מוסברים בהרחבה במדריכים אחרים של Legal Mind, וכדאי להכיר אותם לפני שמתחילים לעבוד על חומר אמיתי.</p>
 </section>
 
@@ -371,11 +396,50 @@
 <li>פותחים את ההגדרות של הסרגל.</li>
 <li>בפאנל שנפתח מפעילים את אפשרות התיעוד.</li>
 </ol>
-<figure class="shot shot-pending"><div class="shot-frame"><span class="pending-label"><span class="pending-tag">צילום מסך 1 מתוך 2</span>הסרגל כולו, עם סימון על המקום שממנו נפתחות ההגדרות</span></div></figure>
-<figure class="shot shot-pending"><div class="shot-frame"><span class="pending-label"><span class="pending-tag">צילום מסך 2 מתוך 2</span>פאנל ההגדרות שנפתח, עם סימון על המתג שמפעיל את התיעוד</span></div></figure>
+<figure class="shot"><div class="shot-frame" style="max-width:339px;margin-inline:auto"><img src="../assets/shots/g1-install-19-sidebar-menu.png" alt="התפריט שנפתח משלוש הנקודות שבראש הסרגל" loading="lazy"></div><p class="shot-legend">התפריט שנפתח משלוש הנקודות שבראש הסרגל</p></figure>
+<figure class="shot"><div class="shot-frame" style="max-width:338px;margin-inline:auto"><img src="../assets/shots/g1-install-20-settings.png" alt="פאנל ההגדרות, ובו שדה ההוראות והמתג Session logging" loading="lazy"></div><p class="shot-legend">פאנל ההגדרות, ובו שדה ההוראות והמתג Session logging</p></figure>
 <p>בהגדרות של הסרגל אפשר להפעיל תיעוד. כשהאפשרות הזאת פעילה, <bdi dir="ltr">Claude</bdi> יוצר בקובץ גיליון נוסף בשם <bdi dir="ltr">Claude Log</bdi>, וכותב בו את הפעולות שביצע בכל סבב. אם הוא לא יצר אותו לבד, אפשר פשוט לבקש ממנו לתעד את מה שעשה, והוא ייצור את הגיליון.</p>
 <p>לעבודה במשרד עורכי דין זה שווה את ההפעלה, כי זה נותן רשומה של מה שנעשה בקובץ ומתי.</p>
+<aside class="callout tip">
+<span class="callout-label">מחיר קטן שכדאי להכיר</span>
+<p>כשהתיעוד דלוק, כל פעולה מבקשת <strong>אישור נפרד גם על כתיבת שורת היומן.</strong> כלומר גם פרומפט שמבקש במפורש לא לשנות כלום יבקש אישור אחד או שניים. זה תקין.</p>
+</aside>
 <figure class="shot"><div class="shot-frame" style="max-width:660px;margin-inline:auto"><a href="../assets/shots/g1-log-01-claude-log-sheet.png" target="_blank" rel="noopener"><img src="../assets/shots/g1-log-01-claude-log-sheet.png" alt="גיליון Claude Log שנוצר בקובץ, עם שורת התיעוד הראשונה" loading="lazy"></a></div><p class="shot-legend">גיליון Claude Log שנוצר בקובץ, עם שורת התיעוד הראשונה</p><p class="shot-zoom"><a href="../assets/shots/g1-log-01-claude-log-sheet.png" target="_blank" rel="noopener">לחיצה על התמונה פותחת אותה בגודל מלא</a></p></figure>
+
+<h3>נראה לי שנעלמה לי לשונית</h3>
+<p>כש-<bdi dir="ltr">Claude</bdi> יוצר לשוניות חדשות, שורת הלשוניות מתארכת והלשוניות הישנות נדחפות מחוץ למסך. <strong>בקובץ בעברית הן נדחפות ימינה, וזה נראה בדיוק כמו לשונית שנמחקה.</strong></p>
+<p><strong>אף לשונית לא נמחקה. היא רק לא נראית.</strong></p>
+<p>לחיצה ימנית על אחד מחצי הניווט שבקצה שורת הלשוניות פותחת רשימה של כל הלשוניות בקובץ.</p>
+<figure class="shot"><div class="shot-frame" style="max-width:412px;margin-inline:auto"><img src="../assets/shots/g1-tabs-01-arrows-tooltip.png" alt="החלונית שנפתחת כשעומדים על חצי הניווט" loading="lazy"></div><p class="shot-legend">החלונית שנפתחת כשעומדים על חצי הניווט</p></figure>
+<figure class="shot"><div class="shot-frame" style="max-width:349px;margin-inline:auto"><img src="../assets/shots/g1-tabs-02-activate-list.png" alt="רשימת כל הלשוניות בקובץ" loading="lazy"></div><p class="shot-legend">רשימת כל הלשוניות בקובץ</p></figure>
+<p>בוחרים לשונית ולוחצים <bdi dir="ltr">OK</bdi>, <strong>והיא הופכת לפעילה ושורת הלשוניות נגללת אליה.</strong> זו גם הדרך הנוחה ביותר לנווט בקובץ עם הרבה לשוניות. <bdi dir="ltr">Ctrl</bdi> עם לחיצה שמאלית על החץ קופץ ישר ללשונית הראשונה.</p>
+
+<h3>רוחב עמודות, שלוש פקודות ומתי כל אחת</h3>
+<p>הלשונית שנוצרה כרגע היא הזדמנות טובה ללמוד משהו שיחזור בכל קובץ: <strong>מה שנכתב נכון לא תמיד נראה טוב, וזה תיקון של פרומפט אחד.</strong></p>
+<p><strong>הפקודה הראשונה, התאמה אוטומטית לכל העמודות:</strong></p>
+<div class="copy-block"><div class="copy-heading"><strong>התאמת רוחב, פרומפט מוכן להעתקה</strong><button class="copy-button" data-copy-target="p-width-1" type="button">העתקה</button></div>
+<div class="copy-body" id="p-width-1">תתאים את רוחב כל העמודות בלשונית Claude Log לרוחב התוכן שבהן.</div>
+<span class="copy-status" aria-live="polite" aria-atomic="true"></span></div>
+<figure class="shot"><div class="shot-frame" style="max-width:660px;margin-inline:auto"><a href="../assets/shots/g1-log-02-after-autofit.png" target="_blank" rel="noopener"><img src="../assets/shots/g1-log-02-after-autofit.png" alt="התוצאה: עמודה אחת התרחבה לרוחב של מסך וחצי" loading="lazy"></a></div><p class="shot-legend">התוצאה: עמודה אחת התרחבה לרוחב של מסך וחצי</p><p class="shot-zoom"><a href="../assets/shots/g1-log-02-after-autofit.png" target="_blank" rel="noopener">לחיצה על התמונה פותחת אותה בגודל מלא</a></p></figure>
+<p><strong>היא עבדה, והתוצאה לא שימושית.</strong> התאמה אוטומטית מרחיבה כל עמודה לרוחב התא הארוך ביותר בה, <strong>ובעמודה שיש בה משפט שלם זה אומר עמודה ברוחב מסך.</strong></p>
+<p><strong>הפקודה השנייה, רוחב אחיד עם גלישת טקסט:</strong></p>
+<div class="copy-block"><div class="copy-heading"><strong>רוחב אחיד וגלישה, פרומפט מוכן להעתקה</strong><button class="copy-button" data-copy-target="p-width-2" type="button">העתקה</button></div>
+<div class="copy-body" id="p-width-2">בלשונית Claude Log תעשה שלושה דברים לפי הסדר:
+1. תקבע לכל העמודות מ-A עד F רוחב אחיד של 30 תווים.
+2. תפעיל גלישת טקסט בכל התאים שיש בהם תוכן.
+3. תתאים את גובה כל שורה לתוכן שלה אחרי הגלישה.</div>
+<span class="copy-status" aria-live="polite" aria-atomic="true"></span></div>
+<figure class="shot"><div class="shot-frame" style="max-width:660px;margin-inline:auto"><a href="../assets/shots/g1-log-03-after-wrap.png" target="_blank" rel="noopener"><img src="../assets/shots/g1-log-03-after-wrap.png" alt="אותה לשונית אחרי רוחב אחיד וגלישת טקסט" loading="lazy"></a></div><p class="shot-legend">אותה לשונית אחרי רוחב אחיד וגלישת טקסט</p><p class="shot-zoom"><a href="../assets/shots/g1-log-03-after-wrap.png" target="_blank" rel="noopener">לחיצה על התמונה פותחת אותה בגודל מלא</a></p></figure>
+<p><strong>והפקודה השלישית, תיקון עמודה אחת בלבד.</strong> עכשיו עמודת המספרים רחבה מדי, ואפשר לכוון אליה לבד:</p>
+<div class="copy-block"><div class="copy-heading"><strong>תיקון עמודה אחת, פרומפט מוכן להעתקה</strong><button class="copy-button" data-copy-target="p-width-3" type="button">העתקה</button></div>
+<div class="copy-body" id="p-width-3">בלשונית Claude Log תצמצם רק את עמודה A לרוחב שמתאים לתוכן שלה. אל תיגע ברוחב של שאר העמודות ואל תבטל את גלישת הטקסט.</div>
+<span class="copy-status" aria-live="polite" aria-atomic="true"></span></div>
+<figure class="shot"><div class="shot-frame" style="max-width:660px;margin-inline:auto"><a href="../assets/shots/g1-log-04-single-column.png" target="_blank" rel="noopener"><img src="../assets/shots/g1-log-04-single-column.png" alt="רק עמודה A צומצמה, והשאר נשאר כפי שהיה" loading="lazy"></a></div><p class="shot-legend">רק עמודה A צומצמה, והשאר נשאר כפי שהיה</p><p class="shot-zoom"><a href="../assets/shots/g1-log-04-single-column.png" target="_blank" rel="noopener">לחיצה על התמונה פותחת אותה בגודל מלא</a></p></figure>
+<aside class="callout tip">
+<span class="callout-label">הכלל שמאחורי שלושתן</span>
+<p><strong>התאמה אוטומטית מתאימה לטבלאות עם ערכים קצרים:</strong> תאריכים, סכומים, שמות. <strong>בעמודה עם טקסט חופשי רוצים רוחב קבוע וגלישה.</strong> והשורה השנייה בפקודה השלישית, זו שאומרת במה לא לגעת, היא מה שמונע ממנו לעשות סדר גם במקומות שלא ביקשתם.</p>
+</aside>
+
 </section>
 
 <section class="guide-section" id="phrasing">
@@ -484,7 +548,13 @@
 <h3>אני לא מבין ב-<bdi dir="ltr">Excel</bdi>. זה בשבילי?</h3>
 <p>כן, וזה אפילו אחד השימושים הטובים שלו. אפשר לבקש ממנו להסביר גיליון <bdi dir="ltr">Excel</bdi> שמישהו אחר בנה, ואפשר לבקש ממנו לבנות דברים שלא הייתם יודעים לבנות לבד. מה שכן נדרש זה לבדוק את התוצאה, ולזה יש פרק 10.</p>
 <h3>אפשר לבטל שינוי שהוא עשה?</h3>
-<p>כן, ביטול הפעולה הרגיל של <bdi dir="ltr">Excel</bdi> עובד גם עליו. ובכל מקרה, כשעובדים על קובץ אמיתי כדאי לשמור עותק לפני.</p>
+<p>כן. <bdi dir="ltr">Ctrl + Z</bdi> מבטל שינוי שהוא עשה, בדיוק כמו כל שינוי אחר ב-<bdi dir="ltr">Excel</bdi>. <strong>בדקנו את זה בפועל.</strong></p>
+<p><strong>אבל יש שני דברים שכדאי לדעת מראש, אחרת נראה שזה לא עובד.</strong></p>
+<p><strong>הראשון: פעולה אחת שביקשתם מתבצעת ב-<bdi dir="ltr">Excel</bdi> כמה צעדים נפרדים</strong>, ולכן צריך ללחוץ כמה פעמים. אם יומן השינויים דלוק, הלחיצה הראשונה מוחקת דווקא את שורת היומן, <strong>והשינוי עצמו עדיין יהיה שם.</strong></p>
+<p><strong>והשני: הביטול מקפיץ אתכם ללשונית שבה בוצע השינוי שמתבטל</strong>, ולפעמים ללשונית שאין לה קשר למה שעשיתם. זה מבלבל, וזה לא סימן שמשהו נשבר.</p>
+<figure class="shot"><div class="shot-frame" style="max-width:569px;margin-inline:auto"><img src="../assets/shots/g1-undo-01-after-claude.png" alt="הגיליון אחרי ש-Claude צבע את העמודה בצהוב" loading="lazy"></div><p class="shot-legend">אחרי ש-Claude צבע את העמודה</p></figure>
+<figure class="shot"><div class="shot-frame" style="max-width:569px;margin-inline:auto"><img src="../assets/shots/g1-undo-02-after-ctrlz.png" alt="אותו גיליון אחרי הביטול, בלי הצבע" loading="lazy"></div><p class="shot-legend">ואחרי הביטול</p></figure>
+<p><strong>וההיסטוריה הזאת חיה רק כל עוד הקובץ פתוח.</strong> אחרי שמירה וסגירה אין יותר מה לבטל, <strong>ולכן בקובץ של תיק עדיין כדאי לעבוד על עותק.</strong></p>
 <h3>הוא זוכר את הגיליון שעבדנו עליו אתמול?</h3>
 <p>לא. כל שיחה מתחילה מהקובץ שפתוח כרגע. מה שכן נשמר בין שיחות זה מה שכתבתם בשדה ההוראות, לפי פרק 12.</p>
 <h3>ההיסטוריה של השיחות שלי נשמרת?</h3>
