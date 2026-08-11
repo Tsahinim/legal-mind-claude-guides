@@ -84,6 +84,15 @@
 </tbody>
 </table></div>
 
+<aside class="callout tip">
+<span class="callout-label">עמודה או לשונית שנוצרו ונראות לא מעוצבות</span>
+<p>כמה מהפרומפטים גורמים ל-<bdi dir="ltr">Claude</bdi> לבנות לעצמו עמודת עזר או לשונית ביניים. <strong>לפעמים הוא לא מעצב אותן, כי בעיניו הן כלי פנימי ולא תוצר</strong>, ואז התאריכים מוצגים כמספרים והכותרת נחתכת.</p>
+<p><strong>זו שורה אחת לתקן, ואפשר להשתמש בה בכל מקום שזה קורה:</strong></p>
+<div class="copy-block"><div class="copy-heading"><strong>עיצוב עמודת עזר, פרומפט מוכן להעתקה</strong><button class="copy-button" data-copy-target="p-helper-fix" type="button">העתקה</button></div>
+<div class="copy-body" id="p-helper-fix">בעמודת העזר שיצרת: עצב את כל התאריכים בפורמט יום/חודש/שנה, הדלק גלישת טקסט בתא הכותרת, והתאם את רוחב העמודה ואת גובה שורת הכותרת כך שהכותרת תיקרא במלואה. אל תשנה שום ערך.</div>
+<span class="copy-status" aria-live="polite" aria-atomic="true"></span></div>
+</aside>
+
 <aside class="callout warn">
 <span class="callout-label">שני דברים ממדריך 1 שכדאי לזכור לפני שמתחילים</span>
 <p><strong>הראשון, חלונות האישור.</strong> כמעט כל פרומפט כאן כותב משהו לקובץ, ולכן יבקש אישור. לא נזכיר את זה שוב בכל פרומפט. העמדה שלנו בעניין הזה מפורטת במדריך 1.</p>
@@ -311,11 +320,19 @@
 4. "סטטוס": "עבר המועד" אם התאריך חלף, "דחוף" אם נותרו פחות משבעה ימי עבודה, ואחרת "בטווח".
 
 צבע באדום כל שורה שהסטטוס בה "עבר המועד" או "דחוף".
+אם אתה יוצר עמודת עזר או לשונית עזר לצורך החישוב, עצב גם אותה: תאריכים בפורמט יום/חודש/שנה, גלישת טקסט בכותרת, ורוחב שמתאים לתוכן.
 בסוף תגיד לי אם היה חישוב שלא היית בטוח בו, ולמה.</div>
 <span class="copy-status" aria-live="polite" aria-atomic="true"></span>
 </div>
 <h3>מה אמור לחזור</h3>
 <p>שלוש עמודות מלאות, <strong>עם נוסחאות ולא עם תאריכים מוקלדים</strong>, ושורות צבועות באדום היכן שהמועד קרוב או חלף.</p>
+<figure class="shot"><div class="shot-frame" style="max-width:606px;margin-inline:auto"><a href="../assets/shots/p06-02-sheet-full.png" target="_blank" rel="noopener"><img src="../assets/shots/p06-02-sheet-a.png" alt="הלשונית אחרי החישוב: תאריך ההחלטה, הערכאה ונושא ההחלטה" loading="lazy"></a></div><p class="shot-legend">הלשונית אחרי החישוב: תאריך ההחלטה, הערכאה ונושא ההחלטה</p><p class="shot-zoom"><a href="../assets/shots/p06-02-sheet-full.png" target="_blank" rel="noopener">לחיצה על התמונה פותחת את הלשונית כולה</a></p></figure>
+<figure class="shot"><div class="shot-frame" style="max-width:605px;margin-inline:auto"><a href="../assets/shots/p06-02-sheet-full.png" target="_blank" rel="noopener"><img src="../assets/shots/p06-02-sheet-b.png" alt="והמשכה: המועד האחרון, הימים שנותרו והסטטוס הצבוע" loading="lazy"></a></div><p class="shot-legend">והמשכה: המועד האחרון, הימים שנותרו והסטטוס הצבוע</p><p class="shot-zoom"><a href="../assets/shots/p06-02-sheet-full.png" target="_blank" rel="noopener">לחיצה על התמונה פותחת את הלשונית כולה</a></p></figure>
+<p><strong>ותסתכלו על השורה הרביעית.</strong> החלטה מ-27 ביולי עם שבעה ימי עבודה להגשה, <strong>והמועד האחרון יצא 14 בספטמבר.</strong> כי פגרת הקיץ, מ-21 ביולי עד 5 בספטמבר, הוחרגה במלואה. <strong>חודש וחצי הפרש בין חישוב שמכיר את הפגרות לחישוב שלא.</strong></p>
+<h3>ועמודת עזר שהוא בונה לבד</h3>
+<p>כדי להחריג את ימי הפגרה הוא פורס את שש התקופות ל-126 תאריכים בודדים בעמודה נפרדת, <strong>וכל אחד מהם מקושר בנוסחה לטבלת הפגרות.</strong> כלומר אם תשנו תאריך בטבלה, כל המועדים יתעדכנו.</p>
+<figure class="shot"><div class="shot-frame" style="max-width:238px;margin-inline:auto"><img src="../assets/shots/p06-03-helper.png" alt="ראש עמודת העזר: ימי הפגרה, פרוסים אחד אחד ומקושרים לטבלה" loading="lazy"></div><p class="shot-legend">ראש עמודת העזר: ימי הפגרה, פרוסים אחד אחד ומקושרים לטבלה</p></figure>
+<p>וההסבר שלו למה דווקא כך: <strong>"כדי שאפשר יהיה להראות בבית משפט בדיוק אילו ימים הוחרגו."</strong></p>
 <aside class="content-box warning">
 <h3>זה תרגיל חישוב, לא הנחיה דיונית</h3>
 <p><strong>ספירת מועדים בהליך משפטי כפופה לתקנות ולפסיקה, והיא אינה עניין של נוסחה ב-<bdi dir="ltr">Excel</bdi>.</strong> התרגיל הזה מלמד איך לגרום ל-<bdi dir="ltr">Excel</bdi> לחשב הפרשי ימים סביב פגרות, <strong>ולא מה המועד הנכון בתיק שלכם.</strong> את זה בודקים לגופו בכל מקרה.</p>
