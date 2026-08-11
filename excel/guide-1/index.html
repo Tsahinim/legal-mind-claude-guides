@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="description" content="מדריך 1 בסדרת Claude בתוך Excel של Legal Mind: מה הכלי עושה, אילו גרסאות ומנוי נדרשים, על אילו קבצים מותר להפעיל את Claude, התקנה מסך אחר מסך ואיך בודקים תוצאה לפני שסומכים עליה.">
 <title>עבודה עם Claude בסביבת Excel | Legal Mind</title>
-<link rel="stylesheet" href="assets/site.css?v=20260807">
+<link rel="stylesheet" href="assets/site.css?v=20260811">
 <script defer src="assets/site.js"></script>
 </head>
 <body>
@@ -236,29 +236,61 @@
 <p>ההתקנה עצמה קצרה, בערך עשר דקות. יש שני מסלולים: התקנה שאתם עושים לעצמכם, והתקנה שמנהל המשרד עושה פעם אחת לכל העובדים.</p>
 <h3>מסלול א', התקנה אישית</h3>
 <p>שם התוסף המדויק הוא <bdi dir="ltr">Claude for Microsoft 365</bdi>, והוא אותו תוסף אחד שמשרת את <bdi dir="ltr">Excel</bdi> ואת שאר יישומי <bdi dir="ltr">Office</bdi>. שווה לדעת את השם, כדי לא להתקין בטעות תוסף אחר בשם דומה.</p>
-<p>חמישה שלבים, בלי לדלג על אף אחד.</p>
+<p>כל מה שמתואר כאן צולם במהלך התקנה אמיתית, מסך אחר מסך.</p>
 
-<h4>שלב 1: נכנסים לחנות של <bdi dir="ltr">Microsoft</bdi> ומוסיפים את התוסף</h4>
-<p>זו הדרך שמופיעה בתיעוד הרשמי: נכנסים לעמוד של <bdi dir="ltr">Claude for Microsoft 365</bdi> בחנות של <bdi dir="ltr">Microsoft</bdi>, ולוחצים על כפתור ההוספה.</p>
-<figure class="shot shot-pending"><div class="shot-frame"><span class="pending-label"><span class="pending-tag">צילום מסך</span>עמוד התוסף בחנות של <bdi dir="ltr">Microsoft</bdi>, עם סימון על כפתור ההוספה</span></div></figure>
-<p>יש גם דרך שנייה, מתוך <bdi dir="ltr">Excel</bdi> עצמו: לוחצים בסרגל העליון על <bdi dir="ltr">Home</bdi> ואז על <bdi dir="ltr">Add-ins</bdi>, וב-<bdi dir="ltr">Mac</bdi> תחת <bdi dir="ltr">Tools</bdi> ואז <bdi dir="ltr">Add-ins</bdi>, ומחפשים שם את התוסף. הדרך הזאת נוחה יותר, אבל היא תלויה בכך שהגישה לחנות התוספים פתוחה בארגון שלכם, ולכן אם היא לא עובדת זה לא סימן לתקלה.</p>
-<figure class="shot shot-pending"><div class="shot-frame"><span class="pending-label"><span class="pending-tag">צילום מסך</span>הסרגל העליון של <bdi dir="ltr">Excel</bdi>, עם סימון על הכפתור <bdi dir="ltr">Add-ins</bdi></span></div></figure>
+<h4>שלב 1: פותחים את חנות התוספים מתוך <bdi dir="ltr">Excel</bdi></h4>
+<p>בסרגל העליון, בלשונית <bdi dir="ltr">Home</bdi>, לוחצים על הכפתור <bdi dir="ltr">Add-ins</bdi>. הוא יושב בקצה הסרגל, ולא באמצע.</p>
+<figure class="shot"><div class="shot-frame" style="max-width:660px;margin-inline:auto"><a href="../assets/shots/g1-install-01-ribbon-addins.png" target="_blank" rel="noopener"><img src="../assets/shots/g1-install-01-ribbon-addins.png" alt="הסרגל העליון של Excel, והכפתור Add-ins בקצה" loading="lazy"></a></div><p class="shot-legend">הסרגל העליון של Excel, והכפתור Add-ins בקצה</p><p class="shot-zoom"><a href="../assets/shots/g1-install-01-ribbon-addins.png" target="_blank" rel="noopener">לחיצה על התמונה פותחת אותה בגודל מלא</a></p></figure>
+<p>נפתחת חלונית של חנות התוספים.</p>
+<figure class="shot"><div class="shot-frame" style="max-width:368px;margin-inline:auto"><img src="../assets/shots/g1-install-02-addins-panel.png" alt="חלונית חנות התוספים אחרי הלחיצה" loading="lazy"></div><p class="shot-legend">חלונית חנות התוספים אחרי הלחיצה</p></figure>
 
-<h4>שלב 2: מאשרים את ההרשאה</h4>
-<p>לפני שהתוסף נוסף, <bdi dir="ltr">Microsoft</bdi> מציגה חלון שמפרט מה התוסף יוכל לעשות, למשל לקרוא את המסמך שפתוח. זה חלון של <bdi dir="ltr">Microsoft</bdi> ולא של <bdi dir="ltr">Anthropic</bdi>, וצריך לאשר אותו כדי להמשיך.</p>
-<figure class="shot shot-pending"><div class="shot-frame"><span class="pending-label"><span class="pending-tag">צילום מסך</span>דיאלוג ההרשאה של <bdi dir="ltr">Microsoft</bdi> לפני ההוספה</span></div></figure>
+<h4>שלב 2: מחפשים ומוסיפים</h4>
+<p>בשורת החיפוש כותבים <bdi dir="ltr">Claude</bdi>, ובוחרים מהתוצאות את <bdi dir="ltr">Claude for Microsoft 365</bdi>.</p>
+<aside class="callout warn">
+<span class="callout-label">שימו לב לשם המלא</span>
+<p>בחנות מופיעים גם תוספים אחרים עם שמות דומים, שאינם של <bdi dir="ltr">Anthropic</bdi>. בדקו שהשם מדויק לפני שאתם מוסיפים.</p>
+</aside>
+<figure class="shot"><div class="shot-frame" style="max-width:362px;margin-inline:auto"><img src="../assets/shots/g1-install-04-search-results.png" alt="תוצאות החיפוש, והתוסף הנכון מתוכן" loading="lazy"></div><p class="shot-legend">תוצאות החיפוש, והתוסף הנכון מתוכן</p></figure>
 
-<h4>שלב 3: מפעילים את התוסף בתוך <bdi dir="ltr">Excel</bdi></h4>
-<p>פותחים <bdi dir="ltr">Excel</bdi> על קובץ חדש וריק, ומפעילים את התוסף מתוך <bdi dir="ltr">Home</bdi> ואז <bdi dir="ltr">Add-ins</bdi>.</p>
-<figure class="shot shot-pending"><div class="shot-frame"><span class="pending-label"><span class="pending-tag">צילום מסך</span>התוסף מופיע ברשימת התוספים המותקנים, לפני ההפעלה</span></div></figure>
+<h4>שלב 3: הכפתור מופיע בסרגל</h4>
+<p>אחרי הלחיצה על <bdi dir="ltr">Add</bdi> לא נפתח שום חלון נוסף ולא מופיעה שום הודעה. פשוט מופיע כפתור <bdi dir="ltr">Claude</bdi> בסרגל העליון, וזה סימן שההתקנה הצליחה.</p>
+<figure class="shot"><div class="shot-frame" style="max-width:184px;margin-inline:auto"><img src="../assets/shots/g1-install-05-claude-in-ribbon.png" alt="הכפתור של Claude אחרי ההתקנה" loading="lazy"></div><p class="shot-legend">הכפתור של Claude אחרי ההתקנה</p></figure>
 
-<h4>שלב 4: נכנסים לחשבון של המשרד</h4>
-<p>הסרגל נפתח ומבקש להיכנס לחשבון. זה השלב שמחבר בין התוסף למנוי, וכאן חשוב להיכנס לחשבון של המשרד ולא לחשבון פרטי.</p>
-<figure class="shot shot-pending"><div class="shot-frame"><span class="pending-label"><span class="pending-tag">צילום מסך</span>מסך הכניסה לחשבון בתוך הסרגל</span></div></figure>
+<h4>שלב 4: נכנסים לחשבון</h4>
+<p>לוחצים על הכפתור, והסרגל נפתח בצד המסך ומבקש להיכנס לחשבון.</p>
+<figure class="shot"><div class="shot-frame" style="max-width:348px;margin-inline:auto"><img src="../assets/shots/g1-install-06-sidebar-signin.png" alt="מסך הכניסה בתוך הסרגל" loading="lazy"></div><p class="shot-legend">מסך הכניסה בתוך הסרגל</p></figure>
+<p>הכניסה נעשית דרך הדפדפן. נפתח עמוד שמבקש לאשר את החיבור בין התוסף לחשבון.</p>
+<figure class="shot"><div class="shot-frame" style="max-width:660px;margin-inline:auto"><a href="../assets/shots/g1-install-08-browser-connect.png" target="_blank" rel="noopener"><img src="../assets/shots/g1-install-08-browser-connect.png" alt="עמוד אישור החיבור שנפתח בדפדפן" loading="lazy"></a></div><p class="shot-legend">עמוד אישור החיבור שנפתח בדפדפן</p><p class="shot-zoom"><a href="../assets/shots/g1-install-08-browser-connect.png" target="_blank" rel="noopener">לחיצה על התמונה פותחת אותה בגודל מלא</a></p></figure>
 
-<h4>שלב 5: מוודאים שזה עבד</h4>
-<p>אחרי הכניסה הסרגל נפתח ומוכן לקבל בקשה. אם הוא מופיע בצד המסך, ההתקנה הסתיימה.</p>
-<figure class="shot shot-pending"><div class="shot-frame"><span class="pending-label"><span class="pending-tag">צילום מסך</span>הסרגל אחרי התקנה מוצלחת, עם סימון על שורת הכתיבה</span></div></figure>
+<aside class="callout warn">
+<span class="callout-label">לפני שמאשרים, בדקו לאיזה חשבון ולאיזה ארגון</span>
+<p>מי שיש לו גם חשבון פרטי וגם חשבון של המשרד תחת אותה כתובת מייל מתחבר לארגון שפעיל באותו רגע בדפדפן, <strong>והתוסף אינו מציג אחר כך את שם הארגון במקום שאפשר לבדוק בו.</strong></p>
+<p><strong>לכן לפני ההתחברות שווה לפתוח את <bdi dir="ltr">claude.ai</bdi>, ללחוץ על העיגול עם השם, ולוודא איזה ארגון מסומן.</strong> זה המקום היחיד שרואים בו את השם בבירור.</p>
+</aside>
+<figure class="shot"><div class="shot-frame" style="max-width:287px;margin-inline:auto"><img src="../assets/shots/g1-install-10-org-list.png" alt="רשימת הארגונים ב-claude.ai, והארגון הפעיל מסומן" loading="lazy"></div><p class="shot-legend">רשימת הארגונים ב-claude.ai, והארגון הפעיל מסומן</p></figure>
+<p>אחרי האישור הדפדפן מודיע שההתחברות הצליחה. אפשר לסגור אותו ולחזור ל-<bdi dir="ltr">Excel</bdi>, <strong>והסרגל מתחבר בעצמו בלי שצריך לרענן או לפתוח מחדש.</strong></p>
+<figure class="shot"><div class="shot-frame" style="max-width:532px;margin-inline:auto"><img src="../assets/shots/g1-install-11-signed-in.png" alt="הודעת ההצלחה בדפדפן" loading="lazy"></div><p class="shot-legend">הודעת ההצלחה בדפדפן</p></figure>
+
+<h4>שלב 5: מסכי הפתיחה</h4>
+<p>בפעם הראשונה <bdi dir="ltr">Claude</bdi> מציג כמה מסכי פתיחה: מה התפקיד שלכם, באיזה תחום משפטי אתם עוסקים, אזהרה על הוראות מוסתרות בקבצים והצעה לחיבורים חיצוניים.</p>
+<p><strong>לא צילמנו את כולם, ואנחנו סומכים עליכם שתחליטו בעצמכם מה לקרוא ומה לדלג.</strong> ובכל זאת ההמלצה שלנו היא להקדיש לזה כמה דקות ולסיים את ההתקנה בצורה מסודרת. דווקא בגלל שבתיעוד הרשמי אין שום אמירה שהבחירות האלה משפיעות על התשובות או מתאימות אותן למקצוע שלכם, אין שום סיבה לרוץ.</p>
+<figure class="shot"><div class="shot-frame" style="max-width:349px;margin-inline:auto"><img src="../assets/shots/g1-install-12-onboarding-1.png" alt="מסך התפקיד, ובו האפשרות Legal" loading="lazy"></div><p class="shot-legend">מסך התפקיד, ובו האפשרות Legal</p></figure>
+<figure class="shot"><div class="shot-frame" style="max-width:344px;margin-inline:auto"><img src="../assets/shots/g1-install-14-onboarding-3.png" alt="מסך תחום המשפט" loading="lazy"></div><p class="shot-legend">מסך תחום המשפט</p></figure>
+<aside class="callout tip">
+<span class="callout-label">אם התחום שלכם לא ברשימה</span>
+<p>הרשימה כוללת חוזים מסחריים, תאגידים ומיזוגים, ליטיגציה, קניין רוחני ופרטיות. <strong>דיני משפחה, מקרקעין ודיני עבודה אינם מופיעים בה.</strong> מי שעוסק בהם בוחר <bdi dir="ltr">Other</bdi>, וזה לא אומר שהכלי פחות מתאים לו.</p>
+</aside>
+<p>לפני הסוף מוצע לחבר חיבורים חיצוניים למסדי נתונים. <strong>לוחצים <bdi dir="ltr">Skip</bdi>.</strong> החיבורים שמוצעים שם הם למסדי נתונים פיננסיים ואין בהם צורך לשום דבר בסדרה הזאת. הנושא הזה אינו נכנס למדריכים האלה, כי הוא נוגע גם בשאלות של סודיות ושל העברת מידע לצדדים שלישיים, ולכן <bdi dir="ltr">Legal Mind</bdi> תקדיש לו מדריך נפרד.</p>
+<figure class="shot"><div class="shot-frame" style="max-width:342px;margin-inline:auto"><img src="../assets/shots/g1-install-15-connectors-skip.png" alt="מסך החיבורים החיצוניים, שאפשר לדלג עליו" loading="lazy"></div><p class="shot-legend">מסך החיבורים החיצוניים, שאפשר לדלג עליו</p></figure>
+<p>ודבר אחד שכדאי לזכור מהמסכים האלה: <strong>קיצור המקלדת <bdi dir="ltr">Ctrl + Alt + C</bdi> פותח את <bdi dir="ltr">Claude</bdi> בתוך <bdi dir="ltr">Excel</bdi></strong> בלי לחפש את הכפתור בסרגל.</p>
+
+<h4>שלב 6: הסרגל מוכן</h4>
+<p>כשמסכי הפתיחה נגמרים, הסרגל מציג רשימת סקילים מוצעים ושורת כתיבה. <strong>מכאן אפשר להתחיל.</strong></p>
+<figure class="shot"><div class="shot-frame" style="max-width:336px;margin-inline:auto"><img src="../assets/shots/g1-install-18-sidebar-ready.png" alt="הסרגל אחרי סיום ההתקנה, עם הסקילים המוצעים" loading="lazy"></div><p class="shot-legend">הסרגל אחרי סיום ההתקנה, עם הסקילים המוצעים</p></figure>
+<aside class="callout tip">
+<span class="callout-label">רשימת הסקילים תיעלם, וזה תקין</span>
+<p>ברגע שתשלחו את הפרומפט הראשון, הרשימה תוחלף בשיחה. <strong>זה לא אומר שההתקנה לא הושלמה.</strong> תמיד אפשר להחזיר את הסקילים בהקלדת <bdi dir="ltr">/</bdi>.</p>
+</aside>
 
 <h3>מסלול ב', התקנה לכל המשרד</h3>
 <p>מנהל המשרד יכול להתקין את התוסף פעם אחת לכל העובדים, במקום שכל עורך דין יתקין לעצמו. במקרה כזה התוסף מופיע אצל כולם, וגם מי שאין לו הרשאה להתקין תוספים בעצמו יקבל אותו. זו פעולה של מנהל מערכת, ולא של עורך דין.</p>
@@ -343,7 +375,7 @@
 <figure class="shot shot-pending"><div class="shot-frame"><span class="pending-label"><span class="pending-tag">צילום מסך 2 מתוך 2</span>פאנל ההגדרות שנפתח, עם סימון על המתג שמפעיל את התיעוד</span></div></figure>
 <p>בהגדרות של הסרגל אפשר להפעיל תיעוד. כשהאפשרות הזאת פעילה, <bdi dir="ltr">Claude</bdi> יוצר בקובץ גיליון נוסף בשם <bdi dir="ltr">Claude Log</bdi>, וכותב בו את הפעולות שביצע בכל סבב. אם הוא לא יצר אותו לבד, אפשר פשוט לבקש ממנו לתעד את מה שעשה, והוא ייצור את הגיליון.</p>
 <p>לעבודה במשרד עורכי דין זה שווה את ההפעלה, כי זה נותן רשומה של מה שנעשה בקובץ ומתי.</p>
-<figure class="shot shot-pending"><div class="shot-frame"><span class="pending-label"><span class="pending-tag">צילום מסך</span>גיליון <bdi dir="ltr">Claude Log</bdi> שנוצר בקובץ, עם התיעוד בתוכו</span></div></figure>
+<figure class="shot"><div class="shot-frame" style="max-width:660px;margin-inline:auto"><a href="../assets/shots/g1-log-01-claude-log-sheet.png" target="_blank" rel="noopener"><img src="../assets/shots/g1-log-01-claude-log-sheet.png" alt="גיליון Claude Log שנוצר בקובץ, עם שורת התיעוד הראשונה" loading="lazy"></a></div><p class="shot-legend">גיליון Claude Log שנוצר בקובץ, עם שורת התיעוד הראשונה</p><p class="shot-zoom"><a href="../assets/shots/g1-log-01-claude-log-sheet.png" target="_blank" rel="noopener">לחיצה על התמונה פותחת אותה בגודל מלא</a></p></figure>
 </section>
 
 <section class="guide-section" id="phrasing">
@@ -397,7 +429,7 @@
 <p>אם הפעלתם את התיעוד בפרק 8, יש בקובץ גיליון <bdi dir="ltr">Claude Log</bdi> עם רשימת הפעולות. זה שימושי במיוחד כשעשיתם כמה סבבים ואתם רוצים לראות מה קרה בכל אחד.</p>
 <h3>4. אזהרת הדריסה</h3>
 <p>אם פעולה עומדת לדרוס נתונים קיימים, הוא מזהיר לפני. כשמופיעה האזהרה הזאת, כדאי לעצור ולקרוא אותה ולא לאשר אוטומטית.</p>
-<figure class="shot shot-pending"><div class="shot-frame"><span class="pending-label"><span class="pending-tag">צילום מסך</span>אזהרת הדריסה כפי שהיא מופיעה בסרגל</span></div></figure>
+<figure class="shot"><div class="shot-frame" style="max-width:269px;margin-inline:auto"><img src="../assets/shots/g1-permission-01-request.png" alt="חלון בקשת האישור, עם פירוט כל פעולה בנפרד" loading="lazy"></div><p class="shot-legend">חלון בקשת האישור, עם פירוט כל פעולה בנפרד</p></figure>
 <h3>ואם משהו יצא לא נכון</h3>
 <p>ביטול הפעולה ב-<bdi dir="ltr">Excel</bdi> עצמו, כלומר <bdi dir="ltr">Ctrl+Z</bdi>, עובד גם על שינויים שהוא עשה. לכן, כשמתחילים לעבוד על משהו אמיתי, כדאי לשמור עותק של הקובץ לפני, כדי שתמיד תהיה נקודת חזרה.</p>
 </section>
@@ -424,7 +456,7 @@
 <p>עד כאן ניסחנו כל בקשה מחדש. אבל יש דברים שתרצו שיהיו נכונים תמיד, בכל בקשה, בלי לחזור עליהם. לזה יש שדה הוראות בתוך הסרגל.</p>
 <h3>שדה ההוראות</h3>
 <p>בסרגל יש שדה בשם <bdi dir="ltr">Instructions</bdi>. מה שכותבים בו חל על כל שיחה ב-<bdi dir="ltr">Excel</bdi>, מעכשיו והלאה. כותבים אותו פעם אחת, וזה נשאר.</p>
-<figure class="shot shot-pending"><div class="shot-frame"><span class="pending-label"><span class="pending-tag">צילום מסך</span>הסרגל, עם סימון על שדה <bdi dir="ltr">Instructions</bdi></span></div></figure>
+<figure class="shot"><div class="shot-frame" style="max-width:338px;margin-inline:auto"><img src="../assets/shots/g1-install-20-settings.png" alt="מסך ההגדרות של התוסף, ובראשו שדה ההוראות" loading="lazy"></div><p class="shot-legend">מסך ההגדרות של התוסף, ובראשו שדה ההוראות</p></figure>
 <p>שווה לדעת: ההוראות שכותבים ב-<bdi dir="ltr">Excel</bdi> חלות רק על <bdi dir="ltr">Excel</bdi>, והן נפרדות מהוראות שהגדרתם ביישומים אחרים של <bdi dir="ltr">Office</bdi>.</p>
 <h3>דוגמה למה שכדאי לכתוב שם</h3>
 <div class="copy-block">
