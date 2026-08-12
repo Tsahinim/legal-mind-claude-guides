@@ -30,7 +30,7 @@
 
 <nav class="mobile-toc"><details><summary>תוכן המדריך</summary><ol>
 <li><a href="#what-it-does"><span>01</span>מה <bdi dir="ltr">Claude</bdi> עושה בתוך גיליון <bdi dir="ltr">Excel</bdi>, ובמה זה שונה מהדבקת טבלה לשיחה</a></li>
-<li><a href="#good-at"><span>02</span>במה <bdi dir="ltr">Claude</bdi> טוב ב-<bdi dir="ltr">Excel</bdi>, ומה הוא לא עושה</a></li>
+<li><a href="#good-at"><span>02</span>במה <bdi dir="ltr">Claude</bdi> טוב ב-<bdi dir="ltr">Excel</bdi>, ומה <bdi dir="ltr">Claude</bdi> לא עושה</a></li>
 <li><a href="#requirements"><span>03</span>אילו גרסאות <bdi dir="ltr">Excel</bdi> נדרשות, ואיזה מנוי</a></li>
 <li><a href="#install"><span>04</span>התקנת <bdi dir="ltr">Claude</bdi> ב-<bdi dir="ltr">Excel</bdi>, מסך אחר מסך</a></li>
 <li><a href="#first-open"><span>05</span>הפתיחה הראשונה, ומה <bdi dir="ltr">Claude</bdi> רואה בגיליון שלכם</a></li>
@@ -51,14 +51,14 @@
 <p class="section-number">01</p>
 <h2>מה <bdi dir="ltr">Claude</bdi> עושה בתוך גיליון <bdi dir="ltr">Excel</bdi>, ובמה זה שונה מהדבקת טבלה לשיחה</h2>
 <p>נניח שיש לכם גיליון <bdi dir="ltr">Excel</bdi> של מעקב מועדים בתיק מסוים, או טבלת שעות שאתם מדווחים ללקוח. אם השתמשתם עד היום ב-<bdi dir="ltr">Claude</bdi> דרך הדפדפן, כנראה עבדתם ככה: סימנתם את הטבלה, העתקתם אותה, הדבקתם לתוך השיחה, שאלתם שאלה וקיבלתם תשובה שהעתקתם בחזרה בעצמכם. זה עובד, אבל זה עובד על העתק. <bdi dir="ltr">Claude</bdi> ראה רק את מה שהדבקתם, לא את הקובץ.</p>
-<p>הכלי שנתקין במדריך הזה עובד אחרת. הוא נפתח כסרגל צר בצד המסך, בתוך ה-<bdi dir="ltr">Excel</bdi> שלכם, לצד הגיליון עצמו. משם הוא יכול לעשות שלושה דברים שהשיחה בדפדפן לא יכולה:</p>
-<figure class="shot" style="max-width:832px;"><div class="shot-frame" style="aspect-ratio:1009/812;"><img src="../assets/shots/g1-sidebar-04-beside-sheet.png" alt="מסך Excel שלם, ובצדו השמאלי הסרגל של Claude" loading="lazy"><div class="shot-target" style="left:58.1%; top:1.7%; width:41.6%; height:97.3%;"><span class="shot-target-badge">1</span></div></div><ol class="shot-legend"><li><b>1</b><span><strong>זה הסרגל, וזה כל מה שנוסף למסך.</strong> הוא יושב בתוך חלון ה-<bdi dir="ltr">Excel</bdi> ולא בדפדפן נפרד, והגיליון נשאר פתוח ועובד לצידו. <strong>לא העתקנו לשם כלום,</strong> והוא קורא את הקובץ בעצמו.</span></li></ol><p class="shot-caption">כך זה נראה אחרי ההתקנה: הגיליון בצד אחד, הסרגל בצד השני</p></figure>
+<p>הכלי שנתקין במדריך הזה עובד אחרת. הוא נפתח כסרגל צר בצד המסך, בתוך ה-<bdi dir="ltr">Excel</bdi> שלכם, לצד הגיליון עצמו. משם <bdi dir="ltr">Claude</bdi> יכול לעשות שלושה דברים שהשיחה בדפדפן לא יכולה:</p>
+<figure class="shot" style="max-width:832px;"><div class="shot-frame" style="aspect-ratio:1009/812;"><img src="../assets/shots/g1-sidebar-04-beside-sheet.png" alt="מסך Excel שלם, ובצדו השמאלי הסרגל של Claude" loading="lazy"><div class="shot-target" style="left:58.1%; top:1.7%; width:41.6%; height:97.3%;"><span class="shot-target-badge">1</span></div></div><ol class="shot-legend"><li><b>1</b><span><strong>זה הסרגל, וזה כל מה שנוסף למסך.</strong> הוא יושב בתוך חלון ה-<bdi dir="ltr">Excel</bdi> ולא בדפדפן נפרד, והגיליון נשאר פתוח ועובד לצידו. <strong>לא העתקנו לשם כלום,</strong> ו-<bdi dir="ltr">Claude</bdi> קורא את הקובץ בעצמו.</span></li></ol><p class="shot-caption">כך זה נראה אחרי ההתקנה: הגיליון בצד אחד, הסרגל בצד השני</p></figure>
 <ul class="bullets">
-<li><strong>לקרוא את הקובץ כולו</strong>, ולא רק את מה שסימנתם. אם יש לכם קובץ אחד עם גיליון נפרד לכל תיק, הוא רואה את כולם.</li>
-<li><strong>להצביע על תא מסוים</strong> בתשובה שלו. כשהוא מסביר חישוב, ההפניה לתא היא לחיצה, וה-<bdi dir="ltr">Excel</bdi> קופץ לאותו תא בעצמו.</li>
-<li><strong>לשנות בקובץ בעצמו</strong>, אם ביקשתם. הוא כותב, מוחק ומתקן בגיליון האמיתי, במקום להחזיר לכם טקסט להעתקה.</li>
+<li><strong>לקרוא את הקובץ כולו</strong>, ולא רק את מה שסימנתם. אם יש לכם קובץ אחד עם גיליון נפרד לכל תיק, <bdi dir="ltr">Claude</bdi> רואה את כולם.</li>
+<li><strong>להצביע על תא מסוים</strong> בתשובה שלו. כש-<bdi dir="ltr">Claude</bdi> מסביר חישוב, ההפניה לתא היא לחיצה, וה-<bdi dir="ltr">Excel</bdi> קופץ לאותו תא בעצמו.</li>
+<li><strong>לשנות בקובץ בעצמו</strong>, אם ביקשתם. <bdi dir="ltr">Claude</bdi> כותב, מוחק ומתקן בגיליון האמיתי, במקום להחזיר לכם טקסט להעתקה.</li>
 </ul>
-<p>שלוש היכולות האלה, ובמיוחד השלישית, הן גם היתרון וגם מה שמחייב זהירות. בהמשך המדריך נראה בדיוק איך רואים כל שינוי שהוא עשה, איך חוזרים אחורה ואיך מוודאים שלא סמכתם על משהו לא נכון.</p>
+<p>שלוש היכולות האלה, ובמיוחד השלישית, הן גם היתרון וגם מה שמחייב זהירות. בהמשך המדריך נראה בדיוק איך רואים כל שינוי ש-<bdi dir="ltr">Claude</bdi> עשה, איך חוזרים אחורה ואיך מוודאים שלא סמכתם על משהו לא נכון.</p>
 <h3>שני מושגים שיחזרו לאורך כל המדריך</h3>
 <p>כדאי להפריד ביניהם פעם אחת, כי בהמשך נשתמש בשניהם.</p>
 <p><strong>קובץ <bdi dir="ltr">Excel</bdi></strong> הוא מה שאתם שומרים במחשב ושולחים במייל. <strong>גיליון</strong> הוא לשונית אחת בתוך הקובץ, מאותן לשוניות שמופיעות בתחתית המסך. קובץ אחד יכול להחזיק עשרים גיליונות, למשל גיליון נפרד לכל תיק.</p>
@@ -71,24 +71,24 @@
 
 <section class="guide-section" id="good-at">
 <p class="section-number">02</p>
-<h2>במה <bdi dir="ltr">Claude</bdi> טוב ב-<bdi dir="ltr">Excel</bdi>, ומה הוא לא עושה</h2>
+<h2>במה <bdi dir="ltr">Claude</bdi> טוב ב-<bdi dir="ltr">Excel</bdi>, ומה <bdi dir="ltr">Claude</bdi> לא עושה</h2>
 <p>לפני שמתקינים כלי חדש, כדאי לדעת מה הוא באמת עושה טוב, ובאילו מקומות לא כדאי לסמוך עליו.</p>
-<h3>מה הוא עושה טוב</h3>
+<h3>מה <bdi dir="ltr">Claude</bdi> עושה טוב</h3>
 <ul class="bullets">
-<li><strong>מסביר גיליון <bdi dir="ltr">Excel</bdi> שלא אתם בנתם.</strong> קיבלתם גיליון <bdi dir="ltr">Excel</bdi> עם חישוב שצורף לתביעת נזיקין, או קובץ שעובד קודם במשרד בנה, ולא ברור לכם מאיפה הגיע מספר מסוים. אפשר לשאול, והוא מצביע על התאים שהובילו לתוצאה.</li>
+<li><strong>מסביר גיליון <bdi dir="ltr">Excel</bdi> שלא אתם בנתם.</strong> קיבלתם גיליון <bdi dir="ltr">Excel</bdi> עם חישוב שצורף לתביעת נזיקין, או קובץ שעובד קודם במשרד בנה, ולא ברור לכם מאיפה הגיע מספר מסוים. אפשר לשאול, ו-<bdi dir="ltr">Claude</bdi> מצביע על התאים שהובילו לתוצאה.</li>
 <li><strong>משנה נתון בלי לשבור נוסחאות.</strong> בלוח תשלומים של עסקת מכר, אם משנים סכום או מועד, כל מה שתלוי בו ממשיך לעבוד.</li>
 <li><strong>מוצא ומתקן שגיאות.</strong> תאים שמציגים הודעת שגיאה, סכום שלא מסתדר, או חישוב שמפנה לעצמו במעגל.</li>
 <li><strong>בונה גיליון <bdi dir="ltr">Excel</bdi> חדש מאפס, או ממלא תבנית קיימת.</strong> למשל רשימת נכסים בהליך משפחה, טבלת שעות של עובד בתיק דיני עבודה, או מפתח נספחים לתיק.</li>
 <li><strong>מבצע פעולות <bdi dir="ltr">Excel</bdi> רגילות בעצמו.</strong> למיין ולסנן טבלה, לצבוע באדום כל שורה שעברה מועד, להוסיף רשימה נפתחת בעמודת סטטוס, לערוך טבלאות ציר וגרפים, ולהכין את הגיליון להדפסה. אלה פעולות שאפשר לבקש במילים, בלי לדעת איפה הן נמצאות בתפריטים.</li>
 <li><strong>מחלץ טבלה מ-<bdi dir="ltr">PDF</bdi> לתוך גיליון.</strong> תדפיס בנק, חשבונית או תחשיב שהגיעו כ-<bdi dir="ltr">PDF</bdi> יכולים להפוך לטבלה שאפשר לעבוד איתה. על זה יש פרומפט שלם במדריך 2, פרומפט 11.</li>
 </ul>
-<h3>מה הוא לא עושה</h3>
+<h3>מה <bdi dir="ltr">Claude</bdi> לא עושה</h3>
 <ul class="bullets">
-<li><strong>הוא לא מבקש אישור לפני כל שינוי.</strong> כשביקשתם שינוי, הוא מבצע. הוא כן מסמן מה השתנה, ומזהיר לפני שהוא דורס נתונים קיימים.</li>
-<li><strong>הוא לא תומך במאקרו ולא ב-<bdi dir="ltr">VBA</bdi>.</strong> אלה כלי אוטומציה מתקדמים של <bdi dir="ltr">Excel</bdi>, והוא לא עובד איתם. גם טבלאות נתונים אינן נתמכות.</li>
-<li><strong>הוא לא מכיר קבצים אחרים.</strong> בשיחה חדשה הוא רואה רק את הקובץ שפתוח מולכם, ולא יודע שום דבר על קבצים אחרים במשרד. מה שכן נשמר בין קבצים הוא היסטוריית השיחות בסרגל, ומה שקבעתם בהוראות הקבועות שבפרק 12.</li>
-<li><strong>הוא לא מתריע מעצמו כשהוא לא בטוח.</strong> אלא אם ביקשתם ממנו במפורש לסמן מה שלא היה ברור, והוא כן יודע לעשות את זה כשמבקשים. הבדיקה נשארת באחריותכם, ובפרק 7 נראה איך עושים אותה בפועל.</li>
-<li><strong>הוא לא פותח וסוגר קבצים בעצמו.</strong> התיעוד הרשמי מציין שהוא אינו יכול ליצור, לפתוח, לסגור או להחליף קבצים מתוך התוסף. בכל מקרה, הקובץ שאתם רוצים שיעבוד עליו צריך להיות פתוח מולכם, כי הוא רואה רק אותו.</li>
+<li><strong><bdi dir="ltr">Claude</bdi> לא מבקש אישור לפני כל שינוי.</strong> כשביקשתם שינוי, <bdi dir="ltr">Claude</bdi> מבצע. <bdi dir="ltr">Claude</bdi> כן מסמן מה השתנה, ומזהיר לפני שהוא דורס נתונים קיימים.</li>
+<li><strong><bdi dir="ltr">Claude</bdi> לא תומך במאקרו ולא ב-<bdi dir="ltr">VBA</bdi>.</strong> אלה כלי אוטומציה מתקדמים של <bdi dir="ltr">Excel</bdi>, ו-<bdi dir="ltr">Claude</bdi> לא עובד איתם. גם טבלאות נתונים אינן נתמכות.</li>
+<li><strong><bdi dir="ltr">Claude</bdi> לא מכיר קבצים אחרים.</strong> בשיחה חדשה <bdi dir="ltr">Claude</bdi> רואה רק את הקובץ שפתוח מולכם, ולא יודע שום דבר על קבצים אחרים במשרד. מה שכן נשמר בין קבצים הוא היסטוריית השיחות בסרגל, ומה שקבעתם בהוראות הקבועות שבפרק 12.</li>
+<li><strong><bdi dir="ltr">Claude</bdi> לא מתריע מעצמו כש-<bdi dir="ltr">Claude</bdi> לא בטוח.</strong> אלא אם ביקשתם ממנו במפורש לסמן מה שלא היה ברור, ו-<bdi dir="ltr">Claude</bdi> כן יודע לעשות את זה כשמבקשים. הבדיקה נשארת באחריותכם, ובפרק 7 נראה איך עושים אותה בפועל.</li>
+<li><strong><bdi dir="ltr">Claude</bdi> לא פותח וסוגר קבצים בעצמו.</strong> התיעוד הרשמי מציין ש-<bdi dir="ltr">Claude</bdi> אינו יכול ליצור, לפתוח, לסגור או להחליף קבצים מתוך התוסף. בכל מקרה, הקובץ שאתם רוצים שיעבוד עליו צריך להיות פתוח מולכם, כי <bdi dir="ltr">Claude</bdi> רואה רק אותו.</li>
 </ul>
 </section>
 
@@ -124,11 +124,11 @@
 <h3>מכסות שימוש, ומה קורה בשיחה ארוכה</h3>
 <p><strong>השימוש בתוסף נספר במכסה של חשבון <bdi dir="ltr">Claude</bdi> שלכם</strong>, בדיוק כמו שימוש רגיל. אין לו מכסה נפרדת.</p>
 <p>ודבר שני שכדאי להכיר מראש: <strong>שיחה ארוכה נדחסת אוטומטית לשיחה חדשה</strong> כשהיא מתקרבת לגבול. זו התנהגות מתועדת ולא תקלה, <strong>אבל המשמעות היא שפרטים מתחילת השיחה עלולים לא להיות זמינים לו בהמשכה.</strong></p>
-<p>בעבודה על תיק, אם אחרי שעה הוא שכח משהו שאמרתם בהתחלה, זו הסיבה. פשוט חוזרים ואומרים.</p>
+<p>בעבודה על תיק, אם אחרי שעה <bdi dir="ltr">Claude</bdi> שכח משהו שאמרתם בהתחלה, זו הסיבה. פשוט חוזרים ואומרים.</p>
 
 <h3>אילו סוגי קבצים נתמכים</h3>
 <p>התוסף עובד על חוברת <bdi dir="ltr">Excel</bdi> שפתוחה מולכם, כלומר על קבצי <bdi dir="ltr">.xlsx</bdi> ועל קבצי <bdi dir="ltr">.xlsm</bdi>. אלה סוגי הקובץ הרגילים של <bdi dir="ltr">Excel</bdi>, ורוב הסיכויים שכל הקבצים במשרד שלכם הם כאלה.</p>
-<p>שווה לדעת ש-<bdi dir="ltr">.xlsm</bdi> הוא הסיומת של קובץ שיש בו מאקרו. <strong>הקובץ עצמו ייפתח ו-<bdi dir="ltr">Claude</bdi> יעבוד על התאים שבו כרגיל, אבל במאקרו עצמו הוא לא נוגע,</strong> כי מאקרו ו-<bdi dir="ltr">VBA</bdi> אינם נתמכים.</p>
+<p>שווה לדעת ש-<bdi dir="ltr">.xlsm</bdi> הוא הסיומת של קובץ שיש בו מאקרו. <strong>הקובץ עצמו ייפתח ו-<bdi dir="ltr">Claude</bdi> יעבוד על התאים שבו כרגיל, אבל במאקרו עצמו <bdi dir="ltr">Claude</bdi> לא נוגע,</strong> כי מאקרו ו-<bdi dir="ltr">VBA</bdi> אינם נתמכים.</p>
 <aside class="content-box recommendation">
 <h3>עמדת Legal Mind</h3>
 <p>המנוי שמתאים לעורכי דין הוא <bdi dir="ltr">Team</bdi>. בארגונים גדולים, או כשנדרשים מושבים רבים, האפשרויות הן <bdi dir="ltr">Team</bdi> עם מספר מושבים גדול, או <bdi dir="ltr">Enterprise</bdi>, לפי הצורך של הארגון. שני המנויים האלה הם מנויים מסחריים ביזנסיאליים, והם המתאימים מבחינת הדרישות הבסיסיות של אבטחת מידע, בהתאם להסכם עיבוד המידע, ה-<bdi dir="ltr">DPA</bdi>, שמקושר אליהם.</p>
@@ -189,7 +189,7 @@
 <span class="callout-label">אם התחום שלכם לא ברשימה</span>
 <p>הרשימה כוללת חוזים מסחריים, תאגידים ומיזוגים, ליטיגציה, קניין רוחני ופרטיות. <strong>דיני משפחה, מקרקעין ודיני עבודה אינם מופיעים בה.</strong> מי שעוסק בהם בוחר <bdi dir="ltr">Other</bdi>, וזה לא אומר שהכלי פחות מתאים לו.</p>
 </aside>
-<p>לפני הסוף מוצע לחבר חיבורים חיצוניים למסדי נתונים. <strong>לוחצים <bdi dir="ltr">Skip</bdi>.</strong> החיבורים שמוצעים שם הם למסדי נתונים פיננסיים ואין בהם צורך לשום דבר בסדרה הזאת. הנושא הזה אינו נכנס למדריכים האלה, כי הוא נוגע גם בשאלות של סודיות ושל העברת מידע לצדדים שלישיים, ולכן <bdi dir="ltr">Legal Mind</bdi> תקדיש לו מדריך נפרד.</p>
+<p>לפני הסוף מוצע לחבר חיבורים חיצוניים למסדי נתונים. <strong>לוחצים <bdi dir="ltr">Skip</bdi>.</strong> החיבורים שמוצעים שם הם למסדי נתונים פיננסיים ואין בהם צורך לשום דבר בסדרה הזאת. הנושא הזה אינו נכנס למדריכים האלה, כי <bdi dir="ltr">Claude</bdi> נוגע גם בשאלות של סודיות ושל העברת מידע לצדדים שלישיים, ולכן <bdi dir="ltr">Legal Mind</bdi> תקדיש לו מדריך נפרד.</p>
 <figure class="shot"><div class="shot-frame" style="max-width:342px;margin-inline:auto"><img src="../assets/shots/g1-install-15-connectors-skip.png" alt="מסך החיבורים החיצוניים, שאפשר לדלג עליו" loading="lazy"></div><p class="shot-legend">מסך החיבורים החיצוניים, שאפשר לדלג עליו</p></figure>
 <p>ודבר אחד שכדאי לזכור מהמסכים האלה: <strong>קיצור המקלדת <bdi dir="ltr">Ctrl + Alt + C</bdi> פותח את <bdi dir="ltr">Claude</bdi> בתוך <bdi dir="ltr">Excel</bdi></strong> בלי לחפש את הכפתור בסרגל.</p>
 
@@ -289,15 +289,15 @@
 
 <h3>לפתוח את הסרגל</h3>
 <p>נכנסים ל-<bdi dir="ltr">Home</bdi>, ואז <bdi dir="ltr">Add-ins</bdi>, ובוחרים את <bdi dir="ltr">Claude</bdi>. הוא נפתח כסרגל צר בצד המסך, וה-<bdi dir="ltr">Excel</bdi> נשאר במקום. אפשר לעבוד בגיליון והסרגל נשאר פתוח.</p>
-<figure class="shot" style="max-width:832px;"><div class="shot-frame" style="aspect-ratio:1009/812;"><img src="../assets/shots/g1-sidebar-04-beside-sheet.png" alt="הסרגל פתוח לצד טבלת הנכסים" loading="lazy"><div class="shot-target badge-right" style="left:0.8%; top:3.0%; width:55.9%; height:96.3%;"><span class="shot-target-badge">1</span></div><div class="shot-target" style="left:58.3%; top:15.8%; width:40.8%; height:52.2%;"><span class="shot-target-badge">2</span></div><div class="shot-target" style="left:58.3%; top:88.4%; width:40.8%; height:7.1%;"><span class="shot-target-badge">3</span></div></div><ol class="shot-legend"><li><b>1</b><span><strong>הגיליון נשאר גיליון.</strong> אפשר לגלול בו, לסמן תאים ולערוך אותם בזמן שהסרגל פתוח. <strong>הוא אינו נעול ואינו קופא.</strong></span></li><li><b>2</b><span><strong>הבקשה שנשלחה נשארת בראש השיחה, כלשונה.</strong> ומתחתיה, בשורות הקצרות, הוא מדווח מה קרא וכמה עריכות ביצע.</span></li><li><b>3</b><span><strong>ותיבת הכתיבה נשארת זמינה בתחתית</strong>, כדי להמשיך את אותה שיחה בלי לפתוח אותה מחדש.</span></li></ol><p class="shot-caption">כך זה נראה כשעובדים: הגיליון בצד אחד, השיחה בצד השני</p></figure>
-<h3>מה הוא רואה, ומה לא</h3>
-<p>לפי התיעוד הרשמי, הוא קורא את תוכן הקובץ שפתוח מולכם: את התאים, את הנוסחאות ואת מבנה הלשוניות. והוא יכול לגשת רק לקובץ שפתוח ב-<bdi dir="ltr">Excel</bdi>, כלומר לא לקבצים אחרים במחשב שלכם.</p>
+<figure class="shot" style="max-width:832px;"><div class="shot-frame" style="aspect-ratio:1009/812;"><img src="../assets/shots/g1-sidebar-04-beside-sheet.png" alt="הסרגל פתוח לצד טבלת הנכסים" loading="lazy"><div class="shot-target badge-right" style="left:0.8%; top:3.0%; width:55.9%; height:96.3%;"><span class="shot-target-badge">1</span></div><div class="shot-target" style="left:58.3%; top:15.8%; width:40.8%; height:52.2%;"><span class="shot-target-badge">2</span></div><div class="shot-target" style="left:58.3%; top:88.4%; width:40.8%; height:7.1%;"><span class="shot-target-badge">3</span></div></div><ol class="shot-legend"><li><b>1</b><span><strong>הגיליון נשאר גיליון.</strong> אפשר לגלול בו, לסמן תאים ולערוך אותם בזמן שהסרגל פתוח. <strong>הוא אינו נעול ואינו קופא.</strong></span></li><li><b>2</b><span><strong>הבקשה שנשלחה נשארת בראש השיחה, כלשונה.</strong> ומתחתיה, בשורות הקצרות, <bdi dir="ltr">Claude</bdi> מדווח מה קרא וכמה עריכות ביצע.</span></li><li><b>3</b><span><strong>ותיבת הכתיבה נשארת זמינה בתחתית</strong>, כדי להמשיך את אותה שיחה בלי לפתוח אותה מחדש.</span></li></ol><p class="shot-caption">כך זה נראה כשעובדים: הגיליון בצד אחד, השיחה בצד השני</p></figure>
+<h3>מה <bdi dir="ltr">Claude</bdi> רואה, ומה לא</h3>
+<p>לפי התיעוד הרשמי, <bdi dir="ltr">Claude</bdi> קורא את תוכן הקובץ שפתוח מולכם: את התאים, את הנוסחאות ואת מבנה הלשוניות. ו-<bdi dir="ltr">Claude</bdi> יכול לגשת רק לקובץ שפתוח ב-<bdi dir="ltr">Excel</bdi>, כלומר לא לקבצים אחרים במחשב שלכם.</p>
 <h3>איך שולחים בקשה בסרגל</h3>
 <p>בסרגל יש תיבת כתיבה. לוחצים בתוכה, ומדביקים או מקלידים את הבקשה. הצילום שלמטה מראה בדיוק איפה היא נמצאת ואיך שולחים, כי זה לא מתואר בתיעוד הרשמי.</p>
 <p>הפרומפטים בהמשך הסדרה הם בני כמה שורות, ולכן <strong>עדיף להעתיק ולהדביק אותם ולא להקליד</strong>. הדבקה שומרת על כל השורות בבת אחת, ולא צריך לדעת איך יורדים שורה בתוך התיבה. אחרי ההדבקה מוודאים בעין שכל השורות הגיעו, ורק אז שולחים.</p>
 <figure class="shot" style="max-width:398px;"><div class="shot-frame" style="aspect-ratio:398/261;"><img src="../assets/shots/g1-sidebar-01-input-bar.png" alt="שורת הכתיבה בסרגל" loading="lazy"><div class="shot-target badge-right" style="left:2.5%; top:3.1%; width:50.3%; height:10.0%;"><span class="shot-target-badge">1</span></div><div class="shot-target badge-right" style="left:4.0%; top:21.5%; width:93.0%; height:49.8%;"><span class="shot-target-badge">2</span></div><div class="shot-target" style="left:87.4%; top:76.6%; width:11.6%; height:16.9%;"><span class="shot-target-badge">3</span></div></div><ol class="shot-legend"><li><b>1</b><span><strong>התא שמסומן בגיליון באותו רגע.</strong> הסרגל מציג אותו תמיד. <strong>אין לזה קשר לבקשה שאתם כותבים.</strong></span></li><li><b>2</b><span><strong>תיבת הכתיבה.</strong> לוחצים בתוכה ומדביקים את הפרומפט. <strong>שורה חדשה נעשית ב-<bdi dir="ltr">Shift</bdi> עם <bdi dir="ltr">Enter</bdi></strong>, כי <bdi dir="ltr">Enter</bdi> לבדו שולח.</span></li><li><b>3</b><span><strong>כפתור השליחה.</strong></span></li></ol><p class="shot-caption">שורת הכתיבה, ומה שמסביבה</p></figure>
 <figure class="shot"><div class="shot-frame" style="max-width:385px;margin-inline:auto"><img src="../assets/shots/g1-sidebar-02-prompt-pasted.png" alt="פרומפט בן כמה שורות אחרי הדבקה, לפני השליחה" loading="lazy"></div><p class="shot-legend">פרומפט בן כמה שורות אחרי הדבקה, לפני השליחה</p></figure>
-<h3>להפעיל תיעוד של מה שהוא עשה</h3>
+<h3>להפעיל תיעוד של מה ש-<bdi dir="ltr">Claude</bdi> עשה</h3>
 <p>התיעוד מופעל מתוך ההגדרות של הסרגל, בשני צעדים. שני הצילומים כאן מראים בדיוק איפה נמצא כל אחד מהם, כי מיקום ההגדרות בסרגל אינו מתואר בתיעוד הרשמי ולכן לא נכתב כאן מהניחוש.</p>
 <ol class="steps">
 <li>פותחים את ההגדרות של הסרגל.</li>
@@ -305,9 +305,9 @@
 </ol>
 <figure class="shot" style="max-width:339px;"><div class="shot-frame" style="aspect-ratio:339/205;"><img src="../assets/shots/g1-install-19-sidebar-menu.png" alt="תפריט שלוש הנקודות בסרגל" loading="lazy"><div class="shot-target" style="left:82.0%; top:17.6%; width:7.7%; height:12.7%;"><span class="shot-target-badge">1</span></div><div class="shot-target" style="left:32.4%; top:36.1%; width:57.2%; height:15.6%;"><span class="shot-target-badge">2</span></div><div class="shot-target" style="left:32.4%; top:51.7%; width:57.2%; height:15.6%;"><span class="shot-target-badge">3</span></div></div><ol class="shot-legend"><li><b>1</b><span><strong>שלוש הנקודות בראש הסרגל.</strong> משם נפתח התפריט.</span></li><li><b>2</b><span><strong><bdi dir="ltr">Settings</bdi>, ההגדרות.</strong> שם יושבים שדה ההוראות הקבועות, גודל הטקסט והתיעוד.</span></li><li><b>3</b><span><strong><bdi dir="ltr">Download Transcript</bdi>, הורדת השיחה.</strong> שימושי כשרוצים לשמור תיעוד של מה שנעשה בקובץ.</span></li></ol><p class="shot-caption">תפריט הסרגל, ושלוש האפשרויות שבו</p></figure>
 <figure class="shot"><div class="shot-frame" style="max-width:338px;margin-inline:auto"><img src="../assets/shots/g1-install-20-settings.png" alt="פאנל ההגדרות, ובו שדה ההוראות והמתג Session logging" loading="lazy"></div><p class="shot-legend">פאנל ההגדרות, ובו שדה ההוראות והמתג Session logging</p></figure>
-<p>בהגדרות של הסרגל אפשר להפעיל תיעוד. כשהאפשרות הזאת פעילה, <bdi dir="ltr">Claude</bdi> יוצר בדרך כלל בקובץ גיליון נוסף בשם <bdi dir="ltr">Claude Log</bdi>, וכותב בו את הפעולות שביצע בכל סבב. אם הוא לא יצר אותו לבד, אפשר פשוט לבקש ממנו לתעד את מה שעשה, והוא ייצור את הגיליון.</p>
+<p>בהגדרות של הסרגל אפשר להפעיל תיעוד. כשהאפשרות הזאת פעילה, <bdi dir="ltr">Claude</bdi> יוצר בדרך כלל בקובץ גיליון נוסף בשם <bdi dir="ltr">Claude Log</bdi>, וכותב בו את הפעולות שביצע בכל סבב. אם <bdi dir="ltr">Claude</bdi> לא יצר אותו לבד, אפשר פשוט לבקש ממנו לתעד את מה שעשה, ו-<bdi dir="ltr">Claude</bdi> ייצור את הגיליון.</p>
 <p>לעבודה במשרד עורכי דין זה שווה את ההפעלה, כי זה נותן רשומה של מה שנעשה בקובץ ומתי.</p>
-<figure class="shot" style="max-width:725px;"><div class="shot-frame" style="aspect-ratio:725/171;"><img src="../assets/shots/g1-log-01-claude-log-sheet.png" alt="גיליון התיעוד שנוצר בקובץ" loading="lazy"><div class="shot-target badge-right" style="left:81.0%; top:2.3%; width:17.9%; height:95.3%;"><span class="shot-target-badge">1</span></div><div class="shot-target" style="left:37.9%; top:2.3%; width:41.9%; height:95.3%;"><span class="shot-target-badge">2</span></div><div class="shot-target" style="left:1.0%; top:2.3%; width:36.0%; height:95.3%;"><span class="shot-target-badge">3</span></div></div><ol class="shot-legend"><li><b>1</b><span><strong>מספר הסבב והתאריך.</strong> כל בקשה שנשלחת מקבלת שורה.</span></li><li><b>2</b><span><strong>מה ביקשתם, במילים שלכם.</strong> הבקשה נשמרת כלשונה.</span></li><li><b>3</b><span><strong>ומה הוא עשה בפועל.</strong> משמאל לעמודה הזאת יש עוד שתיים, <bdi dir="ltr">Details</bdi> ו-<bdi dir="ltr">Outcome</bdi>, <strong>שבהן הוא מפרט אילו נוסחאות נכתבו ומה יצא.</strong> לחיצה על התמונה פותחת אותן.</span></li></ol><p class="shot-caption">שורה אחת לכל סבב: מה ביקשתם, מה נעשה, ומה יצא</p></figure>
+<figure class="shot" style="max-width:725px;"><div class="shot-frame" style="aspect-ratio:725/171;"><img src="../assets/shots/g1-log-01-claude-log-sheet.png" alt="גיליון התיעוד שנוצר בקובץ" loading="lazy"><div class="shot-target badge-right" style="left:81.0%; top:2.3%; width:17.9%; height:95.3%;"><span class="shot-target-badge">1</span></div><div class="shot-target" style="left:37.9%; top:2.3%; width:41.9%; height:95.3%;"><span class="shot-target-badge">2</span></div><div class="shot-target" style="left:1.0%; top:2.3%; width:36.0%; height:95.3%;"><span class="shot-target-badge">3</span></div></div><ol class="shot-legend"><li><b>1</b><span><strong>מספר הסבב והתאריך.</strong> כל בקשה שנשלחת מקבלת שורה.</span></li><li><b>2</b><span><strong>מה ביקשתם, במילים שלכם.</strong> הבקשה נשמרת כלשונה.</span></li><li><b>3</b><span><strong>ומה <bdi dir="ltr">Claude</bdi> עשה בפועל.</strong> משמאל לעמודה הזאת יש עוד שתיים, <bdi dir="ltr">Details</bdi> ו-<bdi dir="ltr">Outcome</bdi>, <strong>שבהן <bdi dir="ltr">Claude</bdi> מפרט אילו נוסחאות נכתבו ומה יצא.</strong> לחיצה על התמונה פותחת אותן.</span></li></ol><p class="shot-caption">שורה אחת לכל סבב: מה ביקשתם, מה נעשה, ומה יצא</p></figure>
 <aside class="callout tip">
 <span class="callout-label">מחיר קטן שכדאי להכיר</span>
 <p>כשהתיעוד דלוק, פעולה עשויה לבקש <strong>אישור נפרד גם על כתיבת שורת היומן.</strong> כלומר גם פרומפט שמבקש במפורש לא לשנות כלום עלול לבקש אישור אחד או שניים. זה תקין.</p>
@@ -338,17 +338,17 @@
 <h3>אותה בקשה, בשני ניסוחים</h3>
 <p>ניסוח חלש: "תסדר לי את רשימת התיקים".</p>
 <p>ניסוח טוב: "בגיליון 'תיקים', בעמודה C יש מספרי תיק שנרשמו בכמה צורות שונות. תאחד את כולם לפורמט אחיד. תכתוב את התוצאה בעמודה חדשה לצדה, ואל תשנה את העמודה המקורית. אם בשורה כלשהי לא ברור מה המספר, תשאיר את התא ריק ותסמן לי את השורה."</p>
-<p>ההבדל אינו באורך. ההבדל הוא שבניסוח השני אין שום דבר שהוא צריך לנחש, וגם ברור מראש מה יקרה עם המקרים החריגים.</p>
+<p>ההבדל אינו באורך. ההבדל הוא שבניסוח השני אין שום דבר ש-<bdi dir="ltr">Claude</bdi> צריך לנחש, וגם ברור מראש מה יקרה עם המקרים החריגים.</p>
 <aside class="callout tip">
 <span class="callout-label">טיפ של Legal Mind</span>
 <p>המשפט "אל תנחש, תסמן לי" הוא התוספת הכי משתלמת לכל בקשה. הוא הופך שגיאה שקטה, שקשה למצוא, לסימון גלוי שאתם רואים מיד.</p>
 </aside>
 
-<h3>לפעמים הוא ישאל אתכם שאלה</h3>
-<p>לא תמיד הוא יבצע מיד. <strong>לפעמים תופיע בסרגל שאלה עם כמה אפשרויות ללחיצה.</strong></p>
-<p>זה קורה כשההוראה שנתתם לא מתאימה בדיוק למבנה של הגיליון <bdi dir="ltr">Excel</bdi> שלכם, למשל כשיש בו כמה טבלאות ואתם ביקשתם לעצב "את שורת הכותרות". <strong>זה סימן טוב ולא תקלה.</strong> הוא בחר לשאול במקום לנחש.</p>
-<figure class="shot" style="max-width:311px;"><div class="shot-frame" style="aspect-ratio:311/294;"><img src="../assets/shots/g2-design-03-q1-header-style.png" alt="חלונית שבה Claude שואל שאלה ומציע אפשרויות ללחיצה" loading="lazy"><div class="shot-target is-quiet badge-right" style="left:3.2%; top:2.7%; width:95.2%; height:15.0%;"><span class="shot-target-badge">1</span></div><div class="shot-target is-quiet badge-right" style="left:3.2%; top:21.1%; width:95.2%; height:56.1%;"><span class="shot-target-badge">2</span></div><div class="shot-target is-quiet" style="left:79.1%; top:84.4%; width:16.7%; height:9.5%;"><span class="shot-target-badge">3</span></div></div><ol class="shot-legend"><li><b>1</b><span><strong>השאלה עצמה, ובה שם הלשונית שעליה הוא עומד לעבוד.</strong> כדאי לקרוא את השם הזה, כי זו ההזדמנות לתפוס שהוא כיוון ללשונית הלא נכונה.</span></li><li><b>2</b><span><strong>האפשרויות, ולוחצים על אחת מהן.</strong> ואם אף אחת לא מתאימה, השורה התחתונה מאפשרת להקליד תשובה משלכם.</span></li><li><b>3</b><span><strong>ו-<bdi dir="ltr">Skip</bdi>, שעליו לא לוחצים.</strong> דילוג פירושו שהוא יחליט לבדו, ודווקא בנקודה שבה הוא עצמו לא היה בטוח.</span></li></ol><p class="shot-caption">כך נראית שאלה בסרגל, וזו הזדמנות ולא עיכוב</p></figure>
-<p><strong>בוחרים אפשרות והוא ממשיך. ואל תלחצו <bdi dir="ltr">Skip</bdi></strong>, כי אז הוא מחליט לבדו בדיוק בנקודה שבה הוא עצמו לא היה בטוח.</p>
+<h3>לפעמים <bdi dir="ltr">Claude</bdi> ישאל אתכם שאלה</h3>
+<p>לא תמיד <bdi dir="ltr">Claude</bdi> יבצע מיד. <strong>לפעמים תופיע בסרגל שאלה עם כמה אפשרויות ללחיצה.</strong></p>
+<p>זה קורה כשההוראה שנתתם לא מתאימה בדיוק למבנה של הגיליון <bdi dir="ltr">Excel</bdi> שלכם, למשל כשיש בו כמה טבלאות ואתם ביקשתם לעצב "את שורת הכותרות". <strong>זה סימן טוב ולא תקלה.</strong> <bdi dir="ltr">Claude</bdi> בחר לשאול במקום לנחש.</p>
+<figure class="shot" style="max-width:311px;"><div class="shot-frame" style="aspect-ratio:311/294;"><img src="../assets/shots/g2-design-03-q1-header-style.png" alt="חלונית שבה Claude שואל שאלה ומציע אפשרויות ללחיצה" loading="lazy"><div class="shot-target is-quiet badge-right" style="left:3.2%; top:2.7%; width:95.2%; height:15.0%;"><span class="shot-target-badge">1</span></div><div class="shot-target is-quiet badge-right" style="left:3.2%; top:21.1%; width:95.2%; height:56.1%;"><span class="shot-target-badge">2</span></div><div class="shot-target is-quiet" style="left:79.1%; top:84.4%; width:16.7%; height:9.5%;"><span class="shot-target-badge">3</span></div></div><ol class="shot-legend"><li><b>1</b><span><strong>השאלה עצמה, ובה שם הלשונית שעליה <bdi dir="ltr">Claude</bdi> עומד לעבוד.</strong> כדאי לקרוא את השם הזה, כי זו ההזדמנות לתפוס שהוא כיוון ללשונית הלא נכונה.</span></li><li><b>2</b><span><strong>האפשרויות, ולוחצים על אחת מהן.</strong> ואם אף אחת לא מתאימה, השורה התחתונה מאפשרת להקליד תשובה משלכם.</span></li><li><b>3</b><span><strong>ו-<bdi dir="ltr">Skip</bdi>, שעליו לא לוחצים.</strong> דילוג פירושו ש-<bdi dir="ltr">Claude</bdi> יחליט לבדו, ודווקא בנקודה שבה הוא עצמו לא היה בטוח.</span></li></ol><p class="shot-caption">כך נראית שאלה בסרגל, וזו הזדמנות ולא עיכוב</p></figure>
+<p><strong>בוחרים אפשרות והוא ממשיך. ואל תלחצו <bdi dir="ltr">Skip</bdi></strong>, כי אז <bdi dir="ltr">Claude</bdi> מחליט לבדו בדיוק בנקודה שבה הוא עצמו לא היה בטוח.</p>
 
 <h3>הבקשה הראשונה שלכם, עכשיו</h3>
 <p>זה הרגע לעשות את זה בפועל. פותחים את גיליון התרגול שהכנתם בפרק 5, פותחים את הסרגל, מעתיקים את הבקשה הבאה ומדביקים אותה בשורת הכתיבה.</p>
@@ -363,7 +363,7 @@
 <span class="copy-status" aria-live="polite" aria-atomic="true"></span>
 </div>
 <p>שימו לב למה שביקשנו כאן. אמרנו לו איפה להסתכל, מה בדיוק לענות, ובסוף אמרנו במפורש שלא ישנה כלום. זו בקשה שאין בה שום סיכון, ובכל זאת היא מראה מיד אם הוא באמת מבין את הגיליון שלכם.</p>
-<h3 class="answer-head">התשובה ש-<bdi dir="ltr">Claude</bdi> החזיר, כפי שהופיעה בחלון הצ'אט</h3><figure class="shot" style="max-width:407px;"><div class="shot-frame" style="aspect-ratio:407/509;"><img src="../assets/shots/g1-first-answer.png" alt="התשובה שחזרה על הבקשה הראשונה, בסרגל" loading="lazy"><div class="shot-target is-quiet badge-right" style="left:1.5%; top:1.2%; width:96.8%; height:42.0%;"><span class="shot-target-badge">1</span></div><div class="shot-target is-quiet badge-right" style="left:1.5%; top:46.4%; width:96.8%; height:21.2%;"><span class="shot-target-badge">2</span></div><div class="shot-target is-quiet badge-right" style="left:1.5%; top:70.7%; width:96.8%; height:27.5%;"><span class="shot-target-badge">3</span></div></div><ol class="shot-legend"><li><b>1</b><span><strong>עמודה עמודה, ובכל אחת הפניה כמו <bdi dir="ltr">A:A</bdi> שהיא לחיצה.</strong> לוחצים, וה-<bdi dir="ltr">Excel</bdi> קופץ לעמודה. <strong>זו הדרך לוודא שהוא מדבר על מה שאתם חושבים,</strong> ולא רק נשמע משכנע.</span></li><li><b>2</b><span><strong>ואיפה ראה את החישוב.</strong> הוא נקב בתא <bdi dir="ltr">F2</bdi> בשמו ואמר שאותו דפוס חוזר עד <bdi dir="ltr">F9</bdi>. <strong>תשובה שלא נוקבת בתא היא תשובה שאי אפשר לבדוק.</strong></span></li><li><b>3</b><span><strong>וזה הדבר שבגללו עשינו את התרגיל.</strong> הוא מצא את שורה 7, אמר שהתא <bdi dir="ltr">E7</bdi> ריק, שלכן <bdi dir="ltr">F7</bdi> מחזיר אפס למרות שתי שעות, <strong>וכימת את החוסר: תשע מאות שקל.</strong> וסיים בשורה שאומרת שלא שינה כלום, כפי שביקשנו.</span></li></ol><p class="shot-caption">התשובה על שלוש השאלות, ובתחתיתה הפגם שהוא מצא בעצמו</p></figure>
+<h3 class="answer-head">התשובה ש-<bdi dir="ltr">Claude</bdi> החזיר, כפי שהופיעה בחלון הצ'אט</h3><figure class="shot" style="max-width:407px;"><div class="shot-frame" style="aspect-ratio:407/509;"><img src="../assets/shots/g1-first-answer.png" alt="התשובה שחזרה על הבקשה הראשונה, בסרגל" loading="lazy"><div class="shot-target is-quiet badge-right" style="left:1.5%; top:1.2%; width:96.8%; height:42.0%;"><span class="shot-target-badge">1</span></div><div class="shot-target is-quiet badge-right" style="left:1.5%; top:46.4%; width:96.8%; height:21.2%;"><span class="shot-target-badge">2</span></div><div class="shot-target is-quiet badge-right" style="left:1.5%; top:70.7%; width:96.8%; height:27.5%;"><span class="shot-target-badge">3</span></div></div><ol class="shot-legend"><li><b>1</b><span><strong>עמודה עמודה, ובכל אחת הפניה כמו <bdi dir="ltr">A:A</bdi> שהיא לחיצה.</strong> לוחצים, וה-<bdi dir="ltr">Excel</bdi> קופץ לעמודה. <strong>זו הדרך לוודא שהוא מדבר על מה שאתם חושבים,</strong> ולא רק נשמע משכנע.</span></li><li><b>2</b><span><strong>ואיפה ראה את החישוב.</strong> <bdi dir="ltr">Claude</bdi> נקב בתא <bdi dir="ltr">F2</bdi> בשמו ואמר שאותו דפוס חוזר עד <bdi dir="ltr">F9</bdi>. <strong>תשובה שלא נוקבת בתא היא תשובה שאי אפשר לבדוק.</strong></span></li><li><b>3</b><span><strong>וזה הדבר שבגללו עשינו את התרגיל.</strong> <bdi dir="ltr">Claude</bdi> מצא את שורה 7, אמר שהתא <bdi dir="ltr">E7</bdi> ריק, שלכן <bdi dir="ltr">F7</bdi> מחזיר אפס למרות שתי שעות, <strong>וכימת את החוסר: תשע מאות שקל.</strong> וסיים בשורה שאומרת שלא שינה כלום, כפי שביקשנו.</span></li></ol><p class="shot-caption">התשובה על שלוש השאלות, ובתחתיתה הפגם ש-<bdi dir="ltr">Claude</bdi> מצא בעצמו</p></figure>
 <p>בפרק הבא נבדוק את התשובה שקיבלתם.</p>
 </section>
 
@@ -371,22 +371,22 @@
 <p class="section-number">07</p>
 <h2>איך בודקים ש-<bdi dir="ltr">Claude</bdi> לא טעה</h2>
 <p>קיבלתם תשובה על הבקשה הראשונה. עכשיו נבדוק אותה, ואת כל מה שיבוא אחריה. יש ארבע דרכים לבדוק, וכדאי להכיר את כולן.</p>
-<p>בבקשה הראשונה, שהייתה שאלה בלבד, הבדיקה פשוטה: האם התיאור שהוא נתן לכל עמודה מתאים למה שאתם רואים בגיליון, והאם התא שהוא הצביע עליו הוא באמת התא שבו החישוב יושב. אם שתי התשובות כן, הוא קרא את הגיליון נכון. אם לא, זה סימן שכדאי לנסח מחדש ולציין במפורש את שמות העמודות.</p>
+<p>בבקשה הראשונה, שהייתה שאלה בלבד, הבדיקה פשוטה: האם התיאור שהוא נתן לכל עמודה מתאים למה שאתם רואים בגיליון, והאם התא ש-<bdi dir="ltr">Claude</bdi> הצביע עליו הוא באמת התא שבו החישוב יושב. אם שתי התשובות כן, <bdi dir="ltr">Claude</bdi> קרא את הגיליון נכון. אם לא, זה סימן שכדאי לנסח מחדש ולציין במפורש את שמות העמודות.</p>
 <h3>1. הסימון בצבע על מה שהשתנה</h3>
 <p>אחרי כל שינוי, <bdi dir="ltr">Claude</bdi> מסמן את כל התאים שנגע בהם ומוסיף הערות הסבר. זה הדבר הראשון להסתכל עליו: האם השתנו רק התאים שהתכוונתם אליהם, או גם תאים אחרים.</p>
 <figure class="shot"><div class="shot-frame" style="max-width:570px;margin-inline:auto"><img src="../assets/shots/g1-undo-01-after-claude.png" alt="גיליון אחרי שינוי, עם התאים שנצבעו" loading="lazy"></div><p class="shot-legend">גיליון אחרי שינוי, עם התאים שנצבעו</p></figure>
 <h3>2. ההפניות לתאים בתוך התשובה</h3>
-<p>כשהוא מסביר חישוב, ההפניות לתאים בתשובה שלו הן לחיצות. לוחצים, וה-<bdi dir="ltr">Excel</bdi> קופץ לאותו תא. זו הדרך המהירה לוודא שהוא מדבר על התא שאתם חושבים.</p>
+<p>כש-<bdi dir="ltr">Claude</bdi> מסביר חישוב, ההפניות לתאים בתשובה שלו הן לחיצות. לוחצים, וה-<bdi dir="ltr">Excel</bdi> קופץ לאותו תא. זו הדרך המהירה לוודא שהוא מדבר על התא שאתם חושבים.</p>
 <h3 class="answer-head">התשובה ש-<bdi dir="ltr">Claude</bdi> החזיר, כפי שהופיעה בחלון הצ'אט</h3><figure class="shot"><div class="shot-frame" style="max-width:401px;margin-inline:auto"><img src="../assets/shots/p02-01-answer-1.png" alt="וההפניות לתאים בתוך התשובה הן לחיצות" loading="lazy"></div><p class="shot-legend">וההפניות לתאים בתוך התשובה הן לחיצות</p></figure>
 <h3>3. גיליון התיעוד</h3>
 <p>אם הפעלתם את התיעוד בפרק 5, יש בקובץ גיליון <bdi dir="ltr">Claude Log</bdi> עם רשימת הפעולות. זה שימושי במיוחד כשעשיתם כמה סבבים ואתם רוצים לראות מה קרה בכל אחד.</p>
 <h3>4. שמירת השיחה עצמה</h3>
 <p>בתפריט שלוש הנקודות שבראש הסרגל יש אפשרות בשם <bdi dir="ltr">Download Transcript</bdi>, <strong>שמורידה את השיחה כולה כקובץ.</strong></p>
-<p>ולמה זה חשוב דווקא לעורך דין: לפי התיעוד הרשמי, <strong>היסטוריית השיחות נשמרת מקומית בדפדפן ולא בשרתים של <bdi dir="ltr">Anthropic</bdi>, והיא אינה מסתנכרנת בין מחשבים.</strong> כלומר זו הדרך היחידה לשמור תיעוד של מה ביקשתם ומה הוא ענה.</p>
+<p>ולמה זה חשוב דווקא לעורך דין: לפי התיעוד הרשמי, <strong>היסטוריית השיחות נשמרת מקומית בדפדפן ולא בשרתים של <bdi dir="ltr">Anthropic</bdi>, והיא אינה מסתנכרנת בין מחשבים.</strong> כלומר זו הדרך היחידה לשמור תיעוד של מה ביקשתם ומה <bdi dir="ltr">Claude</bdi> ענה.</p>
 <p><strong>יומן השינויים מתעד מה נעשה בקובץ. התמליל מתעד מה ביקשתם.</strong> מי שעובד על תיק וירצה להסביר בדיעבד איך התקבל מספר, צריך את שניהם.</p>
 
 <h3>5. אזהרת הדריסה</h3>
-<p>אם פעולה עומדת לדרוס נתונים קיימים, הוא מזהיר לפני. כשמופיעה האזהרה הזאת, כדאי לעצור ולקרוא אותה ולא לאשר אוטומטית.</p>
+<p>אם פעולה עומדת לדרוס נתונים קיימים, <bdi dir="ltr">Claude</bdi> מזהיר לפני. כשמופיעה האזהרה הזאת, כדאי לעצור ולקרוא אותה ולא לאשר אוטומטית.</p>
 <figure class="shot"><div class="shot-frame" style="max-width:269px;margin-inline:auto"><img src="../assets/shots/g1-permission-01-request.png" alt="חלון בקשת האישור, עם פירוט כל פעולה בנפרד" loading="lazy"></div><p class="shot-legend">חלון בקשת האישור, עם פירוט כל פעולה בנפרד</p></figure>
 <aside class="content-box warning">
 <h3>עמדת Legal Mind בעניין בקשות האישור</h3>
@@ -400,18 +400,18 @@
 
 <h3>ויש חלון אישור אחד שנראה אחרת</h3>
 <p>רוב בקשות האישור נראות אותו דבר. אבל כשהפעולה עלולה למחוק תוכן, <strong>החלון נצבע באדום ומופיעה בו השורה "אובדן נתונים אפשרי", עם הטווח המדויק שעומד להתרוקן.</strong></p>
-<figure class="shot" style="max-width:270px;"><div class="shot-frame" style="aspect-ratio:270/368;"><img src="../assets/shots/g1-permission-01-dataloss.png" alt="חלון אישור עם אזהרה על אובדן נתונים" loading="lazy"><div class="shot-target" style="left:3.0%; top:12.5%; width:92.6%; height:12.0%;"><span class="shot-target-badge">1</span></div><div class="shot-target badge-right" style="left:7.4%; top:28.3%; width:70.4%; height:18.5%;"><span class="shot-target-badge">2</span></div><div class="shot-target" style="left:3.0%; top:77.2%; width:92.6%; height:9.8%;"><span class="shot-target-badge">3</span></div></div><ol class="shot-legend"><li><b>1</b><span><strong>מה הוא עומד לעשות, בעברית.</strong> כאן תיקון פורמט תאריך וניקוי עמודות ריקות.</span></li><li><b>2</b><span><strong>ובאדום, האזהרה עצמה.</strong> <bdi dir="ltr">Potential data loss</bdi>, ומתחתיה הטווחים המדויקים שעומדים להתרוקן: שתי שורות, שני טווחים. <strong>זו השורה שקוראים לפני שלוחצים</strong>, ומשווים אותה למה שביקשתם.</span></li><li><b>3</b><span><strong>אישור חד פעמי.</strong> הכפתור שבו משתמשים כברירת מחדל.</span></li></ol><p class="shot-caption">חלון האישור, כשהפעולה עלולה למחוק נתונים</p></figure>
+<figure class="shot" style="max-width:270px;"><div class="shot-frame" style="aspect-ratio:270/368;"><img src="../assets/shots/g1-permission-01-dataloss.png" alt="חלון אישור עם אזהרה על אובדן נתונים" loading="lazy"><div class="shot-target" style="left:3.0%; top:12.5%; width:92.6%; height:12.0%;"><span class="shot-target-badge">1</span></div><div class="shot-target badge-right" style="left:7.4%; top:28.3%; width:70.4%; height:18.5%;"><span class="shot-target-badge">2</span></div><div class="shot-target" style="left:3.0%; top:77.2%; width:92.6%; height:9.8%;"><span class="shot-target-badge">3</span></div></div><ol class="shot-legend"><li><b>1</b><span><strong>מה <bdi dir="ltr">Claude</bdi> עומד לעשות, בעברית.</strong> כאן תיקון פורמט תאריך וניקוי עמודות ריקות.</span></li><li><b>2</b><span><strong>ובאדום, האזהרה עצמה.</strong> <bdi dir="ltr">Potential data loss</bdi>, ומתחתיה הטווחים המדויקים שעומדים להתרוקן: שתי שורות, שני טווחים. <strong>זו השורה שקוראים לפני שלוחצים</strong>, ומשווים אותה למה שביקשתם.</span></li><li><b>3</b><span><strong>אישור חד פעמי.</strong> הכפתור שבו משתמשים כברירת מחדל.</span></li></ol><p class="shot-caption">חלון האישור, כשהפעולה עלולה למחוק נתונים</p></figure>
 <p><strong>ושימו לב לשם הכפתור האמצעי.</strong> בחלון הרגיל כתוב עליו <bdi dir="ltr">Always allow</bdi>. כאן כתוב <bdi dir="ltr">Dangerously always allow</bdi>, כלומר <strong>אישור תמידי מסוכן.</strong></p>
 <p><bdi dir="ltr">Anthropic</bdi> בחרה לקרוא לכפתור הזה כך בעצמה. <strong>אין לנו מה להוסיף על זה.</strong></p>
 
-<h3>6. מה הוא אומר שהוא לא בדק</h3>
+<h3>6. מה הוא אומר ש-<bdi dir="ltr">Claude</bdi> לא בדק</h3>
 <p>זו אולי הנקודה החשובה ביותר בפרק הזה, והיא לא מובנת מאליה.</p>
-<p><strong>בסוף תשובה ארוכה <bdi dir="ltr">Claude</bdi> נוהג לכתוב מה בדיוק הוא אימת ומה לא.</strong> למשל: "קראתי מחדש את כל טווח הנתונים", או לעומת זאת "לא בדקתי תא-תא את כל 45 השורות, בדקתי מדגמית את שורות 1, 20, 26, 36 ואת שורת הסיכום".</p>
+<p><strong>בסוף תשובה ארוכה <bdi dir="ltr">Claude</bdi> נוהג לכתוב מה בדיוק <bdi dir="ltr">Claude</bdi> אימת ומה לא.</strong> למשל: "קראתי מחדש את כל טווח הנתונים", או לעומת זאת "לא בדקתי תא-תא את כל 45 השורות, בדקתי מדגמית את שורות 1, 20, 26, 36 ואת שורת הסיכום".</p>
 <p><strong>ההבדל בין "בדקתי" לבין "דגמתי" הוא ההבדל בין ממצא לבין רמז.</strong></p>
 <p>חפשו את המשפט הזה בכל תשובה. הוא בדרך כלל בפסקה האחרונה, <strong>והוא אומר לכם כמה משקל לתת לתשובה שקיבלתם.</strong></p>
 
 <h3>ואם משהו יצא לא נכון</h3>
-<p>ביטול הפעולה ב-<bdi dir="ltr">Excel</bdi> עצמו, כלומר <bdi dir="ltr">Ctrl+Z</bdi>, עובד גם על שינויים שהוא עשה. לכן, כשמתחילים לעבוד על משהו אמיתי, כדאי לשמור עותק של הקובץ לפני, כדי שתמיד תהיה נקודת חזרה.</p>
+<p>ביטול הפעולה ב-<bdi dir="ltr">Excel</bdi> עצמו, כלומר <bdi dir="ltr">Ctrl+Z</bdi>, עובד גם על שינויים ש-<bdi dir="ltr">Claude</bdi> עשה. לכן, כשמתחילים לעבוד על משהו אמיתי, כדאי לשמור עותק של הקובץ לפני, כדי שתמיד תהיה נקודת חזרה.</p>
 </section>
 
 <section class="guide-section" id="full-loop">
@@ -420,7 +420,7 @@
 <p>הרצתם בקשה אחת ובדקתם אותה. עכשיו כדאי לראות את כל המסלול בבת אחת, כי ככה זה ייראה בעבודה אמיתית. <strong>עבודה אחת שלמה מורכבת מארבעה שלבים,</strong> וזה נכון גם לבקשה הפשוטה ביותר וגם למורכבת ביותר.</p>
 <ol class="steps">
 <li><strong>אתם מבקשים.</strong> פותחים את הסרגל בצד וכותבים בעברית מה אתם רוצים. למשל: תסביר לי איך יצא הסכום בעמודת שכר הטרחה.</li>
-<li><strong>הוא עונה או מציע.</strong> אם ביקשתם הסבר, הוא עונה ומצביע על התאים הרלוונטיים. אם ביקשתם שינוי, הוא מבצע אותו ומסמן בצבע כל תא שנגע בו.</li>
+<li><strong><bdi dir="ltr">Claude</bdi> עונה או מציע.</strong> אם ביקשתם הסבר, <bdi dir="ltr">Claude</bdi> עונה ומצביע על התאים הרלוונטיים. אם ביקשתם שינוי, <bdi dir="ltr">Claude</bdi> מבצע אותו ומסמן בצבע כל תא שנגע בו.</li>
 <li><strong>אתם בודקים.</strong> עוברים על מה שהשתנה, לוחצים על ההפניות לתאים ומוודאים שזה מה שהתכוונתם. זה השלב שאף פעם לא מדלגים עליו.</li>
 <li><strong>אתם מאשרים או חוזרים אחורה.</strong> אם זה נכון, שומרים וממשיכים. אם לא, מבטלים ומנסחים את הבקשה מחדש.</li>
 </ol>
@@ -435,7 +435,7 @@
 <h3>הכלל</h3>
 <p>מפעילים את <bdi dir="ltr">Claude</bdi> רק על גיליונות <bdi dir="ltr">Excel</bdi> שמקורם אצלכם, או אצל מי שאתם סומכים עליו. לא על גיליונות שהגיעו ממקור חיצוני שאינכם מכירים.</p>
 <h3>למה, בשפה פשוטה</h3>
-<p>גיליון <bdi dir="ltr">Excel</bdi> יכול להכיל טקסט מוסתר. לא בכוונה זדונית בהכרח, אבל אפשר. אם מישהו הטמין בתוך תא, או בתוך הערה, או בגיליון נסתר, הוראה שמכוונת ל-<bdi dir="ltr">Claude</bdi>, יש סיכוי שהוא יתייחס אליה כאילו אתם כתבתם אותה. במקרה כזה הוא יכול, למשל, להוציא מידע מהקובץ למקום אחר, לשנות נתונים שלא ביקשתם לשנות, או לבצע פעולה מוחקת על כמה גיליונות.</p>
+<p>גיליון <bdi dir="ltr">Excel</bdi> יכול להכיל טקסט מוסתר. לא בכוונה זדונית בהכרח, אבל אפשר. אם מישהו הטמין בתוך תא, או בתוך הערה, או בגיליון נסתר, הוראה שמכוונת ל-<bdi dir="ltr">Claude</bdi>, יש סיכוי שהוא יתייחס אליה כאילו אתם כתבתם אותה. במקרה כזה <bdi dir="ltr">Claude</bdi> יכול, למשל, להוציא מידע מהקובץ למקום אחר, לשנות נתונים שלא ביקשתם לשנות, או לבצע פעולה מוחקת על כמה גיליונות.</p>
 <p>ומה שחשוב להבין: זה סוג הנזק שבדיקה של התוצאה אחר כך לא מבטלת. אם מידע יצא, הוא יצא. לכן זו לא אזהרה מסוג "תבדקו את התוצר", אלא החלטה שמתקבלת לפני שפותחים את הקובץ.</p>
 <h3>יש רשת ביטחון אחת, וכדאי להכיר אותה</h3>
 <p>יש קבוצה של פונקציות <bdi dir="ltr">Excel</bdi> שיכולות למשוך מידע מבחוץ או להריץ פעולה במחשב. כשClaude מנסה להפעיל אחת מהן, מופיע חלון שמבקש את האישור שלכם לפני הביצוע. זה נכון, בין היתר, לפונקציות שמושכות מידע מהאינטרנט, לפונקציות שמייבאות נתונים ממקור חיצוני, ולפונקציות שניגשות לקבצים במחשב.</p>
@@ -504,19 +504,19 @@
 <li>להתחיל על גיליון <bdi dir="ltr">Excel</bdi> שאין בו פרטים מזהים, עד שאתם בטוחים בכלי.</li>
 </ul>
 <p>שווה לשים לב שיש תחומים שבהם הגיליונות רגישים במיוחד. בדיני משפחה ובדיני עבודה, גיליון אחד יכול להכיל תנועות בנק, נתוני שכר או פרטים על בני משפחה, כלומר מידע אישי מהסוג הרגיש ביותר. שם הזהירות לפני שמעלים חומר צריכה להיות גדולה יותר, ולא פחות.</p>
-<h3>נקודה שכדאי לדעת: הוא לא בהכרח מוגבל לגיליון</h3>
-<p>אם חיברתם ל-<bdi dir="ltr">Claude</bdi> מערכות חיצוניות, למשל תיבת מייל או אחסון מסמכים, החיבורים האלה עובדים גם מתוך <bdi dir="ltr">Excel</bdi>. כלומר הוא יכול להביא לגיליון מידע שלא נמצא בו, וגם להפך.</p>
+<h3>נקודה שכדאי לדעת: <bdi dir="ltr">Claude</bdi> לא בהכרח מוגבל לגיליון</h3>
+<p>אם חיברתם ל-<bdi dir="ltr">Claude</bdi> מערכות חיצוניות, למשל תיבת מייל או אחסון מסמכים, החיבורים האלה עובדים גם מתוך <bdi dir="ltr">Excel</bdi>. כלומר <bdi dir="ltr">Claude</bdi> יכול להביא לגיליון מידע שלא נמצא בו, וגם להפך.</p>
 <p>מצד אחד זה שימושי. מצד שני זה מרחיב את מה שנגיש לו בזמן שאתם עובדים על קובץ של לקוח, ולכן כדאי לדעת אילו חיבורים פעילים אצלכם לפני שמתחילים. חיבורים שנבנו בהתאמה אישית, ולא חיבורים רשמיים, דורשים בדיקה נפרדת לפני שמפעילים אותם.</p>
-<p>לפי התיעוד הרשמי, כדי לראות אילו חיבורים זמינים פותחים את הסרגל, לוחצים על כפתור הפלוס שמתחת לשורת הכתיבה ובוחרים <bdi dir="ltr">Connectors</bdi>. <strong>נושא החיבורים אינו נכנס לסדרה הזאת</strong>, כי הוא נוגע גם בהעברת מידע לצדדים שלישיים ומצריך דיון בפני עצמו.</p>
+<p>לפי התיעוד הרשמי, כדי לראות אילו חיבורים זמינים פותחים את הסרגל, לוחצים על כפתור הפלוס שמתחת לשורת הכתיבה ובוחרים <bdi dir="ltr">Connectors</bdi>. <strong>נושא החיבורים אינו נכנס לסדרה הזאת</strong>, כי <bdi dir="ltr">Claude</bdi> נוגע גם בהעברת מידע לצדדים שלישיים ומצריך דיון בפני עצמו.</p>
 <h3>ויש עוד הגדרה אחת שכדאי שמנהל המשרד יכיר</h3>
 <p>ל-<bdi dir="ltr">Claude</bdi> יש יכולת לעבוד בין יישומי <bdi dir="ltr">Office</bdi> שונים, כלומר להעביר הקשר בין <bdi dir="ltr">Excel</bdi>, <bdi dir="ltr">Word</bdi> ו-<bdi dir="ltr">Outlook</bdi> בלי שתעתיקו ביניהם בעצמכם. התיעוד הרשמי מנסח זאת כך: ההקשר עובר בין היישומים אוטומטית.</p>
 <p>והנקודה החשובה למשרד: במנויי <bdi dir="ltr">Team</bdi> ו-<bdi dir="ltr">Enterprise</bdi> ההגדרה הזאת <strong>כבויה כברירת מחדל</strong>, ורק בעל הארגון יכול להפעיל אותה, תחת הגדרות הארגון בסעיף <bdi dir="ltr">Office agents</bdi>. במנויים אישיים בתשלום היא דווקא פעילה כברירת מחדל.</p>
 <p>כלומר אם המשרד שלכם על <bdi dir="ltr">Team</bdi>, ברירת המחדל היא הזהירה יותר, וזה דבר טוב. אבל אם מישהו מפעיל את ההגדרה, המשמעות היא שעבודה על גיליון של לקוח יכולה למשוך הקשר גם מהמייל ומהמסמכים. זו החלטה שכדאי שתתקבל במשרד ביודעין, ולא תתגלה בדיעבד.</p>
-<h3>הוא עובד על כל הקבצים הפתוחים, ויש לזה מתג</h3>
+<h3><bdi dir="ltr">Claude</bdi> עובד על כל הקבצים הפתוחים, ויש לזה מתג</h3>
 <p>במסכי הפתיחה של התוסף מופיע מסך שאומר את זה במפורש: <strong><bdi dir="ltr">Claude</bdi> יכול לעבוד על כל המסמכים, חוברות העבודה והמצגות שפתוחים אצלכם, בבת אחת.</strong></p>
-<figure class="shot"><div class="shot-frame" style="max-width:338px;margin-inline:auto"><img src="../assets/shots/g1-install-16-work-across-apps.png" alt="מסך הפתיחה שמסביר שהוא עובד על כל הקבצים הפתוחים" loading="lazy"></div><p class="shot-legend">מסך הפתיחה שמסביר שהוא עובד על כל הקבצים הפתוחים</p></figure>
+<figure class="shot"><div class="shot-frame" style="max-width:338px;margin-inline:auto"><img src="../assets/shots/g1-install-16-work-across-apps.png" alt="מסך הפתיחה שמסביר שהוא עובד על כל הקבצים הפתוחים" loading="lazy"></div><p class="shot-legend">מסך הפתיחה שמסביר ש-<bdi dir="ltr">Claude</bdi> עובד על כל הקבצים הפתוחים</p></figure>
 <p>המשמעות המעשית ברורה: <strong>אם פתוח אצלכם במקביל חוזה של לקוח אחד וגיליון <bdi dir="ltr">Excel</bdi> של לקוח אחר, שניהם בהישג ידו באותו רגע.</strong></p>
-<p><strong>וזו יכולת שאפשר לכבות.</strong> בהגדרות התוסף יש מתג בשם <bdi dir="ltr">Let Claude work across files</bdi>. <strong>מצבו ההתחלתי תלוי במנוי שלכם:</strong> ב-<bdi dir="ltr">Pro</bdi> וב-<bdi dir="ltr">Max</bdi> הוא דלוק כברירת מחדל, וב-<bdi dir="ltr">Team</bdi> וב-<bdi dir="ltr">Enterprise</bdi> הוא כבוי. מי שרוצה ש-<bdi dir="ltr">Claude</bdi> ייגע רק בקובץ שהוא עומד עליו, מוודא שהוא כבוי.</p>
+<p><strong>וזו יכולת שאפשר לכבות.</strong> בהגדרות התוסף יש מתג בשם <bdi dir="ltr">Let Claude work across files</bdi>. <strong>מצבו ההתחלתי תלוי במנוי שלכם:</strong> ב-<bdi dir="ltr">Pro</bdi> וב-<bdi dir="ltr">Max</bdi> הוא דלוק כברירת מחדל, וב-<bdi dir="ltr">Team</bdi> וב-<bdi dir="ltr">Enterprise</bdi> הוא כבוי. מי שרוצה ש-<bdi dir="ltr">Claude</bdi> ייגע רק בקובץ ש-<bdi dir="ltr">Claude</bdi> עומד עליו, מוודא שהוא כבוי.</p>
 <p>ועוד פרט שכדאי לדעת: <strong>המתג הזה הוא לפי מכשיר.</strong> אם כיביתם אותו במחשב המשרד, זה לא אומר שהוא כבוי גם במחשב הבית.</p>
 <p>ולכל הפחות, סגרו קבצים של תיקים אחרים לפני שאתם מתחילים לעבוד.</p>
 
@@ -531,7 +531,7 @@
 <aside class="content-box warning">
 <p><strong>השתמשו ב-<bdi dir="ltr">Claude for Excel</bdi> רק עם גיליונות שאתם סומכים עליהם. קבצים ממקורות חיצוניים יכולים להכיל הוראות מוסתרות שמתמרנות את התוסף לחלץ נתונים, לשנות רשומות או לבצע פעולות הרסניות.</strong> בבדיקות זוהו מצבים שבהם ניתן לתמרן את <bdi dir="ltr">Claude for Excel</bdi> לחלץ מידע רגיש, לשנות נתונים קריטיים או לבצע פעולות הרסניות אם הוא מורשה לפעול בלי אימות.</p>
 </aside>
-<p>ולמה זה נוגע לעורך דין יותר מלכל אחד אחר: <strong>עורך דין מקבל קבצים מהצד השני כל יום.</strong> ובגיליון <bdi dir="ltr">Excel</bdi> קל במיוחד להסתיר טקסט, בתא רחוק מחוץ לאזור שרואים, בלשונית מוסתרת, בטקסט בצבע לבן או בהערה בתא. <strong>אתם לא רואים, הוא כן קורא.</strong></p>
+<p>ולמה זה נוגע לעורך דין יותר מלכל אחד אחר: <strong>עורך דין מקבל קבצים מהצד השני כל יום.</strong> ובגיליון <bdi dir="ltr">Excel</bdi> קל במיוחד להסתיר טקסט, בתא רחוק מחוץ לאזור שרואים, בלשונית מוסתרת, בטקסט בצבע לבן או בהערה בתא. <strong>אתם לא רואים, <bdi dir="ltr">Claude</bdi> כן קורא.</strong></p>
 
 <h3>ומה <bdi dir="ltr">Anthropic</bdi> עצמה אומרת שלא מומלץ לעשות</h3>
 <p>שלוש השורות האלה מופיעות בתיעוד הרשמי תחת מגבלות, והן נוגעות ישירות לעבודה משפטית:</p>
@@ -555,7 +555,7 @@
 <p>זו לא תכונה של <bdi dir="ltr">Claude</bdi>, זו תכונה ותיקה של <bdi dir="ltr">Excel</bdi> עצמו. אם התאריך בגיליון הוקלד כתאריך אמיתי, אין בעיה, כי <bdi dir="ltr">Excel</bdi> שומר אותו כמספר פנימי שלא משתמע לשתי פנים. הבעיה מתעוררת כשהתאריך בתא הוא סתם טקסט, וזה קורה הרבה במשרדים, כי מעתיקים תאריכים ממייל, ממערכת של בית משפט או מ-<bdi dir="ltr">PDF</bdi>, והם נדבקים כטקסט.</p>
 <figure class="shot" style="max-width:832px;"><div class="shot-frame" style="aspect-ratio:892/776;"><img src="../assets/shots/g1-text-vs-real.png" alt="לשונית ההוצאות, ובה תא תאריך ותא סכום ששמורים כטקסט בין שורות תקינות" loading="lazy"><div class="shot-target badge-right" style="left:83.0%; top:31.8%; width:13.1%; height:3.1%;"><span class="shot-target-badge">1</span></div><div class="shot-target" style="left:1.3%; top:93.7%; width:12.4%; height:3.1%;"><span class="shot-target-badge">2</span></div></div><ol class="shot-legend"><li><b>1</b><span><strong>שורה 10, ותסתכלו על התאריך.</strong> כל התאריכים בעמודה צמודים לימין, וזה לבדו צמוד לשמאל. <strong>זה כל ההבדל בין תאריך אמיתי לבין טקסט שנראה כמו תאריך.</strong> חישוב ימים שיתבסס עליו פשוט ידלג עליו.</span></li><li><b>2</b><span><strong>ושורה 30, הסכום.</strong> אין לו סימן שקל ואין לו מפריד אלפים, והוא צמוד לשמאל. <strong>המשולש הירוק הקטן בפינה הוא ההתראה של <bdi dir="ltr">Excel</bdi> עצמו,</strong> והוא מופיע רק לפעמים. סכום כזה לא נכנס לשום סיכום, והסיכום שיצא ייראה סביר לחלוטין.</span></li></ol><p class="shot-caption">שני תאים ששמורים כטקסט, בין עשרות שורות תקינות. ההבדל היחיד הוא היישור</p></figure>
 <h3>הבדיקה, בשורה אחת</h3>
-<p>אחרי כל בקשה שקשורה לתאריכים, שואלים אותו: "איזה תאריך בדיוק הבנת בתא הזה? תכתוב לי אותו במילים." אם הוא כותב "3 באוגוסט 2026", הכל בסדר. אם הוא כותב "8 במרץ", מצאתם את הפער לפני שהוא נכנס לחישוב.</p>
+<p>אחרי כל בקשה שקשורה לתאריכים, שואלים אותו: "איזה תאריך בדיוק הבנת בתא הזה? תכתוב לי אותו במילים." אם <bdi dir="ltr">Claude</bdi> כותב "3 באוגוסט 2026", הכל בסדר. אם <bdi dir="ltr">Claude</bdi> כותב "8 במרץ", מצאתם את הפער לפני שהוא נכנס לחישוב.</p>
 
 </section>
 
@@ -595,7 +595,7 @@
 <aside class="content-box info">
 <h3>איך בוחרים מודל, ומהו טוקן</h3>
 <p><strong>השאלה מתי כדאי לעבור למודל חזק יותר, מה ההבדל בין מהירות לדיוק, מהו טוקן ואיך חוסכים בהם</strong> היא נושא בפני עצמו, והוא אינו מיוחד ל-<bdi dir="ltr">Excel</bdi>.</p>
-<p>הנושא מוסבר בהרחבה <strong>במדריך למתחילים על <bdi dir="ltr">Claude Code</bdi> לעורכי דין, החל מפרק 10</strong>, ולכן הוא לא נכפל כאן.</p>
+<p>הנושא מוסבר בהרחבה <strong>במדריך למתחילים על <bdi dir="ltr">Claude Code</bdi> לעורכי דין, החל מפרק 10</strong>, ולכן <bdi dir="ltr">Claude</bdi> לא נכפל כאן.</p>
 </aside>
 
 <h3>כלים מוכנים שאפשר להפעיל בלוכסן</h3>
@@ -611,13 +611,13 @@
 <p class="section-number">13</p>
 <h2>שאלות נפוצות</h2>
 <h3>האם הוא משנה לי את הקובץ בלי שאני יודע?</h3>
-<p>לא. הוא משנה רק כשביקשתם שינוי, הוא מסמן בצבע כל תא שנגע בו, ומזהיר לפני שהוא דורס נתונים קיימים. אם ביקשתם רק הסבר, הקובץ לא משתנה.</p>
-<h3>הוא עובד על קובץ ששמור אצלי במחשב, או צריך להעלות אותו לאינטרנט?</h3>
-<p>הוא עובד על הקובץ שפתוח אצלכם, ואינכם צריכים להעלות אותו לשום מקום בעצמכם. אבל תוכן הגיליון שנדרש לבקשה כן נשלח לענן של <bdi dir="ltr">Anthropic</bdi> לצורך העיבוד, וחוזר משם. הפירוט המלא בפרק 10.</p>
+<p>לא. הוא משנה רק כשביקשתם שינוי, <bdi dir="ltr">Claude</bdi> מסמן בצבע כל תא שנגע בו, ומזהיר לפני שהוא דורס נתונים קיימים. אם ביקשתם רק הסבר, הקובץ לא משתנה.</p>
+<h3><bdi dir="ltr">Claude</bdi> עובד על קובץ ששמור אצלי במחשב, או צריך להעלות אותו לאינטרנט?</h3>
+<p><bdi dir="ltr">Claude</bdi> עובד על הקובץ שפתוח אצלכם, ואינכם צריכים להעלות אותו לשום מקום בעצמכם. אבל תוכן הגיליון שנדרש לבקשה כן נשלח לענן של <bdi dir="ltr">Anthropic</bdi> לצורך העיבוד, וחוזר משם. הפירוט המלא בפרק 10.</p>
 <h3>אני לא מבין ב-<bdi dir="ltr">Excel</bdi>. זה בשבילי?</h3>
 <p>כן, וזה אפילו אחד השימושים הטובים שלו. אפשר לבקש ממנו להסביר גיליון <bdi dir="ltr">Excel</bdi> שמישהו אחר בנה, ואפשר לבקש ממנו לבנות דברים שלא הייתם יודעים לבנות לבד. מה שכן נדרש זה לבדוק את התוצאה, ולזה יש פרק 7.</p>
-<h3>אפשר לבטל שינוי שהוא עשה?</h3>
-<p>כן. <bdi dir="ltr">Ctrl + Z</bdi> מבטל שינוי שהוא עשה, בדיוק כמו כל שינוי אחר ב-<bdi dir="ltr">Excel</bdi>. <strong>בדקנו את זה בפועל.</strong></p>
+<h3>אפשר לבטל שינוי ש-<bdi dir="ltr">Claude</bdi> עשה?</h3>
+<p>כן. <bdi dir="ltr">Ctrl + Z</bdi> מבטל שינוי ש-<bdi dir="ltr">Claude</bdi> עשה, בדיוק כמו כל שינוי אחר ב-<bdi dir="ltr">Excel</bdi>. <strong>בדקנו את זה בפועל.</strong></p>
 <p><strong>אבל יש שני דברים שכדאי לדעת מראש, אחרת נראה שזה לא עובד.</strong></p>
 <p><strong>הראשון: פעולה אחת שביקשתם מתבצעת ב-<bdi dir="ltr">Excel</bdi> כמה צעדים נפרדים</strong>, ולכן צריך ללחוץ כמה פעמים. אם יומן השינויים דלוק, הלחיצה הראשונה מוחקת דווקא את שורת היומן, <strong>והשינוי עצמו עדיין יהיה שם.</strong></p>
 <p><strong>והשני: הביטול מקפיץ אתכם ללשונית שבה בוצע השינוי שמתבטל</strong>, ולפעמים ללשונית שאין לה קשר למה שעשיתם. זה מבלבל, וזה לא סימן שמשהו נשבר.</p>
@@ -631,11 +631,11 @@
 <p>לא. כל שיחה מתחילה מהקובץ שפתוח כרגע. מה שכן נשמר בין שיחות זה מה שכתבתם בשדה ההוראות, לפי פרק 12.</p>
 <h3>ההיסטוריה של השיחות שלי נשמרת?</h3>
 <p>היא נשמרת מקומית אצלכם, לא בשרת. לכן היא לא עוברת בין מחשבים, ואם מנקים את נתוני הדפדפן היא נעלמת.</p>
-<h3>הוא יכול לחשב לי מועד, למשל מועד להגשה או מועד התיישנות?</h3>
-<p>הוא יכול לספור ימים בין תאריכים שאתם נותנים לו, וזה בערך זה. הוא לא יודע דין, ולא מכיר את כללי המועדים שחלים על ההליך שלכם. הוא לא מזהה שמועד נדחה בגלל פגרה, ולא מזהה שהספירה מתחילה מיום אחר ממה שהזנתם. הוא עובד על המספרים שבגיליון, ומי שיודע איך סופרים במקרה הזה הוא אתם.</p>
+<h3><bdi dir="ltr">Claude</bdi> יכול לחשב לי מועד, למשל מועד להגשה או מועד התיישנות?</h3>
+<p><bdi dir="ltr">Claude</bdi> יכול לספור ימים בין תאריכים שאתם נותנים לו, וזה בערך זה. <bdi dir="ltr">Claude</bdi> לא יודע דין, ולא מכיר את כללי המועדים שחלים על ההליך שלכם. <bdi dir="ltr">Claude</bdi> לא מזהה שמועד נדחה בגלל פגרה, ולא מזהה שהספירה מתחילה מיום אחר ממה שהזנתם. <bdi dir="ltr">Claude</bdi> עובד על המספרים שבגיליון, ומי שיודע איך סופרים במקרה הזה הוא אתם.</p>
 <h3>אפשר להזין לו גיליון עם שמות של לקוחות?</h3>
 <p>זו לא שאלה טכנית אלא שאלה של חיסיון, והיא מוסברת בפרק 10. בקצרה: זה תלוי בסוג החשבון שאתם עובדים בו, במה שהמשרד קבע ובהסכמת הלקוח.</p>
-<h3>עבדתי איתו שעה על אותה משימה, ופתאום הוא לא זכר משהו מההתחלה. למה?</h3>
+<h3>עבדתי איתו שעה על אותה משימה, ופתאום <bdi dir="ltr">Claude</bdi> לא זכר משהו מההתחלה. למה?</h3>
 <p>בשיחות ארוכות המערכת דוחסת אוטומטית את מה שקדם, כדי שהשיחה לא תיתקע. התוצאה היא שפרטים מתחילת העבודה עלולים להיטשטש. בעבודה ארוכה כדאי לחזור ולציין את הפרטים החשובים, במקום להניח שהוא זוכר מה אמרתם לפני חצי שעה.</p>
 <h3>ההיסטוריה שלי נשמרת בין קבצים שונים?</h3>
 <p>כן. בתוך <bdi dir="ltr">Excel</bdi> ההיסטוריה עוברת בין קבצים שונים, כך שאפשר לחזור לשיחה קודמת גם כשעובדים על קובץ אחר. היא כן נפרדת בין ארגונים, ואם אתם מחליפים חשבון תראו היסטוריה אחרת.</p>
