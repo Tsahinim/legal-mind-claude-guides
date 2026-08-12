@@ -3,10 +3,10 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="description" content="מדריך 2 בסדרת Claude בתוך Excel של Legal Mind: תשע רמות תרגול בסדר עולה, מלשאול שאלה על גיליון ועד לטבלת ציר, מטריצת פשרה ולוח סילוקין, עם פרומפט מוכן להעתקה בכל רמה.">
-<title>תשע רמות עבודה עם Claude ב-Excel | Legal Mind</title>
-<link rel="stylesheet" href="assets/site.css?v=20260811">
-<script defer src="assets/site.js"></script>
+<meta name="description" content="מדריך 2 בסדרת Claude בתוך Excel של Legal Mind: ארבעה עשר פרומפטים על תיק גירושין בדוי אחד, מביקורת קובץ שהגיע מהצד השני ועד לוח מצב עם תרשימים, עם תיבה מוכנה להעתקה בכל פרומפט.">
+<title>ארבעה עשר פרומפטים ל-Claude ב-Excel | Legal Mind</title>
+<link rel="stylesheet" href="assets/site.css?v=20260812c">
+<script defer src="assets/site.js?v=20260812c"></script>
 </head>
 <body>
 <a class="skip" href="#main">דילוג לתוכן</a>
@@ -16,31 +16,36 @@
 <header class="hero">
 <div>
 <p class="eyebrow">מדריך 2 מתוך 3</p>
-<h1>תשע רמות עבודה עם <bdi dir="ltr">Claude</bdi> ב-<bdi dir="ltr">Excel</bdi></h1>
-<p class="hero-sub">מהבקשה הפשוטה ועד למטריצת פשרה</p>
-<p class="hero-copy">במדריך 1 התקנתם את התוסף ולמדתם לנסח בקשה ולבדוק את התוצאה. כאן נתרגל בפועל, בתשע רמות שעולות בהדרגה. כל רמה בנויה באותו מבנה: המצב מהמשרד, פרומפט מוכן להעתקה, מה אמור לחזור, איך בודקים שזה נכון, ומה עושים אם יצא לא נכון. הראשונה לא נוגעת בקובץ בכלל, והאחרונה מגיעה לדברים שבמשרד רגיל רק מנהלת החשבונות יודעת לעשות.</p>
+<h1>ארבעה עשר פרומפטים ל-<bdi dir="ltr">Claude</bdi> ב-<bdi dir="ltr">Excel</bdi></h1>
+<p class="hero-sub">כולם על תיק אחד, מביקורת הקובץ שהגיע מהצד השני ועד לוח מצב התיק</p>
+<p class="hero-copy">במדריך 1 התקנתם את התוסף ולמדתם לנסח בקשה ולבדוק את התוצאה. כאן מתרגלים בפועל, בארבעה עשר פרומפטים שכולם רצים על תיק גירושין בדוי אחד. כל פרומפט בנוי באותו מבנה: המצב מהמשרד, תיבה מוכנה להעתקה, מה אמור לחזור, איך בודקים שזה נכון, ומה מוסיפים אם יצא לא נכון. הראשון רק קורא את הקובץ ומדווח מה לא בסדר בו, והאחרון בונה לוח מצב עם תרשימים. כל פרומפט הורץ על הקובץ הזה לפני שנכתב כאן, וכל מה שמופיע במדריך הוא מה שחזר בפועל.</p>
 </div>
 <dl class="facts">
-<div><dt>תוצר הלמידה</dt><dd>תשע משימות אמיתיות שביצעתם בעצמכם ב-<bdi dir="ltr">Excel</bdi>, מהקלה ביותר ועד לדברים שנחשבים "רק למי שעשה קורס <bdi dir="ltr">Excel</bdi>".</dd></div>
+<div><dt>תוצר הלמידה</dt><dd>ארבעה עשר פרומפטים שהרצתם בעצמכם על תיק אחד, מביקורת קובץ שהתקבל ועד לוח מצב עם תרשימים, כולל הדברים שנחשבים "רק למי שעשה קורס <bdi dir="ltr">Excel</bdi>".</dd></div>
 <div><dt>ידע מוקדם</dt><dd>דורש את מדריך 1: התוסף מותקן, ואתם יודעים לפתוח את הסרגל.</dd></div>
-<div><dt>מבנה</dt><dd>12 פרקים, מתוכם תשע רמות תרגול</dd></div>
-<div><dt>זמן משוער</dt><dd>כ-40 דקות קריאה, וכעשר דקות תרגול בכל רמה. הרמות עומדות בפני עצמן ואפשר לעצור אחרי כל אחת</dd></div>
+<div><dt>מבנה</dt><dd>17 פרקים, ובהם ארבעה עשר פרומפטים לתרגול</dd></div>
+<div><dt>זמן משוער</dt><dd>כשעה קריאה, וכעשר דקות תרגול בכל פרומפט. הפרומפטים מחולקים לארבע ישיבות, ואפשר לעצור בסוף כל אחת</dd></div>
 </dl>
 </header>
 
 <nav class="mobile-toc"><details><summary>תוכן המדריך</summary><ol>
-<li><a href="#how-to"><span>01</span>איך עובדים עם המדריך הזה, ואיזה גיליון <bdi dir="ltr">Excel</bdi> להכין</a></li>
-<li><a href="#level-1"><span>02</span>רמה 1: לשאול את <bdi dir="ltr">Claude</bdi> על גיליון <bdi dir="ltr">Excel</bdi> בלי לשנות בו כלום</a></li>
-<li><a href="#level-2"><span>03</span>רמה 2: להשוות שני גיליונות ולמצוא את הפערים</a></li>
-<li><a href="#level-3"><span>04</span>רמה 3: לנקות, לתקן כתיב ולאחד רשימה מבולגנת</a></li>
-<li><a href="#level-4"><span>05</span>רמה 4: לכתוב נוסחה, ולתקן נוסחה שגויה</a></li>
-<li><a href="#level-5"><span>06</span>רמה 5: לצבוע, לסמן ולסדר בלי להתמצא בתפריטים</a></li>
-<li><a href="#level-6"><span>07</span>רמה 6: לחלץ טבלה מ-<bdi dir="ltr">PDF</bdi> לתוך גיליון <bdi dir="ltr">Excel</bdi></a></li>
-<li><a href="#level-7"><span>08</span>רמה 7: להפוך טבלה לגרף</a></li>
-<li><a href="#level-8"><span>09</span>רמה 8: לבנות מאפס כלי עבודה ולוח בקרה</a></li>
-<li><a href="#level-9"><span>10</span>רמה 9: הדברים שנחשבים "רק למי שעשה קורס"</a></li>
-<li><a href="#refine"><span>11</span>איך מדייקים בקשה שחזרה חלקית או לא מדויקת</a></li>
-<li><a href="#faq"><span>12</span>שאלות נפוצות</a></li>
+<li><a href="#how-to"><span>01</span>איך עובדים עם המדריך הזה</a></li>
+<li><a href="#p01"><span>02</span>פרומפט 1: לבקר קובץ שהגיע מהצד השני</a></li>
+<li><a href="#p02"><span>03</span>פרומפט 2: להשוות שתי גרסאות ולמצוא את הפערים</a></li>
+<li><a href="#p03"><span>04</span>פרומפט 3: לנקות ציר אירועים, ולתעד כל שינוי</a></li>
+<li><a href="#p04"><span>05</span>פרומפט 4: שלוש עמודות מחושבות</a></li>
+<li><a href="#p05"><span>06</span>פרומפט 5: לשלוף מטבלת עזר ולסמן סתירות</a></li>
+<li><a href="#p06"><span>07</span>פרומפט 6: מחשבון מועדים דיוניים</a></li>
+<li><a href="#p07"><span>08</span>פרומפט 7: סיכומים מותנים בלי טבלת ציר</a></li>
+<li><a href="#p08"><span>09</span>פרומפט 8: טבלת ציר</a></li>
+<li><a href="#p09"><span>10</span>פרומפט 9: כמה שווה היום סכום שישולם בעתיד</a></li>
+<li><a href="#p10"><span>11</span>פרומפט 10: יתרה מתגלגלת וסטטוס שמחשב את עצמו</a></li>
+<li><a href="#p11"><span>12</span>פרומפט 11: לחלץ טבלה מ-<bdi dir="ltr">PDF</bdi> ולהשוות אותה לקובץ</a></li>
+<li><a href="#p12"><span>13</span>פרומפט 12: להפוך טבלה לפסקה בכתב טענות</a></li>
+<li><a href="#p13"><span>14</span>פרומפט 13: לעצב טבלה, בלי לגעת בנתונים</a></li>
+<li><a href="#p14"><span>15</span>פרומפט 14: לוח מצב התיק</a></li>
+<li><a href="#refine"><span>16</span>איך מדייקים בקשה שחזרה חלקית או לא מדויקת</a></li>
+<li><a href="#faq"><span>17</span>שאלות נפוצות</a></li>
 </ol></details></nav>
 
 <div class="layout">
@@ -53,13 +58,14 @@
 
 <h3>התיק שעליו מתאמנים</h3>
 <p>כל התרגול נעשה על תיק גירושין בדוי אחד, <strong>כהן נגד כהן</strong>. אין בו פרט אמיתי של אף אדם, ואין בו מספרי זהות, כתובות או מספרי חשבון אמיתיים.</p>
-<p>בקובץ אחת עשרה לשוניות שכולן חלק מאותו תיק: <strong>רשימת נכסים והתחייבויות, טבלת סיווג לפי מקור הזכות, גרסת הנכסים של הצד השני, הוצאות על הילדים, הכנסות שני הצדדים, תנועות בנק, לוח תשלומי איזון, ציר אירועים, החלטות ומועדים, מפתח נספחים, וטבלת מעקב תיקים שמעוצבת גרוע בכוונה.</strong></p>
+<p>בקובץ אחת עשרה לשוניות עבודה שכולן חלק מאותו תיק: <strong>רשימת נכסים והתחייבויות, טבלת סיווג לפי מקור הזכות, גרסת הנכסים של הצד השני, הוצאות הילדים שמעבר למזונות, הכנסות שני הצדדים, תנועות בנק, לוח תשלומי איזון, ציר אירועים, החלטות ומועדים, מפתח נספחים, וטבלת מעקב תיקים שמעוצבת גרוע בכוונה.</strong></p>
+<p>לפניהן יש לשונית פתיחה קצרה בשם "קרא לפני שמתחילים". <strong>כל הנתונים בקובץ בדויים, והוא אינו מסמך משפטי ואינו תחליף לבדיקה של עורך דין.</strong></p>
 <p><strong>ובתוך הקובץ שתלנו פגמים.</strong> תאריכים ששמורים כטקסט, סכום שנעלם, שורות כפולות, שם שנכתב בשלוש צורות, סכום כולל שמחמיץ שורה אחת, ונכס שהתקבל בירושה וסומן ככלול באיזון. <strong>הם לא תקלה, הם התרגיל.</strong></p>
 
 <h3>שני הקבצים להורדה</h3>
 <div class="bonus-actions" style="margin:16px 0">
-<a class="button primary" href="../assets/Legal-Mind-family-workbook.xlsx?v=2" download>הורדת קובץ התרגול</a>
-<a class="button" href="../assets/Legal-Mind-bank-statement.pdf?v=2" download>הורדת תדפיס הבנק</a>
+<a class="button primary" href="../assets/Legal-Mind-family-workbook.xlsx?v=3" download>הורדת קובץ התרגול</a>
+<a class="button" href="../assets/Legal-Mind-bank-statement.pdf?v=3" download>הורדת תדפיס הבנק</a>
 </div>
 <p>קובץ התרגול הוא חוברת <bdi dir="ltr">Excel</bdi>. תדפיס הבנק הוא קובץ <bdi dir="ltr">PDF</bdi>, והוא נחוץ רק לפרומפט 11. שמרו את שניהם באותה תיקייה.</p>
 
@@ -95,8 +101,8 @@
 
 <aside class="callout warn">
 <span class="callout-label">שני דברים ממדריך 1 שכדאי לזכור לפני שמתחילים</span>
-<p><strong>הראשון, חלונות האישור.</strong> כמעט כל פרומפט כאן כותב משהו לקובץ, ולכן יבקש אישור. לא נזכיר את זה שוב בכל פרומפט. העמדה שלנו בעניין הזה מפורטת במדריך 1.</p>
-<p><strong>והשני, לשוניות שנעלמות.</strong> כל פרומפט שיוצר לשונית חדשה דוחף את הקיימות מחוץ למסך. <strong>הן לא נמחקו.</strong> לחיצה ימנית על חצי הניווט בקצה שורת הלשוניות פותחת רשימה של כולן.</p>
+<p><strong>הראשון, חלונות האישור.</strong> כמעט כל פרומפט כאן כותב משהו לקובץ, <strong>ולכן סביר שיבקש אישור.</strong> לא נזכיר את זה שוב בכל פרומפט. העמדה שלנו בעניין הזה מפורטת במדריך 1.</p>
+<p><strong>והשני, לשונית שנראית כאילו נעלמה.</strong> אם בסוף הרצה אתם מגלים שאתם לא בלשונית שעבדתם עליה, או שאינכם רואים אותה בשורה שלמטה, <strong>היא לא נמחקה.</strong> זה קורה כשנוצרת לשונית חדשה שדוחפת את הקיימות מחוץ למסך, <strong>וגם, אצל חלק מהמשתמשים, כשהתיעוד פעיל והלשונית <bdi dir="ltr">Claude Log</bdi> הופכת לפעילה בסוף הסבב.</strong> לחיצה ימנית על חצי הניווט בקצה שורת הלשוניות פותחת רשימה של כולן, ובחירה משם מחזירה אתכם ישר לשם.</p>
 </aside>
 </section>
 
@@ -105,7 +111,12 @@
 <h2>פרומפט 1: לבקר קובץ שהגיע מהצד השני</h2>
 <h3>המצב</h3>
 <p>הגיעה אליכם רשימת נכסים מהצד השני, או מרואה חשבון, או מהלקוח עצמו. <strong>לפני שאתם מתייחסים למספרים לגופם, אתם רוצים לדעת אם הקובץ בכלל עומד בעצמו.</strong></p>
-<p>זה הפרומפט היחיד בסדרה שלא נוגע בקובץ בכלל. אפשר להריץ אותו על כל קובץ, גם על אמיתי, בלי שום סיכון.</p>
+<p>זה הפרומפט היחיד בסדרה שלא נוגע בקובץ בכלל. הוא רק קורא ומדווח, ולכן אין סכנה שיקלקל לכם משהו, ואפשר להריץ אותו גם על קובץ אמיתי.</p>
+<aside class="callout warn">
+<span class="callout-label">אבל לא על הקובץ שהגיע מהצד השני עצמו</span>
+<p>הכותרת של הפרק אומרת "קובץ שהגיע מהצד השני", וזה בדיוק המצב שבו ההחלטה מפרק 9 של מדריך 1 נכנסת לפעולה. <strong>העובדה שהפרומפט הזה רק קורא אינה הופכת את הקובץ למהימן.</strong> הוראות שהוטמנו בתוך קובץ פועלות גם על בקשה שרק קוראת, ובדיוק מהסיבה הזאת ההחלטה מתקבלת לפני הפתיחה ולא אחרי התוצאה.</p>
+<p><strong>מה שעושים בפועל:</strong> מסמנים בקובץ המקורי את הנתונים שצריך, מדביקים אותם כטקסט בלבד לגיליון <bdi dir="ltr">Excel</bdi> חדש שאתם יצרתם, סוגרים את המקורי, ומריצים את הפרומפט על החדש.</p>
+</aside>
 <h3>הפרומפט</h3>
 <div class="copy-block">
 <div class="copy-heading"><strong>פרומפט 1, מוכן להעתקה</strong><button class="copy-button" data-copy-target="p01" type="button">העתקה</button></div>
@@ -163,10 +174,10 @@
 </div>
 <h3>מה אמור לחזור</h3>
 <p><strong>לשונית חדשה בשם "פערים", ובה שלושה פערים בדיוק.</strong> נכס אחד שקיים רק אצלכם, ושני נכסים ששווים שונה בשתי הגרסאות. וסך ההפרש הכספי מפורק לשלושת הרכיבים.</p>
-<figure class="shot"><div class="shot-frame" style="max-width:660px;margin-inline:auto"><a href="../assets/shots/p02-04-gaps-sheet-top-full.png" target="_blank" rel="noopener"><img src="../assets/shots/p02-04-gaps-sheet-top-a.png" alt="לשונית הפערים, הצד הימני: הנכס החסר והנכסים ששווים שונה" loading="lazy"></a></div><p class="shot-legend">לשונית הפערים, הצד הימני: הנכס החסר והנכסים ששווים שונה</p><p class="shot-zoom"><a href="../assets/shots/p02-04-gaps-sheet-top-full.png" target="_blank" rel="noopener">לחיצה על התמונה פותחת את הצילום המלא</a></p></figure>
-<figure class="shot"><div class="shot-frame" style="max-width:660px;margin-inline:auto"><a href="../assets/shots/p02-04-gaps-sheet-top-full.png" target="_blank" rel="noopener"><img src="../assets/shots/p02-04-gaps-sheet-top-b.png" alt="אותה לשונית, ההמשך: ההפרשים בשקלים וסך ההפרש" loading="lazy"></a></div><p class="shot-legend">אותה לשונית, ההמשך: ההפרשים בשקלים וסך ההפרש</p><p class="shot-zoom"><a href="../assets/shots/p02-04-gaps-sheet-top-full.png" target="_blank" rel="noopener">לחיצה על התמונה פותחת את הצילום המלא</a></p></figure>
-<figure class="shot"><div class="shot-frame" style="max-width:660px;margin-inline:auto"><a href="../assets/shots/p02-05-gaps-sheet-bottom-full.png" target="_blank" rel="noopener"><img src="../assets/shots/p02-05-gaps-sheet-bottom-a.png" alt="תחתית הלשונית, הצד הימני: מה סומן לבדיקה ידנית" loading="lazy"></a></div><p class="shot-legend">תחתית הלשונית, הצד הימני: מה סומן לבדיקה ידנית</p><p class="shot-zoom"><a href="../assets/shots/p02-05-gaps-sheet-bottom-full.png" target="_blank" rel="noopener">לחיצה על התמונה פותחת את הצילום המלא</a></p></figure>
-<figure class="shot"><div class="shot-frame" style="max-width:660px;margin-inline:auto"><a href="../assets/shots/p02-05-gaps-sheet-bottom-full.png" target="_blank" rel="noopener"><img src="../assets/shots/p02-05-gaps-sheet-bottom-b.png" alt="תחתית הלשונית, ההמשך: ההסבר למה כל אחד לא נספר כפער" loading="lazy"></a></div><p class="shot-legend">תחתית הלשונית, ההמשך: ההסבר למה כל אחד לא נספר כפער</p><p class="shot-zoom"><a href="../assets/shots/p02-05-gaps-sheet-bottom-full.png" target="_blank" rel="noopener">לחיצה על התמונה פותחת את הצילום המלא</a></p></figure>
+<figure class="shot"><div class="shot-frame" style="max-width:832px;margin-inline:auto"><a href="../assets/shots/p02-04-gaps-sheet-top-full.png" target="_blank" rel="noopener"><img src="../assets/shots/p02-04-gaps-sheet-top-a.png" alt="לשונית הפערים, הצד הימני: הנכס החסר והנכסים ששווים שונה" loading="lazy"></a></div><p class="shot-legend">לשונית הפערים, הצד הימני: הנכס החסר והנכסים ששווים שונה</p><p class="shot-zoom"><a href="../assets/shots/p02-04-gaps-sheet-top-full.png" target="_blank" rel="noopener">לחיצה על התמונה מגדילה אותה ופותחת את מה שנשאר מחוץ למסגרת, עם אפשרות לגלול בתוכה לכל הכיוונים</a></p></figure>
+<figure class="shot"><div class="shot-frame" style="max-width:832px;margin-inline:auto"><a href="../assets/shots/p02-04-gaps-sheet-top-full.png" target="_blank" rel="noopener"><img src="../assets/shots/p02-04-gaps-sheet-top-b.png" alt="אותה לשונית, ההמשך: ההפרשים בשקלים וסך ההפרש" loading="lazy"></a></div><p class="shot-legend">אותה לשונית, ההמשך: ההפרשים בשקלים וסך ההפרש</p><p class="shot-zoom"><a href="../assets/shots/p02-04-gaps-sheet-top-full.png" target="_blank" rel="noopener">לחיצה על התמונה מגדילה אותה ופותחת את מה שנשאר מחוץ למסגרת, עם אפשרות לגלול בתוכה לכל הכיוונים</a></p></figure>
+<figure class="shot"><div class="shot-frame" style="max-width:832px;margin-inline:auto"><a href="../assets/shots/p02-05-gaps-sheet-bottom-full.png" target="_blank" rel="noopener"><img src="../assets/shots/p02-05-gaps-sheet-bottom-a.png" alt="תחתית הלשונית, הצד הימני: מה סומן לבדיקה ידנית" loading="lazy"></a></div><p class="shot-legend">תחתית הלשונית, הצד הימני: מה סומן לבדיקה ידנית</p><p class="shot-zoom"><a href="../assets/shots/p02-05-gaps-sheet-bottom-full.png" target="_blank" rel="noopener">לחיצה על התמונה מגדילה אותה ופותחת את מה שנשאר מחוץ למסגרת, עם אפשרות לגלול בתוכה לכל הכיוונים</a></p></figure>
+<figure class="shot"><div class="shot-frame" style="max-width:832px;margin-inline:auto"><a href="../assets/shots/p02-05-gaps-sheet-bottom-full.png" target="_blank" rel="noopener"><img src="../assets/shots/p02-05-gaps-sheet-bottom-b.png" alt="תחתית הלשונית, ההמשך: ההסבר למה כל אחד לא נספר כפער" loading="lazy"></a></div><p class="shot-legend">תחתית הלשונית, ההמשך: ההסבר למה כל אחד לא נספר כפער</p><p class="shot-zoom"><a href="../assets/shots/p02-05-gaps-sheet-bottom-full.png" target="_blank" rel="noopener">לחיצה על התמונה מגדילה אותה ופותחת את מה שנשאר מחוץ למסגרת, עם אפשרות לגלול בתוכה לכל הכיוונים</a></p></figure>
 <p><strong>ושימו לב לחלק התחתון.</strong> שם הוא מפרט שורות שלא הצליח להתאים בוודאות, ומסביר למה, <strong>במקום לנחש ולספור אותן כפער.</strong> זה מה שהשורה האחרונה בפרומפט משיגה.</p>
 <figure class="shot"><div class="shot-frame" style="max-width:401px;margin-inline:auto"><img src="../assets/shots/p02-01-answer-1.png" alt="התשובה בסרגל, וההפניות לתאים בתוכה לחיצות" loading="lazy"></div><p class="shot-legend">התשובה בסרגל, וההפניות לתאים בתוכה לחיצות</p></figure>
 <h3>איך בודקים</h3>
@@ -241,26 +252,33 @@
 3. "אחוז מסך הנכסים": חלקו של הנכס מתוך סך השווי נטו של כל הנכסים, באחוזים עם ספרה אחת אחרי הנקודה.
 
 בשלושתן השתמש בנוסחאות ולא בערכים קבועים.
+עצב את שלוש העמודות באותו סגנון של הטבלה הקיימת: אותו עיצוב כותרת, אותו סוג קו גבול ואותה מידת עובי, ואותו יישור.
+התאם את רוחב שלוש העמודות לתוכן שלהן והדלק גלישת טקסט בתאי הכותרת, כך שאף תא לא יציג #### ושום כותרת לא תיחתך.
 מתחת לטבלה כתוב שלוש שורות שמסבירות בעברית פשוטה מה עושה כל נוסחה, כדי שאוכל להסביר אותה בבית משפט.
 אל תשנה שום נתון קיים.</div>
 <span class="copy-status" aria-live="polite" aria-atomic="true"></span>
 </div>
 <h3>מה אמור לחזור</h3>
 <p>שלוש עמודות חדשות, <strong>וכולן נוסחאות ולא מספרים מוקלדים.</strong> ומתחת לטבלה שלוש שורות הסבר בעברית.</p>
-<figure class="shot"><div class="shot-frame" style="max-width:660px;margin-inline:auto"><a href="../assets/shots/p04-05-sheet-new-columns-full.png" target="_blank" rel="noopener"><img src="../assets/shots/p04-05-sheet-new-columns.png" alt="שלוש העמודות החדשות, N, O ו-P" loading="lazy"></a></div><p class="shot-legend">שלוש העמודות החדשות, N, O ו-P</p><p class="shot-zoom"><a href="../assets/shots/p04-05-sheet-new-columns-full.png" target="_blank" rel="noopener">לחיצה על התמונה פותחת את הצילום המלא</a></p></figure>
+<p><strong>ושימו לב לקווים ולכותרות.</strong> העמודות החדשות נראות כמו המשך של הטבלה ולא כמו טלאי, <strong>וזה קרה רק מפני שהפרומפט ביקש את זה במפורש.</strong> בלי השורה הזאת הוא בוחר סגנון משלו, ובלי שורת הרוחב חלק מהתאים חוזרים כ-####.</p>
+<figure class="shot"><div class="shot-frame" style="max-width:832px;margin-inline:auto"><a href="../assets/shots/p04-05-sheet-new-columns-full.png" target="_blank" rel="noopener"><img src="../assets/shots/p04-05-sheet-new-columns.png" alt="שלוש העמודות החדשות, N, O ו-P" loading="lazy"></a></div><p class="shot-legend">שלוש העמודות החדשות, N, O ו-P</p><p class="shot-zoom"><a href="../assets/shots/p04-05-sheet-new-columns-full.png" target="_blank" rel="noopener">לחיצה על התמונה מגדילה אותה ופותחת את מה שנשאר מחוץ למסגרת, עם אפשרות לגלול בתוכה לכל הכיוונים</a></p></figure>
 <p><strong>שימו לב שבשורות ההתחייבויות המחצית והאחוז יוצאים שליליים.</strong> זה נכון: חוב מקטין את מסת האיזון ולא מגדיל אותה.</p>
 <h3>ומה שהוא אמר לנו מעצמו</h3>
-<p>כשהרצנו את זה, <strong>הוא עצר והזהיר משלושה דברים לפני שנסתמך על התוצאה</strong>, ואף אחד מהם לא נתבקש:</p>
-<figure class="shot"><div class="shot-frame" style="max-width:404px;margin-inline:auto"><img src="../assets/shots/p04-02-answer-flagged.png" alt="שלוש האזהרות שהוא הוסיף מעצמו לפני שנסתמך על העמודות" loading="lazy"></div><p class="shot-legend">שלוש האזהרות שהוא הוסיף מעצמו לפני שנסתמך על העמודות</p></figure>
-<p><strong>והחשובה מהן: עמודת האחוזים מתבססת על שורת הסיכום, ושורת הסיכום מחמיצה שורה אחת.</strong> כלומר הפגם שפרומפט 1 מצא זולג עכשיו לתוך העמודה החדשה.</p>
+<p>הוא לא הסתפק בבניית העמודות. <strong>הוא דיווח מה בדק, ואז עצר והצביע על שני דברים שאיש לא ביקש ממנו למצוא.</strong></p>
+<figure class="shot"><div class="shot-frame" style="max-width:406px;margin-inline:auto"><img src="../assets/shots/p04-06-answer-full.png" alt="התשובה המלאה בחלונית: הנוסחאות, העיצוב, האימות ושתי ההערות" loading="lazy"></div><p class="shot-legend">התשובה המלאה בחלונית: הנוסחאות שבנה, העיצוב שהתאים, מה אימת בפועל, ושתי ההערות בסוף</p></figure>
+<p><strong>הראשון: האופנוע.</strong> בעמודת עליית הערך הוא מציג מינוס 7,000 ש"ח, <strong>והוא טרח להסביר למה זה נכון ולא שגיאה:</strong> האופנוע נרכש לפני הנישואין ושוויו ירד מאז. <strong>עמודה שמראה ירידת ערך אינה תקלה, היא נתון.</strong></p>
+<p><strong>והשני, החשוב מבין השניים: תא הסיכום שעמודת האחוזים נשענת עליו מסכם עד שורה 28, והנתונים נמשכים עד שורה 29.</strong> כלומר הפגם שפרומפט 1 מצא זולג עכשיו לתוך העמודה החדשה. <strong>הוא לא תיקן, כי הפרומפט אסר עליו לשנות נתונים קיימים, אבל הוא שאל אם לתקן.</strong></p>
 <h3>איך בודקים</h3>
 <p><strong>לחצו על תא אחד בכל עמודה וראו בשורת הנוסחאות שיש שם נוסחה ולא מספר.</strong></p>
 <p><strong>ואז שנו שווי של נכס אחד בטבלה, וראו ששלוש העמודות מתעדכנות מיד.</strong> אם רק חלק התעדכן, יש שם מספרים קבועים.</p>
 <aside class="callout tip">
 <span class="callout-label">והבדיקה שמגלה הכל בשלוש שניות</span>
-<p><strong>סכמו את כל עמודת האחוזים.</strong> אם היא יוצאת בדיוק מאה, שורת הסיכום מכסה את כל השורות. <strong>אם היא יוצאת יותר ממאה, יש שורה שהאחוזים מתבססים על סך שאינו כולל אותה.</strong></p>
-<p><strong>בקובץ התרגול היא יוצאת בערך 101, וזה נכון.</strong> זו אותה שורה שנשארה מחוץ לטווח שגיליתם בפרומפט 1, <strong>ועכשיו אפשר לראות אותה במספר אחד במקום לחפש אותה.</strong></p>
+<p><strong>סכמו את כל עמודת האחוזים.</strong> יש שתי תוצאות אפשריות, <strong>ושתיהן אומרות לכם משהו.</strong></p>
+<p><strong>בדיוק מאה אומר שהוא חישב לפי סך שמכסה את כל השורות</strong>, כלומר הוא לא נשען על שורת הסיכום שבקובץ אלא סכם בעצמו. <strong>יותר ממאה אומר שהוא כן נשען עליה</strong>, ושורת הסיכום הזאת מחמיצה שורה, ולכן הפגם שפרומפט 1 מצא זלג לתוך העמודה החדשה.</p>
+<p><strong>שאלו אותו ישירות: "על איזה סכום התבססת בעמודת האחוזים, ומאיזה תא הוא הגיע."</strong> התשובה הזאת שווה יותר מהמספר עצמו.</p>
 </aside>
+<p>וזו התשובה שקיבלנו כששאלנו. <strong>הוא נקב במספר, נקב בתא שממנו הוא בא, הצביע על השורה שנשארה בחוץ ועל סכומה, ואמר מה זה עושה לעמודת האחוזים.</strong></p>
+<figure class="shot"><div class="shot-frame" style="max-width:405px;margin-inline:auto"><img src="../assets/shots/p04-07-denominator.png" alt="התשובה לשאלה על המכנה: המספר, התא שממנו הוא בא, והשורה שנשארה בחוץ" loading="lazy"></div><p class="shot-legend">התשובה לשאלה על המכנה: המספר, התא שממנו הוא בא, והשורה שנשארה בחוץ</p></figure>
 <h3>אם יצא לא נכון</h3>
 <p>אם הוא הדביק מספרים במקום נוסחאות, אמרו: <strong>"אני רוצה נוסחה שמתעדכנת לבד, לא מספרים קבועים."</strong></p>
 </section>
@@ -285,17 +303,16 @@
 <span class="copy-status" aria-live="polite" aria-atomic="true"></span>
 </div>
 <h3>מה אמור לחזור</h3>
-<p><strong>שתי עמודות חדשות, ושורה אחת בלבד צבועה באדום.</strong> כשהרצנו את זה הוא מצא בדיוק סתירה אחת, <strong>ואפס התראות שווא בעשרים ושבע השורות האחרות.</strong></p>
-<figure class="shot"><div class="shot-frame" style="max-width:465px;margin-inline:auto"><a href="../assets/shots/p05-04-sheet-new-columns-full.png" target="_blank" rel="noopener"><img src="../assets/shots/p05-04-sheet-new-columns.png" alt="שתי העמודות החדשות, והשורה היחידה שנצבעה" loading="lazy"></a></div><p class="shot-legend">שתי העמודות החדשות, והשורה היחידה שנצבעה</p><p class="shot-zoom"><a href="../assets/shots/p05-04-sheet-new-columns-full.png" target="_blank" rel="noopener">לחיצה על התמונה פותחת את הצילום המלא</a></p></figure>
-<figure class="shot"><div class="shot-frame" style="max-width:660px;margin-inline:auto"><a href="../assets/shots/p05-03-sheet-right-full.png" target="_blank" rel="noopener"><img src="../assets/shots/p05-03-sheet-right.png" alt="ואותה שורה מהצד השני של הטבלה: הדירה שהתקבלה בירושה" loading="lazy"></a></div><p class="shot-legend">ואותה שורה מהצד השני של הטבלה: הדירה שהתקבלה בירושה</p><p class="shot-zoom"><a href="../assets/shots/p05-03-sheet-right-full.png" target="_blank" rel="noopener">לחיצה על התמונה פותחת את הצילום המלא</a></p></figure>
-<p>וזה מה שהוא כתב בסרגל:</p>
-<figure class="shot"><div class="shot-frame" style="max-width:406px;margin-inline:auto"><img src="../assets/shots/p05-01-answer-found.png" alt="הדיווח: הנוסחאות שנבנו, והסתירה היחידה שנמצאה" loading="lazy"></div><p class="shot-legend">הדיווח: הנוסחאות שנבנו, והסתירה היחידה שנמצאה</p></figure>
-<p><strong>שימו לב שהוא לא עצר בסימון.</strong> הוא הוסיף את הסעיף שמופיע בטבלה, <strong>את המשמעות הכספית, כלומר ששורה זו שווה 1,650,000 ש"ח שהם כ-21.6 אחוז ממסת הנכסים</strong>, ואת ההסתייגות שטבלת הסיווג מפושטת לצורך התרגול ואינה תחליף לבדיקה משפטית.</p>
-<figure class="shot"><div class="shot-frame" style="max-width:404px;margin-inline:auto"><img src="../assets/shots/p05-02-answer-meaning.png" alt="ההמשך: המשמעות הכספית וההסתייגות שהוא הוסיף מעצמו" loading="lazy"></div><p class="shot-legend">ההמשך: המשמעות הכספית וההסתייגות שהוא הוסיף מעצמו</p></figure>
-<aside class="callout warn">
-<span class="callout-label">מה הפרומפט הזה עושה ומה הוא לא עושה</span>
-<p><strong>הוא מצביע על אי-התאמה בין שני מקומות בקובץ שלכם. זה הכל.</strong> הוא אינו קובע מה נכון, אינו מפרש את החוק ואינו מחליף בדיקה משפטית. <strong>שימו לב שהפרומפט אוסר עליו במפורש לתקן את העמודה, ורק לסמן.</strong></p>
-</aside>
+<p><strong>שתי עמודות חדשות, ושורה אחת בלבד צבועה.</strong> כשהרצנו את זה הוא מצא בדיוק סתירה אחת, <strong>ואפס התראות שווא בעשרים ושבע השורות האחרות.</strong></p>
+<figure class="shot"><div class="shot-frame" style="max-width:274px;margin-inline:auto"><img src="../assets/shots/p05-04-sheet-new-columns.png" alt="שתי העמודות החדשות: מה הטבלה מחזירה, והאם יש סתירה. שורה אחת בלבד נצבעה" loading="lazy"></div><p class="shot-legend">שתי העמודות החדשות: מה הטבלה מחזירה, והאם יש סתירה. שורה אחת בלבד נצבעה</p></figure>
+<p><strong>ומי הנכס שנצבע.</strong> בלי הצד הזה של הטבלה רואים שורה אדומה ולא יודעים על מה מדובר.</p>
+<figure class="shot"><div class="shot-frame" style="max-width:832px;margin-inline:auto"><img src="../assets/shots/p05-03-sheet-right.png" alt="אותה שורה מהצד השני של הטבלה: הדירה שהתקבלה בירושה מהאם" loading="lazy"></div><p class="shot-legend">אותה שורה מהצד השני של הטבלה: הדירה שהתקבלה בירושה מהאם</p></figure>
+<h3>ומה שהוא אמר לנו מעצמו</h3>
+<p>הוא לא הסתפק בסימון.</p>
+<figure class="shot"><div class="shot-frame" style="max-width:407px;margin-inline:auto"><img src="../assets/shots/p05-01-answer-full.png" alt="התשובה המלאה: הנוסחאות, העיצוב המותנה, הסתירה שנמצאה, המשמעות הכספית, וההסתייגות שהוסיף" loading="lazy"></div><p class="shot-legend">התשובה המלאה: הנוסחאות, העיצוב המותנה, הסתירה שנמצאה, המשמעות הכספית, וההסתייגות שהוסיף</p></figure>
+<p><strong>ראשית, הוא לא צבע ידנית.</strong> הוא בנה עיצוב מותנה על כל הטווח, עם נוסחה שבודקת את עמודת הסתירה. <strong>המשמעות: אם תשנו מקור זכות או תתקנו את טבלת הסיווג, הצביעה תתעדכן לבד</strong>, ולא תישאר צבועה שורה שכבר אינה סותרת.</p>
+<p><strong>שנית, הוא הוסיף את המשמעות הכספית.</strong> השורה הזאת שווה 1,650,000 ש"ח, שהם כ-21.6 אחוז ממסת הנכסים. <strong>סתירה אחת בעמודה קטנה, וחמישית מהתיק תלויה בה.</strong></p>
+<p><strong>ושלישית, וזה מה שהכי חשוב:</strong> הוא קרא את שורת ההסתייגות שכתובה בלשונית "סיווג מקורות" עצמה, וציטט אותה חזרה. <strong>שהטבלה מפושטת, שנכס שמוחרג לפיה עשוי בכל זאת להיכלל בטענה לשיתוף ספציפי, ושהסימון האדום מצביע על פער שדורש הסבר ולא על טעות מוכחת.</strong></p>
 <h3>איך בודקים</h3>
 <p><strong>קחו שורה שנצבעה, ופתחו את לשונית "סיווג מקורות".</strong> ראו בעיניים מה כתוב שם מול מה שכתוב בטבלה. אם השניים באמת שונים, הסימון נכון.</p>
 <p><strong>ובדקו גם שורה שלא נצבעה</strong>, כדי לוודא שהוא לא צבע הכל או כלום.</p>
@@ -326,8 +343,8 @@
 </div>
 <h3>מה אמור לחזור</h3>
 <p>שלוש עמודות מלאות, <strong>עם נוסחאות ולא עם תאריכים מוקלדים</strong>, ושורות צבועות באדום היכן שהמועד קרוב או חלף.</p>
-<figure class="shot"><div class="shot-frame" style="max-width:606px;margin-inline:auto"><a href="../assets/shots/p06-02-sheet-full.png" target="_blank" rel="noopener"><img src="../assets/shots/p06-02-sheet-a.png" alt="הלשונית אחרי החישוב: תאריך ההחלטה, הערכאה ונושא ההחלטה" loading="lazy"></a></div><p class="shot-legend">הלשונית אחרי החישוב: תאריך ההחלטה, הערכאה ונושא ההחלטה</p><p class="shot-zoom"><a href="../assets/shots/p06-02-sheet-full.png" target="_blank" rel="noopener">לחיצה על התמונה פותחת את הלשונית כולה</a></p></figure>
-<figure class="shot"><div class="shot-frame" style="max-width:605px;margin-inline:auto"><a href="../assets/shots/p06-02-sheet-full.png" target="_blank" rel="noopener"><img src="../assets/shots/p06-02-sheet-b.png" alt="והמשכה: המועד האחרון, הימים שנותרו והסטטוס הצבוע" loading="lazy"></a></div><p class="shot-legend">והמשכה: המועד האחרון, הימים שנותרו והסטטוס הצבוע</p><p class="shot-zoom"><a href="../assets/shots/p06-02-sheet-full.png" target="_blank" rel="noopener">לחיצה על התמונה פותחת את הלשונית כולה</a></p></figure>
+<figure class="shot"><div class="shot-frame" style="max-width:832px;margin-inline:auto"><a href="../assets/shots/p06-02-sheet-full.png" target="_blank" rel="noopener"><img src="../assets/shots/p06-02-sheet-a.png" alt="הלשונית אחרי החישוב: תאריך ההחלטה, הערכאה ונושא ההחלטה" loading="lazy"></a></div><p class="shot-legend">הלשונית אחרי החישוב: תאריך ההחלטה, הערכאה ונושא ההחלטה</p><p class="shot-zoom"><a href="../assets/shots/p06-02-sheet-full.png" target="_blank" rel="noopener">לחיצה על התמונה מגדילה אותה ופותחת את מה שנשאר מחוץ למסגרת, עם אפשרות לגלול בתוכה לכל הכיוונים</a></p></figure>
+<figure class="shot"><div class="shot-frame" style="max-width:832px;margin-inline:auto"><a href="../assets/shots/p06-02-sheet-full.png" target="_blank" rel="noopener"><img src="../assets/shots/p06-02-sheet-b.png" alt="והמשכה: המועד האחרון, הימים שנותרו והסטטוס הצבוע" loading="lazy"></a></div><p class="shot-legend">והמשכה: המועד האחרון, הימים שנותרו והסטטוס הצבוע</p><p class="shot-zoom"><a href="../assets/shots/p06-02-sheet-full.png" target="_blank" rel="noopener">לחיצה על התמונה מגדילה אותה ופותחת את מה שנשאר מחוץ למסגרת, עם אפשרות לגלול בתוכה לכל הכיוונים</a></p></figure>
 <p><strong>ותסתכלו על השורה הרביעית.</strong> החלטה מ-27 ביולי עם שבעה ימי עבודה להגשה, <strong>והמועד האחרון יצא 14 בספטמבר.</strong> כי פגרת הקיץ, מ-21 ביולי עד 5 בספטמבר, הוחרגה במלואה. <strong>חודש וחצי הפרש בין חישוב שמכיר את הפגרות לחישוב שלא.</strong></p>
 <h3>ועמודת עזר שהוא בונה לבד</h3>
 <p>כדי להחריג את ימי הפגרה הוא פורס את שש התקופות ל-126 תאריכים בודדים בעמודה נפרדת, <strong>וכל אחד מהם מקושר בנוסחה לטבלת הפגרות.</strong> כלומר אם תשנו תאריך בטבלה, כל המועדים יתעדכנו.</p>
@@ -348,23 +365,45 @@
 <p class="section-number">08</p>
 <h2>פרומפט 7: סיכומים מותנים בלי טבלת ציר</h2>
 <h3>המצב</h3>
-<p>בתיק מזונות או במחלוקת על הוצאות הילדים, השאלה תמיד אותה שאלה: <strong>כמה הוציא כל צד, על מה, ועל איזה ילד.</strong></p>
-<p>בקובץ יש שישים שורות הוצאות. הפרומפט הזה מלמד את משפחת הנוסחאות שמסכמת לפי תנאי, <strong>וזו הנוסחה השימושית ביותר שיש אחרי סכום פשוט.</strong></p>
+<p>בתיק מזונות או במחלוקת על השתתפות בהוצאות, השאלה תמיד אותה שאלה: <strong>כמה הוציא כל צד, על מה, ועל איזה ילד.</strong></p>
+<p>הלשונית "הוצאות מעבר למזונות" מרכזת את ההוצאות שיש להן אסמכתה ושנחלקות בין ההורים. <strong>לכל שורה בה יש גם סיווג: הכרחית, שאינה הכרחית או חריגה</strong>, וזה הסיווג שקובע בפועל מי נושא בהוצאה ובאיזה יחס.</p>
+<p>בלשונית שישים ואחת שורות. הפרומפט הזה מלמד את משפחת הנוסחאות שמסכמת לפי תנאי, <strong>וזו הנוסחה השימושית ביותר שיש אחרי סכום פשוט.</strong></p>
+<figure class="shot"><div class="shot-frame" style="max-width:832px;margin-inline:auto"><a href="../assets/shots/p07-01-sheet-before-full.png" target="_blank" rel="noopener"><img src="../assets/shots/p07-01-sheet-before-a.png" alt="ראש הלשונית: תאריך, ילד, קטגוריה, סיווג ההוצאה ותיאור" loading="lazy"></a></div><p class="shot-legend">ראש הלשונית. משמאל לתיאור יש עוד שלוש עמודות: מי שילם, יש קבלה, והוחזר</p><p class="shot-zoom"><a href="../assets/shots/p07-01-sheet-before-full.png" target="_blank" rel="noopener">לחיצה על התמונה מגדילה אותה ופותחת את מה שנשאר מחוץ למסגרת, עם אפשרות לגלול בתוכה לכל הכיוונים</a></p></figure>
+<p><strong>ושימו לב לשתי שורות שנראות תקינות לגמרי.</strong> התאריך בשורה 10 והסכום בשורה 30 מיושרים אחרת מהשכנים שלהם, <strong>וזה כל ההבדל בין מספר לבין טקסט שנראה כמו מספר.</strong> תכף נראה מה זה עושה.</p>
 <h3>הפרומפט</h3>
 <div class="copy-block">
 <div class="copy-heading"><strong>פרומפט 7, מוכן להעתקה</strong><button class="copy-button" data-copy-target="p07" type="button">העתקה</button></div>
-<div class="copy-body" id="p07">מהלשונית "הוצאות הילדים" תבנה לשונית חדשה בשם "סיכום הוצאות", ובה ארבע טבלאות קטנות זו מתחת לזו:
+<div class="copy-body" id="p07">מהלשונית "הוצאות מעבר למזונות" תבנה לשונית חדשה בשם "סיכום הוצאות", ובה חמש טבלאות קטנות זו מתחת לזו:
 1. סך ההוצאות לכל ילד.
-2. סך ההוצאות לכל קטגוריה.
-3. סך ההוצאות שכל הורה שילם, ואחוז מהסך הכולל.
-4. סך ההוצאות שאין להן קבלה, ובכמה שורות מדובר.
+2. סך ההוצאות לכל סיווג: הכרחית, שאינה הכרחית, חריגה.
+3. סך ההוצאות לכל קטגוריה.
+4. סך ההוצאות שכל הורה שילם, ואחוז מהסך הכולל.
+5. סך ההוצאות שאין להן קבלה, ובכמה שורות מדובר.
 
 השתמש בנוסחאות מותנות שמתעדכנות לבד אם אוסיף שורות, ולא בערכים קבועים.
-מתחת לכל טבלה כתוב שורה שמסבירה באיזו נוסחה השתמשת ולמה.</div>
+מתחת לכל טבלה כתוב שורה שמסבירה באיזו נוסחה השתמשת ולמה.
+
+ובסוף, בשתי שורות נפרדות: כמה שורות נתונים יש בלשונית, וכמה שורות נכללו בפועל בחישוב. אם שני המספרים אינם זהים, תפרט אילו שורות לא נכללו ומה הסיבה.</div>
 <span class="copy-status" aria-live="polite" aria-atomic="true"></span>
 </div>
 <h3>מה אמור לחזור</h3>
-<p>לשונית חדשה עם ארבע טבלאות, <strong>וכל מספר בהן נוסחה.</strong> ומתחת לכל טבלה שורת הסבר.</p>
+<p>לשונית חדשה עם חמש טבלאות, <strong>וכל מספר בהן נוסחה.</strong> ומתחת לכל טבלה שורת הסבר.</p>
+<figure class="shot"><div class="shot-frame" style="max-width:832px;margin-inline:auto"><a href="../assets/shots/p07-02-summary-full.png" target="_blank" rel="noopener"><img src="../assets/shots/p07-02-summary-a.png" alt="שלוש הטבלאות הראשונות: לפי ילד, לפי סיווג משפטי, ולפי קטגוריה. שורת ההסבר מתחת לכל אחת ממשיכה שמאלה מעבר למסגרת" loading="lazy"></a></div><p class="shot-legend">שלוש הטבלאות הראשונות: לפי ילד, לפי סיווג משפטי, ולפי קטגוריה. שורת ההסבר מתחת לכל אחת ממשיכה שמאלה מעבר למסגרת</p><p class="shot-zoom"><a href="../assets/shots/p07-02-summary-full.png" target="_blank" rel="noopener">לחיצה על התמונה מגדילה אותה ופותחת את מה שנשאר מחוץ למסגרת, עם אפשרות לגלול בתוכה לכל הכיוונים</a></p></figure>
+<p><strong>וכאן נמצאת בדיקת האמת של כל התרגיל.</strong> שלוש הטבלאות חותכות את אותם נתונים בשלוש דרכים שונות, <strong>ושלושתן חייבות להסתכם באותו מספר.</strong> אצלנו כולן הגיעו ל-30,389 ש"ח. <strong>אם אחת מהן הייתה יוצאת אחרת, היה שם באג.</strong></p>
+<figure class="shot"><div class="shot-frame" style="max-width:784px;margin-inline:auto"><img src="../assets/shots/p07-02-summary-b.png" alt="שתי הטבלאות האחרונות, ומתחתן שתי שורות הספירה שהן העיקר" loading="lazy"></div><p class="shot-legend">שתי הטבלאות האחרונות, ומתחתן שתי שורות הספירה שהן העיקר</p></figure>
+<p><strong>ושתי השורות האחרונות הן העיקר.</strong> בלשונית שישים ואחת שורות נתונים, <strong>ובחישוב נכללות חמישים ותשע.</strong> שתי שורות נשארות בחוץ מפני שהסכום בהן שמור כטקסט ולא כמספר, <strong>והנוסחאות המותנות פשוט מדלגות עליהן בלי להתריע.</strong></p>
+<p><strong>הוא לא הסתפק במספר. הוא נקב בשתי השורות בשמן:</strong> שורה 30, אבחון דידקטי של נועה בסך 3,132 ש"ח, ושורה 43, קייטנת קיץ של רומי בסך 956 ש"ח. <strong>יחד 4,088 ש"ח שנעלמו מכל חמש הטבלאות בבת אחת.</strong></p>
+<h3>ומה שהוא אמר לנו מעצמו</h3>
+<figure class="shot"><div class="shot-frame" style="max-width:407px;margin-inline:auto"><img src="../assets/shots/p07-04-answer-full.png" alt="התשובה בחלונית: הנוסחאות, הממצאים, פער הספירה, והכפילות שהוא מצא בדרך" loading="lazy"></div><p class="shot-legend">התשובה בחלונית: הנוסחאות, הממצאים, פער הספירה, והכפילות שהוא מצא בדרך</p></figure>
+<p><strong>שלושה דברים שאיש לא ביקש.</strong></p>
+<p><strong>הראשון, הוא הגן על העתיד.</strong> הנוסחאות נכתבו עד שורה 1000 ולא עד השורה האחרונה, <strong>כדי שהוספת שורות חדשות תתעדכן לבד.</strong> והוא כתב את זה בשורה בראש הלשונית, כדי שמי שיפתח אותה בעוד חצי שנה ידע.</p>
+<p><strong>השני, הוא הוסיף עמודת "מספר שורות" לכל טבלה.</strong> לא ביקשנו. <strong>ובזכותה רואים מיד ש-61 שורות נספרו אבל רק חלקן חוברו</strong>, וזה בדיוק מה שחשף את הפער.</p>
+<p><strong>והשלישי, שאפילו אני לא ציפיתי לו בפרומפט הזה:</strong> הוא הבחין ששורה 62 בלשונית המקור זהה לחלוטין לשורה 19. אותו ילד, אותו סכום, אותו תאריך, אותה אסמכתה. <strong>הוא אמר ששתיהן נספרות כרגע, שלא נגע בהן, ושאם זו כפילות כדאי להסיר אחת לפני הגשה.</strong></p>
+<aside class="callout warn">
+<span class="callout-label">ולמה זה חשוב מעבר לתרגיל</span>
+<p><strong>סכום שמור כטקסט אינו נראה שונה על המסך.</strong> הוא מיושר אחרת, וזה הכל. <strong>והנוסחה שמדלגת עליו אינה מחזירה שגיאה, היא מחזירה מספר נמוך יותר שנראה סביר לגמרי.</strong></p>
+<p>בתיק הזה מדובר ב-4,088 ש"ח מתוך 34,477, <strong>כלומר כמעט שתים עשרה אחוז מהסכום שהיינו מגישים.</strong> וזאת הסיבה שהפרומפט מבקש ממנו לספור שורות ולא רק לחבר סכומים.</p>
+</aside>
 <h3>איך בודקים</h3>
 <p><strong>הוסיפו שורת הוצאה חדשה בסוף לשונית ההוצאות, וחזרו לסיכום.</strong> אם המספרים התעדכנו לבד, הנוסחאות נכונות. אם לא, יש שם ערכים קבועים.</p>
 <p><strong>ובדקו שסך ההוצאות של שני ההורים ביחד שווה לסך הכולל.</strong> אם לא, יש שורות שנפלו בין הכיסאות.</p>
@@ -377,18 +416,27 @@
 <h2>פרומפט 8: טבלת ציר</h2>
 <h3>המצב</h3>
 <p>טבלת ציר היא הכלי שנחשב "רק למי שעשה קורס <bdi dir="ltr">Excel</bdi>". <strong>היא לוקחת רשימה ארוכה ומסדרת אותה בשני צירים, כדי לראות חתך שאי אפשר לראות ברשימה.</strong></p>
-<p>כאן: קטגוריות ההוצאה בשורות, ההורה ששילם בעמודות. <strong>וכך רואים מיד באיזו קטגוריה כל צד נושא בעיקר הנטל.</strong></p>
+<p>כאן: הסיווג המשפטי והקטגוריה בשורות, ההורה ששילם בעמודות. <strong>וכך רואים מיד מי נושא בעיקר הנטל, ובאיזה סוג הוצאה בדיוק.</strong></p>
 <h3>הפרומפט</h3>
 <div class="copy-block">
 <div class="copy-heading"><strong>פרומפט 8, מוכן להעתקה</strong><button class="copy-button" data-copy-target="p08" type="button">העתקה</button></div>
-<div class="copy-body" id="p08">מהלשונית "הוצאות הילדים" תבנה טבלת ציר בלשונית חדשה בשם "ציר הוצאות".
-בשורות: הקטגוריה. בעמודות: מי שילם. בערכים: סכום ההוצאה.
+<div class="copy-body" id="p08">מהלשונית "הוצאות מעבר למזונות" תבנה טבלת ציר בלשונית חדשה בשם "ציר הוצאות".
+בשורות שתי רמות: הסיווג ומתחתיו הקטגוריה. בעמודות: מי שילם. בערכים: סכום ההוצאה.
 תוסיף סך הכל בשורות ובעמודות.
-מתחת לטבלה כתוב שתי שורות: באיזו קטגוריה הפער בין שני ההורים הוא הגדול ביותר, ומה הסכום.</div>
+מתחת לטבלה כתוב שתי שורות: באיזה סיווג הפער בין שני ההורים הוא הגדול ביותר, ומה הסכום.</div>
 <span class="copy-status" aria-live="polite" aria-atomic="true"></span>
 </div>
 <h3>מה אמור לחזור</h3>
 <p>טבלת ציר אמיתית, <strong>עם שורת וטור סך הכל</strong>, ושתי שורות מסקנה מתחתיה.</p>
+<figure class="shot" style="max-width:755px;"><div class="shot-frame" style="aspect-ratio:755/340;"><a href="../assets/shots/p08-01-pivot-full.png" target="_blank" rel="noopener"><img src="../assets/shots/p08-01-pivot.png" alt="טבלת הציר, עם השורה שמציגה אפס והשורה התחתונה" loading="lazy"></a><div class="shot-target badge-right" style="left:2.4%; top:62.6%; width:68.9%; height:7.4%;"><span class="shot-target-badge">1</span></div><div class="shot-target badge-right" style="left:2.4%; top:91.8%; width:45.0%; height:7.6%;"><span class="shot-target-badge">2</span></div></div><ol class="shot-legend"><li><b>1</b><span><strong>חריגה, ובתוכה חינוך, מציגה אפס.</strong> ולא מפני שלא היו הוצאות חינוך חריגות. <strong>הסכום היחיד בקטגוריה הזאת שמור בקובץ כטקסט, וטבלת ציר אינה סופרת טקסט.</strong> זו אותה הוצאה מפרומפט 7, האבחון הדידקטי בסך 3,132 ש"ח.</span></li><li><b>2</b><span><strong>והשורה התחתונה היא ההצלבה.</strong> 21,711 ו-8,678, בדיוק אותם מספרים שהתקבלו בפרומפט 7 בדרך חישוב אחרת לגמרי.</span></li></ol><p class="shot-caption">טבלת הציר: הסיווג ומתחתיו הקטגוריה בשורות, שני ההורים בעמודות</p><p class="shot-zoom"><a href="../assets/shots/p08-01-pivot-full.png" target="_blank" rel="noopener">לחיצה על התמונה מגדילה אותה ופותחת את מה שנשאר מחוץ למסגרת, עם אפשרות לגלול בתוכה לכל הכיוונים</a></p></figure>
+<p><strong>וההצלבה הראשונה שעושים היא לפרומפט הקודם.</strong> הסך הכללי כאן הוא 30,389 ש"ח, האב 21,711 והאם 8,678. <strong>אותם מספרים בדיוק שיצאו בפרומפט 7, בדרך חישוב אחרת לגמרי.</strong> שתי שיטות שמגיעות לאותה תוצאה הן הסימן הטוב ביותר שאין באג באף אחת מהן.</p>
+<p><strong>ומתחת לטבלה הוא בנה טבלה שנייה שלא ביקשנו במפורש:</strong> הפער בין ההורים בכל סיווג, ומי הגדול ביותר.</p>
+<figure class="shot"><div class="shot-frame" style="max-width:755px;margin-inline:auto"><img src="../assets/shots/p08-02-gap.png" alt="טבלת הפערים והמסקנה: הפער הגדול ביותר הוא בצרכים ההכרחיים, 8,363 ש"ח" loading="lazy"></div><p class="shot-legend">טבלת הפערים והמסקנה: הפער הגדול ביותר הוא בצרכים ההכרחיים, 8,363 ש"ח</p></figure>
+<h3>ומה שהוא אמר לנו מעצמו</h3>
+<figure class="shot"><div class="shot-frame" style="max-width:406px;margin-inline:auto"><img src="../assets/shots/p08-03-answer-full.png" alt="התשובה בחלונית: המבנה, הסכומים, המסקנה, ושתי הערות טכניות בסוף" loading="lazy"></div><p class="shot-legend">התשובה בחלונית: המבנה, הסכומים, המסקנה, ושתי הערות טכניות בסוף</p></figure>
+<p><strong>הראשונה שווה את כל התרגיל.</strong> בטבלה יש תת-שורה אחת שמציגה אפס: חריגה, ובתוכה חינוך. <strong>וזה לא אומר שלא היו הוצאות חינוך חריגות.</strong> זו בדיוק ההוצאה מפרומפט 7, האבחון הדידקטי בסך 3,132 ש"ח, <strong>ומפני שהסכום שמור כטקסט טבלת הציר לא ראתה אותו והתת-קטגוריה כולה התאפסה.</strong></p>
+<p><strong>שימו לב מה קרה כאן.</strong> בפרומפט 7 הפגם הופיע כפער בין שני מספרים, וצריך היה לחפש אותו. <strong>כאן הוא הופיע כשורה שכתוב בה אפס, ואפס נראה כמו עובדה.</strong> מי שיסתכל על הטבלה בלי לדעת יאמר שלא היו הוצאות חינוך חריגות.</p>
+<p><strong>והשנייה, טכנית ולא ניתנת לתיקון מתוך הגיליון:</strong> הכיתוב <bdi dir="ltr">Grand Total</bdi> מופיע באנגלית. <bdi dir="ltr">Excel</bdi> לוקח אותו משפת הממשק ולא משפת הקובץ, <strong>והוא אמר את זה במפורש במקום לנסות ולהיכשל.</strong> אם הכיתוב באנגלית מפריע, אפשר להקליד עליו ידנית בעברית אחרי שהטבלה נבנתה.</p>
 <h3>איך בודקים</h3>
 <p><strong>קחו תא אחד באמצע הטבלה ולחצו עליו פעמיים.</strong> בטבלת ציר אמיתית זה פותח לשונית חדשה עם כל השורות שהרכיבו את המספר. אם לא קרה כלום, זו טבלה רגילה ולא טבלת ציר.</p>
 <p><strong>והשוו את הסך הכולל למספר שקיבלתם בפרומפט 7.</strong> הם חייבים להיות זהים.</p>
@@ -400,8 +448,11 @@
 <p class="section-number">10</p>
 <h2>פרומפט 9: כמה שווה היום סכום שישולם בעתיד</h2>
 <h3>המצב</h3>
-<p>הצדדים הסכימו על תשלומי איזון לשיעורין, שנפרסים על פני שנה. <strong>מיליון שקל שישולמו בשנים עשר תשלומים אינם מיליון שקל היום.</strong></p>
+<p>הצדדים הסכימו על תשלומי איזון לשיעורין, שנים עשר תשלומים של 45,000 ש"ח שנפרסים על פני שנה. <strong>חמש מאות וארבעים אלף שקל שישולמו לאורך שנה אינם חמש מאות וארבעים אלף שקל היום.</strong></p>
 <p>זה חישוב שכל מומחה כלכלי עושה, ובעל מקצוע שיודע לעשות אותו בעצמו נכנס למשא ומתן עם מספר ולא עם תחושה.</p>
+<figure class="shot"><div class="shot-frame" style="max-width:832px;margin-inline:auto"><a href="../assets/shots/p09-01-schedule-before-full.png" target="_blank" rel="noopener"><img src="../assets/shots/p09-01-schedule-before.png" alt="לוח התשלומים לפני החישוב" loading="lazy"></a></div><p class="shot-legend">לוח התשלומים כפי שהוא מגיע. מימין למועד יש עמודה נוספת עם מספר התשלום, אחד עד שנים עשר</p><p class="shot-zoom"><a href="../assets/shots/p09-01-schedule-before-full.png" target="_blank" rel="noopener">לחיצה על התמונה מגדילה אותה ופותחת את מה שנשאר מחוץ למסגרת, עם אפשרות לגלול בתוכה לכל הכיוונים</a></p></figure>
+<p><strong>ובלוח הזה יש ארבעה מצבים שונים, ושווה לזהות אותם עכשיו כי פרומפט 10 יבקש לחשב אותם.</strong> תשלום ששולם במועד, תשלום שאיחר, <strong>תשלום שאיחר וגם שולם חלקית, 30,000 במקום 45,000</strong>, ותשלומים שמועדם עוד לא הגיע.</p>
+<p><strong>ויש שם גם מלכודת.</strong> עמודת הסטטוס מולאה ידנית פעם אחת ולא עודכנה מאז, <strong>ולכן ייתכן שיש בה שורה שכתוב בה "טרם הגיע מועד" והמועד שלה כבר חלף.</strong> זה בדיוק מה שקורה בלוח שמישהו מנהל ביד.</p>
 <h3>הפרומפט</h3>
 <div class="copy-block">
 <div class="copy-heading"><strong>פרומפט 9, מוכן להעתקה</strong><button class="copy-button" data-copy-target="p09" type="button">העתקה</button></div>
@@ -418,9 +469,26 @@
 </div>
 <h3>מה אמור לחזור</h3>
 <p>תא אחד לשיעור ההיוון, ערך נוכחי מחושב, ההפרש מהסכום הנומינלי, <strong>וטבלת רגישות קטנה בשלושה שיעורים.</strong></p>
+<figure class="shot"><div class="shot-frame" style="max-width:832px;margin-inline:auto"><a href="../assets/shots/p09-02-calc-full.png" target="_blank" rel="noopener"><img src="../assets/shots/p09-02-rate.png" alt="תא שיעור ההיוון, מסומן בצהוב, ולצידו מועד החישוב. כל השאר נגזר משניהם" loading="lazy"></a></div><p class="shot-legend">תא שיעור ההיוון, מסומן בצהוב, ולצידו מועד החישוב. כל השאר נגזר משניהם</p><p class="shot-zoom"><a href="../assets/shots/p09-02-calc-full.png" target="_blank" rel="noopener">לחיצה על התמונה מגדילה אותה ופותחת את מה שנשאר מחוץ למסגרת, עם אפשרות לגלול בתוכה לכל הכיוונים</a></p></figure>
+<p><strong>שימו לב שהוא לא הסתפק בתא אחד.</strong> הוא הוסיף גם תא למועד החישוב, <strong>כי ערך נוכחי בלי לומר ליום מי הוא חסר משמעות.</strong></p>
+<figure class="shot"><div class="shot-frame" style="max-width:668px;margin-inline:auto"><img src="../assets/shots/p09-03-summary.png" alt="הסיכום וטבלת הרגישות: ככל שהשיעור עולה הערך הנוכחי יורד" loading="lazy"></div><p class="shot-legend">הסיכום וטבלת הרגישות: ככל שהשיעור עולה הערך הנוכחי יורד</p></figure>
+<h3>ומה שהוא אמר לנו מעצמו</h3>
+<figure class="shot"><div class="shot-frame" style="max-width:406px;margin-inline:auto"><img src="../assets/shots/p09-04-answer-full.png" alt="התשובה בחלונית: המבנה, המספרים, המשמעות המעשית, וההחלטה שהוא קיבל לבד" loading="lazy"></div><p class="shot-legend">התשובה בחלונית: המבנה, המספרים, המשמעות המעשית, וההחלטה שהוא קיבל לבד</p></figure>
+<p><strong>שלושה דברים, וכולם החלטות מקצועיות ולא חישוב.</strong></p>
+<p><strong>הראשון, מה נחשב "טרם שולם".</strong> חמישה תשלומים מלאים לא שולמו, וזה 225,000 ש"ח. <strong>אבל יש גם תשלום שישי שבו שולמו 30,000 מתוך 45,000</strong>, והוא צירף את היתרה של 15,000 והגיע ל-240,000. <strong>הפרומפט לא אמר לו לעשות את זה.</strong></p>
+<p><strong>השני, ומי שמחשב היוון ביד נופל בו:</strong> תשלום אחד בלוח כבר עבר מועדו ולא שולם. <strong>הוא לא היוון אותו, אלא ספר אותו בערכו המלא</strong>, כי חוב שהיה אמור להיפרע כבר אינו תשלום עתידי. והוא כתב את ההחלטה הזאת כהערה בגיליון, לא רק בשיחה.</p>
+<p><strong>והשלישי הוא ההסבר להפרש.</strong> ההפרש כאן הוא 1,453 ש"ח בלבד, פחות מאחוז, <strong>והוא טרח להסביר למה: רוב היתרה מגיעה לפירעון בתוך ארבעה חודשים.</strong> היוון על טווח קצר כמעט אינו משנה, <strong>וזה בדיוק המספר שכדאי להכיר לפני שנכנסים למשא ומתן על פריסה.</strong></p>
+<aside class="callout tip">
+<span class="callout-label">ומה זה שווה בפריסה ארוכה</span>
+<p><strong>אותו חישוב על פריסה של חמש שנים במקום שנה נותן תוצאה אחרת לגמרי.</strong> אם תרצו לראות את זה, שנו את התאריכים בעמודת המועד ופזרו אותם על פני חמש שנים, <strong>וראו את ההפרש קופץ.</strong> הנוסחאות יתעדכנו לבד, וזו כל הנקודה של תא היוון נפרד.</p>
+</aside>
 <h3>איך בודקים</h3>
 <p><strong>שנו את תא שיעור ההיוון מ-4 ל-8.</strong> הערך הנוכחי חייב לרדת. אם הוא לא זז, יש שם מספר קבוע ולא נוסחה.</p>
-<p><strong>והיגיון פשוט: הערך הנוכחי תמיד נמוך מהסכום הנומינלי.</strong> אם יצא גבוה ממנו, משהו הפוך.</p>
+<figure class="shot"><div class="shot-frame" style="max-width:503px;margin-inline:auto"><img src="../assets/shots/p09-05-rate-test.png" alt="אותו אזור בשני שיעורי היוון, ארבעה אחוזים ושמונה" loading="lazy"></div><p class="shot-legend">אותו אזור בדיוק, פעם בארבעה אחוזים ופעם בשמונה. מספר אחד שונה, וכל השאר נגזר ממנו</p></figure>
+<p><strong>אצלנו הערך הנוכחי ירד מ-238,547 ל-237,162, וההפרש קפץ מ-1,453 ל-2,838.</strong> שינוי בתא אחד, ושתים עשרה שורות התעדכנו.</p>
+<p><strong>ושימו לב לדבר שקל לפספס: גם משפט הסיכום בעברית שמתחת לחישוב התעדכן.</strong> הוא לא הקליד את המספרים לתוך המשפט, <strong>הוא בנה את המשפט בנוסחה שמושכת אותם.</strong> כלומר גם ההסבר לא מתיישן כשמשנים הנחה.</p>
+<p><strong>ומה שלא זז, ובצדק: טבלת הרגישות.</strong> היא מציגה שני, שלושה וארבעה אחוזים בקביעות, <strong>והיא אינה אמורה לרוץ אחרי התא הראשי.</strong> אם גם היא הייתה משתנה, זו הייתה תקלה.</p>
+<p><strong>והיגיון פשוט שסוגר את הבדיקה: הערך הנוכחי תמיד נמוך מהסכום הנומינלי.</strong> אם יצא גבוה ממנו, משהו הפוך.</p>
 <h3>אם יצא לא נכון</h3>
 <p>אם הוא היוון גם תשלומים ששולמו כבר, אמרו: <strong>"תכלול בחישוב רק שורות שעמודת הסכום ששולם בהן ריקה."</strong></p>
 <aside class="callout warn">
@@ -434,6 +502,15 @@
 <h2>פרומפט 10: יתרה מתגלגלת וסטטוס שמחשב את עצמו</h2>
 <h3>המצב</h3>
 <p>לוח תשלומים שאתם מנהלים ביד מתיישן ברגע שמישהו משלם באיחור. <strong>אתם רוצים לוח שמתעדכן לבד:</strong> כמה נשאר, מי איחר, וכמה ימי איחור הצטברו.</p>
+<aside class="callout warn">
+<span class="callout-label">אם תקפוץ כאן אזהרה אדומה, אל תיבהלו</span>
+<p>עד כאן חלונות האישור היו שגרתיים. <strong>בפרומפט הזה ייתכן שיופיע חלון עם כותרת אדומה שכתוב בה <bdi dir="ltr">Potential data loss</bdi></strong>, ומתחתיה שורה שאומרת שהוא עומד לנקות טווח תאים. <strong>אצלנו הוא הופיע. אצלכם ייתכן שלא, וגם זה תקין.</strong></p>
+<figure class="shot"><div class="shot-frame" style="max-width:338px;margin-inline:auto"><img src="../assets/shots/p10-01-permission.png" alt="חלון האישור עם האזהרה על ניקוי טווח" loading="lazy"></div><p class="shot-legend">האזהרה כפי שהופיעה אצלנו: ניקוי הטווח <bdi dir="ltr">G2:G13</bdi>, כלומר עמודת הסטטוס בלבד</p></figure>
+<p><strong>הסיבה פשוטה.</strong> בעמודת הסטטוס כבר כתוב טקסט שהוקלד ידנית. כדי לשים שם נוסחה שמחשבת את הסטטוס לבד, ולתלות בה רשימה נפתחת, <strong>הוא חייב קודם לפנות את מה שכתוב.</strong> האזהרה נכונה מבחינה טכנית, <strong>והנתון שיימחק הוא בדיוק זה שביקשנו שיוחלף.</strong></p>
+<p><strong>ובכל זאת, זו ההזדמנות ללמוד לקרוא את החלון הזה, כי הבדיקה לוקחת שתי שניות: האם הטווח שכתוב בו הוא הטווח שביקשתם.</strong></p>
+<p><bdi dir="ltr">G2:G13</bdi> הוא עמודה אחת, שתים עשרה שורות, בדיוק עמודת הסטטוס. <strong>אילו היה כתוב שם <bdi dir="ltr">A2:G13</bdi>, זו כבר כל הטבלה, ואז עוצרים ושואלים.</strong></p>
+<p>אם הוא מופיע, לוחצים <bdi dir="ltr">Allow once</bdi>. <strong>וייתכן שהוא יופיע פעמיים ברצף</strong>, כי מדובר בשתי פעולות נפרדות על אותה עמודה: ניקוי מה שהיה, ואחריו הוספת הרשימה הנפתחת. <strong>בשתיהן בודקים את הטווח ומאשרים.</strong></p>
+</aside>
 <h3>הפרומפט</h3>
 <div class="copy-block">
 <div class="copy-heading"><strong>פרומפט 10, מוכן להעתקה</strong><button class="copy-button" data-copy-target="p10" type="button">העתקה</button></div>
@@ -449,6 +526,11 @@
 </div>
 <h3>מה אמור לחזור</h3>
 <p>יתרה שיורדת משורה לשורה, סטטוס מחושב, <strong>רשימה נפתחת בעמודת הסטטוס</strong>, ושורות צבועות באדום.</p>
+<figure class="shot"><div class="shot-frame" style="max-width:832px;margin-inline:auto"><a href="../assets/shots/p10-02-schedule-after-full.png" target="_blank" rel="noopener"><img src="../assets/shots/p10-02-schedule-after.png" alt="הלוח אחרי החישוב. שלוש שורות אדומות, והיתרה נעצרת על 240,000" loading="lazy"></a></div><p class="shot-legend">הלוח אחרי החישוב. שלוש שורות אדומות, והיתרה נעצרת על 240,000</p><p class="shot-zoom"><a href="../assets/shots/p10-02-schedule-after-full.png" target="_blank" rel="noopener">לחיצה על התמונה מגדילה אותה ופותחת את מה שנשאר מחוץ למסגרת, עם אפשרות לגלול בתוכה לכל הכיוונים</a></p></figure>
+<p><strong>ועמודת היתרה המתגלגלת מספרת את כל הסיפור לבדה.</strong> היא יורדת ב-45,000 בכל שורה, <strong>ובשורה אחת היא יורדת רק ב-30,000</strong>, כי שם שולם תשלום חלקי. <strong>ומשורה מסוימת ואילך היא כבר לא זזה</strong>, כי משם ואילך לא שולם דבר. עמודה אחת, ושתי עובדות שאי אפשר לראות ברשימת התשלומים המקורית.</p>
+<p><strong>ושורה אחת ראויה לתשומת לב מיוחדת.</strong> בלוח שהגיע אלינו היה כתוב בה "טרם הגיע מועד". <strong>המועד שלה חלף, והחישוב סימן אותה "טרם שולם" וצבע אותה באדום.</strong> זה בדיוק מה שקורה ללוח שמישהו מילא ביד לפני חודשיים ולא חזר אליו.</p>
+<figure class="shot"><div class="shot-frame" style="max-width:163px;margin-inline:auto"><img src="../assets/shots/p10-03-dropdown.png" alt="הרשימה הנפתחת בתא הסטטוס, עם ארבע האפשרויות" loading="lazy"></div><p class="shot-legend">הרשימה הנפתחת בתא הסטטוס, עם ארבע האפשרויות</p></figure>
+<p><strong>והרשימה הנפתחת היא הבדיקה הכי מהירה שיש.</strong> לוחצים על תא בעמודת הסטטוס, ואם נפתח חץ עם ארבע האפשרויות, החלק הזה של הבקשה בוצע.</p>
 <h3>איך בודקים</h3>
 <p><strong>היתרה בשורה האחרונה חייבת להיות שווה לסך הכל פחות מה ששולם.</strong> חשבו את זה בראש ובדקו.</p>
 <p><strong>ולחצו על תא בעמודת הסטטוס וראו שנפתח חץ עם ארבע האפשרויות.</strong> אם אין חץ, הרשימה הנפתחת לא נוצרה.</p>
@@ -462,8 +544,12 @@
 <h3>המצב</h3>
 <p>הצד השני הגיש תדפיס בנק כקובץ <bdi dir="ltr">PDF</bdi>, והלקוח שלכם הקליד את התנועות לגיליון <bdi dir="ltr">Excel</bdi>. <strong>השאלה היא אם השניים מסכימים.</strong></p>
 <p>זה הפרומפט היחיד שדורש את הקובץ השני שהורדתם.</p>
+<figure class="shot" style="max-width:782px;"><div class="shot-frame"><a href="../assets/shots/p11-01-statement-full.png" target="_blank" rel="noopener"><img src="../assets/shots/p11-01-statement.png" alt="ראש התדפיס: התקופה, מועד ההפקה, ויתרת הפתיחה" loading="lazy"></a></div><p class="shot-legend">ראש התדפיס: התקופה, מועד ההפקה, ויתרת הפתיחה</p><p class="shot-zoom"><a href="../assets/shots/p11-01-statement-full.png" target="_blank" rel="noopener">לחיצה על התמונה מגדילה אותה ופותחת את מה שנשאר מחוץ למסגרת, עם אפשרות לגלול בתוכה לכל הכיוונים</a></p></figure><p><strong>ושימו לב לשורת התקופה בכותרת.</strong> היא קובעת על מה בכלל אפשר להשוות, <strong>ותכף נראה למה זה קריטי.</strong></p>
+<figure class="shot" style="max-width:832px;"><div class="shot-frame"><a href="../assets/shots/p11-02-sheet-before-full.png" target="_blank" rel="noopener"><img src="../assets/shots/p11-02-sheet-before.png" alt="והלשונית שבקובץ, שאליה נשווה. היא מתחילה מוקדם יותר מהתדפיס" loading="lazy"></a></div><p class="shot-legend">והלשונית שבקובץ, שאליה נשווה. היא מתחילה מוקדם יותר מהתדפיס</p><p class="shot-zoom"><a href="../assets/shots/p11-02-sheet-before-full.png" target="_blank" rel="noopener">לחיצה על התמונה מגדילה אותה ופותחת את מה שנשאר מחוץ למסגרת, עם אפשרות לגלול בתוכה לכל הכיוונים</a></p></figure>
 <h3>הפרומפט</h3>
 <p><strong>לפני שמדביקים: לחצו על כפתור הפלוס שמתחת לשורת הכתיבה בסרגל, וצרפו את קובץ תדפיס הבנק.</strong></p>
+<figure class="shot" style="max-width:436px;"><div class="shot-frame" style="aspect-ratio:436/816;"><img src="../assets/shots/p11-03-attach.png" alt="הסרגל אחרי צירוף קובץ ה-PDF" loading="lazy"><div class="shot-target" style="left:8.9%; top:94.2%; width:8.7%; height:4.7%;"><span class="shot-target-badge">1</span></div><div class="shot-target badge-right" style="left:10.1%; top:22.4%; width:34.9%; height:19.7%;"><span class="shot-target-badge">2</span></div></div><ol class="shot-legend"><li><b>1</b><span><strong>כפתור הפלוס.</strong> לוחצים עליו, נפתח חלון בחירת קובץ, ובוחרים את תדפיס הבנק מהמקום שאליו הורדתם אותו.</span></li><li><b>2</b><span><strong>הקובץ אחרי שצורף.</strong> כרטיס קטן עם שם הקובץ וסימון <bdi dir="ltr">PDF</bdi>, מעל שורת הכתיבה. <strong>אם הכרטיס הזה אינו מופיע, הקובץ לא נקלט, ואין טעם לשלוח את הבקשה.</strong></span></li></ol><p class="shot-caption">הסרגל אחרי צירוף התדפיס, רגע לפני השליחה</p></figure>
+<p><strong>ושימו לב לדבר קטן בצילום שקל לפספס.</strong> למעלה כתוב <bdi dir="ltr">B14 selected</bdi>. <strong>זה התא שהיה מסומן בגיליון באותו רגע</strong>, והסרגל מציג אותו תמיד. אין לזה קשר לבקשה, וזה לא משפיע עליה.</p>
 <div class="copy-block">
 <div class="copy-heading"><strong>פרומפט 11, מוכן להעתקה</strong><button class="copy-button" data-copy-target="p11" type="button">העתקה</button></div>
 <div class="copy-body" id="p11">צירפתי תדפיס בנק כקובץ PDF.
@@ -471,12 +557,30 @@
 1. חלץ ממנו את כל התנועות ללשונית חדשה בשם "תדפיס הבנק", עם אותן עמודות שבתדפיס.
 2. אם יש שורה שלא הצלחת לקרוא בוודאות, אל תשלים אותה מהיגיון. סמן אותה וכתוב מה לא היה ברור.
 3. אחר כך תשווה את הלשונית הזאת ללשונית "תנועות בנק" שכבר קיימת בקובץ, ותכתוב בלשונית חדשה בשם "פערי בנק": תנועות שקיימות רק בתדפיס, תנועות שקיימות רק בלשונית, ותנועות שקיימות בשתיהן עם סכום שונה.
+   בהשוואה הזאת התייחס רק לתנועות שנופלות בתוך התקופה שרשומה בכותרת התדפיס. תנועה בלשונית שמחוץ לתקופה אינה פער, ואל תכלול אותה ברשימה.
 4. בסוף כתוב מה סך ההפרש הכספי, ומאיזו תנועה ואילך היתרות מפסיקות להתאים.</div>
 <span class="copy-status" aria-live="polite" aria-atomic="true"></span>
 </div>
 <h3>מה אמור לחזור</h3>
 <p>שתי לשוניות חדשות, <strong>ובלשונית הפערים שלושה ממצאים:</strong> שתי תנועות שקיימות בתדפיס ולא בקובץ, ותנועה אחת שסכומה שונה בין השניים.</p>
+<figure class="shot" style="max-width:832px;"><div class="shot-frame" style="aspect-ratio:854/388;"><img src="../assets/shots/p11-05-gaps-a.png" alt="לשונית פערי הבנק, שלושת סוגי הפער" loading="lazy"><div class="shot-target badge-right" style="left:0.7%; top:32.5%; width:98.6%; height:11.9%;"><span class="shot-target-badge">1</span></div><div class="shot-target badge-right" style="left:0.7%; top:65.2%; width:98.6%; height:6.7%;"><span class="shot-target-badge">2</span></div><div class="shot-target badge-right" style="left:0.7%; top:90.7%; width:98.6%; height:7.2%;"><span class="shot-target-badge">3</span></div></div><ol class="shot-legend"><li><b>1</b><span><strong>שתי תנועות שקיימות בתדפיס ואינן בקובץ.</strong> העברה לחשבון פרטי ב-8 בפברואר על 6,300 ש"ח, ומשיכת מזומן ב-21 במרץ על 4,200. <strong>לכל אחת הוא ציין את מספר האסמכתא</strong>, כדי שאפשר יהיה למצוא אותה בתדפיס.</span></li><li><b>2</b><span><strong>ואפס תנועות בכיוון ההפוך.</strong> הוא כתב במפורש שכל 31 התנועות שבתוך התקופה מופיעות בשני המקורות, ושהתנועות מאוקטובר עד דצמבר אינן פער אלא מחוץ לתקופת התדפיס.</span></li><li><b>3</b><span><strong>ותנועה אחת עם סכום שונה.</strong> כרטיס אשראי ב-20 בינואר, אותה אסמכתא בשני המקורות. בתדפיס 5,489 ש"ח, ובלשונית 4,089, <strong>הפרש של 1,400.</strong> שתי העמודות שמראות את ההפרש נשארו מחוץ למסגרת, ולחיצה על התמונה פותחת אותן.</span></li></ol><p class="shot-caption">שלושת סוגי הפער, כל אחד בטבלה נפרדת</p></figure>
+<p><strong>וזה הצד השני של אותה לשונית, זה שנושא את המספרים.</strong></p>
+<figure class="shot" style="max-width:832px;"><div class="shot-frame" style="aspect-ratio:854/182;"><img src="../assets/shots/p11-05-gaps-b.png" alt="הסיכום הכספי בלשונית פערי הבנק" loading="lazy"><div class="shot-target badge-right" style="left:0.7%; top:38.5%; width:98.6%; height:12.1%;"><span class="shot-target-badge">1</span></div><div class="shot-target badge-right" style="left:0.7%; top:51.1%; width:98.6%; height:39.6%;"><span class="shot-target-badge">2</span></div></div><ol class="shot-legend"><li><b>1</b><span><strong>סך ההפרש: 11,900 ש"ח.</strong> עשרת אלפים וחמש מאות מהתנועות החסרות, ואלף וארבע מאות מההפרש בסכום.</span></li><li><b>2</b><span><strong>וההצלבה שלא ביקשנו.</strong> הוא לקח את יתרת הסגירה בתדפיס, 13,706, את יתרת הסגירה בלשונית, 1,806, וחיסר. <strong>ההפרש יצא בדיוק 11,900.</strong> שתי דרכים שונות לגמרי לאותו מספר, וזו הבדיקה שהייתם עושים ביד.</span></li></ol><p class="shot-caption">הסיכום הכספי, ובתחתיתו הצלבה שלא ביקשנו</p></figure>
 <p><strong>ושורה שמציינת מאיזו נקודה ואילך היתרות מפסיקות להתאים.</strong> זו השורה החשובה, כי היא מצביעה על הרגע שבו ההקלדה הידנית התנתקה מהמציאות.</p>
+<h3>ומה שהוא אמר לנו מעצמו</h3>
+<figure class="shot" style="max-width:418px;"><div class="shot-frame"><img src="../assets/shots/p11-06-answer-full.png" alt="התשובה המלאה: החילוץ, ההשוואה, ההצלבה, והשורה שהוא לא הצליח לקרוא בוודאות" loading="lazy"></div><p class="shot-legend">התשובה המלאה: החילוץ, ההשוואה, ההצלבה, והשורה שהוא לא הצליח לקרוא בוודאות</p></figure><p><strong>והממצא שלא שתלנו.</strong> בתיאור של 12 במרץ, "העברה לחו"ל", <strong>הגרשיים בתוך המילה גרמו להיפוך תווים בחילוץ מה-PDF.</strong> הוא זיהה את זה, הבין מה המילה, <strong>ורשם הערה בלשונית במקום לתקן בשקט.</strong></p>
+<p><strong>זה בדיוק המקום שבו חילוץ עברית מ-PDF נשבר, וזה קורה הרבה.</strong> גרשיים בתוך מילה, מרכאות בשם חברה, ראשי תיבות. <strong>מי שמחלץ טבלה מ-PDF בעברית צריך לעבור על עמודת התיאורים בעיניים, תמיד.</strong></p>
+<aside class="callout tip">
+<span class="callout-label">ולמה יש בפרומפט שורה על התקופה</span>
+<p><strong>הלשונית בקובץ מתחילה מוקדם יותר מהתדפיס.</strong> בלי ההוראה להשוות רק בתוך התקופה שבכותרת, כל תנועה מוקדמת תדווח כ"קיימת רק בלשונית", <strong>ובמקום שלושה ממצאים תקבלו עשרות.</strong></p>
+<p><strong>וזה לא באג שלו אלא חוסר בבקשה שלכם.</strong> כשמשווים שני מקורות, הדבר הראשון שקובעים הוא על איזו תקופה מדובר. <strong>אותו כלל חל על כל השוואה שתעשו בתיק אמיתי.</strong></p>
+</aside>
+<aside class="callout warn">
+<span class="callout-label">וגם כאן ייתכן שתקפוץ האזהרה האדומה</span>
+<p><strong>אותו חלון שראינו בפרומפט 10 עשוי לחזור גם כאן, אבל הפעם הוא אומר משהו אחר.</strong></p>
+<figure class="shot" style="max-width:322px;"><div class="shot-frame" style="aspect-ratio:322/413;"><img src="../assets/shots/p11-04-permission.png" alt="חלון האישור בפרומפט 11, עם פעולה וטווח אחרים" loading="lazy"><div class="shot-target" style="left:4.3%; top:14.0%; width:91.9%; height:6.3%;"><span class="shot-target-badge">1</span></div><div class="shot-target" style="left:11.2%; top:25.4%; width:59.0%; height:15.5%;"><span class="shot-target-badge">2</span></div><div class="shot-target" style="left:3.1%; top:73.8%; width:93.8%; height:9.7%;"><span class="shot-target-badge">3</span></div></div><ol class="shot-legend"><li><b>1</b><span><strong>מה הוא עומד לעשות.</strong> כאן מילוי אוטומטי, ולא ניקוי כמו בפרומפט הקודם.</span></li><li><b>2</b><span><strong>ועל איזה טווח.</strong> בפרומפט 10 היה כתוב <bdi dir="ltr">G2:G13</bdi>, כלומר שתים עשרה שורות. כאן כתוב <bdi dir="ltr">G9</bdi>, כלומר תא בודד. <strong>שתי השורות האלה משתנות בכל פעם, וזו כל הסיבה לקרוא אותן.</strong></span></li><li><b>3</b><span><strong>אישור חד פעמי.</strong> זה הכפתור שלוחצים עליו כשהטווח מתאים למה שביקשתם.</span></li></ol><p class="shot-caption">אותו חלון, פעולה אחרת וטווח אחר</p></figure>
+<p><strong>וזה בדיוק הרגל העבודה שאנחנו רוצים לבנות.</strong> לא לזכור שהחלון מסוכן או לא מסוכן, <strong>אלא לקרוא בו שתי שורות: מה הפעולה, ועל איזה טווח.</strong> שתי שניות, ובכל פרומפט מחדש.</p>
+</aside>
 <h3>איך בודקים</h3>
 <p><strong>פתחו את קובץ ה-PDF לצד הלשונית שנוצרה, וספרו את מספר התנועות בשניהם.</strong> אם הוא החסיר שורה בחילוץ, כל ההשוואה אחריה חסרת ערך.</p>
 <p><strong>ובדקו תנועה אחת שהוא סימן כפער, מול התדפיס עצמו.</strong></p>
@@ -504,6 +608,12 @@
 </div>
 <h3>מה אמור לחזור</h3>
 <p>פסקה רצה, לא רשימה, <strong>שמפרטת את הנכסים החיצוניים עם השווי, המקור ומספר הנספח</strong>, ובסופה סכום כולל.</p>
+<p><strong>אצלנו נכנסו לפסקה שישה נכסים, והסכום הכולל יצא 2,497,000 ש"ח.</strong> ומתחת לפסקה הוא בנה, בלי שביקשנו, טבלת מקור שמקושרת בנוסחאות ללשונית הנכסים, <strong>כדי שאפשר יהיה לאמת כל נתון בפסקה מול מקורו.</strong></p>
+<figure class="shot" style="max-width:832px;"><div class="shot-frame" style="aspect-ratio:891/201;"><a href="../assets/shots/p12-03-source-full.png" target="_blank" rel="noopener"><img src="../assets/shots/p12-03-source.png" alt="טבלת המקור של פרומפט 12, עם עמודות הנספח והאסמכתא" loading="lazy"></a><div class="shot-target" style="left:16.3%; top:43.3%; width:5.4%; height:33.8%;"><span class="shot-target-badge">1</span></div><div class="shot-target badge-right" style="left:0.7%; top:53.2%; width:15.4%; height:10.9%;"><span class="shot-target-badge">2</span></div><div class="shot-target" style="left:29.5%; top:86.1%; width:16.8%; height:12.9%;"><span class="shot-target-badge">3</span></div></div><ol class="shot-legend"><li><b>1</b><span><strong>שלוש שורות שאין להן מספר נספח.</strong> אופנוע, קרן פנסיה מוקפאת ותכשיטים. <strong>הוא לא המציא מספר לאף אחת מהן</strong>, וכתב בפסקה שהאסמכתא חסרה.</span></li><li><b>2</b><span><strong>ודווקא לקרן הפנסיה המוקפאת יש אסמכתא.</strong> דוח קרן פנסיה 2023, אבל בלי שורה תואמת במפתח הנספחים. הוא הסביר במפורש שנספח 5 הוא דוח אקטוארי של קרן אחרת, <strong>וההכרעה אם לשייך בכל זאת היא שלכם.</strong></span></li><li><b>3</b><span><strong>והסכום הכולל, 2,497,000 ש"ח.</strong> זה המספר שנכנס לפסקה שהוא כתב, וזה המספר שבודקים מול הטבלה.</span></li></ol><p class="shot-caption">הטבלה שממנה נכתבה הפסקה, ושלוש השורות שחסרה בהן אסמכתא</p><p class="shot-zoom"><a href="../assets/shots/p12-03-source-full.png" target="_blank" rel="noopener">לחיצה על התמונה מגדילה אותה ופותחת את מה שנשאר מחוץ למסגרת, עם אפשרות לגלול בתוכה לכל הכיוונים</a></p></figure>
+<h3>ומה שהוא אמר לנו מעצמו</h3>
+<figure class="shot" style="max-width:409px;"><div class="shot-frame"><img src="../assets/shots/p12-02-answer-full.png" alt="התשובה המלאה בחלונית" loading="lazy"></div><p class="shot-legend">התשובה בחלונית: הפסקה, הטבלה, ושלוש ההערות שבסופה</p></figure>
+<p><strong>השורה שהכי חשוב לקרוא היא זו שבה הוא מסרב.</strong> הוא לא כתב מספר נספח היכן שלא היה לו, ולא ניחש. <strong>הוא פירט למה, והשאיר את ההחלטה לכם.</strong> זו התנהגות שאי אפשר לקבל מטבלה ואי אפשר לקבל מתבנית.</p>
+<p><strong>והוא גם סימן מגבלה בניסוח.</strong> הוא כתב שהשתמש בצורה אחידה, "הרשום/ה על שם", כדי לא להטות מין ומספר לכל פריט בנפרד, <strong>והציע לנסח ידנית לכל נכס אם נעדיף התאמה דקדוקית מלאה.</strong> בעברית משפטית זה הבדל שרואים.</p>
 <aside class="content-box warning">
 <h3>מה הפסקה הזאת אינה</h3>
 <p><strong>היא תיאור של מה שכתוב בטבלה שלכם, ותו לא.</strong> שימו לב שהפרומפט אוסר עליו במפורש להוסיף טענה או להסיק מסקנה, <strong>וזו השורה החשובה ביותר בו.</strong></p>
@@ -587,12 +697,12 @@
 </div>
 <h3>מה אמור לחזור</h3>
 <p>זו הלשונית לפני:</p>
-<figure class="shot"><div class="shot-frame" style="max-width:660px;margin-inline:auto"><a href="../assets/shots/g2-design-01-before-top-full.png" target="_blank" rel="noopener"><img src="../assets/shots/g2-design-01-before-top-a.png" alt="לפני העיצוב, הצד הימני: רוחבי עמודות אקראיים והכל ממורכז" loading="lazy"></a></div><p class="shot-legend">לפני העיצוב, הצד הימני: רוחבי עמודות אקראיים והכל ממורכז</p><p class="shot-zoom"><a href="../assets/shots/g2-design-01-before-top-full.png" target="_blank" rel="noopener">לחיצה על התמונה פותחת את הצילום המלא</a></p></figure>
-<figure class="shot"><div class="shot-frame" style="max-width:660px;margin-inline:auto"><a href="../assets/shots/g2-design-01-before-top-full.png" target="_blank" rel="noopener"><img src="../assets/shots/g2-design-01-before-top-b.png" alt="לפני העיצוב, ההמשך: סולמיות במקום תאריכים וגופנים חריגים" loading="lazy"></a></div><p class="shot-legend">לפני העיצוב, ההמשך: סולמיות במקום תאריכים וגופנים חריגים</p><p class="shot-zoom"><a href="../assets/shots/g2-design-01-before-top-full.png" target="_blank" rel="noopener">לחיצה על התמונה פותחת את הצילום המלא</a></p></figure>
+<figure class="shot"><div class="shot-frame" style="max-width:832px;margin-inline:auto"><a href="../assets/shots/g2-design-01-before-top-full.png" target="_blank" rel="noopener"><img src="../assets/shots/g2-design-01-before-top-a.png" alt="לפני העיצוב, הצד הימני: רוחבי עמודות אקראיים והכל ממורכז" loading="lazy"></a></div><p class="shot-legend">לפני העיצוב, הצד הימני: רוחבי עמודות אקראיים והכל ממורכז</p><p class="shot-zoom"><a href="../assets/shots/g2-design-01-before-top-full.png" target="_blank" rel="noopener">לחיצה על התמונה מגדילה אותה ופותחת את מה שנשאר מחוץ למסגרת, עם אפשרות לגלול בתוכה לכל הכיוונים</a></p></figure>
+<figure class="shot"><div class="shot-frame" style="max-width:832px;margin-inline:auto"><a href="../assets/shots/g2-design-01-before-top-full.png" target="_blank" rel="noopener"><img src="../assets/shots/g2-design-01-before-top-b.png" alt="לפני העיצוב, ההמשך: סולמיות במקום תאריכים וגופנים חריגים" loading="lazy"></a></div><p class="shot-legend">לפני העיצוב, ההמשך: סולמיות במקום תאריכים וגופנים חריגים</p><p class="shot-zoom"><a href="../assets/shots/g2-design-01-before-top-full.png" target="_blank" rel="noopener">לחיצה על התמונה מגדילה אותה ופותחת את מה שנשאר מחוץ למסגרת, עם אפשרות לגלול בתוכה לכל הכיוונים</a></p></figure>
 <p>וזו אותה לשונית אחרי, בהרצה אחת:</p>
-<figure class="shot"><div class="shot-frame" style="max-width:580px;margin-inline:auto"><a href="../assets/shots/g2-design-07-after-top-right-full.png" target="_blank" rel="noopener"><img src="../assets/shots/g2-design-07-after-top-right-a.png" alt="אחרי העיצוב, הצד הימני: כותרות מוקפאות ופסים לסירוגין" loading="lazy"></a></div><p class="shot-legend">אחרי העיצוב, הצד הימני: כותרות מוקפאות ופסים לסירוגין</p><p class="shot-zoom"><a href="../assets/shots/g2-design-07-after-top-right-full.png" target="_blank" rel="noopener">לחיצה על התמונה פותחת את הצילום המלא</a></p></figure>
-<figure class="shot"><div class="shot-frame" style="max-width:580px;margin-inline:auto"><a href="../assets/shots/g2-design-07-after-top-right-full.png" target="_blank" rel="noopener"><img src="../assets/shots/g2-design-07-after-top-right-b.png" alt="אחרי העיצוב, ההמשך: סכומים בשקלים ושליליים באדום ובסוגריים" loading="lazy"></a></div><p class="shot-legend">אחרי העיצוב, ההמשך: סכומים בשקלים ושליליים באדום ובסוגריים</p><p class="shot-zoom"><a href="../assets/shots/g2-design-07-after-top-right-full.png" target="_blank" rel="noopener">לחיצה על התמונה פותחת את הצילום המלא</a></p></figure>
-<figure class="shot"><div class="shot-frame" style="max-width:660px;margin-inline:auto"><a href="../assets/shots/g2-design-10-after-bottom-left-full.png" target="_blank" rel="noopener"><img src="../assets/shots/g2-design-10-after-bottom-left.png" alt="אחרי גלילה שמאלה, עמודת מספר התיק נשארת על המסך" loading="lazy"></a></div><p class="shot-legend">אחרי גלילה שמאלה, עמודת מספר התיק נשארת על המסך</p><p class="shot-zoom"><a href="../assets/shots/g2-design-10-after-bottom-left-full.png" target="_blank" rel="noopener">לחיצה על התמונה פותחת את הצילום המלא</a></p></figure>
+<figure class="shot"><div class="shot-frame" style="max-width:832px;margin-inline:auto"><a href="../assets/shots/g2-design-07-after-top-right-full.png" target="_blank" rel="noopener"><img src="../assets/shots/g2-design-07-after-top-right-a.png" alt="אחרי העיצוב, הצד הימני: כותרות מוקפאות ופסים לסירוגין" loading="lazy"></a></div><p class="shot-legend">אחרי העיצוב, הצד הימני: כותרות מוקפאות ופסים לסירוגין</p><p class="shot-zoom"><a href="../assets/shots/g2-design-07-after-top-right-full.png" target="_blank" rel="noopener">לחיצה על התמונה מגדילה אותה ופותחת את מה שנשאר מחוץ למסגרת, עם אפשרות לגלול בתוכה לכל הכיוונים</a></p></figure>
+<figure class="shot"><div class="shot-frame" style="max-width:832px;margin-inline:auto"><a href="../assets/shots/g2-design-07-after-top-right-full.png" target="_blank" rel="noopener"><img src="../assets/shots/g2-design-07-after-top-right-b.png" alt="אחרי העיצוב, ההמשך: סכומים בשקלים ושליליים באדום ובסוגריים" loading="lazy"></a></div><p class="shot-legend">אחרי העיצוב, ההמשך: סכומים בשקלים ושליליים באדום ובסוגריים</p><p class="shot-zoom"><a href="../assets/shots/g2-design-07-after-top-right-full.png" target="_blank" rel="noopener">לחיצה על התמונה מגדילה אותה ופותחת את מה שנשאר מחוץ למסגרת, עם אפשרות לגלול בתוכה לכל הכיוונים</a></p></figure>
+<figure class="shot"><div class="shot-frame" style="max-width:832px;margin-inline:auto"><a href="../assets/shots/g2-design-10-after-bottom-left-full.png" target="_blank" rel="noopener"><img src="../assets/shots/g2-design-10-after-bottom-left.png" alt="אחרי גלילה שמאלה, עמודת מספר התיק נשארת על המסך" loading="lazy"></a></div><p class="shot-legend">אחרי גלילה שמאלה, עמודת מספר התיק נשארת על המסך</p><p class="shot-zoom"><a href="../assets/shots/g2-design-10-after-bottom-left-full.png" target="_blank" rel="noopener">לחיצה על התמונה מגדילה אותה ופותחת את מה שנשאר מחוץ למסגרת, עם אפשרות לגלול בתוכה לכל הכיוונים</a></p></figure>
 <h3>ומה שהוא לא נגע בו, ודיווח עליו</h3>
 <p>זה החלק שהופך את הפרומפט הזה למשפטי ולא לגרפי:</p>
 <figure class="shot"><div class="shot-frame" style="max-width:314px;margin-inline:auto"><img src="../assets/shots/g2-design-14-report-flagged-1.png" alt="הדוח: תאים צבועים, גבול חריג, עמודות ושורות ריקות ותא ממוזג" loading="lazy"></div><p class="shot-legend">הדוח: תאים צבועים, גבול חריג, עמודות ושורות ריקות ותא ממוזג</p></figure>
@@ -621,9 +731,9 @@
 <div class="copy-heading"><strong>פרומפט 14, מוכן להעתקה</strong><button class="copy-button" data-copy-target="p14" type="button">העתקה</button></div>
 <div class="copy-body" id="p14">תבנה לשונית חדשה בשם "לוח מצב התיק" ובה:
 
-1. ארבעה מספרים מרכזיים: סך שווי הנכסים נטו, סך שווי הנכסים שאינם נכללים באיזון, סך ההוצאות על הילדים, והיתרה שטרם שולמה בלוח תשלומי האיזון.
+1. ארבעה מספרים מרכזיים: סך שווי הנכסים נטו, סך שווי הנכסים שאינם נכללים באיזון, סך ההוצאות שמעבר למזונות, והיתרה שטרם שולמה בלוח תשלומי האיזון.
 2. תרשים עוגה של חלוקת הנכסים לפי סוג הנכס.
-3. תרשים עמודות של הוצאות הילדים לפי קטגוריה.
+3. תרשים עמודות של ההוצאות שמעבר למזונות לפי סיווג ההוצאה.
 4. תרשים קווים של ההכנסות של שני הצדדים לאורך 12 החודשים.
 
 כל הכותרות בעברית, וכל מספר מקושר בנוסחה ללשונית המקורית ולא מוקלד.</div>
@@ -631,6 +741,16 @@
 </div>
 <h3>מה אמור לחזור</h3>
 <p>לשונית אחת עם ארבעה מספרים ושלושה תרשימים, <strong>וכל מספר מקושר בנוסחה.</strong></p>
+<figure class="shot" style="max-width:731px;"><div class="shot-frame"><img src="../assets/shots/p14-02-numbers-a.png" alt="שניים מארבעת המספרים המרכזיים" loading="lazy"></div><p class="shot-legend">שניים מארבעת המספרים המרכזיים</p></figure><figure class="shot" style="max-width:731px;"><div class="shot-frame"><img src="../assets/shots/p14-02-numbers-b.png" alt="ושני האחרים" loading="lazy"></div><p class="shot-legend">ושני האחרים</p></figure><p><strong>וכל ארבעת המספרים כבר מוכרים לכם מפרומפטים קודמים.</strong> 847,000 הוא הסכום שפרומפט 1 נקב בו, 240,000 הוא היתרה מפרומפטים 9 ו-10, <strong>ו-34,477 הוא סך ההוצאות מפרומפט 7.</strong> לוח מצב טוב אינו מייצר מספרים חדשים, הוא מרכז את אלה שכבר אימתתם.</p>
+<p><strong>ושימו לב ל-34,477 במיוחד.</strong> אם הוא היה מסכם את העמודה כפי שהיא, היה יוצא 30,389, <strong>כי שני סכומים בה שמורים כטקסט.</strong> הוא כתב שהוא מודע לזה, השתמש בנוסחה שמכירה גם טקסט, והציע לתקן את המקור. <strong>זו הפעם השלישית באותו קובץ שהוא נתקל בפגם הזה, והפעם הוא כבר עקף אותו במקום רק לדווח.</strong></p>
+<figure class="shot" style="max-width:782px;"><div class="shot-frame" style="aspect-ratio:782/472;"><img src="../assets/shots/p14-03-pie.png" alt="תרשים העוגה, עם מקרא בעברית" loading="lazy"><div class="shot-target" style="left:0.5%; top:12.3%; width:17.4%; height:84.7%;"><span class="shot-target-badge">1</span></div></div><ol class="shot-legend"><li><b>1</b><span><strong>ארבע עשרה תוויות בעברית, כולן קריאות ואף אחת לא נחתכה.</strong> זו לא מובנת מאליה בגיליון מימין לשמאל, וזאת בדיוק הבדיקה שכדאי לעשות בעיניים.</span></li></ol><p class="shot-caption">חלוקת הנכסים לפי סוג הנכס</p></figure><p><strong>ועל העוגה הזאת הוא אמר לנו משהו שאיש לא שאל.</strong> תרשים עוגה אינו יכול להציג ערך שלילי, <strong>ולכן שתי שורות ההתחייבויות אינן בו.</strong> והוא לא הסתפק באמירה, הוא כימת: <strong>סכום הנתונים בעוגה גבוה ב-191,800 ש"ח מהשווי נטו</strong>, וזה בדיוק ההלוואה מההורים והחוב בכרטיס האשראי יחד.</p>
+<figure class="shot" style="max-width:700px;"><div class="shot-frame" style="aspect-ratio:700/492;"><img src="../assets/shots/p14-04-bar.png" alt="תרשים העמודות של ההוצאות לפי סיווג" loading="lazy"><div class="shot-target" style="left:9.7%; top:90.2%; width:79.7%; height:6.5%;"><span class="shot-target-badge">1</span></div><div class="shot-target badge-right" style="left:88.9%; top:8.9%; width:10.3%; height:74.8%;"><span class="shot-target-badge">2</span></div></div><ol class="shot-legend"><li><b>1</b><span><strong>שלושת הסיווגים המשפטיים, בעברית, על ציר הקטגוריות.</strong> הכרחית, שאינה הכרחית וחריגה, כל אחד במקומו ואף אחד לא נחתך.</span></li><li><b>2</b><span><strong>וציר הערכים בשקלים, מעוצב.</strong> ההוצאות ההכרחיות מגיעות לכ-18,000 ש"ח, <strong>יותר מפי שניים מכל אחד משני האחרים,</strong> וזה נראה בשנייה במקום להיקרא מטבלה.</span></li></ol><p class="shot-caption">ההוצאות שמעבר למזונות, לפי סיווג</p></figure><figure class="shot" style="max-width:832px;"><div class="shot-frame" style="aspect-ratio:1005/434;"><img src="../assets/shots/p14-05-line.png" alt="גרף ההכנסות של שני הצדדים לאורך שנים עשר חודשים" loading="lazy"><div class="shot-target badge-right" style="left:5.5%; top:20.3%; width:15.1%; height:11.5%;"><span class="shot-target-badge">1</span></div><div class="shot-target" style="left:24.4%; top:39.2%; width:21.1%; height:5.1%;"><span class="shot-target-badge">2</span></div><div class="shot-target" style="left:2.2%; top:92.6%; width:93.5%; height:6.0%;"><span class="shot-target-badge">3</span></div></div><ol class="shot-legend"><li><b>1</b><span><strong>הקו העליון, הכנסת האב.</strong> נע בין 21,522 ל-26,619 ש"ח, <strong>והשיא ביוני 2026,</strong> שזו הנקודה שהמסגרת מקיפה.</span></li><li><b>2</b><span><strong>והתחתון, הכנסת האם.</strong> נע בין 17,093 ל-19,503, <strong>ויציב הרבה יותר.</strong> הפער בין שני הקווים נראה בעין בלי לקרוא מספר אחד.</span></li><li><b>3</b><span><strong>וציר הזמן.</strong> אוגוסט 2025 בימין ויולי 2026 בשמאל, כלומר <strong>הזמן מתקדם מימין לשמאל,</strong> מפני שכך מוגדר הגיליון. זה נכון, וזה מה שכדאי לוודא בכל גרף שנבנה על גיליון בעברית.</span></li></ol><p class="shot-caption">ההכנסות של שני הצדדים, שנים עשר חודשים</p></figure>
+<aside class="callout tip">
+<span class="callout-label">וההערה שסוגרת את כל הסדרה</span>
+<p><strong>בתרשים הקווים של ההכנסות, ציר הזמן רץ מימין לשמאל.</strong> אוגוסט 2025 בימין ויולי 2026 בשמאל, מפני שהגיליון מוגדר מימין לשמאל.</p>
+<p><strong>הוא הצביע על זה מעצמו, הסביר שזה עקבי עם כיוון הקריאה בעברית אבל הפוך מהמקובל בתרשימים פיננסיים, והציע להפוך את הציר אם נעדיף.</strong></p>
+<p><strong>זו אינה תקלה וזו אינה הסתייגות. זו החלטת עיצוב שהוא זיהה ומסר לכם.</strong> וזה, בסופו של דבר, כל ההבדל בין כלי שמבצע לבין כלי שאפשר לעבוד איתו.</p>
+</aside>
 <h3>איך בודקים</h3>
 <p><strong>שנו נתון אחד בלשונית המקורית וחזרו ללוח המצב.</strong> אם המספר והתרשים התעדכנו, הקישור אמיתי.</p>
 <p><strong>ובדקו שהכותרות בתרשימים בעברית ולא באנגלית</strong>, ושהתוויות לא נחתכות.</p>
@@ -671,7 +791,7 @@
 <h3>כמה זמן זה לוקח?</h3>
 <p>ההמלצה שלנו היא ארבע ישיבות של כשלושים דקות. <strong>מי שינסה לעשות את כולם ברצף אחד יתעייף באמצע, וזה מה שאנחנו רוצים למנוע.</strong></p>
 <h3>הפרומפטים האלה עובדים גם על קובץ אמיתי של תיק?</h3>
-<p>כן, וזו המטרה. <strong>רק אחרי שעברתם אותם על הקובץ הבדוי</strong>, ולפי הכלל מפרק 5 של מדריך 1 לגבי מקור הקובץ.</p>
+<p>כן, וזו המטרה. <strong>רק אחרי שעברתם אותם על הקובץ הבדוי</strong>, ולפי הכלל מפרק 9 של מדריך 1 לגבי מקור הקובץ.</p>
 <h3>למה בכל פרומפט יש שורה שאומרת לו לא לנחש?</h3>
 <p>כי בלי השורה הזאת הוא ישלים את החסר בעצמו, <strong>וזה ייראה תקין לגמרי על המסך.</strong> השורה הזאת הופכת שגיאה שקטה לסימון גלוי.</p>
 <h3>אפשר לסמוך על פרומפט ההשוואה כדי לטעון טענה מול הצד השני?</h3>
@@ -695,12 +815,12 @@
 <p><strong>ובכל אחד מהם הוספתם בדיקה אחת לארגז הכלים.</strong></p>
 <p>מדריך 3 לוקח את כל זה לקובץ אמיתי שלכם: איך בונים אותו, מה לא לשים בו, <strong>ואיך נראים אותם ארבעה עשר פרומפטים בליטיגציה, בדיני עבודה ובמקרקעין.</strong></p>
 </aside></div>
-<div class="guide-section"><nav class="bottom-nav"><a class="button" href="../guide-1/index.html">המדריך הקודם</a><a class="button primary" href="../index.html">חזרה למרכז</a></nav></div>
+<div class="guide-section"><nav class="bottom-nav"><a class="button primary" href="../guide-3/index.html">המשך למדריך 3</a><a class="button" href="../guide-1/index.html">המדריך הקודם</a><a class="button" href="../index.html">חזרה למרכז</a></nav></div>
 </main>
 
 <aside class="desktop-toc"><h2>תוכן המדריך</h2><ol><li><a href="#how-to">איך עובדים עם המדריך</a></li><li><a href="#p01">1. ביקורת קובץ שהגיע מהצד השני</a></li><li><a href="#p02">2. השוואת שתי גרסאות</a></li><li><a href="#p03">3. ניקוי ציר אירועים עם יומן</a></li><li><a href="#p04">4. שלוש עמודות מחושבות</a></li><li><a href="#p05">5. שליפה מטבלת עזר וסימון סתירות</a></li><li><a href="#p06">6. מחשבון מועדים דיוניים</a></li><li><a href="#p07">7. סיכומים מותנים</a></li><li><a href="#p08">8. טבלת ציר</a></li><li><a href="#p09">9. היוון תשלומים עתידיים</a></li><li><a href="#p10">10. יתרה מתגלגלת וסטטוס אוטומטי</a></li><li><a href="#p11">11. חילוץ טבלה מ-PDF</a></li><li><a href="#p12">12. פסקה לכתב טענות</a></li><li><a href="#p13">13. עיצוב טבלה</a></li><li><a href="#p14">14. לוח מצב התיק</a></li><li><a href="#refine">איך מדייקים בקשה</a></li><li><a href="#faq">שאלות נפוצות</a></li></ol></aside>
 </div>
 
-<footer>Legal Mind | מדריך 2 מתוך 3 | תשע רמות עבודה עם Claude ב-Excel</footer>
+<footer>Legal Mind | מדריך 2 מתוך 3 | ארבעה עשר פרומפטים ל-Claude ב-Excel</footer>
 </body>
 </html>

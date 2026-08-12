@@ -5,8 +5,8 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="description" content="מדריך 1 בסדרת Claude בתוך Excel של Legal Mind: מה הכלי עושה, אילו גרסאות ומנוי נדרשים, על אילו קבצים מותר להפעיל את Claude, התקנה מסך אחר מסך ואיך בודקים תוצאה לפני שסומכים עליה.">
 <title>עבודה עם Claude בסביבת Excel | Legal Mind</title>
-<link rel="stylesheet" href="assets/site.css?v=20260811">
-<script defer src="assets/site.js"></script>
+<link rel="stylesheet" href="assets/site.css?v=20260812c">
+<script defer src="assets/site.js?v=20260812c"></script>
 </head>
 <body>
 <a class="skip" href="#main">דילוג לתוכן</a>
@@ -24,21 +24,21 @@
 <div><dt>תוצר הלמידה</dt><dd>התוסף של <bdi dir="ltr">Claude</bdi> מותקן ובדוק בתוך <bdi dir="ltr">Excel</bdi>, ואתם יודעים להריץ בקשה ולבדוק את התוצאה.</dd></div>
 <div><dt>ידע מוקדם</dt><dd>אין. לא נדרש ידע ב-<bdi dir="ltr">Excel</bdi> ולא ניסיון קודם עם <bdi dir="ltr">Claude</bdi>.</dd></div>
 <div><dt>מבנה</dt><dd>13 פרקים</dd></div>
-<div><dt>זמן משוער</dt><dd>כ-40 דקות קריאה, כעשר דקות התקנה</dd></div>
+<div><dt>זמן משוער</dt><dd>כ-45 דקות קריאה, כעשר דקות התקנה</dd></div>
 </dl>
 </header>
 
 <nav class="mobile-toc"><details><summary>תוכן המדריך</summary><ol>
 <li><a href="#what-it-does"><span>01</span>מה <bdi dir="ltr">Claude</bdi> עושה בתוך גיליון <bdi dir="ltr">Excel</bdi>, ובמה זה שונה מהדבקת טבלה לשיחה</a></li>
-<li><a href="#full-loop"><span>02</span>איך נראית עבודה שלמה עם <bdi dir="ltr">Claude</bdi> בתוך גיליון <bdi dir="ltr">Excel</bdi>, מההתחלה עד הסוף</a></li>
-<li><a href="#good-at"><span>03</span>במה <bdi dir="ltr">Claude</bdi> טוב ב-<bdi dir="ltr">Excel</bdi>, ומה הוא לא עושה</a></li>
-<li><a href="#requirements"><span>04</span>אילו גרסאות <bdi dir="ltr">Excel</bdi> נדרשות, ואיזה מנוי</a></li>
-<li><a href="#which-files"><span>05</span>על אילו קבצים מותר להפעיל את <bdi dir="ltr">Claude</bdi></a></li>
-<li><a href="#confidentiality"><span>06</span>חיסיון, הסכמת לקוח ולאן המידע מגיע</a></li>
-<li><a href="#install"><span>07</span>התקנת <bdi dir="ltr">Claude</bdi> ב-<bdi dir="ltr">Excel</bdi>, מסך אחר מסך</a></li>
-<li><a href="#first-open"><span>08</span>הפתיחה הראשונה, ומה <bdi dir="ltr">Claude</bdi> רואה בגיליון שלכם</a></li>
-<li><a href="#phrasing"><span>09</span>איך מנסחים בקשה ל-<bdi dir="ltr">Claude</bdi> בתוך גיליון</a></li>
-<li><a href="#verify"><span>10</span>איך בודקים ש-<bdi dir="ltr">Claude</bdi> לא טעה</a></li>
+<li><a href="#good-at"><span>02</span>במה <bdi dir="ltr">Claude</bdi> טוב ב-<bdi dir="ltr">Excel</bdi>, ומה הוא לא עושה</a></li>
+<li><a href="#requirements"><span>03</span>אילו גרסאות <bdi dir="ltr">Excel</bdi> נדרשות, ואיזה מנוי</a></li>
+<li><a href="#install"><span>04</span>התקנת <bdi dir="ltr">Claude</bdi> ב-<bdi dir="ltr">Excel</bdi>, מסך אחר מסך</a></li>
+<li><a href="#first-open"><span>05</span>הפתיחה הראשונה, ומה <bdi dir="ltr">Claude</bdi> רואה בגיליון שלכם</a></li>
+<li><a href="#phrasing"><span>06</span>איך מנסחים בקשה ל-<bdi dir="ltr">Claude</bdi> בתוך גיליון</a></li>
+<li><a href="#verify"><span>07</span>איך בודקים ש-<bdi dir="ltr">Claude</bdi> לא טעה</a></li>
+<li><a href="#full-loop"><span>08</span>איך נראית עבודה שלמה עם <bdi dir="ltr">Claude</bdi> בתוך גיליון <bdi dir="ltr">Excel</bdi>, מההתחלה עד הסוף</a></li>
+<li><a href="#which-files"><span>09</span>על אילו קבצים מותר להפעיל את <bdi dir="ltr">Claude</bdi></a></li>
+<li><a href="#confidentiality"><span>10</span>חיסיון, הסכמת לקוח ולאן המידע מגיע</a></li>
 <li><a href="#hebrew"><span>11</span>עבודה על גיליון <bdi dir="ltr">Excel</bdi> בעברית, ומה לבדוק בתאריכים</a></li>
 <li><a href="#persistent"><span>12</span>להגדיר את <bdi dir="ltr">Claude</bdi> פעם אחת שיעבוד בדרך שלכם</a></li>
 <li><a href="#faq"><span>13</span>שאלות נפוצות</a></li>
@@ -68,21 +68,8 @@
 </aside>
 </section>
 
-<section class="guide-section" id="full-loop">
-<p class="section-number">02</p>
-<h2>איך נראית עבודה שלמה עם <bdi dir="ltr">Claude</bdi> בתוך גיליון <bdi dir="ltr">Excel</bdi>, מההתחלה עד הסוף</h2>
-<p>לפני שנצלול לפרטים, כדאי לראות את כל המסלול בבת אחת. ככה תדעו לאן אנחנו הולכים, ולא תרגישו אבודים באמצע. עבודה אחת שלמה מורכבת מארבעה שלבים, וזה נכון גם לבקשה הפשוטה ביותר וגם למורכבת ביותר.</p>
-<ol class="steps">
-<li><strong>אתם מבקשים.</strong> פותחים את הסרגל בצד וכותבים בעברית מה אתם רוצים. למשל: תסביר לי איך יצא הסכום בעמודת שכר הטרחה.</li>
-<li><strong>הוא עונה או מציע.</strong> אם ביקשתם הסבר, הוא עונה ומצביע על התאים הרלוונטיים. אם ביקשתם שינוי, הוא מבצע אותו ומסמן בצבע כל תא שנגע בו.</li>
-<li><strong>אתם בודקים.</strong> עוברים על מה שהשתנה, לוחצים על ההפניות לתאים ומוודאים שזה מה שהתכוונתם. זה השלב שאף פעם לא מדלגים עליו.</li>
-<li><strong>אתם מאשרים או חוזרים אחורה.</strong> אם זה נכון, שומרים וממשיכים. אם לא, מבטלים ומנסחים את הבקשה מחדש.</li>
-</ol>
-<p>שימו לב לדבר אחד בשלב 2: כשהוא משנה משהו בקובץ, זה קורה מיד ולא ממתין לאישור שלכם. אין כאן מסך של "האם אתה בטוח" לפני כל שינוי. לכן שלב 3 הוא שלב חובה, ולכן גם בפרק 5 נקבע מראש על אילו קבצים בכלל פותחים את הכלי.</p>
-</section>
-
 <section class="guide-section" id="good-at">
-<p class="section-number">03</p>
+<p class="section-number">02</p>
 <h2>במה <bdi dir="ltr">Claude</bdi> טוב ב-<bdi dir="ltr">Excel</bdi>, ומה הוא לא עושה</h2>
 <p>לפני שמתקינים כלי חדש, כדאי לדעת מה הוא באמת עושה טוב, ובאילו מקומות לא כדאי לסמוך עליו.</p>
 <h3>מה הוא עושה טוב</h3>
@@ -99,29 +86,29 @@
 <li><strong>הוא לא מבקש אישור לפני כל שינוי.</strong> כשביקשתם שינוי, הוא מבצע. הוא כן מסמן מה השתנה, ומזהיר לפני שהוא דורס נתונים קיימים.</li>
 <li><strong>הוא לא תומך במאקרו ולא ב-<bdi dir="ltr">VBA</bdi>.</strong> אלה כלי אוטומציה מתקדמים של <bdi dir="ltr">Excel</bdi>, והוא לא עובד איתם. גם טבלאות נתונים אינן נתמכות.</li>
 <li><strong>הוא לא מכיר קבצים אחרים.</strong> בשיחה חדשה הוא רואה רק את הקובץ שפתוח מולכם, ולא יודע שום דבר על קבצים אחרים במשרד. מה שכן נשמר בין קבצים הוא היסטוריית השיחות בסרגל, ומה שקבעתם בהוראות הקבועות שבפרק 12.</li>
-<li><strong>הוא לא מתריע מעצמו כשהוא לא בטוח.</strong> אלא אם ביקשתם ממנו במפורש לסמן מה שלא היה ברור, והוא כן יודע לעשות את זה כשמבקשים. הבדיקה נשארת באחריותכם, ובפרק 10 נראה איך עושים אותה בפועל.</li>
+<li><strong>הוא לא מתריע מעצמו כשהוא לא בטוח.</strong> אלא אם ביקשתם ממנו במפורש לסמן מה שלא היה ברור, והוא כן יודע לעשות את זה כשמבקשים. הבדיקה נשארת באחריותכם, ובפרק 7 נראה איך עושים אותה בפועל.</li>
 <li><strong>הוא לא פותח וסוגר קבצים בעצמו.</strong> התיעוד הרשמי מציין שהוא אינו יכול ליצור, לפתוח, לסגור או להחליף קבצים מתוך התוסף. בכל מקרה, הקובץ שאתם רוצים שיעבוד עליו צריך להיות פתוח מולכם, כי הוא רואה רק אותו.</li>
 </ul>
 </section>
 
 <section class="guide-section" id="requirements">
-<p class="section-number">04</p>
+<p class="section-number">03</p>
 <h2>אילו גרסאות <bdi dir="ltr">Excel</bdi> נדרשות, ואיזה מנוי</h2>
 <p>זה הפרק שכדאי לקרוא לפני שממשיכים, כי אם הגרסה שלכם לא נתמכת, אין טעם להתחיל בהתקנה. הנתונים כאן מתוך התיעוד הרשמי של <bdi dir="ltr">Anthropic</bdi>.</p>
 <h3>איזה מנוי נדרש</h3>
-<p>התיעוד הרשמי קובע שנדרש מנוי <bdi dir="ltr">Claude</bdi> בתשלום, וכי כל המנויים בתשלום מאפשרים את התוסף. כלומר מבחינת המוצר, גם מנוי אישי בתשלום עובד. השאלה איזה מנוי מתאים למשרד עורכי דין היא שאלה אחרת, ועליה עמדת Legal Mind שבסוף הפרק.</p>
+<p>התיעוד הרשמי מונה ארבעה מנויים שבהם התוסף זמין: <bdi dir="ltr">Pro</bdi>, <bdi dir="ltr">Max</bdi>, <bdi dir="ltr">Team</bdi> ו-<bdi dir="ltr">Enterprise</bdi>. כלומר כל מנוי בתשלום, ובחשבון חינמי לא. מבחינת המוצר, גם מנוי אישי בתשלום עובד. השאלה איזה מנוי מתאים למשרד עורכי דין היא שאלה אחרת, ועליה עמדת Legal Mind שבסוף הפרק.</p>
 <h3>איפה זה עובד</h3>
 <ul class="bullets">
 <li><bdi dir="ltr">Excel</bdi> בדפדפן.</li>
-<li><bdi dir="ltr">Excel</bdi> על <bdi dir="ltr">Windows</bdi>, אבל רק מתוך מנוי <bdi dir="ltr">Microsoft 365</bdi>.</li>
-<li><bdi dir="ltr">Excel</bdi> על <bdi dir="ltr">Mac</bdi>, מגרסה <bdi dir="ltr">16.46</bdi> ומעלה.</li>
-<li><bdi dir="ltr">Excel</bdi> על <bdi dir="ltr">iPad</bdi>, מגרסה <bdi dir="ltr">2.51</bdi> ומעלה.</li>
+<li><bdi dir="ltr">Excel</bdi> על <bdi dir="ltr">Windows</bdi>, אבל רק מתוך מנוי <bdi dir="ltr">Microsoft 365</bdi>, ממבנה <bdi dir="ltr">16.0.13127.20296</bdi> ומעלה.</li>
+<li><bdi dir="ltr">Excel</bdi> על <bdi dir="ltr">Mac</bdi>, מגרסה <bdi dir="ltr">16.46</bdi> ומעלה, ומבנה <bdi dir="ltr">21011600</bdi> ומעלה.</li>
 </ul>
 <h3>איפה זה לא עובד</h3>
 <ul class="bullets">
-<li><bdi dir="ltr">Excel 2016</bdi> ו-<bdi dir="ltr">Excel 2019</bdi> שנרכשו ברישיון חד פעמי, ולא כמנוי. זו הנקודה שמפילה הרבה משרדים, כי מדובר ב-<bdi dir="ltr">Excel</bdi> שנראה זהה לגמרי, אבל התוסף לא ייטען בו. ואם תסתכלו בעמוד התוסף בחנות של <bdi dir="ltr">Microsoft</bdi> ותראו שם כתוב "<bdi dir="ltr">Excel 2016</bdi> ואילך", אל תתבלבלו: זה השדה הכללי של החנות, והתיעוד של <bdi dir="ltr">Anthropic</bdi> מפורט יותר וקובע במפורש שרישיון חד פעמי אינו נתמך.</li>
+<li><bdi dir="ltr">Excel 2016</bdi> ו-<bdi dir="ltr">Excel 2019</bdi> שנרכשו ברישיון חד פעמי, ולא כמנוי. זו הנקודה שמפילה הרבה משרדים, כי מדובר ב-<bdi dir="ltr">Excel</bdi> שנראה זהה לגמרי, אבל התוסף לא ייטען בו. ואם תסתכלו בעמוד התוסף בחנות של <bdi dir="ltr">Microsoft</bdi> ותראו שם כתוב "<bdi dir="ltr">Excel 2016</bdi> ואילך", אל תתבלבלו: זה השדה הכללי של החנות, והתיעוד של <bdi dir="ltr">Anthropic</bdi> מפורט יותר וקובע במפורש שרישיון חד פעמי אינו נתמך. וזה נכון גם לרישיון נפח, מהסוג שמשרדים גדולים רוכשים למספר עמדות.</li>
+<li><strong><bdi dir="ltr">Excel</bdi> על <bdi dir="ltr">iPad</bdi>.</strong> זו נקודה שכדאי לשים לב אליה, כי עורכי דין רבים עובדים על <bdi dir="ltr">iPad</bdi> בבית המשפט. התיעוד הרשמי מסביר שהתוסף דורש רכיב טכני מסוים של <bdi dir="ltr">Office</bdi>, בשם <bdi dir="ltr">SharedRuntime</bdi>, ושה-<bdi dir="ltr">iPad</bdi> אינו מספק אותו. <strong>אין מסביב לזה דרך.</strong> מי שרוצה לעבוד מהטאבלט יכול לפתוח את הקובץ ב-<bdi dir="ltr">Excel</bdi> בדפדפן, ושם התוסף כן נתמך.</li>
 <li><bdi dir="ltr">Excel</bdi> על <bdi dir="ltr">Android</bdi>.</li>
-<li>גרסאות <bdi dir="ltr">Microsoft 365</bdi> ישנות מדי, גם אם הן מנוי.</li>
+<li>מבנים ישנים מדי של <bdi dir="ltr">Microsoft 365</bdi>, גם אם הם מנוי. הכוונה למבנים שקודמים לאותו רכיב <bdi dir="ltr">SharedRuntime</bdi>.</li>
 </ul>
 <h3>איך יודעים מה יש לכם</h3>
 <p>שלושה צעדים, ואנחנו עוברים אותם ביחד:</p>
@@ -130,16 +117,17 @@
 <li>נפתח מסך על כל החלון. בתפריט שברצועה השמאלית, למטה, לוחצים על <bdi dir="ltr">Account</bdi>.</li>
 <li>מסתכלים על השורה שמופיעה תחת הכותרת של פרטי המוצר. אם כתוב שם <bdi dir="ltr">Microsoft 365</bdi>, אתם במנוי וזה תקין. אם כתוב <bdi dir="ltr">Office 2016</bdi> או <bdi dir="ltr">Office 2019</bdi> בלי המילה <bdi dir="ltr">365</bdi>, זה רישיון חד פעמי והתוסף לא יעבוד.</li>
 </ol>
-<figure class="shot"><div class="shot-frame" style="max-width:660px;margin-inline:auto"><a href="../assets/shots/g1-version-01-file-button-full.png" target="_blank" rel="noopener"><img src="../assets/shots/g1-version-01-file-button.png" alt="הכפתור File בקצה הסרגל העליון" loading="lazy"></a></div><p class="shot-legend">הכפתור File בקצה הסרגל העליון</p><p class="shot-zoom"><a href="../assets/shots/g1-version-01-file-button-full.png" target="_blank" rel="noopener">לחיצה על התמונה פותחת את הצילום המלא</a></p></figure>
+<figure class="shot"><div class="shot-frame" style="max-width:832px;margin-inline:auto"><a href="../assets/shots/g1-version-01-file-button-full.png" target="_blank" rel="noopener"><img src="../assets/shots/g1-version-01-file-button.png" alt="הכפתור File בקצה הסרגל העליון" loading="lazy"></a></div><p class="shot-legend">הכפתור File בקצה הסרגל העליון</p><p class="shot-zoom"><a href="../assets/shots/g1-version-01-file-button-full.png" target="_blank" rel="noopener">לחיצה על התמונה מגדילה אותה ופותחת את מה שנשאר מחוץ למסגרת, עם אפשרות לגלול בתוכה לכל הכיוונים</a></p></figure>
 <figure class="shot"><div class="shot-frame" style="max-width:197px;margin-inline:auto"><img src="../assets/shots/g1-version-02-file-menu.png" alt="הרצועה שנפתחת, ו-Account בתחתיתה" loading="lazy"></div><p class="shot-legend">הרצועה שנפתחת, ו-Account בתחתיתה</p></figure>
-<figure class="shot"><div class="shot-frame" style="max-width:660px;margin-inline:auto"><a href="../assets/shots/g1-version-03-account.png" target="_blank" rel="noopener"><img src="../assets/shots/g1-version-03-account.png" alt="מסך Account, והשורה שמראה איזה מנוי Office יש לכם" loading="lazy"></a></div><p class="shot-legend">מסך Account, והשורה שמראה איזה מנוי Office יש לכם</p><p class="shot-zoom"><a href="../assets/shots/g1-version-03-account.png" target="_blank" rel="noopener">לחיצה על התמונה פותחת אותה בגודל מלא</a></p></figure>
+<figure class="shot"><div class="shot-frame" style="max-width:672px;margin-inline:auto"><a href="../assets/shots/g1-version-03-account.png" target="_blank" rel="noopener"><img src="../assets/shots/g1-version-03-account.png" alt="מסך Account, והשורה שמראה איזה מנוי Office יש לכם" loading="lazy"></a></div><p class="shot-legend">מסך Account, והשורה שמראה איזה מנוי Office יש לכם</p><p class="shot-zoom"><a href="../assets/shots/g1-version-03-account.png" target="_blank" rel="noopener">לחיצה על התמונה מגדילה אותה, עם אפשרות לגלול בתוכה לכל הכיוונים</a></p></figure>
 <h3>מכסות שימוש, ומה קורה בשיחה ארוכה</h3>
 <p><strong>השימוש בתוסף נספר במכסה של חשבון <bdi dir="ltr">Claude</bdi> שלכם</strong>, בדיוק כמו שימוש רגיל. אין לו מכסה נפרדת.</p>
 <p>ודבר שני שכדאי להכיר מראש: <strong>שיחה ארוכה נדחסת אוטומטית לשיחה חדשה</strong> כשהיא מתקרבת לגבול. זו התנהגות מתועדת ולא תקלה, <strong>אבל המשמעות היא שפרטים מתחילת השיחה עלולים לא להיות זמינים לו בהמשכה.</strong></p>
 <p>בעבודה על תיק, אם אחרי שעה הוא שכח משהו שאמרתם בהתחלה, זו הסיבה. פשוט חוזרים ואומרים.</p>
 
 <h3>אילו סוגי קבצים נתמכים</h3>
-<p>קבצי <bdi dir="ltr">.xlsx</bdi> וקבצי <bdi dir="ltr">.xlsm</bdi>. אלה סוגי הקובץ הרגילים של <bdi dir="ltr">Excel</bdi>, ורוב הסיכויים שכל הקבצים במשרד שלכם הם כאלה.</p>
+<p>התוסף עובד על חוברת <bdi dir="ltr">Excel</bdi> שפתוחה מולכם, כלומר על קבצי <bdi dir="ltr">.xlsx</bdi> ועל קבצי <bdi dir="ltr">.xlsm</bdi>. אלה סוגי הקובץ הרגילים של <bdi dir="ltr">Excel</bdi>, ורוב הסיכויים שכל הקבצים במשרד שלכם הם כאלה.</p>
+<p>שווה לדעת ש-<bdi dir="ltr">.xlsm</bdi> הוא הסיומת של קובץ שיש בו מאקרו. <strong>הקובץ עצמו ייפתח ו-<bdi dir="ltr">Claude</bdi> יעבוד על התאים שבו כרגיל, אבל במאקרו עצמו הוא לא נוגע,</strong> כי מאקרו ו-<bdi dir="ltr">VBA</bdi> אינם נתמכים.</p>
 <aside class="content-box recommendation">
 <h3>עמדת Legal Mind</h3>
 <p>המנוי שמתאים לעורכי דין הוא <bdi dir="ltr">Team</bdi>. בארגונים גדולים, או כשנדרשים מושבים רבים, האפשרויות הן <bdi dir="ltr">Team</bdi> עם מספר מושבים גדול, או <bdi dir="ltr">Enterprise</bdi>, לפי הצורך של הארגון. שני המנויים האלה הם מנויים מסחריים ביזנסיאליים, והם המתאימים מבחינת הדרישות הבסיסיות של אבטחת מידע, בהתאם להסכם עיבוד המידע, ה-<bdi dir="ltr">DPA</bdi>, שמקושר אליהם.</p>
@@ -147,121 +135,8 @@
 </aside>
 </section>
 
-<section class="guide-section" id="which-files">
-<p class="section-number">05</p>
-<h2>על אילו קבצים מותר להפעיל את <bdi dir="ltr">Claude</bdi></h2>
-<p>זה הפרק החשוב ביותר במדריך הזה, והוא מגיע לפני ההתקנה בכוונה. הסיבה פשוטה: אחרי שהתוסף מותקן, ההחלטה על איזה קובץ לפתוח אותו נעשית בשנייה, בלי לחשוב. לכן כדאי שהכלל יהיה ברור מראש.</p>
-<h3>הכלל</h3>
-<p>מפעילים את <bdi dir="ltr">Claude</bdi> רק על גיליונות <bdi dir="ltr">Excel</bdi> שמקורם אצלכם, או אצל מי שאתם סומכים עליו. לא על גיליונות שהגיעו ממקור חיצוני שאינכם מכירים.</p>
-<h3>למה, בשפה פשוטה</h3>
-<p>גיליון <bdi dir="ltr">Excel</bdi> יכול להכיל טקסט מוסתר. לא בכוונה זדונית בהכרח, אבל אפשר. אם מישהו הטמין בתוך תא, או בתוך הערה, או בגיליון נסתר, הוראה שמכוונת ל-<bdi dir="ltr">Claude</bdi>, יש סיכוי שהוא יתייחס אליה כאילו אתם כתבתם אותה. במקרה כזה הוא יכול, למשל, להוציא מידע מהקובץ למקום אחר, לשנות נתונים שלא ביקשתם לשנות, או לבצע פעולה מוחקת על כמה גיליונות.</p>
-<p>ומה שחשוב להבין: זה סוג הנזק שבדיקה של התוצאה אחר כך לא מבטלת. אם מידע יצא, הוא יצא. לכן זו לא אזהרה מסוג "תבדקו את התוצר", אלא החלטה שמתקבלת לפני שפותחים את הקובץ.</p>
-<h3>יש רשת ביטחון אחת, וכדאי להכיר אותה</h3>
-<p>יש קבוצה של פונקציות <bdi dir="ltr">Excel</bdi> שיכולות למשוך מידע מבחוץ או להריץ פעולה במחשב. כשClaude מנסה להפעיל אחת מהן, מופיע חלון שמבקש את האישור שלכם לפני הביצוע. זה נכון, בין היתר, לפונקציות שמושכות מידע מהאינטרנט, לפונקציות שמייבאות נתונים ממקור חיצוני, ולפונקציות שניגשות לקבצים במחשב.</p>
-<p>אם קיבלתם חלון אישור כזה ולא ביקשתם שום דבר שדורש מידע מבחוץ, זה סימן שכדאי לעצור. לא לאשר, לסגור את הקובץ, ולברר מאיפה הוא הגיע.</p>
-<h3>איך זה מתורגם לעבודה במשרד</h3>
-<div class="tbl-wrap"><table class="tbl">
-<thead><tr><th>סוג הקובץ</th><th>מותר להפעיל?</th></tr></thead>
-<tbody>
-<tr><td>גיליון <bdi dir="ltr">Excel</bdi> שאתם או עובד במשרד בניתם</td><td>כן</td></tr>
-<tr><td>גיליון שהלקוח שלכם שלח, ואתם מכירים אותו</td><td>כן, בכפוף לפרק 6</td></tr>
-<tr><td>תבנית שהורדתם מהאינטרנט</td><td>לא</td></tr>
-<tr><td>גיליון שצורף למייל מעורך הדין של הצד השני</td><td>לא</td></tr>
-<tr><td>קובץ שספק או גורם חיצוני שלח</td><td>לא</td></tr>
-<tr><td>גיליון משותף שהרבה גורמים עורכים</td><td>לא</td></tr>
-</tbody>
-</table></div>
-<h3>איך הקובץ הבעייתי נראה בתחומים שונים</h3>
-<p>הטבלה שלמעלה מנוסחת באופן כללי, אבל בפועל אף אחד לא חושב "הגיע אליי קובץ ממקור לא מהימן". חושבים על הקובץ המסוים שנחת במייל. אלה הדוגמאות האופייניות, לפי תחום:</p>
-<ul class="bullets">
-<li><strong>נדל"ן.</strong> לוח תשלומים או טבלת חישוב הצמדה שהיזם, הקבלן או עורך הדין שלהם שלחו.</li>
-<li><strong>דיני עבודה.</strong> גיליון <bdi dir="ltr">Excel</bdi> של שכר או דוח נוכחות שהמעסיק העביר, או תלושים שהומרו לאקסל בידי גורם חיצוני.</li>
-<li><strong>נזיקין.</strong> חישוב נזק או תחשיב אקטוארי שהגיע ממומחה או מחברת הביטוח.</li>
-<li><strong>דיני משפחה.</strong> טבלת נכסים, ריכוז תנועות בנק או תחשיב איזון שהצד השני צירף.</li>
-<li><strong>הוצאה לפועל וגבייה.</strong> פירוט חוב או ריכוז יתרות שהתקבל מהזוכה או מהחייב.</li>
-<li><strong>מסחרי ותאגידים.</strong> מודל הערכת שווי או טבלת בעלויות שהגיעה מהצד השני בעסקה.</li>
-</ul>
-<p>כל אלה הם קבצים שימושיים ולגיטימיים לחלוטין לעבודה. הם רק לא קבצים שפותחים עליהם את הכלי.</p>
-<h3>ומה עושים אם חייבים לעבוד על קובץ כזה</h3>
-<p>פותחים גיליון <bdi dir="ltr">Excel</bdi> חדש ונקי, מסמנים בקובץ המקורי רק את הנתונים שצריך, מדביקים אותם לגיליון החדש כטקסט בלבד, וסוגרים את הקובץ המקורי. עכשיו אתם עובדים על קובץ שאתם יצרתם, ולא על קובץ של מישהו אחר.</p>
-</section>
-
-<section class="guide-section" id="confidentiality">
-<p class="section-number">06</p>
-<h2>חיסיון, הסכמת לקוח ולאן המידע מגיע</h2>
-<p>הפרק הזה גם הוא לפני ההתקנה, כי הוא חומר להחלטה ולא הוראת הפעלה.</p>
-<h3>לאן המידע נוסע</h3>
-<p>כשאתם מבקשים משהו, תוכן הגיליון שנדרש לאותה בקשה נשלח לענן של <bdi dir="ltr">Anthropic</bdi>, שם הבקשה מעובדת, והתשובה חוזרת לסרגל. זה נכון גם כשהקובץ שמור אצלכם על המחשב, וגם כשלא העליתם אותו לשום מקום בעצמכם.</p>
-<h3>ומה בדיוק נשלח, לפי ההצהרה הרשמית</h3>
-<p><bdi dir="ltr">Anthropic</bdi> מסרה ל-<bdi dir="ltr">Microsoft</bdi>, במסגרת אישור התוסף, פירוט של מה שנשמר. הרשימה כוללת את ההודעות שכתבתם, את היסטוריית השיחה, את תוכן התאים, טווחים שסימנתם, קבצים שהעליתם, וגם מטא-דאטה של הגיליון: <strong>שם הקובץ ושמות הלשוניות</strong>.</p>
-<p>ולזה יש משמעות מעשית מאוד לעורך דין, שלא כולם חושבים עליה: קובץ שנקרא "כהן נגד אלפא, תחשיב נזק" מסגיר את שם הלקוח ואת מהות התיק עוד לפני שנשלחה שורה אחת של נתונים. אם אתם עובדים על חומר רגיש, שווה לשקול שם קובץ ושמות לשוניות ניטרליים.</p>
-<h3>איפה המידע נשמר גיאוגרפית</h3>
-<p>לפי אותה הצהרה, המידע נשמר <strong>בארצות הברית</strong>. לעורך דין בישראל זו נקודה שצריכה להיכנס לשיקול, במיוחד כשמדובר במידע אישי של לקוחות, והיא לא ייחודית לכלי הזה אלא נכונה להרבה שירותי ענן. עוד נמסר באותה הצהרה שהמידע אינו מועבר לצדדים שלישיים או לקבלני עיבוד נוספים.</p>
-<h3>מה נשמר, ולכמה זמן</h3>
-<p>לפי התיעוד הרשמי, ברירת המחדל היא שהקלט והפלט נמחקים תוך 30 יום, אלא אם מדיניות שמירת הנתונים של הארגון קובעת אחרת.</p>
-<p>נקודה נוספת שכדאי להכיר: היסטוריית השיחות בסרגל נשמרת מקומית בדפדפן או במחשב שלכם, ולא בשרת. המשמעות המעשית היא שהיא לא עוברת בין מחשבים, ואם מנקים את נתוני הדפדפן היא נעלמת. בתוך <bdi dir="ltr">Excel</bdi> היא כן עוברת בין קבצים שונים.</p>
-<h3>מה שמנהל אבטחת מידע במשרד ישאל, והתשובות</h3>
-<p>אלה הפרטים שמופיעים בעמוד אישור התוסף של <bdi dir="ltr">Microsoft</bdi>, כפי שנמסרו על ידי <bdi dir="ltr">Anthropic</bdi> עצמה בפברואר 2026. שווה לדעת שזו הצהרת יצרן, ו-<bdi dir="ltr">Microsoft</bdi> מציינת במפורש שהיא אינה מאמתת אותה.</p>
-<ul class="bullets">
-<li><strong>יש</strong> תקן <bdi dir="ltr">SOC 2 Type 2</bdi>, מנובמבר 2025, וגם <bdi dir="ltr">SOC 3</bdi>.</li>
-<li><strong>יש</strong> תקן <bdi dir="ltr">ISO 27001</bdi>.</li>
-<li><strong>אין</strong> <bdi dir="ltr">HIPAA</bdi>, <bdi dir="ltr">FedRAMP</bdi>, <bdi dir="ltr">PCI DSS</bdi> ו-<bdi dir="ltr">ISO 27017</bdi> או <bdi dir="ltr">27018</bdi>.</li>
-<li>המידע אינו מועבר לצדדים שלישיים.</li>
-<li>מבוצעות בדיקות חדירה שנתיות וסריקות פגיעות רבעוניות.</li>
-</ul>
-<p>למשרד שנדרש להציג מסמך אבטחת מידע ללקוח מוסדי, אלה הנתונים שהוא יבקש, וכדאי שיהיו בידיכם עוד לפני שהשאלה נשאלת.</p>
-<h3>אפשרות למשרדים עם תשתית טכנולוגית</h3>
-<p>יש דרך התקנה מתקדמת, שמיועדת לארגונים ולא ליחידים, שבה הבקשות מנותבות דרך תשתית ענן של הארגון עצמו במקום ישירות ל-<bdi dir="ltr">Anthropic</bdi>. במסלול הזה, לפי התיעוד, תוכן הבקשות והתשובות נשאר אצל ספק הענן שהארגון בחר. זו פעולה של מנהל מערכת ולא של עורך דין, אבל אם החיסיון הוא שיקול מכריע במשרד שלכם, שווה לדעת שהאפשרות הזאת קיימת ולהעלות אותה מול איש ה-<bdi dir="ltr">IT</bdi>.</p>
-<h3>נקודה שחשוב שמנהל המשרד ידע: אין יומן ביקורת ארגוני</h3>
-<p>התיעוד הרשמי מציין במפורש שבמנויים <bdi dir="ltr">Free</bdi>, <bdi dir="ltr">Pro</bdi>, <bdi dir="ltr">Max</bdi> ו-<bdi dir="ltr">Team</bdi> אין יכולת מעקב וביקורת על השימוש בתוסף ב-<bdi dir="ltr">Excel</bdi>, ושהוא אינו נכלל ביומני הביקורת של <bdi dir="ltr">Enterprise</bdi> ואינו מקושר להגדרות שמירת הנתונים המותאמות של הארגון.</p>
-<p>המשמעות המעשית: אין דרך ארגונית לראות בדיעבד מי הפעיל את הכלי על איזה קובץ. התיעוד היחיד שקיים הוא זה שאתם עצמכם מפעילים בתוך הקובץ, גיליון היומן שמוסבר בפרק 8. במשרד שעובד על חומר של לקוחות, זו סיבה טובה להפעיל אותו כברירת מחדל ולא כתוספת.</p>
-<h3>מה שכדאי לסדר לפני שמעלים חומר של לקוח</h3>
-<ul class="bullets">
-<li>לוודא שאתם עובדים בחשבון של המשרד, ולא בחשבון אישי.</li>
-<li>לברר מול מי שאחראי במשרד מה מותר להזין ומה לא.</li>
-<li>לקבל את הסכמת הלקוח, כפי שהמשרד עושה זאת בכלים אחרים.</li>
-<li>להתחיל על גיליון <bdi dir="ltr">Excel</bdi> שאין בו פרטים מזהים, עד שאתם בטוחים בכלי.</li>
-</ul>
-<p>שווה לשים לב שיש תחומים שבהם הגיליונות רגישים במיוחד. בדיני משפחה ובדיני עבודה, גיליון אחד יכול להכיל תנועות בנק, נתוני שכר או פרטים על בני משפחה, כלומר מידע אישי מהסוג הרגיש ביותר. שם הזהירות לפני שמעלים חומר צריכה להיות גדולה יותר, ולא פחות.</p>
-<h3>נקודה שכדאי לדעת: הוא לא בהכרח מוגבל לגיליון</h3>
-<p>אם חיברתם ל-<bdi dir="ltr">Claude</bdi> מערכות חיצוניות, למשל תיבת מייל או אחסון מסמכים, החיבורים האלה עובדים גם מתוך <bdi dir="ltr">Excel</bdi>. כלומר הוא יכול להביא לגיליון מידע שלא נמצא בו, וגם להפך.</p>
-<p>מצד אחד זה שימושי. מצד שני זה מרחיב את מה שנגיש לו בזמן שאתם עובדים על קובץ של לקוח, ולכן כדאי לדעת אילו חיבורים פעילים אצלכם לפני שמתחילים. חיבורים שנבנו בהתאמה אישית, ולא חיבורים רשמיים, דורשים בדיקה נפרדת לפני שמפעילים אותם.</p>
-<p>לפי התיעוד הרשמי, כדי לראות אילו חיבורים זמינים פותחים את הסרגל, לוחצים על כפתור הפלוס שמתחת לשורת הכתיבה ובוחרים <bdi dir="ltr">Connectors</bdi>. <strong>נושא החיבורים אינו נכנס לסדרה הזאת</strong>, כי הוא נוגע גם בהעברת מידע לצדדים שלישיים ומצריך דיון בפני עצמו.</p>
-<h3>ויש עוד הגדרה אחת שכדאי שמנהל המשרד יכיר</h3>
-<p>ל-<bdi dir="ltr">Claude</bdi> יש יכולת לעבוד בין יישומי <bdi dir="ltr">Office</bdi> שונים, כלומר להעביר הקשר בין <bdi dir="ltr">Excel</bdi>, <bdi dir="ltr">Word</bdi> ו-<bdi dir="ltr">Outlook</bdi> בלי שתעתיקו ביניהם בעצמכם. התיעוד הרשמי מנסח זאת כך: ההקשר עובר בין היישומים אוטומטית.</p>
-<p>והנקודה החשובה למשרד: במנויי <bdi dir="ltr">Team</bdi> ו-<bdi dir="ltr">Enterprise</bdi> ההגדרה הזאת <strong>כבויה כברירת מחדל</strong>, ורק בעל הארגון יכול להפעיל אותה, תחת הגדרות הארגון בסעיף <bdi dir="ltr">Office agents</bdi>. במנויים אישיים בתשלום היא דווקא פעילה כברירת מחדל.</p>
-<p>כלומר אם המשרד שלכם על <bdi dir="ltr">Team</bdi>, ברירת המחדל היא הזהירה יותר, וזה דבר טוב. אבל אם מישהו מפעיל את ההגדרה, המשמעות היא שעבודה על גיליון של לקוח יכולה למשוך הקשר גם מהמייל ומהמסמכים. זו החלטה שכדאי שתתקבל במשרד ביודעין, ולא תתגלה בדיעבד.</p>
-<h3>הוא עובד על כל הקבצים הפתוחים, ויש לזה מתג</h3>
-<p>במסכי הפתיחה של התוסף מופיע מסך שאומר את זה במפורש: <strong><bdi dir="ltr">Claude</bdi> יכול לעבוד על כל המסמכים, חוברות העבודה והמצגות שפתוחים אצלכם, בבת אחת.</strong></p>
-<figure class="shot"><div class="shot-frame" style="max-width:338px;margin-inline:auto"><img src="../assets/shots/g1-install-16-work-across-apps.png" alt="מסך הפתיחה שמסביר שהוא עובד על כל הקבצים הפתוחים" loading="lazy"></div><p class="shot-legend">מסך הפתיחה שמסביר שהוא עובד על כל הקבצים הפתוחים</p></figure>
-<p>המשמעות המעשית ברורה: <strong>אם פתוח אצלכם במקביל חוזה של לקוח אחד וגיליון <bdi dir="ltr">Excel</bdi> של לקוח אחר, שניהם בהישג ידו באותו רגע.</strong></p>
-<p><strong>וזו יכולת שאפשר לכבות.</strong> בהגדרות התוסף יש מתג בשם <bdi dir="ltr">Let Claude work across files</bdi>, והוא <strong>דלוק כברירת מחדל</strong>. מי שרוצה ש-<bdi dir="ltr">Claude</bdi> ייגע רק בקובץ שהוא עומד עליו, מכבה אותו.</p>
-<p>ולכל הפחות, סגרו קבצים של תיקים אחרים לפני שאתם מתחילים לעבוד.</p>
-
-<h3>הוראות מוסתרות בתוך קבצים</h3>
-<p>לפני שהתוסף מתחיל לעבוד הוא מציג מסך אזהרה, וזה המסך היחיד בכל ההתקנה שדורש אישור מפורש ולא רק <bdi dir="ltr">Next</bdi>.</p>
-<figure class="shot"><div class="shot-frame" style="max-width:326px;margin-inline:auto"><img src="../assets/shots/g1-install-17-before-you-continue.png" alt="מסך האזהרה על הוראות מוסתרות, עם הכפתור I understand" loading="lazy"></div><p class="shot-legend">מסך האזהרה על הוראות מוסתרות, עם הכפתור I understand</p></figure>
-<p>זה מה שכתוב בו, בתרגום מדויק:</p>
-<aside class="content-box warning">
-<p><strong>קבצים, מיילים וצרופות יכולים להכיל הוראות מוסתרות שמנסות להכווין את <bdi dir="ltr">Claude</bdi>. השתמשו ב-<bdi dir="ltr">Claude</bdi> רק עם תוכן ממקורות שאתם סומכים עליהם.</strong></p>
-</aside>
-<p>ובתיעוד הרשמי של <bdi dir="ltr">Claude for Excel</bdi> זה מנוסח חזק יותר:</p>
-<aside class="content-box warning">
-<p><strong>השתמשו ב-<bdi dir="ltr">Claude for Excel</bdi> רק עם גיליונות שאתם סומכים עליהם. קבצים ממקורות חיצוניים יכולים להכיל הוראות מוסתרות שמתמרנות את התוסף לחלץ נתונים, לשנות רשומות או לבצע פעולות הרסניות.</strong> בבדיקות זוהו מצבים שבהם ניתן לתמרן את <bdi dir="ltr">Claude for Excel</bdi> לחלץ מידע רגיש, לשנות נתונים קריטיים או לבצע פעולות הרסניות אם הוא מורשה לפעול בלי אימות.</p>
-</aside>
-<p>ולמה זה נוגע לעורך דין יותר מלכל אחד אחר: <strong>עורך דין מקבל קבצים מהצד השני כל יום.</strong> ובגיליון <bdi dir="ltr">Excel</bdi> קל במיוחד להסתיר טקסט, בתא רחוק מחוץ לאזור שרואים, בלשונית מוסתרת, בטקסט בצבע לבן או בהערה בתא. <strong>אתם לא רואים, הוא כן קורא.</strong></p>
-
-<h3>ומה <bdi dir="ltr">Anthropic</bdi> עצמה אומרת שלא מומלץ לעשות</h3>
-<p>שלוש השורות האלה מופיעות בתיעוד הרשמי תחת מגבלות, והן נוגעות ישירות לעבודה משפטית:</p>
-<aside class="content-box warning">
-<p><strong>תוצרים סופיים ללקוח בלי בדיקה אנושית. חישובים קריטיים לביקורת בלי אימות. מודלים שמכילים מידע רגיש או מפוקח בלי בקרות מתאימות.</strong></p>
-</aside>
-
-<p>הכללים האתיים שחלים על עורך דין שמשתמש בכלי בינה מלאכותית הם נושא רחב בפני עצמו, והם לא מיוחדים ל-<bdi dir="ltr">Excel</bdi>. הם מוסברים בהרחבה במדריכים אחרים של Legal Mind, וכדאי להכיר אותם לפני שמתחילים לעבוד על חומר אמיתי.</p>
-</section>
-
 <section class="guide-section" id="install">
-<p class="section-number">07</p>
+<p class="section-number">04</p>
 <h2>התקנת <bdi dir="ltr">Claude</bdi> ב-<bdi dir="ltr">Excel</bdi>, מסך אחר מסך</h2>
 <p>ההתקנה עצמה קצרה, בערך עשר דקות. יש שני מסלולים: התקנה שאתם עושים לעצמכם, והתקנה שמנהל המשרד עושה פעם אחת לכל העובדים.</p>
 <h3>מסלול א', התקנה אישית</h3>
@@ -270,17 +145,20 @@
 
 <h4>שלב 1: פותחים את חנות התוספים מתוך <bdi dir="ltr">Excel</bdi></h4>
 <p>בסרגל העליון, בלשונית <bdi dir="ltr">Home</bdi>, לוחצים על הכפתור <bdi dir="ltr">Add-ins</bdi>. הוא יושב בקצה הסרגל, ולא באמצע.</p>
-<figure class="shot"><div class="shot-frame" style="max-width:660px;margin-inline:auto"><a href="../assets/shots/g1-install-01-ribbon-addins-full.png" target="_blank" rel="noopener"><img src="../assets/shots/g1-install-01-ribbon-addins.png" alt="הכפתור Add-ins, בקצה השני של אותו סרגל" loading="lazy"></a></div><p class="shot-legend">הכפתור Add-ins, בקצה השני של אותו סרגל</p><p class="shot-zoom"><a href="../assets/shots/g1-install-01-ribbon-addins-full.png" target="_blank" rel="noopener">לחיצה על התמונה פותחת את הצילום המלא</a></p></figure>
+<figure class="shot" style="max-width:660px;"><div class="shot-frame" style="aspect-ratio:660/169;"><img src="../assets/shots/g1-install-01-ribbon-addins.png" alt="הרצועה העליונה ב-Excel, עם כפתור התוספות" loading="lazy"><div class="shot-target" style="left:65.3%; top:26.0%; width:9.7%; height:49.7%;"><span class="shot-target-badge">1</span></div></div><ol class="shot-legend"><li><b>1</b><span><strong>הכפתור <bdi dir="ltr">Add-ins</bdi>, בקצה הרצועה ולא באמצעה.</strong> לידו יושב <bdi dir="ltr">Copilot</bdi>, וזה מוצר אחר לגמרי.</span></li></ol><p class="shot-caption">לשונית Home, וכפתור התוספות בקצה</p></figure>
 <p>נפתחת חלונית של חנות התוספים.</p>
-<figure class="shot"><div class="shot-frame" style="max-width:368px;margin-inline:auto"><img src="../assets/shots/g1-install-02-addins-panel.png" alt="חלונית חנות התוספים אחרי הלחיצה" loading="lazy"></div><p class="shot-legend">חלונית חנות התוספים אחרי הלחיצה</p></figure>
+<figure class="shot" style="max-width:368px;"><div class="shot-frame" style="aspect-ratio:368/619;"><img src="../assets/shots/g1-install-02-addins-panel.png" alt="חלונית התוספות שנפתחת" loading="lazy"><div class="shot-target badge-right" style="left:48.9%; top:1.0%; width:13.0%; height:9.7%;"><span class="shot-target-badge">1</span></div><div class="shot-target" style="left:7.1%; top:16.5%; width:85.3%; height:4.5%;"><span class="shot-target-badge">2</span></div></div><ol class="shot-legend"><li><b>1</b><span><strong>הכפתור שלחצתם עליו נשאר מסומן.</strong></span></li><li><b>2</b><span><strong>שורת החיפוש.</strong> החלונית נפתחת על רשימת התוספות הפופולריים, <strong>ואף אחד מהם אינו זה שאנחנו מחפשים.</strong> מקלידים בשורה הזאת.</span></li></ol><p class="shot-caption">החלונית נפתחת על רשימה שאינה רלוונטית. מחפשים</p></figure>
 
 <h4>שלב 2: מחפשים ומוסיפים</h4>
-<p>בשורת החיפוש כותבים <bdi dir="ltr">Claude</bdi>, ובוחרים מהתוצאות את <bdi dir="ltr">Claude for Microsoft 365</bdi>.</p>
+<p>בשורת החיפוש כותבים <bdi dir="ltr">Claude</bdi>. בתוצאות יופיעו <strong>שני תוספים של <bdi dir="ltr">Anthropic</bdi>, ולידם תוספים של חברות אחרות לגמרי.</strong></p>
 <aside class="callout warn">
-<span class="callout-label">שימו לב לשם המלא</span>
-<p>בחנות מופיעים גם תוספים אחרים עם שמות דומים, שאינם של <bdi dir="ltr">Anthropic</bdi>. בדקו שהשם מדויק לפני שאתם מוסיפים.</p>
+<span class="callout-label">שני התוספים של Anthropic, ומה ההבדל</span>
+<p><strong><bdi dir="ltr">Claude by Anthropic for Excel</bdi></strong> הוא התוסף ל-<bdi dir="ltr">Excel</bdi> בלבד. <strong>זה מה שהתקנו כאן, וכל הצילומים במדריך הם ממנו.</strong></p>
+<p><strong><bdi dir="ltr">Claude for Microsoft 365</bdi></strong> הוא החבילה המלאה, שמתקינה את <bdi dir="ltr">Claude</bdi> גם ב-<bdi dir="ltr">Word</bdi>, ב-<bdi dir="ltr">PowerPoint</bdi> וב-<bdi dir="ltr">Outlook</bdi>. שניהם של <bdi dir="ltr">Anthropic</bdi>, ובשניהם ה-<bdi dir="ltr">Excel</bdi> עובד אותו דבר.</p>
+<p><strong>ההמלצה שלנו למי שרוצה רק <bdi dir="ltr">Excel</bdi>: להתקין את הראשון.</strong> הסיבה אינה טכנית אלא זהירות: מה שלא מותקן, לא נמצא בתיבת המייל שלכם. מי שכן רוצה את <bdi dir="ltr">Claude</bdi> בכל יישומי <bdi dir="ltr">Office</bdi> יבחר בשני, וכדאי שיקרא לפני כן את מה שכתוב בפרק 10 על מעבר הקשר בין היישומים.</p>
+<p><strong>ומה שבאמת חשוב לבדוק:</strong> בחנות יש גם תוספים של חברות אחרות עם המילה <bdi dir="ltr">Claude</bdi> בשם או בתיאור. בצילום שלמטה רואים שלושה כאלה. <strong>קראו את שם המפרסם, ולא רק את המילה <bdi dir="ltr">Claude</bdi>.</strong></p>
 </aside>
-<figure class="shot"><div class="shot-frame" style="max-width:362px;margin-inline:auto"><img src="../assets/shots/g1-install-04-search-results.png" alt="תוצאות החיפוש, והתוסף הנכון מתוכן" loading="lazy"></div><p class="shot-legend">תוצאות החיפוש, והתוסף הנכון מתוכן</p></figure>
+<figure class="shot" style="max-width:362px;"><div class="shot-frame" style="aspect-ratio:362/539;"><img src="../assets/shots/g1-install-04-search-results.png" alt="תוצאות החיפוש בחנות התוספות" loading="lazy"><div class="shot-target" style="left:4.4%; top:3.3%; width:90.6%; height:5.9%;"><span class="shot-target-badge">1</span></div><div class="shot-target" style="left:4.4%; top:32.3%; width:90.6%; height:12.6%;"><span class="shot-target-badge">2</span></div><div class="shot-target badge-right" style="left:77.6%; top:36.0%; width:12.7%; height:5.6%;"><span class="shot-target-badge">3</span></div></div><ol class="shot-legend"><li><b>1</b><span><strong>מקלידים <bdi dir="ltr">Claude</bdi> בשורת החיפוש.</strong></span></li><li><b>2</b><span><strong>ובוחרים את <bdi dir="ltr">Claude by Anthropic for Excel</bdi>,</strong> השורה השנייה בצילום הזה. השורה שמעליה, <bdi dir="ltr">Claude for Microsoft 365</bdi>, היא החבילה המלאה של אותה חברה. <strong>שלוש השורות שמתחת, <bdi dir="ltr">CoreGPT</bdi>, <bdi dir="ltr">GPT for MS Excel</bdi> ו-<bdi dir="ltr">Copilot247</bdi>, אינן של <bdi dir="ltr">Anthropic</bdi> כלל.</strong> סדר התוצאות אצלכם עשוי להיות שונה, ולכן קוראים את השם ולא סופרים שורות.</span></li><li><b>3</b><span><strong>ולוחצים <bdi dir="ltr">Add</bdi> באותה שורה.</strong></span></li></ol><p class="shot-caption">חמש תוצאות, שתיים מהן של Anthropic ושלוש של חברות אחרות</p></figure>
 
 <h4>שלב 3: הכפתור מופיע בסרגל</h4>
 <p>אחרי הלחיצה על <bdi dir="ltr">Add</bdi> לא נפתח שום חלון נוסף ולא מופיעה שום הודעה. פשוט מופיע כפתור <bdi dir="ltr">Claude</bdi> בסרגל העליון, וזה סימן שההתקנה הצליחה.</p>
@@ -288,16 +166,16 @@
 
 <h4>שלב 4: נכנסים לחשבון</h4>
 <p>לוחצים על הכפתור, והסרגל נפתח בצד המסך ומבקש להיכנס לחשבון.</p>
-<figure class="shot"><div class="shot-frame" style="max-width:348px;margin-inline:auto"><img src="../assets/shots/g1-install-06-sidebar-signin.png" alt="מסך הכניסה בתוך הסרגל" loading="lazy"></div><p class="shot-legend">מסך הכניסה בתוך הסרגל</p></figure>
+<figure class="shot" style="max-width:348px;"><div class="shot-frame" style="aspect-ratio:348/785;"><img src="../assets/shots/g1-install-06-sidebar-signin.png" alt="מסך הכניסה של הסרגל" loading="lazy"><div class="shot-target badge-right" style="left:75.3%; top:1.0%; width:17.8%; height:7.9%;"><span class="shot-target-badge">1</span></div><div class="shot-target" style="left:10.3%; top:69.6%; width:78.2%; height:5.1%;"><span class="shot-target-badge">2</span></div><div class="shot-target" style="left:10.3%; top:82.3%; width:78.2%; height:5.1%;"><span class="shot-target-badge">3</span></div></div><ol class="shot-legend"><li><b>1</b><span><strong>הכפתור <bdi dir="ltr">Claude</bdi> ברצועה, בקצה השמאלי.</strong> לחיצה עליו פותחת וסוגרת את הסרגל.</span></li><li><b>2</b><span><strong><bdi dir="ltr">Log in</bdi>, כניסה לחשבון קיים.</strong> זה הכפתור שרובכם צריכים.</span></li><li><b>3</b><span><strong>ואת השורה השלישית מתעלמים ממנה.</strong> <bdi dir="ltr">Cloud provider or gateway</bdi> נועדה לארגונים שמפעילים את המודל דרך ספק ענן משלהם.</span></li></ol><p class="shot-caption">מסך הפתיחה של הסרגל, לפני שנכנסים</p></figure>
 <p>הכניסה נעשית דרך הדפדפן. נפתח עמוד שמבקש לאשר את החיבור בין התוסף לחשבון.</p>
-<figure class="shot"><div class="shot-frame" style="max-width:656px;margin-inline:auto"><a href="../assets/shots/g1-install-08-browser-connect-full.png" target="_blank" rel="noopener"><img src="../assets/shots/g1-install-08-browser-connect.png" alt="עמוד אישור החיבור שנפתח בדפדפן" loading="lazy"></a></div><p class="shot-legend">עמוד אישור החיבור שנפתח בדפדפן</p><p class="shot-zoom"><a href="../assets/shots/g1-install-08-browser-connect-full.png" target="_blank" rel="noopener">לחיצה על התמונה פותחת את הצילום המלא</a></p></figure>
+<figure class="shot"><div class="shot-frame" style="max-width:832px;margin-inline:auto"><a href="../assets/shots/g1-install-08-browser-connect-full.png" target="_blank" rel="noopener"><img src="../assets/shots/g1-install-08-browser-connect.png" alt="עמוד אישור החיבור שנפתח בדפדפן" loading="lazy"></a></div><p class="shot-legend">עמוד אישור החיבור שנפתח בדפדפן</p><p class="shot-zoom"><a href="../assets/shots/g1-install-08-browser-connect-full.png" target="_blank" rel="noopener">לחיצה על התמונה מגדילה אותה, עם אפשרות לגלול בתוכה לכל הכיוונים</a></p></figure>
 
 <aside class="callout warn">
 <span class="callout-label">לפני שמאשרים, בדקו לאיזה חשבון ולאיזה ארגון</span>
 <p>מי שיש לו גם חשבון פרטי וגם חשבון של המשרד תחת אותה כתובת מייל מתחבר לארגון שפעיל באותו רגע בדפדפן, <strong>והתוסף אינו מציג אחר כך את שם הארגון במקום שאפשר לבדוק בו.</strong></p>
 <p><strong>לכן לפני ההתחברות שווה לפתוח את <bdi dir="ltr">claude.ai</bdi>, ללחוץ על העיגול עם השם, ולוודא איזה ארגון מסומן.</strong> זה המקום היחיד שרואים בו את השם בבירור.</p>
 </aside>
-<figure class="shot"><div class="shot-frame" style="max-width:287px;margin-inline:auto"><img src="../assets/shots/g1-install-10-org-list.png" alt="רשימת הארגונים ב-claude.ai, והארגון הפעיל מסומן" loading="lazy"></div><p class="shot-legend">רשימת הארגונים ב-claude.ai, והארגון הפעיל מסומן</p></figure>
+<figure class="shot" style="max-width:287px;"><div class="shot-frame" style="aspect-ratio:287/382;"><img src="../assets/shots/g1-install-10-org-list.png" alt="בחירת החשבון שאליו נכנסים" loading="lazy"><div class="shot-target" style="left:4.9%; top:6.8%; width:89.9%; height:6.8%;"><span class="shot-target-badge">1</span></div><div class="shot-target" style="left:4.9%; top:13.6%; width:89.9%; height:6.8%;"><span class="shot-target-badge">2</span></div></div><ol class="shot-legend"><li><b>1</b><span><strong>חשבון הארגון, המסומן ב-<bdi dir="ltr">Team</bdi>.</strong> זה החשבון שבו עובדים על חומר של המשרד. <strong>הווי מימין מראה איזה חשבון פעיל כרגע.</strong></span></li><li><b>2</b><span><strong>וחשבון פרטי, המסומן ב-<bdi dir="ltr">Max</bdi>.</strong> <strong>אם אתם עובדים על חומר של לקוח, ודאו שאתם בחשבון הארגון ולא בפרטי.</strong></span></li></ol><p class="shot-caption">שני חשבונות באותו סרגל. ההבדל ביניהם אינו טכני</p></figure>
 <p>אחרי האישור הדפדפן מודיע שההתחברות הצליחה. אפשר לסגור אותו ולחזור ל-<bdi dir="ltr">Excel</bdi>, <strong>והסרגל מתחבר בעצמו בלי שצריך לרענן או לפתוח מחדש.</strong></p>
 <figure class="shot"><div class="shot-frame" style="max-width:532px;margin-inline:auto"><img src="../assets/shots/g1-install-11-signed-in.png" alt="הודעת ההצלחה בדפדפן" loading="lazy"></div><p class="shot-legend">הודעת ההצלחה בדפדפן</p></figure>
 
@@ -324,9 +202,9 @@
 <figure class="shot"><div class="shot-frame" style="max-width:336px;margin-inline:auto"><img src="../assets/shots/g1-install-18-sidebar-ready.png" alt="הסרגל אחרי סיום ההתקנה, עם הסקילים המוצעים" loading="lazy"></div><p class="shot-legend">הסרגל אחרי סיום ההתקנה, עם הסקילים המוצעים</p></figure>
 <aside class="callout tip">
 <span class="callout-label">אל תתייחסו לסקילים המוצעים</span>
-<p><strong>ארבעת הסקילים שמופיעים כאן אינם המלצה שנגזרת מהקובץ שלכם.</strong> זהו מסך הפתיחה של שיחה חדשה, והוא מציג תמיד את אותם ארבעה, לא משנה מה פתוח לפניכם.</p>
+<p><strong>ארבעת הסקילים שמופיעים כאן אינם המלצה שנגזרת מהקובץ שלכם.</strong> זהו מסך הפתיחה של שיחה חדשה, ואצלנו הוא הציג את אותם ארבעה בכל פעם, לא משנה מה פתוח לפנינו.</p>
 <p><strong>שניים מהם, <bdi dir="ltr">/dcf-model</bdi> ו-<bdi dir="ltr">/comps-analysis</bdi>, הם כלים פיננסיים לשוק ההון ואין לעורך דין שימוש בהם.</strong> הם יופיעו שוב ושוב בצילומים לאורך המדריך, פשוט כי הם חלק מהמסך. התעלמו מהם.</p>
-<p>וברגע שתשלחו את הפרומפט הראשון, הרשימה תוחלף בשיחה. <strong>גם זה תקין ולא אומר שההתקנה לא הושלמה.</strong> תמיד אפשר להחזיר אותה בהקלדת <bdi dir="ltr">/</bdi>.</p>
+<p>וכשתשלחו את הפרומפט הראשון, הרשימה מוחלפת בשיחה. <strong>גם זה תקין ולא אומר שההתקנה לא הושלמה.</strong> תמיד אפשר להחזיר אותה בהקלדת <bdi dir="ltr">/</bdi>.</p>
 </aside>
 
 <h3>מסלול ב', התקנה לכל המשרד</h3>
@@ -361,16 +239,21 @@
 <h3>אם ההתקנה נכשלת</h3>
 <p>זה קורה, וזו לא בהכרח תקלה אצלכם. אלה הסיבות שכדאי לבדוק, לפי הסדר:</p>
 <ul class="bullets">
-<li><strong>ה-<bdi dir="ltr">Excel</bdi> לא מהסוג הנתמך.</strong> חוזרים לפרק 4 ובודקים תחת <bdi dir="ltr">File</bdi> ואז <bdi dir="ltr">Account</bdi> אם מופיע <bdi dir="ltr">Microsoft 365</bdi>.</li>
+<li><strong>ה-<bdi dir="ltr">Excel</bdi> לא מהסוג הנתמך.</strong> חוזרים לפרק 3 ובודקים תחת <bdi dir="ltr">File</bdi> ואז <bdi dir="ltr">Account</bdi> אם מופיע <bdi dir="ltr">Microsoft 365</bdi>.</li>
 <li><strong>ה-<bdi dir="ltr">Excel</bdi> מחובר לחשבון הלא נכון.</strong> אם ה-<bdi dir="ltr">Office</bdi> מחובר לחשבון פרטי במקום לחשבון של המשרד, או להיפך, שווה להתנתק ולהתחבר לחשבון הנכון ולנסות שוב. זו סיבה שעולה בפורומים של <bdi dir="ltr">Microsoft</bdi> ולא בתיעוד הרשמי, ולכן היא מובאת כאן כדבר שכדאי לבדוק ולא כקביעה.</li>
 <li><strong>הגישה לחנות התוספים חסומה בארגון.</strong> במקרה כזה ההתקנה האישית לא תעבוד בכלל, וצריך את מסלול ב'. אם גם שם החנות חסומה, יש מסלול שלישי: מנהל המשרד יכול להוריד קובץ הגדרות של התוסף ולהעלות אותו ידנית במרכז הניהול, בלי לעבור בחנות בכלל. זו פעולה של מנהל מערכת, ולא משהו שעורך דין עושה בעצמו.</li>
 <li><strong>התוסף מותקן אבל לא נפתח.</strong> סוגרים את ה-<bdi dir="ltr">Excel</bdi> לגמרי ופותחים מחדש.</li>
 </ul>
 <p>אם אחרי כל אלה זה עוד לא עובד, זו כבר שאלה למי שמנהל את ה-<bdi dir="ltr">Microsoft 365</bdi> במשרד, ולא משהו שפותרים לבד.</p>
+<aside class="callout warn">
+<span class="callout-label">מותקן. ודבר אחד לפני שפותחים אותו על משהו אמיתי</span>
+<p><strong>אל תפתחו אותו על קובץ של תיק לפני שקראתם את פרקים 9 ו-10.</strong> שם נקבע על אילו קבצים מותר להפעיל אותו בכלל, ומה נדרש מבחינת חיסיון והסכמת לקוח. אלה שני פרקי החלטה, לא הוראות הפעלה, והם קצרים.</p>
+<p>בפרקים הבאים נעבוד על גיליון <bdi dir="ltr">Excel</bdi> קטן שתבנו בעצמכם, בלי שום פרט אמיתי של לקוח, <strong>ולכן אפשר להמשיך ישר מכאן בלי לדלג קדימה.</strong></p>
+</aside>
 </section>
 
 <section class="guide-section" id="first-open">
-<p class="section-number">08</p>
+<p class="section-number">05</p>
 <h2>הפתיחה הראשונה, ומה <bdi dir="ltr">Claude</bdi> רואה בגיליון שלכם</h2>
 <p>עכשיו נפתח אותו בפעם הראשונה, על גיליון <bdi dir="ltr">Excel</bdi> של תרגול ולא על קובץ של תיק אמיתי.</p>
 <h3>קודם מכינים גיליון תרגול</h3>
@@ -390,7 +273,7 @@
 <aside class="callout tip">
 <span class="callout-label">ולמה דווקא להקליד אותו ביד</span>
 <p>כי אתם יודעים בדיוק מה יש בו. <strong>וכשאתם יודעים מה יש בגיליון, אתם יכולים לשפוט אם התשובה שחזרה נכונה</strong>, ולא רק אם היא נשמעת נכונה. זו הבדיקה הראשונה שאנחנו מלמדים, והיא לא עובדת על קובץ שלא אתם בניתם.</p>
-<p>מרמה 4 של מדריך 2 עוברים לקובץ תרגול גדול שהכנו, <strong>כי שמונה שורות לא יכולות לשאת טבלת ציר או לוח בקרה.</strong> העמודות שם זהות לאלה שבניתם כאן, אז המעבר יהיה מוכר. הקישור להורדה מופיע שם.</p>
+<p>במדריך 2 עוברים לקובץ תרגול גדול שהכנו, <strong>כי שמונה שורות לא יכולות לשאת טבלת ציר או לוח מצב.</strong> הוא עומד שם להורדה בלחיצה אחת, וכל ארבעה עשר הפרומפטים רצים עליו.</p>
 </aside>
 <h3>איך נותנים שם ללשונית</h3>
 <p>בהמשך הסדרה נבקש כמה פעמים לתת שם ללשונית או להוסיף לשונית חדשה, ולכן שווה לדעת את זה עכשיו. הלשוניות הן הכיתובים הקטנים בתחתית החלון. <strong>לשינוי שם:</strong> לחיצה כפולה על שם הלשונית, מקלידים את השם החדש ומקישים <bdi dir="ltr">Enter</bdi>. <strong>להוספת לשונית:</strong> לוחצים על סימן הפלוס שמופיע לימין הלשונית האחרונה.</p>
@@ -398,13 +281,13 @@
 
 <h3>לפתוח את הסרגל</h3>
 <p>נכנסים ל-<bdi dir="ltr">Home</bdi>, ואז <bdi dir="ltr">Add-ins</bdi>, ובוחרים את <bdi dir="ltr">Claude</bdi>. הוא נפתח כסרגל צר בצד המסך, וה-<bdi dir="ltr">Excel</bdi> נשאר במקום. אפשר לעבוד בגיליון והסרגל נשאר פתוח.</p>
-<figure class="shot"><div class="shot-frame" style="max-width:660px;margin-inline:auto"><a href="../assets/shots/g1-sidebar-04-beside-sheet-full.png" target="_blank" rel="noopener"><img src="../assets/shots/g1-sidebar-04-beside-sheet.png" alt="הסרגל פתוח בצד המסך, לצד הגיליון" loading="lazy"></a></div><p class="shot-legend">הסרגל נפתח בצד המסך, והגיליון נשאר במקומו</p><p class="shot-zoom"><a href="../assets/shots/g1-sidebar-04-beside-sheet-full.png" target="_blank" rel="noopener">לחיצה על התמונה פותחת את חלון ה-Excel כולו</a></p></figure>
+<figure class="shot" style="max-width:832px;"><div class="shot-frame" style="aspect-ratio:1009/812;"><img src="../assets/shots/g1-sidebar-04-beside-sheet.png" alt="הסרגל פתוח לצד טבלת הנכסים" loading="lazy"><div class="shot-target badge-right" style="left:0.2%; top:2.2%; width:56.9%; height:96.8%;"><span class="shot-target-badge">1</span></div><div class="shot-target" style="left:58.3%; top:15.8%; width:40.8%; height:52.2%;"><span class="shot-target-badge">2</span></div><div class="shot-target" style="left:58.3%; top:88.4%; width:41.0%; height:7.1%;"><span class="shot-target-badge">3</span></div></div><ol class="shot-legend"><li><b>1</b><span><strong>הגיליון נשאר גיליון.</strong> אפשר לגלול בו, לסמן תאים ולערוך אותם בזמן שהסרגל פתוח. <strong>הוא אינו נעול ואינו קופא.</strong></span></li><li><b>2</b><span><strong>הבקשה והתשובה, זו מתחת לזו.</strong> הבקשה שנשלחה נשארת למעלה, ומתחתיה הוא מדווח מה קרא ומה שינה.</span></li><li><b>3</b><span><strong>ותיבת הכתיבה נשארת זמינה בתחתית</strong>, כדי להמשיך את אותה שיחה בלי לפתוח אותה מחדש.</span></li></ol><p class="shot-caption">כך זה נראה כשעובדים: הגיליון בצד אחד, השיחה בצד השני</p></figure>
 <h3>מה הוא רואה, ומה לא</h3>
 <p>לפי התיעוד הרשמי, הוא קורא את תוכן הקובץ שפתוח מולכם: את התאים, את הנוסחאות ואת מבנה הלשוניות. והוא יכול לגשת רק לקובץ שפתוח ב-<bdi dir="ltr">Excel</bdi>, כלומר לא לקבצים אחרים במחשב שלכם.</p>
 <h3>איך שולחים בקשה בסרגל</h3>
 <p>בסרגל יש תיבת כתיבה. לוחצים בתוכה, ומדביקים או מקלידים את הבקשה. הצילום שלמטה מראה בדיוק איפה היא נמצאת ואיך שולחים, כי זה לא מתואר בתיעוד הרשמי.</p>
 <p>הפרומפטים בהמשך הסדרה הם בני כמה שורות, ולכן <strong>עדיף להעתיק ולהדביק אותם ולא להקליד</strong>. הדבקה שומרת על כל השורות בבת אחת, ולא צריך לדעת איך יורדים שורה בתוך התיבה. אחרי ההדבקה מוודאים בעין שכל השורות הגיעו, ורק אז שולחים.</p>
-<figure class="shot"><div class="shot-frame" style="max-width:398px;margin-inline:auto"><img src="../assets/shots/g1-sidebar-01-input-bar.png" alt="שורת הכתיבה בתחתית הסרגל, עם כפתור השליחה" loading="lazy"></div><p class="shot-legend">שורת הכתיבה בתחתית הסרגל, עם כפתור השליחה</p></figure>
+<figure class="shot" style="max-width:398px;"><div class="shot-frame" style="aspect-ratio:398/261;"><img src="../assets/shots/g1-sidebar-01-input-bar.png" alt="שורת הכתיבה בסרגל" loading="lazy"><div class="shot-target badge-right" style="left:2.5%; top:3.1%; width:50.3%; height:10.0%;"><span class="shot-target-badge">1</span></div><div class="shot-target badge-right" style="left:4.0%; top:21.5%; width:93.0%; height:49.8%;"><span class="shot-target-badge">2</span></div><div class="shot-target" style="left:87.4%; top:76.6%; width:11.6%; height:16.9%;"><span class="shot-target-badge">3</span></div></div><ol class="shot-legend"><li><b>1</b><span><strong>התא שמסומן בגיליון באותו רגע.</strong> הסרגל מציג אותו תמיד. <strong>אין לזה קשר לבקשה שאתם כותבים.</strong></span></li><li><b>2</b><span><strong>תיבת הכתיבה.</strong> לוחצים בתוכה ומדביקים את הפרומפט. <strong>שורה חדשה נעשית ב-<bdi dir="ltr">Shift</bdi> עם <bdi dir="ltr">Enter</bdi></strong>, כי <bdi dir="ltr">Enter</bdi> לבדו שולח.</span></li><li><b>3</b><span><strong>כפתור השליחה.</strong></span></li></ol><p class="shot-caption">שורת הכתיבה, ומה שמסביבה</p></figure>
 <figure class="shot"><div class="shot-frame" style="max-width:385px;margin-inline:auto"><img src="../assets/shots/g1-sidebar-02-prompt-pasted.png" alt="פרומפט בן כמה שורות אחרי הדבקה, לפני השליחה" loading="lazy"></div><p class="shot-legend">פרומפט בן כמה שורות אחרי הדבקה, לפני השליחה</p></figure>
 <h3>להפעיל תיעוד של מה שהוא עשה</h3>
 <p>התיעוד מופעל מתוך ההגדרות של הסרגל, בשני צעדים. שני הצילומים כאן מראים בדיוק איפה נמצא כל אחד מהם, כי מיקום ההגדרות בסרגל אינו מתואר בתיעוד הרשמי ולכן לא נכתב כאן מהניחוש.</p>
@@ -412,28 +295,29 @@
 <li>פותחים את ההגדרות של הסרגל.</li>
 <li>בפאנל שנפתח מפעילים את אפשרות התיעוד.</li>
 </ol>
-<figure class="shot"><div class="shot-frame" style="max-width:339px;margin-inline:auto"><img src="../assets/shots/g1-install-19-sidebar-menu.png" alt="התפריט שנפתח משלוש הנקודות שבראש הסרגל" loading="lazy"></div><p class="shot-legend">התפריט שנפתח משלוש הנקודות שבראש הסרגל</p></figure>
+<figure class="shot" style="max-width:339px;"><div class="shot-frame" style="aspect-ratio:339/205;"><img src="../assets/shots/g1-install-19-sidebar-menu.png" alt="תפריט שלוש הנקודות בסרגל" loading="lazy"><div class="shot-target" style="left:82.0%; top:17.6%; width:7.7%; height:12.7%;"><span class="shot-target-badge">1</span></div><div class="shot-target" style="left:32.4%; top:36.1%; width:57.2%; height:15.6%;"><span class="shot-target-badge">2</span></div><div class="shot-target" style="left:32.4%; top:51.7%; width:57.2%; height:15.6%;"><span class="shot-target-badge">3</span></div></div><ol class="shot-legend"><li><b>1</b><span><strong>שלוש הנקודות בראש הסרגל.</strong> משם נפתח התפריט.</span></li><li><b>2</b><span><strong><bdi dir="ltr">Settings</bdi>, ההגדרות.</strong> שם יושבים שדה ההוראות הקבועות, גודל הטקסט והתיעוד.</span></li><li><b>3</b><span><strong><bdi dir="ltr">Download Transcript</bdi>, הורדת השיחה.</strong> שימושי כשרוצים לשמור תיעוד של מה שנעשה בקובץ.</span></li></ol><p class="shot-caption">תפריט הסרגל, ושלוש האפשרויות שבו</p></figure>
 <figure class="shot"><div class="shot-frame" style="max-width:338px;margin-inline:auto"><img src="../assets/shots/g1-install-20-settings.png" alt="פאנל ההגדרות, ובו שדה ההוראות והמתג Session logging" loading="lazy"></div><p class="shot-legend">פאנל ההגדרות, ובו שדה ההוראות והמתג Session logging</p></figure>
-<p>בהגדרות של הסרגל אפשר להפעיל תיעוד. כשהאפשרות הזאת פעילה, <bdi dir="ltr">Claude</bdi> יוצר בקובץ גיליון נוסף בשם <bdi dir="ltr">Claude Log</bdi>, וכותב בו את הפעולות שביצע בכל סבב. אם הוא לא יצר אותו לבד, אפשר פשוט לבקש ממנו לתעד את מה שעשה, והוא ייצור את הגיליון.</p>
+<p>בהגדרות של הסרגל אפשר להפעיל תיעוד. כשהאפשרות הזאת פעילה, <bdi dir="ltr">Claude</bdi> יוצר בדרך כלל בקובץ גיליון נוסף בשם <bdi dir="ltr">Claude Log</bdi>, וכותב בו את הפעולות שביצע בכל סבב. אם הוא לא יצר אותו לבד, אפשר פשוט לבקש ממנו לתעד את מה שעשה, והוא ייצור את הגיליון.</p>
 <p>לעבודה במשרד עורכי דין זה שווה את ההפעלה, כי זה נותן רשומה של מה שנעשה בקובץ ומתי.</p>
-<figure class="shot"><div class="shot-frame" style="max-width:660px;margin-inline:auto"><a href="../assets/shots/g1-log-01-claude-log-sheet.png" target="_blank" rel="noopener"><img src="../assets/shots/g1-log-01-claude-log-sheet.png" alt="גיליון Claude Log שנוצר בקובץ, עם שורת התיעוד הראשונה" loading="lazy"></a></div><p class="shot-legend">גיליון Claude Log שנוצר בקובץ, עם שורת התיעוד הראשונה</p><p class="shot-zoom"><a href="../assets/shots/g1-log-01-claude-log-sheet.png" target="_blank" rel="noopener">לחיצה על התמונה פותחת אותה בגודל מלא</a></p></figure>
+<figure class="shot" style="max-width:725px;"><div class="shot-frame" style="aspect-ratio:725/171;"><img src="../assets/shots/g1-log-01-claude-log-sheet.png" alt="גיליון התיעוד שנוצר בקובץ" loading="lazy"><div class="shot-target badge-right" style="left:81.0%; top:2.3%; width:17.9%; height:95.3%;"><span class="shot-target-badge">1</span></div><div class="shot-target" style="left:37.9%; top:2.3%; width:41.9%; height:95.3%;"><span class="shot-target-badge">2</span></div><div class="shot-target" style="left:1.0%; top:2.3%; width:36.0%; height:95.3%;"><span class="shot-target-badge">3</span></div></div><ol class="shot-legend"><li><b>1</b><span><strong>מספר הסבב והתאריך.</strong> כל בקשה שנשלחת מקבלת שורה.</span></li><li><b>2</b><span><strong>מה ביקשתם, במילים שלכם.</strong> הבקשה נשמרת כלשונה.</span></li><li><b>3</b><span><strong>ומה הוא עשה בפועל.</strong> משמאל לעמודה הזאת יש עוד שתיים, <bdi dir="ltr">Details</bdi> ו-<bdi dir="ltr">Outcome</bdi>, <strong>שבהן הוא מפרט אילו נוסחאות נכתבו ומה יצא.</strong> לחיצה על התמונה פותחת אותן.</span></li></ol><p class="shot-caption">שורה אחת לכל סבב: מה ביקשתם, מה נעשה, ומה יצא</p></figure>
 <aside class="callout tip">
 <span class="callout-label">מחיר קטן שכדאי להכיר</span>
-<p>כשהתיעוד דלוק, כל פעולה מבקשת <strong>אישור נפרד גם על כתיבת שורת היומן.</strong> כלומר גם פרומפט שמבקש במפורש לא לשנות כלום יבקש אישור אחד או שניים. זה תקין.</p>
+<p>כשהתיעוד דלוק, פעולה עשויה לבקש <strong>אישור נפרד גם על כתיבת שורת היומן.</strong> כלומר גם פרומפט שמבקש במפורש לא לשנות כלום עלול לבקש אישור אחד או שניים. זה תקין.</p>
 </aside>
 
 <h3>נראה לי שנעלמה לי לשונית</h3>
 <p>כש-<bdi dir="ltr">Claude</bdi> יוצר לשוניות חדשות, שורת הלשוניות מתארכת והלשוניות הישנות נדחפות מחוץ למסך. <strong>בקובץ בעברית הן נדחפות ימינה, וזה נראה בדיוק כמו לשונית שנמחקה.</strong></p>
-<p><strong>אף לשונית לא נמחקה. היא רק לא נראית.</strong></p>
+<p><strong>ויש לזה סיבה שנייה, ואצל חלק מהמשתמשים היא השכיחה מבין השתיים.</strong> אם הפעלתם את התיעוד, ייתכן שבסוף כל סבב הלשונית <bdi dir="ltr">Claude Log</bdi> תהפוך ללשונית הפעילה ושורת הלשוניות תיגלל אליה. <strong>אז אתם מוצאים את עצמכם בלשונית התיעוד, ולא בזו שעבדתם עליה.</strong> זה לא קורה בכל מחשב ובכל גרסה, אבל אם זה קורה אצלכם, זו הסיבה.</p>
+<p><strong>בשני המקרים אף לשונית לא נמחקה. היא רק לא נראית.</strong></p>
 <p>לחיצה ימנית על אחד מחצי הניווט שבקצה שורת הלשוניות פותחת רשימה של כל הלשוניות בקובץ.</p>
 <figure class="shot"><div class="shot-frame" style="max-width:412px;margin-inline:auto"><img src="../assets/shots/g1-tabs-01-arrows-tooltip.png" alt="החלונית שנפתחת כשעומדים על חצי הניווט" loading="lazy"></div><p class="shot-legend">החלונית שנפתחת כשעומדים על חצי הניווט</p></figure>
-<figure class="shot"><div class="shot-frame" style="max-width:349px;margin-inline:auto"><img src="../assets/shots/g1-tabs-02-activate-list.png" alt="רשימת כל הלשוניות בקובץ" loading="lazy"></div><p class="shot-legend">רשימת כל הלשוניות בקובץ</p></figure>
+<figure class="shot" style="max-width:351px;"><div class="shot-frame" style="aspect-ratio:351/467;"><img src="../assets/shots/g1-tabs-02-activate-list.png" alt="רשימת כל הלשוניות בקובץ" loading="lazy"><div class="shot-target" style="left:2.8%; top:9.0%; width:93.7%; height:81.8%;"><span class="shot-target-badge">1</span></div><div class="shot-target badge-right" style="left:59.0%; top:90.8%; width:17.9%; height:6.9%;"><span class="shot-target-badge">2</span></div></div><ol class="shot-legend"><li><b>1</b><span><strong>כל הלשוניות שבקובץ, כולל אלה שנוצרו תוך כדי העבודה.</strong> בצילום הזה רואים גם את <bdi dir="ltr">Claude Log</bdi> ואת "לוח מצב התיק", שתיהן נוצרו בזמן התרגול. <strong>הלשונית שעליה עומדים כרגע מסומנת במסגרת.</strong></span></li><li><b>2</b><span><strong>בוחרים לשונית ולוחצים <bdi dir="ltr">OK</bdi>.</strong> היא הופכת לפעילה, ושורת הלשוניות שבתחתית נגללת אליה.</span></li></ol><p class="shot-caption">הרשימה שנפתחת בלחיצה ימנית על חצי הניווט</p></figure>
 <p>בוחרים לשונית ולוחצים <bdi dir="ltr">OK</bdi>, <strong>והיא הופכת לפעילה ושורת הלשוניות נגללת אליה.</strong> זו גם הדרך הנוחה ביותר לנווט בקובץ עם הרבה לשוניות. <bdi dir="ltr">Ctrl</bdi> עם לחיצה שמאלית על החץ קופץ ישר ללשונית הראשונה.</p>
 
 </section>
 
 <section class="guide-section" id="phrasing">
-<p class="section-number">09</p>
+<p class="section-number">06</p>
 <h2>איך מנסחים בקשה ל-<bdi dir="ltr">Claude</bdi> בתוך גיליון</h2>
 <p>זה הפרק שקובע אם הכלי יעבוד טוב או בינוני. ניסוח בגיליון <bdi dir="ltr">Excel</bdi> שונה מניסוח בשיחה רגילה, ולא כי צריך שפה מיוחדת, אלא כי בגיליון יש מקום מדויק שאליו הבקשה מתייחסת.</p>
 <h3>ארבעה דברים שכדאי לציין בכל בקשה</h3>
@@ -458,7 +342,7 @@
 <p><strong>בוחרים אפשרות והוא ממשיך. ואל תלחצו <bdi dir="ltr">Skip</bdi></strong>, כי אז הוא מחליט לבדו בדיוק בנקודה שבה הוא עצמו לא היה בטוח.</p>
 
 <h3>הבקשה הראשונה שלכם, עכשיו</h3>
-<p>זה הרגע לעשות את זה בפועל. פותחים את גיליון התרגול שהכנתם בפרק 8, פותחים את הסרגל, מעתיקים את הבקשה הבאה ומדביקים אותה בשורת הכתיבה.</p>
+<p>זה הרגע לעשות את זה בפועל. פותחים את גיליון התרגול שהכנתם בפרק 5, פותחים את הסרגל, מעתיקים את הבקשה הבאה ומדביקים אותה בשורת הכתיבה.</p>
 <div class="copy-block">
 <div class="copy-heading"><strong>בקשה ראשונה, מוכנה להעתקה</strong><button class="copy-button" data-copy-target="first-request" type="button">העתקה</button></div>
 <div class="copy-body" id="first-request">תסתכל על הגיליון שפתוח לפניך ותענה לי בעברית על שלוש שאלות:
@@ -474,7 +358,7 @@
 </section>
 
 <section class="guide-section" id="verify">
-<p class="section-number">10</p>
+<p class="section-number">07</p>
 <h2>איך בודקים ש-<bdi dir="ltr">Claude</bdi> לא טעה</h2>
 <p>קיבלתם תשובה על הבקשה הראשונה. עכשיו נבדוק אותה, ואת כל מה שיבוא אחריה. יש ארבע דרכים לבדוק, וכדאי להכיר את כולן.</p>
 <p>בבקשה הראשונה, שהייתה שאלה בלבד, הבדיקה פשוטה: האם התיאור שהוא נתן לכל עמודה מתאים למה שאתם רואים בגיליון, והאם התא שהוא הצביע עליו הוא באמת התא שבו החישוב יושב. אם שתי התשובות כן, הוא קרא את הגיליון נכון. אם לא, זה סימן שכדאי לנסח מחדש ולציין במפורש את שמות העמודות.</p>
@@ -485,7 +369,7 @@
 <p>כשהוא מסביר חישוב, ההפניות לתאים בתשובה שלו הן לחיצות. לוחצים, וה-<bdi dir="ltr">Excel</bdi> קופץ לאותו תא. זו הדרך המהירה לוודא שהוא מדבר על התא שאתם חושבים.</p>
 <figure class="shot"><div class="shot-frame" style="max-width:401px;margin-inline:auto"><img src="../assets/shots/p02-01-answer-1.png" alt="תשובה בסרגל, וההפניות לתאים בתוכה הן לחיצות" loading="lazy"></div><p class="shot-legend">תשובה בסרגל, וההפניות לתאים בתוכה הן לחיצות</p></figure>
 <h3>3. גיליון התיעוד</h3>
-<p>אם הפעלתם את התיעוד בפרק 8, יש בקובץ גיליון <bdi dir="ltr">Claude Log</bdi> עם רשימת הפעולות. זה שימושי במיוחד כשעשיתם כמה סבבים ואתם רוצים לראות מה קרה בכל אחד.</p>
+<p>אם הפעלתם את התיעוד בפרק 5, יש בקובץ גיליון <bdi dir="ltr">Claude Log</bdi> עם רשימת הפעולות. זה שימושי במיוחד כשעשיתם כמה סבבים ואתם רוצים לראות מה קרה בכל אחד.</p>
 <h3>4. שמירת השיחה עצמה</h3>
 <p>בתפריט שלוש הנקודות שבראש הסרגל יש אפשרות בשם <bdi dir="ltr">Download Transcript</bdi>, <strong>שמורידה את השיחה כולה כקובץ.</strong></p>
 <p>ולמה זה חשוב דווקא לעורך דין: לפי התיעוד הרשמי, <strong>היסטוריית השיחות נשמרת מקומית בדפדפן ולא בשרתים של <bdi dir="ltr">Anthropic</bdi>, והיא אינה מסתנכרנת בין מחשבים.</strong> כלומר זו הדרך היחידה לשמור תיעוד של מה ביקשתם ומה הוא ענה.</p>
@@ -506,7 +390,7 @@
 
 <h3>ויש חלון אישור אחד שנראה אחרת</h3>
 <p>רוב בקשות האישור נראות אותו דבר. אבל כשהפעולה עלולה למחוק תוכן, <strong>החלון נצבע באדום ומופיעה בו השורה "אובדן נתונים אפשרי", עם הטווח המדויק שעומד להתרוקן.</strong></p>
-<figure class="shot"><div class="shot-frame" style="max-width:270px;margin-inline:auto"><img src="../assets/shots/g1-permission-01-dataloss.png" alt="חלון האישור האדום, עם אזהרת אובדן נתונים והטווח שעומד להימחק" loading="lazy"></div><p class="shot-legend">חלון האישור האדום, עם אזהרת אובדן נתונים והטווח שעומד להימחק</p></figure>
+<figure class="shot" style="max-width:270px;"><div class="shot-frame" style="aspect-ratio:270/368;"><img src="../assets/shots/g1-permission-01-dataloss.png" alt="חלון אישור עם אזהרה על אובדן נתונים" loading="lazy"><div class="shot-target" style="left:3.0%; top:12.5%; width:92.6%; height:12.0%;"><span class="shot-target-badge">1</span></div><div class="shot-target badge-right" style="left:9.6%; top:32.6%; width:65.2%; height:12.5%;"><span class="shot-target-badge">2</span></div><div class="shot-target" style="left:3.0%; top:77.2%; width:92.6%; height:9.8%;"><span class="shot-target-badge">3</span></div></div><ol class="shot-legend"><li><b>1</b><span><strong>מה הוא עומד לעשות, בעברית.</strong> כאן תיקון פורמט תאריך וניקוי עמודות ריקות.</span></li><li><b>2</b><span><strong>ועל אילו טווחים בדיוק.</strong> שתי שורות, שני טווחים. <strong>זו השורה שקוראים לפני שלוחצים</strong>, ומשווים אותה למה שביקשתם.</span></li><li><b>3</b><span><strong>אישור חד פעמי.</strong> הכפתור שבו משתמשים כברירת מחדל.</span></li></ol><p class="shot-caption">חלון האישור, כשהפעולה עלולה למחוק נתונים</p></figure>
 <p><strong>ושימו לב לשם הכפתור האמצעי.</strong> בחלון הרגיל כתוב עליו <bdi dir="ltr">Always allow</bdi>. כאן כתוב <bdi dir="ltr">Dangerously always allow</bdi>, כלומר <strong>אישור תמידי מסוכן.</strong></p>
 <p><bdi dir="ltr">Anthropic</bdi> בחרה לקרוא לכפתור הזה כך בעצמה. <strong>אין לנו מה להוסיף על זה.</strong></p>
 
@@ -518,6 +402,134 @@
 
 <h3>ואם משהו יצא לא נכון</h3>
 <p>ביטול הפעולה ב-<bdi dir="ltr">Excel</bdi> עצמו, כלומר <bdi dir="ltr">Ctrl+Z</bdi>, עובד גם על שינויים שהוא עשה. לכן, כשמתחילים לעבוד על משהו אמיתי, כדאי לשמור עותק של הקובץ לפני, כדי שתמיד תהיה נקודת חזרה.</p>
+</section>
+
+<section class="guide-section" id="full-loop">
+<p class="section-number">08</p>
+<h2>איך נראית עבודה שלמה עם <bdi dir="ltr">Claude</bdi> בתוך גיליון <bdi dir="ltr">Excel</bdi>, מההתחלה עד הסוף</h2>
+<p>הרצתם בקשה אחת ובדקתם אותה. עכשיו כדאי לראות את כל המסלול בבת אחת, כי ככה זה ייראה בעבודה אמיתית. <strong>עבודה אחת שלמה מורכבת מארבעה שלבים,</strong> וזה נכון גם לבקשה הפשוטה ביותר וגם למורכבת ביותר.</p>
+<ol class="steps">
+<li><strong>אתם מבקשים.</strong> פותחים את הסרגל בצד וכותבים בעברית מה אתם רוצים. למשל: תסביר לי איך יצא הסכום בעמודת שכר הטרחה.</li>
+<li><strong>הוא עונה או מציע.</strong> אם ביקשתם הסבר, הוא עונה ומצביע על התאים הרלוונטיים. אם ביקשתם שינוי, הוא מבצע אותו ומסמן בצבע כל תא שנגע בו.</li>
+<li><strong>אתם בודקים.</strong> עוברים על מה שהשתנה, לוחצים על ההפניות לתאים ומוודאים שזה מה שהתכוונתם. זה השלב שאף פעם לא מדלגים עליו.</li>
+<li><strong>אתם מאשרים או חוזרים אחורה.</strong> אם זה נכון, שומרים וממשיכים. אם לא, מבטלים ומנסחים את הבקשה מחדש.</li>
+</ol>
+<p>שימו לב לדבר אחד בשלב 2: כשהוא משנה משהו בקובץ, זה קורה מיד ולא ממתין לאישור שלכם. אין כאן מסך של "האם אתה בטוח" לפני כל שינוי. לכן שלב 3 הוא שלב חובה, ולכן גם בפרק 9 נקבע מראש על אילו קבצים בכלל פותחים את הכלי.</p>
+</section>
+
+<section class="guide-section" id="which-files">
+<p class="section-number">09</p>
+<h2>על אילו קבצים מותר להפעיל את <bdi dir="ltr">Claude</bdi></h2>
+<p>עד כאן עבדתם על גיליון <bdi dir="ltr">Excel</bdi> שאתם בניתם, ואין בו פרט אמיתי של אף אחד. <strong>הפרק הזה הוא השער שלפני החומר האמיתי, והוא החשוב ביותר במדריך.</strong></p>
+<p>הסיבה פשוטה: עכשיו, כשהתוסף כבר מותקן ואתם יודעים להפעיל אותו, ההחלטה על איזה קובץ לפתוח אותו נעשית בשנייה ובלי לחשוב. <strong>לכן הכלל צריך להיות ברור לפני הפעם הראשונה שתעשו את זה, ולא אחריה.</strong></p>
+<h3>הכלל</h3>
+<p>מפעילים את <bdi dir="ltr">Claude</bdi> רק על גיליונות <bdi dir="ltr">Excel</bdi> שמקורם אצלכם, או אצל מי שאתם סומכים עליו. לא על גיליונות שהגיעו ממקור חיצוני שאינכם מכירים.</p>
+<h3>למה, בשפה פשוטה</h3>
+<p>גיליון <bdi dir="ltr">Excel</bdi> יכול להכיל טקסט מוסתר. לא בכוונה זדונית בהכרח, אבל אפשר. אם מישהו הטמין בתוך תא, או בתוך הערה, או בגיליון נסתר, הוראה שמכוונת ל-<bdi dir="ltr">Claude</bdi>, יש סיכוי שהוא יתייחס אליה כאילו אתם כתבתם אותה. במקרה כזה הוא יכול, למשל, להוציא מידע מהקובץ למקום אחר, לשנות נתונים שלא ביקשתם לשנות, או לבצע פעולה מוחקת על כמה גיליונות.</p>
+<p>ומה שחשוב להבין: זה סוג הנזק שבדיקה של התוצאה אחר כך לא מבטלת. אם מידע יצא, הוא יצא. לכן זו לא אזהרה מסוג "תבדקו את התוצר", אלא החלטה שמתקבלת לפני שפותחים את הקובץ.</p>
+<h3>יש רשת ביטחון אחת, וכדאי להכיר אותה</h3>
+<p>יש קבוצה של פונקציות <bdi dir="ltr">Excel</bdi> שיכולות למשוך מידע מבחוץ או להריץ פעולה במחשב. כשClaude מנסה להפעיל אחת מהן, מופיע חלון שמבקש את האישור שלכם לפני הביצוע. זה נכון, בין היתר, לפונקציות שמושכות מידע מהאינטרנט, לפונקציות שמייבאות נתונים ממקור חיצוני, ולפונקציות שניגשות לקבצים במחשב.</p>
+<p>אם קיבלתם חלון אישור כזה ולא ביקשתם שום דבר שדורש מידע מבחוץ, זה סימן שכדאי לעצור. לא לאשר, לסגור את הקובץ, ולברר מאיפה הוא הגיע.</p>
+<h3>איך זה מתורגם לעבודה במשרד</h3>
+<div class="tbl-wrap"><table class="tbl">
+<thead><tr><th>סוג הקובץ</th><th>מותר להפעיל?</th></tr></thead>
+<tbody>
+<tr><td>גיליון <bdi dir="ltr">Excel</bdi> שאתם או עובד במשרד בניתם</td><td>כן</td></tr>
+<tr><td>גיליון שהלקוח שלכם שלח, ואתם מכירים אותו</td><td>כן, בכפוף לפרק 10</td></tr>
+<tr><td>תבנית שהורדתם מהאינטרנט</td><td>לא</td></tr>
+<tr><td>גיליון שצורף למייל מעורך הדין של הצד השני</td><td>לא</td></tr>
+<tr><td>קובץ שספק או גורם חיצוני שלח</td><td>לא</td></tr>
+<tr><td>גיליון משותף שהרבה גורמים עורכים</td><td>לא</td></tr>
+</tbody>
+</table></div>
+<h3>איך הקובץ הבעייתי נראה בתחומים שונים</h3>
+<p>הטבלה שלמעלה מנוסחת באופן כללי, אבל בפועל אף אחד לא חושב "הגיע אליי קובץ ממקור לא מהימן". חושבים על הקובץ המסוים שנחת במייל. אלה הדוגמאות האופייניות, לפי תחום:</p>
+<ul class="bullets">
+<li><strong>נדל"ן.</strong> לוח תשלומים או טבלת חישוב הצמדה שהיזם, הקבלן או עורך הדין שלהם שלחו.</li>
+<li><strong>דיני עבודה.</strong> גיליון <bdi dir="ltr">Excel</bdi> של שכר או דוח נוכחות שהמעסיק העביר, או תלושים שהומרו לאקסל בידי גורם חיצוני.</li>
+<li><strong>נזיקין.</strong> חישוב נזק או תחשיב אקטוארי שהגיע ממומחה או מחברת הביטוח.</li>
+<li><strong>דיני משפחה.</strong> טבלת נכסים, ריכוז תנועות בנק או תחשיב איזון שהצד השני צירף.</li>
+<li><strong>הוצאה לפועל וגבייה.</strong> פירוט חוב או ריכוז יתרות שהתקבל מהזוכה או מהחייב.</li>
+<li><strong>מסחרי ותאגידים.</strong> מודל הערכת שווי או טבלת בעלויות שהגיעה מהצד השני בעסקה.</li>
+</ul>
+<p>כל אלה הם קבצים שימושיים ולגיטימיים לחלוטין לעבודה. הם רק לא קבצים שפותחים עליהם את הכלי.</p>
+<h3>ומה עושים אם חייבים לעבוד על קובץ כזה</h3>
+<p>פותחים גיליון <bdi dir="ltr">Excel</bdi> חדש ונקי, מסמנים בקובץ המקורי רק את הנתונים שצריך, מדביקים אותם לגיליון החדש כטקסט בלבד, וסוגרים את הקובץ המקורי. עכשיו אתם עובדים על קובץ שאתם יצרתם, ולא על קובץ של מישהו אחר.</p>
+</section>
+
+<section class="guide-section" id="confidentiality">
+<p class="section-number">10</p>
+<h2>חיסיון, הסכמת לקוח ולאן המידע מגיע</h2>
+<p>גם הפרק הזה הוא חומר להחלטה ולא הוראת הפעלה, והוא החצי השני של אותו שער: הפרק הקודם קבע על אילו קבצים מותר, וכאן מדובר במה שקורה למידע עצמו.</p>
+<h3>לאן המידע נוסע</h3>
+<p>כשאתם מבקשים משהו, תוכן הגיליון שנדרש לאותה בקשה נשלח לענן של <bdi dir="ltr">Anthropic</bdi>, שם הבקשה מעובדת, והתשובה חוזרת לסרגל. זה נכון גם כשהקובץ שמור אצלכם על המחשב, וגם כשלא העליתם אותו לשום מקום בעצמכם.</p>
+<h3>ומה בדיוק נשלח, לפי ההצהרה הרשמית</h3>
+<p><bdi dir="ltr">Anthropic</bdi> מסרה ל-<bdi dir="ltr">Microsoft</bdi>, במסגרת אישור התוסף, פירוט של מה שנשמר. הרשימה כוללת את ההודעות שכתבתם, את היסטוריית השיחה, את תוכן התאים, טווחים שסימנתם, קבצים שהעליתם, וגם מטא-דאטה של הגיליון: <strong>שם הקובץ ושמות הלשוניות</strong>.</p>
+<p>ולזה יש משמעות מעשית מאוד לעורך דין, שלא כולם חושבים עליה: קובץ שנקרא "כהן נגד אלפא, תחשיב נזק" מסגיר את שם הלקוח ואת מהות התיק עוד לפני שנשלחה שורה אחת של נתונים. אם אתם עובדים על חומר רגיש, שווה לשקול שם קובץ ושמות לשוניות ניטרליים.</p>
+<h3>איפה המידע נשמר גיאוגרפית</h3>
+<p>לפי אותה הצהרה, המידע נשמר <strong>בארצות הברית</strong>. לעורך דין בישראל זו נקודה שצריכה להיכנס לשיקול, במיוחד כשמדובר במידע אישי של לקוחות, והיא לא ייחודית לכלי הזה אלא נכונה להרבה שירותי ענן. עוד נמסר באותה הצהרה שהמידע אינו מועבר לצדדים שלישיים או לקבלני עיבוד נוספים.</p>
+<h3>מה נשמר, ולכמה זמן</h3>
+<p>לפי התיעוד הרשמי, ברירת המחדל היא שהקלט והפלט נמחקים תוך 30 יום, אלא אם מדיניות שמירת הנתונים של הארגון קובעת אחרת.</p>
+<p>נקודה נוספת שכדאי להכיר: היסטוריית השיחות בסרגל נשמרת מקומית בדפדפן או במחשב שלכם, ולא בשרת. המשמעות המעשית היא שהיא לא עוברת בין מחשבים, ואם מנקים את נתוני הדפדפן היא נעלמת. בתוך <bdi dir="ltr">Excel</bdi> היא כן עוברת בין קבצים שונים.</p>
+<h3>מה שמנהל אבטחת מידע במשרד ישאל, והתשובות</h3>
+<p>אלה הפרטים שמופיעים בעמוד אישור התוסף של <bdi dir="ltr">Microsoft</bdi>, כפי שנמסרו על ידי <bdi dir="ltr">Anthropic</bdi> עצמה בפברואר 2026. שווה לדעת שזו הצהרת יצרן, ו-<bdi dir="ltr">Microsoft</bdi> מציינת במפורש שהיא אינה מאמתת אותה.</p>
+<ul class="bullets">
+<li><strong>יש</strong> תקן <bdi dir="ltr">SOC 2 Type 2</bdi>, מנובמבר 2025, וגם <bdi dir="ltr">SOC 3</bdi>.</li>
+<li><strong>יש</strong> תקן <bdi dir="ltr">ISO 27001</bdi>.</li>
+<li><strong>אין</strong> <bdi dir="ltr">HIPAA</bdi>, <bdi dir="ltr">FedRAMP</bdi>, <bdi dir="ltr">PCI DSS</bdi> ו-<bdi dir="ltr">ISO 27017</bdi> או <bdi dir="ltr">27018</bdi>.</li>
+<li>המידע אינו מועבר לצדדים שלישיים.</li>
+<li>מבוצעות בדיקות חדירה שנתיות וסריקות פגיעות רבעוניות.</li>
+</ul>
+<p>למשרד שנדרש להציג מסמך אבטחת מידע ללקוח מוסדי, אלה הנתונים שהוא יבקש, וכדאי שיהיו בידיכם עוד לפני שהשאלה נשאלת.</p>
+<h3>אפשרות למשרדים עם תשתית טכנולוגית</h3>
+<p>יש דרך התקנה מתקדמת, שמיועדת לארגונים ולא ליחידים, שבה הבקשות מנותבות דרך תשתית ענן של הארגון עצמו במקום ישירות ל-<bdi dir="ltr">Anthropic</bdi>. במסלול הזה, לפי התיעוד, תוכן הבקשות והתשובות נשאר אצל ספק הענן שהארגון בחר. זו פעולה של מנהל מערכת ולא של עורך דין, אבל אם החיסיון הוא שיקול מכריע במשרד שלכם, שווה לדעת שהאפשרות הזאת קיימת ולהעלות אותה מול איש ה-<bdi dir="ltr">IT</bdi>.</p>
+<h3>נקודה שחשוב שמנהל המשרד ידע: אין יומן ביקורת ארגוני</h3>
+<p>התיעוד הרשמי מציין במפורש שבמנויים <bdi dir="ltr">Free</bdi>, <bdi dir="ltr">Pro</bdi>, <bdi dir="ltr">Max</bdi> ו-<bdi dir="ltr">Team</bdi> אין יכולת מעקב וביקורת על השימוש בתוסף ב-<bdi dir="ltr">Excel</bdi>, ושהוא אינו נכלל ביומני הביקורת של <bdi dir="ltr">Enterprise</bdi> ואינו מקושר להגדרות שמירת הנתונים המותאמות של הארגון. הוא גם אינו נכלל בייצוא הנתונים של הארגון.</p>
+<p>המשמעות המעשית: אין דרך ארגונית לראות בדיעבד מי הפעיל את הכלי על איזה קובץ. התיעוד היחיד שקיים הוא זה שאתם עצמכם מפעילים בתוך הקובץ, גיליון היומן שמוסבר בפרק 5. במשרד שעובד על חומר של לקוחות, זו סיבה טובה להפעיל אותו כברירת מחדל ולא כתוספת.</p>
+<h3>מה שכדאי לסדר לפני שמעלים חומר של לקוח</h3>
+<ul class="bullets">
+<li>לוודא שאתם עובדים בחשבון של המשרד, ולא בחשבון אישי.</li>
+<li>לברר מול מי שאחראי במשרד מה מותר להזין ומה לא.</li>
+<li>לקבל את הסכמת הלקוח, כפי שהמשרד עושה זאת בכלים אחרים.</li>
+<li>להתחיל על גיליון <bdi dir="ltr">Excel</bdi> שאין בו פרטים מזהים, עד שאתם בטוחים בכלי.</li>
+</ul>
+<p>שווה לשים לב שיש תחומים שבהם הגיליונות רגישים במיוחד. בדיני משפחה ובדיני עבודה, גיליון אחד יכול להכיל תנועות בנק, נתוני שכר או פרטים על בני משפחה, כלומר מידע אישי מהסוג הרגיש ביותר. שם הזהירות לפני שמעלים חומר צריכה להיות גדולה יותר, ולא פחות.</p>
+<h3>נקודה שכדאי לדעת: הוא לא בהכרח מוגבל לגיליון</h3>
+<p>אם חיברתם ל-<bdi dir="ltr">Claude</bdi> מערכות חיצוניות, למשל תיבת מייל או אחסון מסמכים, החיבורים האלה עובדים גם מתוך <bdi dir="ltr">Excel</bdi>. כלומר הוא יכול להביא לגיליון מידע שלא נמצא בו, וגם להפך.</p>
+<p>מצד אחד זה שימושי. מצד שני זה מרחיב את מה שנגיש לו בזמן שאתם עובדים על קובץ של לקוח, ולכן כדאי לדעת אילו חיבורים פעילים אצלכם לפני שמתחילים. חיבורים שנבנו בהתאמה אישית, ולא חיבורים רשמיים, דורשים בדיקה נפרדת לפני שמפעילים אותם.</p>
+<p>לפי התיעוד הרשמי, כדי לראות אילו חיבורים זמינים פותחים את הסרגל, לוחצים על כפתור הפלוס שמתחת לשורת הכתיבה ובוחרים <bdi dir="ltr">Connectors</bdi>. <strong>נושא החיבורים אינו נכנס לסדרה הזאת</strong>, כי הוא נוגע גם בהעברת מידע לצדדים שלישיים ומצריך דיון בפני עצמו.</p>
+<h3>ויש עוד הגדרה אחת שכדאי שמנהל המשרד יכיר</h3>
+<p>ל-<bdi dir="ltr">Claude</bdi> יש יכולת לעבוד בין יישומי <bdi dir="ltr">Office</bdi> שונים, כלומר להעביר הקשר בין <bdi dir="ltr">Excel</bdi>, <bdi dir="ltr">Word</bdi> ו-<bdi dir="ltr">Outlook</bdi> בלי שתעתיקו ביניהם בעצמכם. התיעוד הרשמי מנסח זאת כך: ההקשר עובר בין היישומים אוטומטית.</p>
+<p>והנקודה החשובה למשרד: במנויי <bdi dir="ltr">Team</bdi> ו-<bdi dir="ltr">Enterprise</bdi> ההגדרה הזאת <strong>כבויה כברירת מחדל</strong>, ורק בעל הארגון יכול להפעיל אותה, תחת הגדרות הארגון בסעיף <bdi dir="ltr">Office agents</bdi>. במנויים אישיים בתשלום היא דווקא פעילה כברירת מחדל.</p>
+<p>כלומר אם המשרד שלכם על <bdi dir="ltr">Team</bdi>, ברירת המחדל היא הזהירה יותר, וזה דבר טוב. אבל אם מישהו מפעיל את ההגדרה, המשמעות היא שעבודה על גיליון של לקוח יכולה למשוך הקשר גם מהמייל ומהמסמכים. זו החלטה שכדאי שתתקבל במשרד ביודעין, ולא תתגלה בדיעבד.</p>
+<h3>הוא עובד על כל הקבצים הפתוחים, ויש לזה מתג</h3>
+<p>במסכי הפתיחה של התוסף מופיע מסך שאומר את זה במפורש: <strong><bdi dir="ltr">Claude</bdi> יכול לעבוד על כל המסמכים, חוברות העבודה והמצגות שפתוחים אצלכם, בבת אחת.</strong></p>
+<figure class="shot"><div class="shot-frame" style="max-width:338px;margin-inline:auto"><img src="../assets/shots/g1-install-16-work-across-apps.png" alt="מסך הפתיחה שמסביר שהוא עובד על כל הקבצים הפתוחים" loading="lazy"></div><p class="shot-legend">מסך הפתיחה שמסביר שהוא עובד על כל הקבצים הפתוחים</p></figure>
+<p>המשמעות המעשית ברורה: <strong>אם פתוח אצלכם במקביל חוזה של לקוח אחד וגיליון <bdi dir="ltr">Excel</bdi> של לקוח אחר, שניהם בהישג ידו באותו רגע.</strong></p>
+<p><strong>וזו יכולת שאפשר לכבות.</strong> בהגדרות התוסף יש מתג בשם <bdi dir="ltr">Let Claude work across files</bdi>. <strong>מצבו ההתחלתי תלוי במנוי שלכם:</strong> ב-<bdi dir="ltr">Pro</bdi> וב-<bdi dir="ltr">Max</bdi> הוא דלוק כברירת מחדל, וב-<bdi dir="ltr">Team</bdi> וב-<bdi dir="ltr">Enterprise</bdi> הוא כבוי. מי שרוצה ש-<bdi dir="ltr">Claude</bdi> ייגע רק בקובץ שהוא עומד עליו, מוודא שהוא כבוי.</p>
+<p>ועוד פרט שכדאי לדעת: <strong>המתג הזה הוא לפי מכשיר.</strong> אם כיביתם אותו במחשב המשרד, זה לא אומר שהוא כבוי גם במחשב הבית.</p>
+<p>ולכל הפחות, סגרו קבצים של תיקים אחרים לפני שאתם מתחילים לעבוד.</p>
+
+<h3>הוראות מוסתרות בתוך קבצים</h3>
+<p>לפני שהתוסף מתחיל לעבוד הוא מציג מסך אזהרה, וזה המסך היחיד בכל ההתקנה שדורש אישור מפורש ולא רק <bdi dir="ltr">Next</bdi>.</p>
+<figure class="shot" style="max-width:326px;"><div class="shot-frame" style="aspect-ratio:326/522;"><img src="../assets/shots/g1-install-17-before-you-continue.png" alt="מסך האזהרה על הוראות נסתרות בקבצים" loading="lazy"><div class="shot-target badge-right" style="left:14.1%; top:67.0%; width:76.7%; height:17.6%;"><span class="shot-target-badge">1</span></div><div class="shot-target" style="left:55.2%; top:90.0%; width:39.9%; height:7.3%;"><span class="shot-target-badge">2</span></div></div><ol class="shot-legend"><li><b>1</b><span><strong>האזהרה עצמה, וכדאי לקרוא אותה ולא לדלג.</strong> קבצים, מיילים וצרופות עלולים להכיל הוראות מוסתרות שמכוונות את הכלי. <strong>זו הסיבה שמשתמשים רק בחומר ממקור שסומכים עליו.</strong></span></li><li><b>2</b><span><strong><bdi dir="ltr">I understand</bdi>, וממשיכים.</strong></span></li></ol><p class="shot-caption">המסך שמופיע פעם אחת, ושכדאי לא לדלג עליו</p></figure>
+<p>זה מה שכתוב בו, בתרגום מדויק:</p>
+<aside class="content-box warning">
+<p><strong>קבצים, מיילים וצרופות יכולים להכיל הוראות מוסתרות שמנסות להכווין את <bdi dir="ltr">Claude</bdi>. השתמשו ב-<bdi dir="ltr">Claude</bdi> רק עם תוכן ממקורות שאתם סומכים עליהם.</strong></p>
+</aside>
+<p>ובתיעוד הרשמי של <bdi dir="ltr">Claude for Excel</bdi> זה מנוסח חזק יותר:</p>
+<aside class="content-box warning">
+<p><strong>השתמשו ב-<bdi dir="ltr">Claude for Excel</bdi> רק עם גיליונות שאתם סומכים עליהם. קבצים ממקורות חיצוניים יכולים להכיל הוראות מוסתרות שמתמרנות את התוסף לחלץ נתונים, לשנות רשומות או לבצע פעולות הרסניות.</strong> בבדיקות זוהו מצבים שבהם ניתן לתמרן את <bdi dir="ltr">Claude for Excel</bdi> לחלץ מידע רגיש, לשנות נתונים קריטיים או לבצע פעולות הרסניות אם הוא מורשה לפעול בלי אימות.</p>
+</aside>
+<p>ולמה זה נוגע לעורך דין יותר מלכל אחד אחר: <strong>עורך דין מקבל קבצים מהצד השני כל יום.</strong> ובגיליון <bdi dir="ltr">Excel</bdi> קל במיוחד להסתיר טקסט, בתא רחוק מחוץ לאזור שרואים, בלשונית מוסתרת, בטקסט בצבע לבן או בהערה בתא. <strong>אתם לא רואים, הוא כן קורא.</strong></p>
+
+<h3>ומה <bdi dir="ltr">Anthropic</bdi> עצמה אומרת שלא מומלץ לעשות</h3>
+<p>שלוש השורות האלה מופיעות בתיעוד הרשמי תחת מגבלות, והן נוגעות ישירות לעבודה משפטית:</p>
+<aside class="content-box warning">
+<p><strong>תוצרים סופיים ללקוח בלי בדיקה אנושית. חישובים קריטיים לביקורת בלי אימות. מודלים שמכילים מידע רגיש או מפוקח בלי בקרות מתאימות.</strong></p>
+</aside>
+
+<p>הכללים האתיים שחלים על עורך דין שמשתמש בכלי בינה מלאכותית הם נושא רחב בפני עצמו, והם לא מיוחדים ל-<bdi dir="ltr">Excel</bdi>. הם מוסברים בהרחבה במדריכים אחרים של Legal Mind, וכדאי להכיר אותם לפני שמתחילים לעבוד על חומר אמיתי.</p>
 </section>
 
 <section class="guide-section" id="hebrew">
@@ -579,7 +591,6 @@
 <p>אם מקלידים בסרגל את התו <bdi dir="ltr">/</bdi>, נפתחת רשימה של כלים מוכנים שנקראים סקילים. <strong>הרשימה הזאת ארוכה יותר מארבעת הסקילים שמופיעים במסך הפתיחה</strong>, והיא כוללת את כל מה שמותקן בחשבון <bdi dir="ltr">Claude</bdi> שלכם.</p>
 <p>מבין אלה שמגיעים כברירת מחדל, <strong><bdi dir="ltr">/audit-xls</bdi> לביקורת גיליון ו-<bdi dir="ltr">/clean-data-xls</bdi> לניקוי נתונים שימושיים לכל אחד.</strong> <bdi dir="ltr">/dcf-model</bdi>, <bdi dir="ltr">/comps-analysis</bdi> ו-<bdi dir="ltr">/3-statement-model</bdi> הם כלים פיננסיים לשוק ההון, ואין לעורך דין שימוש בהם.</p>
 <p><strong>וסקיל שהותקן בחשבון מופיע כאן גם אם התיאור שלו בעברית.</strong> זה מה שמאפשר להוסיף כלים משפטיים משלכם.</p>
-<p><strong>שני האחרונים הם כלים פיננסיים ואין לעורך דין שימוש בהם.</strong> שני הראשונים דווקא שימושיים.</p>
 <p>ולפי התיעוד הרשמי, <strong><bdi dir="ltr">Claude</bdi> יכול להפעיל סקיל רלוונטי גם מעצמו, בלי שתקלידו לוכסן</strong>, לפי מה שאתם עושים. וסקיל שאינו רלוונטי ליישום שאתם נמצאים בו כלל לא יופיע ברשימה.</p>
 <figure class="shot"><div class="shot-frame" style="max-width:419px;margin-inline:auto"><img src="../assets/shots/g1-sidebar-05-slash-list.png" alt="הרשימה שנפתחת אחרי הקלדת לוכסן, ובה כל הסקילים שמותקנים בחשבון" loading="lazy"></div><p class="shot-legend">הרשימה שנפתחת אחרי הקלדת לוכסן, ובה כל הסקילים שמותקנים בחשבון</p></figure>
 <p>מה שיופיע ברשימה תלוי בכלים שמופעלים בחשבון <bdi dir="ltr">Claude</bdi> שלכם, ולכן הרשימה אצלכם לא בהכרח זהה לרשימה אצל עורך דין אחר במשרד. כלים שאינם רלוונטיים ל-<bdi dir="ltr">Excel</bdi> לא מופיעים שם כלל. ואם הכלי המתאים לא מופיע, אין בעיה: אפשר לבקש את אותו דבר במילים רגילות.</p>
@@ -591,19 +602,19 @@
 <h3>האם הוא משנה לי את הקובץ בלי שאני יודע?</h3>
 <p>לא. הוא משנה רק כשביקשתם שינוי, הוא מסמן בצבע כל תא שנגע בו, ומזהיר לפני שהוא דורס נתונים קיימים. אם ביקשתם רק הסבר, הקובץ לא משתנה.</p>
 <h3>הוא עובד על קובץ ששמור אצלי במחשב, או צריך להעלות אותו לאינטרנט?</h3>
-<p>הוא עובד על הקובץ שפתוח אצלכם, ואינכם צריכים להעלות אותו לשום מקום בעצמכם. אבל תוכן הגיליון שנדרש לבקשה כן נשלח לענן של <bdi dir="ltr">Anthropic</bdi> לצורך העיבוד, וחוזר משם. הפירוט המלא בפרק 6.</p>
+<p>הוא עובד על הקובץ שפתוח אצלכם, ואינכם צריכים להעלות אותו לשום מקום בעצמכם. אבל תוכן הגיליון שנדרש לבקשה כן נשלח לענן של <bdi dir="ltr">Anthropic</bdi> לצורך העיבוד, וחוזר משם. הפירוט המלא בפרק 10.</p>
 <h3>אני לא מבין ב-<bdi dir="ltr">Excel</bdi>. זה בשבילי?</h3>
-<p>כן, וזה אפילו אחד השימושים הטובים שלו. אפשר לבקש ממנו להסביר גיליון <bdi dir="ltr">Excel</bdi> שמישהו אחר בנה, ואפשר לבקש ממנו לבנות דברים שלא הייתם יודעים לבנות לבד. מה שכן נדרש זה לבדוק את התוצאה, ולזה יש פרק 10.</p>
+<p>כן, וזה אפילו אחד השימושים הטובים שלו. אפשר לבקש ממנו להסביר גיליון <bdi dir="ltr">Excel</bdi> שמישהו אחר בנה, ואפשר לבקש ממנו לבנות דברים שלא הייתם יודעים לבנות לבד. מה שכן נדרש זה לבדוק את התוצאה, ולזה יש פרק 7.</p>
 <h3>אפשר לבטל שינוי שהוא עשה?</h3>
 <p>כן. <bdi dir="ltr">Ctrl + Z</bdi> מבטל שינוי שהוא עשה, בדיוק כמו כל שינוי אחר ב-<bdi dir="ltr">Excel</bdi>. <strong>בדקנו את זה בפועל.</strong></p>
 <p><strong>אבל יש שני דברים שכדאי לדעת מראש, אחרת נראה שזה לא עובד.</strong></p>
 <p><strong>הראשון: פעולה אחת שביקשתם מתבצעת ב-<bdi dir="ltr">Excel</bdi> כמה צעדים נפרדים</strong>, ולכן צריך ללחוץ כמה פעמים. אם יומן השינויים דלוק, הלחיצה הראשונה מוחקת דווקא את שורת היומן, <strong>והשינוי עצמו עדיין יהיה שם.</strong></p>
 <p><strong>והשני: הביטול מקפיץ אתכם ללשונית שבה בוצע השינוי שמתבטל</strong>, ולפעמים ללשונית שאין לה קשר למה שעשיתם. זה מבלבל, וזה לא סימן שמשהו נשבר.</p>
-<figure class="shot"><div class="shot-frame" style="max-width:569px;margin-inline:auto"><img src="../assets/shots/g1-undo-01-after-claude.png" alt="הגיליון אחרי ש-Claude צבע את העמודה בצהוב" loading="lazy"></div><p class="shot-legend">אחרי ש-Claude צבע את העמודה</p></figure>
-<figure class="shot"><div class="shot-frame" style="max-width:569px;margin-inline:auto"><img src="../assets/shots/g1-undo-02-after-ctrlz.png" alt="אותו גיליון אחרי הביטול, בלי הצבע" loading="lazy"></div><p class="shot-legend">ואחרי הביטול</p></figure>
+<figure class="shot"><div class="shot-frame" style="max-width:570px;margin-inline:auto"><img src="../assets/shots/g1-undo-01-after-claude.png" alt="הגיליון אחרי ש-Claude צבע את העמודה בצהוב" loading="lazy"></div><p class="shot-legend">אחרי ש-Claude צבע את העמודה</p></figure>
+<figure class="shot"><div class="shot-frame" style="max-width:576px;margin-inline:auto"><img src="../assets/shots/g1-undo-02-after-ctrlz.png" alt="אותו גיליון אחרי הביטול, בלי הצבע" loading="lazy"></div><p class="shot-legend">ואחרי הביטול</p></figure>
 <p><strong>וההיסטוריה הזאת חיה רק כל עוד הקובץ פתוח.</strong> אחרי שמירה וסגירה אין יותר מה לבטל, <strong>ולכן בקובץ של תיק עדיין כדאי לעבוד על עותק.</strong></p>
 <h3>נעלמה לי לשונית מהקובץ, מה קרה?</h3>
-<p>כמעט בוודאות היא לא נמחקה, <strong>אלא נדחפה מחוץ למסך</strong> כי נוספו לשוניות חדשות. <strong>לחיצה ימנית על אחד מחצי הניווט שבקצה שורת הלשוניות פותחת רשימה של כל הלשוניות בקובץ</strong>, ומשם בוחרים אותה. ההסבר המלא עם הצילומים נמצא בפרק 8.</p>
+<p>כמעט בוודאות היא לא נמחקה, <strong>אלא נדחפה מחוץ למסך</strong> כי נוספו לשוניות חדשות. <strong>לחיצה ימנית על אחד מחצי הניווט שבקצה שורת הלשוניות פותחת רשימה של כל הלשוניות בקובץ</strong>, ומשם בוחרים אותה. ההסבר המלא עם הצילומים נמצא בפרק 5.</p>
 
 <h3>הוא זוכר את הגיליון שעבדנו עליו אתמול?</h3>
 <p>לא. כל שיחה מתחילה מהקובץ שפתוח כרגע. מה שכן נשמר בין שיחות זה מה שכתבתם בשדה ההוראות, לפי פרק 12.</p>
@@ -612,7 +623,7 @@
 <h3>הוא יכול לחשב לי מועד, למשל מועד להגשה או מועד התיישנות?</h3>
 <p>הוא יכול לספור ימים בין תאריכים שאתם נותנים לו, וזה בערך זה. הוא לא יודע דין, ולא מכיר את כללי המועדים שחלים על ההליך שלכם. הוא לא מזהה שמועד נדחה בגלל פגרה, ולא מזהה שהספירה מתחילה מיום אחר ממה שהזנתם. הוא עובד על המספרים שבגיליון, ומי שיודע איך סופרים במקרה הזה הוא אתם.</p>
 <h3>אפשר להזין לו גיליון עם שמות של לקוחות?</h3>
-<p>זו לא שאלה טכנית אלא שאלה של חיסיון, והיא מוסברת בפרק 6. בקצרה: זה תלוי בסוג החשבון שאתם עובדים בו, במה שהמשרד קבע ובהסכמת הלקוח.</p>
+<p>זו לא שאלה טכנית אלא שאלה של חיסיון, והיא מוסברת בפרק 10. בקצרה: זה תלוי בסוג החשבון שאתם עובדים בו, במה שהמשרד קבע ובהסכמת הלקוח.</p>
 <h3>עבדתי איתו שעה על אותה משימה, ופתאום הוא לא זכר משהו מההתחלה. למה?</h3>
 <p>בשיחות ארוכות המערכת דוחסת אוטומטית את מה שקדם, כדי שהשיחה לא תיתקע. התוצאה היא שפרטים מתחילת העבודה עלולים להיטשטש. בעבודה ארוכה כדאי לחזור ולציין את הפרטים החשובים, במקום להניח שהוא זוכר מה אמרתם לפני חצי שעה.</p>
 <h3>ההיסטוריה שלי נשמרת בין קבצים שונים?</h3>
@@ -623,30 +634,30 @@
 <aside class="content-box source-quote">
 <h3>מתוך התיעוד הרשמי של <bdi dir="ltr">Anthropic</bdi></h3>
 <blockquote>"השתמשו ב-<bdi dir="ltr">Claude for Excel</bdi> רק עם גיליונות ממקור מהימן, ולא עם גיליונות שהגיעו ממקורות חיצוניים שאינם מהימנים (לדוגמה: תבניות שהורדו, קבצים של ספקים, מסמכים משותפים וייבוא נתונים)."</blockquote>
-<p class="quote-source">תרגום מתוך המסמך <bdi dir="ltr">Use Claude for Excel</bdi>, מרכז התמיכה של <bdi dir="ltr">Anthropic</bdi>, סעיף <bdi dir="ltr">Prompt injection attack risks</bdi>. <a href="https://support.claude.com/en/articles/12650343-use-claude-for-excel" target="_blank" rel="noopener">קישור למקור</a></p>
+<p class="quote-source">תרגום מתוך המסמך <bdi dir="ltr">Use Claude for Excel</bdi>, התיעוד הרשמי של <bdi dir="ltr">Anthropic</bdi>, סעיף <bdi dir="ltr">Prompt injection risk</bdi>. <a href="https://claude.com/docs/office-agents/excel" target="_blank" rel="noopener">קישור למקור</a></p>
 </aside>
 </section>
 
 <div class="guide-section"><aside class="content-box info">
 <h3>סיכום, ומה הלאה</h3>
 <p>התוסף מותקן, אתם יודעים לפתוח אותו, לבקש ממנו משהו ולבדוק את מה שחזר. אתם גם יודעים על אילו קבצים לא לפתוח אותו ומה לסדר לפני שעובדים על חומר של לקוח.</p>
-<p>מדריך 2 נמצא בבנייה. הוא יתרגל בפועל, בשש רמות בסדר עולה, מלשאול שאלה על גיליון <bdi dir="ltr">Excel</bdi> בלי לגעת בו ועד לבנות כלי שלם למשרד מאפס, עם תיבת פרומפט מוכנה להעתקה בכל רמה.</p>
+<p><strong>מדריך 2 הוא התרגול עצמו.</strong> ארבעה עשר פרומפטים על תיק גירושין בדוי אחד, מביקורת קובץ שהגיע מהצד השני ועד לוח מצב עם תרשימים, ובכל אחד תיבה מוכנה להעתקה. קובץ התרגול עומד שם להורדה, ואין צורך להכין כלום מראש.</p>
 </aside></div>
 
-<div class="guide-section"><nav class="bottom-nav"><a class="button primary" href="../index.html">חזרה למרכז המדריכים</a></nav></div>
+<div class="guide-section"><nav class="bottom-nav"><a class="button primary" href="../guide-2/index.html">המשך למדריך 2</a><a class="button" href="../index.html">חזרה למרכז המדריכים</a></nav></div>
 </main>
 
 <aside class="desktop-toc"><h2>תוכן המדריך</h2><ol>
 <li><a href="#what-it-does"><span>01</span>מה <bdi dir="ltr">Claude</bdi> עושה בתוך גיליון <bdi dir="ltr">Excel</bdi></a></li>
-<li><a href="#full-loop"><span>02</span>איך נראית עבודה שלמה עם <bdi dir="ltr">Claude</bdi> בגיליון</a></li>
-<li><a href="#good-at"><span>03</span>במה <bdi dir="ltr">Claude</bdi> טוב, ומה לא</a></li>
-<li><a href="#requirements"><span>04</span>גרסאות ומנוי</a></li>
-<li><a href="#which-files"><span>05</span>על אילו קבצים מותר</a></li>
-<li><a href="#confidentiality"><span>06</span>חיסיון ולאן המידע מגיע</a></li>
-<li><a href="#install"><span>07</span>התקנת <bdi dir="ltr">Claude</bdi> ב-<bdi dir="ltr">Excel</bdi>, מסך אחר מסך</a></li>
-<li><a href="#first-open"><span>08</span>הפתיחה הראשונה</a></li>
-<li><a href="#phrasing"><span>09</span>איך מנסחים בקשה ל-<bdi dir="ltr">Claude</bdi></a></li>
-<li><a href="#verify"><span>10</span>איך בודקים ש-<bdi dir="ltr">Claude</bdi> לא טעה</a></li>
+<li><a href="#good-at"><span>02</span>במה <bdi dir="ltr">Claude</bdi> טוב, ומה לא</a></li>
+<li><a href="#requirements"><span>03</span>גרסאות ומנוי</a></li>
+<li><a href="#install"><span>04</span>התקנת <bdi dir="ltr">Claude</bdi> ב-<bdi dir="ltr">Excel</bdi>, מסך אחר מסך</a></li>
+<li><a href="#first-open"><span>05</span>הפתיחה הראשונה</a></li>
+<li><a href="#phrasing"><span>06</span>איך מנסחים בקשה ל-<bdi dir="ltr">Claude</bdi></a></li>
+<li><a href="#verify"><span>07</span>איך בודקים ש-<bdi dir="ltr">Claude</bdi> לא טעה</a></li>
+<li><a href="#full-loop"><span>08</span>איך נראית עבודה שלמה, מההתחלה עד הסוף</a></li>
+<li><a href="#which-files"><span>09</span>על אילו קבצים מותר</a></li>
+<li><a href="#confidentiality"><span>10</span>חיסיון ולאן המידע מגיע</a></li>
 <li><a href="#hebrew"><span>11</span>עברית ותאריכים</a></li>
 <li><a href="#persistent"><span>12</span>הוראות קבועות</a></li>
 <li><a href="#faq"><span>13</span>שאלות נפוצות</a></li>
