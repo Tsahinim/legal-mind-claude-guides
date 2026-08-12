@@ -153,3 +153,4 @@
    נוספה אחרי שהקריאה כתלמיד הראתה שכל ארבעה עשר נראים חובה במידה שווה. */
 .fit-tag{display:inline-block;margin:0 0 10px;border:1px solid var(--line);border-radius:999px;padding:3px 11px;background:#fff;color:var(--muted);font-size:12px;font-weight:800;letter-spacing:.02em}
 .fit-tag.is-core{border-color:#9fd3ce;background:#eefaf8;color:var(--teal)}
+@media(max-width:640px){.fit-tag{border-radius:10px;line-height:1.5}}
