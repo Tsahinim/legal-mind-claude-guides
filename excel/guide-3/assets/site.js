@@ -73,3 +73,16 @@ window.addEventListener("load",scan);
 window.addEventListener("resize",()=>{});
 document.addEventListener("keydown",e=>{if(e.key==="Escape")close();});
 })();
+
+// הדפסת רשימת הבדיקה בלבד: המדריך מבטיח שאפשר לתלות אותה על הקיר,
+// ובלי זה הדפסה מוציאה את כל המדריך
+(()=>{"use strict";
+const b=document.querySelector(".print-checklist");if(!b)return;
+b.addEventListener("click",()=>{
+ document.body.classList.add("only-checklist");
+ const off=()=>document.body.classList.remove("only-checklist");
+ window.addEventListener("afterprint",off,{once:true});
+ setTimeout(off,4000);
+ window.print();
+});
+})();

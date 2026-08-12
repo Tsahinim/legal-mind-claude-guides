@@ -132,6 +132,7 @@
 .lightbox-scroll{overflow:auto;width:100%;height:100%;border-radius:12px;background:#fff;cursor:grab;-webkit-overflow-scrolling:touch}
 .lightbox-scroll.is-dragging{cursor:grabbing}
 .lightbox-scroll img{display:block;max-width:none;width:auto;height:auto;border-radius:0;margin-inline:auto;image-rendering:auto}
+.print-checklist{margin:0 0 4px;min-height:42px;font-size:15px}
 .lightbox-close{position:absolute;top:11px;inset-inline-end:14px;z-index:2;min-height:38px;border:1px solid rgba(255,255,255,.7);border-radius:9px;background:rgba(255,255,255,.15);color:#fff;font-family:inherit;font-size:14px;font-weight:900;padding:7px 15px;cursor:pointer}
 .lightbox-close:hover{background:rgba(255,255,255,.28)}
 .lightbox-hint{position:absolute;bottom:11px;inset-inline:0;margin:0;text-align:center;color:#dcecef;font-size:13px}
