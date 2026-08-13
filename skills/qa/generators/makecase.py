@@ -293,4 +293,20 @@ for name, html, scanned in FILES:
           % (name, d.page_count, os.path.getsize(p) / 1024, kind, chars))
     d.close()
 
+# סריקת ניקוי: Windows נועל קובץ זמני לרגע, והמחיקה בתוך הפונקציה
+# נכשלת בשקט. בלי זה נשארים קובצי tmp בתיקייה שהקורא מקבל.
+import time
+leftovers = [f for f in os.listdir(OUT) if f.endswith(".tmp")]
+for f in leftovers:
+    for _ in range(5):
+        try:
+            os.remove(os.path.join(OUT, f)); break
+        except OSError:
+            time.sleep(0.2)
+still = [f for f in os.listdir(OUT) if f.endswith(".tmp")]
+if leftovers:
+    print("\nקובצי עבודה זמניים שנוקו: %d" % (len(leftovers) - len(still)))
+if still:
+    print("שימו לב, נשארו קבצים זמניים: %s" % ", ".join(still))
+
 print("\nנשמר ב: " + OUT)
