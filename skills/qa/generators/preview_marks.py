@@ -75,6 +75,8 @@ def draw(name, targets):
     print(p, im.size)
 
 if __name__ == "__main__":
+    draw("cut-install-popup", [("left:93.1%;top:3.8%;width:5.4%;height:22.9%", "badge-below", 1),
+                               ("left:53.8%;top:61%;width:11%;height:32.4%", "badge-outside-left", 2)])
     draw("cut-include-completed", [("left:52.8%;top:14.3%;width:5.5%;height:28.6%", "badge-below", 1)])
     draw("cut-flagged", [("left:80.6%;top:1.3%;width:17%;height:11.1%", "badge-outside-left", 1),
                          ("left:38.9%;top:48.2%;width:60.6%;height:9.4%", "badge-outside-left", 2)])
