@@ -45,13 +45,14 @@
 <li><a href="#ex2"><span>06</span>תרגיל 2 · מאות עמודים, ושמונה שורות</a></li>
 <li><a href="#ex3"><span>07</span>תרגיל 3 · הכול חזר</a></li>
 <li><a href="#ex4"><span>08</span>תרגיל 4 · הוא בודק את עצמו</a></li>
-<li><a href="#why"><span>09</span>למה זה שונה מכל מה שעשיתם עד כאן</a></li>
-<li><a href="#open"><span>10</span>פותחים את המסך הנכון</a></li>
-<li><a href="#local"><span>11</span><bdi dir="ltr">Local</bdi>, ולא ענן</a></li>
-<li><a href="#form"><span>12</span>ממלאים ארבעה שדות</a></li>
-<li><a href="#run"><span>13</span><bdi dir="ltr">Create</bdi>, ואז <bdi dir="ltr">Run now</bdi></a></li>
-<li><a href="#result"><span>14</span>מה היא החזירה, ולמה זה מרשים</a></li>
-<li><a href="#truth"><span>15</span>מה שחייבים לדעת לפני שסומכים על זה</a></li>
+<li><a href="#ex5"><span>09</span>תרגיל 5 · הוא בונה כלי שעובד</a></li>
+<li><a href="#why"><span>10</span>למה זה שונה מכל מה שעשיתם עד כאן</a></li>
+<li><a href="#open"><span>11</span>פותחים את המסך הנכון</a></li>
+<li><a href="#local"><span>12</span><bdi dir="ltr">Local</bdi>, ולא ענן</a></li>
+<li><a href="#form"><span>13</span>ממלאים ארבעה שדות</a></li>
+<li><a href="#run"><span>14</span><bdi dir="ltr">Create</bdi>, ואז <bdi dir="ltr">Run now</bdi></a></li>
+<li><a href="#result"><span>15</span>מה היא החזירה, ולמה זה מרשים</a></li>
+<li><a href="#truth"><span>16</span>מה שחייבים לדעת לפני שסומכים על זה</a></li>
 </ol></details></nav>
 
 <div class="layout">
@@ -657,8 +658,102 @@
 <p><strong>ובנוסף שלוש הערות תפעוליות שהוא הוסיף:</strong> ששמות הקבצים מטעים ולכן תייק לפי גוף המסמך · ששתי טיוטות ההסכם נושאות נוסח סותר לסעיף 14 ואין בתיק הסכם חתום · <strong>ושלושה מסמכים נסרקו כתמונת ראי, שהוא קרא אותם בכיוון ההפוך והמליץ לאמת מול המקור.</strong></p>
 </section>
 
-<section class="guide-section" id="why">
+<section class="guide-section" id="ex5">
 <span class="section-number">09</span>
+<h2>תרגיל 5 · הוא בונה כלי שעובד</h2>
+
+<p><strong>איפה עובדים:</strong> ב-<bdi dir="ltr">VS Code</bdi> · <strong>כמה זמן:</strong> כשבע דקות</p>
+
+<h3>המטרה</h3>
+
+<p>בהסכם המכר שבתיקייה יש סעיף 4.1: <strong>הערת אזהרה תירשם תוך שבעה ימי עסקים ממועד החתימה.</strong></p>
+
+<p><strong>ושבעה ימי עסקים זה לא שבעה ימים.</strong> צריך לדלג על שישי ושבת, ועל חגים, ולספור. <strong>וזה בדיוק הדבר שנופלים בו כשסופרים ביד</strong>, ושאף אחד לא רוצה לעשות פעמיים.</p>
+
+<p><strong>אז נבקש ממנו לבנות דף שעושה את זה.</strong> מזינים תאריך חתימה, ומקבלים את המועד ואת כל לוח העסקה.</p>
+
+<h3>ההוראה, ולמה היא ארוכה</h3>
+
+<p><strong>זו ההוראה הארוכה ביותר במדריך, ובכוונה.</strong> כשמבקשים כלי ולא תשובה, כל דבר שלא תבקשו במפורש - לא יהיה שם.</p>
+
+<ul class="bullets">
+<li><strong>"בורר תאריכים, ולא פורמט אמריקאי".</strong> בלי זה מי שיקליד <bdi dir="ltr">04/02</bdi> ויתכוון ל-4 בפברואר יקבל חישוב על 2 באפריל, <strong>ולא יידע.</strong></li>
+<li><strong>"אם אינך יודע אילו חגים חלים, אל תנחש".</strong> חג שגוי בחישוב משפטי גרוע מהיעדר חג.</li>
+<li><strong>"דווח על חג רק אם הוא באמת השפיע".</strong> על השורה הזאת נרחיב עוד רגע.</li>
+<li><strong>"אל תוסיף כפתור חשב".</strong> כפתור שלא עושה כלום גרוע מהיעדר כפתור, <strong>כי אינכם יודעים אם מה שמוצג מעודכן.</strong></li>
+</ul>
+
+<div class="copy-block">
+  <div class="copy-heading">
+    <strong>ההוראה, להעתקה</strong>
+    <button class="copy-button" data-copy-target="ex5-prompt" type="button">העתקת ההוראה</button>
+  </div>
+  <div class="copy-body" id="ex5-prompt">בתיקייה יש הסכם מכר. קרא אותו.
+
+בנה לי דף שאפשר לפתוח בדפדפן בלחיצה כפולה, ושבו מזינים תאריך חתימה של עסקה ומקבלים את לוח המועדים שלה במלואו, לפי המנגנונים שבהסכם הזה.
+
+הדף צריך:
+
+לקבל תאריך חתימה בבורר תאריכים, ולהציג אותו במבנה יום/חודש/שנה ולא בפורמט אמריקאי.
+
+לחשב את המועד לרישום הערת אזהרה לפי סעיף 4.1, כלומר שבעה ימי עסקים ממועד החתימה. ימי עסקים בישראל אינם כוללים שישי, שבת וחגים.
+
+לאפשר להוסיף ימי חג ושבתון, וגם הם ייבחרו בבורר תאריכים ולא יוקלדו. אפשר להוסיף כמה, ואפשר להסיר. אם אינך יודע בוודאות אילו חגים חלים, אל תנחש: כתוב בדף איזו הנחה הנחת.
+
+לדווח על ימי חג רק אם הם נפלו בתוך תקופת הספירה והשפיעו עליה בפועל. אם הוזן חג שאינו רלוונטי, אמור זאת בנפרד ובמפורש. אל תדווח שהוצא חג כשהתוצאה זהה לחישוב בלי חגים.
+
+להציג את כל מועדי התשלום ואת מועד המסירה שבהסכם, עם הסכומים והשיעורים, ולסמן כל מועד שכבר חלף.
+
+להציג טבלה שמראה את ספירת שבעת ימי העסקים יום אחר יום, עם הסיבה לכל דילוג.
+
+ולעבוד בעברית, מימין לשמאל, בלי חיבור לאינטרנט ובלי שום התקנה.
+
+אל תוסיף כפתור "חשב". התוצאה צריכה להתעדכן לבד בכל שינוי.
+
+שמור אותו בתיקייה בשם לפי נהלי המשרד, עם סיומת html.
+
+בסוף כתוב לי בקצרה מה בנית, איזה סעיף בהסכם עומד מאחורי כל חישוב, ומה לא הצלחת לוודא.
+
+אל תשנה, תמחק או תשנה שם לאף מסמך קיים בתיקייה.</div>
+  <span class="copy-status" aria-live="polite" aria-atomic="true"></span>
+</div>
+
+<h3>מה יקרה אחרי שתדביקו</h3>
+
+<p>הוא יקרא את ההסכם ויכתוב קובץ אחד עם סיומת <bdi dir="ltr">html</bdi>. <strong>לחיצה ימנית עליו בסייר ← <bdi dir="ltr">Reveal in File Explorer</bdi> ← לחיצה כפולה, והוא נפתח בדפדפן.</strong></p>
+
+<h3>ומה שקיבלנו כשהרצנו את זה</h3>
+
+<p><strong>דף עובד, ואימתנו כל מספר שבו ביד.</strong></p>
+
+<p>חתימה ב-04.02 נותנת 15.02 · ב-05.01 נותנת 14.01 · ב-08.01 נותנת 19.01 · ב-02.04 נותנת 13.04. <strong>ספירת ימי עסקים אמיתית, לא שבעה ימי לוח.</strong> וכל התאריכים, הסכומים והאחוזים בלוח המלא נכונים.</p>
+
+<aside class="content-box legal-example">
+<h3>ושתי התנהגויות ששוות יותר מהדף</h3>
+<p><strong>הוא סירב לנחש על חגים:</strong> <em>"לא אימתתי אילו חגים חלים ב-2026, ולכן לא הנחתי דבר. החישוב מדלג על שישי ושבת בלבד."</em> <strong>ובנה שדה למי שיודע, במקום להמציא תשובה.</strong></p>
+<p><strong>והוא תיקן את הבקשה שלנו:</strong> כתבנו "שלושת מועדי התשלום", והוא ענה שההסכם מונה <strong>ארבעה</strong> - הרביעי הוא היתרה במסירה - <strong>והציג את כולם.</strong></p>
+</aside>
+
+<h3>ועכשיו החלק שבגללו התרגיל הזה אחרון</h3>
+
+<p><strong>בגרסה הראשונה שבנינו מצאנו שלושה ליקויים.</strong> ואת שלושתם מצאנו כי בדקנו, לא כי הוא אמר.</p>
+
+<ul class="bullets">
+<li><strong>כפתור שלא עשה כלום.</strong> התוצאה התעדכנה לבד ממילא.</li>
+<li><strong>שני שדות תאריך זה ליד זה, בשני פורמטים הפוכים.</strong></li>
+<li><strong>ובאג של ממש:</strong> הדף כתב "הוצאו מהספירה ימי חג" גם כשהחג היה מחוץ לתקופה ולא השפיע כלל. <strong>ורק טבלת הספירה יום אחר יום הוכיחה זאת</strong> - אותו יום הופיע בה כיום עסקים רגיל.</li>
+</ul>
+
+<aside class="content-box recommendation">
+<h3>והרגע</h3>
+<p><strong>הוא בנה כלי שמראה את עבודתו.</strong> לא רק תוצאה, אלא ספירה מלאה שאפשר לבדוק שורה-שורה - <strong>ובזכותה תפסנו טעות שהסיכום שלו הסתיר.</strong></p>
+<p><strong>וזה המסר של המדריך כולו:</strong> לא "הוא בנה, אז זה נכון", אלא <strong>"הוא בנה, וגם נתן לי איך לבדוק - אז בדקתי, ומצאתי".</strong></p>
+<p>ההוראה שלמעלה כבר כוללת את שלושת התיקונים. <strong>אתם מקבלים את הגרסה שעברה בדיקה.</strong></p>
+</aside>
+</section>
+
+<section class="guide-section" id="why">
+<span class="section-number">10</span>
 <h2>למה זה שונה מכל מה שעשיתם עד כאן</h2>
 
 <p>בכל מה שלמדתם עד עכשיו, וגם בכל מה שאתם מכירים מהעבודה בדפדפן, אתם נמצאים בקצה אחד: אתם כותבים, אתם ממתינים, אתם מקבלים. תמיד יש בן אדם שיוזם.</p>
@@ -681,7 +776,7 @@
 </section>
 
 <section class="guide-section" id="open">
-<span class="section-number">10</span>
+<span class="section-number">11</span>
 <h2>פותחים את המסך הנכון</h2>
 
 <p><strong>למעלה, ליד <bdi dir="ltr">Home</bdi>, לחצו על <bdi dir="ltr">Code</bdi>.</strong> זו אותה אפליקציה שאתם מכירים, וזה הצד שבו יושב <bdi dir="ltr">Claude Code</bdi>.</p>
@@ -713,7 +808,7 @@
 </section>
 
 <section class="guide-section" id="local">
-<span class="section-number">11</span>
+<span class="section-number">12</span>
 <h2><bdi dir="ltr">Local</bdi>, ולא ענן</h2>
 
 <p>בפינה למעלה יש <bdi dir="ltr">New routine</bdi> ולידו חץ קטן.</p>
@@ -744,7 +839,7 @@
 </section>
 
 <section class="guide-section" id="form">
-<span class="section-number">12</span>
+<span class="section-number">13</span>
 <h2>ממלאים ארבעה שדות</h2>
 
 <p>זה הטופס הנכון. יש בו שדה לבחירת תיקייה, בורר מודל, ואפשרות <bdi dir="ltr">Manual</bdi> בשורת התזמון.</p>
@@ -859,7 +954,7 @@
 </section>
 
 <section class="guide-section" id="run">
-<span class="section-number">13</span>
+<span class="section-number">14</span>
 <h2><bdi dir="ltr">Create</bdi>, ואז <bdi dir="ltr">Run now</bdi></h2>
 
 <p>בדף שנפתח, למעלה בקצה, יש כפתור שחור: <strong><bdi dir="ltr">Run now</bdi></strong>.</p>
@@ -901,7 +996,7 @@
 </section>
 
 <section class="guide-section" id="result">
-<span class="section-number">14</span>
+<span class="section-number">15</span>
 <h2>מה היא החזירה, ולמה זה מרשים</h2>
 
 <p>בהרצה שלנו הקובץ נכתב שלוש דקות אחרי הלחיצה. בתוכו שתי טבלאות ועשרה סעיפי "טעון בדיקה", וכל שורה עם התאריך, מה נדרש, מי הצד החייב, ומאיזה מסמך ומאיזה סעיף.</p>
@@ -923,7 +1018,7 @@
 </section>
 
 <section class="guide-section" id="truth">
-<span class="section-number">15</span>
+<span class="section-number">16</span>
 <h2>מה שחייבים לדעת לפני שסומכים על זה</h2>
 
 <p><strong>שלושה תנאים, וכולם מתקיימים או שכלום לא קורה:</strong></p>
@@ -964,13 +1059,14 @@
 <li><a href="#ex2"><span>06</span>תרגיל 2 · מאות עמודים, ושמונה שורות</a></li>
 <li><a href="#ex3"><span>07</span>תרגיל 3 · הכול חזר</a></li>
 <li><a href="#ex4"><span>08</span>תרגיל 4 · הוא בודק את עצמו</a></li>
-<li><a href="#why"><span>09</span>למה זה שונה מכל מה שעשיתם עד כאן</a></li>
-<li><a href="#open"><span>10</span>פותחים את המסך הנכון</a></li>
-<li><a href="#local"><span>11</span><bdi dir="ltr">Local</bdi>, ולא ענן</a></li>
-<li><a href="#form"><span>12</span>ממלאים ארבעה שדות</a></li>
-<li><a href="#run"><span>13</span><bdi dir="ltr">Create</bdi>, ואז <bdi dir="ltr">Run now</bdi></a></li>
-<li><a href="#result"><span>14</span>מה היא החזירה, ולמה זה מרשים</a></li>
-<li><a href="#truth"><span>15</span>מה שחייבים לדעת לפני שסומכים על זה</a></li>
+<li><a href="#ex5"><span>09</span>תרגיל 5 · הוא בונה כלי שעובד</a></li>
+<li><a href="#why"><span>10</span>למה זה שונה מכל מה שעשיתם עד כאן</a></li>
+<li><a href="#open"><span>11</span>פותחים את המסך הנכון</a></li>
+<li><a href="#local"><span>12</span><bdi dir="ltr">Local</bdi>, ולא ענן</a></li>
+<li><a href="#form"><span>13</span>ממלאים ארבעה שדות</a></li>
+<li><a href="#run"><span>14</span><bdi dir="ltr">Create</bdi>, ואז <bdi dir="ltr">Run now</bdi></a></li>
+<li><a href="#result"><span>15</span>מה היא החזירה, ולמה זה מרשים</a></li>
+<li><a href="#truth"><span>16</span>מה שחייבים לדעת לפני שסומכים על זה</a></li>
 </ol>
 </aside>
 </div>
