@@ -1101,6 +1101,8 @@ __PLACEHOLDER_DONE__
 <p>משימה שהסתיימה נעלמת מהרשימה. יש בדף <bdi dir="ltr">Routines</bdi> מתג בשם <bdi dir="ltr">Include completed</bdi>, <strong>והוא חוזר לכבוי בכל כניסה.</strong> אם המשימה שלכם "נעלמה" - הדליקו אותו.</p>
 </aside>
 
+__FIG_INCLUDECOMPLETED__
+
 <aside class="content-box warning">
 <h3>ושני דברים שיפילו לכם את המשימה ביום שתכתבו אחת משלכם</h3>
 <p><strong>לכל הרצה אין זיכרון.</strong> לא מהשיחה שבה הגדרתם את המשימה, ולא מההרצה של אתמול. <strong>"תבדוק כמו שסיכמנו" לא יעבוד,</strong> כי אין "סיכמנו". ההוראה צריכה לעמוד לבדה, כאילו נתתם אותה למישהו שרואה את התיק בפעם הראשונה.</p>
@@ -1387,6 +1389,11 @@ HTML = HTML.replace("__FIG_PANEL__", shot("cut-panel-top",
             "והלשונית <bdi dir=\"ltr\">Chat</bdi> שלידה <strong>אינה של <bdi dir=\"ltr\">Claude</bdi>.</strong> היא של <bdi dir=\"ltr\">VS Code</bdi>, ומי שיכתוב בה יקבל תשובה ממישהו אחר.",
             "<strong>אייקון השעון.</strong> לחיצה עליו פותחת את כל השיחות שהיו בתיקייה הזאת.",
             "והפלוס שלידו <strong>פותח שיחה חדשה.</strong> אל תלחצו עליו כשאתם מחפשים שיחה ישנה."]))
+
+HTML = HTML.replace("__FIG_INCLUDECOMPLETED__", shot("cut-include-completed",
+    "המתג שמחזיר משימות שהסתיימו לרשימה",
+    targets=[("left:52.8%;top:14.3%;width:5.5%;height:28.6%", "badge-below", 1)],
+    legend=["<bdi dir=\"ltr\">Include completed</bdi>, ולידו מספר המשימות שמוסתרות כרגע. <strong>הוא כבוי כברירת מחדל וחוזר לכבוי בכל כניסה</strong> - וזו כל הסיבה שנדמה שהמשימה נמחקה."]))
 
 HTML = HTML.replace("__FIG_FLAGGED__", shot("cut-flagged",
     "החלק שלא ביקשנו: מה שהוא סימן כטעון בדיקה, מתוך ההרצה עצמה",
