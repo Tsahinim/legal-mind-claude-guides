@@ -17,6 +17,7 @@
 <body>
 
 <a class="skip" href="#main">דילוג לתוכן</a>
+<nav class="backbar"><a href="../index.html">חזרה למרכז המדריכים</a></nav>
 
 <div class="skills-brand">
   <img class="skills-logo" src="../assets/legal-mind-logo-tight.png"
@@ -37,7 +38,20 @@
   </dl>
 </header>
 
-<main id="main">
+<nav class="mobile-toc"><details><summary>תוכן המדריך</summary><ol>
+<li><a href="#start"><span>01</span>לפני שמתחילים, כמה מילים ביניכם לביני</a></li>
+<li><a href="#download"><span>02</span>מורידים את התיק שנעבוד עליו</a></li>
+<li><a href="#why"><span>03</span>למה זה שונה מכל מה שעשיתם עד כאן</a></li>
+<li><a href="#open"><span>04</span>פותחים את המסך הנכון</a></li>
+<li><a href="#local"><span>05</span><bdi dir="ltr">Local</bdi>, ולא ענן</a></li>
+<li><a href="#form"><span>06</span>ממלאים ארבעה שדות</a></li>
+<li><a href="#run"><span>07</span><bdi dir="ltr">Create</bdi>, ואז <bdi dir="ltr">Run now</bdi></a></li>
+<li><a href="#result"><span>08</span>מה היא החזירה, ולמה זה מרשים</a></li>
+<li><a href="#truth"><span>09</span>מה שחייבים לדעת לפני שסומכים על זה</a></li>
+</ol></details></nav>
+
+<div class="layout">
+<main class="surface" id="main">
 
 <aside class="content-box warning">
 <p><strong>מסמך עבודה.</strong> זו טיוטה פנימית לבדיקה, ולא מדריך שפורסם. הסימונים האדומים על הצילומים והמקרא הממוספר טרם בוצעו, ושני צילומים עדיין חסרים ומסומנים בגוף הטקסט.</p>
@@ -367,11 +381,93 @@
 
 </main>
 
-<footer class="page-footer">
-<p><bdi dir="ltr">Legal Mind</bdi> · טיוטת פרק לבדיקה פנימית · 14.08.2026</p>
-</footer>
+<aside class="desktop-toc">
+<h2>תוכן המדריך</h2>
+<ol>
+<li><a href="#start"><span>01</span>לפני שמתחילים, כמה מילים ביניכם לביני</a></li>
+<li><a href="#download"><span>02</span>מורידים את התיק שנעבוד עליו</a></li>
+<li><a href="#why"><span>03</span>למה זה שונה מכל מה שעשיתם עד כאן</a></li>
+<li><a href="#open"><span>04</span>פותחים את המסך הנכון</a></li>
+<li><a href="#local"><span>05</span><bdi dir="ltr">Local</bdi>, ולא ענן</a></li>
+<li><a href="#form"><span>06</span>ממלאים ארבעה שדות</a></li>
+<li><a href="#run"><span>07</span><bdi dir="ltr">Create</bdi>, ואז <bdi dir="ltr">Run now</bdi></a></li>
+<li><a href="#result"><span>08</span>מה היא החזירה, ולמה זה מרשים</a></li>
+<li><a href="#truth"><span>09</span>מה שחייבים לדעת לפני שסומכים על זה</a></li>
+</ol>
+</aside>
+</div>
 
-<script src="../assets/site.js?v=20260807"></script>
+<footer><bdi dir="ltr">Legal Mind</bdi> | מדריך ההמשך על <bdi dir="ltr">Claude Code</bdi> לעורכי דין | טיוטה לבדיקה</footer>
+
+<script>
+(function(){
+  document.addEventListener("click", function(ev){
+    var btn = ev.target.closest(".copy-button");
+    if(!btn) return;
+    var block = btn.closest(".copy-block");
+    var src = document.getElementById(btn.getAttribute("data-copy-target"));
+    var status = block ? block.querySelector(".copy-status") : null;
+    if(!src) return;
+    var text = src.innerText.replace(/ /g, " ").trim();
+    var done = function(ok){
+      if(!status) return;
+      status.textContent = ok ? "הועתק" : "ההעתקה לא הצליחה. סמנו את הטקסט והעתיקו ידנית.";
+      status.style.color = ok ? "" : "var(--red)";
+      window.setTimeout(function(){ status.textContent = ""; }, 3000);
+    };
+    if(navigator.clipboard && window.isSecureContext){
+      navigator.clipboard.writeText(text).then(function(){ done(true); }, function(){ fallback(); });
+    } else { fallback(); }
+    function fallback(){
+      var ta = document.createElement("textarea");
+      ta.value = text;
+      ta.setAttribute("readonly", "");
+      ta.style.position = "fixed";
+      ta.style.top = "-1000px";
+      document.body.appendChild(ta);
+      ta.select();
+      var ok = false;
+      try { ok = document.execCommand("copy"); } catch(e) { ok = false; }
+      document.body.removeChild(ta);
+      done(ok);
+    }
+  });
+})();
+
+/* סימון הפרק הפעיל בסרגל הצד, זהה להתנהגות בסדרת Excel */
+(function(){
+  "use strict";
+  var sections = [].slice.call(document.querySelectorAll(".guide-section[id]"));
+  var links = [].slice.call(document.querySelectorAll(".desktop-toc a[href^='#']"));
+  if(!sections.length || !links.length) return;
+  var linked = sections.filter(function(s){
+    return links.some(function(a){ return a.getAttribute("href") === "#" + s.id; });
+  });
+  if(!linked.length) return;
+  var current = null;
+  function set(id){
+    if(id === current) return;
+    current = id;
+    links.forEach(function(a){
+      if(a.getAttribute("href") === "#" + id){ a.setAttribute("aria-current","location"); }
+      else { a.removeAttribute("aria-current"); }
+    });
+  }
+  function pick(){
+    var line = window.innerHeight * 0.25, best = linked[0];
+    for(var i = 0; i < linked.length; i++){
+      if(linked[i].getBoundingClientRect().top <= line){ best = linked[i]; } else { break; }
+    }
+    set(best.id);
+  }
+  pick();
+  window.addEventListener("scroll", pick, {passive:true});
+  window.addEventListener("resize", pick, {passive:true});
+})();
+
+
+
+</script>
 
 </body>
 </html>
