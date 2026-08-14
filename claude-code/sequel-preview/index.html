@@ -39,13 +39,14 @@
 <nav class="mobile-toc"><details><summary>תוכן המדריך</summary><ol>
 <li><a href="#start"><span>01</span>לפני שמתחילים, כמה מילים ביניכם לביני</a></li>
 <li><a href="#download"><span>02</span>מורידים את התיק שנעבוד עליו</a></li>
-<li><a href="#why"><span>03</span>למה זה שונה מכל מה שעשיתם עד כאן</a></li>
-<li><a href="#open"><span>04</span>פותחים את המסך הנכון</a></li>
-<li><a href="#local"><span>05</span><bdi dir="ltr">Local</bdi>, ולא ענן</a></li>
-<li><a href="#form"><span>06</span>ממלאים ארבעה שדות</a></li>
-<li><a href="#run"><span>07</span><bdi dir="ltr">Create</bdi>, ואז <bdi dir="ltr">Run now</bdi></a></li>
-<li><a href="#result"><span>08</span>מה היא החזירה, ולמה זה מרשים</a></li>
-<li><a href="#truth"><span>09</span>מה שחייבים לדעת לפני שסומכים על זה</a></li>
+<li><a href="#panic"><span>03</span>כשמשהו נראה שבור, והוא לא</a></li>
+<li><a href="#why"><span>04</span>למה זה שונה מכל מה שעשיתם עד כאן</a></li>
+<li><a href="#open"><span>05</span>פותחים את המסך הנכון</a></li>
+<li><a href="#local"><span>06</span><bdi dir="ltr">Local</bdi>, ולא ענן</a></li>
+<li><a href="#form"><span>07</span>ממלאים ארבעה שדות</a></li>
+<li><a href="#run"><span>08</span><bdi dir="ltr">Create</bdi>, ואז <bdi dir="ltr">Run now</bdi></a></li>
+<li><a href="#result"><span>09</span>מה היא החזירה, ולמה זה מרשים</a></li>
+<li><a href="#truth"><span>10</span>מה שחייבים לדעת לפני שסומכים על זה</a></li>
 </ol></details></nav>
 
 <div class="layout">
@@ -132,8 +133,103 @@
 </aside>
 </section>
 
-<section class="guide-section" id="why">
+<section class="guide-section" id="panic">
 <span class="section-number">03</span>
+<h2>כשמשהו נראה שבור, והוא לא</h2>
+
+<p>לפני שנתחיל לעבוד, נקדיש כמה דקות לדבר שאף מדריך לא טורח לספר עליו: <strong>מה קורה כשהמסך פתאום נראה אחרת ממה שציפיתם.</strong></p>
+
+<p><bdi dir="ltr">Claude Code</bdi> אינו תוכנה בפני עצמה. <strong>הוא מתארח בתוך <bdi dir="ltr">VS Code</bdi></strong>, שהיא סביבה גדולה עם הרבה חלונות, לשוניות והודעות משלה. <strong>רובן לא נוגעות אליכם בכלל</strong>, אבל כשהן קופצות באמצע עבודה קל לחשוב שמשהו התקלקל.</p>
+
+<aside class="content-box recommendation">
+<p><strong>אף אחד מהמצבים שבפרק הזה אינו תקלה, ואף אחד מהם לא שבר כלום.</strong> לכל אחד יש פתרון של לחיצה או שתיים. <strong>קראו את הפרק עכשיו, ותחזרו אליו כשמשהו ייראה לכם מוזר.</strong></p>
+</aside>
+
+<h3>1 · פתחתי תיקייה, ו-<bdi dir="ltr">Claude</bdi> נעלם</h3>
+
+<p><strong>מה שרואים:</strong> פתחתם תיקייה חדשה, ופתאום אין חלונית של <bdi dir="ltr">Claude</bdi> ואין אפילו את הסמל שלו בצד. <strong>נראה כאילו הוא הוסר מהמחשב.</strong></p>
+
+<p><strong>מה קרה באמת:</strong> <bdi dir="ltr">VS Code</bdi> לא פותח תוספים בתיקייה שהוא עוד לא מכיר, עד שתאשרו שאתם בוטחים בה. <strong>זו הגנה, לא תקלה.</strong></p>
+
+<p><strong>מה עושים:</strong> למעלה תופיע שורה כחולה. <strong>לוחצים בה <bdi dir="ltr">Manage</bdi>, ובחלון שנפתח לוחצים <bdi dir="ltr">Trust</bdi>.</strong> מרגע זה <bdi dir="ltr">Claude</bdi> חוזר.</p>
+
+<aside class="content-box warning">
+<p><strong>סליחה שנחזור על זה גם בהמשך.</strong> זה השלב שהכי קל לשכוח, ובלעדיו נראה שהכלי פשוט לא עובד.</p>
+</aside>
+
+<h3>2 · יש כאן עוד חלונות צ'אט, ואני לא יודע באיזה לכתוב</h3>
+
+<p><strong>מה שרואים:</strong> יותר מחלונית שיחה אחת, וכולן נראות דומה.</p>
+
+<p><strong>מה קרה באמת:</strong> ל-<bdi dir="ltr">VS Code</bdi> יש חלוניות צ'אט משלו ושל תוספים אחרים. <strong>מי שיכתוב בחלונית הלא נכונה יקבל תשובה ממישהו אחר לגמרי, או שלא יקבל כלום.</strong></p>
+
+<p><strong>איך מזהים את של <bdi dir="ltr">Claude</bdi>, ושלושה סימנים שכל אחד מהם מספיק:</strong></p>
+
+<ul class="bullets">
+<li>הכותרת <bdi dir="ltr">Claude Code</bdi> והכוכבית הכתומה.</li>
+<li>בתחתית תיבת הכתיבה מופיע שם המודל, למשל <bdi dir="ltr">Opus 5</bdi>. <strong>בחלוניות אחרות זה לא מופיע.</strong></li>
+<li>ובסרגל האייקונים שבצד, הכוכבית הכתומה מחזירה תמיד לחלונית הנכונה.</li>
+</ul>
+
+<h3>3 · <bdi dir="ltr">Claude</bdi> היה כאן ופתאום איננו</h3>
+
+<p><strong>מה שרואים:</strong> לחצתם על שם של קובץ בשיחה, הקובץ נפתח, <strong>ובמקום השיחה יש עכשיו מסמך.</strong></p>
+
+<p><strong>מה קרה באמת:</strong> החלונית של <bdi dir="ltr">Claude</bdi> היא לשונית, בדיוק כמו קובץ. <strong>היא לא נסגרה, היא מאחור.</strong></p>
+
+<p><strong>מה עושים:</strong> למעלה, בשורת הלשוניות, <strong>לוחצים על הלשונית עם הכוכבית הכתומה.</strong></p>
+
+<h3>4 · המסך התמלא בלשוניות</h3>
+
+<p><strong>מה שרואים:</strong> אחרי כמה לחיצות המסך עמוס, והחלונית של <bdi dir="ltr">Claude</bdi> הצטמצמה לפינה.</p>
+
+<p><strong>מה עושים:</strong> שלוש הנקודות בפינת אזור הלשוניות, ואז <bdi dir="ltr">Close All</bdi>. <strong>או בקיצור: <bdi dir="ltr">Ctrl+K</bdi> ואחריו <bdi dir="ltr">W</bdi>.</strong></p>
+
+<p><strong>ואל תחששו לסגור.</strong> שום דבר לא נמחק, והקבצים נשארים בתיקייה. <strong>כדי לעבוד מספיקות התיקייה בצד וחלונית <bdi dir="ltr">Claude</bdi> באמצע.</strong></p>
+
+<h3>5 · קפץ חלון שמציע להתקין משהו</h3>
+
+<p><strong>מה שרואים:</strong> חלון קטן שמציע להתקין תוסף, למשל לצפייה בקובצי <bdi dir="ltr">PDF</bdi>.</p>
+
+<p><strong>מה עושים: סוגרים אותו ב-<bdi dir="ltr">X</bdi>.</strong> הוא לא קשור לתרגיל. <bdi dir="ltr">Claude</bdi> קורא את המסמכים בעצמו, בלי שום תוספת.</p>
+
+<p><strong>וכלל כללי שחוסך את כל השאלות מהסוג הזה: כל דבר שקופץ ומציע להתקין - לא צריך.</strong></p>
+
+<h3>6 · איך חוזרים לשיחה קודמת</h3>
+
+<p><strong>מה שרואים:</strong> פתחתם תיקייה שעבדתם בה אתמול, <strong>והשיחה ריקה. כאילו הכל נמחק.</strong></p>
+
+<p><strong>מה קרה באמת: כלום. השיחות שלכם שמורות.</strong> פתיחת תיקייה פותחת שיחה חדשה, ולא את האחרונה.</p>
+
+<p><strong>מה עושים: בראש חלונית <bdi dir="ltr">Claude Code</bdi> יש כפתור בשם <bdi dir="ltr">Session history</bdi>. לוחצים עליו</strong>, ונפתחת רשימת כל השיחות שהיו בתיקייה הזאת - <strong>עם חיפוש לפי מילה, ועם חלוקה להיום, אתמול ושבעה ימים אחרונים.</strong> לוחצים על שיחה, והיא נפתחת עם כל ההיסטוריה שלה.</p>
+
+<aside class="content-box info">
+<h3>ולמה השיחות שייכות לתיקייה</h3>
+<p>שיחה על תיק אחד לא תופיע כשתפתחו תיקייה של תיק אחר. <strong>וזה בדיוק מה שאתם רוצים:</strong> כל תיק והשיחות שלו, בלי ערבוב בין לקוחות, ובלי סיכוי לפתוח בטעות שיחה על תיק אחר מול לקוח שיושב מולכם.</p>
+</aside>
+
+<h3>7 · איך עוברים לתיקייה אחרת</h3>
+
+<p><bdi dir="ltr">File</bdi> ואז <bdi dir="ltr">Open Recent</bdi>, ושם רשימת התיקיות שפתחתם לאחרונה. או <bdi dir="ltr">Open Folder</bdi> לתיקייה חדשה.</p>
+
+<p><strong>ושימו לב: זו רשימת תיקיות, לא רשימת שיחות.</strong> אחרי שהתיקייה נפתחת, מגיעים לשיחה דרך <bdi dir="ltr">Session history</bdi> שבסעיף הקודם. <strong>קודם התיקייה, ואז השיחה.</strong></p>
+
+<h3>8 · הוא אמר שיצר קבצים, ואני לא רואה אותם</h3>
+
+<p><strong>או ההפך: מחקנו קבצים והם עדיין מופיעים.</strong></p>
+
+<p><strong>מה קרה באמת:</strong> רשימת הקבצים בצד לא תמיד מתעדכנת מיד. <strong>הקבצים כבר במקום, זו רק התצוגה.</strong></p>
+
+<p><strong>מה עושים:</strong> לוחצים על שם התיקייה ברשימה, או על אייקון הרענון שבראש הרשימה.</p>
+
+<aside class="content-box recommendation">
+<h3>ואם כלום מזה לא עזר</h3>
+<p><strong>סגרו את <bdi dir="ltr">VS Code</bdi> ופתחו מחדש.</strong> זה נשמע פשוט מדי, וזה פותר את רוב הדברים המוזרים. <strong>שום שיחה ושום קובץ לא ילכו לאיבוד</strong> - הכל שמור, וה-<bdi dir="ltr">Session history</bdi> יחכה לכם בדיוק כפי שהיה.</p>
+</aside>
+</section>
+
+<section class="guide-section" id="why">
+<span class="section-number">04</span>
 <h2>למה זה שונה מכל מה שעשיתם עד כאן</h2>
 
 <p>בכל מה שלמדתם עד עכשיו, וגם בכל מה שאתם מכירים מהעבודה בדפדפן, אתם נמצאים בקצה אחד: אתם כותבים, אתם ממתינים, אתם מקבלים. תמיד יש בן אדם שיוזם.</p>
@@ -156,7 +252,7 @@
 </section>
 
 <section class="guide-section" id="open">
-<span class="section-number">04</span>
+<span class="section-number">05</span>
 <h2>פותחים את המסך הנכון</h2>
 
 <p><strong>למעלה, ליד <bdi dir="ltr">Home</bdi>, לחצו על <bdi dir="ltr">Code</bdi>.</strong> זו אותה אפליקציה שאתם מכירים, וזה הצד שבו יושב <bdi dir="ltr">Claude Code</bdi>.</p>
@@ -188,7 +284,7 @@
 </section>
 
 <section class="guide-section" id="local">
-<span class="section-number">05</span>
+<span class="section-number">06</span>
 <h2><bdi dir="ltr">Local</bdi>, ולא ענן</h2>
 
 <p>בפינה למעלה יש <bdi dir="ltr">New routine</bdi> ולידו חץ קטן.</p>
@@ -219,7 +315,7 @@
 </section>
 
 <section class="guide-section" id="form">
-<span class="section-number">06</span>
+<span class="section-number">07</span>
 <h2>ממלאים ארבעה שדות</h2>
 
 <p>זה הטופס הנכון. יש בו שדה לבחירת תיקייה, בורר מודל, ואפשרות <bdi dir="ltr">Manual</bdi> בשורת התזמון.</p>
@@ -334,7 +430,7 @@
 </section>
 
 <section class="guide-section" id="run">
-<span class="section-number">07</span>
+<span class="section-number">08</span>
 <h2><bdi dir="ltr">Create</bdi>, ואז <bdi dir="ltr">Run now</bdi></h2>
 
 <p>בדף שנפתח, למעלה בקצה, יש כפתור שחור: <strong><bdi dir="ltr">Run now</bdi></strong>.</p>
@@ -376,7 +472,7 @@
 </section>
 
 <section class="guide-section" id="result">
-<span class="section-number">08</span>
+<span class="section-number">09</span>
 <h2>מה היא החזירה, ולמה זה מרשים</h2>
 
 <p>בהרצה שלנו הקובץ נכתב שלוש דקות אחרי הלחיצה. בתוכו שתי טבלאות ועשרה סעיפי "טעון בדיקה", וכל שורה עם התאריך, מה נדרש, מי הצד החייב, ומאיזה מסמך ומאיזה סעיף.</p>
@@ -398,7 +494,7 @@
 </section>
 
 <section class="guide-section" id="truth">
-<span class="section-number">09</span>
+<span class="section-number">10</span>
 <h2>מה שחייבים לדעת לפני שסומכים על זה</h2>
 
 <p><strong>שלושה תנאים, וכולם מתקיימים או שכלום לא קורה:</strong></p>
@@ -433,13 +529,14 @@
 <ol>
 <li><a href="#start"><span>01</span>לפני שמתחילים, כמה מילים ביניכם לביני</a></li>
 <li><a href="#download"><span>02</span>מורידים את התיק שנעבוד עליו</a></li>
-<li><a href="#why"><span>03</span>למה זה שונה מכל מה שעשיתם עד כאן</a></li>
-<li><a href="#open"><span>04</span>פותחים את המסך הנכון</a></li>
-<li><a href="#local"><span>05</span><bdi dir="ltr">Local</bdi>, ולא ענן</a></li>
-<li><a href="#form"><span>06</span>ממלאים ארבעה שדות</a></li>
-<li><a href="#run"><span>07</span><bdi dir="ltr">Create</bdi>, ואז <bdi dir="ltr">Run now</bdi></a></li>
-<li><a href="#result"><span>08</span>מה היא החזירה, ולמה זה מרשים</a></li>
-<li><a href="#truth"><span>09</span>מה שחייבים לדעת לפני שסומכים על זה</a></li>
+<li><a href="#panic"><span>03</span>כשמשהו נראה שבור, והוא לא</a></li>
+<li><a href="#why"><span>04</span>למה זה שונה מכל מה שעשיתם עד כאן</a></li>
+<li><a href="#open"><span>05</span>פותחים את המסך הנכון</a></li>
+<li><a href="#local"><span>06</span><bdi dir="ltr">Local</bdi>, ולא ענן</a></li>
+<li><a href="#form"><span>07</span>ממלאים ארבעה שדות</a></li>
+<li><a href="#run"><span>08</span><bdi dir="ltr">Create</bdi>, ואז <bdi dir="ltr">Run now</bdi></a></li>
+<li><a href="#result"><span>09</span>מה היא החזירה, ולמה זה מרשים</a></li>
+<li><a href="#truth"><span>10</span>מה שחייבים לדעת לפני שסומכים על זה</a></li>
 </ol>
 </aside>
 </div>
