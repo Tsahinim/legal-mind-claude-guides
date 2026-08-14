@@ -41,13 +41,14 @@
 <li><a href="#download"><span>02</span>מורידים את התיק שנעבוד עליו</a></li>
 <li><a href="#firstopen"><span>03</span>פתחתם תיקייה. עכשיו איך מגיעים לשיחה</a></li>
 <li><a href="#panic"><span>04</span><bdi dir="ltr">Claude</bdi> מתארח כאן, ולכן לפעמים צריך עוד לחיצה</a></li>
-<li><a href="#why"><span>05</span>למה זה שונה מכל מה שעשיתם עד כאן</a></li>
-<li><a href="#open"><span>06</span>פותחים את המסך הנכון</a></li>
-<li><a href="#local"><span>07</span><bdi dir="ltr">Local</bdi>, ולא ענן</a></li>
-<li><a href="#form"><span>08</span>ממלאים ארבעה שדות</a></li>
-<li><a href="#run"><span>09</span><bdi dir="ltr">Create</bdi>, ואז <bdi dir="ltr">Run now</bdi></a></li>
-<li><a href="#result"><span>10</span>מה היא החזירה, ולמה זה מרשים</a></li>
-<li><a href="#truth"><span>11</span>מה שחייבים לדעת לפני שסומכים על זה</a></li>
+<li><a href="#ex1"><span>05</span>תרגיל 1 · ארבעים סרוקים מקבלים שם</a></li>
+<li><a href="#why"><span>06</span>למה זה שונה מכל מה שעשיתם עד כאן</a></li>
+<li><a href="#open"><span>07</span>פותחים את המסך הנכון</a></li>
+<li><a href="#local"><span>08</span><bdi dir="ltr">Local</bdi>, ולא ענן</a></li>
+<li><a href="#form"><span>09</span>ממלאים ארבעה שדות</a></li>
+<li><a href="#run"><span>10</span><bdi dir="ltr">Create</bdi>, ואז <bdi dir="ltr">Run now</bdi></a></li>
+<li><a href="#result"><span>11</span>מה היא החזירה, ולמה זה מרשים</a></li>
+<li><a href="#truth"><span>12</span>מה שחייבים לדעת לפני שסומכים על זה</a></li>
 </ol></details></nav>
 
 <div class="layout">
@@ -344,8 +345,89 @@
 </aside>
 </section>
 
-<section class="guide-section" id="why">
+<section class="guide-section" id="ex1">
 <span class="section-number">05</span>
+<h2>תרגיל 1 · ארבעים סרוקים מקבלים שם</h2>
+
+<p><strong>איפה עובדים:</strong> ב-<bdi dir="ltr">VS Code</bdi> · <strong>כמה זמן:</strong> כשמונה דקות, ורובן הוא עובד ואתם לא</p>
+
+<h3>המטרה</h3>
+
+<p>בכל תיק יש תיקייה כזאת. קוראים לה "סרוקים", או "לתיוק", או סתם "חדש", <strong>ובתוכה עשרות קבצים בשמות שאף אחד לא בחר:</strong> <bdi dir="ltr">scan_0030</bdi>, <bdi dir="ltr">doc4_final_v2</bdi>, <bdi>מסמך חדש (7)</bdi>.</p>
+
+<p><strong>כדי לדעת מה יש שם צריך לפתוח אותם אחד אחד.</strong> ולכן זה לא נעשה.</p>
+
+<p>בתרגיל הזה נבקש ממנו לפתוח את כולם, לקרוא מה כתוב בכל אחד, <strong>ולתת לכל אחד שם שאומר מה הוא.</strong></p>
+
+<aside class="content-box info">
+<h3>ושימו לב לדבר אחד שלא היה במדריך למתחילים</h3>
+<p><strong>המסמכים האלה הם תמונה.</strong> אין בהם טקסט, <bdi dir="ltr">Ctrl+F</bdi> לא ימצא בהם מילה, ואי אפשר להעתיק מהם דבר. <strong>בדיוק כמו מה שמגיע אליכם מהצד השני.</strong></p>
+</aside>
+
+<h3>ההוראה, ולמה היא כתובה ככה</h3>
+
+<p><strong>שלושה דברים בה אינם מובנים מאליהם:</strong></p>
+
+<ul class="bullets">
+<li><strong>"הסתכל על כל עמוד כמו על תמונה".</strong> בלי המשפט הזה הוא יוצא לחפש במחשב תוכנות שמפענחות סריקות, <strong>ומבזבז דקות על משהו שהוא יודע לעשות בעצמו.</strong></li>
+<li><strong>"אל תשנה שם ואל תזיז שום קובץ קיים".</strong> נהלי המשרד שבתיקייה אוסרים לגעת במסמך מקור, וזה נכון גם בחיים. <strong>לכן הוא יעתיק לתיקייה חדשה וישאיר את המקור כפי שהוא.</strong></li>
+<li><strong>ובקשה לקובץ אינדקס.</strong> בלעדיו יש לכם ארבעים קבצים בשמות יפים ואין לכם דרך לדעת מה השתנה. <strong>איתו יש לכם גם ביקורת.</strong></li>
+</ul>
+
+<div class="copy-block">
+  <div class="copy-heading">
+    <strong>ההוראה, להעתקה</strong>
+    <button class="copy-button" data-copy-target="ex1-prompt" type="button">העתקת ההוראה</button>
+  </div>
+  <div class="copy-body" id="ex1-prompt">קרא את CLAUDE.md שבתיקייה ופעל לפי נהלי המשרד שכתובים בו.
+
+בתיקיית המשנה "סרוקים-לתיוק" יש ארבעים מסמכים סרוקים. כולם תמונה בלבד, אין בהם טקסט להעתקה, והשמות שלהם חסרי משמעות. פשוט הסתכל על כל עמוד כמו על תמונה וקרא מה כתוב בו. אל תחפש במחשב תוכנות פענוח ואל תתקין כלום, אתה יודע לקרוא תמונה בעצמך.
+
+לכל מסמך זהה: מה סוג המסמך, מה התאריך שמופיע בו, ומה הנושא שלו במילים ספורות.
+
+נהלי המשרד אוסרים לשנות שם למסמך מקור, ולכן אל תשנה שם ואל תזיז שום קובץ קיים. במקום זה צור בתיקייה תיקיית משנה חדשה בשם "מתויק", והעתק אליה את כל ארבעים המסמכים בשמות תקינים לפי כלל שמות הקבצים שבנהלי המשרד.
+
+בנוסף הפק בתיקייה קובץ אינדקס בשם לפי נהלי המשרד, ובו טבלה: שם הקובץ המקורי, השם החדש, סוג המסמך, התאריך שבמסמך, והנושא. ובסוף חלק בשם "טעון בדיקה" לכל מסמך שלא הצלחת לקרוא או שהתאריך בו לא היה ברור.
+
+אל תקבע מה הדין ואל תכתוב מי צודק. עובדות ומקורות בלבד.</div>
+  <span class="copy-status" aria-live="polite" aria-atomic="true"></span>
+</div>
+
+<h3>מה יקרה אחרי שתדביקו</h3>
+
+<p><strong>הוא ידווח לכם שורה אחרי שורה.</strong> קודם יקרא את קובץ הנהלים, ואז תראו אותו כותב משהו כמו <em>"אין צורך בכלי פענוח, כל קובץ עוטף תמונה אחת, אני מחלץ אותה וקורא ישירות"</em> - <strong>וזו החלטה שהוא מקבל לבד.</strong></p>
+
+<p>ואז: <em>"קריא. עכשיו קורא את כל ארבעים העמודים."</em></p>
+
+<p><strong>כשמונה דקות, ורובן אתם לא עושים כלום.</strong> ובסוף יהיו בתיקייה שני דברים חדשים: תיקייה בשם <bdi>מתויק</bdi> ובה ארבעים עותקים בשמות תקינים, וקובץ אינדקס.</p>
+
+<h3>ומה שקיבלנו כשהרצנו את זה</h3>
+
+<p><strong>ארבעים מתוך ארבעים התאריכים נכונים.</strong> בדקנו אחד אחד מול רשימה שהוכנה מראש. <strong>בלי טעות אחת, וכל תאריך נקרא מתוך תמונה.</strong></p>
+
+<p>והשמות יצאו כך: <bdi>2025-08-12_הסכם-שכירות_טיוטה-1.pdf</bdi></p>
+
+<p><strong>תאריך, סוג המסמך, הנושא - בדיוק לפי כלל שמות הקבצים שבקובץ הנהלים.</strong> ולא ביקשנו את זה בשום מקום בהוראה. <strong>הוא קרא את הנהלים והחיל אותם.</strong></p>
+
+<aside class="content-box legal-example">
+<h3>והחלק שלא ציפינו לו</h3>
+<p>בסוף האינדקס הוא הוסיף <strong>שלושה עשר פריטים ב"טעון בדיקה"</strong>. הוא לא רק תייק - <strong>הוא קרא את המסמכים והשווה ביניהם:</strong></p>
+<ul class="bullets">
+<li><strong>"בכל ארבעים הקבצים התאריך שבשם הקובץ שונה מהתאריך שבגוף המסמך. התיוק בוצע לפי גוף המסמך."</strong> הוא זיהה שהשמות משקרים, והעדיף את המסמך.</li>
+<li>"שתי טיוטות ההסכם נושאות נוסח שונה של סעיף 14, ואין בתיק הסכם חתום."</li>
+<li>"שני פרוטוקולים בכותרות זהות ובגוף שונה."</li>
+<li>"חסרות קבלות דמי שכירות לחודשיים."</li>
+</ul>
+<p><strong>אף אחד מהדברים האלה לא כתוב באף מסמך בודד.</strong> הם נמצאים רק בהשוואה בין מסמכים, וכדי לראות אותם צריך להחזיק את כולם בראש באותו רגע.</p>
+</aside>
+
+<aside class="content-box recommendation">
+<p><strong>נתקעתם? משהו נראה אחרת ממה שכתוב כאן?</strong> שווה לחזור לפרק <strong>"<bdi dir="ltr">Claude</bdi> מתארח כאן"</strong> - יש סיכוי טוב שהתשובה כבר מחכה שם.</p>
+</aside>
+</section>
+
+<section class="guide-section" id="why">
+<span class="section-number">06</span>
 <h2>למה זה שונה מכל מה שעשיתם עד כאן</h2>
 
 <p>בכל מה שלמדתם עד עכשיו, וגם בכל מה שאתם מכירים מהעבודה בדפדפן, אתם נמצאים בקצה אחד: אתם כותבים, אתם ממתינים, אתם מקבלים. תמיד יש בן אדם שיוזם.</p>
@@ -368,7 +450,7 @@
 </section>
 
 <section class="guide-section" id="open">
-<span class="section-number">06</span>
+<span class="section-number">07</span>
 <h2>פותחים את המסך הנכון</h2>
 
 <p><strong>למעלה, ליד <bdi dir="ltr">Home</bdi>, לחצו על <bdi dir="ltr">Code</bdi>.</strong> זו אותה אפליקציה שאתם מכירים, וזה הצד שבו יושב <bdi dir="ltr">Claude Code</bdi>.</p>
@@ -400,7 +482,7 @@
 </section>
 
 <section class="guide-section" id="local">
-<span class="section-number">07</span>
+<span class="section-number">08</span>
 <h2><bdi dir="ltr">Local</bdi>, ולא ענן</h2>
 
 <p>בפינה למעלה יש <bdi dir="ltr">New routine</bdi> ולידו חץ קטן.</p>
@@ -431,7 +513,7 @@
 </section>
 
 <section class="guide-section" id="form">
-<span class="section-number">08</span>
+<span class="section-number">09</span>
 <h2>ממלאים ארבעה שדות</h2>
 
 <p>זה הטופס הנכון. יש בו שדה לבחירת תיקייה, בורר מודל, ואפשרות <bdi dir="ltr">Manual</bdi> בשורת התזמון.</p>
@@ -546,7 +628,7 @@
 </section>
 
 <section class="guide-section" id="run">
-<span class="section-number">09</span>
+<span class="section-number">10</span>
 <h2><bdi dir="ltr">Create</bdi>, ואז <bdi dir="ltr">Run now</bdi></h2>
 
 <p>בדף שנפתח, למעלה בקצה, יש כפתור שחור: <strong><bdi dir="ltr">Run now</bdi></strong>.</p>
@@ -588,7 +670,7 @@
 </section>
 
 <section class="guide-section" id="result">
-<span class="section-number">10</span>
+<span class="section-number">11</span>
 <h2>מה היא החזירה, ולמה זה מרשים</h2>
 
 <p>בהרצה שלנו הקובץ נכתב שלוש דקות אחרי הלחיצה. בתוכו שתי טבלאות ועשרה סעיפי "טעון בדיקה", וכל שורה עם התאריך, מה נדרש, מי הצד החייב, ומאיזה מסמך ומאיזה סעיף.</p>
@@ -610,7 +692,7 @@
 </section>
 
 <section class="guide-section" id="truth">
-<span class="section-number">11</span>
+<span class="section-number">12</span>
 <h2>מה שחייבים לדעת לפני שסומכים על זה</h2>
 
 <p><strong>שלושה תנאים, וכולם מתקיימים או שכלום לא קורה:</strong></p>
@@ -647,13 +729,14 @@
 <li><a href="#download"><span>02</span>מורידים את התיק שנעבוד עליו</a></li>
 <li><a href="#firstopen"><span>03</span>פתחתם תיקייה. עכשיו איך מגיעים לשיחה</a></li>
 <li><a href="#panic"><span>04</span><bdi dir="ltr">Claude</bdi> מתארח כאן, ולכן לפעמים צריך עוד לחיצה</a></li>
-<li><a href="#why"><span>05</span>למה זה שונה מכל מה שעשיתם עד כאן</a></li>
-<li><a href="#open"><span>06</span>פותחים את המסך הנכון</a></li>
-<li><a href="#local"><span>07</span><bdi dir="ltr">Local</bdi>, ולא ענן</a></li>
-<li><a href="#form"><span>08</span>ממלאים ארבעה שדות</a></li>
-<li><a href="#run"><span>09</span><bdi dir="ltr">Create</bdi>, ואז <bdi dir="ltr">Run now</bdi></a></li>
-<li><a href="#result"><span>10</span>מה היא החזירה, ולמה זה מרשים</a></li>
-<li><a href="#truth"><span>11</span>מה שחייבים לדעת לפני שסומכים על זה</a></li>
+<li><a href="#ex1"><span>05</span>תרגיל 1 · ארבעים סרוקים מקבלים שם</a></li>
+<li><a href="#why"><span>06</span>למה זה שונה מכל מה שעשיתם עד כאן</a></li>
+<li><a href="#open"><span>07</span>פותחים את המסך הנכון</a></li>
+<li><a href="#local"><span>08</span><bdi dir="ltr">Local</bdi>, ולא ענן</a></li>
+<li><a href="#form"><span>09</span>ממלאים ארבעה שדות</a></li>
+<li><a href="#run"><span>10</span><bdi dir="ltr">Create</bdi>, ואז <bdi dir="ltr">Run now</bdi></a></li>
+<li><a href="#result"><span>11</span>מה היא החזירה, ולמה זה מרשים</a></li>
+<li><a href="#truth"><span>12</span>מה שחייבים לדעת לפני שסומכים על זה</a></li>
 </ol>
 </aside>
 </div>
