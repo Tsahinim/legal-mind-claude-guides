@@ -39,14 +39,15 @@
 <nav class="mobile-toc"><details><summary>תוכן המדריך</summary><ol>
 <li><a href="#start"><span>01</span>לפני שמתחילים, כמה מילים ביניכם לביני</a></li>
 <li><a href="#download"><span>02</span>מורידים את התיק שנעבוד עליו</a></li>
-<li><a href="#panic"><span>03</span><bdi dir="ltr">Claude</bdi> מתארח כאן, ולכן לפעמים צריך עוד לחיצה</a></li>
-<li><a href="#why"><span>04</span>למה זה שונה מכל מה שעשיתם עד כאן</a></li>
-<li><a href="#open"><span>05</span>פותחים את המסך הנכון</a></li>
-<li><a href="#local"><span>06</span><bdi dir="ltr">Local</bdi>, ולא ענן</a></li>
-<li><a href="#form"><span>07</span>ממלאים ארבעה שדות</a></li>
-<li><a href="#run"><span>08</span><bdi dir="ltr">Create</bdi>, ואז <bdi dir="ltr">Run now</bdi></a></li>
-<li><a href="#result"><span>09</span>מה היא החזירה, ולמה זה מרשים</a></li>
-<li><a href="#truth"><span>10</span>מה שחייבים לדעת לפני שסומכים על זה</a></li>
+<li><a href="#firstopen"><span>03</span>פתחתם תיקייה. עכשיו איך מגיעים לשיחה</a></li>
+<li><a href="#panic"><span>04</span><bdi dir="ltr">Claude</bdi> מתארח כאן, ולכן לפעמים צריך עוד לחיצה</a></li>
+<li><a href="#why"><span>05</span>למה זה שונה מכל מה שעשיתם עד כאן</a></li>
+<li><a href="#open"><span>06</span>פותחים את המסך הנכון</a></li>
+<li><a href="#local"><span>07</span><bdi dir="ltr">Local</bdi>, ולא ענן</a></li>
+<li><a href="#form"><span>08</span>ממלאים ארבעה שדות</a></li>
+<li><a href="#run"><span>09</span><bdi dir="ltr">Create</bdi>, ואז <bdi dir="ltr">Run now</bdi></a></li>
+<li><a href="#result"><span>10</span>מה היא החזירה, ולמה זה מרשים</a></li>
+<li><a href="#truth"><span>11</span>מה שחייבים לדעת לפני שסומכים על זה</a></li>
 </ol></details></nav>
 
 <div class="layout">
@@ -133,8 +134,69 @@
 </aside>
 </section>
 
-<section class="guide-section" id="panic">
+<section class="guide-section" id="firstopen">
 <span class="section-number">03</span>
+<h2>פתחתם תיקייה. עכשיו איך מגיעים לשיחה</h2>
+
+<p><strong>זה המסלול שתעשו בתחילת כל תרגיל, וכדאי לעבור עליו פעם אחת ברוגע.</strong> אחרי פעמיים הוא ייקח לכם חצי דקה.</p>
+
+<aside class="content-box info">
+<h3>ולפני הכל, דבר אחד שכדאי לדעת</h3>
+<p><bdi dir="ltr">Claude Code</bdi> <strong>תמיד עובד בתוך תיקייה.</strong> אי אפשר לפתוח איתו שיחה בלי לבחור אחת. <strong>וזה לא חיסרון, זה מה שמאפשר לו לעבוד על הקבצים שלכם.</strong></p>
+<p>והתיקייה לא חייבת להכיל כלום. <strong>אפשר פשוט ליצור תיקייה חדשה וריקה, לתת לה שם, ולבחור אותה.</strong> מכאן הכל עובד אותו דבר.</p>
+</aside>
+
+<h3>שלב 1 · אישור התיקייה</h3>
+
+<p>מיד אחרי שבחרתם תיקייה, <strong>תופיע למעלה שורה כחולה. לחצו בה <bdi dir="ltr">Manage</bdi>.</strong></p>
+
+<p><strong>ייפתח חלון, ובו לוחצים <bdi dir="ltr">Trust</bdi>.</strong></p>
+
+<aside class="content-box warning">
+<h3>ואז יופיע מסך שנראה חשוב, והוא לא</h3>
+<p>אחרי האישור ייפתח מסך גדול בשם <bdi dir="ltr">Workspace Trust</bdi>, עם שתי עמודות וסימני וי ואיקס. <strong>אל תקראו אותו. אין בו שום דבר שאתם צריכים.</strong></p>
+<p><strong>הוא רק מאשר שאישרתם. סגרו אותו ב-<bdi dir="ltr">X</bdi> ותמשיכו.</strong></p>
+<p>אנחנו אומרים את זה במפורש כי הוא נראה כמו משהו שאסור לסגור בלי להבין, <strong>והוא בדיוק ההפך.</strong></p>
+</aside>
+
+<p><strong>ואיך יודעים שהצלחתם:</strong> בסרגל האייקונים שבצד, <strong>הכוכבית של <bdi dir="ltr">Claude</bdi> מופיעה.</strong> זו הבדיקה היחידה שצריך.</p>
+
+<h3>שלב 2 · מנקים את המסך</h3>
+
+<p><strong>מה שתראו עכשיו הוא לא מה שאתם צריכים,</strong> ובואו נעבור על זה בלי להיבהל.</p>
+
+<ul class="bullets">
+<li><strong>באמצע</strong> יש מסך פתיחה של <bdi dir="ltr">VS Code</bdi> עם קישורים והסברים. לא קשור אלינו.</li>
+<li><strong>ובצד</strong> יש חלונית שיחה - <strong>ואינה של <bdi dir="ltr">Claude</bdi>.</strong> היא של <bdi dir="ltr">VS Code</bdi> עצמו.</li>
+</ul>
+
+<ol class="steps">
+<li><strong>את המסך שבאמצע:</strong> שלוש הנקודות שמעליו, ואז <bdi dir="ltr">Close All</bdi>.</li>
+<li><strong>ואת חלונית השיחה שבצד:</strong> ה-<bdi dir="ltr">X</bdi> שבפינה שלה.</li>
+</ol>
+
+<h3>שלב 3 · פותחים את השיחה של <bdi dir="ltr">Claude</bdi></h3>
+
+<ol class="steps">
+<li><strong>לוחצים על הכוכבית של <bdi dir="ltr">Claude</bdi></strong> בסרגל האייקונים שבצד.</li>
+<li><strong>ולוחצים <bdi dir="ltr">New session</bdi>.</strong></li>
+</ol>
+
+<p><strong>ורק עכשיו נפתחת השיחה.</strong> מכאן והלאה מדביקים ועובדים.</p>
+
+<h3>שלב 4 · ואם רוצים לראות את התיקייה</h3>
+
+<p><strong>לוחצים על אייקון המסמכים</strong> שבראש סרגל האייקונים, וסרגל הקבצים נפתח עם שם התיקייה והקבצים שבה.</p>
+
+<p><strong>וזה גם שימושי מעבר לנוחות:</strong> שם התיקייה שרשום שם הוא <strong>הדרך לוודא שהשיחה באמת על התיק שרציתם</strong>, ולא על תיק אחר שנשאר פתוח מקודם.</p>
+
+<aside class="content-box recommendation">
+<p><strong>ארבעת השלבים האלה הם כל מה שצריך, והם חוזרים על עצמם בכל תרגיל.</strong> אנחנו נזכיר אותם בקצרה בכל פעם, כדי שלא תצטרכו לחזור לכאן.</p>
+</aside>
+</section>
+
+<section class="guide-section" id="panic">
+<span class="section-number">04</span>
 <h2><bdi dir="ltr">Claude</bdi> מתארח כאן, ולכן לפעמים צריך עוד לחיצה</h2>
 
 <p>נתחיל בהודאה: <strong>זה לא פשוט כמו לחזור לשיחה בצ'אט.</strong> בדפדפן הכל במקום אחד, השיחות מסודרות זו מתחת לזו, ואי אפשר ללכת לאיבוד. <strong>כאן זה אחרת, וזה יכול להבהיל בפעם הראשונה.</strong></p>
@@ -262,7 +324,7 @@
 </section>
 
 <section class="guide-section" id="why">
-<span class="section-number">04</span>
+<span class="section-number">05</span>
 <h2>למה זה שונה מכל מה שעשיתם עד כאן</h2>
 
 <p>בכל מה שלמדתם עד עכשיו, וגם בכל מה שאתם מכירים מהעבודה בדפדפן, אתם נמצאים בקצה אחד: אתם כותבים, אתם ממתינים, אתם מקבלים. תמיד יש בן אדם שיוזם.</p>
@@ -285,7 +347,7 @@
 </section>
 
 <section class="guide-section" id="open">
-<span class="section-number">05</span>
+<span class="section-number">06</span>
 <h2>פותחים את המסך הנכון</h2>
 
 <p><strong>למעלה, ליד <bdi dir="ltr">Home</bdi>, לחצו על <bdi dir="ltr">Code</bdi>.</strong> זו אותה אפליקציה שאתם מכירים, וזה הצד שבו יושב <bdi dir="ltr">Claude Code</bdi>.</p>
@@ -317,7 +379,7 @@
 </section>
 
 <section class="guide-section" id="local">
-<span class="section-number">06</span>
+<span class="section-number">07</span>
 <h2><bdi dir="ltr">Local</bdi>, ולא ענן</h2>
 
 <p>בפינה למעלה יש <bdi dir="ltr">New routine</bdi> ולידו חץ קטן.</p>
@@ -348,7 +410,7 @@
 </section>
 
 <section class="guide-section" id="form">
-<span class="section-number">07</span>
+<span class="section-number">08</span>
 <h2>ממלאים ארבעה שדות</h2>
 
 <p>זה הטופס הנכון. יש בו שדה לבחירת תיקייה, בורר מודל, ואפשרות <bdi dir="ltr">Manual</bdi> בשורת התזמון.</p>
@@ -463,7 +525,7 @@
 </section>
 
 <section class="guide-section" id="run">
-<span class="section-number">08</span>
+<span class="section-number">09</span>
 <h2><bdi dir="ltr">Create</bdi>, ואז <bdi dir="ltr">Run now</bdi></h2>
 
 <p>בדף שנפתח, למעלה בקצה, יש כפתור שחור: <strong><bdi dir="ltr">Run now</bdi></strong>.</p>
@@ -505,7 +567,7 @@
 </section>
 
 <section class="guide-section" id="result">
-<span class="section-number">09</span>
+<span class="section-number">10</span>
 <h2>מה היא החזירה, ולמה זה מרשים</h2>
 
 <p>בהרצה שלנו הקובץ נכתב שלוש דקות אחרי הלחיצה. בתוכו שתי טבלאות ועשרה סעיפי "טעון בדיקה", וכל שורה עם התאריך, מה נדרש, מי הצד החייב, ומאיזה מסמך ומאיזה סעיף.</p>
@@ -527,7 +589,7 @@
 </section>
 
 <section class="guide-section" id="truth">
-<span class="section-number">10</span>
+<span class="section-number">11</span>
 <h2>מה שחייבים לדעת לפני שסומכים על זה</h2>
 
 <p><strong>שלושה תנאים, וכולם מתקיימים או שכלום לא קורה:</strong></p>
@@ -562,14 +624,15 @@
 <ol>
 <li><a href="#start"><span>01</span>לפני שמתחילים, כמה מילים ביניכם לביני</a></li>
 <li><a href="#download"><span>02</span>מורידים את התיק שנעבוד עליו</a></li>
-<li><a href="#panic"><span>03</span><bdi dir="ltr">Claude</bdi> מתארח כאן, ולכן לפעמים צריך עוד לחיצה</a></li>
-<li><a href="#why"><span>04</span>למה זה שונה מכל מה שעשיתם עד כאן</a></li>
-<li><a href="#open"><span>05</span>פותחים את המסך הנכון</a></li>
-<li><a href="#local"><span>06</span><bdi dir="ltr">Local</bdi>, ולא ענן</a></li>
-<li><a href="#form"><span>07</span>ממלאים ארבעה שדות</a></li>
-<li><a href="#run"><span>08</span><bdi dir="ltr">Create</bdi>, ואז <bdi dir="ltr">Run now</bdi></a></li>
-<li><a href="#result"><span>09</span>מה היא החזירה, ולמה זה מרשים</a></li>
-<li><a href="#truth"><span>10</span>מה שחייבים לדעת לפני שסומכים על זה</a></li>
+<li><a href="#firstopen"><span>03</span>פתחתם תיקייה. עכשיו איך מגיעים לשיחה</a></li>
+<li><a href="#panic"><span>04</span><bdi dir="ltr">Claude</bdi> מתארח כאן, ולכן לפעמים צריך עוד לחיצה</a></li>
+<li><a href="#why"><span>05</span>למה זה שונה מכל מה שעשיתם עד כאן</a></li>
+<li><a href="#open"><span>06</span>פותחים את המסך הנכון</a></li>
+<li><a href="#local"><span>07</span><bdi dir="ltr">Local</bdi>, ולא ענן</a></li>
+<li><a href="#form"><span>08</span>ממלאים ארבעה שדות</a></li>
+<li><a href="#run"><span>09</span><bdi dir="ltr">Create</bdi>, ואז <bdi dir="ltr">Run now</bdi></a></li>
+<li><a href="#result"><span>10</span>מה היא החזירה, ולמה זה מרשים</a></li>
+<li><a href="#truth"><span>11</span>מה שחייבים לדעת לפני שסומכים על זה</a></li>
 </ol>
 </aside>
 </div>
