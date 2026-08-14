@@ -5,9 +5,12 @@ sys.stdout.reconfigure(encoding='utf-8', errors='replace')
 ROOT = r"C:\Users\Tzahi\OneDrive\שולחן העבודה\LEGAL-MIND-CLAUDE-DESKTOP-GUIDE\.github-live-repo\legal-mind-claude-guides"
 A = os.path.join(ROOT, "skills", "qa", "chapter-scheduled-assets")
 B = os.path.join(ROOT, "skills", "qa", "chapter-vscode-assets")
+C = os.path.join(ROOT, "skills", "qa", "chapter-opening-assets")
+D = os.path.join(ROOT, "skills", "qa", "ex4-assets")
+E = os.path.join(ROOT, "skills", "qa", "ex5-assets")
 
 def _path(n):
-    for folder in (A, B):
+    for folder in (A, B, C, D, E):
         for name in ("raw-%s.png" % n, "%s.png" % n):
             p = os.path.join(folder, name)
             if os.path.exists(p):
@@ -233,9 +236,21 @@ __MOBILE_TOC__
 
 <section class="guide-section" id="firstopen">
 <span class="section-number">03</span>
-<h2>פתחתם תיקייה. עכשיו איך מגיעים לשיחה</h2>
+<h2>אחרי שבחרתם תיקייה שקלוד יעבוד עליה</h2>
 
 <p><strong>זה המסלול שתעשו בתחילת כל תרגיל, וכדאי לעבור עליו פעם אחת ברוגע.</strong> אחרי פעמיים הוא ייקח לכם חצי דקה.</p>
+
+<aside class="content-box recommendation">
+<h3>ולמה אנחנו מפרטים אותו עד הסוף</h3>
+<p><strong>זה לא שאנחנו לא סומכים עליכם.</strong> אנחנו פשוט לא רוצים שתיבהלו ממה שכמעט כל מי שהתחיל עם <bdi dir="ltr">Claude Code</bdi> עבר: <strong>פותחים תיקייה, וקלוד נעלם.</strong> במקומו יש מסך לבן באמצע, חלונית שיחה בצד שאינה שלו, וחלונות שקופצים.</p>
+<p><strong>שום דבר לא נשבר. ככה זה נראה אצל כולם בפעם הראשונה,</strong> ובעוד שתי דקות זה ייראה אחרת.</p>
+</aside>
+
+<h3>וכך זה נראה בפועל, רגע אחרי שבחרתם תיקייה</h3>
+
+__FIG_CHAOS__
+
+<p><strong>שלושה דברים על המסך, ורק אחד מהם קשור אליכם.</strong> נעבור עליהם אחד אחד, ובסוף יישארו שניים: התיקייה בצד, וקלוד באמצע.</p>
 
 <aside class="content-box info">
 <h3>ולפני הכל, דבר אחד שכדאי לדעת</h3>
@@ -255,6 +270,8 @@ __MOBILE_TOC__
 <p><strong>הוא רק מאשר שאישרתם. סגרו אותו ב-<bdi dir="ltr">X</bdi> ותמשיכו.</strong></p>
 <p>אנחנו אומרים את זה במפורש כי הוא נראה כמו משהו שאסור לסגור בלי להבין, <strong>והוא בדיוק ההפך.</strong></p>
 </aside>
+
+__FIG_TRUST__
 
 <p><strong>ואיך יודעים שהצלחתם:</strong> בסרגל האייקונים שבצד, <strong>הכוכבית של <bdi dir="ltr">Claude</bdi> מופיעה.</strong> זו הבדיקה היחידה שצריך.</p>
 
@@ -281,11 +298,17 @@ __MOBILE_TOC__
 
 __FIG_ACTIVITYBAR__
 
+<p><strong>וכך נראית החלונית ברגע שהיא נפתחת:</strong></p>
+
+__FIG_NEWSESSION__
+
 <p><strong>ורק עכשיו נפתחת השיחה.</strong> מכאן והלאה מדביקים ועובדים.</p>
 
 <h3>שלב 4 · ואם רוצים לראות את התיקייה</h3>
 
 <p><strong>לוחצים על אייקון המסמכים</strong> שבראש סרגל האייקונים, וסרגל הקבצים נפתח עם שם התיקייה והקבצים שבה.</p>
+
+__FIG_EXPLORERICON__
 
 <p><strong>וזה גם שימושי מעבר לנוחות:</strong> שם התיקייה שרשום שם הוא <strong>הדרך לוודא שהשיחה באמת על התיק שרציתם</strong>, ולא על תיק אחר שנשאר פתוח מקודם.</p>
 
@@ -1407,6 +1430,23 @@ HTML = HTML.replace("__FIG_PANEL__", shot("cut-panel-top",
             "והלשונית <bdi dir=\"ltr\">Chat</bdi> שלידה <strong>אינה של <bdi dir=\"ltr\">Claude</bdi>.</strong> היא של <bdi dir=\"ltr\">VS Code</bdi>, ומי שיכתוב בה יקבל תשובה ממישהו אחר.",
             "<strong>אייקון השעון.</strong> לחיצה עליו פותחת את כל השיחות שהיו בתיקייה הזאת.",
             "והפלוס שלידו <strong>פותח שיחה חדשה.</strong> אל תלחצו עליו כשאתם מחפשים שיחה ישנה."]))
+
+HTML = HTML.replace("__FIG_CHAOS__", shot("open-chaos",
+    "המסך מיד אחרי פתיחת תיקייה. באמצע מסך פתיחה של VS Code, בצד חלונית שיחה שאינה של קלוד, וקלוד עצמו עוד לא נפתח",
+    legend=None))
+
+HTML = HTML.replace("__FIG_TRUST__", shot("open-trust",
+    "מסך Workspace Trust. אין בו שום דבר שאתם צריכים, וסוגרים אותו ב-X שבפינה השמאלית העליונה",
+    legend=None))
+
+HTML = HTML.replace("__FIG_NEWSESSION__", shot("cut-newsession",
+    "חלונית Claude Code אחרי לחיצה על הכוכבית",
+    targets=[("left:4.3%;top:20.7%;width:42.4%;height:11.4%", "badge-right", 1)],
+    legend=["<bdi dir=\"ltr\">New session</bdi>. <strong>לחיצה אחת, ורק אז נפתחת תיבת הכתיבה.</strong> ו<bdi dir=\"ltr\">No sessions yet</bdi> שכתוב מתחת פירושו שזו תיקייה חדשה שעוד לא עבדתם בה, לא שמשהו נמחק."]))
+
+HTML = HTML.replace("__FIG_EXPLORERICON__", shot("open-explorer-icon",
+    "אייקון המסמכים, העליון בסרגל. VS Code עצמו כותב את שמו כשעוברים עליו עם העכבר",
+    legend=None))
 
 HTML = HTML.replace("__FIG_INSTALLPOPUP__", shot("cut-install-popup",
     "החלון שקופץ ומציע להתקין תוסף. הוא לא קשור למשימה",

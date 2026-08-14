@@ -8,10 +8,13 @@ sys.stdout.reconfigure(encoding='utf-8', errors='replace')
 ROOT = r"C:\Users\Tzahi\OneDrive\שולחן העבודה\LEGAL-MIND-CLAUDE-DESKTOP-GUIDE\.github-live-repo\legal-mind-claude-guides"
 A = os.path.join(ROOT, "skills", "qa", "chapter-scheduled-assets")
 B = os.path.join(ROOT, "skills", "qa", "chapter-vscode-assets")
+C = os.path.join(ROOT, "skills", "qa", "chapter-opening-assets")
+D = os.path.join(ROOT, "skills", "qa", "ex4-assets")
+E = os.path.join(ROOT, "skills", "qa", "ex5-assets")
 OUT = os.path.dirname(os.path.abspath(__file__))
 
 def _path(n):
-    for folder in (A, B):
+    for folder in (A, B, C, D, E):
         for name in ("raw-%s.png" % n, "%s.png" % n):
             p = os.path.join(folder, name)
             if os.path.exists(p):
@@ -75,6 +78,8 @@ def draw(name, targets):
     print(p, im.size)
 
 if __name__ == "__main__":
+    draw("cut-newsession", [("left:4.3%;top:20.7%;width:42.4%;height:11.4%", "badge-right", 1)])
+    draw("open-explorer-icon", [("left:1.8%;top:12.5%;width:9.1%;height:11.4%", "badge-below", 1)])
     draw("cut-install-popup", [("left:93.1%;top:3.8%;width:5.4%;height:22.9%", "badge-below", 1),
                                ("left:53.8%;top:61%;width:11%;height:32.4%", "badge-outside-left", 2)])
     draw("cut-include-completed", [("left:52.8%;top:14.3%;width:5.5%;height:28.6%", "badge-below", 1)])
