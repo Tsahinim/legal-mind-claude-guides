@@ -10,6 +10,23 @@
 <style>
   .download-row { display:flex; align-items:center; gap:.9rem; flex-wrap:wrap; margin:1.25rem 0; }
   .download-meta { opacity:.75; font-size:.95em; }
+
+  /* a screenshot shrunk to a phone column is unreadable, so every one of them
+     opens full size on a tap. scoped to this page - the published guides keep
+     their own behaviour. */
+  .shot-frame { cursor: zoom-in; }
+  .shot-hint { margin:6px 0 0; color:var(--muted); font-size:.82rem; }
+  .zoomer { position:fixed; inset:0; z-index:9999; display:none;
+            background:rgba(7,20,33,.94); overflow:auto; padding:54px 10px 24px;
+            overscroll-behavior:contain; }
+  .zoomer.is-open { display:block; }
+  .zoomer-stage { margin-inline:auto; position:relative; }
+  .zoomer-stage img { display:block; width:100%; height:auto; border-radius:8px; }
+  .zoomer-close { position:fixed; top:10px; inset-inline-end:12px; z-index:1;
+                  border:0; border-radius:999px; padding:9px 17px; cursor:pointer;
+                  background:#fff; color:var(--navy); font:inherit; font-weight:800; }
+  .zoomer-cap { max-width:760px; margin:14px auto 0; color:#eef3f3;
+                font-size:.95rem; line-height:1.7; text-align:center; }
 </style>
 </head>
 <body>
@@ -1212,6 +1229,77 @@
       document.body.removeChild(ta);
       done(ok);
     }
+  });
+})();
+
+/* הגדלת צילום מסך.
+   על מסך קטן כל צילום מוקטן עד שאי אפשר לקרוא בו מילה, ולכן לחיצה עליו
+   פותחת אותו בגודלו המלא. הסימונים האדומים משוכפלים איתו כי הם ממוקמים
+   באחוזים, ולכן הם נשארים בדיוק על אותם רכיבים. */
+(function(){
+  "use strict";
+  var frames = [].slice.call(document.querySelectorAll(".shot-frame"));
+  if(!frames.length) return;
+
+  var box = document.createElement("div");
+  box.className = "zoomer";
+  box.setAttribute("role", "dialog");
+  box.setAttribute("aria-modal", "true");
+  box.setAttribute("aria-label", "צילום מסך בגודל מלא");
+  box.innerHTML = '<button type="button" class="zoomer-close">סגירה</button>' +
+                  '<div class="zoomer-stage"></div><p class="zoomer-cap"></p>';
+  document.body.appendChild(box);
+
+  var stage = box.querySelector(".zoomer-stage");
+  var cap = box.querySelector(".zoomer-cap");
+  var closeBtn = box.querySelector(".zoomer-close");
+  var opener = null;
+
+  function open(frame){
+    var img = frame.querySelector("img");
+    if(!img) return;
+    stage.innerHTML = frame.innerHTML;
+    stage.style.maxWidth = (img.naturalWidth || img.width) + "px";
+    var fig = frame.closest("figure");
+    var c = fig ? fig.querySelector(".shot-caption") : null;
+    cap.textContent = c ? c.textContent : "";
+    opener = frame;
+    box.classList.add("is-open");
+    document.body.style.overflow = "hidden";
+    closeBtn.focus();
+  }
+  function close(){
+    box.classList.remove("is-open");
+    document.body.style.overflow = "";
+    stage.innerHTML = "";
+    if(opener) opener.focus();
+    opener = null;
+  }
+
+  frames.forEach(function(frame){
+    frame.setAttribute("tabindex", "0");
+    frame.setAttribute("role", "button");
+    frame.setAttribute("aria-label", "הגדלת הצילום");
+    frame.addEventListener("click", function(){ open(frame); });
+    frame.addEventListener("keydown", function(ev){
+      if(ev.key === "Enter" || ev.key === " "){ ev.preventDefault(); open(frame); }
+    });
+    var fig = frame.closest("figure");
+    var capEl = fig ? fig.querySelector(".shot-caption") : null;
+    if(capEl){
+      var hint = document.createElement("p");
+      hint.className = "shot-hint";
+      hint.textContent = "לחיצה על הצילום פותחת אותו בגודל מלא.";
+      capEl.insertAdjacentElement("afterend", hint);
+    }
+  });
+
+  closeBtn.addEventListener("click", close);
+  box.addEventListener("click", function(ev){
+    if(ev.target === box) close();
+  });
+  document.addEventListener("keydown", function(ev){
+    if(ev.key === "Escape" && box.classList.contains("is-open")) close();
   });
 })();
 
