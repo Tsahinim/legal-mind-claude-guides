@@ -42,13 +42,14 @@
 <li><a href="#firstopen"><span>03</span>פתחתם תיקייה. עכשיו איך מגיעים לשיחה</a></li>
 <li><a href="#panic"><span>04</span><bdi dir="ltr">Claude</bdi> מתארח כאן, ולכן לפעמים צריך עוד לחיצה</a></li>
 <li><a href="#ex1"><span>05</span>תרגיל 1 · ארבעים סרוקים מקבלים שם</a></li>
-<li><a href="#why"><span>06</span>למה זה שונה מכל מה שעשיתם עד כאן</a></li>
-<li><a href="#open"><span>07</span>פותחים את המסך הנכון</a></li>
-<li><a href="#local"><span>08</span><bdi dir="ltr">Local</bdi>, ולא ענן</a></li>
-<li><a href="#form"><span>09</span>ממלאים ארבעה שדות</a></li>
-<li><a href="#run"><span>10</span><bdi dir="ltr">Create</bdi>, ואז <bdi dir="ltr">Run now</bdi></a></li>
-<li><a href="#result"><span>11</span>מה היא החזירה, ולמה זה מרשים</a></li>
-<li><a href="#truth"><span>12</span>מה שחייבים לדעת לפני שסומכים על זה</a></li>
+<li><a href="#ex2"><span>06</span>תרגיל 2 · מאות עמודים, ושמונה שורות</a></li>
+<li><a href="#why"><span>07</span>למה זה שונה מכל מה שעשיתם עד כאן</a></li>
+<li><a href="#open"><span>08</span>פותחים את המסך הנכון</a></li>
+<li><a href="#local"><span>09</span><bdi dir="ltr">Local</bdi>, ולא ענן</a></li>
+<li><a href="#form"><span>10</span>ממלאים ארבעה שדות</a></li>
+<li><a href="#run"><span>11</span><bdi dir="ltr">Create</bdi>, ואז <bdi dir="ltr">Run now</bdi></a></li>
+<li><a href="#result"><span>12</span>מה היא החזירה, ולמה זה מרשים</a></li>
+<li><a href="#truth"><span>13</span>מה שחייבים לדעת לפני שסומכים על זה</a></li>
 </ol></details></nav>
 
 <div class="layout">
@@ -426,8 +427,82 @@
 </aside>
 </section>
 
-<section class="guide-section" id="why">
+<section class="guide-section" id="ex2">
 <span class="section-number">06</span>
+<h2>תרגיל 2 · מאות עמודים, ושמונה שורות</h2>
+
+<p><strong>איפה עובדים:</strong> ב-<bdi dir="ltr">VS Code</bdi> · <strong>כמה זמן:</strong> כרבע שעה, וכולה שלו</p>
+
+<h3>המטרה</h3>
+
+<p><strong>פרוטוקולים של ארבעה ימי דיונים.</strong> אתם צריכים מהם דבר אחד: כל מקום שבו נאמר מועד תשלום. <strong>עם מספר עמוד ומספר שורה, כי כך מפנים בסיכומים.</strong></p>
+
+<aside class="content-box info">
+<h3>ולמה זה לא חיפוש מילה</h3>
+<p>בפרוטוקולים האלה יש <strong>מאות אזכורים של תשלומים בלי מועד</strong>, ו<strong>מאות תאריכים שאינם מועדי תשלום.</strong></p>
+<p>מי שיחפש את המילה "תשלום" יקבל ערימה. מי שיחפש תאריכים יקבל ערימה אחרת. <strong>מה שצריך הוא ההצטלבות, וזה דורש להבין מה נאמר ולא רק למצוא מילה.</strong></p>
+</aside>
+
+<h3>ההוראה, ולמה היא כתובה ככה</h3>
+
+<ul class="bullets">
+<li><strong>"ההפניה חייבת להיות מדויקת".</strong> זו לא קפדנות לשמה: <strong>הפניה שגויה בסיכומים גרועה מהיעדר הפניה.</strong></li>
+<li><strong>אמרנו לו מראש שיש הרבה רעש</strong> - תשלומים בלי מועד, תאריכים שאינם תשלומים - <strong>כדי שידע שהמשימה היא להבחין ולא לאסוף.</strong></li>
+<li><strong>וביקשנו חלק "טעון בדיקה"</strong> לכל מקום שבו לא היה בטוח. <strong>וזה החלק שהפך למעניין ביותר.</strong></li>
+</ul>
+
+<div class="copy-block">
+  <div class="copy-heading">
+    <strong>ההוראה, להעתקה</strong>
+    <button class="copy-button" data-copy-target="ex2-prompt" type="button">העתקת ההוראה</button>
+  </div>
+  <div class="copy-body" id="ex2-prompt">קרא את CLAUDE.md שבתיקייה ופעל לפי נהלי המשרד שכתובים בו.
+
+בתיקיית המשנה "פרוטוקולים" יש ארבעה קובצי פרוטוקול של ימי דיונים, מאות עמודים בסך הכול. בכל עמוד יש מספר עמוד, ובכל עמוד השורות ממוספרות.
+
+המשימה: אתר כל מקום שבו נאמר בדיון מועד תשלום, כלומר תאריך שבו תשלום כלשהו אמור להתבצע או שנטען שהיה אמור להתבצע.
+
+שים לב: יש בפרוטוקולים הרבה מאוד אזכורים של תשלומים בלי מועד, וגם הרבה תאריכים שאינם מועדי תשלום. מה שמחפשים הוא רק הצטלבות של השניים: תשלום שנקוב לו מועד.
+
+הפק בתיקייה קובץ בשם לפי נהלי המשרד, ובו טבלה של כל מועד תשלום שמצאת, ובה: מספר העמוד, מספר השורה, התאריך שנאמר, מי אמר את זה, וציטוט קצר של המשפט עצמו.
+
+ההפניה לעמוד ולשורה חייבת להיות מדויקת, כי כך מפנים בסיכומים.
+
+ובסוף חלק בשם "טעון בדיקה" לכל מקום שבו לא היית בטוח אם מדובר במועד תשלום.
+
+אל תקבע מה הדין ואל תכתוב מי צודק. עובדות ומקורות בלבד.</div>
+  <span class="copy-status" aria-live="polite" aria-atomic="true"></span>
+</div>
+
+<h3>מה יקרה אחרי שתדביקו</h3>
+
+<p><strong>הוא יקרא את כל הקבצים, וזה ייקח לו זמן.</strong> אצלנו כרבע שעה על כתשעת אלפים שורות. <strong>זה הזמן ללכת להכין קפה.</strong></p>
+
+<p>בסוף יהיה בתיקייה קובץ עם טבלה, ובה לכל מועד: עמוד, שורה, התאריך, מי אמר את זה, וציטוט קצר.</p>
+
+<h3>ומה שקיבלנו כשהרצנו את זה</h3>
+
+<p><strong>חמש שורות בטבלה, וכל אחת מהן נכונה.</strong> בדקנו כל הפניה מול הפרוטוקול עצמו: <strong>עמוד ושורה מדויקים, אפס שורות מומצאות.</strong></p>
+
+<p>ושלושה מקומות נוספים שהוא <strong>לא</strong> הכניס לטבלה אלא ל"טעון בדיקה", עם הנימוק:</p>
+
+<aside class="content-box legal-example">
+<p><em>"עמוד 344 שורה 10: 'דרישת התשלום שיצאה מהמשרד שלי נקבה ב-15 במרץ'. לא ברור מלשון האמירה אם 15.03 הוא המועד שנדרש בו התשלום, או התאריך שבו יצאה הדרישה. <strong>לא הוכנס לטבלה כדי לא להכריע בין שתי הקריאות.</strong> יש לבדוק מול דרישת התשלום עצמה."</em></p>
+<p><em>"עמוד 432 שורה 8: 'בפגישה ב-26 בפברואר סוכם שמכתב הכוונות יימסר לפני התשלום'. <strong>התאריך הוא מועד הפגישה. התשלום נזכר ביחס לסדר, בלי מועד משלו.</strong>"</em></p>
+</aside>
+
+<p><strong>ועוד דבר שהוא שם לב אליו ואנחנו לא:</strong> שלוש מהשורות בטבלה נוקבות יום וחודש <strong>בלי שנה</strong>, והוא סימן זאת בנפרד.</p>
+
+<aside class="content-box recommendation">
+<h3>והרגע</h3>
+<p><strong>זה לא הטבלה. הטבלה נחמדה.</strong></p>
+<p><strong>הרגע הוא שהוא נתקל במשפט דו-משמעי, סירב להכריע, וכתב בדיוק למה ומה צריך לבדוק כדי לדעת.</strong></p>
+<p>זה בדיוק מה שאתם רוצים ממתמחה, ובדרך כלל לא מקבלים.</p>
+</aside>
+</section>
+
+<section class="guide-section" id="why">
+<span class="section-number">07</span>
 <h2>למה זה שונה מכל מה שעשיתם עד כאן</h2>
 
 <p>בכל מה שלמדתם עד עכשיו, וגם בכל מה שאתם מכירים מהעבודה בדפדפן, אתם נמצאים בקצה אחד: אתם כותבים, אתם ממתינים, אתם מקבלים. תמיד יש בן אדם שיוזם.</p>
@@ -450,7 +525,7 @@
 </section>
 
 <section class="guide-section" id="open">
-<span class="section-number">07</span>
+<span class="section-number">08</span>
 <h2>פותחים את המסך הנכון</h2>
 
 <p><strong>למעלה, ליד <bdi dir="ltr">Home</bdi>, לחצו על <bdi dir="ltr">Code</bdi>.</strong> זו אותה אפליקציה שאתם מכירים, וזה הצד שבו יושב <bdi dir="ltr">Claude Code</bdi>.</p>
@@ -482,7 +557,7 @@
 </section>
 
 <section class="guide-section" id="local">
-<span class="section-number">08</span>
+<span class="section-number">09</span>
 <h2><bdi dir="ltr">Local</bdi>, ולא ענן</h2>
 
 <p>בפינה למעלה יש <bdi dir="ltr">New routine</bdi> ולידו חץ קטן.</p>
@@ -513,7 +588,7 @@
 </section>
 
 <section class="guide-section" id="form">
-<span class="section-number">09</span>
+<span class="section-number">10</span>
 <h2>ממלאים ארבעה שדות</h2>
 
 <p>זה הטופס הנכון. יש בו שדה לבחירת תיקייה, בורר מודל, ואפשרות <bdi dir="ltr">Manual</bdi> בשורת התזמון.</p>
@@ -628,7 +703,7 @@
 </section>
 
 <section class="guide-section" id="run">
-<span class="section-number">10</span>
+<span class="section-number">11</span>
 <h2><bdi dir="ltr">Create</bdi>, ואז <bdi dir="ltr">Run now</bdi></h2>
 
 <p>בדף שנפתח, למעלה בקצה, יש כפתור שחור: <strong><bdi dir="ltr">Run now</bdi></strong>.</p>
@@ -670,7 +745,7 @@
 </section>
 
 <section class="guide-section" id="result">
-<span class="section-number">11</span>
+<span class="section-number">12</span>
 <h2>מה היא החזירה, ולמה זה מרשים</h2>
 
 <p>בהרצה שלנו הקובץ נכתב שלוש דקות אחרי הלחיצה. בתוכו שתי טבלאות ועשרה סעיפי "טעון בדיקה", וכל שורה עם התאריך, מה נדרש, מי הצד החייב, ומאיזה מסמך ומאיזה סעיף.</p>
@@ -692,7 +767,7 @@
 </section>
 
 <section class="guide-section" id="truth">
-<span class="section-number">12</span>
+<span class="section-number">13</span>
 <h2>מה שחייבים לדעת לפני שסומכים על זה</h2>
 
 <p><strong>שלושה תנאים, וכולם מתקיימים או שכלום לא קורה:</strong></p>
@@ -730,13 +805,14 @@
 <li><a href="#firstopen"><span>03</span>פתחתם תיקייה. עכשיו איך מגיעים לשיחה</a></li>
 <li><a href="#panic"><span>04</span><bdi dir="ltr">Claude</bdi> מתארח כאן, ולכן לפעמים צריך עוד לחיצה</a></li>
 <li><a href="#ex1"><span>05</span>תרגיל 1 · ארבעים סרוקים מקבלים שם</a></li>
-<li><a href="#why"><span>06</span>למה זה שונה מכל מה שעשיתם עד כאן</a></li>
-<li><a href="#open"><span>07</span>פותחים את המסך הנכון</a></li>
-<li><a href="#local"><span>08</span><bdi dir="ltr">Local</bdi>, ולא ענן</a></li>
-<li><a href="#form"><span>09</span>ממלאים ארבעה שדות</a></li>
-<li><a href="#run"><span>10</span><bdi dir="ltr">Create</bdi>, ואז <bdi dir="ltr">Run now</bdi></a></li>
-<li><a href="#result"><span>11</span>מה היא החזירה, ולמה זה מרשים</a></li>
-<li><a href="#truth"><span>12</span>מה שחייבים לדעת לפני שסומכים על זה</a></li>
+<li><a href="#ex2"><span>06</span>תרגיל 2 · מאות עמודים, ושמונה שורות</a></li>
+<li><a href="#why"><span>07</span>למה זה שונה מכל מה שעשיתם עד כאן</a></li>
+<li><a href="#open"><span>08</span>פותחים את המסך הנכון</a></li>
+<li><a href="#local"><span>09</span><bdi dir="ltr">Local</bdi>, ולא ענן</a></li>
+<li><a href="#form"><span>10</span>ממלאים ארבעה שדות</a></li>
+<li><a href="#run"><span>11</span><bdi dir="ltr">Create</bdi>, ואז <bdi dir="ltr">Run now</bdi></a></li>
+<li><a href="#result"><span>12</span>מה היא החזירה, ולמה זה מרשים</a></li>
+<li><a href="#truth"><span>13</span>מה שחייבים לדעת לפני שסומכים על זה</a></li>
 </ol>
 </aside>
 </div>
