@@ -44,13 +44,14 @@
 <li><a href="#ex1"><span>05</span>תרגיל 1 · ארבעים סרוקים מקבלים שם</a></li>
 <li><a href="#ex2"><span>06</span>תרגיל 2 · מאות עמודים, ושמונה שורות</a></li>
 <li><a href="#ex3"><span>07</span>תרגיל 3 · הכול חזר</a></li>
-<li><a href="#why"><span>08</span>למה זה שונה מכל מה שעשיתם עד כאן</a></li>
-<li><a href="#open"><span>09</span>פותחים את המסך הנכון</a></li>
-<li><a href="#local"><span>10</span><bdi dir="ltr">Local</bdi>, ולא ענן</a></li>
-<li><a href="#form"><span>11</span>ממלאים ארבעה שדות</a></li>
-<li><a href="#run"><span>12</span><bdi dir="ltr">Create</bdi>, ואז <bdi dir="ltr">Run now</bdi></a></li>
-<li><a href="#result"><span>13</span>מה היא החזירה, ולמה זה מרשים</a></li>
-<li><a href="#truth"><span>14</span>מה שחייבים לדעת לפני שסומכים על זה</a></li>
+<li><a href="#ex4"><span>08</span>תרגיל 4 · הוא בודק את עצמו</a></li>
+<li><a href="#why"><span>09</span>למה זה שונה מכל מה שעשיתם עד כאן</a></li>
+<li><a href="#open"><span>10</span>פותחים את המסך הנכון</a></li>
+<li><a href="#local"><span>11</span><bdi dir="ltr">Local</bdi>, ולא ענן</a></li>
+<li><a href="#form"><span>12</span>ממלאים ארבעה שדות</a></li>
+<li><a href="#run"><span>13</span><bdi dir="ltr">Create</bdi>, ואז <bdi dir="ltr">Run now</bdi></a></li>
+<li><a href="#result"><span>14</span>מה היא החזירה, ולמה זה מרשים</a></li>
+<li><a href="#truth"><span>15</span>מה שחייבים לדעת לפני שסומכים על זה</a></li>
 </ol></details></nav>
 
 <div class="layout">
@@ -579,8 +580,85 @@
 </aside>
 </section>
 
-<section class="guide-section" id="why">
+<section class="guide-section" id="ex4">
 <span class="section-number">08</span>
+<h2>תרגיל 4 · הוא בודק את עצמו</h2>
+
+<p><strong>איפה עובדים:</strong> ב-<bdi dir="ltr">VS Code</bdi> · <strong>כמה זמן:</strong> כרבע שעה</p>
+
+<h3>המטרה</h3>
+
+<p>עד עכשיו הוא עשה עבודה ואתם בדקתם אותה. <strong>הפעם נבקש ממנו לבדוק את עצמו.</strong></p>
+
+<p>שני שלבים: קודם הוא בונה טבלה של ארבעים מסמכים, <strong>ואז פותח עשרים מהם מחדש ומוודא מול המסמך עצמו שמה שכתב נכון.</strong> ומתקן מה שלא.</p>
+
+<aside class="content-box info">
+<h3>וזה ההבדל האמיתי בין צ׳אט לבין מה שיושב מולכם</h3>
+<p><strong>צ׳אט לא חוזר למסמך אחרי שענה. אין לו למה לחזור.</strong> התשובה שלו היא מה שהוא זוכר מהרגע שקרא.</p>
+<p>כאן המסמכים נשארים בתיקייה, <strong>והוא יכול לפתוח אותם שוב ולהשוות.</strong></p>
+</aside>
+
+<h3>ההוראה, ולמה היא כתובה ככה</h3>
+
+<ul class="bullets">
+<li><strong>"בחר עשרים באקראי".</strong> לא "בדוק את כולם" - כי אז זו סתם עבודה כפולה. <strong>מדגם מקרי הוא איך שבודקים באמת.</strong></li>
+<li><strong>"תקן בטבלה עצמה".</strong> לא מספיק לדווח על טעות. <strong>שיתקן אותה.</strong></li>
+<li><strong>ודוח נפרד</strong> שאומר כמה נבדקו, כמה נמצאו, ומה תוקן. <strong>בלי זה אין לכם דרך לדעת שהבדיקה בכלל קרתה.</strong></li>
+</ul>
+
+<div class="copy-block">
+  <div class="copy-heading">
+    <strong>ההוראה, להעתקה</strong>
+    <button class="copy-button" data-copy-target="ex4-prompt" type="button">העתקת ההוראה</button>
+  </div>
+  <div class="copy-body" id="ex4-prompt">בתיקיית המשנה "סרוקים-לתיוק" יש ארבעים מסמכים סרוקים. כולם תמונה בלבד, אין בהם טקסט להעתקה. פשוט הסתכל על כל עמוד כמו על תמונה וקרא מה כתוב בו. אל תחפש תוכנות פענוח ואל תתקין כלום.
+
+קרא את CLAUDE.md שבתיקייה ופעל לפי נהלי המשרד שכתובים בו.
+
+השלב הראשון: בנה טבלה של כל ארבעים המסמכים, ובה לכל מסמך: שם הקובץ, סוג המסמך, התאריך שמופיע בגוף המסמך, והנושא במילים ספורות. שמור אותה בקובץ בתיקייה, בשם לפי נהלי המשרד.
+
+השלב השני, וזה העיקר: אחרי שסיימת את הטבלה, בחר עשרים מסמכים באקראי מתוך הארבעים, פתח כל אחד מהם שוב, ובדוק מול המסמך עצמו אם מה שכתבת בטבלה נכון.
+
+לכל אחד מהעשרים כתוב: מה כתבת בטבלה, מה כתוב במסמך, והאם זה תואם. כל מקום שאינו תואם - תקן בטבלה עצמה.
+
+ובסוף הפק דוח קצר בקובץ נפרד ובו: כמה מסמכים נבדקו, בכמה מהם נמצאה אי-התאמה, מה בדיוק תוקן בכל אחד, ומה נשאר לא ברור.
+
+אל תשנה, תמחק או תשנה שם לאף מסמך מקור.</div>
+  <span class="copy-status" aria-live="polite" aria-atomic="true"></span>
+</div>
+
+<h3>מה יקרה אחרי שתדביקו</h3>
+
+<p><strong>תראו אותו עובד פעמיים.</strong> קודם קורא ארבעים מסמכים ובונה טבלה, <strong>ואז חוזר ופותח מסמכים בפעם השנייה.</strong> זה החלק ששווה להסתכל בו.</p>
+
+<p>בסוף יהיו בתיקייה שני קבצים: הטבלה, ודוח הבדיקה.</p>
+
+<h3>ומה שקיבלנו כשהרצנו את זה</h3>
+
+<p><strong>עשרים מתוך עשרים תואמים. אפס אי-התאמות.</strong></p>
+
+<p>ולפני זה, משפט אחד ששווה לשים לב אליו:</p>
+
+<aside class="content-box legal-example">
+<p><em>"הגרלתי את עשרים המסמכים <strong>לפני</strong> שכתבתי את הטבלה, כדי שהבחירה לא תושפע ממה שרשמתי. כל אחד מהם נפתח מחדש והושווה מול העמוד עצמו."</em></p>
+<p><strong>הוא הגריל לפני, ולא אחרי.</strong> כדי שלא ייבחר דווקא במסמכים שהוא בטוח בהם.</p>
+</aside>
+
+<h3>והרגע, והוא לא הטבלה</h3>
+
+<p>בסוף הדוח הוא הוסיף מיוזמתו, בלי שנשאל:</p>
+
+<aside class="content-box recommendation">
+<p><em>"הערה על תוקף הבדיקה: <strong>אני זה שכתב את הטבלה ואני זה שבדק אותה</strong>, ולכן טעות קריאה שחזרה על עצמה בשני הסבבים לא הייתה מתגלה כאן."</em></p>
+<p><strong>הוא אמר לכם את המגבלה של הבדיקה שהוא עצמו ביצע.</strong></p>
+<p>לא "בדקתי והכל תקין", אלא <strong>"בדקתי, וזה מה שהבדיקה שלי לא יכולה לתפוס".</strong> זה בדיוק מה שאתם רוצים ממתמחה, ובדרך כלל לא מקבלים.</p>
+</aside>
+
+<p><strong>ובנוסף שלוש הערות תפעוליות שהוא הוסיף:</strong> ששמות הקבצים מטעים ולכן תייק לפי גוף המסמך · ששתי טיוטות ההסכם נושאות נוסח סותר לסעיף 14 ואין בתיק הסכם חתום · <strong>ושלושה מסמכים נסרקו כתמונת ראי, שהוא קרא אותם בכיוון ההפוך והמליץ לאמת מול המקור.</strong></p>
+</section>
+
+<section class="guide-section" id="why">
+<span class="section-number">09</span>
 <h2>למה זה שונה מכל מה שעשיתם עד כאן</h2>
 
 <p>בכל מה שלמדתם עד עכשיו, וגם בכל מה שאתם מכירים מהעבודה בדפדפן, אתם נמצאים בקצה אחד: אתם כותבים, אתם ממתינים, אתם מקבלים. תמיד יש בן אדם שיוזם.</p>
@@ -603,7 +681,7 @@
 </section>
 
 <section class="guide-section" id="open">
-<span class="section-number">09</span>
+<span class="section-number">10</span>
 <h2>פותחים את המסך הנכון</h2>
 
 <p><strong>למעלה, ליד <bdi dir="ltr">Home</bdi>, לחצו על <bdi dir="ltr">Code</bdi>.</strong> זו אותה אפליקציה שאתם מכירים, וזה הצד שבו יושב <bdi dir="ltr">Claude Code</bdi>.</p>
@@ -635,7 +713,7 @@
 </section>
 
 <section class="guide-section" id="local">
-<span class="section-number">10</span>
+<span class="section-number">11</span>
 <h2><bdi dir="ltr">Local</bdi>, ולא ענן</h2>
 
 <p>בפינה למעלה יש <bdi dir="ltr">New routine</bdi> ולידו חץ קטן.</p>
@@ -666,7 +744,7 @@
 </section>
 
 <section class="guide-section" id="form">
-<span class="section-number">11</span>
+<span class="section-number">12</span>
 <h2>ממלאים ארבעה שדות</h2>
 
 <p>זה הטופס הנכון. יש בו שדה לבחירת תיקייה, בורר מודל, ואפשרות <bdi dir="ltr">Manual</bdi> בשורת התזמון.</p>
@@ -781,7 +859,7 @@
 </section>
 
 <section class="guide-section" id="run">
-<span class="section-number">12</span>
+<span class="section-number">13</span>
 <h2><bdi dir="ltr">Create</bdi>, ואז <bdi dir="ltr">Run now</bdi></h2>
 
 <p>בדף שנפתח, למעלה בקצה, יש כפתור שחור: <strong><bdi dir="ltr">Run now</bdi></strong>.</p>
@@ -823,7 +901,7 @@
 </section>
 
 <section class="guide-section" id="result">
-<span class="section-number">13</span>
+<span class="section-number">14</span>
 <h2>מה היא החזירה, ולמה זה מרשים</h2>
 
 <p>בהרצה שלנו הקובץ נכתב שלוש דקות אחרי הלחיצה. בתוכו שתי טבלאות ועשרה סעיפי "טעון בדיקה", וכל שורה עם התאריך, מה נדרש, מי הצד החייב, ומאיזה מסמך ומאיזה סעיף.</p>
@@ -845,7 +923,7 @@
 </section>
 
 <section class="guide-section" id="truth">
-<span class="section-number">14</span>
+<span class="section-number">15</span>
 <h2>מה שחייבים לדעת לפני שסומכים על זה</h2>
 
 <p><strong>שלושה תנאים, וכולם מתקיימים או שכלום לא קורה:</strong></p>
@@ -885,13 +963,14 @@
 <li><a href="#ex1"><span>05</span>תרגיל 1 · ארבעים סרוקים מקבלים שם</a></li>
 <li><a href="#ex2"><span>06</span>תרגיל 2 · מאות עמודים, ושמונה שורות</a></li>
 <li><a href="#ex3"><span>07</span>תרגיל 3 · הכול חזר</a></li>
-<li><a href="#why"><span>08</span>למה זה שונה מכל מה שעשיתם עד כאן</a></li>
-<li><a href="#open"><span>09</span>פותחים את המסך הנכון</a></li>
-<li><a href="#local"><span>10</span><bdi dir="ltr">Local</bdi>, ולא ענן</a></li>
-<li><a href="#form"><span>11</span>ממלאים ארבעה שדות</a></li>
-<li><a href="#run"><span>12</span><bdi dir="ltr">Create</bdi>, ואז <bdi dir="ltr">Run now</bdi></a></li>
-<li><a href="#result"><span>13</span>מה היא החזירה, ולמה זה מרשים</a></li>
-<li><a href="#truth"><span>14</span>מה שחייבים לדעת לפני שסומכים על זה</a></li>
+<li><a href="#ex4"><span>08</span>תרגיל 4 · הוא בודק את עצמו</a></li>
+<li><a href="#why"><span>09</span>למה זה שונה מכל מה שעשיתם עד כאן</a></li>
+<li><a href="#open"><span>10</span>פותחים את המסך הנכון</a></li>
+<li><a href="#local"><span>11</span><bdi dir="ltr">Local</bdi>, ולא ענן</a></li>
+<li><a href="#form"><span>12</span>ממלאים ארבעה שדות</a></li>
+<li><a href="#run"><span>13</span><bdi dir="ltr">Create</bdi>, ואז <bdi dir="ltr">Run now</bdi></a></li>
+<li><a href="#result"><span>14</span>מה היא החזירה, ולמה זה מרשים</a></li>
+<li><a href="#truth"><span>15</span>מה שחייבים לדעת לפני שסומכים על זה</a></li>
 </ol>
 </aside>
 </div>
