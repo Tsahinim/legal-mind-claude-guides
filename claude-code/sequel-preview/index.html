@@ -43,13 +43,14 @@
 <li><a href="#panic"><span>04</span><bdi dir="ltr">Claude</bdi> מתארח כאן, ולכן לפעמים צריך עוד לחיצה</a></li>
 <li><a href="#ex1"><span>05</span>תרגיל 1 · ארבעים סרוקים מקבלים שם</a></li>
 <li><a href="#ex2"><span>06</span>תרגיל 2 · מאות עמודים, ושמונה שורות</a></li>
-<li><a href="#why"><span>07</span>למה זה שונה מכל מה שעשיתם עד כאן</a></li>
-<li><a href="#open"><span>08</span>פותחים את המסך הנכון</a></li>
-<li><a href="#local"><span>09</span><bdi dir="ltr">Local</bdi>, ולא ענן</a></li>
-<li><a href="#form"><span>10</span>ממלאים ארבעה שדות</a></li>
-<li><a href="#run"><span>11</span><bdi dir="ltr">Create</bdi>, ואז <bdi dir="ltr">Run now</bdi></a></li>
-<li><a href="#result"><span>12</span>מה היא החזירה, ולמה זה מרשים</a></li>
-<li><a href="#truth"><span>13</span>מה שחייבים לדעת לפני שסומכים על זה</a></li>
+<li><a href="#ex3"><span>07</span>תרגיל 3 · הכול חזר</a></li>
+<li><a href="#why"><span>08</span>למה זה שונה מכל מה שעשיתם עד כאן</a></li>
+<li><a href="#open"><span>09</span>פותחים את המסך הנכון</a></li>
+<li><a href="#local"><span>10</span><bdi dir="ltr">Local</bdi>, ולא ענן</a></li>
+<li><a href="#form"><span>11</span>ממלאים ארבעה שדות</a></li>
+<li><a href="#run"><span>12</span><bdi dir="ltr">Create</bdi>, ואז <bdi dir="ltr">Run now</bdi></a></li>
+<li><a href="#result"><span>13</span>מה היא החזירה, ולמה זה מרשים</a></li>
+<li><a href="#truth"><span>14</span>מה שחייבים לדעת לפני שסומכים על זה</a></li>
 </ol></details></nav>
 
 <div class="layout">
@@ -501,8 +502,85 @@
 </aside>
 </section>
 
-<section class="guide-section" id="why">
+<section class="guide-section" id="ex3">
 <span class="section-number">07</span>
+<h2>תרגיל 3 · הכול חזר</h2>
+
+<p><strong>איפה עובדים:</strong> ב-<bdi dir="ltr">VS Code</bdi> · <strong>כמה זמן:</strong> כחמש דקות</p>
+
+<h3>המטרה</h3>
+
+<p><strong>זה החשש שעוצר עורכי דין יותר מכל דבר אחר:</strong> "ומה אם הוא יעשה משהו לתיק שלי שאני לא רוצה?"</p>
+
+<p>אז נעשה בדיוק את זה. <strong>ניתן לו לייצר שישה קבצים בתיקייה, ואז נחזיר את הכל אחורה בשתי לחיצות</strong> - ונראה במו עינינו מה בדיוק חוזר.</p>
+
+<h3>ההוראה</h3>
+
+<p><strong>הפעם היא קצרה ופשוטה בכוונה</strong>, כי מה שמעניין אינו התוצר אלא מה שקורה אחריו.</p>
+
+<div class="copy-block">
+  <div class="copy-heading">
+    <strong>ההוראה, להעתקה</strong>
+    <button class="copy-button" data-copy-target="ex3-prompt" type="button">העתקת ההוראה</button>
+  </div>
+  <div class="copy-body" id="ex3-prompt">עבור על חמשת מסמכי התיק שבתיקייה וקרא אותם. שניים מהם סרוקים, אז פשוט הסתכל על העמודים כמו על תמונה.
+
+לכל אחד מחמשת המסמכים הכן קובץ תקציר נפרד בתיקייה, בשם לפי נהלי המשרד, ובו: מה המסמך, מתי, בין מי למי, ומה העיקר בו בשלוש שורות.
+
+בנוסף הכן קובץ אחד שמרכז את חמשת התקצירים לציר זמן אחד.</div>
+  <span class="copy-status" aria-live="polite" aria-atomic="true"></span>
+</div>
+
+<h3>מה יקרה אחרי שתדביקו</h3>
+
+<p>הוא יקרא את חמשת המסמכים ויכתוב <strong>שישה קבצים חדשים</strong> - חמישה תקצירים וציר זמן. <strong>תראו אותם מופיעים בסייר הקבצים שבצד.</strong></p>
+
+<h3>ועכשיו הדבר עצמו</h3>
+
+<ol class="steps">
+<li><strong>לחצו פעם אחת בתוך תיבת הכתיבה</strong> של <bdi dir="ltr">Claude</bdi>, כדי שהסמן יהיה שם.</li>
+<li><strong>הקישו <bdi dir="ltr">Esc</bdi> פעמיים.</strong></li>
+</ol>
+
+<aside class="content-box warning">
+<p><strong>וזה חשוב: <bdi dir="ltr">Esc</bdi> כפול עובד רק כשהסמן בתוך תיבת הכתיבה.</strong> אם הפוקוס על סייר הקבצים או על מסמך פתוח, לא יקרה כלום, ותחשבו שאין דבר כזה.</p>
+</aside>
+
+<p>ייפתח מסך בשם <bdi dir="ltr">Rewind to...</bdi> ובו רשימת נקודות החזרה. <strong>בחרו את השורה שלפני שהתחיל, והקישו <bdi dir="ltr">Enter</bdi>.</strong></p>
+
+<h3>ומה שיופיע אז הוא כל התרגיל</h3>
+
+<p><strong>מסך שאומר לכם בדיוק מה עומד לקרות, לפני שהוא קורה:</strong></p>
+
+<aside class="content-box legal-example">
+<p><strong><bdi dir="ltr">226 lines will be removed and 0 lines will be added across 6 files</bdi></strong></p>
+<p><strong>ומתחתיו ששת הקבצים, אחד אחד, בשמם המלא.</strong></p>
+<p>ומיד אחריהם שורה שכדאי לקרוא לאט:</p>
+<p><em><bdi dir="ltr">Rewinding does not affect files edited manually or via bash.</bdi></em></p>
+<p><strong>כלומר: מה שערכתם ביד, או שנעשה מחוץ לו, לא חוזר.</strong> הוא אומר לכם את הגבול של עצמו.</p>
+</aside>
+
+<p><strong>לחצו <bdi dir="ltr">Continue</bdi>.</strong></p>
+
+<h3>ומה שקרה כשהרצנו את זה</h3>
+
+<p><strong>ששת הקבצים נמחקו, וחמשת מסמכי המקור נשארו בדיוק כפי שהיו.</strong> בדקנו בתיקייה עצמה, לא במסך.</p>
+
+<aside class="content-box warning">
+<h3>ודבר אחד שיבלבל אתכם</h3>
+<p><strong>סייר הקבצים לא מתרענן מיד.</strong> הקבצים כבר נמחקו, אבל ממשיכים להופיע ברשימה. <strong>לחצו על שם התיקייה או על אייקון הרענון - הם כבר לא שם.</strong></p>
+<p>בלי התזכורת הזאת הייתם מסיקים שזה נכשל.</p>
+</aside>
+
+<aside class="content-box recommendation">
+<h3>והרגע</h3>
+<p><strong>הבקשה שלכם חוזרת לתיבת הכתיבה, מוכנה לעריכה.</strong></p>
+<p><strong>וזה בעצם כל הרעיון.</strong> זו לא פעולת "בטל", זו פעולת <strong>"נסה שוב אחרת"</strong>: הכל חזר למקום, והבקשה מחכה לכם כדי שתשנו בה מילה ותשלחו שוב.</p>
+</aside>
+</section>
+
+<section class="guide-section" id="why">
+<span class="section-number">08</span>
 <h2>למה זה שונה מכל מה שעשיתם עד כאן</h2>
 
 <p>בכל מה שלמדתם עד עכשיו, וגם בכל מה שאתם מכירים מהעבודה בדפדפן, אתם נמצאים בקצה אחד: אתם כותבים, אתם ממתינים, אתם מקבלים. תמיד יש בן אדם שיוזם.</p>
@@ -525,7 +603,7 @@
 </section>
 
 <section class="guide-section" id="open">
-<span class="section-number">08</span>
+<span class="section-number">09</span>
 <h2>פותחים את המסך הנכון</h2>
 
 <p><strong>למעלה, ליד <bdi dir="ltr">Home</bdi>, לחצו על <bdi dir="ltr">Code</bdi>.</strong> זו אותה אפליקציה שאתם מכירים, וזה הצד שבו יושב <bdi dir="ltr">Claude Code</bdi>.</p>
@@ -557,7 +635,7 @@
 </section>
 
 <section class="guide-section" id="local">
-<span class="section-number">09</span>
+<span class="section-number">10</span>
 <h2><bdi dir="ltr">Local</bdi>, ולא ענן</h2>
 
 <p>בפינה למעלה יש <bdi dir="ltr">New routine</bdi> ולידו חץ קטן.</p>
@@ -588,7 +666,7 @@
 </section>
 
 <section class="guide-section" id="form">
-<span class="section-number">10</span>
+<span class="section-number">11</span>
 <h2>ממלאים ארבעה שדות</h2>
 
 <p>זה הטופס הנכון. יש בו שדה לבחירת תיקייה, בורר מודל, ואפשרות <bdi dir="ltr">Manual</bdi> בשורת התזמון.</p>
@@ -703,7 +781,7 @@
 </section>
 
 <section class="guide-section" id="run">
-<span class="section-number">11</span>
+<span class="section-number">12</span>
 <h2><bdi dir="ltr">Create</bdi>, ואז <bdi dir="ltr">Run now</bdi></h2>
 
 <p>בדף שנפתח, למעלה בקצה, יש כפתור שחור: <strong><bdi dir="ltr">Run now</bdi></strong>.</p>
@@ -745,7 +823,7 @@
 </section>
 
 <section class="guide-section" id="result">
-<span class="section-number">12</span>
+<span class="section-number">13</span>
 <h2>מה היא החזירה, ולמה זה מרשים</h2>
 
 <p>בהרצה שלנו הקובץ נכתב שלוש דקות אחרי הלחיצה. בתוכו שתי טבלאות ועשרה סעיפי "טעון בדיקה", וכל שורה עם התאריך, מה נדרש, מי הצד החייב, ומאיזה מסמך ומאיזה סעיף.</p>
@@ -767,7 +845,7 @@
 </section>
 
 <section class="guide-section" id="truth">
-<span class="section-number">13</span>
+<span class="section-number">14</span>
 <h2>מה שחייבים לדעת לפני שסומכים על זה</h2>
 
 <p><strong>שלושה תנאים, וכולם מתקיימים או שכלום לא קורה:</strong></p>
@@ -806,13 +884,14 @@
 <li><a href="#panic"><span>04</span><bdi dir="ltr">Claude</bdi> מתארח כאן, ולכן לפעמים צריך עוד לחיצה</a></li>
 <li><a href="#ex1"><span>05</span>תרגיל 1 · ארבעים סרוקים מקבלים שם</a></li>
 <li><a href="#ex2"><span>06</span>תרגיל 2 · מאות עמודים, ושמונה שורות</a></li>
-<li><a href="#why"><span>07</span>למה זה שונה מכל מה שעשיתם עד כאן</a></li>
-<li><a href="#open"><span>08</span>פותחים את המסך הנכון</a></li>
-<li><a href="#local"><span>09</span><bdi dir="ltr">Local</bdi>, ולא ענן</a></li>
-<li><a href="#form"><span>10</span>ממלאים ארבעה שדות</a></li>
-<li><a href="#run"><span>11</span><bdi dir="ltr">Create</bdi>, ואז <bdi dir="ltr">Run now</bdi></a></li>
-<li><a href="#result"><span>12</span>מה היא החזירה, ולמה זה מרשים</a></li>
-<li><a href="#truth"><span>13</span>מה שחייבים לדעת לפני שסומכים על זה</a></li>
+<li><a href="#ex3"><span>07</span>תרגיל 3 · הכול חזר</a></li>
+<li><a href="#why"><span>08</span>למה זה שונה מכל מה שעשיתם עד כאן</a></li>
+<li><a href="#open"><span>09</span>פותחים את המסך הנכון</a></li>
+<li><a href="#local"><span>10</span><bdi dir="ltr">Local</bdi>, ולא ענן</a></li>
+<li><a href="#form"><span>11</span>ממלאים ארבעה שדות</a></li>
+<li><a href="#run"><span>12</span><bdi dir="ltr">Create</bdi>, ואז <bdi dir="ltr">Run now</bdi></a></li>
+<li><a href="#result"><span>13</span>מה היא החזירה, ולמה זה מרשים</a></li>
+<li><a href="#truth"><span>14</span>מה שחייבים לדעת לפני שסומכים על זה</a></li>
 </ol>
 </aside>
 </div>
