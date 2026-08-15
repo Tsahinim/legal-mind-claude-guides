@@ -9,9 +9,10 @@ C = os.path.join(ROOT, "skills", "qa", "chapter-opening-assets")
 D = os.path.join(ROOT, "skills", "qa", "ex4-assets")
 E = os.path.join(ROOT, "skills", "qa", "ex5-assets")
 F = os.path.join(ROOT, "skills", "qa", "ex2-assets")
+G = os.path.join(ROOT, "skills", "qa", "md-preview-assets")
 
 def _path(n):
-    for folder in (A, B, C, D, E, F):
+    for folder in (A, B, C, D, E, F, G):
         for name in ("raw-%s.png" % n, "%s.png" % n):
             p = os.path.join(folder, name)
             if os.path.exists(p):
@@ -508,6 +509,8 @@ __FIG_RECENT__
 <p><strong>או בקיצור מקלדת, כשהקובץ פתוח: <bdi dir="ltr">Ctrl+Shift+V</bdi>.</strong></p>
 <p>ומיד תקבלו את אותו קובץ עם כותרות, טבלאות מסודרות וטקסט רגיל. <strong>אותו קובץ בדיוק, רק מוצג כמו שצריך.</strong></p>
 </aside>
+
+__FIG_MDMENU__
 
 <p><strong>ואם אתם רוצים שזה יקרה תמיד מעצמו:</strong> באותו תפריט ימני יש <bdi dir="ltr">Open With</bdi>, ובסוף הרשימה שנפתחת <bdi dir="ltr">Configure default editor</bdi>. <strong>בוחרים שם <bdi dir="ltr">Markdown Preview</bdi>, ומעכשיו כל קובץ כזה ייפתח ישר בתצוגה הנעימה.</strong></p>
 
@@ -1626,6 +1629,13 @@ HTML = HTML.replace("__FIG_NEWSESSION__", shot("cut-newsession",
 HTML = HTML.replace("__FIG_EXPLORERICON__", shot("open-explorer-icon",
     "אייקון המסמכים, העליון בסרגל. VS Code עצמו כותב את שמו כשעוברים עליו עם העכבר",
     legend=None))
+
+HTML = HTML.replace("__FIG_MDMENU__", shot("cut-md-menu",
+    "התפריט שנפתח בלחיצה ימנית על קובץ. שתי השורות שתצטרכו נמצאות בו למעלה",
+    targets=[("left:3%;top:3.6%;width:51.1%;height:9%", "badge-right", 1),
+             ("left:3%;top:31.3%;width:51.1%;height:9%", "badge-right", 2)],
+    legend=["<bdi dir=\"ltr\">Open Preview</bdi>, הראשון ברשימה. <strong>זה מה שהופך את הקובץ ממה שנראה כמו קוד למסמך קריא.</strong>",
+            "<bdi dir=\"ltr\">Reveal in File Explorer</bdi>. <strong>פותח את התיקייה בסייר של Windows</strong>, וזה מה שנשתמש בו כדי לפתוח קובץ בדפדפן."]))
 
 HTML = HTML.replace("__FIG_INSTALLPOPUP__", shot("cut-install-popup",
     "החלון שקופץ ומציע להתקין תוסף. הוא לא קשור למשימה",

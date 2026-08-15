@@ -12,10 +12,11 @@ C = os.path.join(ROOT, "skills", "qa", "chapter-opening-assets")
 D = os.path.join(ROOT, "skills", "qa", "ex4-assets")
 E = os.path.join(ROOT, "skills", "qa", "ex5-assets")
 F = os.path.join(ROOT, "skills", "qa", "ex2-assets")
+G = os.path.join(ROOT, "skills", "qa", "md-preview-assets")
 OUT = os.path.dirname(os.path.abspath(__file__))
 
 def _path(n):
-    for folder in (A, B, C, D, E, F):
+    for folder in (A, B, C, D, E, F, G):
         for name in ("raw-%s.png" % n, "%s.png" % n):
             p = os.path.join(folder, name)
             if os.path.exists(p):
@@ -79,6 +80,8 @@ def draw(name, targets):
     print(p, im.size)
 
 if __name__ == "__main__":
+    draw("cut-md-menu", [("left:3%;top:3.6%;width:51.1%;height:9%", "badge-right", 1),
+                         ("left:3%;top:31.3%;width:51.1%;height:9%", "badge-right", 2)])
     draw("ex2-04", [("left:2.7%;top:14.1%;width:29.6%;height:34.7%", "badge-above", 1),
                     ("left:5.8%;top:52.8%;width:92.1%;height:8%", "badge-outside-left", 2)])
     draw("ex5-result", [("left:69.6%;top:50.1%;width:28%;height:11.1%", "badge-outside-left", 1),
