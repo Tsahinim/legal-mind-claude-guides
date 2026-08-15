@@ -1027,6 +1027,12 @@ __FIG_EX5NOTE__
 <h3>ולמה דווקא רשימת מועדים</h3>
 <p>כי זה מה שקורה לתיק אחרי שסוגרים אותו: לא שוכחים אותו, פשוט לא פותחים אותו יותר. עד שמישהו מהצד השני מזכיר. משימה שעוברת על התיק כל שבוע היא הדבר הכי קרוב לעין שנשארת פקוחה.</p>
 </aside>
+
+<aside class="content-box recommendation">
+<h3>ולפני שמתחילים, שני דברים</h3>
+<p><strong>הפעם עובדים באפליקציה של <bdi dir="ltr">Claude</bdi>, ולא ב-<bdi dir="ltr">VS Code</bdi>.</strong> אותה אפליקציה שכבר מותקנת אצלכם, ואין מה להוריד ואין מה להתקין. <strong>אפשר לסגור את <bdi dir="ltr">VS Code</bdi> לגמרי, לא נחזור אליו כאן.</strong></p>
+<p><strong>וזה לוקח כעשרים דקות,</strong> מהן כשלוש שבהן היא עובדת ואתם לא.</p>
+</aside>
 </section>
 
 <section class="guide-section" id="open">
@@ -1462,7 +1468,7 @@ HTML = HTML.replace("__SHOT_288__", shot("288",
     legend=["<bdi dir=\"ltr\">Name must contain at least one letter or number</bdi>. השדה הזה הופך את מה שתכתבו לשם תיקייה במחשב, ולכן <strong>רק הוא חייב להיות באנגלית.</strong>"]))
 
 HTML = HTML.replace("__SHOT_291__", shot("291",
-    "הטופס מוכן. שלושת הדברים שהופכים אותו לתקין",
+    "הטופס מוכן. ארבעת הדברים שהופכים אותו לתקין",
     targets=[("left:25%;top:78%;width:25%;height:5%", "", 1),
              ("left:88%;top:75%;width:10%;height:5%", "", 2),
              ("left:25%;top:88%;width:8%;height:5%", "", 3),
@@ -1593,7 +1599,7 @@ HTML = HTML.replace("__FIG_TRUST__", shot("open-trust",
 HTML = HTML.replace("__FIG_NEWSESSION__", shot("cut-newsession",
     "חלונית Claude Code אחרי לחיצה על הכוכבית",
     targets=[("left:4.3%;top:20.7%;width:42.4%;height:11.4%", "badge-right", 1)],
-    legend=["<bdi dir=\"ltr\">New session</bdi>. <strong>לחיצה אחת, ורק אז נפתחת תיבת הכתיבה.</strong> ו<bdi dir=\"ltr\">No sessions yet</bdi> שכתוב מתחת פירושו שזו תיקייה חדשה שעוד לא עבדתם בה, לא שמשהו נמחק."]))
+    legend=["<bdi dir=\"ltr\">New session</bdi>. <strong>לחיצה אחת, ורק אז נפתחת תיבת הכתיבה.</strong> ומה שכתוב מתחת, <bdi dir=\"ltr\">No sessions yet</bdi>, פירושו שזו תיקייה חדשה שעוד לא עבדתם בה - <strong>ולא שמשהו נמחק.</strong>"]))
 
 HTML = HTML.replace("__FIG_EXPLORERICON__", shot("open-explorer-icon",
     "אייקון המסמכים, העליון בסרגל. VS Code עצמו כותב את שמו כשעוברים עליו עם העכבר",
@@ -1636,7 +1642,7 @@ HTML = HTML.replace("__FIG_LOCALCLOUD__", shot("cut-local-cloud",
     legend=["<bdi dir=\"ltr\">Local</bdi>, העליונה. <strong>היא זו שרואה את הקבצים שעל המחשב שלכם.</strong> <bdi dir=\"ltr\">Cloud</bdi> שמתחתיה רצה בשרת של <bdi dir=\"ltr\">Anthropic</bdi>, ואין לה גישה לתיקייה."]))
 
 HTML = HTML.replace("__FIG_GREYCREATE__", shot("cut-grey-create",
-    "תחתית הטופס לפני שבחרתם תיקייה. שלושת הדברים שצריך לגעת בהם, וכפתור אפור",
+    "תחתית הטופס לפני שבחרתם תיקייה. שני הדברים שצריך לגעת בהם, והכפתור שנשאר אפור בינתיים",
     targets=[("left:1.6%;top:17.9%;width:15.5%;height:12.2%", "", 1),
              ("left:88.6%;top:4.1%;width:10.2%;height:10.6%", "", 2),
              ("left:90.6%;top:84.1%;width:9%;height:14.2%", "badge-above", 3)],
@@ -1645,9 +1651,9 @@ HTML = HTML.replace("__FIG_GREYCREATE__", shot("cut-grey-create",
             "<bdi dir=\"ltr\">Create</bdi>, ובצילום הזה הוא אפור. <strong>כך הוא נראה כל עוד לא נבחרה תיקייה</strong> - בלי הודעה, בלי סימן אדום, בלי כלום."]))
 
 HTML = HTML.replace("__FIG_ACTIVITYBAR__", shot("cut-activitybar",
-    "סרגל האייקונים שבשמאל המסך. הכוכבית הכתומה היא קלוד",
+    "סרגל האייקונים שבשמאל המסך. הכוכבית הכתומה היא קלוד, והעליון בסרגל פותח את רשימת הקבצים",
     targets=[("left:14.3%;top:49.5%;width:71.4%;height:6.4%", "badge-below", 1)],
-    legend=["<strong>הכוכבית הכתומה.</strong> לחיצה עליה פותחת את חלונית <bdi dir=\"ltr\">Claude Code</bdi>, ושם לוחצים <bdi dir=\"ltr\">New session</bdi>. <strong>אם אינכם רואים אותה, התיקייה עדיין לא אושרה</strong> - חזרו לשלב 1. והאייקון העליון בסרגל, זה שנראה כמו שני דפים, הוא שפותח את רשימת הקבצים."]))
+    legend=["<strong>הכוכבית הכתומה.</strong> לחיצה עליה פותחת את חלונית <bdi dir=\"ltr\">Claude Code</bdi>, ושם לוחצים <bdi dir=\"ltr\">New session</bdi>. <strong>ואם אינכם רואים אותה בכלל - התיקייה עדיין לא אושרה, וצריך לחזור לשלב 1.</strong>"]))
 
 HTML = HTML.replace("__FIG_SIXFILES__", shot("vs-02",
     "סייר הקבצים אחרי שהוא סיים. מסמכי המקור למעלה, ומתחתיהם מה שהוא כתב",
@@ -1666,7 +1672,7 @@ HTML = HTML.replace("__FIG_SESSIONS__", shot("cut-sessions",
 HTML = HTML.replace("__FIG_REWIND__", shot("vs-01",
     "מסך האישור של החזרה לאחור. הוא מפרט מה יימחק לפני שהוא מוחק",
     targets=[("left:2.8%;top:78.2%;width:94%;height:7.7%", "badge-right", 1)],
-    legend=["<bdi dir=\"ltr\">Continue</bdi> מבצע את החזרה. <strong>עד שלא לוחצים עליו, שום דבר עדיין לא נמחק</strong> - ו<bdi dir=\"ltr\">Never mind</bdi> שמתחתיו מבטל הכל."]))
+    legend=["<bdi dir=\"ltr\">Continue</bdi> מבצע את החזרה. <strong>עד שלא לוחצים עליו, שום דבר עדיין לא נמחק</strong> - והכפתור שמתחתיו, <bdi dir=\"ltr\">Never mind</bdi>, מבטל הכל."]))
 
 HTML = HTML.replace("__FIG_HISTORY__", shot("cut-history-restored",
     "כך נראית שיחה שחזרה: השם שלה בראש החלונית, וכל מה שנכתב בה קודם",
