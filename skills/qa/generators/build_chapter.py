@@ -8,9 +8,10 @@ B = os.path.join(ROOT, "skills", "qa", "chapter-vscode-assets")
 C = os.path.join(ROOT, "skills", "qa", "chapter-opening-assets")
 D = os.path.join(ROOT, "skills", "qa", "ex4-assets")
 E = os.path.join(ROOT, "skills", "qa", "ex5-assets")
+F = os.path.join(ROOT, "skills", "qa", "ex2-assets")
 
 def _path(n):
-    for folder in (A, B, C, D, E):
+    for folder in (A, B, C, D, E, F):
         for name in ("raw-%s.png" % n, "%s.png" % n):
             p = os.path.join(folder, name)
             if os.path.exists(p):
@@ -637,11 +638,15 @@ __FIG_FLAGGED__
 
 <p><strong>הוא יקרא את כל הקבצים, וזה ייקח לו זמן.</strong> אצלנו כרבע שעה על כתשעת אלפים שורות. <strong>זה הזמן ללכת להכין קפה.</strong></p>
 
+__FIG_EX2WORK__
+
 <p>בסוף יהיה בתיקייה קובץ עם טבלה, ובה לכל מועד: עמוד, שורה, התאריך, מי אמר את זה, וציטוט קצר.</p>
 
 <h3>ומה שקיבלנו כשהרצנו את זה</h3>
 
 <p><strong>כשש שורות בטבלה, וכל אחת מהן נכונה.</strong> בדקנו כל הפניה מול הפרוטוקול עצמו: <strong>עמוד ושורה מדויקים, אפס שורות מומצאות.</strong></p>
+
+__FIG_EX2RESULT__
 
 <aside class="content-box info">
 <h3>ואם יצא לכם מספר אחר, זה תקין</h3>
@@ -1491,6 +1496,17 @@ HTML = HTML.replace("__FIG_PANEL__", shot("cut-panel-top",
             "והלשונית <bdi dir=\"ltr\">Chat</bdi> שלידה <strong>אינה של <bdi dir=\"ltr\">Claude</bdi>.</strong> היא של <bdi dir=\"ltr\">VS Code</bdi>, ומי שיכתוב בה יקבל תשובה ממישהו אחר.",
             "<strong>אייקון השעון.</strong> לחיצה עליו פותחת את כל השיחות שהיו בתיקייה הזאת.",
             "והפלוס שלידו <strong>פותח שיחה חדשה.</strong> אל תלחצו עליו כשאתם מחפשים שיחה ישנה."]))
+
+HTML = HTML.replace("__FIG_EX2WORK__", shot("ex2-02",
+    "הוא פותח את ארבעת הפרוטוקולים וסופר את השורות בכל אחד",
+    legend=None))
+
+HTML = HTML.replace("__FIG_EX2RESULT__", shot("ex2-04",
+    "מה שהוא החזיר: טבלה עם הפניה מדויקת, ולידה מה שהוא סירב להכניס אליה",
+    targets=[("left:2.7%;top:14.1%;width:29.6%;height:34.7%", "badge-above", 1),
+             ("left:5.8%;top:52.8%;width:92.1%;height:8%", "badge-outside-left", 2)],
+    legend=["<strong>הטבלה. לכל מועד: עמוד, שורה, תאריך ותוכן.</strong> פתחנו את הפרוטוקולים ובדקנו כל אחת משש השורות - כולן מדויקות.",
+            "<strong>וזה החלק המעניין:</strong> שני תאריכים שנמצאים צמוד לאזכור תשלום <strong>ואינם מועדי תשלום</strong> - אחד מועד פגישה, אחד מועד הגשה למיסוי. <strong>הוא לא הכניס אותם לטבלה, וכתב למה.</strong>"]))
 
 HTML = HTML.replace("__FIG_EX4BEFORE__", shot("ex4-before",
     "התיקייה לפני שהוא התחיל: תיקיית הסרוקים וקובץ הנהלים בלבד",

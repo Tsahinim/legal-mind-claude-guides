@@ -11,10 +11,11 @@ B = os.path.join(ROOT, "skills", "qa", "chapter-vscode-assets")
 C = os.path.join(ROOT, "skills", "qa", "chapter-opening-assets")
 D = os.path.join(ROOT, "skills", "qa", "ex4-assets")
 E = os.path.join(ROOT, "skills", "qa", "ex5-assets")
+F = os.path.join(ROOT, "skills", "qa", "ex2-assets")
 OUT = os.path.dirname(os.path.abspath(__file__))
 
 def _path(n):
-    for folder in (A, B, C, D, E):
+    for folder in (A, B, C, D, E, F):
         for name in ("raw-%s.png" % n, "%s.png" % n):
             p = os.path.join(folder, name)
             if os.path.exists(p):
@@ -78,6 +79,8 @@ def draw(name, targets):
     print(p, im.size)
 
 if __name__ == "__main__":
+    draw("ex2-04", [("left:2.7%;top:14.1%;width:29.6%;height:34.7%", "badge-above", 1),
+                    ("left:5.8%;top:52.8%;width:92.1%;height:8%", "badge-outside-left", 2)])
     draw("ex5-result", [("left:69.6%;top:50.1%;width:28%;height:11.1%", "badge-outside-left", 1),
                         ("left:75.2%;top:88.7%;width:23.3%;height:7.8%", "badge-outside-left", 2)])
     draw("ex5-daycount", [("left:59%;top:22.3%;width:6%;height:14.2%", "badge-outside-left", 1)])
