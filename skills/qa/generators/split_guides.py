@@ -20,13 +20,13 @@ GUIDES = [
          learn="איך נראה המסך מיד אחרי שפותחים תיקייה ומה עושים בו לפי הסדר, ולמה חלונות קופצים, חלוניות שיחה זרות ושיחות שנעלמו הם התנהגות רגילה ולא תקלה.",
          end="סביבת עבודה שאתם מרגישים בה בבית, ופרק שאפשר לחזור אליו בכל פעם שמשהו נראה מוזר.",
          time="כ-20 דקות קריאה", need="למי שסיים את המדריך למתחילים. אין צורך בידע טכני"),
-    dict(dir="guide-2", num=2, ids=["download", "ex1", "ex2", "ex3", "ex4", "ex5", "why"],
+    dict(dir="guide-2", num=2, ids=["download", "ex1", "ex2", "ex3", "ex4", "ex5"],
          title="חמישה תרגילים על תיק אמיתי",
          sub="תיקיית תרגול אחת, וחמישה תרגילים שכל אחד מהם מראה משהו שלא ראיתם קודם. הכול מוכן, אתם מעתיקים ולוחצים.",
          learn="לתייק ארבעים מסמכים סרוקים, לאתר מועדים בתשעת אלפים שורות פרוטוקול, לחזור לאחור ולבטל, לבקש ממנו לבדוק את עצמו, ולבנות כלי חישוב שעובד.",
          end="חמישה תוצרים בתיקייה שלכם, וידיעה מה הכלי הזה באמת יודע לעשות.",
          time="כשעה וחצי, בקצב שלכם", need="דורש את מדריך 1"),
-    dict(dir="guide-3", num=3, ids=["open", "local", "form", "run", "result", "truth"],
+    dict(dir="guide-3", num=3, ids=["why", "open", "local", "form", "run", "result", "truth"],
          title="לתת לקלוד קוד לעבוד גם כשאתם לא מול המחשב",
          sub="מגדירים משימה אחת, פעם אחת, והיא עוברת על תיקיית התיק גם כשאתם לא ליד המחשב ומשאירה לכם קובץ מוכן.",
          learn="איפה נמצא המסך הנכון ולמה יש שניים שנראים דומים, איך ממלאים את הטופס, ומה חייבים לדעת לפני שסומכים על משימה שרצה בלעדיכם.",
@@ -66,6 +66,19 @@ def page(g, idx):
     joined = joined.replace('href="../assets/', 'href="../../assets/')
     # one level deeper than the working page, so cross-series links move too
     joined = joined.replace('href="../../skills/', 'href="../../../skills/')
+
+    # a pointer to a chapter that moved to another guide must cross the page,
+    # otherwise the reader clicks and lands nowhere
+    mine = set(g["ids"])
+    def cross(m):
+        sid = m.group(1)
+        if sid in mine:
+            return m.group(0)
+        for other in GUIDES:
+            if sid in other["ids"]:
+                return 'href="../%s/index.html#%s"' % (other["dir"], sid)
+        return m.group(0)
+    joined = re.sub(r'href="#([a-z0-9]+)"', cross, joined)
 
     prev_next = []
     if idx > 0:
