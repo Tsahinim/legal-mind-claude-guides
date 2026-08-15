@@ -231,7 +231,7 @@ __MOBILE_TOC__
 <ol class="steps">
 <li>לחצו על הקובץ בלחיצה ימנית.</li>
 <li>בחרו <bdi dir="ltr">Extract All</bdi>, ובחלון שנפתח לחצו <bdi dir="ltr">Extract</bdi>.</li>
-<li>נוצרת לכם תיקייה רגילה בשם <bdi>תיק-הברוש-14-לתרגול</bdi>. <strong>זו התיקייה שנעבוד איתה לאורך כל המדריך.</strong></li>
+<li>נוצרת לכם תיקייה רגילה בשם <bdi>תיק-הברוש-14-לתרגול</bdi>, <strong>באותו מקום שבו יושב הקובץ המכווץ, כלומר בתוך <bdi dir="ltr">Downloads</bdi>.</strong> זו התיקייה שנעבוד איתה לאורך כל המדריך.</li>
 </ol>
 
 <aside class="content-box recommendation">
@@ -244,6 +244,12 @@ __MOBILE_TOC__
 <h2>אחרי שבחרתם תיקייה שקלוד יעבוד עליה</h2>
 
 <p><strong>זה המסלול שתעשו בתחילת כל תרגיל, וכדאי לעבור עליו פעם אחת ברוגע.</strong> אחרי פעמיים הוא ייקח לכם חצי דקה.</p>
+
+<aside class="content-box info">
+<h3>ואיזו תיקייה לפתוח עכשיו</h3>
+<p><strong>עדיין אין לכם את תיקיית התרגול - היא יורדת בתחילת מדריך 2.</strong> וזה בסדר גמור, כי כדי לתרגל את המסלול הזה כל תיקייה מתאימה.</p>
+<p><strong>צרו תיקייה חדשה וריקה על שולחן העבודה, קראו לה איך שבא לכם, ופתחו אותה.</strong> היא תעבוד בדיוק כמו תיק אמיתי, ואפשר למחוק אותה אחר כך.</p>
+</aside>
 
 <aside class="content-box recommendation">
 <h3>ולמה אנחנו מפרטים אותו עד הסוף</h3>
@@ -432,7 +438,7 @@ __FIG_HISTORY__
 
 <ol class="steps">
 <li><strong>בוחרים את התיקייה.</strong> <bdi dir="ltr">File</bdi> ואז <bdi dir="ltr">Open Recent</bdi>, ומשם את התיק. ואם זו תיקייה שלא נפתחה כאן קודם, תופיע השורה הכחולה: <bdi dir="ltr">Manage</bdi> ואז <bdi dir="ltr">Trust</bdi>.</li>
-<li><strong>פותחים את החלונית בצד.</strong> <bdi dir="ltr">Ctrl+Shift+P</bdi>, מקלידים <bdi dir="ltr">claude</bdi>, ובוחרים <bdi dir="ltr">Open in Side Bar</bdi>.</li>
+<li><strong>פותחים את החלונית בצד.</strong> הקישו <bdi dir="ltr">Ctrl+Shift+P</bdi>. <strong>בראש המסך ייפתח שדה חיפוש</strong> - זו רשימת כל הפעולות ש-<bdi dir="ltr">VS Code</bdi> יודע לעשות. הקלידו בו <bdi dir="ltr">claude</bdi>, ומהרשימה שתצטמצם בחרו <bdi dir="ltr">Open in Side Bar</bdi>.</li>
 <li><strong>לוחצים על השעון</strong> ובוחרים את השיחה.</li>
 </ol>
 
@@ -510,6 +516,22 @@ __FIG_RECENT__
 </aside>
 
 <aside class="content-box recommendation">
+<h3>11 · הוא התחיל לעבוד ונעצר באמצע</h3>
+
+<p><strong>מה שרואים:</strong> הוא כתב כמה שורות, ואז שום דבר. אין סימן מסתובב, אין הודעת שגיאה, פשוט שקט.</p>
+
+<p><strong>מה עושים, לפי הסדר:</strong></p>
+
+<ol class="steps">
+<li><strong>כתבו בתיבה מילה אחת:</strong> "המשך". <strong>ברוב המקרים זה כל מה שצריך</strong>, והוא ימשיך מהמקום שבו עצר.</li>
+<li>ואם לא, כתבו: <strong>"מה מצבך? מה הספקת ומה נשאר?"</strong> - הוא יענה, ותדעו איפה הוא באמת.</li>
+<li>ואם גם זה לא, <strong>פתחו שיחה חדשה והדביקו את אותה הוראה שוב.</strong> הקבצים שכבר נוצרו נשארים במקומם.</li>
+</ol>
+
+<aside class="content-box info">
+<p><strong>ומה שכבר נעשה - נעשה.</strong> כל קובץ שהוא הספיק לכתוב יושב בתיקייה, גם אם השיחה נתקעה. <strong>אתם לא מתחילים מאפס.</strong></p>
+</aside>
+
 <h3>ואם כלום מזה לא עזר</h3>
 <p><strong>סגרו את <bdi dir="ltr">VS Code</bdi> ופתחו מחדש.</strong> זה נשמע פשוט מדי, וזה פותר את רוב הדברים המוזרים. <strong>שום שיחה ושום קובץ לא ילכו לאיבוד</strong> - הכל שמור, וה-<bdi dir="ltr">Session history</bdi> יחכה לכם בדיוק כפי שהיה.</p>
 </aside>
@@ -1516,7 +1538,7 @@ HTML = HTML.replace("__FIG_PALETTE__", shot("vs-16",
     "רשימת הפקודות אחרי Ctrl+Shift+P והקלדת claude",
     targets=[("left:1.5%;top:2.5%;width:94%;height:6.5%", "badge-right", 1),
              ("left:2%;top:53.5%;width:94%;height:4.5%", "", 2)],
-    legend=["מקלידים כאן <bdi dir=\"ltr\">claude</bdi>, וכל מה שקלוד קוד יודע לעשות מופיע ברשימה.",
+    legend=["<strong>שדה החיפוש שנפתח בראש המסך.</strong> מקלידים בו <bdi dir=\"ltr\">claude</bdi>, והרשימה מצטמצמת לכל מה שקלוד קוד יודע לעשות.",
             "<bdi dir=\"ltr\">Open in Side Bar</bdi>. <strong>זו הפקודה שמחזירה את החלונית לצד, ורק שם יש לה שעון.</strong>"]))
 
 HTML = HTML.replace("__FIG_CLOSEALL__", shot("vs-13",
