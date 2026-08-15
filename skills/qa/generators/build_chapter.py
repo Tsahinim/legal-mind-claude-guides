@@ -501,7 +501,15 @@ __FIG_RECENT__
 
 <p><strong>מה שרואים:</strong> לחצתם על הקובץ שהוא יצר, ובמקום מסמך נעים לקריאה קיבלתם מספרי שורות, סימני <bdi dir="ltr">##</bdi> ו-<bdi dir="ltr">**</bdi> באמצע המשפטים, ועברית שקופצת מצד לצד.</p>
 
+__FIG_MDRAW__
+
 <p><strong>מה קרה באמת:</strong> אתם מסתכלים על הקובץ הגולמי. <strong>הסימנים האלה הם הוראות עיצוב</strong> - <bdi dir="ltr">##</bdi> אומר "כותרת" ו-<bdi dir="ltr">**</bdi> אומר "מודגש" - <strong>והם נועדו להיקרא על ידי התוכנה, לא על ידיכם.</strong></p>
+
+<p><strong>וזה בדיוק אותו קובץ, אחרי לחיצה אחת:</strong></p>
+
+__FIG_MDPREVIEW__
+
+<p><strong>אותם נתונים בדיוק.</strong> אף מילה לא השתנתה, אף שורה לא נוספה. <strong>רק ההצגה.</strong></p>
 
 <aside class="content-box tip">
 <h3>ולחיצה אחת הופכת אותו למסמך</h3>
@@ -1628,6 +1636,14 @@ HTML = HTML.replace("__FIG_NEWSESSION__", shot("cut-newsession",
 
 HTML = HTML.replace("__FIG_EXPLORERICON__", shot("open-explorer-icon",
     "אייקון המסמכים, העליון בסרגל. VS Code עצמו כותב את שמו כשעוברים עליו עם העכבר",
+    legend=None))
+
+HTML = HTML.replace("__FIG_MDRAW__", shot("md-raw",
+    "כך נראה הקובץ כשלוחצים עליו: מספרי שורות, סימני עיצוב, ועברית שקופצת מצד לצד",
+    legend=None))
+
+HTML = HTML.replace("__FIG_MDPREVIEW__", shot("md-preview",
+    "ואותו קובץ בדיוק אחרי Open Preview: כותרת, טבלה מסודרת, וטקסט שנעים לקרוא",
     legend=None))
 
 HTML = HTML.replace("__FIG_MDMENU__", shot("cut-md-menu",
