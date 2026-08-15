@@ -154,10 +154,6 @@ __MOBILE_TOC__
 <div class="layout">
 <main class="surface" id="main">
 
-<aside class="content-box warning">
-<p><strong>מסמך עבודה.</strong> זו טיוטה פנימית לבדיקה, ולא מדריך שפורסם. הסימונים האדומים על הצילומים והמקרא הממוספר טרם בוצעו, ושני צילומים עדיין חסרים ומסומנים בגוף הטקסט.</p>
-</aside>
-
 <section class="guide-section" id="start">
 <span class="section-number">01</span>
 <h2>לפני שמתחילים, כמה מילים ביניכם לביני</h2>
@@ -181,7 +177,7 @@ __MOBILE_TOC__
 
 <p><bdi dir="ltr">Claude Code</bdi> יושב בשני מקומות. אחד מהם הוא <bdi dir="ltr">VS Code</bdi>, שהיא הסביבה שכל העולם עובד בה היום, וגם המקום שבו רואים הכל: את התיקייה, את הקבצים, את מה שהשתנה ומתי. <strong>והשני הוא האפליקציה של <bdi dir="ltr">Claude</bdi> שכבר מותקנת אצלכם במחשב, וששם זה הרבה יותר פשוט.</strong></p>
 
-<p><strong>בחרנו ללמד אתכם קודם את הקשה.</strong> לא כדי להתיש אתכם, אלא כי מי שראה את המכונה מבפנים מבין מה קורה לו מתחת לידיים, ומהמקום הזה לרדת לקל הוא עניין של דקה. הפוך זה לא עובד.</p>
+<p><strong>בחרנו ללמד אתכם קודם את הקשה.</strong> לא כדי להקשות עליכם, אלא כי מי שראה פעם איפה יושבים הקבצים ומה השתנה בהם, יודע אחר כך מה קורה גם כשלא רואים את זה. <strong>ומי שלמד את הקשה, הקל אצלו לוקח דקה.</strong> בכיוון ההפוך זה לא עובד.</p>
 
 <p>ובמדריך הזה תעשו בדיוק את זה: <strong>חלק מהתרגילים נעשה ב-<bdi dir="ltr">VS Code</bdi> שאתם כבר מכירים, וחלק נעשה באפליקציה.</strong> ותראו בעצמכם כמה זה קל שם.</p>
 
@@ -369,7 +365,7 @@ __FIG_PANEL__
 
 <ul class="bullets">
 <li>הכותרת <bdi dir="ltr">Claude Code</bdi> והכוכבית הכתומה.</li>
-<li>בתחתית תיבת הכתיבה מופיע שם המודל, למשל <bdi dir="ltr">Opus 5</bdi>. <strong>בחלוניות אחרות זה לא מופיע.</strong></li>
+<li>בתוך תיבת הכתיבה, כשהיא ריקה, כתוב <bdi dir="ltr">ctrl esc to focus or unfocus Claude</bdi>. <strong>המשפט הזה מופיע רק אצלו.</strong></li>
 <li>ובסרגל האייקונים שבצד, הכוכבית הכתומה מחזירה תמיד לחלונית הנכונה.</li>
 </ul>
 
@@ -398,14 +394,14 @@ __FIG_CLOSEALL__
 
 __FIG_INSTALLPOPUP__
 
-<p><strong>מה זה בעצם:</strong> <bdi dir="ltr">VS Code</bdi> ראה שיש בתיקייה קובץ <bdi dir="ltr">PDF</bdi>, ומציע לכם תוסף שיציג אותו על המסך. <strong>ההצעה אינה מגיעה מ-<bdi dir="ltr">Claude</bdi> ואינה קשורה למשימה,</strong> והתוסף עצמו נכתב בידי מפתח חיצוני ולא בידי מיקרוסופט או <bdi dir="ltr">Anthropic</bdi>.</p>
+<p><strong>מה זה בעצם:</strong> <bdi dir="ltr">VS Code</bdi> ראה שיש בתיקייה קובץ <bdi dir="ltr">PDF</bdi>, ומציע לכם תוסף שיציג אותו על המסך. <strong>ההצעה אינה מגיעה מ-<bdi dir="ltr">Claude</bdi> ואינה קשורה למשימה,</strong> והתוסף עצמו נכתב בידי מפתח חיצוני, לא בידי <bdi dir="ltr">Microsoft</bdi> ולא בידי <bdi dir="ltr">Anthropic</bdi>.</p>
 
 <p><strong>מה עושים: סוגרים אותו ב-<bdi dir="ltr">X</bdi>.</strong> <bdi dir="ltr">Claude</bdi> קורא את המסמכים בעצמו, בלי שום תוספת.</p>
 
 <aside class="content-box warning">
 <h3>ולמה לא ללחוץ <bdi dir="ltr">Install</bdi> סתם כדי שייעלם</h3>
 <p><strong>תוסף מקבל גישה לקבצים שבתיקייה הפתוחה,</strong> ואצלכם זו תיקיית תיק. <strong>התקנה היא החלטה, לא סגירה של חלון.</strong></p>
-<p>ואם התקנתם בטעות - <strong>לא קרה אסון</strong>, אבל אין סיבה. הצילום נעשה על התרגיל הזה עצמו, והמשימה רצה בלי התוסף.</p>
+<p>ואם התקנתם בטעות - <strong>לא קרה אסון</strong>, פשוט אין בזה צורך. <strong>כל התרגילים במדריך רצו בלי אף תוסף.</strong></p>
 </aside>
 
 <p><strong>וכלל כללי שחוסך את כל השאלות מהסוג הזה: כל דבר שקופץ ומציע להתקין - לא צריך.</strong></p>
@@ -488,7 +484,7 @@ __FIG_RECENT__
 
 <h3>9 · הוא אמר שיצר קבצים, ואני לא רואה אותם</h3>
 
-<p><strong>או ההפך: מחקנו קבצים והם עדיין מופיעים.</strong></p>
+<p><strong>או ההפך: קבצים נמחקו והם עדיין מופיעים ברשימה.</strong></p>
 
 <p><strong>מה קרה באמת:</strong> רשימת הקבצים בצד לא תמיד מתעדכנת מיד. <strong>הקבצים כבר במקום, זו רק התצוגה.</strong></p>
 
@@ -608,7 +604,7 @@ __FIG_FLAGGED__
 
 <section class="guide-section" id="ex2">
 <span class="section-number">06</span>
-<h2>תרגיל 2 · מאות עמודים, ושמונה שורות</h2>
+<h2>תרגיל 2 · מאות עמודים, וכמה שורות שבאמת צריך</h2>
 
 <p><strong>איפה עובדים:</strong> ב-<bdi dir="ltr">VS Code</bdi> · <strong>כמה זמן:</strong> כרבע שעה, וכולה שלו</p>
 
@@ -1475,8 +1471,14 @@ HTML = HTML.replace("__SHOT_282__", shot("282",
     targets=[("left:4%;top:60.5%;width:6%;height:5%", "", 1)],
     legend=["הסימן המסתובב. כל עוד הוא שם, היא עדיין עובדת. כשהוא נעלם והיא כותבת סיכום, היא סיימה."]))
 
-HTML = HTML.replace("__PLACEHOLDER_PERM__", placeholder("בקשת האישור טרם צולמה. בהרצות שביצענו היא לא קפצה, ולכן אין כאן צילום ולא נמציא אחד."))
-HTML = HTML.replace("__PLACEHOLDER_DONE__", placeholder("שני צילומים חסרים כאן: השיחה הגמורה עם הסיכום, והקובץ החדש יושב בתיקייה בסייר הקבצים."))
+HTML = HTML.replace("__PLACEHOLDER_PERM__",
+    '<aside class="content-box info">\n<p><strong>ואצלנו היא בכלל לא קפצה.</strong> בכל ההרצות שביצענו המשימה רצה מתחילתה '
+    'ועד סופה בלי לבקש דבר. <strong>אם היא כן תקפוץ אצלכם - זה תקין,</strong> וזה בדיוק מה שההרצה '
+    'הראשונה נועדה לו.</p>\n</aside>')
+HTML = HTML.replace("__PLACEHOLDER_DONE__",
+    '<aside class="content-box recommendation">\n<p><strong>ואיך תדעו שהיא באמת סיימה, בלי לנחש:</strong> '
+    'פתחו את התיקייה בסייר. <strong>הקובץ החדש יושב שם עם התאריך של היום בשמו.</strong> '
+    'זו הבדיקה היחידה שצריך, והיא לא תלויה בשום דבר שכתוב על המסך.</p>\n</aside>')
 HTML = HTML.replace("__INSTR__", INSTR)
 
 
@@ -1579,7 +1581,7 @@ HTML = HTML.replace("__FIG_CHAOS__", shot("open-chaos",
     legend=None))
 
 HTML = HTML.replace("__FIG_TRUST__", shot("open-trust",
-    "מסך Workspace Trust. אין בו שום דבר שאתם צריכים, וסוגרים אותו ב-X שבפינה השמאלית העליונה",
+    "מסך Workspace Trust. אין בו שום דבר שאתם צריכים, וסוגרים אותו ב-X שבפינה הימנית למעלה",
     legend=None))
 
 HTML = HTML.replace("__FIG_NEWSESSION__", shot("cut-newsession",
