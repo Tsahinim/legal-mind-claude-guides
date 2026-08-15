@@ -78,6 +78,9 @@ def draw(name, targets):
     print(p, im.size)
 
 if __name__ == "__main__":
+    draw("ex5-result", [("left:69.6%;top:50.1%;width:28%;height:11.1%", "badge-outside-left", 1),
+                        ("left:75.2%;top:88.7%;width:23.3%;height:7.8%", "badge-outside-left", 2)])
+    draw("ex5-daycount", [("left:59%;top:22.3%;width:6%;height:14.2%", "badge-outside-left", 1)])
     draw("cut-newsession", [("left:4.3%;top:20.7%;width:42.4%;height:11.4%", "badge-right", 1)])
     draw("open-explorer-icon", [("left:1.8%;top:12.5%;width:9.1%;height:11.4%", "badge-below", 1)])
     draw("cut-install-popup", [("left:93.1%;top:3.8%;width:5.4%;height:22.9%", "badge-below", 1),
