@@ -90,6 +90,9 @@ def page(g, idx):
         prev_next.append('<a class="button primary" href="../%s/index.html">המדריך הבא: %s</a>' % (n["dir"], n["title"]))
 
     hd = head.replace('href="../assets/site.css', 'href="../../assets/site.css')
+    # the working page is noindex on purpose; the published guides are not
+    hd = hd.replace('<meta name="robots" content="noindex">\n', '')
+    hd = hd.replace('<meta name="robots" content="noindex">', '')
     hd = re.sub(r'<title>.*?</title>',
                 '<title>%s · מדריך %d: %s | Legal Mind</title>' % (SERIES_PLAIN, g["num"], g["title"]), hd, flags=re.S)
     hd = re.sub(r'<meta name="description" content="[^"]*">',
