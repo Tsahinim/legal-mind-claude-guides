@@ -27,8 +27,8 @@ GUIDES = [
          end="חמישה תוצרים בתיקייה שלכם, וידיעה מה הכלי הזה באמת יודע לעשות.",
          time="כשעה וחצי, בקצב שלכם", need="דורש את מדריך 1"),
     dict(dir="guide-3", num=3, ids=["open", "local", "form", "run", "result", "truth"],
-         title="שיעבוד גם כשאתם לא מול המחשב",
-         sub="משימה שרצה לבד על תיקיית תיק, מוציאה קובץ, ומחכה לכם מוכנה.",
+         title="משימה שרצה לבד",
+         sub="מגדירים אותה פעם אחת, והיא עוברת על תיקיית התיק גם כשאתם לא מול המחשב ומשאירה לכם קובץ מוכן.",
          learn="איפה נמצא המסך הנכון ולמה יש שניים שנראים דומים, איך ממלאים את הטופס, ומה חייבים לדעת לפני שסומכים על משימה שרצה בלעדיכם.",
          end="משימה פעילה על תיק, ותוצר שמופק בלי שנגעתם.",
          time="כ-30 דקות", need="דורש את מדריך 1"),
@@ -64,6 +64,8 @@ def page(g, idx):
     joined = re.sub(r'<span class="section-number">\d+</span>', renum, joined)
     joined = joined.replace('src="../assets/', 'src="../../assets/')
     joined = joined.replace('href="../assets/', 'href="../../assets/')
+    # one level deeper than the working page, so cross-series links move too
+    joined = joined.replace('href="../../skills/', 'href="../../../skills/')
 
     prev_next = []
     if idx > 0:
@@ -146,7 +148,7 @@ hub = """<!DOCTYPE html>
 
 <section class="learning-path"><h2>מסלול הלימוד</h2>
 <p>כל מדריך עומד בפני עצמו, והסדר הוא מה שהופך אותו לקל.</p>
-<ol><li><span>1</span>להרגיש בבית</li><li><span>2</span>לתרגל על תיק</li><li><span>3</span>להריץ בלעדיכם</li></ol>
+<ol><li><span>1</span>להרגיש בבית</li><li><span>2</span>לתרגל על תיק</li><li><span>3</span>להריץ בלי לשבת מול המחשב</li></ol>
 <p class="path-note"><strong>לא בטוחים מאיפה להתחיל?</strong> התחילו במדריך 1. הוא לא מבקש מכם לבצע שום תרגיל, והוא זה שהופך את כל השאר לפשוט. מי שידלג עליו יתקע בתרגיל הראשון על משהו שאינו קשור לתרגיל.</p></section>
 
 <section><div class="guide-grid">
