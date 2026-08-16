@@ -21,6 +21,17 @@
     border-radius:999px; background:rgba(20,116,116,.09);
     color:var(--teal); font-size:1.2rem; font-weight:800; line-height:1.4; }
   .shot-hint:before { content:"\1F50D"; margin-inline-end:8px; font-weight:400; }
+  /* a link that looks like a button is still only a rectangle to someone who has
+     never pressed one. the hand says out loud that this one is meant to be
+     pressed, and it points at the thing itself */
+  .press-hint { display:flex; align-items:center; justify-content:center;
+    gap:10px; margin:20px 0 8px; color:var(--teal);
+    font-size:1.22rem; font-weight:800; line-height:1.5; text-align:center; }
+  .press-hint .hand { font-size:1.9rem; line-height:1;
+    animation:press-nudge 1.7s ease-in-out infinite; }
+  @keyframes press-nudge { 0%,100% { transform:translateY(0); }
+                           50% { transform:translateY(6px); } }
+  @media (prefers-reduced-motion:reduce) { .press-hint .hand { animation:none; } }
   .zoomer { position:fixed; inset:0; z-index:9999; display:none; direction:ltr;
             background:rgba(7,20,33,.94); overflow:auto; padding:54px 10px 24px;
             overscroll-behavior:contain; }
