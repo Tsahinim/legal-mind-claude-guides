@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="description" content="מה עמית במשרד רואה ומה לא, איך משתפים תיק בלי לפתוח אותו לכולם, ומה נשאר שלכם גם בפרויקט משותף.">
-<title>קלוד Team במשרד · מדריך 1: לפתוח פרויקט ולהחליט מי רואה אותו | Legal Mind</title>
+<title>מדריך על מנוי Team ב-Claude · מדריך 1: לפתוח פרויקט ולהחליט מי רואה אותו | Legal Mind</title>
 <link rel="stylesheet" href="../../claude-code/assets/site.css?v=20260817">
 <style>
   .draft-note{border:2px dashed var(--teal);border-radius:10px;padding:14px 18px;
@@ -47,7 +47,7 @@
 <div class="skills-brand"><img class="skills-logo" src="../../claude-code/assets/legal-mind-logo-tight.png" alt="לוגו Legal Mind - נורה מעל שם המותג" decoding="async"></div>
 
 <header class="hero"><div>
-<p class="eyebrow">קלוד Team בעבודה היומיומית של המשרד · מדריך 1 מתוך 2</p>
+<p class="eyebrow">מדריך על מנוי Team ב-Claude · מדריך 1 מתוך 2</p>
 <h1>לפתוח פרויקט ולהחליט מי רואה אותו</h1>
 <p class="hero-copy">מה עמית במשרד רואה ומה לא, איך משתפים תיק בלי לפתוח אותו לכולם, ומה נשאר שלכם גם בפרויקט משותף.</p>
 </div><dl class="facts"><div><dt>מה נלמד</dt><dd>לפתוח פרויקט ולבחור את הנראות שלו, לשתף אדם אחד ולקבוע מה מותר לו, לחבר יומן ומייל, ולעבוד מול קלוד בתוך Word ו-Excel.</dd></div><div><dt>בסיום</dt><dd>פרויקט אחד פתוח ומשותף נכון, וידיעה מה כל שותף רואה ומה לא.</dd></div><div><dt>זמן</dt><dd>כ-20 דקות קריאה, וכ-20 דקות ביצוע</dd></div><div><dt>דרישות</dt><dd>אין. מי שכבר עובד ב-Team יכול להתחיל כאן</dd></div></dl></header>
@@ -390,29 +390,8 @@
 <aside class="desktop-toc"><h2>תוכן המדריך</h2><ol><li><a href="#g1-ch01"><span>01</span>מה האחרים במשרד רואים, ומה לא</a></li><li><a href="#g1-ch02"><span>02</span>פותחים פרויקט, ומחליטים מי רואה אותו</a></li><li><a href="#g1-ch03"><span>03</span>לשתף את הפרויקט עם אדם אחד, ולקבוע מה מותר לו</a></li><li><a href="#g1-ch04"><span>04</span>האם מי ששיתפתם רואה את השיחות שלכם</a></li><li><a href="#g1-ch05"><span>05</span>למה מה שאמרתם בשיחה אחת לא מופיע בשנייה</a></li><li><a href="#g1-ch06"><span>06</span>הסקילים שאתם רואים, ומאיפה הם הגיעו</a></li><li><a href="#g1-ch07"><span>07</span>לחבר את היומן ואת המייל</a></li><li><a href="#g1-ch08"><span>08</span>קלוד בתוך Word ובתוך Excel</a></li><li><a href="#g1-ch09"><span>09</span>כשמשהו לא עובד</a></li><li><a href="#g1-ch10"><span>10</span>מה למדתם, ולאן ממשיכים</a></li></ol></aside>
 </div>
 
-<footer><bdi dir="ltr">Legal Mind</bdi> | קלוד Team במשרד | מדריך 1: לפתוח פרויקט ולהחליט מי רואה אותו</footer>
+<footer><bdi dir="ltr">Legal Mind</bdi> | מדריך על מנוי Team ב-Claude | מדריך 1: לפתוח פרויקט ולהחליט מי רואה אותו</footer>
 
-<script>
-(function(){
-  document.addEventListener("click", function(ev){
-    var btn = ev.target.closest(".copy-button");
-    if(!btn) return;
-    var block = btn.closest(".copy-block");
-    var src = document.getElementById(btn.getAttribute("data-copy-target"));
-    var status = block ? block.querySelector(".copy-status") : null;
-    if(!src) return;
-    var text = src.innerText;
-    function done(ok){
-      if(!status) return;
-      status.textContent = ok ? "ההוראה הועתקה" : "ההעתקה נכשלה, סמנו והעתיקו ידנית";
-      setTimeout(function(){ status.textContent = ""; }, 2600);
-    }
-    if(navigator.clipboard && navigator.clipboard.writeText){
-      navigator.clipboard.writeText(text).then(function(){done(true);},
-                                              function(){done(false);});
-    } else { done(false); }
-  });
-})();
-</script>
+<script src="../../claude-code/assets/site.js?v=20260818"></script>
 </body>
 </html>

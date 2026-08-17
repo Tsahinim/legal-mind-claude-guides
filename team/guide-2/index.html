@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="description" content="תפקידים, סקיל ארגוני אחד שכל המשרד עובד לפיו, ובקרה שמונעת פרסום חופשי.">
-<title>קלוד Team במשרד · מדריך 2: להגדיר איך כל המשרד עובד | Legal Mind</title>
+<title>מדריך על מנוי Team ב-Claude · מדריך 2: להגדיר איך כל המשרד עובד | Legal Mind</title>
 <link rel="stylesheet" href="../../claude-code/assets/site.css?v=20260817">
 <style>
   .draft-note{border:2px dashed var(--teal);border-radius:10px;padding:14px 18px;
@@ -47,7 +47,7 @@
 <div class="skills-brand"><img class="skills-logo" src="../../claude-code/assets/legal-mind-logo-tight.png" alt="לוגו Legal Mind - נורה מעל שם המותג" decoding="async"></div>
 
 <header class="hero"><div>
-<p class="eyebrow">קלוד Team בעבודה היומיומית של המשרד · מדריך 2 מתוך 2</p>
+<p class="eyebrow">מדריך על מנוי Team ב-Claude · מדריך 2 מתוך 2</p>
 <h1>להגדיר איך כל המשרד עובד</h1>
 <p class="hero-copy">תפקידים, סקיל ארגוני אחד שכל המשרד עובד לפיו, ובקרה שמונעת פרסום חופשי.</p>
 </div><dl class="facts"><div><dt>מה נלמד</dt><dd>ארבעת התפקידים ומי ניגש לחיוב, איך מפיצים סקיל אחד לכל המשרד, כללי בית שחלים על כל שיחה, חיפוש ארגוני, מושבים ואנליטיקות.</dd></div><div><dt>בסיום</dt><dd>סקיל ארגוני אחד מופץ, בקרה שמונעת פרסום חופשי, ותוכנית 30 יום.</dd></div><div><dt>זמן</dt><dd>כ-25 דקות קריאה, וכ-40 דקות ביצוע</dd></div><div><dt>דרישות</dt><dd>מדריך 1, וגישה בתפקיד Owner או Admin</dd></div></dl></header>
@@ -414,29 +414,8 @@
 <aside class="desktop-toc"><h2>תוכן המדריך</h2><ol><li><a href="#g2-ch01"><span>01</span>ארבעת התפקידים, ומי ניגש לחיוב</a></li><li><a href="#g2-ch02"><span>02</span>מי מאשר סקיל לפני שכל המשרד מקבל אותו</a></li><li><a href="#g2-ch03"><span>03</span>לתת למחלקה שלמה את כל הכלים בפעולה אחת</a></li><li><a href="#g2-ch04"><span>04</span>לקבוע כלל אחד שיחול על כל שיחה במשרד</a></li><li><a href="#g2-ch05"><span>05</span>לשאול שאלה אחת ולקבל תשובה מכל המקורות</a></li><li><a href="#g2-ch06"><span>06</span>מי מקבל איזה מושב, ומה האדמין מכבה לכולם</a></li><li><a href="#g2-ch07"><span>07</span>לראות מי במשרד באמת משתמש</a></li><li><a href="#g2-ch08"><span>08</span>כשמשהו לא עובד</a></li><li><a href="#g2-ch09"><span>09</span>חמש הטעויות שמשרדים עושים</a></li><li><a href="#g2-ch10"><span>10</span>מסלול 30 יום</a></li><li><a href="#g2-ch11"><span>11</span>מה למדתם, ולאן ממשיכים</a></li></ol></aside>
 </div>
 
-<footer><bdi dir="ltr">Legal Mind</bdi> | קלוד Team במשרד | מדריך 2: להגדיר איך כל המשרד עובד</footer>
+<footer><bdi dir="ltr">Legal Mind</bdi> | מדריך על מנוי Team ב-Claude | מדריך 2: להגדיר איך כל המשרד עובד</footer>
 
-<script>
-(function(){
-  document.addEventListener("click", function(ev){
-    var btn = ev.target.closest(".copy-button");
-    if(!btn) return;
-    var block = btn.closest(".copy-block");
-    var src = document.getElementById(btn.getAttribute("data-copy-target"));
-    var status = block ? block.querySelector(".copy-status") : null;
-    if(!src) return;
-    var text = src.innerText;
-    function done(ok){
-      if(!status) return;
-      status.textContent = ok ? "ההוראה הועתקה" : "ההעתקה נכשלה, סמנו והעתיקו ידנית";
-      setTimeout(function(){ status.textContent = ""; }, 2600);
-    }
-    if(navigator.clipboard && navigator.clipboard.writeText){
-      navigator.clipboard.writeText(text).then(function(){done(true);},
-                                              function(){done(false);});
-    } else { done(false); }
-  });
-})();
-</script>
+<script src="../../claude-code/assets/site.js?v=20260818"></script>
 </body>
 </html>
