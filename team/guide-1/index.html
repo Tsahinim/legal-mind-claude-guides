@@ -7,9 +7,23 @@
 <title>מדריך על מנוי Team ב-Claude · מדריך 1: לפתוח פרויקט ולהחליט מי רואה אותו | Legal Mind</title>
 <link rel="stylesheet" href="../../claude-code/assets/site.css?v=20260817">
 <style>
-  .draft-note{border:2px dashed var(--teal);border-radius:10px;padding:14px 18px;
-    margin:0 0 1.6rem;background:rgba(20,116,116,.06);font-size:1.05rem;
-    line-height:1.6}
+  .status-panel{margin:26px 0;border-radius:16px;background:var(--navy);
+    color:#fff;padding:22px 26px;display:grid;gap:14px;
+    box-shadow:0 10px 30px rgba(13,39,64,.16)}
+  .status-panel .chip{display:inline-flex;align-items:center;gap:8px;
+    align-self:start;border-radius:999px;padding:5px 14px;
+    background:rgba(43,192,183,.16);color:var(--cyan);
+    font-size:.82rem;font-weight:800;letter-spacing:.08em}
+  .status-panel .chip:before{content:"";width:8px;height:8px;border-radius:50%;
+    background:var(--cyan)}
+  .status-panel p{margin:0;font-size:1.02rem;line-height:1.72;opacity:.94}
+  .status-panel strong{color:#fff}
+  .status-facts{display:grid;gap:10px;margin:2px 0 0;padding:0;list-style:none;
+    grid-template-columns:repeat(auto-fit,minmax(190px,1fr))}
+  .status-facts li{background:rgba(255,255,255,.07);border-radius:10px;
+    padding:11px 14px;font-size:.95rem;line-height:1.5}
+  .status-facts b{display:block;font-size:1.32rem;line-height:1.2;
+    color:var(--cyan);margin-bottom:2px;font-variant-numeric:tabular-nums}
   .shot-hole{margin:1.6rem 0}
   .shot-hole .frame{border:2px dashed rgba(20,116,116,.42);border-radius:10px;
     background:rgba(20,116,116,.04);min-height:132px;display:flex;
@@ -33,7 +47,7 @@
   .backbar a:before{content:"↑"}
   .print-only{display:none}
   @media print{
-    .backbar,.mobile-toc,.desktop-toc,.skip,.draft-note{display:none!important}
+    .backbar,.mobile-toc,.desktop-toc,.skip,.status-panel{display:none!important}
     .print-only{display:block}
     body{font-size:11pt}
   }
@@ -52,7 +66,7 @@
 <p class="hero-copy">מה עמית במשרד רואה ומה לא, איך משתפים תיק בלי לפתוח אותו לכולם, ומה נשאר שלכם גם בפרויקט משותף.</p>
 </div><dl class="facts"><div><dt>מה נלמד</dt><dd>לפתוח פרויקט ולבחור את הנראות שלו, לשתף אדם אחד ולקבוע מה מותר לו, לחבר יומן ומייל, ולעבוד מול קלוד בתוך Word ו-Excel.</dd></div><div><dt>בסיום</dt><dd>פרויקט אחד פתוח ומשותף נכון, וידיעה מה כל שותף רואה ומה לא.</dd></div><div><dt>זמן</dt><dd>כ-20 דקות קריאה, וכ-20 דקות ביצוע</dd></div><div><dt>דרישות</dt><dd>אין. מי שכבר עובד ב-Team יכול להתחיל כאן</dd></div></dl></header>
 
-<p class="draft-note"><strong>טיוטה.</strong> הטקסט מלא ומאומת, וצילומי המסך עוד לא צולמו. כל מסגרת מקווקוות היא צילום שייכנס במקומו, ומתחתיה כתובים כבר הכיתוב והמקרא.</p>
+<aside class="status-panel"><span class="chip">בעבודה</span><p><strong>הטקסט שלם ומאומת. הצילומים בדרך.</strong> כל עובדה כאן נבדקה מול התיעוד הרשמי של <bdi dir="ltr">Anthropic</bdi>, ומה שאין לו מקור נאמר במפורש שאין לו. במקום כל צילום עתידי יש מסגרת שנושאת את מספרו, את הכיתוב ואת המקרא שכבר נכתבו לו.</p><ul class="status-facts"><li><b>17</b>מאמרים רשמיים שנקראו</li><li><b>27</b>צילומים מתוכננים, לפי סדר הצילום</li><li><b>3</b>סוגי תיוג לכל עובדה: מקור, ממצא, עמדה</li></ul></aside>
 
 <nav class="mobile-toc"><details><summary>תוכן המדריך</summary><ol><li><a href="#g1-ch01"><span>01</span>מה האחרים במשרד רואים, ומה לא</a></li><li><a href="#g1-ch02"><span>02</span>פותחים פרויקט, ומחליטים מי רואה אותו</a></li><li><a href="#g1-ch03"><span>03</span>לשתף את הפרויקט עם אדם אחד, ולקבוע מה מותר לו</a></li><li><a href="#g1-ch04"><span>04</span>האם מי ששיתפתם רואה את השיחות שלכם</a></li><li><a href="#g1-ch05"><span>05</span>למה מה שאמרתם בשיחה אחת לא מופיע בשנייה</a></li><li><a href="#g1-ch06"><span>06</span>הסקילים שאתם רואים, ומאיפה הם הגיעו</a></li><li><a href="#g1-ch07"><span>07</span>לחבר את היומן ואת המייל</a></li><li><a href="#g1-ch08"><span>08</span>קלוד בתוך Word ובתוך Excel</a></li><li><a href="#g1-ch09"><span>09</span>כשמשהו לא עובד</a></li><li><a href="#g1-ch10"><span>10</span>מה למדתם, ולאן ממשיכים</a></li></ol></details></nav>
 
