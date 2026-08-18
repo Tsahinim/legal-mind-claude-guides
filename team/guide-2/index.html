@@ -30,7 +30,7 @@
   .who-for.owner{background:rgba(13,39,64,.09);color:var(--navy)}
   .shot-legend-num li{text-align:start}
   .shot-legend-num{text-align:start}
-  .shot-hint{display:inline-block;margin:10px 0 6px;padding:7px 14px;
+  .shot-hint{display:inline-block;margin:16px 0 4px;padding:7px 14px;
     border-radius:999px;background:rgba(20,116,116,.09);
     color:var(--teal);font-size:1.2rem;font-weight:800;line-height:1.4}
   .shot-hint:before{content:"🔍";margin-inline-end:8px;font-weight:400}
@@ -665,7 +665,7 @@
         var hint = document.createElement("p");
         hint.className = "shot-hint";
         hint.innerHTML = "לחיצה על הצילום פותחת אותו בגודל מלא";
-        capEl.insertAdjacentElement("beforebegin", hint);
+        capEl.insertAdjacentElement("afterend", hint);
       }
     });
   }
