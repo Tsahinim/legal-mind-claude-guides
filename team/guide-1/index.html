@@ -587,5 +587,37 @@
 <footer><bdi dir="ltr">Legal Mind</bdi> | מדריך על מנוי Team ב-Claude | מדריך 1: לפתוח פרויקט ולהחליט מי רואה אותו</footer>
 
 <script src="../../claude-code/assets/site.js?v=20260818"></script>
+<script>
+(function(){
+  document.addEventListener("click", function(ev){
+    var a = ev.target.closest(".shot-zoom");
+    if(!a) return;
+    ev.preventDefault();
+    var img = a.closest("figure").querySelector("img");
+    if(img) window.open(img.src, "_blank", "noopener");
+  });
+})();
+
+(function(){
+  document.addEventListener("click", function(ev){
+    var btn = ev.target.closest(".copy-button");
+    if(!btn) return;
+    var block = btn.closest(".copy-block");
+    var src = document.getElementById(btn.getAttribute("data-copy-target"));
+    var status = block ? block.querySelector(".copy-status") : null;
+    if(!src) return;
+    var text = src.innerText;
+    function done(ok){
+      if(!status) return;
+      status.textContent = ok ? "ההוראה הועתקה" : "ההעתקה נכשלה, סמנו והעתיקו ידנית";
+      setTimeout(function(){ status.textContent = ""; }, 2600);
+    }
+    if(navigator.clipboard && navigator.clipboard.writeText){
+      navigator.clipboard.writeText(text).then(function(){done(true);},
+                                              function(){done(false);});
+    } else { done(false); }
+  });
+})();
+</script>
 </body>
 </html>
