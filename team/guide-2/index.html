@@ -39,16 +39,22 @@
   .zoomer.is-open{display:block}
   /* the way out of a full-size picture has to be found without hunting for
      it, so it sits centred at the top and wears the brand teal */
-  .zoomer .zoom-close{position:fixed;top:16px;left:50%;transform:translateX(-50%);
-    z-index:2;border:3px solid var(--teal);border-radius:999px;
+  .zoomer .zoomer-close{position:fixed;top:16px;left:50%;
+    transform:translateX(-50%);z-index:2;
+    border:3px solid var(--teal);border-radius:999px;
     padding:13px 34px;background:#fff;color:var(--teal);
-    font-size:1.15rem;font-weight:900;cursor:pointer;
+    font:inherit;font-size:1.15rem;font-weight:900;cursor:pointer;
     box-shadow:0 6px 20px rgba(0,0,0,.28)}
-  .zoomer .zoom-close:hover{background:var(--teal);color:#fff}
-  .zoomer .zoom-stage{margin-inline:auto;position:relative}
-  .zoomer .zoom-stage img{display:block;width:100%;height:auto;border-radius:8px}
-  .zoomer .zoom-cap{margin:14px auto 0;max-width:760px;color:#fff;
+  .zoomer .zoomer-close:hover{background:var(--teal);color:#fff}
+  /* the stage must be the positioned ancestor, or the red boxes measure
+     themselves against the whole overlay and scatter */
+  .zoomer .zoomer-stage{margin:44px auto 0;position:relative}
+  .zoomer .zoomer-stage img{display:block;width:100%;height:auto;
+    border-radius:8px}
+  .zoomer .zoomer-cap{margin:14px auto 0;max-width:760px;color:#fff;
     text-align:center;font-size:1rem;opacity:.9}
+  .zoomer .zoomer-pan{margin:.4rem 0 0;font-size:.9rem;opacity:.8;display:none}
+  .zoomer .zoomer-cap.is-wide .zoomer-pan{display:block}
   .shot-frame{position:relative}
   /* a defined word is a list entry with a red dot, not a paragraph that
      happens to start in bold. the word itself carries the brand orange and
