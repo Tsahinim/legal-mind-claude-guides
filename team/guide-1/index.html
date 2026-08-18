@@ -45,6 +45,11 @@
   .zoomer .zoom-cap{margin:14px auto 0;max-width:760px;color:#fff;
     text-align:center;font-size:1rem;opacity:.9}
   .shot-frame{position:relative}
+  /* in the terms chapter the word being defined has to be the first thing
+     the eye lands on, so it wears the brand orange and the definition stays
+     in the reading ink */
+  .guide-section[id$="-ch00"] p > strong:first-child{color:var(--orange)}
+  .guide-section[id$="-ch00"] p > strong:first-child > bdi{color:var(--orange)}
   .shot{margin:1.7rem 0}
   .shot img{display:block;width:100%;height:auto;border-radius:10px;
     border:1px solid rgba(13,39,64,.14);box-shadow:0 6px 22px rgba(13,39,64,.09)}
