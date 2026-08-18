@@ -33,7 +33,12 @@
     border-radius:999px;padding:8px 18px;background:var(--teal);color:#fff;
     font-size:.92rem;font-weight:700;text-decoration:none;
     box-shadow:0 4px 14px rgba(20,116,116,.24)}
-  .shot-full:before{content:"922";font-weight:400;font-size:1.05rem}
+  .shot-full:before{content:"🔍";font-size:1.05rem;line-height:1;
+    animation:shot-full-nudge 1.9s ease-in-out infinite}
+  @keyframes shot-full-nudge{0%,100%{transform:scale(1)}
+                             50%{transform:scale(1.22)}}
+  @media (prefers-reduced-motion:reduce){
+    .shot-full:before{animation:none}}
   .shot-full:hover{filter:brightness(1.08)}
   .shot{display:flex;flex-direction:column;align-items:stretch}
   .shot-hole{margin:1.6rem 0}
