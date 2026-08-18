@@ -37,9 +37,14 @@
   .zoomer{position:fixed;inset:0;z-index:70;display:none;overflow:auto;
     background:rgba(9,20,32,.92);padding:26px}
   .zoomer.is-open{display:block}
-  .zoomer .zoom-close{position:fixed;top:14px;inset-inline-end:16px;z-index:2;
-    border:0;border-radius:999px;padding:9px 17px;background:#fff;
-    color:var(--navy);font-size:1rem;font-weight:800;cursor:pointer}
+  /* the way out of a full-size picture has to be found without hunting for
+     it, so it sits centred at the top and wears the brand teal */
+  .zoomer .zoom-close{position:fixed;top:16px;left:50%;transform:translateX(-50%);
+    z-index:2;border:3px solid var(--teal);border-radius:999px;
+    padding:13px 34px;background:#fff;color:var(--teal);
+    font-size:1.15rem;font-weight:900;cursor:pointer;
+    box-shadow:0 6px 20px rgba(0,0,0,.28)}
+  .zoomer .zoom-close:hover{background:var(--teal);color:#fff}
   .zoomer .zoom-stage{margin-inline:auto;position:relative}
   .zoomer .zoom-stage img{display:block;width:100%;height:auto;border-radius:8px}
   .zoomer .zoom-cap{margin:14px auto 0;max-width:760px;color:#fff;
