@@ -24,6 +24,13 @@
     padding:11px 14px;font-size:.95rem;line-height:1.5}
   .status-facts b{display:block;font-size:1.32rem;line-height:1.2;
     color:var(--cyan);margin-bottom:2px;font-variant-numeric:tabular-nums}
+  /* one band under the title answers "is this guide for me" once */
+  .audience{margin:0 0 24px;border-radius:14px;padding:18px 20px;
+    border:2px solid rgba(20,116,116,.28);background:rgba(20,116,116,.06)}
+  .audience b{display:block;margin:0 0 6px;color:var(--teal);
+    font-size:1.12rem;font-weight:900}
+  .audience p{margin:0;line-height:1.75}
+  .audience p + p{margin-top:8px}
   .who-for{display:inline-block;margin:0 0 1.1rem;border-radius:999px;
     padding:4px 13px;font-size:.82rem;font-weight:700;line-height:1.5}
   .who-for.everyone{background:rgba(20,116,116,.10);color:var(--teal)}
@@ -151,8 +158,8 @@
 
 <div class="layout">
 <main id="main">
-<p><strong>גם המדריך הזה אינו עוסק בפרטיות ובאבטחת מידע.</strong> הכל נמצא במדריך של Legal Mind על המעבר הבטוח למנוי Team, <strong>מדריך 1 סעיף 2.</strong></p>
-<section class="guide-section" id="g2-ch00"><span class="section-number">00</span><h2>המונחים שנוספים כשעוברים להגדרות ברמת המשרד</h2><p class="who-for everyone">התאמה: לכל עורך דין במשרד</p>
+<div class="audience"><b>למי מיועד המדריך הזה</b><p><strong>למי שמוגדר בחשבון הקלוד של המשרד <bdi dir="ltr">Owner</bdi> או <bdi dir="ltr">Admin</bdi></strong>  - כי הוא זה שהמסכים שבמדריך נפתחים אצלו, והוא זה שמבצע.</p><p><strong>וכל עורך דין אחר מוזמן לקרוא אותו.</strong> ההסברים כאן נכתבו לכולם, והם עונים על השאלה מה המשרד הגדיר עבורכם ולמה. בראש כל פרק כתוב מי מבצע אותו, כדי שתדעו מראש אילו מסכים תמצאו אצלכם ואילו לא.</p></div><p><strong>גם המדריך הזה אינו עוסק בפרטיות ובאבטחת מידע.</strong> הכל נמצא במדריך של Legal Mind על המעבר הבטוח למנוי Team, <strong>מדריך 1 סעיף 2.</strong></p>
+<section class="guide-section" id="g2-ch00"><span class="section-number">00</span><h2>המונחים שנוספים כשעוברים להגדרות ברמת המשרד</h2><p class="who-for everyone">מי מבצע: לכל עורך דין במשרד</p>
 <p>המדריך הזה ממשיך את מדריך 1, ומניח שאתם מכירים כבר פרויקט, מאגר ידע ואת ההרשאות שנותנים בתוך פרויקט. <strong>את המונחים האלה לא נחזור ונגדיר כאן.</strong></p>
 <p>מה שנוסף הוא שכבה אחרת: המשרד. <strong>כאן כבר לא מגדירים מה מותר לעובד מסוים לעשות בתיק מסוים, אלא מגדירים בפעולה אחת מה יחול על כל עורכי הדין ועל כל העובדים במשרד</strong> - ולשכבה הזו יש מונחים משלה.</p>
 <p><strong>גם כאן אפשר לקרוא עכשיו, ואפשר לדלג ולהתחיל לעבוד.</strong> ואם תיתקלו בהמשך במונח שאינכם מכירים, תוכלו לחזור לכאן בלחיצה אחת: <strong>בצד המסך יש רשימה של כל פרקי המדריך, והפרק הזה הוא הראשון בה.</strong></p>
@@ -167,10 +174,10 @@
 <ul class="terms"><li><span class="term"><bdi dir="ltr">Seat</bdi></span> <span class="term-he">(מושב)</span> · רישיון של אדם אחד. <strong><bdi dir="ltr"><code>Standard</code></bdi> הוא הרגיל, <bdi dir="ltr"><code>Premium</code></bdi> נותן מכסה גדולה יותר</strong>, ואפשר לשלב ביניהם באותו משרד.</li><li><span class="term"><bdi dir="ltr">Analytics</bdi></span> <span class="term-he">(אנליטיקות)</span> · מסך שמראה מי במשרד משתמש, כמה, ובאילו יכולות.</li></ul>
 <h3>ולמי כל פרק מיועד:</h3>
 <p>המדריך הזה עוסק בהגדרות, וחלק מהן פתוחות רק למי שמחזיק תפקיד מסוים.</p>
-<p><strong>ולכן בראש כל פרק, מתחת לכותרת, כתובה שורה שאומרת למי הפרק מיועד</strong>, ובה אחת משלוש האפשרויות: <strong>לכל עורך דין במשרד</strong> / <strong>ל-<bdi dir="ltr"><code>Owner</code></bdi> ול-<bdi dir="ltr"><code>Admin</code></bdi></strong> / <strong>ל-<bdi dir="ltr"><code>Owner</code></bdi> בלבד.</strong></p>
-<p><strong>מי שרואה שפרק אינו מיועד לו יכול לדלג עליו בלב שקט</strong>, ומי שרוצה בכל זאת להבין מה קורה שם מוזמן לקרוא. התוכן מוסבר לכולם, גם למי שאין לו את הכפתור.</p>
+<p><strong>ולכן בראש כל פרק, מתחת לכותרת, כתובה שורה שאומרת מי מבצע אותו</strong>, ובה אחת משלוש האפשרויות: <strong>כל עורך דין במשרד</strong> / <strong><bdi dir="ltr"><code>Owner</code></bdi> ו-<bdi dir="ltr"><code>Admin</code></bdi></strong> / <strong><bdi dir="ltr"><code>Owner</code></bdi> בלבד.</strong></p>
+<p><strong>השורה הזו אומרת מי לוחץ על הכפתורים, ולא מי רשאי לקרוא.</strong> הפרקים כתובים לכולם, <strong>וגם מי שהמסך לא ייפתח אצלו יבין בדיוק מה הוגדר במשרד ולמה.</strong></p>
 </section>
-<section class="guide-section" id="g2-ch01"><span class="section-number">01</span><h2>מי במשרד רשאי לשנות הגדרות בקלוד, ואיך בודקים אם זה אתם</h2><p class="who-for everyone">התאמה: לכל עורך דין במשרד</p>
+<section class="guide-section" id="g2-ch01"><span class="section-number">01</span><h2>מי במשרד רשאי לשנות הגדרות בקלוד, ואיך בודקים אם זה אתם</h2><p class="who-for everyone">מי מבצע: לכל עורך דין במשרד</p>
 <p><strong>כשמשרד עובר למנוי <bdi dir="ltr"><code>Team</code></bdi>, כל עורכי הדין בו יושבים תחת חשבון קלוד אחד, של המשרד</strong> - ולא כל אחד בחשבון קלוד פרטי משלו.</p>
 <p><strong>ובחשבון הקלוד של המשרד יש הגדרות שחלות על כל עורכי הדין בבת אחת</strong> - מי יכול להצטרף למשרד, אילו יכולות של קלוד פתוחות לעורכי הדין, ומי משלם על המנוי.</p>
 <p><strong>ולא כל אחד רשאי לגעת בהגדרות האלה.</strong> לכל אדם במשרד יש אחד מארבעה תפקידים, <strong>וכל תפקיד רואה מסכים אחרים ורשאי לעשות דברים אחרים.</strong></p>
@@ -254,7 +261,7 @@
 </aside>
 <p><strong>ומי יהיה <bdi dir="ltr"><code>Primary Owner</code></bdi></strong> - זו החלטה שכבר קיבלתם, והיא מוסברת במדריך של Legal Mind על המעבר הבטוח, מדריך 1 סעיף 3.</p>
 </section>
-<section class="guide-section" id="g2-ch02"><span class="section-number">02</span><h2>מי מאשר סקיל לפני שכל המשרד מקבל אותו</h2><p class="who-for owner">התאמה: ל-Owner ול-Admin</p>
+<section class="guide-section" id="g2-ch02"><span class="section-number">02</span><h2>מי מאשר סקיל לפני שכל המשרד מקבל אותו</h2><p class="who-for owner">מי מבצע: ל-Owner ול-Admin</p>
 <p><strong>זה הפרק שבו המשרד מפסיק להיות אוסף של אנשים שכל אחד עובד בשיטה שלו.</strong></p>
 <p><strong>כשכל עורך דין בונה לעצמו שיטה, יש במשרד שבע שיטות.</strong> וכשלקוח שואל למה התשובה שקיבל שונה ממה שקיבל שותפו, <strong>אין למי לענות.</strong> וכשיש סקיל ארגוני אחד יש שיטה אחת, <strong>ואם צריך לשנות אותה משנים במקום אחד.</strong></p>
 <p><strong>השאלה המעשית היא מי מחליט מה נכנס לשם</strong>, וזה מה שנעשה בפרק הזה.</p>
@@ -323,7 +330,7 @@
 <p><strong>וממנים אדם אחד שדרכו עובר הכל.</strong> לא ועדה, ולא "מי שפנוי".</p>
 </aside>
 </section>
-<section class="guide-section" id="g2-ch03"><span class="section-number">03</span><h2>נותנים למחלקה שלמה את כל הכלים בפעולה אחת</h2><p class="who-for owner">התאמה: ל-Owner ול-Admin</p>
+<section class="guide-section" id="g2-ch03"><span class="section-number">03</span><h2>נותנים למחלקה שלמה את כל הכלים בפעולה אחת</h2><p class="who-for owner">מי מבצע: ל-Owner ול-Admin</p>
 <p><strong>פלאגין הוא חבילה.</strong> בתוכה כמה סקילים שנארזו יחד, <strong>ולפעמים גם פקודות וחיבורים</strong> - והיא מגיעה לאדם אחד בהתקנה אחת.</p>
 <p><strong>ולמה זה עדיף על להפיץ סקילים אחד-אחד:</strong> למחלקת נדל"ן צריך ניתוח הסכמי מכר, מילוי טפסי טאבו ובדיקת נסח. <strong>שלושה סקילים נפרדים זה שלוש הפצות ושלוש הזדמנויות לשכוח אחד</strong> - וחבילה אחת בשם "נדל"ן" זו פעולה אחת.</p>
 <h3>שלב 1 · נכנסים למסך הפלאגינים:</h3>
@@ -357,7 +364,7 @@
 <p><strong>וההפצה עוברת דרך אותו שומר סף מהפרק הקודם.</strong> לא כל מי שיכול - <strong>אלא מי שאחראי.</strong></p>
 </aside>
 </section>
-<section class="guide-section" id="g2-ch04"><span class="section-number">04</span><h2>קובעים כלל אחד שיחול על כל שיחה במשרד</h2><p class="who-for owner">התאמה: ל-Owner ול-Admin</p>
+<section class="guide-section" id="g2-ch04"><span class="section-number">04</span><h2>קובעים כלל אחד שיחול על כל שיחה במשרד</h2><p class="who-for owner">מי מבצע: ל-Owner ול-Admin</p>
 <p><strong>שיחה היא חלון אחד של התכתבות עם קלוד</strong>, ועורך דין פותח כמה כאלה ביום. <strong>הפרק הזה עוסק בכלל אחד שיחול על כולן</strong> - על כל שיחה, של כל עורך דין, בכל תיק, בלי שאף אחד יצטרך לכתוב אותו מחדש.</p>
 <p><strong>ואלה הדברים שאתם רוצים שיקרו בכל תשובה.</strong></p>
 <p>שהתשובות ייכתבו בעברית משפטית תקנית. <strong>שתוצר שמיועד ללקוח יישא הסתייגות שאין מדובר בייעוץ משפטי.</strong> שהפניות לסעיפי חוק ייכתבו בפורמט אחיד.</p>
@@ -400,7 +407,7 @@
 <p><strong>ואת נוסח ההסתייגות כדאי שיאשר עורך דין במשרד</strong>, ולא שייכתב מתוך המדריך הזה כלשונו.</p>
 </aside>
 </section>
-<section class="guide-section" id="g2-ch05"><span class="section-number">05</span><h2>שואלים שאלה אחת ומקבלים תשובה מכל מקורות המשרד</h2><p class="who-for owner">התאמה: ל-Owner בלבד</p>
+<section class="guide-section" id="g2-ch05"><span class="section-number">05</span><h2>שואלים שאלה אחת ומקבלים תשובה מכל מקורות המשרד</h2><p class="who-for owner">מי מבצע: ל-Owner בלבד</p>
 <h3>ולמה חיפוש ארגוני משנה את העבודה במשרד:</h3>
 <p><strong>כי הידע של המשרד לא יושב במקום אחד.</strong> חלק בדרייב, חלק במיילים, חלק בשיחות, <strong>וחלק בראש של מי שטיפל בתיק לפני שנתיים.</strong></p>
 <p><strong>וכשמגיעה שאלה, מישהו צריך לזכור איפה לחפש.</strong></p>
@@ -437,7 +444,7 @@
 <p><strong>במשרד עורכי דין זה שלב מקדים הכרחי, לא המלצה.</strong> מי שמדלג עליו יגלה מה משותף אצלו רק אחרי שכולם כבר מצאו.</p>
 </aside>
 </section>
-<section class="guide-section" id="g2-ch06"><span class="section-number">06</span><h2>מי מקבל איזה מושב, ומה האדמין מכבה לכולם</h2><p class="who-for owner">התאמה: ל-Owner ול-Admin</p>
+<section class="guide-section" id="g2-ch06"><span class="section-number">06</span><h2>מי מקבל איזה מושב, ומה האדמין מכבה לכולם</h2><p class="who-for owner">מי מבצע: ל-Owner ול-Admin</p>
 <h3>ולמה יש שני סוגי מושבים:</h3>
 <p><strong>כי לא כולם עובדים באותה עוצמה.</strong></p>
 <p><strong>עורך דין שמריץ ניתוח עומק על תיק בן מאתיים עמודים</strong> מגיע לתקרת השימוש מהר. <strong>מי ששואל שלוש שאלות ביום, לא.</strong></p>
@@ -488,7 +495,7 @@
 <p><strong>משדרגים לפי נתוני שימוש בפועל אחרי חודש, ולא לפי תחזית.</strong> את הנתונים תראו בפרק הבא, <strong>והם יראו לכם דברים שלא ניחשתם.</strong></p>
 </aside>
 </section>
-<section class="guide-section" id="g2-ch07"><span class="section-number">07</span><h2>רואים מי במשרד באמת משתמש, וכמה</h2><p class="who-for owner">התאמה: ל-Owner בלבד</p>
+<section class="guide-section" id="g2-ch07"><span class="section-number">07</span><h2>רואים מי במשרד באמת משתמש, וכמה</h2><p class="who-for owner">מי מבצע: ל-Owner בלבד</p>
 <h3>ולמה נתוני השימוש אינם רק מספרים:</h3>
 <p><strong>כי החלטה על שדרוג מושב, על הדרכה נוספת, ועל האם ההשקעה מחזירה את עצמה - כולן נשענות על אותם נתונים.</strong></p>
 <p><strong>ובלעדיהם מנחשים.</strong></p>
@@ -523,7 +530,7 @@
 <p><strong>ואפשר להיעזר בקלוד עצמו</strong> ולהגדיר לכך תזכורת חוזרת, כדי שזה לא ייפול על הזיכרון של אף אחד.</p>
 </aside>
 </section>
-<section class="guide-section" id="g2-ch08"><span class="section-number">08</span><h2>כשמשהו לא עובד בהגדרות המשרד</h2><p class="who-for everyone">התאמה: לכל עורך דין במשרד</p>
+<section class="guide-section" id="g2-ch08"><span class="section-number">08</span><h2>כשמשהו לא עובד בהגדרות המשרד</h2><p class="who-for everyone">מי מבצע: לכל עורך דין במשרד</p>
 <h3>אני לא רואה את מסכי ניהול הארגון בכלל:</h3>
 <p><strong>זו שאלה של הרשאה, לא תקלה.</strong> בדקו את התפקיד שלכם ב-<bdi dir="ltr"><code>Settings</code></bdi> ואז <bdi dir="ltr"><code>Account</code></bdi>. <strong>אם כתוב <bdi dir="ltr"><code>User</code></bdi>, אין לכם גישה.</strong> פרק 01.</p>
 <h3>העליתי סקיל ארגוני והוא לא הופיע אצל אף אחד:</h3>
@@ -539,7 +546,7 @@
 <h3>חיפשתי תפקידים מותאמים ולא מצאתי:</h3>
 <p><strong>הם לא קיימים ב-Team.</strong> Enterprise בלבד. פרק 01.</p>
 </section>
-<section class="guide-section" id="g2-ch09"><span class="section-number">09</span><h2>חמש הטעויות שמשרדים עושים</h2><p class="who-for everyone">התאמה: לכל עורך דין במשרד</p>
+<section class="guide-section" id="g2-ch09"><span class="section-number">09</span><h2>חמש הטעויות שמשרדים עושים</h2><p class="who-for everyone">מי מבצע: לכל עורך דין במשרד</p>
 <p><strong>כל אחת מהן נראתה הגיונית למי שעשה אותה.</strong></p>
 <p><strong>1 · פתחו את כל הפרויקטים לכלל הארגון כדי שיהיה נוח.</strong> במקום פרטי כברירת מחדל, ופתיחה רק של מאגרי ידע בלי מידע לקוח. <strong>מדריך 1, פרק 02.</strong></p>
 <p><strong>2 · חמישה אנשים העלו את אותו סקיל בחמש גרסאות.</strong> במקום גרסה אחת שעוברת דרך שומר הסף. <strong>פרק 02.</strong></p>
@@ -547,14 +554,14 @@
 <p><strong>4 · חילקו תפקיד <bdi dir="ltr"><code>Owner</code></bdi> לחצי מהמשרד ליתר ביטחון.</strong> במקום מיפוי מסודר, ולא יותר משניים. <strong>פרק 01.</strong></p>
 <p><strong>5 · קנו מושבי <bdi dir="ltr"><code>Premium</code></bdi> לכולם מראש.</strong> במקום להתחיל ב-<bdi dir="ltr"><code>Standard</code></bdi> ולשדרג לפי נתונים. <strong>פרק 06.</strong></p>
 </section>
-<section class="guide-section" id="g2-ch10"><span class="section-number">10</span><h2>מסלול 30 יום</h2><p class="who-for owner">התאמה: ל-Owner ול-Admin</p>
+<section class="guide-section" id="g2-ch10"><span class="section-number">10</span><h2>מסלול 30 יום</h2><p class="who-for owner">מי מבצע: ל-Owner ול-Admin</p>
 <p><strong>זו לא רשימת משאלות, זו תוכנית ביצוע.</strong> מי שיעשה אותה לפי הסדר יגיע לסוף החודש עם משרד שעובד באותה שיטה.</p>
 <p><strong>שבוע 1</strong> הגדרת התפקידים לפי המיפוי · מינוי שומר הסף · כתיבת ההוראות הארגוניות · ופתיחת הפרויקט הארגוני הראשון, בנק הערות או נהלים.</p>
 <p><strong>שבוע 2</strong> העלאת הסקיל הארגוני הראשון דרך שומר הסף · בדיקתו עם שלושה משתמשים לפני שהוא מגיע לכולם · וחיבור יומן ומייל.</p>
 <p><strong>שבוע 3</strong> הדרכת כלל הצוות על פרויקטים והרשאות, לפי מדריך 1 · והשלמת הגדרת החיפוש הארגוני בידי ה-<bdi dir="ltr"><code>Owner</code></bdi>.</p>
 <p><strong>שבוע 4</strong> בחינת נתוני האנליטיקות · החלטה על שדרוגי מושבים לפי מה שראיתם ולא לפי תחזית · והוספת סקיל שני ופלאגין מחלקתי ראשון.</p>
 </section>
-<section class="guide-section" id="g2-ch11"><span class="section-number">11</span><h2>מה המשרד יודע לעשות עכשיו, ולאן ממשיכים מכאן</h2><p class="who-for everyone">התאמה: לכל עורך דין במשרד</p>
+<section class="guide-section" id="g2-ch11"><span class="section-number">11</span><h2>מה המשרד יודע לעשות עכשיו, ולאן ממשיכים מכאן</h2><p class="who-for everyone">מי מבצע: לכל עורך דין במשרד</p>
 <p><strong>מה שאתם יודעים לעשות עכשיו:</strong></p>
 <ul class="bullets"><li><strong>להבחין בין תפקיד ארגוני להרשאה בפרויקט</strong>, ולא לערבב ביניהם.</li><li><strong>למפות תפקידים במשרד</strong> בלי לחלק <bdi dir="ltr"><code>Owner</code></bdi> לכולם.</li><li><strong>להעלות סקיל ארגוני</strong>, ולהשאיר את מתג השיתוף כבוי.</li><li><strong>להפיץ חבילה שלמה למחלקה</strong>, ולהתחיל מזמין בקטלוג.</li><li><strong>לקבוע כללי בית שחלים על כל שיחה במשרד</strong>, ולבדוק שהם עובדים.</li><li><strong>להפעיל חיפוש ארגוני</strong> אחרי שעשיתם סדר בהרשאות במקורות.</li><li><strong>ולקרוא את נתוני השימוש</strong> ולדעת מה כל מספר אומר.</li></ul>
 <h3>והתוצר המודפס:</h3>
