@@ -25,8 +25,8 @@
   .status-facts b{display:block;font-size:1.32rem;line-height:1.2;
     color:var(--cyan);margin-bottom:2px;font-variant-numeric:tabular-nums}
   /* one band under the title answers "is this guide for me" once */
-  .audience{margin:0 0 24px;border-radius:14px;padding:18px 20px;
-    border:2px solid rgba(20,116,116,.28);background:rgba(20,116,116,.06)}
+  .audience{margin:18px 0 0;border-radius:14px;padding:18px 20px;
+    border:2px solid rgba(20,116,116,.30);background:#fff}
   .audience b{display:block;margin:0 0 6px;color:var(--teal);
     font-size:1.12rem;font-weight:900}
   .audience p{margin:0;line-height:1.75}
@@ -150,6 +150,7 @@
 <p class="eyebrow">מדריך על מנוי Team ב-Claude · מדריך 1 מתוך 2</p>
 <h1>לפתוח פרויקט ולהחליט מי רואה אותו</h1>
 <p class="hero-copy">מה עמית במשרד רואה ומה לא, איך משתפים תיק בלי לפתוח אותו לכולם, ומה נשאר שלכם גם בפרויקט משותף.</p>
+<div class="audience"><b>למי מיועד המדריך הזה</b><p><strong>לכל עורך דין במשרד, בלי יוצא מן הכלל.</strong> אין כאן פעולה אחת שדורשת הרשאת ניהול, ואין כאן מסך שלא ייפתח אצלכם.</p><p><strong>ומי שמוגדר בקלוד <bdi dir="ltr">Owner</bdi> או <bdi dir="ltr">Admin</bdi> וגם קובע איך כל המשרד עובד</strong> - ימשיך אחרי המדריך הזה למדריך 2.</p></div>
 </div><dl class="facts"><div><dt>מה תלמדו כאן</dt><dd>לפתוח תיק בקלוד ולהחליט מי מהמשרד רואה אותו · לשתף אותו עם עורך דין אחד ולקבוע אם הוא רק קורא או גם משנה · לחבר את היומן ואת המייל שלכם · ולעבוד מול קלוד בתוך Word ובתוך Excel.</dd></div><div><dt>מה ישתנה אצלכם</dt><dd>יהיה לכם תיק אחד פתוח בקלוד, משותף רק עם מי שצריך לראות אותו. ותדעו בדיוק מה כל אחד מהם רואה בתוכו, ומה נשאר רק אצלכם.</dd></div><div><dt>כמה זמן זה לוקח</dt><dd>כ-20 דקות קריאה. ועוד כ-20 דקות אם תבצעו את הפעולות תוך כדי, מול המסך.</dd></div><div><dt>מה צריך כדי להתחיל</dt><dd>רק חשבון קלוד במנוי Team. אין צורך בשום הרשאת ניהול, וגם מי שכבר עובד ב-Team שנה שלמה ימצא כאן דברים שלא ידע.</dd></div></dl></header>
 
 <aside class="status-panel"><span class="chip">בעבודה</span><p><strong>הטקסט שלם ומאומת. הצילומים בדרך.</strong> כל עובדה כאן נבדקה מול התיעוד הרשמי של <bdi dir="ltr">Anthropic</bdi>, ומה שאין לו מקור נאמר במפורש שאין לו. במקום כל צילום עתידי יש מסגרת שנושאת את מספרו, את הכיתוב ואת המקרא שכבר נכתבו לו.</p><ul class="status-facts"><li><b>19</b>מאמרים רשמיים שנקראו</li><li><b>35</b>צילומים מתוכננים, לפי סדר הצילום</li><li><b>3</b>סוגי תיוג לכל עובדה: מקור, ממצא, עמדה</li></ul></aside>
@@ -158,7 +159,7 @@
 
 <div class="layout">
 <main id="main">
-<div class="audience"><b>למי מיועד המדריך הזה</b><p><strong>לכל עורך דין במשרד, בלי יוצא מן הכלל.</strong> אין כאן פעולה אחת שדורשת הרשאת ניהול, ואין כאן מסך שלא ייפתח אצלכם.</p><p><strong>ומי שמוגדר בקלוד <bdi dir="ltr">Owner</bdi> או <bdi dir="ltr">Admin</bdi> וגם קובע איך כל המשרד עובד</strong> - ימשיך אחרי המדריך הזה למדריך 2.</p></div><p><strong>המדריך הזה אינו עוסק בפרטיות ובאבטחת מידע.</strong> כל מה שקשור ל-DPA, לאימון מודלים ולמדיניות השמירה נמצא במדריך של Legal Mind על המעבר הבטוח למנוי Team, <strong>מדריך 1 סעיף 2</strong>, <strong>ושם הוא כתוב במלואו עם ציטוט מהמקור הרשמי.</strong></p>
+<p><strong>המדריך הזה אינו עוסק בפרטיות ובאבטחת מידע.</strong> כל מה שקשור ל-DPA, לאימון מודלים ולמדיניות השמירה נמצא במדריך של Legal Mind על המעבר הבטוח למנוי Team, <strong>מדריך 1 סעיף 2</strong>, <strong>ושם הוא כתוב במלואו עם ציטוט מהמקור הרשמי.</strong></p>
 <section class="guide-section" id="g1-ch00"><span class="section-number">00</span><h2>מונחים שכדאי להכיר לפני שמתחילים</h2><p class="who-for everyone">מי מבצע: כל עורך דין במשרד</p>
 <p>בקלוד יש כמה מונחים שחוזרים כל הזמן, ורובם באנגלית - כי כך הם כתובים על המסך, ואם נתרגם אותן לעברית לא תמצאו אותן שם.</p>
 <p>הן פשוטות, וכולן מוסברות גם בגוף המדריך במקום שבו הן מופיעות לראשונה.</p>
