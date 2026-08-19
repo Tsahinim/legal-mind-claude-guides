@@ -4,6 +4,34 @@
    sits outside the frame so it cannot cover a word-end */
 .shot-target{background:transparent}
 </style>
+<style>
+  .shot-hint{display:inline-block;margin:16px 0 4px;padding:7px 14px;
+    border-radius:999px;background:rgba(20,116,116,.09);
+    color:var(--teal);font-size:1.2rem;font-weight:800;line-height:1.4}
+  .shot-hint:before{content:"🔍";margin-inline-end:8px;font-weight:400}
+  .zoomer{position:fixed;inset:0;z-index:70;display:none;overflow:auto;
+    background:rgba(9,20,32,.92);padding:26px}
+  .zoomer.is-open{display:block}
+  /* the way out of a full-size picture has to be found without hunting for
+     it, so it sits centred at the top and wears the brand teal */
+  .zoomer .zoomer-close{position:fixed;top:16px;left:50%;
+    transform:translateX(-50%);z-index:2;
+    border:3px solid var(--teal);border-radius:999px;
+    padding:13px 34px;background:#fff;color:var(--teal);
+    font:inherit;font-size:1.15rem;font-weight:900;cursor:pointer;
+    box-shadow:0 6px 20px rgba(0,0,0,.28)}
+  .zoomer .zoomer-close:hover{background:var(--teal);color:#fff}
+  /* the stage must be the positioned ancestor, or the red boxes measure
+     themselves against the whole overlay and scatter */
+  .zoomer .zoomer-stage{margin:44px auto 0;position:relative}
+  .zoomer .zoomer-stage img{display:block;width:100%;height:auto;
+    border-radius:8px}
+  .zoomer .zoomer-cap{margin:14px auto 0;max-width:760px;color:#fff;
+    text-align:center;font-size:1rem;opacity:.9}
+  .zoomer .zoomer-pan{margin:.4rem 0 0;font-size:.9rem;opacity:.8;display:none}
+  .zoomer .zoomer-cap.is-wide .zoomer-pan{display:block}
+  .shot-frame{position:relative}
+</style>
 </head><body><a class="skip" href="#main">דילוג לתוכן</a><nav class="backbar"><a href="../index.html">חזרה למרכז מדריכי Skills</a></nav><div class="skills-brand"><img alt="לוגו Legal Mind" class="skills-logo" decoding="async" src="../assets/legal-mind-logo-tight.png"/></div><header class="hero"><div><p class="eyebrow">מדריך 1 מתוך 4</p><h1>מאיפה מתחילים עם Skills</h1><p class="hero-copy">מדריך הפתיחה לסדרה. מסביר מהו סקיל, מראה מסך אחר מסך איך מגיעים לאזור הסקילים ב-Claude, ומלווה אתכם בהתקנה והפעלה של סקיל מוכן עד שהוא עובד אצלכם.</p></div><dl class="facts"><div><dt>תוצר הלמידה</dt><dd>סקיל מותקן ופועל, ויכולת להגיע אליו ולנהל אותו בעצמכם.</dd></div><div><dt>ידע מוקדם</dt><dd>אין. זהו המדריך הראשון בסדרה.</dd></div><div><dt>מבנה</dt><dd>14 פרקים ו-20 צילומי מסך מודרכים</dd></div><div><dt>זמן משוער</dt><dd>כ-25 דקות קריאה, וכ-15 דקות ביצוע</dd></div></dl></header><nav class="mobile-toc"><details><summary>תוכן המדריך</summary><ol><li><a href="#what"><span>01</span>מהו Skill וכיצד הוא בנוי</a></li><li><a href="#problem"><span>02</span>איזו בעיה Skills פותרים</a></li><li><a href="#load"><span>03</span>כיצד Skill מזוהה ונטען</a></li><li><a href="#notdo"><span>04</span>מה Skill אינו עושה</a></li><li><a href="#three-llms"><span>05</span>Skills בשלושת הצ׳אטבוטים</a></li><li><a href="#dpa"><span>06</span>המנוי שמתאים למשרד</a></li><li><a href="#path"><span>07</span>הדרך לאזור הסקילים</a></li><li><a href="#four-ways"><span>08</span>ארבע דרכים להביא סקיל</a></li><li><a href="#directory"><span>09</span>הספרייה והמסך הריק</a></li><li><a href="#install"><span>10</span>להתקין סקיל מוכן</a></li><li><a href="#run"><span>11</span>להפעיל את הסקיל</a></li><li><a href="#proof"><span>12</span>לראות שהסקיל עשה משהו</a></li><li><a href="#troubleshoot"><span>13</span>כשמשהו לא עובד</a></li><li><a href="#next"><span>14</span>מה למדתם ולאן ממשיכים</a></li></ol></details></nav><div class="layout"><main class="surface" id="main">
 <section class="guide-section" id="what"><span class="section-number">01</span>
 <p class="section-number">01</p>
@@ -489,4 +517,121 @@
 </section>
 
 <div class="bottom-nav"><a class="button" href="../index.html">מרכז המדריכים</a><a class="button primary" href="../guide-2/index.html">המדריך הבא: לבחור תהליך ולאפיין אותו</a></div>
-</main><aside class="desktop-toc"><h2>תוכן המדריך</h2><ol><li><a href="#what"><span>01</span>מהו Skill וכיצד הוא בנוי</a></li><li><a href="#problem"><span>02</span>איזו בעיה Skills פותרים</a></li><li><a href="#load"><span>03</span>כיצד Skill מזוהה ונטען</a></li><li><a href="#notdo"><span>04</span>מה Skill אינו עושה</a></li><li><a href="#three-llms"><span>05</span>Skills בשלושת הצ׳אטבוטים</a></li><li><a href="#dpa"><span>06</span>המנוי שמתאים למשרד</a></li><li><a href="#path"><span>07</span>הדרך לאזור הסקילים</a></li><li><a href="#four-ways"><span>08</span>ארבע דרכים להביא סקיל</a></li><li><a href="#directory"><span>09</span>הספרייה והמסך הריק</a></li><li><a href="#install"><span>10</span>להתקין סקיל מוכן</a></li><li><a href="#run"><span>11</span>להפעיל את הסקיל</a></li><li><a href="#proof"><span>12</span>לראות שהסקיל עשה משהו</a></li><li><a href="#troubleshoot"><span>13</span>כשמשהו לא עובד</a></li><li><a href="#next"><span>14</span>מה למדתם ולאן ממשיכים</a></li></ol></aside></div><footer>Legal Mind · המדריך המקיף ל-Skills לעורכי דין · מדריך 1 מתוך 4 · עודכן באוגוסט 2026</footer></body></html>
+</main><aside class="desktop-toc"><h2>תוכן המדריך</h2><ol><li><a href="#what"><span>01</span>מהו Skill וכיצד הוא בנוי</a></li><li><a href="#problem"><span>02</span>איזו בעיה Skills פותרים</a></li><li><a href="#load"><span>03</span>כיצד Skill מזוהה ונטען</a></li><li><a href="#notdo"><span>04</span>מה Skill אינו עושה</a></li><li><a href="#three-llms"><span>05</span>Skills בשלושת הצ׳אטבוטים</a></li><li><a href="#dpa"><span>06</span>המנוי שמתאים למשרד</a></li><li><a href="#path"><span>07</span>הדרך לאזור הסקילים</a></li><li><a href="#four-ways"><span>08</span>ארבע דרכים להביא סקיל</a></li><li><a href="#directory"><span>09</span>הספרייה והמסך הריק</a></li><li><a href="#install"><span>10</span>להתקין סקיל מוכן</a></li><li><a href="#run"><span>11</span>להפעיל את הסקיל</a></li><li><a href="#proof"><span>12</span>לראות שהסקיל עשה משהו</a></li><li><a href="#troubleshoot"><span>13</span>כשמשהו לא עובד</a></li><li><a href="#next"><span>14</span>מה למדתם ולאן ממשיכים</a></li></ol></aside></div><footer>Legal Mind · המדריך המקיף ל-Skills לעורכי דין · מדריך 1 מתוך 4 · עודכן באוגוסט 2026</footer><script>
+(function(){
+  "use strict";
+  var frames = [].slice.call(document.querySelectorAll(".shot-frame"));
+  if(!frames.length) return;
+
+  var box = document.createElement("div");
+  box.className = "zoomer";
+  box.setAttribute("role", "dialog");
+  box.setAttribute("aria-modal", "true");
+  box.setAttribute("aria-label", "צילום מסך בגודל מלא");
+  box.innerHTML = '<button type="button" class="zoomer-close">סגירה</button>' +
+                  '<div class="zoomer-stage"></div>' +
+                  '<div class="zoomer-cap"><p class="zoomer-cap-text"></p>' +
+                  '<p class="zoomer-pan">הצילום רחב מהמסך. אפשר לגרור אותו הצידה כדי לראות את כולו.</p></div>';
+  document.body.appendChild(box);
+
+  var stage = box.querySelector(".zoomer-stage");
+  var cap = box.querySelector(".zoomer-cap");
+  var capText = box.querySelector(".zoomer-cap-text");
+  var closeBtn = box.querySelector(".zoomer-close");
+  var opener = null;
+
+  function open(frame){
+    var img = frame.querySelector("img");
+    if(!img) return;
+    stage.innerHTML = frame.innerHTML;
+    /* גודל טבעי, ולא "עד רוחב המסך" - אחרת על טלפון מקבלים שוב תמונה
+       מוקטנת שאי אפשר לקרוא בה, וההגדלה לא עשתה כלום */
+    var nat = img.naturalWidth || img.width;
+    stage.style.width = nat + "px";
+    stage.style.maxWidth = "none";
+    var fig = frame.closest("figure");
+    var c = fig ? fig.querySelector(".shot-caption") : null;
+    capText.textContent = c ? c.textContent : "";
+    cap.classList.toggle("is-wide", nat > (window.innerWidth - 20));
+    opener = frame;
+    box.classList.add("is-open");
+    document.body.style.overflow = "hidden";
+    closeBtn.focus();
+  }
+  function close(){
+    box.classList.remove("is-open");
+    document.body.style.overflow = "";
+    stage.innerHTML = "";
+    if(opener) opener.focus();
+    opener = null;
+  }
+
+  /* ההזמנה להגדיל מופיעה רק על צילום שבאמת מוצג מוקטן. על צילום שממילא
+     בגודלו הטבעי היא הבטחה ריקה, ועשרים שורות כאלה הן רעש */
+  function wire(){
+    frames.forEach(function(frame){
+      var img = frame.querySelector("img");
+      if(!img || !img.naturalWidth) return;
+      var shrunk = img.getBoundingClientRect().width < img.naturalWidth * 0.96;
+      if(!shrunk || frame.dataset.zoom) return;
+      frame.dataset.zoom = "1";
+      frame.setAttribute("tabindex", "0");
+      frame.setAttribute("role", "button");
+      frame.setAttribute("aria-label", "הגדלת הצילום");
+      frame.style.cursor = "zoom-in";
+      frame.addEventListener("click", function(){ open(frame); });
+      frame.addEventListener("keydown", function(ev){
+        if(ev.key === "Enter" || ev.key === " "){ ev.preventDefault(); open(frame); }
+      });
+      var fig = frame.closest("figure");
+      var capEl = fig ? fig.querySelector(".shot-caption") : null;
+      var legEl = fig ? fig.querySelector(".shot-legend, .shot-legend-num") : null;
+      if((capEl || legEl) && !fig.querySelector(".shot-hint")){
+        var hint = document.createElement("p");
+        hint.className = "shot-hint";
+        hint.innerHTML = "לחיצה על הצילום פותחת אותו בגודל מלא";
+        if(capEl){ capEl.insertAdjacentElement("afterend", hint); }
+        else { legEl.insertAdjacentElement("beforebegin", hint); }
+      }
+    });
+  }
+  wire();
+  window.addEventListener("load", wire);
+  window.addEventListener("resize", wire);
+  frames.forEach(function(frame){
+    var img = frame.querySelector("img");
+    if(img && !img.complete) img.addEventListener("load", wire);
+  });
+
+  closeBtn.addEventListener("click", close);
+  box.addEventListener("click", function(ev){
+    if(ev.target === box) close();
+  });
+  document.addEventListener("keydown", function(ev){
+    if(ev.key === "Escape" && box.classList.contains("is-open")) close();
+  });
+})();
+
+
+(function(){
+  document.addEventListener("click", function(ev){
+    var btn = ev.target.closest(".copy-button");
+    if(!btn) return;
+    var block = btn.closest(".copy-block");
+    var src = document.getElementById(btn.getAttribute("data-copy-target"));
+    var status = block ? block.querySelector(".copy-status") : null;
+    if(!src) return;
+    var text = src.innerText;
+    function done(ok){
+      if(!status) return;
+      status.textContent = ok ? "ההוראה הועתקה" : "ההעתקה נכשלה, סמנו והעתיקו ידנית";
+      setTimeout(function(){ status.textContent = ""; }, 2600);
+    }
+    if(navigator.clipboard && navigator.clipboard.writeText){
+      navigator.clipboard.writeText(text).then(function(){done(true);},
+                                              function(){done(false);});
+    } else { done(false); }
+  });
+})();
+</script>
+</body></html>
