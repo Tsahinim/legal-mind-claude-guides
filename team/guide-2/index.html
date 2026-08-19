@@ -71,7 +71,12 @@
   .terms + p,.terms + p + p{padding-inline-start:26px}
   /* the shared sheet sets 1.15rem, and at that size a sub-heading reads as
      one more bold line. 15% larger, in this series only */
-  .guide-section h3,.sec-body h3{font-size:1.32rem}
+  .guide-section h3,.sec-body h3{font-size:1.32rem;position:relative}
+  /* the dot lives in the margin, so the heading does not shift right */
+  .guide-section h3:before{content:"";position:absolute;
+    inset-inline-start:-16px;top:.54em;width:8px;height:8px;
+    border-radius:50%;background:var(--navy)}
+  .guide-section .content-box h3:before{inset-inline-start:-13px}
   /* a link inside the reading text: the reader has to see that it is one,
      without it shouting louder than the sentence around it */
   .guide-section a{color:var(--teal);font-weight:800;
