@@ -66,6 +66,9 @@
     width:9px;height:9px;border-radius:50%;background:#D6323C}
   .terms .term{color:var(--orange);font-weight:800}
   .terms .term-he{color:var(--orange);font-weight:700}
+  /* the sentence that closes a term list is part of it, so it starts
+     where the terms start and not at the edge of the column */
+  .terms + p,.terms + p + p{padding-inline-start:26px}
   /* the shared sheet sets 1.15rem, and at that size a sub-heading reads as
      one more bold line. 15% larger, in this series only */
   .guide-section h3,.sec-body h3{font-size:1.32rem}
