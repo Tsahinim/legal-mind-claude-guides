@@ -128,7 +128,7 @@ bdi[dir=ltr],[dir=ltr]{unicode-bidi:isolate}
 .facts dt{color:var(--teal);font-size:12px;font-weight:900}
 .facts dd{margin:2px 0 0;color:var(--navy);font-weight:700}
 
-.layout{display:grid;grid-template-columns:minmax(0,1fr) 286px;gap:28px;padding:8px 14px 60px}
+.layout{display:grid;grid-template-columns:286px minmax(0,1fr);gap:28px;padding:8px 14px 60px}
 .surface{overflow:hidden;border:1px solid var(--line);border-radius:18px;
   background:var(--paper);box-shadow:0 9px 28px rgba(13,39,64,.06)}
 
@@ -154,7 +154,7 @@ bdi[dir=ltr],[dir=ltr]{unicode-bidi:isolate}
 /* ---------------------------------------------------------------------------
    6. TABLE OF CONTENTS
    ------------------------------------------------------------------------ */
-.desktop-toc{position:sticky;top:64px;align-self:start;border:1px solid var(--line);
+.desktop-toc{order:-1;position:sticky;top:64px;align-self:start;border:1px solid var(--line);
   border-radius:16px;background:var(--paper);padding:16px;
   box-shadow:0 8px 24px rgba(13,39,64,.06);max-height:calc(100vh - 84px);overflow:auto}
 .desktop-toc h2{margin:0 0 10px;color:var(--navy);font-size:1rem}
