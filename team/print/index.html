@@ -1,14 +1,32 @@
 <!DOCTYPE html>
 <html dir="rtl" lang="he"><head><meta charset="utf-8">
 <meta content="width=device-width,initial-scale=1" name="viewport">
-<meta name="description" content="דף תרגול: מה לשתף ובאיזו הרשאה, מסלול 30 יום, וחמש הטעויות">
+<meta name="description" content="דף תרגול של שיתוף והרשאות במנוי Team: חמישה תרגילים מול המסך, וחומר עזר לתלייה">
 <title>מדריך על מנוי Team ב-Claude · דף תרגול | Legal Mind</title>
 <link href="../../claude-code/assets/site.css?v=20260821" rel="stylesheet">
 <style>
   .sheet{max-width:60rem;margin:0 auto 3rem;padding:1.4rem 1.6rem 2.4rem;
     background:var(--paper);border:1px solid var(--line);border-radius:18px;
     box-shadow:0 9px 28px rgba(13,39,64,.06)}
-  .sheet h2{margin-top:2.4rem}
+  .sheet h2{margin-top:2.4rem;color:var(--navy)}
+  .sheet .drill-title{font-size:1.45rem}
+  .who-chip{display:inline-block;margin:0 0 .4rem;border-radius:999px;
+    padding:4px 13px;font-size:.82rem;font-weight:700;line-height:1.5}
+  .who-chip.everyone{background:rgba(20,116,116,.10);color:var(--teal)}
+  .who-chip.owner{background:rgba(13,39,64,.09);color:var(--navy)}
+  .what{margin:.2rem 0 1rem;color:var(--teal);font-weight:800;font-size:.95rem}
+  .steps li{position:relative;margin:11px 0;padding:12px 50px 12px 12px;
+    border:1px solid var(--line);border-radius:12px;background:#fbfdfd}
+  .steps li:before{counter-increment:step;content:counter(step);
+    position:absolute;right:10px;top:10px;display:grid;place-items:center;
+    width:28px;height:28px;border-radius:8px;background:var(--teal);
+    color:#fff;font-weight:900}
+  .success{margin:14px 0 0;border-right:5px solid var(--teal);
+    border-radius:12px;background:#edf7f6;padding:13px 16px}
+  .success b{color:var(--navy)}
+  .drill-src{margin:.8rem 0 0;color:var(--muted);font-size:.9rem}
+  .prep p{margin:0 0 .8rem}
+  .go-line{font-size:1.15rem;font-weight:900;color:var(--navy)}
   .sheet table{width:100%;border-collapse:collapse;font-size:1.02rem}
   .sheet th,.sheet td{border:1px solid rgba(20,116,116,.25);padding:.6rem .75rem;
     text-align:right;vertical-align:top}
@@ -27,7 +45,7 @@
     .backbar,.skip,.printbar,.skills-brand{display:none!important}
     body{font-size:10.5pt}
     .sheet{padding:0;background:none;border:none;box-shadow:none;border-radius:0}
-    .week,.sheet th{background:none}
+    .week,.sheet th,.success,.steps li{background:none}
   }
 </style>
 </head><body>
@@ -40,13 +58,88 @@
 <header class="hero"><div>
 <p class="eyebrow">מדריך על מנוי Team ב-Claude · דף תרגול</p>
 <h1>דף תרגול של שיתוף והרשאות במנוי <bdi dir="ltr">Team</bdi> ב-<bdi dir="ltr">Claude</bdi></h1>
-<p class="hero-copy">מה לשתף ובאיזו הרשאה, מה לעשות בכל שבוע, ומה לא לעשות. דף אחד לתלייה מול העיניים בחודש הראשון - כל שורה בו מוסברת במלואה במדריכים, ומצוין היכן.</p>
+<p class="hero-copy">חמישה תרגילים קצרים לביצוע מול המסך, כל אחד עם הוראות שלב אחר שלב ובדיקת הצלחה. ואחריהם, חומר העזר לתלייה ליד המחשב: טבלת ההחלטה, מסלול 30 יום וחמש הטעויות.</p>
 </div></header>
 
 <div class="printbar"><button class="button primary" type="button" onclick="window.print()">הדפסה או שמירת קובץ דף התרגול</button>
 <p class="printnote">בחלון ההדפסה שייפתח אפשר לבחור <bdi dir="ltr">Save as PDF</bdi> כדי לשמור את הדף כקובץ.</p></div>
 
 <main id="main" class="sheet">
+
+<h2>הכנה לפני שמתחילים לתרגל</h2>
+<div class="prep">
+<p><strong>חשבון קלוד במנוי Team שאתם יודעים להיכנס אליו.</strong> זה הכל מבחינת ציוד.</p>
+<p><strong>שום חומר לקוח.</strong> כל התרגול נעשה על תיק דמה שנפתח כאן ונמחק בסוף. אף מסמך אמיתי לא עולה לתרגיל.</p>
+<p><strong>לתרגיל 2 צריך שותף:</strong> עורך דין אחד מהמשרד שמסכים לקבל מכם הזמנה ולהציץ רגע במסך שלו.</p>
+<p><strong>תרגילים 4 ו-5 מיועדים למי שמוגדר <bdi dir="ltr">Owner</bdi> בלבד.</strong> איך בודקים אם זה אתם - זה בדיוק תרגיל 4, אז מי שלא בטוח פשוט יגיע לשם לפי הסדר. מי שיגלה שם שהוא <bdi dir="ltr">User</bdi> - סיים את חלקו בתרגיל 4, ותרגיל 5 שייך ל-<bdi dir="ltr">Owner</bdi> של המשרד.</p>
+</div>
+
+<p class="go-line">קדימה, מתחילים.</p>
+
+<h2 class="drill-title">תרגיל 1 - פותחים תיק פרטי, ובודקים שהוא באמת פרטי</h2>
+<span class="who-chip everyone">לכל עורך דין במשרד</span>
+<p class="what">מה מתרגלים כאן: פתיחת פרויקט כך שאף אחד אחר במשרד לא רואה אותו.</p>
+<ol class="steps">
+<li>לוחצים על <bdi dir="ltr">Projects</bdi> בסרגל הצד, ואז על <bdi dir="ltr">New project</bdi>.</li>
+<li>לפני שממלאים שם: יורדים לאזור <bdi dir="ltr">Visibility</bdi> בתחתית החלון ומסמנים <bdi dir="ltr">Private</bdi>. זה הצעד החשוב בתרגיל, כי האפשרות שמסומנת מראש פותחת את התיק לכל המשרד.</li>
+<li>עכשיו ממלאים שם: <bdi dir="ltr">תיק תרגול</bdi> ושמכם. תיאור - משפט אחד, לא חובה.</li>
+<li>לוחצים <bdi dir="ltr">Create project</bdi>.</li>
+</ol>
+<div class="success"><b>איך יודעים שהצלחתם:</b> מתחת לשם התיק בראש המסך כתוב <bdi dir="ltr">Private</bdi>, וברשימת הפרויקטים מופיע מנעול קטן על הכרטיס של התיק. אם במקום זה כתוב שם המשרד - חוזרים לפרק 02 של מדריך 1, לקטע שמסביר איך מתקנים.</div>
+<p class="drill-src">נלמד במלואו: מדריך 1, פרק 02.</p>
+
+<h2 class="drill-title">תרגיל 2 - משתפים עורך דין אחד, כקורא בלבד</h2>
+<span class="who-chip everyone">לכל עורך דין במשרד</span>
+<p class="what">מה מתרגלים כאן: להזמין אדם אחד לתיק, לקבוע שהוא רק קורא, ולדעת בדיוק מה הוא רואה.</p>
+<ol class="steps">
+<li>נכנסים לתיק התרגול ולוחצים על <bdi dir="ltr">Share</bdi> בשורה העליונה.</li>
+<li>מקלידים את שם העמית בשדה העליון. כשנפתחת רשימת הכתובות - קוראים את סוף הכתובת, אחרי הסימן <bdi dir="ltr">@</bdi>, ובוחרים רק כתובת של המשרד. לא <bdi dir="ltr">gmail</bdi>.</li>
+<li>בוחרים לו הרשאת <bdi dir="ltr">Can view</bdi>, ושולחים.</li>
+<li>מבקשים מהעמית לפתוח את קלוד ולהיכנס לתיק שהופיע אצלו.</li>
+</ol>
+<div class="success"><b>איך יודעים שהצלחתם:</b> אצל העמית התיק מופיע והחומר נקרא, אבל אין לו אפשרות לשנות בו דבר. והשיחות שלכם עם קלוד בתוך התיק - לא מופיעות אצלו בכלל. אצלכם, בחלון השיתוף, הוא מופיע ברשימת <bdi dir="ltr">People with access</bdi>.</div>
+<p class="drill-src">נלמד במלואו: מדריך 1, פרקים 03 ו-04.</p>
+
+<h2 class="drill-title">תרגיל 3 - בודקים מה עובר בין שיחות, ומה עושים כשלא</h2>
+<span class="who-chip everyone">לכל עורך דין במשרד</span>
+<p class="what">מה מתרגלים כאן: לראות במו עיניכם שקלוד לא זוכר בין שיחות, ולתקן את זה דרך מאגר הידע.</p>
+<ol class="steps">
+<li>פותחים שיחה בתוך תיק התרגול וכותבים לקלוד החלטה מומצאת אחת, למשל: התאריך הקובע בתיק הוא 15 במרץ.</li>
+<li>פותחים שיחה חדשה באותו תיק ושואלים: מה התאריך הקובע בתיק?</li>
+<li>קלוד לא יידע. זו לא תקלה - כך המערכת עובדת, ובדיוק בשביל זה קיים מאגר הידע.</li>
+<li>מוסיפים את ההחלטה למאגר הידע של התיק, כפי שנלמד בפרק 05 של מדריך 1.</li>
+<li>פותחים שיחה חדשה נוספת ושואלים שוב.</li>
+</ol>
+<div class="success"><b>איך יודעים שהצלחתם:</b> בפעם השנייה קלוד עונה 15 במרץ, ומציין שהמידע מגיע מחומר התיק.</div>
+<p class="drill-src">נלמד במלואו: מדריך 1, פרק 05.</p>
+
+<h2 class="drill-title">תרגיל 4 - בודקים מי אתם בעיני המערכת, וממפים את המשרד</h2>
+<span class="who-chip everyone">מתחילים כולם, ממשיכים רק Owner</span>
+<p class="what">מה מתרגלים כאן: לדעת איזה תפקיד יש לכם, מי ה-<bdi dir="ltr">Owner</bdi> של המשרד, וכמה כאלה יש.</p>
+<ol class="steps">
+<li>לוחצים על שמכם בפינה התחתונה של המסך, ובתפריט שנפתח בוחרים <bdi dir="ltr">Settings</bdi>.</li>
+<li>במסך <bdi dir="ltr">Account</bdi> קוראים מה כתוב ליד התפקיד: <bdi dir="ltr">Owner</bdi> או <bdi dir="ltr">User</bdi>. מי שכתוב אצלו <bdi dir="ltr">User</bdi> - מסתכל באותו מסך מי ה-<bdi dir="ltr">Primary Owner</bdi> של המשרד, וכאן חלקו בתרגיל הסתיים.</li>
+<li>מי שמוגדר <bdi dir="ltr">Owner</bdi>: נכנסים למסכי הניהול של המשרד לפי מדריך 2 פרק 01, ופותחים את רשימת החברים והתפקידים.</li>
+<li>סופרים כמה <bdi dir="ltr">Owner</bdi> יש במשרד.</li>
+</ol>
+<div class="success"><b>איך יודעים שהצלחתם:</b> אתם יודעים לומר בלי להסס מה התפקיד שלכם, מי ה-<bdi dir="ltr">Primary Owner</bdi>, וכמה <bdi dir="ltr">Owner</bdi> יש. ואם יצאו יותר משניים - מצאתם בדיוק את טעות מספר 4 מהרשימה שבסוף הדף, ויש לכם על מה לדבר בישיבת המשרד הקרובה.</div>
+<p class="drill-src">נלמד במלואו: מדריך 2, פרק 01.</p>
+
+<h2 class="drill-title">תרגיל 5 - כותבים הוראה ארגונית, ורואים אותה עובדת</h2>
+<span class="who-chip owner">ל-Owner בלבד</span>
+<p class="what">מה מתרגלים כאן: לקבוע כלל אחד שחל מעכשיו על כל שיחה של כל עורך דין במשרד, ולוודא שהוא באמת פועל.</p>
+<ol class="steps">
+<li>במסכי הניהול לוחצים בסרגל על <bdi dir="ltr">Organization and access</bdi>.</li>
+<li>יורדים לאזור ההוראות הארגוניות, מתחת לשם הארגון.</li>
+<li>מדביקים את נוסח הפתיחה מפרק 04 של מדריך 2, או לפחות שני כללים ממנו: תשובות בעברית משפטית תקנית, והסתייגות בכל תוצר המיועד ללקוח שאין מדובר בייעוץ משפטי.</li>
+<li>שומרים.</li>
+<li>פותחים שיחה חדשה רגילה, לא בתוך פרויקט, ומבקשים: כתוב טיוטת מכתב קצר ללקוח על דחיית דיון.</li>
+</ol>
+<div class="success"><b>איך יודעים שהצלחתם:</b> הטיוטה יוצאת בעברית משפטית, ובסופה מופיעה מעצמה ההסתייגות שאין מדובר בייעוץ משפטי - בלי שביקשתם אותה בשיחה. הכלל שכתבתם פעם אחת עבד בשיחה שלא אמרתם בה עליו מילה.</div>
+<p class="drill-src">נלמד במלואו: מדריך 2, פרק 04.</p>
+
+<h2>חומר עזר לשמירה ליד המחשב</h2>
+<p>התרגילים נגמרים אחרי פעם או פעמיים. שלושת הדברים הבאים הם ההפך: הם מלווים את המשרד כל החודש הראשון, ולכן שווה להדפיס את הדף ולתלות אותו מול העיניים.</p>
 
 <h2>טבלת ההחלטה · מה לשתף ובאיזו הרשאה</h2>
 <p>זו התשובה לשאלה שחוזרת יותר מכל שאלה אחרת במשרד.</p>
