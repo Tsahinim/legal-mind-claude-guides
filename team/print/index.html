@@ -22,6 +22,7 @@
     place-items:center;font-weight:700;font-size:.85rem}
   .backbar a:before{content:"↑"}
   .printbar{text-align:center;margin:1.6rem 0}
+  .printbar .printnote{margin:.5rem 0 0;font-size:.9rem;opacity:.75}
   @media print{
     .backbar,.skip,.printbar,.skills-brand{display:none!important}
     body{font-size:10.5pt}
@@ -42,7 +43,8 @@
 <p class="hero-copy">דף אחד לתלייה מול העיניים בחודש הראשון. כל שורה בו מוסברת במלואה במדריכים, ומצוין היכן.</p>
 </div></header>
 
-<div class="printbar"><button class="button primary" type="button" onclick="window.print()">הדפסת הדף</button></div>
+<div class="printbar"><button class="button primary" type="button" onclick="window.print()">הדפסה או שמירת קובץ דף התרגול</button>
+<p class="printnote">בחלון ההדפסה שייפתח אפשר לבחור <bdi dir="ltr">Save as PDF</bdi> כדי לשמור את הדף כקובץ.</p></div>
 
 <main id="main" class="sheet">
 
