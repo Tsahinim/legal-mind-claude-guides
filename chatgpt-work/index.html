@@ -370,6 +370,23 @@ main > .sec:first-of-type{ margin-top:0; border-top:none; padding-top:36px; }
 .mk{ border-color:#D6323C; background:rgba(214,50,60,.08); box-shadow:0 0 0 3px rgba(214,50,60,.16); }
 .mk-tag{ background:#D6323C; }
 .shot-legend li b{ background:#D6323C; }
+
+/* הגדלת צילום בלחיצה, בסגנון סדרות Team ו-Cowork */
+.shot-frame{cursor:zoom-in}
+.mk{pointer-events:none}
+.zoom-hint{display:inline-flex;align-items:center;gap:7px;margin:10px 0 0;
+  padding:6px 14px;border-radius:999px;background:var(--brand-wash);
+  color:var(--brand-strong);font-size:13px;font-weight:700}
+.zoom-hint:before{content:"🔍"}
+.lightbox{position:fixed;inset:0;z-index:999;background:rgba(9,20,32,.93);
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  padding:20px;cursor:zoom-out}
+.lightbox .lb-close{margin:0 0 18px;border:0;border-radius:999px;
+  padding:13px 34px;background:#fff;color:var(--brand-strong);
+  font-weight:800;font-size:16px;cursor:pointer;font-family:inherit}
+.lightbox .lb-close:hover{background:var(--brand);color:#fff}
+.lightbox .lb-stage{max-height:84vh;max-width:96vw;overflow:auto}
+.lightbox .shot-frame{width:100%;max-width:none;cursor:default}
 </style>
 </head>
 <body>
@@ -916,5 +933,33 @@ main > .sec:first-of-type{ margin-top:0; border-top:none; padding-top:36px; }
 })();
 </script>
 
-</body>
+<script>
+(function(){
+  var lb = document.createElement('div');
+  lb.className = 'lightbox';
+  lb.style.display = 'none';
+  lb.innerHTML = '<button class="lb-close" type="button">סגירה</button><div class="lb-stage"></div>';
+  document.body.appendChild(lb);
+  var stage = lb.querySelector('.lb-stage');
+  function close(){ lb.style.display = 'none'; stage.innerHTML = ''; document.body.style.overflow = ''; }
+  lb.addEventListener('click', close);
+  document.addEventListener('keydown', function(e){ if (e.key === 'Escape') close(); });
+  document.querySelectorAll('figure.shot .shot-frame').forEach(function(fr){
+    fr.addEventListener('click', function(){
+      var c = fr.cloneNode(true);
+      stage.innerHTML = '';
+      stage.appendChild(c);
+      var img = c.querySelector('img');
+      var ar = (img && img.naturalWidth) ? img.naturalWidth / img.naturalHeight : 1.5;
+      c.style.width = Math.min(window.innerWidth * 0.96, window.innerHeight * 0.84 * ar) + 'px';
+      lb.style.display = 'flex';
+      document.body.style.overflow = 'hidden';
+    });
+    var hint = document.createElement('p');
+    hint.className = 'zoom-hint';
+    hint.textContent = 'לחיצה על הצילום פותחת אותו בגודל מלא';
+    fr.parentNode.insertBefore(hint, fr.nextSibling);
+  });
+})();
+</script></body>
 </html>
