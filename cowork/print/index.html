@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html dir="rtl" lang="he">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="המעגל, תבנית המשימה, שלוש הבדיקות, טבלאות ההחלטה ומסלול 30 יום - בדף אחד, לקריאה ולהדפסה או לשמירה.">
+<title>מדריך Claude Cowork · דף תרגול | Legal Mind</title>
+<link rel="stylesheet" href="../../claude-code/assets/site.css?v=20260817">
+<style>
+  .status-panel{margin:26px 0;border-radius:16px;background:var(--navy);
+    color:#fff;padding:22px 26px;display:grid;gap:14px;
+    box-shadow:0 10px 30px rgba(13,39,64,.16)}
+  .status-panel .chip{display:inline-flex;align-items:center;gap:8px;
+    align-self:start;border-radius:999px;padding:5px 14px;
+    background:rgba(43,192,183,.16);color:var(--cyan);
+    font-size:.82rem;font-weight:800;letter-spacing:.08em}
+  .status-panel .chip:before{content:"";width:8px;height:8px;border-radius:50%;
+    background:var(--cyan)}
+  .status-panel p{margin:0;font-size:1.02rem;line-height:1.72;opacity:.94}
+  .status-panel strong{color:#fff}
+  .status-facts{display:grid;gap:10px;margin:2px 0 0;padding:0;list-style:none;
+    grid-template-columns:repeat(auto-fit,minmax(190px,1fr))}
+  .status-facts li{background:rgba(255,255,255,.07);border-radius:10px;
+    padding:11px 14px;font-size:.95rem;line-height:1.5}
+  .status-facts b{display:block;font-size:1.32rem;line-height:1.2;
+    color:var(--cyan);margin-bottom:2px;font-variant-numeric:tabular-nums}
+  /* one band under the title answers "is this guide for me" once */
+  .audience{margin:18px 0 0;border-radius:14px;padding:18px 20px;
+    border:2px solid rgba(20,116,116,.30);background:#fff}
+  .audience b{display:block;margin:0 0 6px;color:var(--teal);
+    font-size:1.12rem;font-weight:900}
+  .audience p{margin:0;line-height:1.75}
+  .audience p + p{margin-top:8px}
+  .who-for{display:inline-block;margin:0 0 1.1rem;border-radius:999px;
+    padding:4px 13px;font-size:.82rem;font-weight:700;line-height:1.5}
+  .who-for.everyone{background:rgba(20,116,116,.10);color:var(--teal)}
+  .who-for.owner{background:rgba(13,39,64,.09);color:var(--navy)}
+  .shot-legend-num li{text-align:start}
+  .shot-legend-num{text-align:start}
+  .shot-hint{display:inline-block;margin:16px 0 4px;padding:7px 14px;
+    border-radius:999px;background:rgba(20,116,116,.09);
+    color:var(--teal);font-size:1.2rem;font-weight:800;line-height:1.4}
+  .shot-hint:before{content:"🔍";margin-inline-end:8px;font-weight:400}
+  .zoomer{position:fixed;inset:0;z-index:70;display:none;overflow:auto;
+    background:rgba(9,20,32,.92);padding:26px}
+  .zoomer.is-open{display:block}
+  /* the way out of a full-size picture has to be found without hunting for
+     it, so it sits centred at the top and wears the brand teal */
+  .zoomer .zoomer-close{position:fixed;top:16px;left:50%;
+    transform:translateX(-50%);z-index:2;
+    border:3px solid var(--teal);border-radius:999px;
+    padding:13px 34px;background:#fff;color:var(--teal);
+    font:inherit;font-size:1.15rem;font-weight:900;cursor:pointer;
+    box-shadow:0 6px 20px rgba(0,0,0,.28)}
+  .zoomer .zoomer-close:hover{background:var(--teal);color:#fff}
+  /* the stage must be the positioned ancestor, or the red boxes measure
+     themselves against the whole overlay and scatter */
+  .zoomer .zoomer-stage{margin:44px auto 0;position:relative}
+  .zoomer .zoomer-stage img{display:block;width:100%;height:auto;
+    border-radius:8px}
+  .zoomer .zoomer-cap{margin:14px auto 0;max-width:760px;color:#fff;
+    text-align:center;font-size:1rem;opacity:.9}
+  .zoomer .zoomer-pan{margin:.4rem 0 0;font-size:.9rem;opacity:.8;display:none}
+  .zoomer .zoomer-cap.is-wide .zoomer-pan{display:block}
+  .shot-frame{position:relative}
+  /* the shared sheet tints every marker box red. over text that wash reads
+     as a smear, so in this series the border and the badge do all the work */
+  .shot-target{background:transparent}
+  /* a defined word is a list entry with a red dot, not a paragraph that
+     happens to start in bold. the word itself carries the brand orange and
+     everything after it stays in the reading ink */
+  .terms{list-style:none;padding:0;margin:1.1rem 0}
+  .terms li{position:relative;padding-inline-start:26px;margin-bottom:.95rem;
+    line-height:1.75;text-align:start}
+  .terms li:before{content:"";position:absolute;inset-inline-start:0;top:.62em;
+    width:9px;height:9px;border-radius:50%;background:#D6323C}
+  .terms .term{color:var(--orange);font-weight:800}
+  /* a term named inside the reading text, not only in the glossary */
+  .guide-section .term{color:var(--orange);font-weight:800}
+  .terms .term-he{color:var(--orange);font-weight:700}
+  /* the sentence that closes a term list is part of it, so it starts
+     where the terms start and not at the edge of the column */
+  .terms + p,.terms + p + p{padding-inline-start:26px}
+  /* the shared sheet sets 1.15rem, and at that size a sub-heading reads as
+     one more bold line. 15% larger, in this series only */
+  .guide-section h3,.sec-body h3{font-size:1.32rem;position:relative}
+  /* the dot lives in the margin, so the heading does not shift right */
+  .guide-section h3:before{content:"";position:absolute;
+    inset-inline-start:-16px;top:.54em;width:8px;height:8px;
+    border-radius:50%;background:var(--navy)}
+  .guide-section .content-box h3:before{display:none}
+  /* a link inside the reading text: the reader has to see that it is one,
+     without it shouting louder than the sentence around it */
+  .guide-section a{color:var(--teal);font-weight:800;
+    text-decoration:underline;text-underline-offset:3px;
+    text-decoration-thickness:2px;
+    text-decoration-color:rgba(20,116,116,.42)}
+  .guide-section a:hover{text-decoration-color:var(--teal)}
+  /* the pill button is not reading text, and must keep its own colours */
+  .guide-section a.shot-full{color:#fff;text-decoration:none}
+  .shot{margin:1.7rem 0}
+  .shot img{display:block;width:100%;height:auto;border-radius:10px;
+    border:1px solid rgba(13,39,64,.14);box-shadow:0 6px 22px rgba(13,39,64,.09)}
+  .shot figcaption{text-align:center;margin:.7rem 0 .5rem;opacity:.8;
+    font-size:.95rem}
+  .shot-full{display:inline-flex;align-items:center;gap:7px;margin:.2rem auto 0;
+    border-radius:999px;padding:8px 18px;background:var(--teal);color:#fff;
+    font-size:.92rem;font-weight:700;text-decoration:none;
+    box-shadow:0 4px 14px rgba(20,116,116,.24)}
+  .shot-full:before{content:"🔍";font-size:1.05rem;line-height:1;
+    animation:shot-full-nudge 1.9s ease-in-out infinite}
+  @keyframes shot-full-nudge{0%,100%{transform:scale(1)}
+                             50%{transform:scale(1.22)}}
+  @media (prefers-reduced-motion:reduce){
+    .shot-full:before{animation:none}}
+  .shot-full:hover{filter:brightness(1.08)}
+  .shot{display:flex;flex-direction:column;align-items:stretch}
+  .shot-hole{margin:1.6rem 0}
+  .shot-hole .frame{border:2px dashed rgba(20,116,116,.42);border-radius:10px;
+    background:rgba(20,116,116,.04);min-height:132px;display:flex;
+    flex-direction:column;align-items:center;justify-content:center;gap:9px;
+    padding:26px}
+  .shot-hole .sid{font-family:ui-monospace,Consolas,monospace;font-size:1rem;
+    font-weight:700;color:var(--teal);letter-spacing:.06em}
+  .shot-hole .wait{font-size:.95rem;opacity:.68}
+  .shot-hole .pins{display:flex;gap:6px;flex-wrap:wrap}
+  .shot-hole .pin{width:26px;height:26px;border-radius:50%;background:#D6323C;
+    color:#fff;display:grid;place-items:center;font-size:.8rem;font-weight:700}
+  .shot-hole figcaption{text-align:center;margin:.7rem 0 .5rem;opacity:.8;
+    font-size:1rem}
+  .shot-legend{list-style:none;padding:0;margin:0;counter-reset:n}
+  .shot-legend li{counter-increment:n;position:relative;padding-inline-start:34px;
+    margin-bottom:.5rem;font-size:1.02rem;line-height:1.65}
+  .shot-legend li:before{content:counter(n);position:absolute;
+    inset-inline-start:0;top:.22em;width:22px;height:22px;border-radius:50%;
+    background:#D6323C;color:#fff;display:grid;place-items:center;
+    font-size:.72rem;font-weight:700}
+  .backbar a:before{content:"↑"}
+  .print-only{display:none}
+  @media print{
+    .backbar,.mobile-toc,.desktop-toc,.skip,.status-panel{display:none!important}
+    .print-only{display:block}
+    body{font-size:11pt}
+  }
+</style>
+</head>
+<body>
+
+<a class="skip" href="#main">דילוג לתוכן</a>
+<nav class="backbar"><a href="../index.html">חזרה למרכז המדריכים</a></nav>
+
+<div class="skills-brand"><img class="skills-logo" src="../../claude-code/assets/legal-mind-logo-tight.png" alt="לוגו Legal Mind - נורה מעל שם המותג" decoding="async"></div>
+
+<header class="hero"><div>
+<p class="eyebrow">מדריך Claude Cowork לעורכי דין · דף תרגול</p>
+<h1>דף התרגול של הסדרה: כל מה שנשאר ביד</h1>
+<p class="hero-copy">המעגל, תבנית המשימה, שלוש הבדיקות, טבלאות ההחלטה ומסלול 30 יום - בדף אחד, לקריאה ולהדפסה או לשמירה.</p>
+<div class="audience"><b>למי מיועד המדריך הזה</b><p><strong>לכל עורך דין במשרד, בלי יוצא מן הכלל.</strong> אין כאן פעולה שדורשת הרשאת ניהול, וכל התרגול נעשה על חומר מומצא שכתוב בתוך המדריך.</p><p><strong>הדף מיועד למי שסיים את הסדרה</strong> - הוא מזכיר, לא מלמד, וכל שורה בו מפנה לפרק שבו היא נלמדה.</p></div>
+</div><dl class="facts"><div><dt>מה יש בדף</dt><dd>המעגל בחמישה צעדים · תבנית ניסוח משימה · שלוש הבדיקות · מה מתזמנים ומה לא · מסלול 30 יום · ותשובות מהירות עם הפניה מדויקת לכל פרק.</dd></div><div><dt>איך משתמשים בו</dt><dd>קוראים פעם אחת אחרי הסדרה, ואז מדפיסים או שומרים. כל שורה שמעלה שאלה מפנה לפרק שבו התשובה המלאה.</dd></div><div><dt>כמה זמן זה לוקח</dt><dd>כ-5 דקות קריאה, ושימוש חוזר אחר כך.</dd></div><div><dt>מה צריך כדי להתחיל</dt><dd>לסיים את שלושת מדריכי הסדרה.</dd></div></dl></header>
+
+
+
+<nav class="mobile-toc"><details><summary>תוכן המדריך</summary><ol><li><a href="#cp-ch01"><span>01</span>המעגל של כל משימה, בחמישה צעדים</a></li><li><a href="#cp-ch02"><span>02</span>תבנית ניסוח משימה</a></li><li><a href="#cp-ch03"><span>03</span>איזו דרך עבודה מתאימה למה</a></li><li><a href="#cp-ch04"><span>04</span>מבנה התיקיות של תיק</a></li><li><a href="#cp-ch05"><span>05</span>שלוש הבדיקות לפני שתוצר זז לתיקייה 04</a></li><li><a href="#cp-ch06"><span>06</span>מה מתזמנים ומה לא</a></li><li><a href="#cp-ch07"><span>07</span>מסלול 30 יום להטמעה במשרד</a></li><li><a href="#cp-ch08"><span>08</span>שאלות מהירות, ואיפה התשובה המלאה</a></li><li><a href="#cp-ch09"><span>09</span>בדיקות חובה לפני שעוברים לחומר אמיתי</a></li></ol></details></nav>
+
+<div class="layout">
+<main id="main">
+<p><strong>הדף הזה לא מחליף את המדריכים.</strong> ליד כל פריט כתוב באיזה מדריך ובאיזה פרק הוא נלמד, כך שכל שורה שמעלה שאלה מחזירה אתכם בדיוק למקום שבו יש עליה תשובה מלאה.</p>
+<section class="guide-section" id="cp-ch01"><span class="section-number">01</span><h2>המעגל של כל משימה, בחמישה צעדים</h2>
+<p>כך רצה כל משימת Cowork, מהקטנה ועד הגדולה. נלמד במדריך 1, פרקים 04 ו-05:</p>
+<ol class="steps"><li><strong>מנסחים משימה</strong> לפי התבנית שבמקטע הבא.</li><li><strong>קוראים את התוכנית</strong> שקלוד מציג - קבצים נכונים, תוצר נכון, בלי צעד שלא ביקשתם.</li><li><strong>מאשרים</strong>, ונותנים לו לעבוד. עצירה אפשרית בכל רגע, ולא מזיקה לכלום.</li><li><strong>פותחים את התוצר</strong> בסייר הקבצים ובודקים אותו.</li><li><strong>מוודאים שמה שלא ביקשתם לשנות - לא השתנה.</strong></li></ol>
+</section>
+<section class="guide-section" id="cp-ch02"><span class="section-number">02</span><h2>תבנית ניסוח משימה</h2>
+<p>ארבע שורות שחוסכות עשר הודעות תיקון. נלמדה במדריך 1 פרק 04:</p>
+<div class="copy-block"><div class="copy-heading"><strong>תבנית המשימה, להעתקה ולהתאמה</strong><button class="copy-button" data-copy-target="cp-copy-1" type="button">העתקת ההוראה</button></div><div class="copy-body" id="cp-copy-1">מה החומר: [אילו קבצים או תיקייה]
+מה להכין: [סוג הקובץ ומה יהיה בו]
+באיזה שם לשמור: [שם הקובץ] ובאיזו תיקייה: [היעד]
+מה אסור: אל תשנה שום קובץ שלא ביקשתי לגעת בו.</div><span class="copy-status" aria-live="polite" aria-atomic="true"></span></div>
+<p><strong>ולתיק מסודר מוסיפים את שורת המקורות</strong> ממדריך 2 פרק 04: ליד כל עובדה בתוצר, לציין מאיזה מסמך היא נלקחה.</p>
+</section>
+<section class="guide-section" id="cp-ch03"><span class="section-number">03</span><h2>איזו דרך עבודה מתאימה למה</h2>
+<div class="table-scroll"><table><thead><tr><th>מה אתם צריכים</th><th>במה משתמשים</th><th>איפה נלמד</th></tr></thead><tbody><tr><td>תשובה, ניסוח, חשיבה משותפת</td><td>Chat</td><td>מדריך 1 פרק 01</td></tr><tr><td>קובץ מוכן מתוך חומר קיים</td><td>משימת Cowork</td><td>מדריך 1 פרקים 04-05</td></tr><tr><td>תיק שעובדים עליו שוב ושוב</td><td>Project עם הוראות</td><td>מדריך 2 פרקים 03-04</td></tr><tr><td>דוח שחוזר כל שבוע</td><td>משימה מתוזמנת</td><td>מדריך 3 פרק 02</td></tr><tr><td>להתניע עבודה כשאתם בדרכים</td><td>Dispatch מהטלפון</td><td>מדריך 3 פרק 03</td></tr><tr><td>לוח מצב שתמיד עדכני</td><td>Live artifact</td><td>מדריך 3 פרק 04</td></tr></tbody></table></div>
+</section>
+<section class="guide-section" id="cp-ch04"><span class="section-number">04</span><h2>מבנה התיקיות של תיק</h2>
+<p>ארבע תיקיות, ומקומו של קובץ אומר מה מותר לעשות איתו. נלמד במדריך 2 פרק 02:</p>
+<div class="table-scroll"><table><thead><tr><th>תיקייה</th><th>מה יושב בה</th><th>הכלל</th></tr></thead><tbody><tr><td>01-מקור</td><td>מה שהגיע מבחוץ</td><td>לא נוגעים, וגם קלוד לא</td></tr><tr><td>02-עבודה</td><td>עותקים שאתם עורכים ביד</td><td>חופשי</td></tr><tr><td>03-פלט-קלוד</td><td>כל מה שקלוד יוצר</td><td>טיוטה, תמיד, גם כשנראה מושלם</td></tr><tr><td>04-תוצר-בדוק</td><td>מה שעבר בדיקת עורך דין</td><td>רק מכאן מצטטים ושולחים</td></tr></tbody></table></div>
+</section>
+<section class="guide-section" id="cp-ch05"><span class="section-number">05</span><h2>שלוש הבדיקות לפני שתוצר זז לתיקייה 04</h2>
+<p>הפרק החשוב בסדרה, מדריך 2 פרק 07. על כל תוצר, לפני שהוא הופך מטיוטה למסמך שמותר לצטט:</p>
+<ol class="steps"><li><strong>כל עובדה חוזרת למקור.</strong> תאריך, סכום, שם וסעיף נבדקים מול המסמך שהתוצר מצביע עליו.</li><li><strong>כלום לא הומצא.</strong> מחפשים עובדה בלי מקור, מספר מעוגל, ניסוח בטוח במקום שהמקור מהוסס.</li><li><strong>התוצר לא מכריע.</strong> המלצה או עמדה בתוך תוצר - חריגה, גם כשהיא נשמעת נכונה.</li></ol>
+<p><strong>עברו השלוש - מעבירים ל-04 ביד, בסייר. ההעברה היא החתימה שלכם.</strong> נפלה בדיקה - מתקנים דרך קלוד, לא ביד, כדי שהטעות לא תחזור.</p>
+</section>
+<section class="guide-section" id="cp-ch06"><span class="section-number">06</span><h2>מה מתזמנים ומה לא</h2>
+<p>הכלל ממדריך 3 פרק 01: מתזמנים רק משימה שמכינה טיוטה, ולעולם לא משימה שפועלת כלפי חוץ.</p>
+<div class="table-scroll"><table><thead><tr><th>כן, אחרי הרצה ידנית אחת</th><th>לא, גם לא כשזה מפתה</th></tr></thead><tbody><tr><td>דוח שבועי פנימי</td><td>שליחת מייל או הודעה לכל גורם</td></tr><tr><td>ריכוז מסמכים חדשים בתיק</td><td>עדכון מסמך מקור</td></tr><tr><td>רשימת מועדים מתקרבים</td><td>כל פעולה שיוצרת מחויבות</td></tr><tr><td>רשימת נקודות פתוחות</td><td>פעולה שדורשת הכרעה משפטית</td></tr></tbody></table></div>
+<p><strong>ותזכורת ממדריך 3 פרק 02:</strong> משימה שצריכה קבצים מהמחשב רצה רק כשהמחשב דלוק ו-Claude Desktop פתוח.</p>
+</section>
+<section class="guide-section" id="cp-ch07"><span class="section-number">07</span><h2>מסלול 30 יום להטמעה במשרד</h2>
+<p>המלצה של Legal Mind למי שרוצה להפוך את הסדרה לשגרה משרדית, שבוע אחר שבוע. כל שלב נשען על פרק שכבר נלמד:</p>
+<p><strong>שבוע 1 - תרגול בלי סיכון.</strong> כל עורך דין שמצטרף עובר את מדריך 1 במלואו: תיקיית תרגול, שלוש משימות, היכרות עם התוכנית ועם העצירה. בלי שום חומר אמיתי.</p>
+<p><strong>שבוע 2 - תיק אמיתי ראשון, זהיר.</strong> בוחרים תיק אחד שאין בו חומר רגיש, בונים לו את ארבע התיקיות ו-Project עם הוראות, לפי מדריך 2 פרקים 02 עד 04. מריצים משימות קריאה וריכוז בלבד.</p>
+<p><strong>שבוע 3 - תוצרים ובדיקות.</strong> מכינים מסמך, טבלה ומצגת מתוך התיק, ומקפידים על שלוש הבדיקות לפני כל העברה ל-04. מדריך 2 פרקים 05 עד 07.</p>
+<p><strong>שבוע 4 - שגרה.</strong> משימה מתוזמנת ראשונה על התיק, לפי מדריך 3 פרק 02, ושיחת צוות קצרה: מה עבד, מה לא, ומה הכלל המשרדי מכאן והלאה.</p>
+<p><strong>ובכל השבועות, כלל אחד קבוע:</strong> מצב <bdi dir="ltr"><code>Manually approve</code></bdi>, ותוצר לא זז בלי שלוש הבדיקות.</p>
+</section>
+<section class="guide-section" id="cp-ch08"><span class="section-number">08</span><h2>שאלות מהירות, ואיפה התשובה המלאה</h2>
+<p><strong>קלוד רואה את כל המחשב שלי?</strong> לא. רק את התיקייה שחיברתם, ושום דבר מחוץ לה. מדריך 1 פרק 04.</p>
+<p><strong>המסמכים שלי עוברים בשרתים של אנתרופיק?</strong> כן, בסביבה מבודדת, וכל ההשלכות מוסברות במדריך 1 פרק 01, ובהרחבה במדריך על מנוי Team.</p>
+<p><strong>אפשר לסגור את המחשב באמצע משימה?</strong> משימה על תיקייה מקומית - לא, האפליקציה חייבת להישאר פתוחה עד הסיום. מדריך 1 פרק 04.</p>
+<p><strong>איך עוצרים משימה שרצה?</strong> כפתור העצירה ליד שורת ההתקדמות, או לכתוב "עצור" בתיבה. שום דבר שלא הושלם לא נשמר. מדריך 1 פרק 05.</p>
+<p><strong>איפה מוצאים משימה מאתמול?</strong> ברשימת המשימות בסרגל הצד. משימה היא לא חלון שנעלם. מדריך 1 פרק 05.</p>
+<p><strong>קלוד כתב במסמך עובדה שלא קיימת - מה עושים?</strong> מצביעים על השורה ומבקשים תיקון לפי המסמכים בלבד, דרך קלוד ולא ביד. מדריך 2 פרקים 07 ו-08.</p>
+<p><strong>המשימה המתוזמנת לא רצה - למה?</strong> כמעט תמיד: המחשב היה כבוי או האפליקציה סגורה. מדריך 3 פרק 07.</p>
+<p><strong>מה ההבדל בין Connector, Skill ו-Plugin?</strong> גישה למידע, שיטת עבודה, וחבילה שאורזת כמה יכולות. הטבלה המלאה במדריך 3 פרק 05.</p>
+<p><strong>נגמרה לי המכסה באמצע היום - זה תקין?</strong> כן, משימות Cowork צורכות יותר משיחה רגילה, והמכסה מתחדשת מעצמה. מדריך 1 פרק 08.</p>
+<p><strong>מותר לתזמן שליחת מייל ללקוח?</strong> לא. שום פעולה כלפי חוץ לא מתוזמנת. מדריך 3 פרקים 01 ו-06.</p>
+</section>
+<section class="guide-section" id="cp-ch09"><span class="section-number">09</span><h2>בדיקות חובה לפני שעוברים לחומר אמיתי</h2>
+<ol class="steps"><li>עברתי את שלושת המדריכים וביצעתי את התרגילים על תיק אלומה.</li><li>אני יודע לקרוא תוכנית ולזהות בה צעד שלא ביקשתי.</li><li>אני יודע לעצור משימה באמצע, ועשיתי את זה לפחות פעם אחת.</li><li>יש לי מבנה ארבע תיקיות מוכן לתיק הראשון.</li><li>ההוראות הגלובליות והוראות ה-Project כתובות ושמורות.</li><li>מצב האישור אצלי הוא <bdi dir="ltr"><code>Manually approve</code></bdi>.</li><li>אני יודע את שלוש הבדיקות בעל פה, או שהדף הזה תלוי לידי.</li></ol>
+</section>
+<div class="bottom-nav"><a class="button" href="../guide-3/index.html">המדריך הקודם: Cowork שעובד גם כשאתם לא שם</a><a class="button primary" href="../index.html">מרכז המדריכים</a></div>
+</main>
+
+<aside class="desktop-toc"><h2>תוכן המדריך</h2><ol><li><a href="#cp-ch01"><span>01</span>המעגל של כל משימה, בחמישה צעדים</a></li><li><a href="#cp-ch02"><span>02</span>תבנית ניסוח משימה</a></li><li><a href="#cp-ch03"><span>03</span>איזו דרך עבודה מתאימה למה</a></li><li><a href="#cp-ch04"><span>04</span>מבנה התיקיות של תיק</a></li><li><a href="#cp-ch05"><span>05</span>שלוש הבדיקות לפני שתוצר זז לתיקייה 04</a></li><li><a href="#cp-ch06"><span>06</span>מה מתזמנים ומה לא</a></li><li><a href="#cp-ch07"><span>07</span>מסלול 30 יום להטמעה במשרד</a></li><li><a href="#cp-ch08"><span>08</span>שאלות מהירות, ואיפה התשובה המלאה</a></li><li><a href="#cp-ch09"><span>09</span>בדיקות חובה לפני שעוברים לחומר אמיתי</a></li></ol></aside>
+</div>
+
+<footer><bdi dir="ltr">Legal Mind</bdi> | מדריך Claude Cowork | דף תרגול</footer>
+
+<script src="../../claude-code/assets/site.js?v=20260818"></script>
+<script>
+(function(){
+  "use strict";
+  var frames = [].slice.call(document.querySelectorAll(".shot-frame"));
+  if(!frames.length) return;
+
+  var box = document.createElement("div");
+  box.className = "zoomer";
+  box.setAttribute("role", "dialog");
+  box.setAttribute("aria-modal", "true");
+  box.setAttribute("aria-label", "צילום מסך בגודל מלא");
+  box.innerHTML = '<button type="button" class="zoomer-close">סגירה</button>' +
+                  '<div class="zoomer-stage"></div>' +
+                  '<div class="zoomer-cap"><p class="zoomer-cap-text"></p>' +
+                  '<p class="zoomer-pan">הצילום רחב מהמסך. אפשר לגרור אותו הצידה כדי לראות את כולו.</p></div>';
+  document.body.appendChild(box);
+
+  var stage = box.querySelector(".zoomer-stage");
+  var cap = box.querySelector(".zoomer-cap");
+  var capText = box.querySelector(".zoomer-cap-text");
+  var closeBtn = box.querySelector(".zoomer-close");
+  var opener = null;
+
+  function open(frame){
+    var img = frame.querySelector("img");
+    if(!img) return;
+    stage.innerHTML = frame.innerHTML;
+    /* גודל טבעי, ולא "עד רוחב המסך" - אחרת על טלפון מקבלים שוב תמונה
+       מוקטנת שאי אפשר לקרוא בה, וההגדלה לא עשתה כלום */
+    var nat = img.naturalWidth || img.width;
+    stage.style.width = nat + "px";
+    stage.style.maxWidth = "none";
+    var fig = frame.closest("figure");
+    var c = fig ? fig.querySelector(".shot-caption") : null;
+    capText.textContent = c ? c.textContent : "";
+    cap.classList.toggle("is-wide", nat > (window.innerWidth - 20));
+    opener = frame;
+    box.classList.add("is-open");
+    document.body.style.overflow = "hidden";
+    closeBtn.focus();
+  }
+  function close(){
+    box.classList.remove("is-open");
+    document.body.style.overflow = "";
+    stage.innerHTML = "";
+    if(opener) opener.focus();
+    opener = null;
+  }
+
+  /* ההזמנה להגדיל מופיעה רק על צילום שבאמת מוצג מוקטן. על צילום שממילא
+     בגודלו הטבעי היא הבטחה ריקה, ועשרים שורות כאלה הן רעש */
+  function wire(){
+    frames.forEach(function(frame){
+      var img = frame.querySelector("img");
+      if(!img || !img.naturalWidth) return;
+      var shrunk = img.getBoundingClientRect().width < img.naturalWidth * 0.96;
+      if(!shrunk || frame.dataset.zoom) return;
+      frame.dataset.zoom = "1";
+      frame.setAttribute("tabindex", "0");
+      frame.setAttribute("role", "button");
+      frame.setAttribute("aria-label", "הגדלת הצילום");
+      frame.style.cursor = "zoom-in";
+      frame.addEventListener("click", function(){ open(frame); });
+      frame.addEventListener("keydown", function(ev){
+        if(ev.key === "Enter" || ev.key === " "){ ev.preventDefault(); open(frame); }
+      });
+      var fig = frame.closest("figure");
+      var capEl = fig ? fig.querySelector(".shot-caption") : null;
+      if(capEl && !fig.querySelector(".shot-hint")){
+        var hint = document.createElement("p");
+        hint.className = "shot-hint";
+        hint.innerHTML = "לחיצה על הצילום פותחת אותו בגודל מלא";
+        capEl.insertAdjacentElement("afterend", hint);
+      }
+    });
+  }
+  wire();
+  window.addEventListener("load", wire);
+  window.addEventListener("resize", wire);
+  frames.forEach(function(frame){
+    var img = frame.querySelector("img");
+    if(img && !img.complete) img.addEventListener("load", wire);
+  });
+
+  closeBtn.addEventListener("click", close);
+  box.addEventListener("click", function(ev){
+    if(ev.target === box) close();
+  });
+  document.addEventListener("keydown", function(ev){
+    if(ev.key === "Escape" && box.classList.contains("is-open")) close();
+  });
+})();
+
+
+(function(){
+  document.addEventListener("click", function(ev){
+    var btn = ev.target.closest(".copy-button");
+    if(!btn) return;
+    var block = btn.closest(".copy-block");
+    var src = document.getElementById(btn.getAttribute("data-copy-target"));
+    var status = block ? block.querySelector(".copy-status") : null;
+    if(!src) return;
+    var text = src.innerText;
+    function done(ok){
+      if(!status) return;
+      status.textContent = ok ? "ההוראה הועתקה" : "ההעתקה נכשלה, סמנו והעתיקו ידנית";
+      setTimeout(function(){ status.textContent = ""; }, 2600);
+    }
+    if(navigator.clipboard && navigator.clipboard.writeText){
+      navigator.clipboard.writeText(text).then(function(){done(true);},
+                                              function(){done(false);});
+    } else { done(false); }
+  });
+})();
+</script>
+</body>
+</html>

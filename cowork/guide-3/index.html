@@ -1,14 +1,381 @@
 <!DOCTYPE html>
-<html dir="rtl" lang="he"><head><meta charset="utf-8">
-<meta content="width=device-width,initial-scale=1" name="viewport">
-<title>המדריך בבנייה | Legal Mind</title>
-<link href="../../claude-code/assets/site.css?v=20260817" rel="stylesheet">
-<style>.hold{max-width:640px;margin:10vh auto;padding:0 22px;text-align:center}
-.hold h1{color:var(--navy)}.hold p{font-size:1.05rem;line-height:1.8}</style>
-</head><body><main class="hold">
-<h1>המדריך הזה נכתב מחדש</h1>
-<p>סדרת המדריכים על <bdi dir="ltr">Claude Cowork</bdi> נבנית כאן מהיסוד:
-טקסט חדש, צילומים חדשים מהמסך האמיתי, ובדיקות מול התיעוד הרשמי.
-הקישור הזה יישאר, וכשהמדריך יעלה - הוא יופיע בדיוק כאן.</p>
-<p><a class="button primary" href="../index.html">למרכז מדריכי Cowork</a></p>
-</main></body></html>
+<html dir="rtl" lang="he">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="דוח שבועי שמכין את עצמו, משימה שנשלחת מהטלפון בדרך לדיון, לוח שמתעדכן לבד, וההבדל הפשוט בין Connector, Skill ו-Plugin.">
+<title>מדריך Claude Cowork · מדריך 3: Cowork שעובד גם כשאתם לא שם | Legal Mind</title>
+<link rel="stylesheet" href="../../claude-code/assets/site.css?v=20260817">
+<style>
+  .status-panel{margin:26px 0;border-radius:16px;background:var(--navy);
+    color:#fff;padding:22px 26px;display:grid;gap:14px;
+    box-shadow:0 10px 30px rgba(13,39,64,.16)}
+  .status-panel .chip{display:inline-flex;align-items:center;gap:8px;
+    align-self:start;border-radius:999px;padding:5px 14px;
+    background:rgba(43,192,183,.16);color:var(--cyan);
+    font-size:.82rem;font-weight:800;letter-spacing:.08em}
+  .status-panel .chip:before{content:"";width:8px;height:8px;border-radius:50%;
+    background:var(--cyan)}
+  .status-panel p{margin:0;font-size:1.02rem;line-height:1.72;opacity:.94}
+  .status-panel strong{color:#fff}
+  .status-facts{display:grid;gap:10px;margin:2px 0 0;padding:0;list-style:none;
+    grid-template-columns:repeat(auto-fit,minmax(190px,1fr))}
+  .status-facts li{background:rgba(255,255,255,.07);border-radius:10px;
+    padding:11px 14px;font-size:.95rem;line-height:1.5}
+  .status-facts b{display:block;font-size:1.32rem;line-height:1.2;
+    color:var(--cyan);margin-bottom:2px;font-variant-numeric:tabular-nums}
+  /* one band under the title answers "is this guide for me" once */
+  .audience{margin:18px 0 0;border-radius:14px;padding:18px 20px;
+    border:2px solid rgba(20,116,116,.30);background:#fff}
+  .audience b{display:block;margin:0 0 6px;color:var(--teal);
+    font-size:1.12rem;font-weight:900}
+  .audience p{margin:0;line-height:1.75}
+  .audience p + p{margin-top:8px}
+  .who-for{display:inline-block;margin:0 0 1.1rem;border-radius:999px;
+    padding:4px 13px;font-size:.82rem;font-weight:700;line-height:1.5}
+  .who-for.everyone{background:rgba(20,116,116,.10);color:var(--teal)}
+  .who-for.owner{background:rgba(13,39,64,.09);color:var(--navy)}
+  .shot-legend-num li{text-align:start}
+  .shot-legend-num{text-align:start}
+  .shot-hint{display:inline-block;margin:16px 0 4px;padding:7px 14px;
+    border-radius:999px;background:rgba(20,116,116,.09);
+    color:var(--teal);font-size:1.2rem;font-weight:800;line-height:1.4}
+  .shot-hint:before{content:"🔍";margin-inline-end:8px;font-weight:400}
+  .zoomer{position:fixed;inset:0;z-index:70;display:none;overflow:auto;
+    background:rgba(9,20,32,.92);padding:26px}
+  .zoomer.is-open{display:block}
+  /* the way out of a full-size picture has to be found without hunting for
+     it, so it sits centred at the top and wears the brand teal */
+  .zoomer .zoomer-close{position:fixed;top:16px;left:50%;
+    transform:translateX(-50%);z-index:2;
+    border:3px solid var(--teal);border-radius:999px;
+    padding:13px 34px;background:#fff;color:var(--teal);
+    font:inherit;font-size:1.15rem;font-weight:900;cursor:pointer;
+    box-shadow:0 6px 20px rgba(0,0,0,.28)}
+  .zoomer .zoomer-close:hover{background:var(--teal);color:#fff}
+  /* the stage must be the positioned ancestor, or the red boxes measure
+     themselves against the whole overlay and scatter */
+  .zoomer .zoomer-stage{margin:44px auto 0;position:relative}
+  .zoomer .zoomer-stage img{display:block;width:100%;height:auto;
+    border-radius:8px}
+  .zoomer .zoomer-cap{margin:14px auto 0;max-width:760px;color:#fff;
+    text-align:center;font-size:1rem;opacity:.9}
+  .zoomer .zoomer-pan{margin:.4rem 0 0;font-size:.9rem;opacity:.8;display:none}
+  .zoomer .zoomer-cap.is-wide .zoomer-pan{display:block}
+  .shot-frame{position:relative}
+  /* the shared sheet tints every marker box red. over text that wash reads
+     as a smear, so in this series the border and the badge do all the work */
+  .shot-target{background:transparent}
+  /* a defined word is a list entry with a red dot, not a paragraph that
+     happens to start in bold. the word itself carries the brand orange and
+     everything after it stays in the reading ink */
+  .terms{list-style:none;padding:0;margin:1.1rem 0}
+  .terms li{position:relative;padding-inline-start:26px;margin-bottom:.95rem;
+    line-height:1.75;text-align:start}
+  .terms li:before{content:"";position:absolute;inset-inline-start:0;top:.62em;
+    width:9px;height:9px;border-radius:50%;background:#D6323C}
+  .terms .term{color:var(--orange);font-weight:800}
+  /* a term named inside the reading text, not only in the glossary */
+  .guide-section .term{color:var(--orange);font-weight:800}
+  .terms .term-he{color:var(--orange);font-weight:700}
+  /* the sentence that closes a term list is part of it, so it starts
+     where the terms start and not at the edge of the column */
+  .terms + p,.terms + p + p{padding-inline-start:26px}
+  /* the shared sheet sets 1.15rem, and at that size a sub-heading reads as
+     one more bold line. 15% larger, in this series only */
+  .guide-section h3,.sec-body h3{font-size:1.32rem;position:relative}
+  /* the dot lives in the margin, so the heading does not shift right */
+  .guide-section h3:before{content:"";position:absolute;
+    inset-inline-start:-16px;top:.54em;width:8px;height:8px;
+    border-radius:50%;background:var(--navy)}
+  .guide-section .content-box h3:before{display:none}
+  /* a link inside the reading text: the reader has to see that it is one,
+     without it shouting louder than the sentence around it */
+  .guide-section a{color:var(--teal);font-weight:800;
+    text-decoration:underline;text-underline-offset:3px;
+    text-decoration-thickness:2px;
+    text-decoration-color:rgba(20,116,116,.42)}
+  .guide-section a:hover{text-decoration-color:var(--teal)}
+  /* the pill button is not reading text, and must keep its own colours */
+  .guide-section a.shot-full{color:#fff;text-decoration:none}
+  .shot{margin:1.7rem 0}
+  .shot img{display:block;width:100%;height:auto;border-radius:10px;
+    border:1px solid rgba(13,39,64,.14);box-shadow:0 6px 22px rgba(13,39,64,.09)}
+  .shot figcaption{text-align:center;margin:.7rem 0 .5rem;opacity:.8;
+    font-size:.95rem}
+  .shot-full{display:inline-flex;align-items:center;gap:7px;margin:.2rem auto 0;
+    border-radius:999px;padding:8px 18px;background:var(--teal);color:#fff;
+    font-size:.92rem;font-weight:700;text-decoration:none;
+    box-shadow:0 4px 14px rgba(20,116,116,.24)}
+  .shot-full:before{content:"🔍";font-size:1.05rem;line-height:1;
+    animation:shot-full-nudge 1.9s ease-in-out infinite}
+  @keyframes shot-full-nudge{0%,100%{transform:scale(1)}
+                             50%{transform:scale(1.22)}}
+  @media (prefers-reduced-motion:reduce){
+    .shot-full:before{animation:none}}
+  .shot-full:hover{filter:brightness(1.08)}
+  .shot{display:flex;flex-direction:column;align-items:stretch}
+  .shot-hole{margin:1.6rem 0}
+  .shot-hole .frame{border:2px dashed rgba(20,116,116,.42);border-radius:10px;
+    background:rgba(20,116,116,.04);min-height:132px;display:flex;
+    flex-direction:column;align-items:center;justify-content:center;gap:9px;
+    padding:26px}
+  .shot-hole .sid{font-family:ui-monospace,Consolas,monospace;font-size:1rem;
+    font-weight:700;color:var(--teal);letter-spacing:.06em}
+  .shot-hole .wait{font-size:.95rem;opacity:.68}
+  .shot-hole .pins{display:flex;gap:6px;flex-wrap:wrap}
+  .shot-hole .pin{width:26px;height:26px;border-radius:50%;background:#D6323C;
+    color:#fff;display:grid;place-items:center;font-size:.8rem;font-weight:700}
+  .shot-hole figcaption{text-align:center;margin:.7rem 0 .5rem;opacity:.8;
+    font-size:1rem}
+  .shot-legend{list-style:none;padding:0;margin:0;counter-reset:n}
+  .shot-legend li{counter-increment:n;position:relative;padding-inline-start:34px;
+    margin-bottom:.5rem;font-size:1.02rem;line-height:1.65}
+  .shot-legend li:before{content:counter(n);position:absolute;
+    inset-inline-start:0;top:.22em;width:22px;height:22px;border-radius:50%;
+    background:#D6323C;color:#fff;display:grid;place-items:center;
+    font-size:.72rem;font-weight:700}
+  .backbar a:before{content:"↑"}
+  .print-only{display:none}
+  @media print{
+    .backbar,.mobile-toc,.desktop-toc,.skip,.status-panel{display:none!important}
+    .print-only{display:block}
+    body{font-size:11pt}
+  }
+</style>
+</head>
+<body>
+
+<a class="skip" href="#main">דילוג לתוכן</a>
+<nav class="backbar"><a href="../index.html">חזרה למרכז המדריכים</a></nav>
+
+<div class="skills-brand"><img class="skills-logo" src="../../claude-code/assets/legal-mind-logo-tight.png" alt="לוגו Legal Mind - נורה מעל שם המותג" decoding="async"></div>
+
+<header class="hero"><div>
+<p class="eyebrow">מדריך Claude Cowork לעורכי דין · מדריך 3 מתוך 3</p>
+<h1>Cowork שעובד בשבילכם גם כשאתם לא מול המחשב</h1>
+<p class="hero-copy">דוח שבועי שמכין את עצמו, משימה שנשלחת מהטלפון בדרך לדיון, לוח שמתעדכן לבד, וההבדל הפשוט בין Connector, Skill ו-Plugin.</p>
+<div class="audience"><b>למי מיועד המדריך הזה</b><p><strong>לכל עורך דין במשרד, בלי יוצא מן הכלל.</strong> אין כאן פעולה שדורשת הרשאת ניהול, וכל התרגול נעשה על חומר מומצא שכתוב בתוך המדריך.</p><p><strong>המדריך סוגר את הסדרה</strong> - הוא מניח את שני המדריכים הקודמים, ואת תיק אלומה שנבנה בהם.</p></div>
+</div><dl class="facts"><div><dt>מה תלמדו כאן</dt><dd>לתזמן דוח שבועי שרץ לבד · לשלוח משימה מהטלפון ולהמשיך אותה במשרד · להכיר לוח מצב שמתעדכן מעצמו · ולדעת מה ההבדל בין Connector, Skill ו-Plugin ומתי זה נוגע אליכם.</dd></div><div><dt>מה יוכל להשתנות אצלכם אחרי שתקראו את המדריך</dt><dd>העבודה החוזרת של תחילת השבוע תכין את עצמה, ותדעו להפעיל את קלוד גם כשאתם בדרכים - בלי לוותר על אף בדיקה.</dd></div><div><dt>כמה זמן זה לוקח</dt><dd>כ-20 דקות קריאה, ועוד כ-25 דקות אם תבצעו את התרגילים מול המסך.</dd></div><div><dt>מה צריך כדי להתחיל</dt><dd>מדריכים 1 ו-2 של הסדרה, ותיק אלומה שנבנה בהם.</dd></div></dl></header>
+
+<aside class="status-panel"><span class="chip">בעבודה</span><p><strong>הטקסט שלם ומאומת. הצילומים בדרך.</strong> כל עובדה בסדרה נבדקה מול התיעוד הרשמי של <bdi dir="ltr">Anthropic</bdi>, והטקסט עבר בדיקת קריאה בעיני תלמיד. במקום כל צילום עתידי יש מסגרת שנושאת את מספרו, את הכיתוב ואת המקרא שכבר נכתבו לו, והצילומים ייכנסו בסבב מודרך מול המסך האמיתי.</p><ul class="status-facts"><li><b>10</b>מקורות רשמיים שנקראו</li><li><b>44</b>עובדות שאומתו מול המקור</li><li><b>6</b>צילומים מתוכננים, לפי סדר הקריאה</li></ul></aside>
+
+<nav class="mobile-toc"><details><summary>תוכן המדריך</summary><ol><li><a href="#c3-ch00"><span>00</span>מונחים שכדאי להכיר לפני שמתחילים</a></li><li><a href="#c3-ch01"><span>01</span>הדוח שמחכה מוכן ביום ראשון בבוקר: מה זו משימה מתוזמנת</a></li><li><a href="#c3-ch02"><span>02</span>יוצרים משימה מתוזמנת ראשונה: דוח שבועי על תיק אלומה</a></li><li><a href="#c3-ch03"><span>03</span>Dispatch: שולחים לקלוד משימה מהטלפון בדרך לדיון</a></li><li><a href="#c3-ch04"><span>04</span>Live artifact: לוח תיק שמתעדכן לבד</a></li><li><a href="#c3-ch05"><span>05</span>Connector, Skill ו-Plugin: מה ההבדל, ומתי זה נוגע אליכם</a></li><li><a href="#c3-ch06"><span>06</span>עובדים בטוח: הכללים שנשארים גם כשקלוד עובד לבד</a></li><li><a href="#c3-ch07"><span>07</span>כשמשהו לא עובד</a></li><li><a href="#c3-ch08"><span>08</span>סיימתם את הסדרה: מה אתם יודעים, ומה הצעד הבא</a></li></ol></details></nav>
+
+<div class="layout">
+<main id="main">
+<p><strong>מה שמפעילים במדריך הזה ממשיך לרוץ גם בלעדיכם</strong> - זו בדיוק המטרה שלו. לכן כל תרגיל כאן בנוי כך שגם אם תשכחו ממנו לגמרי, <strong>הוא לא נוגע בשום קובץ, לא שולח שום דבר, ולא עולה כסף מעבר למנוי שכבר יש לכם.</strong></p>
+<section class="guide-section" id="c3-ch00"><span class="section-number">00</span><h2>מונחים שכדאי להכיר לפני שמתחילים</h2>
+<ul class="terms"><li><span class="term"><bdi dir="ltr">משימה מתוזמנת</bdi></span> <span class="term-he">(Scheduled task)</span> · משימת Cowork שקבעתם לה מועד וקצב - למשל כל יום ראשון בשמונה בבוקר - <strong>והיא רצה לבד, בלי שתפתחו את קלוד.</strong></li><li><span class="term"><bdi dir="ltr">Dispatch</bdi></span> · שליחת משימה לקלוד מהטלפון או מכל מכשיר אחר, <strong>והמשך אותה שיחה מהמחשב במשרד.</strong></li><li><span class="term"><bdi dir="ltr">Live artifact</bdi></span> · לוח אינטראקטיבי שקלוד בונה ושומר, <strong>והוא מתעדכן מעצמו בנתונים טריים בכל פעם שפותחים אותו.</strong></li><li><span class="term"><bdi dir="ltr">Connector</bdi></span> <span class="term-he">(חיבור)</span> · גשר בין קלוד לשירות שאתם כבר עובדים בו - יומן, מייל, אחסון בענן. <strong>מחברים פעם אחת, ומאז קלוד יכול לשלוף משם בעצמו.</strong></li><li><span class="term"><bdi dir="ltr">Skill</bdi></span> <span class="term-he">(סקיל)</span> · שיטת עבודה ארוזה: הוראות ודוגמאות שקלוד מפעיל מעצמו כשהוא מזהה משימה שמתאימה להן.</li><li><span class="term"><bdi dir="ltr">Plugin</bdi></span> <span class="term-he">(פלאגין)</span> · חבילה שאורזת כמה יכולות יחד - למשל כמה סקילים וחיבור - <strong>מותקנת בבת אחת.</strong></li></ul>
+</section>
+<section class="guide-section" id="c3-ch01"><span class="section-number">01</span><h2>הדוח שמחכה מוכן ביום ראשון בבוקר: מה זו משימה מתוזמנת</h2>
+<p>עוד רגע מהמשרד. יום ראשון, תשע בבוקר, ישיבת צוות שבועית. מישהו - בדרך כלל הכי צעיר בחדר - ישב אתמול חצי שעה לרכז מה קרה השבוע בתיקים: מה התקדם, מה נתקע, אילו מועדים מתקרבים. <strong>אותה חצי שעה, כל שבוע, מחדש.</strong></p>
+<p>בדיוק לעבודות האלה קיימת משימה מתוזמנת: <strong>משימת Cowork רגילה לגמרי - כמו אלה שכתבתם במדריכים 1 ו-2 - שקיבלה גם שעון.</strong> קבעתם לה מועד וקצב, והיא רצה לבד. ביום ראשון בבוקר הדוח כבר יושב ומחכה.</p>
+<h3>מה מתאים לתזמון, ומה לא:</h3>
+<p>הכלל של Legal Mind פשוט, והוא נשען על מה שכבר למדתם: <strong>מתזמנים רק משימה שמכינה טיוטה, ולעולם לא משימה שפועלת כלפי חוץ.</strong></p>
+<p><strong>מתאים לתזמון:</strong> ריכוז שבועי של מסמכים חדשים בתיקייה. דוח מועדים מתקרבים. רשימת נקודות פתוחות בתיק. סיכום פנימי מכל סוג.</p>
+<p><strong>לא מתזמנים, גם לא כשזה מפתה:</strong> שליחת מייל או הודעה לכל גורם. עדכון מסמך מקור. כל פעולה שיוצרת מחויבות. <strong>הסיבה היא לא שקלוד לא מסוגל - היא שבמשימה מתוזמנת אתם לא שם כשזה קורה.</strong> טיוטה שגויה מחכה בתיקייה ומתוקנת. הודעה שגויה שנשלחה - נשלחה.</p>
+</section>
+<section class="guide-section" id="c3-ch02"><span class="section-number">02</span><h2>יוצרים משימה מתוזמנת ראשונה: דוח שבועי על תיק אלומה</h2>
+<p>נבנה את הדוח השבועי מהסיפור שפתחנו בו, על תיק התרגול שלנו.</p>
+<p><strong>נקודה אחת להבין לפני היצירה, כי היא קובעת איך המשימה תרוץ:</strong> משימה מתוזמנת רצה בענן, בשרתים של אנתרופיק, <strong>גם כשהמחשב שלכם כבוי.</strong> אבל תיקיית תיק אלומה יושבת על המחשב שלכם - וכדי שהמשימה תגיע אליה, <strong>המחשב צריך להיות דלוק ו-<bdi dir="ltr"><code>Claude Desktop</code></bdi> פתוח בשעת הריצה.</strong> בטופס היצירה יש מתג בדיוק לזה, ותכף תראו אותו.</p>
+<p><strong>שלב 1 - פותחים את מסך המשימות המתוזמנות.</strong> בסרגל הצד של <bdi dir="ltr"><code>Claude Desktop</code></bdi> לוחצים על <bdi dir="ltr"><code>Scheduled</code></bdi>.</p>
+<figure class="shot-hole"><div class="frame"><span class="sid">S-01</span><span class="wait">הצילום עוד לא צולם</span><div class="pins"><span class="pin">1</span><span class="pin">2</span></div></div><figcaption>מסך המשימות המתוזמנות, והדרך אליו מסרגל הצד.</figcaption><ol class="shot-legend"><li>הפריט <bdi dir="ltr"><code>Scheduled</code></bdi> בסרגל.</li><li>הכפתור <bdi dir="ltr"><code>New task</code></bdi>.</li></ol></figure>
+<p><strong>שלב 2 - יוצרים משימה חדשה.</strong> לוחצים על <bdi dir="ltr"><code>New task</code></bdi>. נפתחות שתי דרכים: <bdi dir="ltr"><code>Create with Claude</code></bdi>, שבה מתארים במילים והוא בונה את הטופס, ו-<bdi dir="ltr"><code>Set up manually</code></bdi>, שבה ממלאים הכל בעצמכם. <strong>בפעם הראשונה בוחרים <bdi dir="ltr"><code>Set up manually</code></bdi> - כדי לראות במו עיניכם כל שדה שנקבע.</strong></p>
+<figure class="shot-hole"><div class="frame"><span class="sid">S-02</span><span class="wait">הצילום עוד לא צולם</span><div class="pins"><span class="pin">1</span><span class="pin">2</span></div></div><figcaption>שתי דרכים ליצור משימה. בפעם הראשונה - ידנית, כדי לראות כל שדה.</figcaption><ol class="shot-legend"><li><bdi dir="ltr"><code>Create with Claude</code></bdi> - מתארים במילים והוא בונה.</li><li><bdi dir="ltr"><code>Set up manually</code></bdi> - האפשרות שנבחר.</li></ol></figure>
+<p><strong>שלב 3 - ממלאים את הטופס.</strong></p>
+<p>בשדה השם: <bdi dir="ltr"><code>דוח שבועי - תיק אלומה - תרגול</code></bdi>.</p>
+<p>בתיבת המשימה מדביקים:</p>
+<div class="copy-block"><div class="copy-heading"><strong>העתקת משימת הדוח השבועי</strong><button class="copy-button" data-copy-target="c3-copy-1" type="button">העתקת ההוראה</button></div><div class="copy-body" id="c3-copy-1">קרא את כל הקבצים בתיקייה 01-מקור ובתיקייה 04-תוצר-בדוק של תיק אלומה
+והכן קובץ טקסט חדש בשם "דוח-שבועי" עם התאריך של היום בשם הקובץ:
+1. אילו קבצים יש בתיק ומתי כל אחד השתנה לאחרונה.
+2. המועד הקרוב ביותר שמוזכר במסמכים ועדיין לא עבר.
+3. הנקודות שמסומנות במסמכים כפתוחות.
+שמור בתיקייה 03-פלט-קלוד. אל תשנה שום קובץ קיים.</div><span class="copy-status" aria-live="polite" aria-atomic="true"></span></div>
+<p>בשדה התיקייה או ה-Project בוחרים את <bdi dir="ltr"><code>תיק אלומה - תרגול</code></bdi> - <strong>בלי זה המשימה לא תדע איפה התיק, וזו הסיבה מספר אחת לדוח שלא נוצר.</strong></p>
+<p>בשדה התדירות: פעם בשבוע, ביום ובשעה שבהם המחשב שלכם בדרך כלל דלוק - למשל יום חמישי בעשר בבוקר.</p>
+<p><strong>בשדה מצב האישור</strong> משאירים <bdi dir="ltr"><code>Manually approve</code></bdi>, כמו בכל הסדרה. <strong>ומה קורה עם אישורים כשאתם לא שם?</strong> משימה שעצרה לבקש אישור ואין מי שיענה - פשוט ממתינה. תמצאו אותה במסך <bdi dir="ltr"><code>Scheduled</code></bdi> עומדת בשאלה, תאשרו, והיא תמשיך. <strong>שום דבר לא קורה בלי אישור גם כשאתם לא שם - הוא רק קורה מאוחר יותר.</strong> ובדיוק בגלל זה בחרנו לתרגול דוח פנימי קטן: גם אם חיכה לכם יום, שום דבר לא נשבר.</p>
+<p><strong>ומדליקים את המתג <bdi dir="ltr"><code>Run on your computer</code></bdi></strong> - כי המשימה שלנו צריכה את התיקייה שבמחשב. לצד המתג כתוב בדיוק מה שהסברנו: משימה כזאת רצה רק כשהמחשב דלוק.</p>
+<figure class="shot-hole"><div class="frame"><span class="sid">S-03</span><span class="wait">הצילום עוד לא צולם</span><div class="pins"><span class="pin">1</span><span class="pin">2</span><span class="pin">3</span><span class="pin">4</span><span class="pin">5</span></div></div><figcaption>טופס המשימה המתוזמנת, שדה אחר שדה.</figcaption><ol class="shot-legend"><li>שם המשימה.</li><li>נוסח המשימה שהודבק.</li><li>בחירת ה-Project של תיק אלומה.</li><li>התדירות השבועית.</li><li>המתג <bdi dir="ltr"><code>Run on your computer</code></bdi>, דלוק - כי התיק על המחשב.</li></ol></figure>
+<p><strong>שלב 4 - שומרים, ומריצים פעם אחת ידנית.</strong> לא מחכים שבוע כדי לגלות ניסוח עקום: במסך המשימה יש אפשרות להריץ אותה עכשיו. מריצים, מחכים לסיום, ופותחים את <bdi dir="ltr"><code>03-פלט-קלוד</code></bdi> - <strong>הדוח הראשון שם, ואתם בודקים אותו בדיוק כמו כל תוצר: שלוש הבדיקות ממדריך 2, פרק 07.</strong></p>
+<figure class="shot-hole"><div class="frame"><span class="sid">S-04</span><span class="wait">הצילום עוד לא צולם</span><div class="pins"><span class="pin">1</span></div></div><figcaption>הדוח הראשון נוצר, ושמו כולל את התאריך.</figcaption><ol class="shot-legend"><li>קובץ הדוח בתיקיית <bdi dir="ltr"><code>03-פלט-קלוד</code></bdi>.</li></ol></figure>
+<p><strong>ואחרי הריצה המתוזמנת הראשונה האמיתית,</strong> בשבוע הבא, נכנסים שוב ל-<bdi dir="ltr"><code>Scheduled</code></bdi> ובודקים: המשימה רצה במועד, הדוח נוצר, ושום קובץ אחר לא השתנה. <strong>משימה מתוזמנת מקבלת אמון בהדרגה, ריצה אחרי ריצה - לא מראש.</strong></p>
+<p><strong>בדיקות חובה לפני שממשיכים:</strong> המשימה מופיעה ברשימת <bdi dir="ltr"><code>Scheduled</code></bdi> עם המועד הבא שלה. הרצה ידנית אחת הסתיימה והדוח נבדק. והמשימה לא נוגעת בשום תיקייה מחוץ לתיק אלומה.</p>
+</section>
+<section class="guide-section" id="c3-ch03"><span class="section-number">03</span><h2>Dispatch: שולחים לקלוד משימה מהטלפון בדרך לדיון</h2>
+<p>שמונה וחצי בבוקר, אתם בדרך לבית המשפט, ונזכרים שצריך טבלת מועדים מעודכנת לפגישה של אחר הצהריים. עד היום זו הייתה הודעה למתמחה או פתק לעצמכם. <strong>עם Dispatch זו הודעה לקלוד: כותבים לו מהטלפון, והוא מתחיל לעבוד. כשתשבו מול המחשב במשרד - התוצר כבר שם, ואתם ממשיכים את אותה שיחה בדיוק מהמקום שבו עצרה.</strong></p>
+<p>איך זה עובד: מתקינים את אפליקציית קלוד בטלפון - היא בחנות האפליקציות, בחיפוש <bdi dir="ltr"><code>Claude</code></bdi> - ונכנסים עם חשבון המשרד, אותו חשבון מהמחשב. בתוך האפליקציה נכנסים ל-Cowork, ובסרגל בוחרים <bdi dir="ltr"><code>Dispatch</code></bdi>. בפעם הראשונה לוחצים <bdi dir="ltr"><code>Get started</code></bdi> ומאשרים את ההגדרות שהמסך מבקש.</p>
+<figure class="shot-hole"><div class="frame"><span class="sid">S-05</span><span class="wait">הצילום עוד לא צולם</span><div class="pins"><span class="pin">1</span><span class="pin">2</span></div></div><figcaption>Dispatch בטלפון: מכאן שולחים משימה בדרך לדיון.</figcaption><ol class="shot-legend"><li>הפריט <bdi dir="ltr"><code>Dispatch</code></bdi> בסרגל.</li><li>הכפתור <bdi dir="ltr"><code>Get started</code></bdi> של הפעם הראשונה.</li></ol></figure>
+<p><strong>והנה אותה נקודה שכבר פגשתם במשימות המתוזמנות, והיא חשובה כפליים כאן:</strong> אם המשימה צריכה קבצים שיושבים על המחשב במשרד, <strong>המחשב חייב להיות דלוק ו-<bdi dir="ltr"><code>Claude Desktop</code></bdi> פתוח</strong> בזמן שקלוד עובד. שולחים מהטלפון משימה על תיק אלומה כשהמחשב במשרד כבוי? היא תחכה. <strong>משימה שכל החומר שלה בענן - רצה גם בלי המחשב.</strong></p>
+<aside class="content-box info">
+<h3>עמדת Legal Mind:</h3>
+<p>Dispatch נוח בדיוק ברגעים שבהם אתם ממהרים - ומיהרתם זה בדיוק המצב שבו שולחים משימה מנוסחת ברישול. <strong>ההמלצה שלנו: מהטלפון שולחים רק משימות הכנה על חומר שכבר בתיק</strong> - טבלה, סיכום, ריכוז - <strong>ואת האישורים והבדיקות עושים כרגיל מול המסך הגדול במשרד.</strong> הטלפון מתניע, המשרד מאשר.</p>
+</aside>
+</section>
+<section class="guide-section" id="c3-ch04"><span class="section-number">04</span><h2>Live artifact: לוח תיק שמתעדכן לבד</h2>
+<p>התוצרים שהכנתם עד עכשיו הם קבצים: נוצרו פעם אחת, וכדי לרענן אותם צריך משימה חדשה. <strong>Live artifact הוא סוג אחר של תוצר: לוח אינטראקטיבי שקלוד בונה פעם אחת, ומאז הוא מתעדכן מעצמו בכל פעם שפותחים אותו.</strong></p>
+<p>למשל: לוח מצב לתיק אלומה שמציג את המועד הקרוב, את הנקודות הפתוחות ואת הקבצים שנוספו - <strong>ובכל בוקר שתפתחו אותו, הוא כבר יציג את המצב של אותו בוקר, בלי שביקשתם.</strong></p>
+<p>יוצרים אותו כמו כל תוצר: מתוך משימת Cowork, מתארים מה הלוח צריך להציג ומאיפה, ומבקשים <bdi dir="ltr"><code>Live artifact</code></bdi>. הלוחות שנוצרו מחכים במסך ה-<bdi dir="ltr"><code>Artifacts</code></bdi> של <bdi dir="ltr"><code>Claude Desktop</code></bdi>, מסומנים בתווית <bdi dir="ltr"><code>Cowork</code></bdi>.</p>
+<figure class="shot-hole"><div class="frame"><span class="sid">S-06</span><span class="wait">הצילום עוד לא צולם</span><div class="pins"><span class="pin">1</span></div></div><figcaption>לוח חי במסך ה-Artifacts, מסומן בתווית Cowork.</figcaption><ol class="shot-legend"><li>תווית <bdi dir="ltr"><code>Cowork</code></bdi> שמבדילה לוח חי מרגיל.</li></ol></figure>
+<p>שלושה דברים שכדאי לדעת לפני שמשתמשים בזה על תיק אמיתי:</p>
+<p><strong>זה עובד רק ב-<bdi dir="ltr"><code>Claude Desktop</code></bdi> במחשב.</strong> לא בדפדפן ולא בטלפון.</p>
+<p><strong>שיתוף לוח עם אחרים קיים רק במנויי <bdi dir="ltr"><code>Team</code></bdi> ו-<bdi dir="ltr"><code>Enterprise</code></bdi></strong> - ומי שמקבל לוח משותף רואה אותו דרך החיבורים וההרשאות שלו, לא שלכם.</p>
+<p><strong>והחשוב מכולם: לוח חי מתעדכן דרך החיבורים שאישרתם, בלי לשאול אתכם בכל רענון.</strong> זה כל הקסם שלו, וזו גם הסיבה לבנות אותו רק על מקורות שאתם שלמים איתם. <strong>לוח שמציג - כן. לוח שמבצע פעולות - לא.</strong></p>
+</section>
+<section class="guide-section" id="c3-ch05"><span class="section-number">05</span><h2>Connector, Skill ו-Plugin: מה ההבדל, ומתי זה נוגע אליכם</h2>
+<p>שלושת המונחים האלה מרחפים סביב כל שיחה על קלוד, ובשלב הזה של הסדרה מגיע לכם הסבר של שורה לכל אחד - <strong>כי ההבדל באמת פשוט:</strong></p>
+<div class="table-scroll"><table><tbody><tr><td></td><td>מה זה נותן לקלוד</td><td>דוגמה מהמשרד</td></tr><tr><td><strong>Connector</strong></td><td><strong>גישה למידע</strong> שיושב בשירות אחר</td><td>קלוד שולף מהיומן את הדיונים של השבוע לדוח המתוזמן</td></tr><tr><td><strong>Skill</strong></td><td><strong>שיטת עבודה</strong> קבועה למשימה שחוזרת</td><td>כל סיכום פגישה נבנה באותו מבנה משרדי בדיוק</td></tr><tr><td><strong>Plugin</strong></td><td><strong>חבילה</strong> של כמה יכולות שמותקנת יחד</td><td>ערכה לעורך דין: כמה סקילים וחיבור, בהתקנה אחת</td></tr></tbody></table></div>
+<p>ואיך זה פוגש את Cowork? <strong>בדיוק כמו שתיקייה מחוברת נותנת לקלוד את הקבצים שלכם, Connector נותן לו את היומן או המייל, ו-Skill אומר לו באיזו שיטה לעבוד עליהם.</strong> משימת Cowork יכולה להשתמש בכולם יחד: לקרוא מהתיקייה, לשלוף מהיומן, ולעבד לפי הסקיל של המשרד.</p>
+<p><strong>מה בודקים לפני שמחברים Connector, בשלוש שורות:</strong> לאיזה חשבון הוא מתחבר. האם הוא רק קורא משם, או גם יכול לכתוב ולשלוח. והאם המשרד אישר אותו. <strong>חיבור שיכול לכתוב מקבל את אותו יחס כמו מצב <bdi dir="ltr"><code>Skip</code></bdi> במדריך 1: לא בלי החלטה מפורשת.</strong></p>
+<p>ומעבר לזה - <strong>לא נעמיק כאן, כי זה כבר כתוב:</strong> ל-Skills יש סדרת מדריכים שלמה של Legal Mind, מההתקנה הראשונה ועד בנייה של סקיל משרדי. מי שסיים את הסדרה הזאת מוכן אליה.</p>
+</section>
+<section class="guide-section" id="c3-ch06"><span class="section-number">06</span><h2>עובדים בטוח: הכללים שנשארים גם כשקלוד עובד לבד</h2>
+<p>הסדרה כולה נבנתה על הרגלי בטיחות - תיקייה ייעודית, מצב <bdi dir="ltr"><code>Manually approve</code></bdi>, תוצר נבדק לפני שהוא זז. <strong>במדריך הזה קלוד התחיל לעבוד גם בלעדיכם, ולכן זה המקום לרכז את הכללים שאנתרופיק עצמה קובעת בתיעוד הרשמי שלה, ושאנחנו מאמצים:</strong></p>
+<p><strong>תיקיית עבודה ייעודית, תמיד.</strong> לא מחברים ל-Cowork את כל המסמכים, ולא תיקיות עם חומר פיננסי, סיסמאות או פרטים אישיים שלא שייכים למשימה.</p>
+<p><strong>עוקבים אחרי חריגות, לא אחרי כל צעד.</strong> לא צריך לקרוא כל שורת התקדמות. צריך לשים לב כשקלוד ניגש לקובץ שלא קשור, גולש לאתר שלא ביקשתם, או מציע פעולה שלא הזמנתם - <strong>ואז עוצרים, כמו שלמדתם במדריך 1.</strong></p>
+<p><strong>משימות מתוזמנות מתחילות קטן.</strong> קודם דוח פנימי, כמו שעשינו. פעולות על חומר רגיש נכנסות לתזמון רק אחרי שהמשימה הוכיחה את עצמה שבועות, לא ימים.</p>
+<p><strong>והאחריות לא מתוזמנת.</strong> על כל תוצר שיוצא מהמשרד חתום עורך דין, גם כשקלוד הכין אותו בשלוש בלילה. הבדיקה של מדריך 2 פרק 07 היא לא שלב בתרגול - היא הנוהל.</p>
+<p><strong>ומילה אחת על יכולת בשם <bdi dir="ltr"><code>Computer use</code></bdi>,</strong> שאולי תשמעו עליה: מצב שבו קלוד רואה את המסך ומפעיל את העכבר והמקלדת כמו אדם. היכולת מוגדרת אצל אנתרופיק כניסיונית, <strong>היא זמינה כיום רק במנויי <bdi dir="ltr"><code>Pro</code></bdi> ו-<bdi dir="ltr"><code>Max</code></bdi> ולא במנוי <bdi dir="ltr"><code>Team</code></bdi>, ואנתרופיק עצמה מזהירה בתיעוד הרשמי במילים מפורשות מפני טיפול במסמכים משפטיים ובחוזים דרכה.</strong> לכן היא לא חלק מהסדרה הזאת, ואם תרצו לבחון אותה ביום שתגיע למנוי שלכם - זו החלטה משרדית, לא ניסוי אישי.</p>
+</section>
+<section class="guide-section" id="c3-ch07"><span class="section-number">07</span><h2>כשמשהו לא עובד</h2>
+<p><strong>המשימה המתוזמנת לא רצה במועד?</strong> החשוד המיידי: המחשב היה כבוי או <bdi dir="ltr"><code>Claude Desktop</code></bdi> היה סגור, והמשימה שלנו מוגדרת <bdi dir="ltr"><code>Run on your computer</code></bdi>. בודקים במסך <bdi dir="ltr"><code>Scheduled</code></bdi> מה כתוב ליד המשימה, מדליקים את המחשב, ומריצים ידנית להשלמה.</p>
+<p><strong>המשימה רצה אבל הדוח לא נוצר?</strong> נכנסים למשימה במסך <bdi dir="ltr"><code>Scheduled</code></bdi> וקוראים את הריצה האחרונה - היא נשמרת כמו כל משימה, עם הדיווח המלא. לרוב תמצאו שם בדיוק מה השתבש: תיקייה לא נמצאה, ניסוח דו-משמעי. מתקנים את נוסח המשימה ומריצים ידנית.</p>
+<p><strong>נוצרו שני דוחות מאותו יום?</strong> הרצתם פעם ידנית ופעם בתזמון. לא נורא: מוחקים את הכפול, ובודקים ששם הקובץ במשימה כולל את התאריך - כמו בנוסח שנתנו - כך שכל ריצה יוצרת קובץ נפרד וברור.</p>
+<p><strong>משימה מהטלפון לא מתקדמת?</strong> כמעט תמיד זה אותו סיפור: היא צריכה קבצים מהמחשב, והמחשב במשרד כבוי. או שמחכים, או שמנסחים אותה מחדש על חומר שבענן.</p>
+<p><strong>הלוח החי לא מתעדכן?</strong> בודקים שאתם פותחים אותו ב-<bdi dir="ltr"><code>Claude Desktop</code></bdi> במחשב, ושהחיבורים שהוא נשען עליהם עדיין מחוברים. חיבור שנותק - הלוח מציג את הנתונים האחרונים שהיו לו, בלי להתריע.</p>
+<p><strong>ורוצים לעצור הכל?</strong> משימה מתוזמנת אפשר להשהות או למחוק בכל רגע ממסך <bdi dir="ltr"><code>Scheduled</code></bdi>, ומחיקה שלה לא נוגעת בשום קובץ שכבר נוצר. <strong>שום דבר במדריך הזה לא התחייבות - הכל הפיך בלחיצה.</strong></p>
+</section>
+<section class="guide-section" id="c3-ch08"><span class="section-number">08</span><h2>סיימתם את הסדרה: מה אתם יודעים, ומה הצעד הבא</h2>
+<p>שלושה מדריכים, ותיק אלומה עבר איתכם את כל הדרך: משני קבצים בתיקיית תרגול, דרך Project מסודר עם תוצרים בדוקים, ועד דוח שמכין את עצמו כל שבוע.</p>
+<p><strong>אתם יודעים לתת לקלוד עבודה</strong> ולקבל קובץ מוכן - לא רק תשובה.</p>
+<p><strong>אתם יודעים לבנות תיק</strong> שמפריד מקור מפלט ומתוצר בדוק, עם Project שזוכר את הכללים.</p>
+<p><strong>אתם יודעים לבדוק</strong> כל תוצר בשלוש בדיקות, ולתקן דרך קלוד במקום ביד.</p>
+<p><strong>ואתם יודעים להפעיל אותו גם בלעדיכם</strong> - מתוזמן, מהטלפון, ובלוח שמתעדכן לבד - בלי לוותר לרגע על העיקרון שליווה כל פרק: <strong>קלוד מכין, עורך הדין מחליט.</strong></p>
+<p><strong>הצעד הבא, למי שרוצה להמשיך:</strong> סדרת המדריכים של Legal Mind על Skills - איך מתקינים סקיל מוכן, ואיך הופכים שיטת עבודה של המשרד לסקיל שכולם עובדים לפיו. ומי שמנהל את חשבון המשרד ימצא בסדרת המדריכים על מנוי Team את הצד הניהולי: הרשאות, חברים והגדרות הארגון.</p>
+</section>
+<div class="bottom-nav"><a class="button" href="../guide-2/index.html">המדריך הקודם: עובדים על תיק שלם</a><a class="button" href="../index.html">מרכז המדריכים</a><a class="button primary" href="../print/index.html">לדף התרגול</a></div>
+</main>
+
+<aside class="desktop-toc"><h2>תוכן המדריך</h2><ol><li><a href="#c3-ch00"><span>00</span>מונחים שכדאי להכיר לפני שמתחילים</a></li><li><a href="#c3-ch01"><span>01</span>הדוח שמחכה מוכן ביום ראשון בבוקר: מה זו משימה מתוזמנת</a></li><li><a href="#c3-ch02"><span>02</span>יוצרים משימה מתוזמנת ראשונה: דוח שבועי על תיק אלומה</a></li><li><a href="#c3-ch03"><span>03</span>Dispatch: שולחים לקלוד משימה מהטלפון בדרך לדיון</a></li><li><a href="#c3-ch04"><span>04</span>Live artifact: לוח תיק שמתעדכן לבד</a></li><li><a href="#c3-ch05"><span>05</span>Connector, Skill ו-Plugin: מה ההבדל, ומתי זה נוגע אליכם</a></li><li><a href="#c3-ch06"><span>06</span>עובדים בטוח: הכללים שנשארים גם כשקלוד עובד לבד</a></li><li><a href="#c3-ch07"><span>07</span>כשמשהו לא עובד</a></li><li><a href="#c3-ch08"><span>08</span>סיימתם את הסדרה: מה אתם יודעים, ומה הצעד הבא</a></li></ol></aside>
+</div>
+
+<footer><bdi dir="ltr">Legal Mind</bdi> | מדריך Claude Cowork | מדריך 3: Cowork שעובד גם כשאתם לא שם</footer>
+
+<script src="../../claude-code/assets/site.js?v=20260818"></script>
+<script>
+(function(){
+  "use strict";
+  var frames = [].slice.call(document.querySelectorAll(".shot-frame"));
+  if(!frames.length) return;
+
+  var box = document.createElement("div");
+  box.className = "zoomer";
+  box.setAttribute("role", "dialog");
+  box.setAttribute("aria-modal", "true");
+  box.setAttribute("aria-label", "צילום מסך בגודל מלא");
+  box.innerHTML = '<button type="button" class="zoomer-close">סגירה</button>' +
+                  '<div class="zoomer-stage"></div>' +
+                  '<div class="zoomer-cap"><p class="zoomer-cap-text"></p>' +
+                  '<p class="zoomer-pan">הצילום רחב מהמסך. אפשר לגרור אותו הצידה כדי לראות את כולו.</p></div>';
+  document.body.appendChild(box);
+
+  var stage = box.querySelector(".zoomer-stage");
+  var cap = box.querySelector(".zoomer-cap");
+  var capText = box.querySelector(".zoomer-cap-text");
+  var closeBtn = box.querySelector(".zoomer-close");
+  var opener = null;
+
+  function open(frame){
+    var img = frame.querySelector("img");
+    if(!img) return;
+    stage.innerHTML = frame.innerHTML;
+    /* גודל טבעי, ולא "עד רוחב המסך" - אחרת על טלפון מקבלים שוב תמונה
+       מוקטנת שאי אפשר לקרוא בה, וההגדלה לא עשתה כלום */
+    var nat = img.naturalWidth || img.width;
+    stage.style.width = nat + "px";
+    stage.style.maxWidth = "none";
+    var fig = frame.closest("figure");
+    var c = fig ? fig.querySelector(".shot-caption") : null;
+    capText.textContent = c ? c.textContent : "";
+    cap.classList.toggle("is-wide", nat > (window.innerWidth - 20));
+    opener = frame;
+    box.classList.add("is-open");
+    document.body.style.overflow = "hidden";
+    closeBtn.focus();
+  }
+  function close(){
+    box.classList.remove("is-open");
+    document.body.style.overflow = "";
+    stage.innerHTML = "";
+    if(opener) opener.focus();
+    opener = null;
+  }
+
+  /* ההזמנה להגדיל מופיעה רק על צילום שבאמת מוצג מוקטן. על צילום שממילא
+     בגודלו הטבעי היא הבטחה ריקה, ועשרים שורות כאלה הן רעש */
+  function wire(){
+    frames.forEach(function(frame){
+      var img = frame.querySelector("img");
+      if(!img || !img.naturalWidth) return;
+      var shrunk = img.getBoundingClientRect().width < img.naturalWidth * 0.96;
+      if(!shrunk || frame.dataset.zoom) return;
+      frame.dataset.zoom = "1";
+      frame.setAttribute("tabindex", "0");
+      frame.setAttribute("role", "button");
+      frame.setAttribute("aria-label", "הגדלת הצילום");
+      frame.style.cursor = "zoom-in";
+      frame.addEventListener("click", function(){ open(frame); });
+      frame.addEventListener("keydown", function(ev){
+        if(ev.key === "Enter" || ev.key === " "){ ev.preventDefault(); open(frame); }
+      });
+      var fig = frame.closest("figure");
+      var capEl = fig ? fig.querySelector(".shot-caption") : null;
+      if(capEl && !fig.querySelector(".shot-hint")){
+        var hint = document.createElement("p");
+        hint.className = "shot-hint";
+        hint.innerHTML = "לחיצה על הצילום פותחת אותו בגודל מלא";
+        capEl.insertAdjacentElement("afterend", hint);
+      }
+    });
+  }
+  wire();
+  window.addEventListener("load", wire);
+  window.addEventListener("resize", wire);
+  frames.forEach(function(frame){
+    var img = frame.querySelector("img");
+    if(img && !img.complete) img.addEventListener("load", wire);
+  });
+
+  closeBtn.addEventListener("click", close);
+  box.addEventListener("click", function(ev){
+    if(ev.target === box) close();
+  });
+  document.addEventListener("keydown", function(ev){
+    if(ev.key === "Escape" && box.classList.contains("is-open")) close();
+  });
+})();
+
+
+(function(){
+  document.addEventListener("click", function(ev){
+    var btn = ev.target.closest(".copy-button");
+    if(!btn) return;
+    var block = btn.closest(".copy-block");
+    var src = document.getElementById(btn.getAttribute("data-copy-target"));
+    var status = block ? block.querySelector(".copy-status") : null;
+    if(!src) return;
+    var text = src.innerText;
+    function done(ok){
+      if(!status) return;
+      status.textContent = ok ? "ההוראה הועתקה" : "ההעתקה נכשלה, סמנו והעתיקו ידנית";
+      setTimeout(function(){ status.textContent = ""; }, 2600);
+    }
+    if(navigator.clipboard && navigator.clipboard.writeText){
+      navigator.clipboard.writeText(text).then(function(){done(true);},
+                                              function(){done(false);});
+    } else { done(false); }
+  });
+})();
+</script>
+</body>
+</html>
