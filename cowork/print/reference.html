@@ -61,6 +61,12 @@
   /* a defined word is a list entry with a red dot, not a paragraph that
      happens to start in bold. the word itself carries the brand orange and
      everything after it stays in the reading ink */
+  /* bare children of the white surface card (the intro note before the
+     first section, and the bottom nav) get the card's inner margins, so
+     no line of text ever touches the border or the rounded corners */
+  main.surface>p{margin:26px 24px 6px}
+  main.surface>p:first-child{margin-top:30px}
+  main.surface>.bottom-nav{margin:20px 24px 28px}
   .terms{list-style:none;padding:0;margin:1.1rem 0}
   .terms li{position:relative;padding-inline-start:26px;margin-bottom:.95rem;
     line-height:1.75;text-align:start}
