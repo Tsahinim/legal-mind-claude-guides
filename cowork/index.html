@@ -1,77 +1,68 @@
-<!doctype html>
-<html dir="rtl" lang="he">
-<head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>מרכז מדריכי Claude Cowork לעורכי דין | Legal Mind</title>
-<meta name="description" content="שלושה מדריכים: צעדים ראשונים ותרגול בטוח ב-Claude Cowork, חיבור כלים והרשאות, וניהול משימה משפטית מבוקרת ובדיקת התוצר.">
-<link rel="stylesheet" href="assets/site.css?v=20260807">
-<style>
-.hub-cards { max-width: 1150px; margin: 26px auto 0; padding: 0 22px; display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
-.hub-card { background: var(--paper-raised); border: 1px solid var(--line); border-radius: 12px; padding: 22px 22px 20px; display: flex; flex-direction: column; box-shadow: 0 1px 2px rgba(13,30,55,.06); transition: transform .15s ease, border-color .15s ease; }
-.hub-card:hover { transform: translateY(-3px); border-color: var(--brand); }
-.hub-num { width: 40px; height: 40px; border-radius: 10px; background: var(--brand-wash); color: var(--brand-strong); display: flex; align-items: center; justify-content: center; font-family: 'Frank Ruhl', serif; font-weight: 700; font-size: 17px; margin-bottom: 13px; }
-.hub-card h2 { font-family: 'Frank Ruhl', serif; font-weight: 700; font-size: 19px; line-height: 1.35; margin: 0 0 9px; color: var(--ink); }
-.hub-card p { font-size: 14px; line-height: 1.65; color: var(--ink-soft); margin: 0 0 14px; flex-grow: 1; }
-.hub-card ul { margin: 0 0 16px; padding-inline-start: 20px; font-size: 13.5px; color: var(--ink-soft); line-height: 1.7; }
-.hub-btn { display: block; text-align: center; text-decoration: none; background: var(--brand-strong); color: #fff; font-weight: 700; font-size: 14px; border-radius: 8px; padding: 11px 14px; }
-.hub-btn:hover { background: var(--dark); }
-.hub-note { max-width: 900px; margin: 24px auto 0; padding: 0 22px; }
-.hub-note .xref-box { margin: 0; }
-@media (max-width: 980px) { .hub-cards { grid-template-columns: 1fr; max-width: 640px; } }
+<!DOCTYPE html>
+<html dir="rtl" lang="he"><head><meta charset="utf-8">
+<meta content="width=device-width,initial-scale=1" name="viewport">
+<meta name="description" content="סדרת המדריכים של Legal Mind על Claude Cowork נכתבת מחדש - שלושה מדריכים, מהמשימה הראשונה ועד עבודה אוטומטית">
+<title>מדריך Claude Cowork לעורכי דין | Legal Mind</title>
+<link href="../claude-code/assets/site.css?v=20260817" rel="stylesheet">
+<style>@media(min-width:900px){.guide-grid{grid-template-columns:repeat(3,minmax(0,1fr))}}
+  .status-panel{margin:26px 0;border-radius:16px;background:var(--navy);
+    color:#fff;padding:22px 26px;display:grid;gap:14px;
+    box-shadow:0 10px 30px rgba(13,39,64,.16)}
+  .status-panel .chip{display:inline-flex;align-items:center;gap:8px;
+    align-self:start;border-radius:999px;padding:5px 14px;
+    background:rgba(43,192,183,.16);color:var(--cyan);
+    font-size:.82rem;font-weight:800;letter-spacing:.08em}
+  .status-panel .chip:before{content:"";width:8px;height:8px;border-radius:50%;
+    background:var(--cyan)}
+  .status-panel p{margin:0;font-size:1.02rem;line-height:1.72;opacity:.94}
+  .status-panel strong{color:#fff}
+  .status-facts{display:grid;gap:10px;margin:2px 0 0;padding:0;list-style:none;
+    grid-template-columns:repeat(auto-fit,minmax(190px,1fr))}
+  .status-facts li{background:rgba(255,255,255,.07);border-radius:10px;
+    padding:11px 14px;font-size:.95rem;line-height:1.5}
+  .status-facts b{display:block;font-size:1.32rem;line-height:1.2;
+    color:var(--cyan);margin-bottom:2px;font-variant-numeric:tabular-nums}
+  .wip-chip{display:inline-flex;align-items:center;gap:8px;border-radius:999px;
+    padding:7px 16px;background:rgba(13,39,64,.07);color:var(--navy);
+    font-size:.9rem;font-weight:800}
+  .wip-chip:before{content:"";width:8px;height:8px;border-radius:50%;
+    background:var(--cyan)}
 </style>
-</head>
-<body>
+</head><body class="center">
+<header class="center-head">
+<div class="skills-brand"><img alt="לוגו Legal Mind - נורה מעל שם המותג" class="skills-logo" decoding="async" src="../claude-code/assets/legal-mind-logo-tight.png"></div>
+<div class="center-hero">
+<p class="center-kicker">מרכז המדריכים של LEGAL MIND</p>
+<h1>מדריך <bdi dir="ltr">Claude Cowork</bdi> לעורכי דין</h1>
+<p class="center-subtitle">נותנים לקלוד עבודה, לא רק שאלות - ומקבלים קובץ מוכן.</p>
+</div></header><main class="center-main">
 
-<header class="hero"><div class="hero-inner">
-<img class="logo-big" src="assets/legal-mind-logo-tight.png" alt="Legal Mind">
-<h1>מרכז מדריכי Claude Cowork לעורכי דין</h1>
-<p>שלושה מדריכים המלווים את התהליך כולו: מהצעדים הראשונים והתרגול הבטוח, דרך חיבור כלים והרשאות, ועד ניהול משימה משפטית מבוקרת ובדיקת התוצר מול המקורות.</p>
-<div class="badges"><span class="badge">סדרת Claude Desktop</span><span class="badge">עברית RTL</span><span class="badge">תוכן מאומת מול Anthropic</span></div>
-</div></header>
+<aside class="status-panel"><span class="chip">מרכז מדריכים בבנייה</span>
+<p><strong>הסדרה נכתבת כאן מחדש, מהיסוד.</strong> הגרסה הקודמת ירדה, ובמקומה נבנית סדרה של שלושה מדריכים: מהמשימה הראשונה על תיקיית תרגול, דרך תיק שלם עם תוצרי <bdi dir="ltr">Word</bdi>, <bdi dir="ltr">Excel</bdi> ומצגת, ועד משימות שרצות לבד. כל עובדה נבדקת מול התיעוד הרשמי של <bdi dir="ltr">Anthropic</bdi>, וכל צילום יצולם מהמסך האמיתי.</p>
+<ul class="status-facts">
+<li><b>3</b>מדריכים בכתיבה</li>
+<li><b>8</b>מאמרים רשמיים שנקראו</li>
+<li><b>1</b>מדריך שכבר עבר בדיקת קריאת תלמיד</li>
+</ul></aside>
 
-<div class="hub-cards">
-  <div class="hub-card">
-    <div class="hub-num">1</div>
-    <h2>צעדים ראשונים ב-Claude Cowork: הקמה בטוחה ותרגיל ראשון</h2>
-    <p>בוחרים את סביבת העבודה הנכונה, מקימים תיקיית תרגול, בונים סביבת עבודה משפטית מסודרת ומריצים תרגיל ראשון - בלי שום חומר אמיתי.</p>
-    <ul>
-      <li>מתי בוחרים Chat, Project, Cowork או Claude Code</li>
-      <li>תיקיית תרגול ותיק אלומה המדומה</li>
-      <li>משימה ראשונה: מבקשים תוכנית ועוצרים לפני ביצוע</li>
-      <li>עשרה צילומי מסך מוסברים</li>
-    </ul>
-    <a class="hub-btn" href="guide-1/">למדריך 1</a>
-  </div>
-  <div class="hub-card">
-    <div class="hub-num">2</div>
-    <h2>חיבור כלים ומקורות חיצוניים: Connectors, Skills והרשאות</h2>
-    <p>מחברים שירותים וכלים חיצוניים בהרשאות מצומצמות, לומדים להבדיל בין Connector, Skill ו-Plugin, ובודקים כל חיבור לפני שנותנים לו גישה.</p>
-    <ul>
-      <li>בדיקת Connector לפני מתן גישה</li>
-      <li>הגבלת כלים באמצעות Tool access</li>
-      <li>Skills, Plugins ומשימות מתוזמנות</li>
-      <li>בדיקות חובה לפני כל חיבור</li>
-    </ul>
-    <a class="hub-btn" href="guide-2/">למדריך 2</a>
-  </div>
-  <div class="hub-card">
-    <div class="hub-num">3</div>
-    <h2>ניהול משימה משפטית מבוקרת ובדיקת התוצר</h2>
-    <p>מגדירים משימה במסגרת מ.ש.פ.ט, מאשרים תוכנית עבודה, מפקחים על הביצוע ובודקים את התוצר מול המקורות - צעד אחר צעד על תיק אלומה.</p>
-    <ul>
-      <li>הגדרת משימה ותוכנית לפני ביצוע</li>
-      <li>אישור מוגבל ופיקוח על פעולות</li>
-      <li>מפת אירועים עם עוגני מקור</li>
-      <li>בדיקת התוצר מול המסמכים</li>
-    </ul>
-    <a class="hub-btn" href="guide-3/">למדריך 3</a>
-  </div>
-</div>
+<section><div class="guide-grid">
 
-<div class="hub-note">
-  <div class="xref-box">חדשים ב-Claude Desktop? לפני הצלילה ל-Cowork, מומלץ להתחיל במדריך הפותח של הסדרה: <a href="../desktop/"><b>Claude Desktop לעורכי דין: היכרות, התקנה וההבדל מהדפדפן</b></a>.</div>
-</div>
+<article class="guide-card"><div><span class="guide-number">1</span></div>
+<h2>נותנים לקלוד עבודה, לא רק שאלות</h2><dl>
+<div><dt>מה ילמד כאן</dt><dd>מה ההבדל בין לשאול את קלוד לבין לתת לו משימה, איך מחברים תיקיית תרגול בטוחה, ואיך עובד המעגל: משימה, תוכנית, אישור, קובץ מוכן.</dd></div>
+</dl><span class="wip-chip">בכתיבה - הטקסט מוכן, הצילומים בדרך</span></article>
 
-<footer>Legal Mind · מדריכי Claude Cowork לעורכי דין · כל הזכויות שמורות ל-Legal Mind</footer>
-</body>
-</html>
+<article class="guide-card"><div><span class="guide-number">2</span></div>
+<h2>עובדים על תיק שלם: <bdi dir="ltr">Project</bdi>, הוראות ותוצרים</h2><dl>
+<div><dt>מה ילמד כאן</dt><dd>מבנה תיקיות שמפריד מקור מפלט, <bdi dir="ltr">Project</bdi> עם הוראות קבועות וזיכרון, שלושה תוצרים אמיתיים - <bdi dir="ltr">Word</bdi>, <bdi dir="ltr">Excel</bdi> ומצגת - ושלוש הבדיקות שהופכות טיוטה לתוצר בדוק.</dd></div>
+</dl><span class="wip-chip">בכתיבה</span></article>
+
+<article class="guide-card"><div><span class="guide-number">3</span></div>
+<h2><bdi dir="ltr">Cowork</bdi> שעובד גם כשאתם לא שם</h2><dl>
+<div><dt>מה ילמד כאן</dt><dd>דוח שבועי שמכין את עצמו, שליחת משימה מהטלפון בדרך לדיון, לוח תיק שמתעדכן לבד, וההבדל הפשוט בין <bdi dir="ltr">Connector</bdi>, <bdi dir="ltr">Skill</bdi> ו-<bdi dir="ltr">Plugin</bdi>.</dd></div>
+</dl><span class="wip-chip">בכתיבה</span></article>
+
+</div></section>
+
+<footer class="center-foot"><a class="back-link" href="../index.html">↑ חזרה למרכז המדריכים</a></footer>
+</main></body></html>
