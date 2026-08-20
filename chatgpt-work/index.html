@@ -205,11 +205,11 @@ h1.hero-title .hi{ color:var(--brand); }
   line-height:1.4;
 }
 .toc-rail li a:hover{ background:var(--paper-alt); color:var(--ink); }
-.toc-rail li a.active{ color:#B84A21; border-inline-end-color:#B84A21; background:var(--paper-alt); font-weight:800;}
+.toc-rail li a.active{ color:#B84A21; background:transparent; border-inline-end-color:transparent; font-weight:800;}
 .toc-rail li a.active .toc-num{ color:#B84A21; }
 @media (prefers-color-scheme: dark){
   :root:not([data-theme="light"]) .toc-rail li a.active,
-  :root:not([data-theme="light"]) .toc-rail li a.active .toc-num{ color:var(--warn); border-inline-end-color:var(--warn); }
+  :root:not([data-theme="light"]) .toc-rail li a.active .toc-num{ color:var(--warn); }
 }
 .toc-num{ font-variant-numeric:tabular-nums; color:var(--gold-strong); font-size:12px; font-weight:700; }
 
