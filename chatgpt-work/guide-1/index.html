@@ -394,6 +394,15 @@ main > .sec:first-of-type{ margin-top:0; border-top:none; padding-top:36px; }
 .backbar a{color:#147474;font-size:14px;font-weight:800;text-decoration:none}
 .backbar a:before{content:"→";margin-left:7px}
 @media print{.backbar{display:none}}
+
+.copy-block{margin:18px 0;background:#f2f6f6;border:1px solid var(--line);border-radius:12px;padding:14px 16px}
+.copy-heading{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-bottom:10px}
+.copy-heading strong{font-size:.95rem;color:var(--ink)}
+.copy-button{background:#147474;color:#fff;border:0;border-radius:8px;padding:7px 14px;font:inherit;font-size:.85rem;font-weight:700;cursor:pointer;white-space:nowrap}
+.copy-button:hover{background:#0d2740}
+.copy-block .copy-body{margin:0;background:#fff;border:1px solid var(--line);border-radius:8px;padding:12px 14px;color:var(--ink);font-size:.95rem;line-height:1.7;white-space:pre-wrap}
+.copy-status{display:block;margin-top:8px;min-height:1.1em;font-size:.82rem;font-weight:700;color:#1a7f37}
+@media(max-width:700px){.copy-heading{align-items:flex-start;flex-direction:column}.copy-button{width:100%}}
 </style>
 </head>
 <body>
@@ -549,7 +558,7 @@ main > .sec:first-of-type{ margin-top:0; border-top:none; padding-top:36px; }
   <div class="callout tip"><span class="callout-label">טיפ</span><p>שווה לפתוח את החץ הקטן ליד "Ran commands" תוך כדי העבודה, לא רק בסוף. זה נותן לכם חלון הצצה אמיתי לאילו כלים המערכת בחרה להפעיל ובאיזה סדר - ואם משהו נראה לא הגיוני, אפשר להתערב מיד במקום לגלות את זה רק בתוצר המוגמר.</p></div>
   <h3 class="h2">עכשיו אתם: המשימה הראשונה שלכם, בלי שום סיכון</h3>
   <p>ראיתם איך זה עובד - עכשיו שווה להרגיש את זה בידיים, על משימה שאין בה שום חומר אמיתי. פתחו שיחת Work חדשה, הדביקו את הבקשה הבאה כמות שהיא, ושלחו:</p>
-  <div class="callout tip"><span class="callout-label">להעתקה - משימת התרגול הראשונה</span><p>צור מסמך קצר בשם "רשימת בדיקה לפגישת לקוח ראשונה" ובו עשרה סעיפים ממוספרים, כל סעיף בשורה אחת עם כותרת מודגשת. בסוף המסמך הוסף שורת הערה: "טיוטה לתרגול - לא לשימוש מול לקוח". עצב נקי ומסודר.</p></div>
+  <div class="copy-block"><div class="copy-heading"><strong>להעתקה - משימת התרגול הראשונה</strong><button class="copy-button" data-copy-target="copy-g1" type="button">העתקה בלחיצה</button></div><div class="copy-body" id="copy-g1">צור מסמך קצר בשם "רשימת בדיקה לפגישת לקוח ראשונה" ובו עשרה סעיפים ממוספרים, כל סעיף בשורה אחת עם כותרת מודגשת. בסוף המסמך הוסף שורת הערה: "טיוטה לתרגול - לא לשימוש מול לקוח". עצב נקי ומסודר.</div><span class="copy-status" aria-live="polite" aria-atomic="true"></span></div>
   <p><b>איך יודעים שהצלחתם:</b> החיווי התחלף מ-"...Working for" ל-"...Worked for", מתחתיו הופיע כרטיס קובץ, ולחיצה עליו פותחת מסמך עם עשרה סעיפים ושורת ההערה בסוף. לקח כמה דקות? זה בדיוק הקצב הנורמלי שראיתם למעלה.</p> <p><b>רוצים להמשיך לתרגל?</b> <a href="../practice/">דף התרגול המלא</a> - שישה תרגילים מודרכים, כולם על חומר מומצא.</p>
 
     </div>
@@ -1089,5 +1098,27 @@ main > .sec:first-of-type{ margin-top:0; border-top:none; padding-top:36px; }
     fr.parentNode.insertBefore(hint, fr.nextSibling);
   });
 })();
-</script></body>
+</script>
+<script>
+(function(){
+  document.addEventListener("click", function(ev){
+    var btn = ev.target.closest(".copy-button");
+    if(!btn) return;
+    var block = btn.closest(".copy-block");
+    var src = document.getElementById(btn.getAttribute("data-copy-target"));
+    var status = block ? block.querySelector(".copy-status") : null;
+    if(!src) return;
+    var text = src.innerText;
+    function done(ok){
+      if(!status) return;
+      status.textContent = ok ? "הטקסט הועתק - עכשיו מדביקים בשיחה" : "ההעתקה נכשלה - סמנו את הטקסט והעתיקו ידנית";
+      setTimeout(function(){ status.textContent = ""; }, 2600);
+    }
+    if(navigator.clipboard && navigator.clipboard.writeText){
+      navigator.clipboard.writeText(text).then(function(){done(true);}, function(){done(false);});
+    } else { done(false); }
+  });
+})();
+</script>
+</body>
 </html>

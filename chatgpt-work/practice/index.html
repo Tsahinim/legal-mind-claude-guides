@@ -394,6 +394,15 @@ main > .sec:first-of-type{ margin-top:0; border-top:none; padding-top:36px; }
 .backbar a{color:#147474;font-size:14px;font-weight:800;text-decoration:none}
 .backbar a:before{content:"→";margin-left:7px}
 @media print{.backbar{display:none}}
+
+.copy-block{margin:18px 0;background:#f2f6f6;border:1px solid var(--line);border-radius:12px;padding:14px 16px}
+.copy-heading{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-bottom:10px}
+.copy-heading strong{font-size:.95rem;color:var(--ink)}
+.copy-button{background:#147474;color:#fff;border:0;border-radius:8px;padding:7px 14px;font:inherit;font-size:.85rem;font-weight:700;cursor:pointer;white-space:nowrap}
+.copy-button:hover{background:#0d2740}
+.copy-block .copy-body{margin:0;background:#fff;border:1px solid var(--line);border-radius:8px;padding:12px 14px;color:var(--ink);font-size:.95rem;line-height:1.7;white-space:pre-wrap}
+.copy-status{display:block;margin-top:8px;min-height:1.1em;font-size:.82rem;font-weight:700;color:#1a7f37}
+@media(max-width:700px){.copy-heading{align-items:flex-start;flex-direction:column}.copy-button{width:100%}}
 </style>
 </head>
 <body>
@@ -465,7 +474,7 @@ main > .sec:first-of-type{ margin-top:0; border-top:none; padding-top:36px; }
 
   <p><b>מה מתרגלים:</b> את המעגל השלם של Work - מגדירים יעד, צופים בעבודה, מקבלים קובץ. (הוסבר בפרק 04 במדריך.)</p>
   <ol class="steps"><li>פותחים שיחה חדשה ומעבירים את הבורר ל-Work.</li><li>מדביקים את הבקשה הבאה כמות שהיא, ושולחים:</li></ol>
-  <div class="callout tip"><span class="callout-label">להעתקה</span><p>צור מסמך קצר בשם "רשימת בדיקה לפגישת לקוח ראשונה" ובו עשרה סעיפים ממוספרים, כל סעיף בשורה אחת עם כותרת מודגשת. בסוף המסמך הוסף שורת הערה: "טיוטה לתרגול - לא לשימוש מול לקוח". עצב נקי ומסודר.</p></div>
+  <div class="copy-block"><div class="copy-heading"><strong>המשימה הראשונה - להעתקה</strong><button class="copy-button" data-copy-target="copy-p1" type="button">העתקה בלחיצה</button></div><div class="copy-body" id="copy-p1">צור מסמך קצר בשם "רשימת בדיקה לפגישת לקוח ראשונה" ובו עשרה סעיפים ממוספרים, כל סעיף בשורה אחת עם כותרת מודגשת. בסוף המסמך הוסף שורת הערה: "טיוטה לתרגול - לא לשימוש מול לקוח". עצב נקי ומסודר.</div><span class="copy-status" aria-live="polite" aria-atomic="true"></span></div>
   <p>כך זה נראה בזמן העבודה - ובסיומה:</p>
   <figure class="shot" style="max-width:560px;">
     <div class="shot-frame" style="aspect-ratio:1012/426;">
@@ -523,8 +532,8 @@ main > .sec:first-of-type{ margin-top:0; border-top:none; padding-top:36px; }
     <div class="sec-body">
 
   <p><b>מה מתרגלים:</b> את התרגיל הכי חשוב לעבודה משפטית - Work בונה גרסה חדשה מתוך קובץ קיים, בלי לשבור את המבנה. (הוסבר בפרק 05.)</p>
-  <ol class="steps"><li>קודם מייצרים תבנית מומצאת: שולחים ב-Work את הבקשה - "צור מסמך בשם 'מכתב התראה - תבנית לתרגול' עם מבנה קבוע: כותרת, שדה [שם הנמען], שדה [תיאור החוב], שלושה סעיפים ממוספרים ושורת חתימה. כל הפרטים מומצאים."</li><li>מורידים את הקובץ שנוצר למחשב.</li><li>פותחים שיחת Work חדשה, מצרפים את הקובץ (גרירה לתיבה או כפתור ה-"+"), ומדביקים:</li></ol>
-  <div class="callout tip"><span class="callout-label">להעתקה</span><p>הקובץ המצורף הוא תבנית. הכן ממנו מכתב חדש לנמען מומצא בשם "חברת הדגמה בע"מ" על חוב מומצא של 12,000 ש"ח. שמור על המבנה, המספור והניסוח הקבוע - עדכן אך ורק את הפרטים בשדות. לפני יצירת הקובץ הסופי, הצג לי רשימה קצרה של מה שינית.</p></div>
+  <ol class="steps"><li>קודם מייצרים תבנית מומצאת - שולחים ב-Work את הבקשה הבאה:<div class="copy-block"><div class="copy-heading"><strong>יצירת התבנית - להעתקה</strong><button class="copy-button" data-copy-target="copy-p2" type="button">העתקה בלחיצה</button></div><div class="copy-body" id="copy-p2">צור מסמך בשם "מכתב התראה - תבנית לתרגול" עם מבנה קבוע: כותרת, שדה [שם הנמען], שדה [תיאור החוב], שלושה סעיפים ממוספרים ושורת חתימה. כל הפרטים מומצאים.</div><span class="copy-status" aria-live="polite" aria-atomic="true"></span></div></li><li>מורידים את הקובץ שנוצר למחשב.</li><li>פותחים שיחת Work חדשה, מצרפים את הקובץ (גרירה לתיבה או כפתור ה-"+"), ומדביקים:</li></ol>
+  <div class="copy-block"><div class="copy-heading"><strong>הבקשה המרכזית - להעתקה</strong><button class="copy-button" data-copy-target="copy-p3" type="button">העתקה בלחיצה</button></div><div class="copy-body" id="copy-p3">הקובץ המצורף הוא תבנית. הכן ממנו מכתב חדש לנמען מומצא בשם "חברת הדגמה בע"מ" על חוב מומצא של 12,000 ש"ח. שמור על המבנה, המספור והניסוח הקבוע - עדכן אך ורק את הפרטים בשדות. לפני יצירת הקובץ הסופי, הצג לי רשימה קצרה של מה שינית.</div><span class="copy-status" aria-live="polite" aria-atomic="true"></span></div>
   <p>שני הרגעים החשובים של התרגיל - צירוף התבנית, ורשימת השינויים שעוצרת לאישור:</p>
   <figure class="shot" style="max-width:640px;">
     <div class="shot-frame" style="aspect-ratio:824/313;">
@@ -579,7 +588,7 @@ main > .sec:first-of-type{ margin-top:0; border-top:none; padding-top:36px; }
     <div class="sec-body">
 
   <p><b>מה מתרגלים:</b> עבודה שרצה בלי שאתם שם - בגרסה הקטנה והבטוחה ביותר שלה. (הוסבר בפרק 07.)</p>
-  <ol class="steps"><li>פותחים שיחת Work חדשה (New chat), ומוודאים שהבורר למעלה עומד על Work.</li><li>מדביקים בתיבת הכתיבה: "צור משימה מתוזמנת חד-פעמית שתרוץ בעוד 15 דקות: הכן רשימה קצרה של שלושה דגשים לניסוח בקשה טובה במצב Work, בעברית."</li><li>ChatGPT יענה בהודעת אישור ויצרף כרטיס משימה. לוחצים על Open בכרטיס, בודקים בחלונית הפרטים שההוראה והמועד נכונים - ומאשרים.</li><li>סוגרים, ולא מחכים ליד המסך - זו כל הפואנטה.</li></ol>
+  <ol class="steps"><li>פותחים שיחת Work חדשה (New chat), ומוודאים שהבורר למעלה עומד על Work.</li><li>מדביקים בתיבת הכתיבה:<div class="copy-block"><div class="copy-heading"><strong>בקשת המשימה המתוזמנת - להעתקה</strong><button class="copy-button" data-copy-target="copy-p4" type="button">העתקה בלחיצה</button></div><div class="copy-body" id="copy-p4">צור משימה מתוזמנת חד-פעמית שתרוץ בעוד 15 דקות: הכן רשימה קצרה של שלושה דגשים לניסוח בקשה טובה במצב Work, בעברית.</div><span class="copy-status" aria-live="polite" aria-atomic="true"></span></div></li><li>ChatGPT יענה בהודעת אישור ויצרף כרטיס משימה. לוחצים על Open בכרטיס, בודקים בחלונית הפרטים שההוראה והמועד נכונים - ומאשרים.</li><li>סוגרים, ולא מחכים ליד המסך - זו כל הפואנטה.</li></ol>
   <p>שלושת השלבים על המסך - הבקשה, האישור והבדיקה:</p>
   <figure class="shot" style="max-width:660px;">
     <div class="shot-frame" style="aspect-ratio:829/221;">
@@ -618,7 +627,9 @@ main > .sec:first-of-type{ margin-top:0; border-top:none; padding-top:36px; }
     <div class="sec-body">
 
   <p><b>מה מתרגלים:</b> את הרגל הבטיחות החשוב ביותר - Work נוגע רק בתיקייה שפתחתם, ועוצר לאישור לפני כל שינוי. (הוסבר בפרק 09. דורש את אפליקציית המחשב.)</p>
-  <ol class="steps"><li>צרו על שולחן העבודה תיקייה חדשה בשם <code>Work-Practice</code>, ובתוכה קובץ טקסט בשם <code>עובדות-לתרגול.txt</code> עם שלוש שורות מומצאות: "פגישה ראשונה: 1.6.2026", "סכום במחלוקת: 40,000 ש"ח (מומצא)", "מועד תגובה: 15.6.2026".</li><li>באפליקציית המחשב, במצב Work, פתחו את התיקייה הזאת.</li><li>ודאו שפקד ההרשאות שמתחת לתיבת הכתיבה עומד על Ask for approval.</li><li>בקשו: "קרא את הקובץ שבתיקייה וצור לצדו קובץ חדש בשם סיכום.txt עם שלוש העובדות מסודרות בטבלה פשוטה".</li></ol>
+  <ol class="steps"><li>צרו על שולחן העבודה תיקייה חדשה בשם <code>Work-Practice</code>, ובתוכה קובץ טקסט בשם <code>עובדות-לתרגול.txt</code> עם שלוש השורות האלה:<div class="copy-block"><div class="copy-heading"><strong>תוכן הקובץ - להעתקה</strong><button class="copy-button" data-copy-target="copy-p5" type="button">העתקה בלחיצה</button></div><div class="copy-body" id="copy-p5">פגישה ראשונה: 1.6.2026
+סכום במחלוקת: 40,000 ש"ח (מומצא)
+מועד תגובה: 15.6.2026</div><span class="copy-status" aria-live="polite" aria-atomic="true"></span></div></li><li>באפליקציית המחשב, במצב Work, פתחו את התיקייה הזאת.</li><li>ודאו שפקד ההרשאות שמתחת לתיבת הכתיבה עומד על Ask for approval.</li><li>מדביקים את הבקשה:<div class="copy-block"><div class="copy-heading"><strong>הבקשה - להעתקה</strong><button class="copy-button" data-copy-target="copy-p6" type="button">העתקה בלחיצה</button></div><div class="copy-body" id="copy-p6">קרא את הקובץ שבתיקייה וצור לצדו קובץ חדש בשם סיכום.txt עם שלוש העובדות מסודרות בטבלה פשוטה.</div><span class="copy-status" aria-live="polite" aria-atomic="true"></span></div></li></ol>
   <p>כך נראית תיקייה מחוברת - Work רואה רק אותה, לא את כל המחשב:</p>
   <figure class="shot" style="max-width:720px;">
     <div class="shot-frame" style="aspect-ratio:1152/720;">
@@ -718,5 +729,27 @@ main > .sec:first-of-type{ margin-top:0; border-top:none; padding-top:36px; }
     fr.parentNode.insertBefore(hint, fr.nextSibling);
   });
 })();
-</script></body>
+</script>
+<script>
+(function(){
+  document.addEventListener("click", function(ev){
+    var btn = ev.target.closest(".copy-button");
+    if(!btn) return;
+    var block = btn.closest(".copy-block");
+    var src = document.getElementById(btn.getAttribute("data-copy-target"));
+    var status = block ? block.querySelector(".copy-status") : null;
+    if(!src) return;
+    var text = src.innerText;
+    function done(ok){
+      if(!status) return;
+      status.textContent = ok ? "הטקסט הועתק - עכשיו מדביקים בשיחה" : "ההעתקה נכשלה - סמנו את הטקסט והעתיקו ידנית";
+      setTimeout(function(){ status.textContent = ""; }, 2600);
+    }
+    if(navigator.clipboard && navigator.clipboard.writeText){
+      navigator.clipboard.writeText(text).then(function(){done(true);}, function(){done(false);});
+    } else { done(false); }
+  });
+})();
+</script>
+</body>
 </html>
