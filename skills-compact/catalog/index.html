@@ -8,7 +8,7 @@
 .draftbar{background:#fff4e5;border-bottom:2px solid #e8b269;padding:10px 16px;text-align:center;font-weight:800;color:#7a4d00}
 .layout{display:block !important;max-width:860px;margin:auto;padding:0 16px 60px}
 .skillcard{background:#fff;border:1.5px solid #9ed8b8;border-radius:14px;padding:18px 20px;margin:20px 0}
-.skillcard h2{margin:0 0 4px;color:#0d2740;font-size:1.25rem}
+.skillcard h2{margin:0 0 4px;color:#0d2740;font-family:Georgia,"Times New Roman",serif;font-size:1.35rem}
 .skillcard .tag{display:inline-block;background:#dff3e7;border:1px solid #9ed8b8;border-radius:7px;padding:2px 10px;font-family:Consolas,monospace;font-size:.85rem;margin-bottom:10px}
 .row{margin:8px 0}
 .row b{color:#147474}
@@ -16,14 +16,14 @@
 .lead{font-size:1.05rem}
 </style>
 </head><body>
-<div class="draftbar">טיוטה פנימית לאישור אסף - חלק מחבילת המדריך המעשי המצומצם.</div>
+<div class="draftbar">טיוטה פנימית לאישור אסף - חלק מחבילת מדריך הסקילים.</div>
 <nav class="backbar"><a href="../">חזרה לדף המרכז</a></nav>
 <div class="skills-brand"><img alt="לוגו Legal Mind - נורה מעל שם המותג" class="skills-logo" decoding="async" src="../../claude-code/assets/legal-mind-logo-tight.png"></div>
 
 <div class="layout">
 <header style="text-align:center;padding:26px 0 6px">
-<h1 style="color:#0d2740;font-size:1.8rem;margin:0 0 10px">הסקילים של Legal Mind - מה כל אחד עושה</h1>
-<p class="lead">הקטלוג הקצר: ארבעת הסקילים שבנה אסף אברמזון עבור מנויי נבו - שם, תפקיד, ומתי הם נדלקים. שתי דקות קריאה.</p>
+<h1 style="color:#0d2740;font-family:Georgia,'Times New Roman',serif;font-size:clamp(1.8rem,4.5vw,2.3rem);line-height:1.2;margin:0 0 10px">הסקילים של Legal Mind - מה כל אחד עושה</h1>
+<p class="lead">הקטלוג: ארבעת הסקילים שבנה אסף אברמזון עבור מנויי נבו - שם, תפקיד ומתי כל אחד נדלק - וחבילת הליבה שמאגדת את כולם. כאן גם השמות המדויקים שתראו במסך אחרי ההתקנה.</p>
 </header>
 
 <div class="skillcard">
@@ -62,8 +62,17 @@
 <div class="wow"><b>מה מיוחד בו:</b> הוא פותר את הבאג המפורסם של וורד עברי - "יישור ימין" שוורד מציג בפועל שמאלה - עם סקריפט תיקון שרץ חובה על כל קובץ, ושער איכות שלא מוסר קובץ שלא עבר. הוא גם שכבת ההפקה של המזכר: כשה-memo מייצא לוורד, זה עובר דרכו.</div>
 </div>
 
+<div class="skillcard" style="border-color:#cfe0dd;background:#fbfdfc">
+<h2>חבילת הליבה - כל הערכה בהתקנה אחת</h2>
+<span class="tag">legal-mind-core</span>
+<div class="row"><b>מה זה:</b> הקובץ החמישי בערכה. לא סקיל חמישי, אלא חבילה שמאגדת את ארבעת הסקילים שלמעלה בהתקנה אחת - ומוסיפה שני סוכני עזר שמשרתים את מזכר נבו: אחד לחיפוש ממוקד במאגר, ואחד לאימות אסמכתא בודדת.</div>
+<div class="row"><b>למי זה מיועד:</b> למשרד שרוצה שכל עוה״ד יעבדו עם אותה ערכה ואותן גרסאות, בלי להעלות סקיל-סקיל בכל חשבון. <b>מי מתקין:</b> אחראי המחשוב או מי שמנהל את חשבון המשרד.</div>
+<div class="row"><b>איפה זה עובד:</b> בסביבות העבודה המתקדמות של <bdi dir="ltr">Claude</bdi> (למשל <bdi dir="ltr">Claude Code</bdi> ו-<bdi dir="ltr">Cowork</bdi>), שם הסקילים מריצים קוד, מפיקים קבצים ומפעילים סוכנים במקביל - ולא בצ'אט הרגיל.</div>
+<div class="wow"><b>מה מיוחד בה:</b> החבילה בנויה לגדול - כל סקיל חדש שאסף בונה נכנס אליה, וכל המשרד מקבל אותו בעדכון אחד. וכדי שסקילים לא "יידרכו" זה על זה, יש בה אכיפה מכנית שמונעת חפיפה בין הטריגרים של הסקילים.</div>
+</div>
+
 <footer style="text-align:center;color:#5a6b75;font-size:.85rem;padding:30px 0 10px;border-top:1px solid #dfe7e4;margin-top:40px">
-Legal Mind · קטלוג הסקילים · טיוטה, אוגוסט 2026 · <a href="../guide/">חזרה למדריך המעשי</a>
+Legal Mind · קטלוג הסקילים · טיוטה, אוגוסט 2026 · <a href="../guide/">חזרה למדריך הסקילים</a>
 </footer>
 </div>
 </body></html>
