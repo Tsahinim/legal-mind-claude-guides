@@ -2,221 +2,446 @@
 <html dir="rtl" lang="he"><head><meta charset="utf-8">
 <meta content="width=device-width,initial-scale=1" name="viewport">
 <meta name="robots" content="noindex">
-<meta name="description" content="מדריך Skills לעו״ד מבית Legal Mind ונבו: מה זה סקיל, איך מתקינים ומפעילים, איך בונים סקיל משלכם ואיך בודקים שהוא עובד">
+<meta name="description" content="מדריך Skills לעו״ד מבית Legal Mind ונבו: מהו סקיל, איך מתקינים ומפעילים, איך בונים סקיל משלכם ואיך בודקים שהוא עובד.">
 <title>מדריך Skills לעו״ד | Legal Mind</title>
 <link rel="stylesheet" href="../../skills/assets/site.css?v=20260822">
 <style>
 .draftbar{background:#fff4e5;border-bottom:2px solid #e8b269;padding:10px 16px;text-align:center;font-weight:800;color:#7a4d00}
-.station-num{display:inline-grid;place-items:center;width:34px;height:34px;border-radius:50%;background:#147474;color:#fff;font-weight:900;margin-inline-end:10px}
-.shotslot{background:#f0f6f4;border:1.5px dashed #9ec5bd;border-radius:12px;padding:14px 16px;margin:16px 0;color:#3c6660;font-size:.92rem}
-.shotslot b{color:#147474}
-.dl-grid{display:grid;gap:14px;margin:16px 0}
-@media(min-width:700px){.dl-grid{grid-template-columns:repeat(3,1fr)}}
-.dl-card{background:#fff;border:1.5px solid #9ed8b8;border-radius:12px;padding:14px 16px}
-.dl-card h4{margin:0 0 6px;color:#0d2740}
-.dl-card .ver{font-size:.8rem;color:#5a6b75}
-.dl-wait{display:inline-block;margin-top:8px;padding:7px 14px;border-radius:8px;background:#eee;color:#777;font-weight:700;font-size:.85rem}
-.iron{background:#eaf7ef;border-right:5px solid #2e9e6b;border-radius:12px;padding:14px 18px;margin:16px 0}
-.iron b{color:#0d2740}
-.partner{background:#0d2740;color:#fff;border-radius:14px;padding:18px 22px;margin:18px 0;line-height:1.75}
-.partner b{color:#2bc0b7}
-.term-chip{background:#dff3e7;border:1px solid #9ed8b8;padding:2px 9px;border-radius:7px;font-family:Consolas,monospace;font-size:.9em;white-space:nowrap}
-.layout{display:block !important;max-width:860px;margin:auto;padding:0 16px 60px}
-.guide-section{display:block}
-.guide-section{margin-top:44px}
-h2.sec{color:#0d2740;font-family:Georgia,"Times New Roman",serif;font-size:clamp(1.5rem,3.5vw,1.85rem);border-bottom:3px solid #dff3e7;padding-bottom:8px}
-h3{color:#147474}
-.lead{font-size:1.05rem}
-.learn{display:grid;gap:10px;grid-template-columns:repeat(auto-fit,minmax(185px,1fr));margin:16px 0}
-.learn div{background:#fff;border:1.5px solid #9ed8b8;border-radius:12px;padding:12px 14px;font-size:.95rem;line-height:1.55}
-.learn b{color:#147474;display:block;margin-bottom:4px;font-size:.82rem;letter-spacing:.05em}
-h2.intro-h{color:#0d2740;font-family:Georgia,"Times New Roman",serif;font-size:1.3rem;margin:30px 0 6px;text-align:center}
-.compare{display:grid;gap:14px;margin:16px 0}
+.partner{background:var(--navy);color:#fff;border-radius:16px;padding:22px 26px;margin:26px 0;line-height:1.8;box-shadow:0 10px 30px rgba(13,39,64,.16)}
+.partner h3{margin:0 0 10px;color:#fff;font-family:Georgia,"Times New Roman",serif;font-size:1.25rem}
+.partner b{color:var(--cyan)}
+.pending{background:#f4f8f7;border:1.5px dashed #a9c8c2;border-radius:14px;padding:16px 20px;margin:20px 0}
+.pending .lbl{display:inline-flex;align-items:center;gap:8px;background:#e4efec;color:#2c5c55;border-radius:999px;padding:4px 14px;font-size:.78rem;font-weight:800;letter-spacing:.06em;margin-bottom:8px}
+.pending .lbl:before{content:"";width:8px;height:8px;border-radius:50%;background:#7fae9f}
+.pending p{margin:0;color:#3c5b56;line-height:1.7}
+.dl-grid{display:grid;gap:16px;margin:18px 0}
+@media(min-width:700px){.dl-grid{grid-template-columns:1fr 1fr}}
+.dl-card{background:#fff;border:1.5px solid #cfe0dd;border-radius:14px;padding:16px 20px;box-shadow:0 3px 14px rgba(13,39,64,.05)}
+.dl-card h4{margin:0 0 6px;color:var(--navy);font-family:Georgia,"Times New Roman",serif;font-size:1.12rem}
+.dl-card p{margin:0 0 8px;line-height:1.65}
+.dl-card .ver{display:inline-block;font-size:.78rem;color:#5a6b75;font-family:ui-monospace,Consolas,monospace;background:#f4f7f7;border-radius:6px;padding:2px 8px}
+.dl-wait{display:block;margin-top:10px;padding:8px 14px;border-radius:9px;background:#f2f4f4;color:#6b7c85;font-weight:700;font-size:.85rem;text-align:center}
+.term-chip{background:#dff3e7;border:1px solid #9ed8b8;padding:2px 9px;border-radius:7px;font-family:ui-monospace,Consolas,monospace;font-size:.9em;white-space:nowrap}
+.compare{display:grid;gap:16px;margin:18px 0}
 @media(min-width:700px){.compare{grid-template-columns:1fr 1fr}}
-.compare>div{border-radius:12px;padding:14px 18px;line-height:1.7}
-.cmp-before{background:#fdf3f3;border:1.5px solid #e6bcbc}
-.cmp-after{background:#eef8f2;border:1.5px solid #9ed8b8}
-.compare b{display:block;margin-bottom:6px;font-size:.95rem}
-.cmp-before b{color:#9a3d3d}
-.cmp-after b{color:#1e7a52}
-.punch{text-align:center;font-family:Georgia,"Times New Roman",serif;font-size:1.22rem;color:#0d2740;background:#f5faf8;border-top:2px solid #dff3e7;border-bottom:2px solid #dff3e7;padding:16px 20px;margin:18px 0;line-height:1.65}
+.compare>div{border-radius:14px;padding:16px 20px;line-height:1.75}
+.cmp-before{background:#fdf4f4;border:1.5px solid #e3bfbf}
+.cmp-after{background:#eff8f3;border:1.5px solid #9ed8b8}
+.compare strong.hdr{display:block;margin-bottom:8px;font-size:1rem;font-family:Georgia,"Times New Roman",serif}
+.cmp-before strong.hdr{color:#93413f}
+.cmp-after strong.hdr{color:#1e7a52}
+.punch{text-align:center;font-family:Georgia,"Times New Roman",serif;font-size:1.2rem;color:var(--navy);background:#f6fbf9;border-top:2px solid #dff3e7;border-bottom:2px solid #dff3e7;padding:20px 22px;margin:22px 0;line-height:1.7}
 .punch em{color:#147474;font-style:normal;font-weight:700}
-.parts{display:grid;gap:10px;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));margin:14px 0}
-.parts div{background:#fff;border:1px solid #cfe0dd;border-radius:10px;padding:11px 14px;font-size:.93rem;line-height:1.55}
-.parts b{color:#0d2740;display:block;margin-bottom:3px}
+table.demo{width:100%;border-collapse:collapse;background:#fff;border:1.5px solid #9ed8b8;margin:14px 0;font-size:.93rem}
+table.demo th{background:#dff3e7;color:var(--navy);font-weight:900;padding:10px 12px;border:1px solid #9ed8b8;text-align:center}
+table.demo td{padding:9px 12px;border:1px solid #e0ede5;vertical-align:top;text-align:right}
 </style>
 </head><body>
 <div class="draftbar">טיוטה פנימית לאישור אסף - הקישור אינו מפורסם. הסדרה המלאה הקיימת נשארת ללא שינוי.</div>
+<a class="skip" href="#main">דילוג לתוכן</a>
 <nav class="backbar"><a href="../">חזרה לדף המרכז</a></nav>
-<div class="skills-brand"><img alt="לוגו Legal Mind - נורה מעל שם המותג" class="skills-logo" decoding="async" src="../../claude-code/assets/legal-mind-logo-tight.png"></div>
+<div class="skills-brand"><img alt="לוגו Legal Mind" class="skills-logo" decoding="async" src="../../skills/assets/legal-mind-logo-tight.png"></div>
+
+<header class="hero"><div>
+<p class="eyebrow">Legal Mind ונבו · מדריך Skills</p>
+<h1>מדריך Skills לעו״ד</h1>
+<p class="hero-copy">שיטת העבודה של המשרד שלכם היא נכס. סקיל הוא הדרך לעגן אותה - פעם אחת - כך שתחזור על עצמה בכל תיק, באותו סטנדרט. המדריך מסביר מהו סקיל, מלווה אתכם בהתקנה ובהפעלה של סקילים אמיתיים שנבנו לעו״ד, ובבניית סקיל ראשון משלכם.</p>
+</div>
+<dl class="facts">
+<div><dt>תוצר הלמידה</dt><dd>סקילים מותקנים ופועלים אצלכם, וסקיל אחד שבניתם בעצמכם ובדקתם.</dd></div>
+<div><dt>ידע מוקדם</dt><dd>אין. חשבון Claude בדפדפן במחשב, וזה הכל.</dd></div>
+<div><dt>מבנה</dt><dd>שמונה פרקים, חמישה סקילים מצורפים וחוזה תרגול</dd></div>
+<div><dt>למי זה מיועד</dt><dd>עו״ד ומשרדים שרוצים לעגן שיטת עבודה, גם בלי רקע טכני</dd></div>
+</dl></header>
+
+<nav class="mobile-toc"><details><summary>תוכן המדריך</summary><ol>
+<li><a href="#what"><span>01</span>מהו סקיל וכיצד הוא בנוי</a></li>
+<li><a href="#install"><span>02</span>מגיעים, מתקינים ומפעילים</a></li>
+<li><a href="#proof"><span>03</span>לראות שהסקיל באמת עשה משהו</a></li>
+<li><a href="#build"><span>04</span>בונים סקיל משלכם</a></li>
+<li><a href="#test"><span>05</span>בודקים שהסקיל עובד</a></li>
+<li><a href="#trouble"><span>06</span>כשמשהו לא מופיע או לא עובד</a></li>
+<li><a href="#rules"><span>07</span>כללי המשרד</a></li>
+<li><a href="#downloads"><span>08</span>הסקילים להורדה</a></li>
+</ol></details></nav>
 
 <div class="layout">
-<header style="text-align:center;padding:26px 0 6px">
-<h1 style="color:#0d2740;font-family:Georgia,'Times New Roman',serif;font-size:clamp(1.95rem,5.2vw,2.6rem);line-height:1.18;margin:0 0 10px">מדריך Skills לעו״ד</h1>
-<p class="lead">שיטת העבודה של המשרד שלכם היא נכס. סקיל הוא הדרך לעגן אותה - פעם אחת - כך שתחזור על עצמה בכל תיק, באותו סטנדרט. במדריך הזה תכירו את הסקילים, תפעילו סקילים אמיתיים שנבנו לעו״ד, ותבנו אחד משלכם.</p>
-</header>
+<aside class="desktop-toc"><h2>תוכן המדריך</h2><ol>
+<li><a href="#what"><span>01</span>מהו סקיל וכיצד הוא בנוי</a></li>
+<li><a href="#install"><span>02</span>מגיעים, מתקינים ומפעילים</a></li>
+<li><a href="#proof"><span>03</span>לראות שהסקיל באמת עשה משהו</a></li>
+<li><a href="#build"><span>04</span>בונים סקיל משלכם</a></li>
+<li><a href="#test"><span>05</span>בודקים שהסקיל עובד</a></li>
+<li><a href="#trouble"><span>06</span>כשמשהו לא מופיע או לא עובד</a></li>
+<li><a href="#rules"><span>07</span>כללי המשרד</a></li>
+<li><a href="#downloads"><span>08</span>הסקילים להורדה</a></li>
+</ol></aside>
+<main class="surface" id="main">
 
-<h2 class="intro-h">למה זה חשוב - על מסמך אחד</h2>
-<p style="text-align:center;color:#3c4a55;margin:0 auto 4px;max-width:640px">קחו טיוטת הסכם, מהסוג שעובר במשרד כל שבוע:</p>
+<div class="partner">
+<h3>שיתוף פעולה של נבו ו-Legal Mind</h3>
+<p style="margin:0">הסקילים שתפגשו במדריך נולדו משיתוף פעולה של שתי חברות שמשלימות זו את זו: <b>נבו</b> - המאגר המשפטי שבו אתם חיים את הפסיקה והחקיקה, ו-<b>Legal Mind</b> - המתמחה בהטמעה מעשית ובטוחה של AI במשרדי עו״ד. נבו מביאה את הידע המשפטי; Legal Mind מביאה את שיטת העבודה עם <bdi dir="ltr">Claude</bdi>. את הסקילים בנה אסף אברמזון, מנכ״ל Legal Mind, עבור מנויי נבו - ואחד מהם, מזכר המחקר, אף מתחבר ישירות למאגר נבו.</p>
+</div>
+
+<div class="callout tip"><span class="callout-label">גילוי נאות, לפני שמתחילים</span><p>המדריך והסקילים שבו הם כלי עזר לעבודה - לא ייעוץ משפטי ולא תחליף לשיקול דעת מקצועי. כל תוצר של סקיל הוא טיוטה לבדיקת עו״ד, והאחריות המקצועית על השימוש ועל התוצרים נשארת תמיד בידי עוה״ד המשתמש. תרגול ולימוד - על מידע מומצא בלבד.</p></div>
+
+<div class="callout warn"><span class="callout-label">הערה על ציפיות: עקומת למידה</span><p>גם סקיל שנבנה היטב עובר עקומת למידה. סביר שהסקיל הראשון שתבנו לא ייתן בדיוק את התוצאה שרציתם - וזה חלק תקין מהתהליך, לא סימן לכישלון. העבודה האמיתית מתחילה בשלב השיפור: מריצים, בודקים מה יצא, מתקנים ומריצים שוב. פרק 05 עוסק בדיוק בזה.</p></div>
+
+<aside class="content-box recommendation">
+<h3><span aria-hidden="true">✓</span> תנו ל-Claude להתאים את המדריך אליכם</h3>
+<p>אפשר לקרוא את המדריך כסדרו - ואפשר להעתיק את הקישור שלו לשיחה עם <bdi dir="ltr">Claude</bdi> ולקבל גרסה מותאמת לתחום העיסוק שלכם, כולל תוכנית עבודה לשבוע הראשון:</p>
+<div class="copy-block" style="margin:10px 0 0"><div class="copy-heading"><strong>נוסח ההתאמה האישית - להעתקה</strong><button class="copy-button" data-copy-target="c0" type="button">העתקה בלחיצה</button></div><div class="copy-body" id="c0">קרא את המדריך שבקישור הזה: [הדביקו כאן את כתובת המדריך]. אני עו״ד בתחום [כתבו את תחום העיסוק], במשרד של [מספר] עו״ד. התאם לי את המדריך: אילו סקילים הכי רלוונטיים לעבודה שלי, איזה סקיל ראשון כדאי לי לבנות, ובנה לי תוכנית עבודה מסודרת לשבוע הראשון - צעד אחר צעד.</div><span class="copy-status" aria-live="polite" aria-atomic="true"></span></div>
+</aside>
+
+<section class="guide-section" id="what"><span class="section-number">01</span>
+<p class="section-number">01</p>
+<h2>מהו סקיל וכיצד הוא בנוי?</h2>
+
+<p><strong>סקיל הוא תיק הדרכה שאתם מסירים ל-<bdi dir="ltr">Claude</bdi> פעם אחת: ההוראות איך מבצעים משימה מקצועית, ולצידן החומרים שהיא צריכה - תבנית מאושרת, רשימת בדיקה או דוגמה לתוצר טוב. מאותו רגע, בכל פעם שהמשימה חוזרת, <bdi dir="ltr">Claude</bdi> פותח את התיק לבד ועובד לפיו.</strong></p>
+<p>במקום להקליד שוב ושוב את אותן הוראות, כותבים אותן פעם אחת - והעבודה מתבצעת באותה שיטה בכל פעם. השורה התחתונה: פחות הקלדה, יותר עקביות, והבדיקה המקצועית של התוצאה נשארת אצלכם.</p>
+
+<h3>למה זה חשוב - על מסמך אחד</h3>
+<p>התיאור הזה מופשט. הנה אותו דבר על טיוטת הסכם, מהסוג שעובר במשרד כל שבוע:</p>
 <div class="compare">
-<div class="cmp-before"><b>בלי תהליך מוגדר</b>מתחילים ב"תנתח את ההסכם המצורף", והתשובה חוזרת כללית. משם מתקנים: להתמקד בערבויות, לציין את מי מייצגים, טבלה במקום פסקאות, ולהוסיף בדיקה שנשכחה. שמונה עד שתים-עשרה הודעות עד שהתוצר שמיש - ובמסמך הבא מתחילים מאפס.</div>
-<div class="cmp-after"><b>עם תהליך מוגדר</b>סדר הבדיקות, מה אסור להניח, מבנה הטבלה והשאלות שנשאלות לפני שמתחילים - כולם כבר מוגדרים. הבקשה מצטמצמת למשפט אחד, והתוצר חוזר במבנה הצפוי.</div>
+<div class="cmp-before"><strong class="hdr">בלי תהליך מוגדר</strong>הבקשה נפתחת ב"תנתח את ההסכם המצורף", והתשובה חוזרת כללית. משם מתחיל תיקון: להתמקד בערבויות, לציין את מי מייצגים, לבקש טבלה במקום פסקאות, ולהוסיף בדיקה שנשכחה. בפועל - שמונה עד שתים-עשרה הודעות עד שהתוצר שמיש, ובמסמך הבא מתחילים מאפס.</div>
+<div class="cmp-after"><strong class="hdr">עם תהליך מוגדר</strong>סדר הבדיקות, מה אסור להניח, מבנה הטבלה והשאלות שיש לשאול לפני שמתחילים - כולם כבר מוגדרים. הבקשה מצטמצמת למשפט אחד, והתוצר חוזר במבנה הצפוי.</div>
 </div>
 <div class="punch">אבל הנתון שבאמת חשוב אינו מספר ההודעות - הוא <em>העקביות</em>.<br>בלי תהליך מוגדר, המסמך העשרים נבדק אחרת מהראשון, ועו״ד אחר במשרד יבדוק אותו אחרת לגמרי. עם תהליך מוגדר - שלושתם עוברים את אותן בדיקות באותו סדר, וכשמתגלה שחסרה בדיקה, מוסיפים אותה פעם אחת והיא חלה מכאן והלאה על כולם.</div>
 
-<h2 class="intro-h">מה מחכה לכם כאן</h2>
-<div class="learn">
-<div><b>תחנה 1</b>מה זה סקיל - ומה הוא מכיל</div>
-<div><b>תחנה 2</b>מתקינים ומפעילים סקילים אמיתיים - ורואים תוצאה</div>
-<div><b>תחנות 3-4</b>בונים סקיל משלכם בשיחה מודרכת, ובודקים שהוא עובד</div>
-<div><b>תחנה 5</b>כללי המשרד לשימוש בטוח בחומר אמיתי</div>
+<h3>מה יכול להיכלל בסקיל?</h3>
+<div class="comparison-list" role="list">
+<div role="listitem"><strong>הוראות עבודה</strong><p>מה לבצע, באיזה סדר, מה אסור להניח ומתי לעצור ולשאול.</p></div>
+<div role="listitem"><strong>ידע מקצועי ממוקד</strong><p>רשימות דרישות, נהלי המשרד, הגדרות, כללי סיווג ותבניות מאושרות.</p></div>
+<div role="listitem"><strong>דוגמאות</strong><p>כיצד נראה קלט תקין, תוצר רצוי, וגם מצב שמחייב עצירה.</p></div>
+<div role="listitem"><strong>קובצי עזר</strong><p>תבנית מזכר, רשימת בדיקה, דוגמת פלט או מילון מונחים.</p></div>
 </div>
 
-<div class="partner">
-<b>רגע לפני שמתחילים - מי עומד מאחורי הערכה הזו.</b> הסקילים שתפגשו במדריך נולדו משיתוף פעולה של שתי חברות שמשלימות זו את זו: <b>נבו</b> - המאגר המשפטי שבו אתם חיים את הפסיקה והחקיקה, ו-<b>Legal Mind</b> - המתמחה בהטמעה מעשית ובטוחה של AI במשרדי עו״ד. נבו מביאה את הידע המשפטי; Legal Mind מביאה את שיטת העבודה עם <bdi dir="ltr">Claude</bdi>. את ארבעת הסקילים בנה אסף אברמזון, מנכ״ל Legal Mind, עבור מנויי נבו - ואחד מהם, מזכר המחקר, אף מתחבר ישירות למאגר נבו.
-</div>
+<aside class="content-box recommendation">
+<h3><span aria-hidden="true">✓</span> דרך פשוטה להבין את תפקיד הסקיל</h3>
+<p>חשבו על סקיל כעל תיק החניכה שמוסרים לעו״ד חדש במשרד. הוא יודע משפטים; מה שהוא לא יודע זה איך <em>אצלכם</em> עובדים - מה בודקים ראשון, אילו סעיפים לא מפספסים, איך נראה מזכר שיוצא מהמשרד, ומתי עוצרים ושואלים את השותף. את זה מוסרים לו ביום הראשון, ומאותו רגע הוא עובד לפי זה בלי שתסבירו שוב. זו גם האנלוגיה שבה משתמשת <bdi dir="ltr">Anthropic</bdi> עצמה לתיאור סקילים.</p>
+</aside>
 
-<div style="background:#fff;border:1.5px solid #cfe0dd;border-radius:12px;padding:12px 18px;margin:14px 0;font-size:.92rem;color:#3c4a55">
-<b>גילוי נאות, לפני שמתחילים:</b> המדריך והסקילים שבו הם כלי עזר לעבודה - לא ייעוץ משפטי ולא תחליף לשיקול דעת מקצועי. כל תוצר של סקיל הוא טיוטה לבדיקת עו״ד, והאחריות המקצועית על השימוש ועל התוצרים נשארת תמיד בידי עוה״ד המשתמש. תרגול ולימוד - על מידע מומצא בלבד.
-</div>
+<p><strong>שלושת מרכיבי הסקיל: </strong>ידע - מה צריך לדעת; הליך - כיצד לבצע את המשימה; בקרה - כיצד בודקים את הביצוע ומתי נדרשת התערבות שלכם.</p>
 
-<div class="iron" style="margin:14px 0">
-<p style="margin:0 0 8px"><b>טיפ פתיחה: תנו ל-Claude להתאים את המדריך אליכם.</b> אפשר לקרוא כסדרו - ואפשר להעתיק את הקישור של המדריך לשיחה עם <bdi dir="ltr">Claude</bdi> ולקבל גרסה מותאמת לתחום שלכם:</p>
-<div class="copy-block" style="margin:0"><div class="copy-heading"><strong>נוסח ההתאמה האישית - להעתקה</strong><button class="copy-button" data-copy-target="c0" type="button">העתקה בלחיצה</button></div><div class="copy-body" id="c0">קרא את המדריך שבקישור הזה: [הדביקו כאן את כתובת המדריך]. אני עו״ד בתחום [כתבו את תחום העיסוק], במשרד של [מספר] עו״ד. התאם לי את המדריך: אילו סקילים הכי רלוונטיים לעבודה שלי, איזה סקיל ראשון כדאי לי לבנות, ובנה לי תוכנית עבודה מסודרת לשבוע הראשון - צעד אחר צעד.</div><span class="copy-status" aria-live="polite" aria-atomic="true"></span></div>
-</div>
-
-<section class="guide-section">
-<h2 class="sec"><span class="station-num">1</span>מה זה סקיל?</h2>
-<p><strong>סקיל הוא תיק הדרכה שאתם מסירים ל-<bdi dir="ltr">Claude</bdi> פעם אחת: ההוראות איך מבצעים משימה מקצועית - ולצידן החומרים שהיא צריכה, כמו תבנית מאושרת, רשימת בדיקה או דוגמה לתוצר טוב. מאותו רגע, בכל פעם שהמשימה חוזרת, <bdi dir="ltr">Claude</bdi> פותח את התיק לבד ועובד לפיו.</strong></p>
-<p>ההשוואה המדויקת ביותר - וזו גם האנלוגיה שבה משתמשת <bdi dir="ltr">Anthropic</bdi> עצמה - היא <strong>תיק חניכה לעובד חדש במשרד</strong>. עו״ד חדש שמגיע אליכם יודע משפטים; מה שהוא לא יודע זה איך <em>אצלכם</em> עובדים: מה בודקים ראשון, אילו סעיפים לא מפספסים, איך נראה מזכר שיוצא מהמשרד, ומתי עוצרים ושואלים את השותף. את זה מוסרים לו ביום הראשון - ומאותו רגע הוא עובד לפי זה, בלי שתסבירו שוב.</p>
-<p>סקיל הוא בדיוק תיק החניכה הזה, בשביל <bdi dir="ltr">Claude</bdi>. וההבדל בעבודה היומית מורגש מיד: <strong>המסמך העשרים נבדק בדיוק כמו הראשון, בדיקה ששכחתם - מוסיפים פעם אחת והיא שם לתמיד, וכל מי שבמשרד מקבל את אותו תוצר באותו סטנדרט.</strong></p>
-<p><strong>ומה בפועל נכנס לתוך התיק הזה?</strong> ארבעה דברים - וכולם בשפה שלכם, לא בשפת מתכנתים:</p>
-<div class="parts">
-<div><b>הוראות עבודה</b>מה לבצע, באיזה סדר, מה אסור להניח ומתי לעצור ולשאול.</div>
-<div><b>ידע מקצועי ממוקד</b>רשימות דרישות, נהלי המשרד, כללי סיווג ותבניות מאושרות.</div>
-<div><b>דוגמאות</b>איך נראה קלט תקין, תוצר רצוי, וגם מצב שמחייב עצירה.</div>
-<div><b>קובצי עזר</b>תבנית מזכר, רשימת בדיקה, דוגמת פלט או מילון מונחים.</div>
-</div>
-<p>ובקצרה, שלושת המרכיבים שכל סקיל טוב מחזיק: <strong>ידע</strong> - מה צריך לדעת; <strong>הליך</strong> - איך מבצעים; <strong>בקרה</strong> - איך בודקים את הביצוע ומתי נדרשת התערבות שלכם.</p>
-<p><strong>ואיך זה שונה ממה שאתם כבר מכירים?</strong> שלוש שורות:</p>
-<ul>
+<h3>ואיך זה שונה ממה שאתם כבר מכירים?</h3>
+<ul class="bullets">
 <li><span class="term-chip">Prompt</span> - הבקשה של עכשיו. נגמרת כשנגמרת השיחה.</li>
 <li><span class="term-chip">Project</span> - החומר של תיק אחד. הפרויקט שומר את החומר.</li>
 <li><span class="term-chip">Skill</span> - שיטת העבודה שחוזרת בין תיקים. <strong>הסקיל שומר את השיטה.</strong></li>
 </ul>
-<p><strong>וביושר, מה סקיל אינו:</strong> הוא אינו מקור משפטי, הוא אינו מתעדכן מעצמו כשהדין משתנה - ועקביות אינה הוכחה לנכונות.</p>
-<p><strong>איך <bdi dir="ltr">Claude</bdi> יודע מתי להפעיל סקיל?</strong> לכל סקיל יש שם ותיאור. <bdi dir="ltr">Claude</bdi> משווה את הבקשה שלכם לתיאור וטוען את הסקיל לבד. אפשר גם להפעיל במפורש - נראה מיד איך.</p>
-<p>ולאורך כל המדריך ילוו אותנו <strong>ארבעת הסקילים של ערכת נבו-Legal Mind</strong> - לא דוגמאות צעצוע:</p>
-<ul>
-<li><b>docx-rtl</b> - מסמכי וורד בעברית שיוצאים נכון: מיושרים לימין, ממוספרים, בלי ת.ז. וסכומים שמתהפכים.</li>
+<p><strong>ומול Prompt שמור?</strong> Prompt שמור עוזר לא לכתוב שוב את אותה בקשה; סקיל עוזר לא לבנות שוב את אותו תהליך.</p>
+
+<aside class="content-box warning">
+<h3>מה סקיל אינו עושה</h3>
+<p>סקיל יכול לעגן תהליך ולסייע ל-<bdi dir="ltr">Claude</bdi> לפעול באופן עקבי יותר. עצם קיומו אינו הופך את התהליך לנכון או מתאים לשימוש מקצועי: <strong>הוא אינו מחליף שיקול דעת</strong> - הוא ממפה, משווה ומסמן פערים, ועוה״ד מכריע ונושא באחריות; <strong>הוא אינו מקור משפטי</strong> - אזכור של חוק או פסיקה אינו מוכיח שהמידע נכון או מעודכן; <strong>הוא אינו מתעדכן מעצמו</strong> - כשהדין או נהלי המשרד משתנים, מעדכנים את הסקיל; <strong>ועקביות אינה הוכחה לנכונות</strong> - תוצר יכול להיות רהוט, מסודר ועקבי, ועדיין לכלול תאריך שגוי או השערה שהוצגה כעובדה.</p>
+</aside>
+
+<h3>איך Claude יודע מתי להפעיל סקיל?</h3>
+<p>אין צורך להעתיק את תוכן הסקיל לכל שיחה. לכל סקיל יש שם ותיאור קצר; <bdi dir="ltr">Claude</bdi> בוחן את הסקילים הזמינים, משווה את הבקשה שלכם לתיאורים - וטוען לבד את מי שמתאים. ואפשר גם להפעיל במפורש, כפי שנראה בפרק הבא.</p>
+
+<aside class="content-box legal-example">
+<h3>הסקילים שילוו אותנו לאורך המדריך</h3>
+<p>לא דוגמאות צעצוע, אלא ערכת הסקילים של מנויי נבו - כולם מצורפים כאן להורדה (פרק 08):</p>
+<ul class="bullets" style="margin-bottom:0">
+<li><b>docx-rtl</b> - מסמכי Word בעברית שיוצאים נכון: מיושרים לימין, ממוספרים, בלי ת.ז. וסכומים שמתהפכים.</li>
 <li><b>legal-timeline</b> - ציר זמן משפטי מוכן לתיק בית משפט, מחוזה או כתב טענות, עם ציטוט מקור לכל אירוע.</li>
-<li><b>legal-skill-builder</b> - "מפעל הסקילים": מראיין אתכם ובונה לכם סקיל משלכם.</li>
+<li><b>legal-skill-builder</b> - הבונה: מראיין אתכם ובונה לכם סקיל משלכם.</li>
 <li><b>nevo-legal-memo</b> - מזכר משפטי מבוסס מחקר במאגר נבו, עם ציטוטים מאומתים וחיפוש-נגד מובנה.</li>
+<li><b>legal-mind-core</b> - חבילת הליבה שמאגדת את כולם, למשרד שרוצה התקנה אחת לכולם.</li>
 </ul>
+</aside>
 </section>
 
-<section class="guide-section">
-<h2 class="sec"><span class="station-num">2</span>מתקינים - ורואים את זה עובד</h2>
-<h3>שלב ראשון - מגיעים למסך הסקילים:</h3>
-<p>נכנסים ל-<bdi dir="ltr">claude.ai</bdi> בדפדפן במחשב, עם חשבון מחובר. <strong>לוחצים על השם שלכם בפינה ← <bdi dir="ltr"><code>Settings</code></bdi> ← במדור <bdi dir="ltr"><code>Customize</code></bdi> בוחרים <bdi dir="ltr"><code>Skills</code></bdi>.</strong> זהו - אתם במקום הנכון, וזה המקום היחיד שמנהלים בו סקילים.</p>
-<p class="small" style="color:#5a6b75">המסך נפתח כמעט ריק? הכל בסדר - סקילים מוכנים של Anthropic מחכים בלשונית <bdi dir="ltr"><code>Browse</code></bdi>. לא רואים את מסך הסקילים בכלל? הדליקו את <bdi dir="ltr"><code>Code execution and file creation</code></bdi> במסך <bdi dir="ltr"><code>Capabilities</code></bdi> שבאותן הגדרות, וחזרו לכאן.</p>
-<div class="shotslot"><b>[צילום 1]</b> מסך הסקילים והדרך אליו - יצולם בסבב הצילומים.</div>
-<h3>שלב שני - מתקינים את הסקיל הראשון:</h3>
-<p><strong>מורידים מהמדריך הזה את הקובץ של <b>docx-rtl</b> (במדור ההורדות למטה), לוחצים <bdi dir="ltr"><code>Add</code></bdi> ← <bdi dir="ltr"><code>Upload a skill</code></bdi>, בוחרים את הקובץ - וזהו.</strong> הסקיל מופיע ברשימה עם מתג דולק. הקובץ הוא ZIP ומעלים אותו כמות שהוא, בלי לחלץ (במחשבי מק: אם הדפדפן פתח אותו לתיקייה - השתמשו בקובץ ה-ZIP שנשאר בתיקיית ההורדות).</p>
-<div class="shotslot"><b>[צילומים 2-3]</b> חלון ההעלאה + הסקיל מותקן ברשימה.</div>
-<h3>שלב שלישי - מפעילים:</h3>
-<p>פותחים שיחה חדשה ומבקשים, במילים שלכם:</p>
+<section class="guide-section" id="install"><span class="section-number">02</span>
+<p class="section-number">02</p>
+<h2>מגיעים, מתקינים ומפעילים</h2>
+
+<h3>הדרך למסך הסקילים</h3>
+<p>עובדים ב-<bdi dir="ltr">claude.ai</bdi> בדפדפן במחשב, עם חשבון מחובר - ההתקנה והניהול נעשים מהמחשב. <strong>לוחצים על השם שלכם בפינה ← <bdi dir="ltr"><code>Settings</code></bdi> ← במדור <bdi dir="ltr"><code>Customize</code></bdi> בוחרים <bdi dir="ltr"><code>Skills</code></bdi>.</strong> זה המקום היחיד שמנהלים בו סקילים, ואליו נחזור בכל פעם שנרצה להוסיף, לכבות או להחליף סקיל.</p>
+<aside class="content-box warning">
+<h3>אין אזור סקילים בכלל?</h3>
+<p>הדליקו את היכולת <bdi dir="ltr"><code>Code execution and file creation</code></bdi> במסך <bdi dir="ltr"><code>Capabilities</code></bdi> שבאותן הגדרות, וחזרו לכאן. במנוי Team או Enterprise ייתכן שההרשאה בידי מנהל הארגון - זו הכתובת.</p>
+</aside>
+
+<h3>שני כפתורים בראש המסך - וההבדל שמבלבל בהתחלה</h3>
+<p>בראש מסך הסקילים יש <bdi dir="ltr"><code>Browse</code></bdi> ולידו <bdi dir="ltr"><code>Add</code></bdi>. הם לא עושים את אותו הדבר:</p>
+<ul class="bullets">
+<li><b><bdi dir="ltr">Browse</bdi></b> - פותח ספרייה של סקילים מוכנים שאפשר להתקין.</li>
+<li><b><bdi dir="ltr">Add</bdi></b> - פותח תפריט של דרכים להביא סקיל חדש, ובו שלוש אפשרויות שונות לגמרי: <b><bdi dir="ltr">Create with Claude</bdi></b> בונה סקיל בשיחה (זו הדרך שנלמד בפרק 04); <b><bdi dir="ltr">Write skill instructions</bdi></b> לכתיבת ההוראות ישירות; ו<b><bdi dir="ltr">Upload a skill</bdi></b> להעלאת קובץ שכבר קיים אצלכם - וזו הדרך שבה מגיע סקיל שמישהו אחר בנה, כמו הסקילים המצורפים למדריך הזה.</li>
+</ul>
+<aside class="content-box info">
+<h3>שווה לדעת: סקיל פשוט הוא קובץ טקסט אחד</h3>
+<p>חלון ההעלאה מקבל גם <strong>קובץ MD בודד</strong>, בתנאי שהוא מכיל שם ותיאור בראשו - אין חובה ליצור תיקייה ולארוז אותה. אריזה ל-ZIP נדרשת רק כשלסקיל יש גם קובצי עזר. וזה חשוב למי שמתחיל: אפשר לפתוח את הקובץ בכל עורך טקסט <strong>ולקרוא אותו לפני שמעלים</strong>.</p>
+</aside>
+
+<h3>הספרייה, והמסך הריק שמבלבל את כולם</h3>
+<p>לחיצה על <bdi dir="ltr"><code>Browse</code></bdi> פותחת את הספרייה (בממשק: <bdi dir="ltr"><code>Directory</code></bdi>) - וכאן קורה הדבר שגורם לרוב האנשים לחשוב שמשהו אצלם לא עובד. <strong>המסך נפתח ריק, ובאמצע כתוב שאין עדיין סקילים.</strong> ההיגיון אומר שאין מה להתקין, אבל זה לא נכון.</p>
+<p>בראש המסך יש שלוש לשוניות, והמסך נפתח על הראשונה - זו שמציגה סקילים ששותפו <em>בתוך הארגון שלכם</em>, ולכן היא ריקה בכל משרד שעדיין לא שיתף סקילים. <strong>הסקילים המוכנים נמצאים בלשונית שנושאת את שם היצרנית.</strong></p>
+<aside class="content-box info">
+<h3>חיפשתם סקיל לקבצים ולא מצאתם?</h3>
+<p>יכולות של Word, Excel, PDF ומצגות <strong>מובנות ואינן דורשות התקנה</strong>. חיפוש שלהן בספרייה יחזיר תוצאה ריקה, וזה תקין - אם אתם צריכים מסמך Word, פשוט בקשו אותו. אז לפני שמסיקים שהספרייה ריקה, ודאו שאתם בלשונית הנכונה ושאתם מחפשים דבר שבאמת מותקן, ולא דבר שכבר קיים.</p>
+</aside>
+<div class="pending"><span class="lbl">צילום מסך 1</span><p>מסך הסקילים והדרך אליו - הצילום המודרך יתווסף בסבב הצילומים, עם סימון מדויק של כל לחיצה בדרך.</p></div>
+
+<h3>מתקינים את הסקיל הראשון</h3>
+<p><strong>מורידים מפרק 08 את הקובץ של <b>docx-rtl</b>, לוחצים <bdi dir="ltr"><code>Add</code></bdi> ← <bdi dir="ltr"><code>Upload a skill</code></bdi>, בוחרים את הקובץ - וזהו.</strong> הסקיל מופיע ברשימה עם מתג דולק, ומאותו רגע הוא זמין בכל שיחה חדשה.</p>
+<aside class="content-box info">
+<h3>הקובץ הוא ZIP - מעלים אותו כמות שהוא</h3>
+<p>אין צורך לחלץ אותו קודם. במחשבי מק, אם הדפדפן פתח את הקובץ לתיקייה אוטומטית - השתמשו בקובץ ה-ZIP המקורי שנשאר בתיקיית ההורדות.</p>
+</aside>
+<div class="pending"><span class="lbl">צילומי מסך 2-3</span><p>חלון ההעלאה, והסקיל המותקן ברשימה עם המתג הדולק.</p></div>
+
+<h3>ומפעילים - הבקשה הראשונה</h3>
+<p>פותחים שיחה חדשה ומבקשים, במילים שלכם. הנה נוסח מוכן, על פרטים מומצאים לחלוטין:</p>
 <div class="copy-block"><div class="copy-heading"><strong>בקשה ראשונה - להעתקה</strong><button class="copy-button" data-copy-target="c1" type="button">העתקה בלחיצה</button></div><div class="copy-body" id="c1">הכן לי הסכם שכירות קצר בוורד, על פרטים מומצאים לחלוטין: משכיר "ישראל ישראלי" (ת.ז. 000000000), שוכר "חברת הדגמה בע״מ", דירה ברחוב הדוגמה 1, דמי שכירות 5,000 ש״ח לחודש, 12 חודשים.</div><span class="copy-status" aria-live="polite" aria-atomic="true"></span></div>
-<p><strong>ואיך יודעים שהסקיל אכן נטען?</strong> כש-<bdi dir="ltr">Claude</bdi> מפעיל סקיל, מופיע בתשובה חיווי עם שם הסקיל - זה האישור שלכם. ורוצים ודאות מראש? מקלידים לוכסן (<bdi dir="ltr"><code>/</code></bdi>) בתיבת הכתיבה ובוחרים את הסקיל מהרשימה.</p>
-<p><strong>מה שתקבלו הוא קובץ וורד שיוצא נכון:</strong> מיושר לימין באמת, ממוספר אוטומטית, וה-ת.ז. והסכומים יושבים ישר בתוך המשפט העברי. מי שאי-פעם קיבל מ-AI מסמך עברי שנפתח שבור אצל הלקוח - יודע כמה זה לא מובן מאליו.</p>
-<div class="shotslot"><b>[צילומים 4-6]</b> הבקשה בשיחה · אישור שהסקיל נטען · הקובץ פתוח בוורד, מסומן: יישור, מספור, ת.ז. ישרה.</div>
-<h3>ועכשיו מסע שלם, מקצה לקצה - legal-timeline:</h3>
-<p>מתקינים גם אותו (אותו תהליך בדיוק), ומורידים את <a href="../practice-contract.txt">חוזה התרגול המומצא</a> שמצורף למדריך. שלושה צעדים:</p>
-<ul>
+<h3>שתי דרכי הפעלה - ומאיזו כדאי להתחיל</h3>
+<p><strong>הדרך הראשונה, זו שבה אתם שולטים:</strong> בשיחה חדשה מקלידים <strong>לוכסן</strong> (<bdi dir="ltr"><code>/</code></bdi>) בשורת ההודעה, ונפתחת רשימה של כל הסקילים הזמינים לכם. בחירה מהרשימה מכניסה את שם הסקיל לשורת ההודעה, בכחול - <strong>ואתם יודעים בוודאות מה יפעל, עוד לפני שכתבתם מילה.</strong> בגלל זה כדאי להתחיל ממנה.</p>
+<p><strong>הדרך השנייה, אוטומטית:</strong> כותבים בקשה שמתאימה לתיאור של סקיל מותקן, ו-<bdi dir="ltr">Claude</bdi> טוען אותו בעצמו. זה נוח כשמכירים את הסקילים שלכם, ופחות נוח בהתחלה - כי לא תמיד ברור מה נטען ולמה. <strong>ובכל מקרה, כשסקיל מופעל מופיע בתשובה חיווי עם שמו</strong> - זה האישור שלכם. אם השורה הזו אינה מופיעה, הבקשה טופלה כשיחה רגילה והסקיל לא פעל.</p>
+<aside class="content-box warning">
+<h3>מופיעים לכם סקילים שלא התקנתם?</h3>
+<p>רשימת הלוכסן מקובצת לפי מקור, ובחשבון Team מנהל הארגון יכול להקצות סקילים לכל המשתמשים - כך שהם פעילים אצלכם כברירת מחדל, ולעיתים אף אינם מופיעים ברשימה האישית שלכם. <strong>כלומר ייתכן שיש לכם סקילים פעילים שלא בחרתם ושאינכם יודעים מי כתב.</strong> אם אתם עובדים על חומר של לקוח - שווה לברר מול מי שמנהל את החשבון מה הם עושים.</p>
+</aside>
+<aside class="content-box recommendation">
+<h3><span aria-hidden="true">✓</span> קיצור דרך לבדיקה מיד אחרי התקנה</h3>
+<p>במסך פרטי הסקיל, תפריט שלוש הנקודות מציע <bdi dir="ltr"><code>Try in chat</code></bdi>. הלחיצה פותחת שיחה חדשה כשהסקיל כבר נבחר - בלי להקליד ובלי לחפש. זו הדרך הקצרה ביותר לבדוק סקיל שהרגע התקנתם.</p>
+</aside>
+<aside class="content-box info">
+<h3>טעינה אינה הוכחה לביצוע נכון</h3>
+<p>גם אחרי שהסקיל נטען, צריך לבדוק שנעשה שימוש בקלט הנכון, שכל השלבים בוצעו, שנקודות העצירה כובדו ושהעובדות אומתו. החיווי מספר שהשיטה הופעלה - לא שהתוצר נכון.</p>
+</aside>
+<p><strong>מה שתקבלו הוא קובץ Word שיוצא נכון:</strong> מיושר לימין באמת, ממוספר אוטומטית, וה-ת.ז. והסכומים יושבים ישר בתוך המשפט העברי. מי שאי-פעם קיבל מ-AI מסמך עברי שנפתח שבור אצל הלקוח - יודע כמה זה לא מובן מאליו: Word מפרש "יישור ימין" בפסקה עברית הפוך, והסקיל מריץ על כל קובץ בדיקת תקינות לפני שהוא מוסר אותו.</p>
+<div class="pending"><span class="lbl">צילומי מסך 4-6</span><p>הבקשה בשיחה · החיווי שהסקיל נטען · הקובץ פתוח ב-Word, עם סימון על היישור, המספור וה-ת.ז. שנשארה ישרה.</p></div>
+
+<h3>ועכשיו מסע שלם, מקצה לקצה - legal-timeline</h3>
+<p>מתקינים גם אותו, באותו תהליך בדיוק, ומורידים את <a href="../practice-contract.txt">חוזה התרגול המומצא</a> שמצורף למדריך. ומכאן שלושה צעדים:</p>
+<ol class="bullets">
 <li><strong>מבקשים:</strong> מדביקים את החוזה וכותבים "תעשה לי ציר זמן".</li>
-<li><strong>הסקיל עוצר לאישור:</strong> לפני שהוא מפיק משהו, הוא מציג לכם מה זיהה, כמה אירועים חילץ ומה השמיט ולמה ("חשבון שלמות").</li>
-<li><strong>מאשרים - ומקבלים PDF ערוך לתיק:</strong> טבלה כרונולוגית עם ציטוט מקור לכל אירוע, תאריכים יחסיים ("תוך 30 יום מהחתימה") מחושבים לתאריך אמיתי, ומועדים בעייתיים מסומנים <strong>כדגלים לאימות - לא כמסקנות</strong>: "לאימות: ייתכן שחלף מועד - לבדיקת העו״ד", לעולם לא "התביעה התיישנה".</li>
-</ul>
-<div class="shotslot"><b>[צילומים 7-9]</b> ההדבקה והבקשה · שער האישור עם חשבון השלמות · ה-PDF המוגמר.</div>
+<li><strong>הסקיל עוצר לאישור:</strong> לפני שהוא מפיק משהו, הוא מציג מה זיהה, כמה אירועים חילץ, ומה השמיט ולמה - מה שהוא מכנה "חשבון שלמות". זו נקודת העצירה, והיא בכוונה.</li>
+<li><strong>מאשרים - ומקבלים PDF ערוך לתיק:</strong> טבלה כרונולוגית עם ציטוט מקור לכל אירוע, תאריכים יחסיים ("תוך 30 יום מהחתימה") מחושבים לתאריך אמיתי, ומועדים בעייתיים מסומנים <strong>כדגלים לאימות - לא כמסקנות</strong>.</li>
+</ol>
+
+<aside class="content-box legal-example">
+<h3>כך נראה תוצר טוב - מקלט מבולגן לטבלה מסודרת</h3>
+<p>הדוגמה הזו מומצאת לחלוטין, ומראה בדיוק מה מפריד בין תוצר שאפשר להגיש לתיק לבין תוצר שאסור לסמוך עליו. נניח שהסקיל קיבל שלושה מסמכים ובהם: <em>"המטופל התייצב בתאריך 14.3.2025 בתלונה על כאבי גב"</em> (תיעוד רפואי, מרפאה א׳), <em>"התקבל למיון ביום 15.3.25 בעקבות החמרה"</em> (בית חולים ב׳), ו<em>"מרשנו מציין כי הפגיעה אירעה כבר בתחילת פברואר 2025"</em> (מכתב הצד שכנגד).</p>
+<table class="demo">
+<thead><tr><th>תאריך</th><th>אירוע</th><th>מקור</th><th>הערה</th></tr></thead>
+<tbody>
+<tr><td>תחילת פברואר 2025 <em>(תאריך לא מדויק)</em></td><td>טענה למועד הפגיעה</td><td>מכתב הצד שכנגד</td><td>טענה, לא עובדה מתועדת - לא אומתה במסמך רפואי</td></tr>
+<tr><td>14.3.2025</td><td>התייצבות במרפאה א׳ עם כאבי גב, הפניה ל-MRI</td><td>תיעוד רפואי, מרפאה א׳</td><td>-</td></tr>
+<tr><td>15.3.2025</td><td>קבלה למיון בבית חולים ב׳ עקב החמרה</td><td>תיעוד רפואי, בית חולים ב׳</td><td>יום לאחר האירוע במרפאה א׳ - סביר שקשור, לא נקבע כוודאי</td></tr>
+</tbody></table>
+<p style="margin-bottom:0"><strong>שימו לב לשלוש נקודות שהופכות את הטבלה לשימושית מבחינה משפטית:</strong> הטענה על "תחילת פברואר" מוצגת כטענה ומתויגת ככזו, לא כעובדה. שני התאריכים הסמוכים (14-15 במרץ) לא מוזגו לאירוע אחד אף שהם קרובים - ההכרעה אם מדובר באותו אירוע נשארת אצל עוה״ד. ובשום מקום הסקיל לא "קבע" שהפגיעה אכן קרתה בפברואר, למרות שהצד שכנגד טוען זאת.</p>
+</aside>
+
+<aside class="content-box recommendation">
+<h3><span aria-hidden="true">✓</span> "עבד טוב" עשוי לכלול "עצר ושאל"</h3>
+<p>זה הבדל מהותי מהאינטואיציה הרגילה סביב תוכנה, שבה "עבד טוב" אומר "נתן תשובה סופית". בסקיל משפטי, כשהוא נתקל במסמך סותר או בתאריך שאי אפשר לשייך למקור - ההצלחה שלו נמדדת ביכולת לסמן את הבעיה בבירור ולהעביר את ההכרעה אליכם, לא ב"לפתור" אותה בעצמו.</p>
+</aside>
+<div class="pending"><span class="lbl">צילומי מסך 7-9</span><p>ההדבקה והבקשה · שער האישור עם חשבון השלמות · ה-PDF המוגמר, עם סימון על עמודת המקור ועל דגלי האימות.</p></div>
 </section>
 
-<section class="guide-section">
-<h2 class="sec"><span class="station-num">3</span>בונים סקיל משלכם - בלי לכתוב שורת קוד</h2>
-<h3>רגע, מה שווה להפוך לסקיל? שש שאלות מהירות:</h3>
-<p>התהליך חוזר על עצמו? · המטרה והתוצר מוגדרים? · אתם מסוגלים להסביר את השלבים לאיש צוות חדש? · יש דרך לבדוק שהתוצאה טובה? · ברור מתי עוצרים ושואלים אתכם? · יש לזה בעלים במשרד? <strong>שש פעמים "כן" - יש לכם מועמד. יש "לא"? כנראה מוקדם מדי, ו"לא עכשיו" אינו סופי.</strong></p>
-<p><i>דוגמה טובה:</i> הכנת תיק לפגישת לקוח ראשונה - תמיד אותם שלבים, תמיד אותו תוצר. <i>דוגמה רעה:</i> "הערכת סיכויי תביעה" - סקיל יכול להכין את התשתית, אבל את ההכרעה מכריע עו״ד.</p>
-<h3>ועכשיו בונים - עם הבונה של Legal Mind:</h3>
-<p><strong>לא צריך לנסח שום דבר טכני.</strong> מתקינים את <b>legal-skill-builder</b> (מצורף למטה), פותחים שיחה חדשה וכותבים:</p>
+<section class="guide-section" id="proof"><span class="section-number">03</span>
+<p class="section-number">03</p>
+<h2>לראות שהסקיל באמת עשה משהו</h2>
+<p>עד כאן התקנו והפעלנו. עכשיו לשאלה שבאמת חשובה: <strong>מה זה משנה בפועל?</strong> נריץ בקשה על תיק מומצא לחלוטין. הנוסח שלהלן בנוי כתבנית - החליפו את הפרטים בשלכם והוא יעבוד באותה מידה:</p>
+<div class="copy-block"><div class="copy-heading"><strong>מסמך עמדה לקראת גישור - להעתקה</strong><button class="copy-button" data-copy-target="c3" type="button">העתקה בלחיצה</button></div><div class="copy-body" id="c3">כתיבת מסמך עמדה לקראת ישיבת גישור. כל הפרטים מומצאים לצורך הדגמה.
+
+ההסכם נחתם ב-3.1.2024 וקבע מסירה תוך 14 חודשים, עם פיצוי מוסכם של 4,000 ש״ח לכל שבוע איחור. המסירה בוצעה בפועל ב-19.5.2025. מרשי טוען שהאיחור נבע משינויי תכנון של המזמין ומעיכוב באישורי הרשות. המזמין דורש פיצוי בגין 16 שבועות איחור.
+
+המסמך מיועד למגשר, לא לבית המשפט. עד שלושה עמודים. הוא צריך להציג את עמדת מרשי, להודות במה שאינו שנוי במחלוקת, ולהציע מתווה פשרה.
+
+כללי עבודה:
+- הפרד בין עובדה, טענה והערכה.
+- כל מקום שחסר בו מידע, שאל אותי. אל תשלים מהיגיון ואל תמציא מסמך, תאריך או סכום.
+- אל תקבע מה הדין. סמן כל נקודה שדורשת הכרעה משפטית כנקודה שממתינה לשיקול דעתי.</div><span class="copy-status" aria-live="polite" aria-atomic="true"></span></div>
+<p><strong>שלוש שורות "כללי העבודה" אינן קישוט.</strong> הן מה שמפריד בין תוצר שאפשר לעבוד איתו לבין תוצר שצריך לבדוק מחדש מההתחלה - והן מתאימות כמעט לכל בקשה משפטית.</p>
+
+<aside class="content-box legal-example">
+<h3>מה קרה בפועל - ולמה זו הנקודה החשובה בכל המדריך</h3>
+<p><strong>הסקיל לא כתב את המסמך. הוא עצר ושאל עשר שאלות - וזה בדיוק תפקידו.</strong></p>
+<p>בשאלה הראשונה הוא בדק את החשבון: הסכם מ-3.1.2024 בתוספת 14 חודשים מגיע ל-3.3.2025, ומשם ועד 19.5.2025 עוברים כאחד-עשר שבועות - לא שישה-עשר. <strong>והוא לא קבע שהצד השני טועה</strong>: הוא הציג שלוש אפשרויות שמהן נספרת תקופת ביצוע בחוזי בנייה, והחזיר את השאלה לעו״ד.</p>
+<p>בהמשך שאל אם שינויי התכנון תועדו בכתב - נקודת המפתח של התיק, שלא נמסרה לו בבקשה - אם ההסכם כולל תקרה לפיצוי המוסכם, ואם ניתנה הודעה בזמן אמת. ובסיום סימן שלוש נקודות שהוא <strong>לא יכריע בהן</strong>, כי הן דורשות שיקול דעת משפטי.</p>
+<p style="margin-bottom:0"><strong>זה ההבדל בין סקיל לבין בקשה רגילה.</strong> בקשה רגילה הייתה מייצרת מסמך יפה, המבוסס על החומר החלקי שנתנו לה. הסקיל הפך את הסדר: קודם לברר מה חסר, ורק אחר כך לכתוב. וכדאי לשים לב למה שהוא <em>לא</em> עשה - לא הכריע בשאלה משפטית, לא המציא סעיף בהסכם, ולא השלים תאריך שלא נמסר לו.</p>
+</aside>
+<div class="pending"><span class="lbl">צילומי מסך 10-12</span><p>החיווי שמאשר שהסקיל נטען · בדיקת החשבון והשאלות שהוחזרו לעו״ד · שלוש הנקודות שסומנו כדורשות הכרעה משפטית.</p></div>
+</section>
+
+<section class="guide-section" id="build"><span class="section-number">04</span>
+<p class="section-number">04</p>
+<h2>בונים סקיל משלכם - בלי לכתוב שורת קוד</h2>
+
+<h3>מה שווה להפוך לסקיל? שש שאלות</h3>
+<p>התהליך חוזר על עצמו? · המטרה והתוצר מוגדרים? · אתם מסוגלים להסביר את השלבים לאיש צוות חדש? · יש דרך לבדוק שהתוצאה טובה? · ברור מתי עוצרים ושואלים אתכם? · יש לזה בעלים במשרד?</p>
+<p><strong>שש פעמים "כן" - יש לכם מועמד. יש "לא"? כנראה מוקדם מדי, ו"לא עכשיו" אינו סופי.</strong></p>
+<aside class="content-box legal-example">
+<h3>דוגמה טובה, ודוגמה רעה</h3>
+<p><strong>טובה:</strong> הכנת תיק לפגישת לקוח ראשונה - תמיד אותם שלבים, תמיד אותו תוצר, וההצלחה נמדדת ביכולת לסמן מה חסר. <strong>רעה:</strong> "הערכת סיכויי תביעה" - סקיל יכול להכין את התשתית, אבל את ההכרעה מכריע עו״ד, ותוצר שנשמע בטוח כאן הוא סיכון ולא נוחות.</p>
+</aside>
+
+<h3>בונים - עם הבונה של Legal Mind</h3>
+<p><strong>לא צריך לנסח שום דבר טכני, ואין צורך בכתיבה ידנית של קבצים.</strong> מתקינים את <b>legal-skill-builder</b> (פרק 08), פותחים שיחה חדשה - ומתארים את הרעיון במשפט או שניים. אין צורך לתכנן את השיחה מראש: הבונה יוביל אותה בשאלות ממוקדות.</p>
 <div class="copy-block"><div class="copy-heading"><strong>הפעלת הבונה - להעתקה</strong><button class="copy-button" data-copy-target="c2" type="button">העתקה בלחיצה</button></div><div class="copy-body" id="c2">תבנה לי סקיל. המשימה שחוזרת אצלי: [תארו במשפט-שניים את התהליך, למשל: מכתב תזכורת ראשון ללקוח שלא שילם, לפי הנוסח הקבוע שלי]</div><span class="copy-status" aria-live="polite" aria-atomic="true"></span></div>
-<p><strong>מכאן הבונה עובד ואתם רק עונים, בארבעה שלבים:</strong></p>
-<ul>
-<li><strong>מראיין</strong> - שאלות בחירה קצרות, בשפת עו״ד: לא "איזה פורמט קובץ" אלא "מה בודקים קודם".</li>
-<li><strong>מציג אפיון לאישורכם</strong> - ולא בונה שום דבר לפני שאישרתם.</li>
-<li><strong>בונה ובודק</strong> - יחד אתכם, על דוגמה.</li>
-<li><strong>מוסר</strong> - עם הוראות הפעלה של שתי שורות.</li>
+<p><strong>ומכאן הבונה עובד ואתם רק עונים, בארבעה שלבים:</strong></p>
+<div class="comparison-list" role="list">
+<div role="listitem"><strong>מראיין</strong><p>שאלות בחירה קצרות בשפת עו״ד - לא "איזה פורמט קובץ" אלא "מה בודקים קודם", ו"מה עושים כשתאריך לא ודאי".</p></div>
+<div role="listitem"><strong>מציג אפיון לאישורכם</strong><p>ולא בונה שום דבר לפני שאישרתם. זה הרגע לתקן כיוון - לא אחרי שהקבצים נוצרו.</p></div>
+<div role="listitem"><strong>בונה ובודק</strong><p>יחד אתכם, על דוגמה אמיתית - ורק אחרי שהבדיקה עברה הוא ממשיך למסירה.</p></div>
+<div role="listitem"><strong>מוסר</strong><p>סקיל מוכן להתקנה, עם הוראות הפעלה של שתי שורות.</p></div>
+</div>
+<aside class="content-box recommendation">
+<h3><span aria-hidden="true">✓</span> המסלול השימושי ביותר: "תקן אותי"</h3>
+<p>שונאים לתאר תהליכים? אמרו לבונה "קשה לי להסביר". הוא ייצר טיוטת תוצר עם טעויות מכוונות ויבקש שתעברו עליה בעט אדום - וכל תיקון שלכם הופך לכלל קבוע בסקיל. <strong>עו״ד שונאים לתאר ואוהבים לתקן; הבונה נבנה בדיוק על ההרגל הזה.</strong></p>
+</aside>
+
+<h3>מאיפה מביאים את החומר שהסקיל צריך?</h3>
+<p>זו השאלה שעוצרת אנשים, והתשובה מפתיעה: <strong>החומר כבר קיים אצלכם, פזור במקומות שלא חשבתם עליהם כעל מאגר ידע.</strong></p>
+<ul class="bullets">
+<li><strong>הערות ששלחתם ללקוחות במייל</strong> - כל הערה שכתבתם על טיוטת הסכם היא כלל שקיים אצלכם בראש ולא נכתב בשום מקום.</li>
+<li><strong>טיוטות עם עקוב אחר שינויים</strong> - התיקונים שאתם מבצעים שוב ושוב מגלים את הניסוחים שאתם מעדיפים.</li>
+<li><strong>סיכומים שכתבתם ללקוח</strong> - הם מראים איך אתם מנסחים מסקנה כשהיא צריכה להיות מובנת.</li>
+<li><strong>תיקיות עבודה קודמות</strong> - תרשומות פנימיות, רשימות בדיקה שהכנתם לעצמכם, טפסים שהמשרד ממלא בכל תיק.</li>
 </ul>
-<p><strong>והמסלול השימושי ביותר שלו - למי ששונא לתאר תהליכים:</strong> אמרו לו "קשה לי להסביר". הוא ייצר טיוטת תוצר עם טעויות מכוונות ויבקש: "עבור עליה בעט אדום". כל תיקון שלכם הופך לכלל קבוע בסקיל. <strong>עו״ד שונאים לתאר - ואוהבים לתקן. הבונה בנוי בדיוק על זה.</strong></p>
-<p class="small" style="color:#5a6b75">וטיפ אחד ששווה לזכור מאחורי הקלעים: לכל סקיל יש תיאור (<bdi dir="ltr">description</bdi>) - <b>והתיאור הוא שקובע מתי <bdi dir="ltr">Claude</bdi> יטען את הסקיל</b>. ודאו שהוא אומר במילים פשוטות מה הסקיל עושה ומתי להשתמש בו; תיאור עמום = סקיל שלא יופעל כשצריך.</p>
-<div class="shotslot"><b>[צילומים 10-13]</b> "תבנה לי סקיל" והשאלה הראשונה · האפיון לאישור · המסירה · מסלול "תקן אותי" אם יזדמן.</div>
+<p><strong>ואין צורך לארגן את החומר לפני שמצרפים אותו.</strong> שלוש עד חמש דוגמאות אמיתיות מספיקות, והבונה יחלץ מהן את הדפוס החוזר.</p>
+<div class="content-box warning">
+<h3>לפני שמצרפים חומר אמיתי</h3>
+<p>הדוגמאות שאתם מצרפים הן חומר לקוח לכל דבר. הסירו שמות, מספרי תיקים ופרטים מזהים לפני הצירוף, או השתמשו בדוגמאות מומצאות. פרק 07 מרחיב.</p>
+</div>
+
+<h3>ומה בעצם נוצר שם?</h3>
+<p><strong>סקיל הוא תיקייה, ובתוכה קובץ הוראות מרכזי אחד.</strong> הקובץ הוא מסוג <span class="term-chip">MD</span> - בדיוק כמו שיש קובץ Word, קובץ PDF וקובץ Excel, יש גם קובץ טקסט מסוג MD, ואפשר לפתוח אותו בכל עורך טקסט פשוט במחשב. ולמה דווקא הוא? משתי סיבות מעשיות: הוא קל יותר לקריאה עבור המערכת, והוא חסכוני יותר במשאבים - כלומר עבודה מהירה וזולה יותר.</p>
+<p><strong>ואם תפתחו אותו, תראו טקסט רגיל בעברית, בלי שום קוד.</strong> הוא בנוי משני חלקים, ממש כמו מסמך משפטי: <strong>כותרת קצרה בראש</strong> שמספרת איך הסקיל נקרא ומתי להשתמש בו - בדיוק כמו שכותרת של כתב תביעה מספרת באיזה תיק מדובר ולא מה נטען בו; ומתחתיה <strong>גוף ההוראות</strong>, השיטה המקצועית שלכם בשפה חופשית. ההפרדה אינה קפריזה: הכותרת נטענת תמיד, בכל שיחה, ולכן היא קצרה; הגוף נטען רק כשהסקיל נבחר בפועל, ולכן שם דווקא כדאי לפרט. <strong>העיקרון: קצר ככל האפשר, מפורט ככל הנדרש - לא קצר בכל מחיר.</strong></p>
+<aside class="content-box info">
+<h3>מה שחשוב לכם מכל זה</h3>
+<p>אינכם כותבים את הקובץ ואינכם צריכים ללמוד תחביר - הבונה יוצר אותו עבורכם. מה שכן חשוב: <strong>שתוכלו לפתוח אותו, לקרוא, ולבדוק שההוראות תואמות בדיוק את התהליך שאישרתם.</strong> וטיפ אחד ששווה לזכור - <b>התיאור שבכותרת הוא שקובע מתי הסקיל ייטען</b>. תיאור כללי כמו "מסייע בעבודה משפטית" לא יעבוד; תיאור ממוקד יאמר גם מה הסקיל עושה וגם מתי הוא מתאים. תיאור עמום = סקיל שלא יופעל כשצריך.</p>
+</aside>
+<aside class="content-box recommendation">
+<h3><span aria-hidden="true">✓</span> למה מתחילים בלי קוד</h3>
+<p>הסקיל הראשון שתבנו יהיה הוראות בלבד - וזה מספיק לרוב התהליכים המשפטיים החוזרים. הסיבה מעשית: <strong>קל הרבה יותר לתקן הוראת טקסט שלא עובדת טוב מאשר לתקן סקריפט שמתנהג בצורה לא צפויה.</strong> אם תגלו בהמשך שתהליך מסוים דורש חישוב מדויק שקשה לבטא במילים - למשל חישוב תקופת התיישנות עם כמה חריגים - זה הרגע לשקול קוד, לא לפני כן.</p>
+</aside>
+
+<h3>שבע שאלות לפני שאתם שומרים</h3>
+<p>הבונה יציג את הסקיל המוכן עם כפתור שמירה. <strong>עצרו רגע לפני הלחיצה.</strong> תיקון עכשיו לוקח דקה; גילוי שהתיאור עמום מדי אחרי שהסקיל בשימוש, ואיש לא מבין למה הוא לא נטען כשצריך - לוקח הרבה יותר. כל שורה כאן מונעת בעיה קונקרטית:</p>
+<div class="content-box recommendation">
+<ul class="bullets" style="margin:0">
+<li><strong>האם התיאור מסביר גם "מה" וגם "מתי"?</strong> בלי ה"מתי", הסקיל לא ייטען בדיוק כשצריך אותו.</li>
+<li><strong>האם הסקיל מנסה לעשות יותר מדי בבת אחת?</strong> סקיל שגם בונה כרונולוגיה וגם מנסח כתב טענות הוא בעצם שני סקילים שמתחרים על אותו תיאור - עדיף לפצל.</li>
+<li><strong>יש שלב שההסבר עליו לא ברור?</strong> אם קשה לכם להסביר אותו, סביר שגם המערכת תתקשה לבצע אותו בעקביות.</li>
+<li><strong>נכנס לתוכו מידע רגיש שלא היה צריך להגיע לשם?</strong> קובץ דוגמה שנשכח עם פרטי לקוח אמיתיים - הטעות הנפוצה ביותר, והקלה ביותר למנוע.</li>
+<li><strong>יש הנחיה כלשהי "להשלים" מידע חסר במקום לסמן אותו?</strong> זו בדיוק הנקודה שבה סקיל משפטי טוב נבדל מסקיל כללי.</li>
+<li><strong>האם התוצר הסופי ברור וניתן לבדיקה?</strong> אם קשה להגדיר איך פלט טוב נראה, קשה גם לדעת מתי הסקיל עובד נכון.</li>
+<li><strong>האם מוגדרות נקודות עצירה לאישור שלכם?</strong> בלעדיהן הסקיל עלול "להמשיך" למקום שלא תכננתם.</li>
+</ul>
+</div>
+<p><strong>ואל תעברו על הרשימה לבד:</strong> העתיקו אותה לשיחה ובקשו מ-<bdi dir="ltr">Claude</bdi> לענות על כל שורה ביחס לסקיל שנוצר. הוא רואה את קובץ ההוראות המלא, ויכול להצביע במדויק על כל נקודה שדורשת תשומת לב - עוד לפני שאתם קוראים אותו שורה אחר שורה.</p>
+<aside class="content-box info">
+<h3>ואחרי השמירה - שתי בדיקות קטנות</h3>
+<p>ודאו שכל קובצי העזר נארזו יחד עם הסקיל ולא נשמר רק קובץ ההוראות. וההמלצה שלנו: לצד השמירה בחשבון, הורידו עותק למחשב ונהלו תיקייה בשם <span class="term-chip">skills</span> - כך הסקילים נשארים שלכם, וזמינים גם אם המשרד יחליף פלטפורמה.</p>
+</aside>
+<div class="pending"><span class="lbl">צילומי מסך 10-13</span><p>"תבנה לי סקיל" והשאלה הראשונה של הראיון · האפיון המוצג לאישור · המסירה · מסלול "תקן אותי".</p></div>
 </section>
 
-<section class="guide-section">
-<h2 class="sec"><span class="station-num">4</span>בודקים שהסקיל עובד - לפני שסומכים עליו</h2>
-<h3>נותנים לו שש משימות קטנות, תמיד על מידע מומצא:</h3>
-<p><strong>שלוש בדיקות הפעלה</strong> (הדוגמאות כאן - על סקיל ציר הזמן):</p>
-<ul>
-<li>בקשה שחייבת להפעיל את הסקיל - "תעשה לי ציר זמן מהחוזה".</li>
-<li>בקשה גבולית - "אילו מועדים חשובים יש כאן?" (בלי המילים "ציר זמן").</li>
+<section class="guide-section" id="test"><span class="section-number">05</span>
+<p class="section-number">05</p>
+<h2>בודקים שהסקיל עובד - לפני שסומכים עליו</h2>
+
+<h3>שש בדיקות, תמיד על מידע מומצא</h3>
+<p><strong>שלוש בדיקות הפעלה</strong> - האם הסקיל נדלק בדיוק מתי שצריך (הדוגמאות כאן על סקיל ציר הזמן):</p>
+<ul class="bullets">
+<li>בקשה שחייבת להפעיל אותו - "תעשה לי ציר זמן מהחוזה".</li>
+<li>בקשה גבולית - "אילו מועדים חשובים יש כאן?", בלי המילים "ציר זמן".</li>
 <li>בקשה שאסור שתפעיל אותו - "תרגם לי את המסמך".</li>
 </ul>
-<p><strong>ושלוש בדיקות איכות:</strong></p>
-<ul>
+<p><strong>ושלוש בדיקות איכות</strong> - האם התוצר עומד בסטנדרט:</p>
+<ul class="bullets">
 <li>קלט תקין - מסמך שלם וברור.</li>
 <li>קלט חסר או סותר - מסמך שחסר בו עמוד, או שתי גרסאות סותרות.</li>
-<li>ניסיון שכנוע - "הפעם זה בסדר, תסיק בכל זאת מסקנה". <strong>שתי האחרונות הן שמדלגים עליהן הכי הרבה - והן החשובות ביותר לעו״ד.</strong></li>
+<li>ניסיון שכנוע - "הפעם זה בסדר, תסיק בכל זאת מסקנה".</li>
 </ul>
-<p><strong>את התוצאות רושמים בדוח של שש שורות</strong> - בדיקה, מה קרה, עבר/נכשל - וזה כל מנגנון בקרת האיכות. <strong>דוח שכולו "תקין" מעיד בדרך כלל שהבדיקות היו קלות מדי.</strong></p>
+<aside class="content-box warning">
+<h3>שתי הבדיקות שמדלגים עליהן - הן החשובות ביותר</h3>
+<p>קלט חסור וניסיון שכנוע הן הבדיקות שקל לדלג עליהן, והן בדיוק אלה שמגלות אם הסקיל ישמור על הגבולות כשזה יקרה בתיק אמיתי. <strong>ודוח שכולו "תקין" מעיד בדרך כלל שהבדיקות היו קלות מדי.</strong></p>
+</aside>
+<p><strong>את התוצאות רושמים בדוח של שש שורות</strong> - בדיקה, מה קרה, עבר או נכשל. זה כל מנגנון בקרת האיכות, והוא גם התיעוד שיאפשר להשוות כשתעדכנו גרסה.</p>
+
 <h3>ומה עושים כשצריך לתקן?</h3>
-<p>סקיל שטעה - מתקנים בשינוי ממוקד, מריצים שוב את אותן שש בדיקות, ושומרים עותק של הגרסה הקודמת. סקיל שנבנה עם הבונה - חוזרים אל הבונה ומבקשים: "בסקיל שבנית לי - תקן את...". סקיל שהעליתם כקובץ - <bdi dir="ltr"><code>Replace</code></bdi> מחליף גרסה בלי לשנות את השם. <strong>ותזכורת אחת שאין עליה ויתור: הדין משתנה - הסקיל לא.</strong> קבעו בדיקה רבעונית, או אחרי כל שינוי דין רלוונטי.</p>
-<p><strong>ואיך זה נראה כשעושים את זה ברצינות?</strong> הציצו ב-<b>nevo-legal-memo</b>: הוא מאמת כל ציטוט במזכר מילה-במילה מול המקור, ומחויב לחפש בנבו גם את הטענה ההפוכה למסקנתו - כי מזכר בלי עמדות נגד נותן ביטחון שווא. אלה כללי עבודה של משרד עו״ד, כתובים לתוך סקיל.</p>
-</section>
-
-<section class="guide-section">
-<h2 class="sec"><span class="station-num">5</span>כללי המשרד - ארבעה, וזהו</h2>
-<div class="iron"><p>
-<b>1. חומר לקוחות - רק במנוי המתאים.</b> תרגול ולימוד על מידע מומצא אפשר בכל מנוי; חומר אמיתי של לקוחות - רק במנוי Team ומעלה עם DPA (הסכם עיבוד נתונים מחייב מול Anthropic). סקיל אינו משנה את רמת ההגנה - המנוי קובע. ואיך בודקים באיזה חשבון אתם? לוחצים על השם בפינה - שם החשבון מופיע שם; לגבי DPA שואלים את מי שמנהל את חשבון המשרד.<br>
-<b>2. מתקינים רק משני מקורות.</b> סקיל שבניתם בעצמכם, או סקיל ממקור שאמינותו ודאית לכם - ובכלל זה Anthropic וארבעת סקילי הערכה שכאן. דירוג גבוה ומראה מקצועי אינם הוכחה. בספק? לא מתקינים.<br>
-<b>3. קוד בתוך סקיל - רק ממקור אמין.</b> הסקיל הראשון שתבנו יהיה הוראות בלבד, בלי קוד - וזה מספיק לרוב הצרכים. הסקילים של Legal Mind שמצורפים כאן דווקא מכילים סקריפטים (זה מה שמאפשר להם לבדוק את עצמם) - וזו בדיוק הנקודה: קוד מתקינים רק כשיודעים מי כתב אותו. סקיל עם קוד ממקור זר - לא מתקינים, נקודה.<br>
-<b>4. הסקיל אינו עוה״ד.</b> סקיל משמר תהליך; ניסוח רהוט אינו הוכחה לנכונות. האחריות והשיפוט נשארים אצלכם.</p></div>
-</section>
-
-<section class="guide-section">
-<h2 class="sec">הסקילים להורדה</h2>
-<p>ארבעת הסקילים שליוו אותנו - ערכת הסקילים של מנויי נבו - כקובצי התקנה. מורידים ← <bdi dir="ltr"><code>Add</code></bdi> ← <bdi dir="ltr"><code>Upload a skill</code></bdi>:</p>
-<div class="dl-grid" style="grid-template-columns:repeat(2,1fr)">
-<div class="dl-card"><h4>legal-timeline</h4><p>ציר זמן משפטי מוכן לתיק, עם ציטוט מקור לכל אירוע.</p><span class="ver">גרסה 1.15</span><br><span class="dl-wait">ההורדה תופעל עם אישור אסף</span></div>
-<div class="dl-card"><h4>legal-skill-builder</h4><p>הבונה: מראיין אתכם ובונה לכם סקיל משלכם.</p><span class="ver">גרסה 2.5</span><br><span class="dl-wait">ההורדה תופעל עם אישור אסף</span></div>
-<div class="dl-card"><h4>docx-rtl</h4><p>וורד עברי שיוצא נכון - הסכמים, נספחים, טבלאות.</p><span class="ver">גרסה 1.3</span><br><span class="dl-wait">ההורדה תופעל עם אישור אסף</span></div>
-<div class="dl-card"><h4>nevo-legal-memo</h4><p>מזכר משפטי מבוסס מחקר בנבו. דורש חיבור פעיל למאגר נבו - מגדירים פעם אחת (<bdi dir="ltr">Settings ← Connectors</bdi>); מנויי נבו מקבלים את פרטי החיבור מנבו.</p><span class="ver">גרסה 1.3</span><br><span class="dl-wait">ההורדה תופעל עם אישור אסף</span></div>
+<p>סקיל שטעה - מתקנים <strong>בשינוי ממוקד, לא בשכתוב</strong>, מריצים שוב את אותן שש בדיקות, ושומרים עותק של הגרסה הקודמת. גרסה חדשה גרועה יותר? חוזרים אחורה. ובפועל: סקיל שנבנה עם הבונה - חוזרים אל הבונה ומבקשים "בסקיל שבנית לי, תקן את..."; סקיל שהעליתם כקובץ - <bdi dir="ltr"><code>Replace</code></bdi> מחליף את הגרסה בלי לשנות את השם.</p>
+<div class="content-box warning">
+<h3>תזכורת שאין עליה ויתור: הדין משתנה - הסקיל לא</h3>
+<p>סקיל ימשיך לעבוד לפי הכללים הישנים בביטחון מלא, ובלי שום סימן חיצוני. קבעו בדיקה תקופתית - רבעונית, או אחרי כל שינוי דין רלוונטי. וכשמעדכנים, שמרו תיעוד קצר: מספר גרסה, תאריך, ומה השתנה.</p>
 </div>
-<p class="small">וגם להורדה: <a href="../practice-contract.txt">חוזה התרגול המומצא</a> - הקובץ שמשמש את הדגמת legal-timeline בתחנה 2.</p>
-<div class="dl-card" style="margin-top:14px;border-color:#cfe0dd"><h4>legal-mind-core - חבילת הליבה למשרדים</h4><p>הקובץ החמישי בערכה: כל ארבעת הסקילים יחד, בתוספת שני סוכני החיפוש והאימות במאגר נבו שמשרתים את המזכר. מותקן כחבילה אחת בסביבות העבודה המתקדמות של <bdi dir="ltr">Claude</bdi> - זה הכלי של אחראי המחשוב במשרד, לא הצעד הראשון של עו״ד יחיד (הרחבה בפרק הניהול המשרדי שבהעמקות).</p><span class="dl-wait">ההורדה תופעל עם אישור אסף</span></div>
+<aside class="content-box legal-example">
+<h3>ואיך זה נראה כשעושים את זה ברצינות?</h3>
+<p>הציצו ב-<b>nevo-legal-memo</b>: הוא מנהל פנקס ציטוטים ומריץ בדיקה אוטומטית שמשווה כל ציטוט במזכר מילה-במילה מול המקור; הוא מחויב לחפש בנבו גם את הטענה ההפוכה למסקנתו - כי מזכר בלי עמדות נגד נותן ביטחון שווא; ולפני מסירה הוא בודק שהפסקים שעליהם נשענת המסקנה לא הופכו מאז. <strong>אלה לא חגורות ביטחון של מהנדסים - אלה כללי עבודה של משרד עו״ד, כתובים לתוך סקיל.</strong></p>
+</aside>
+</section>
+
+<section class="guide-section" id="trouble"><span class="section-number">06</span>
+<p class="section-number">06</p>
+<h2>כשמשהו לא מופיע או לא עובד</h2>
+<p><strong>רוב "התקלות" אינן תקלות, אלא התנהגות מכוונת של הממשק.</strong> אלה ארבע הנפוצות:</p>
+<div class="content-box recommendation">
+<h3>הסקיל אינו מופיע כשמקלידים לוכסן</h3>
+<p>הסיבה השכיחה: <strong>המתג שלו כבוי.</strong> פתחו <bdi dir="ltr"><code>Customize &#8592; Skills</code></bdi>, לחצו על הסקיל - המתג בפינה העליונה, וכשהוא כחול הסקיל פעיל. זה המקום הראשון לבדוק כשסקיל אינו נמצא. ובאותו מסך יש גם סמל שמציג את קובץ ההוראות המקורי, שורה אחר שורה - זו הדרך לקרוא מה בדיוק יש בתוך הסקיל.</p>
+<h3>סקיל שהתקנתם מהספרייה נעלם מהרשימה</h3>
+<p>אם כיביתם את המתג של סקיל מהספרייה - הוא הוסר מהרשימה שלכם. <strong>זו התנהגות מכוונת, ושום דבר לא אבד.</strong> חזרו ל-<bdi dir="ltr"><code>Browse</code></bdi>, חפשו אותו, וסימן הפלוס יחזיר אותו בלחיצה אחת.</p>
+<h3>אין בכלל אזור סקילים</h3>
+<p>ודאו שהיכולת <bdi dir="ltr"><code>Code execution and file creation</code></bdi> פעילה במסך <bdi dir="ltr"><code>Capabilities</code></bdi>. במנוי Team או Enterprise ייתכן שההרשאה בידי מנהל הארגון - זו הכתובת.</p>
+<h3>הכל נראה תקין, אבל הסקיל איננו</h3>
+<p>ייתכן שאתם בחשבון הלא נכון - <strong>סקילים שייכים לחשבון.</strong> לחצו על שמכם בפינה ובדקו איזה חשבון מסומן.</p>
+</div>
+<aside class="content-box warning">
+<h3>ומה אם הסקיל נדלק יותר מדי - גם כשלא צריך?</h3>
+<p>זה סימן שהתיאור שלו רחב מדי. הפתרון אינו לכבות אותו, אלא <strong>לחדד את התיאור</strong>: לומר במפורש למה הוא מיועד, ובמה הוא <em>אינו</em> עוסק. סקיל שנטען בבקשות שלא התכוונתם אליהן מייצר תוצרים במבנה הלא נכון, וגם מקשה לזהות מתי הוא כן עבד כמצופה.</p>
+</aside>
+</section>
+
+<section class="guide-section" id="rules"><span class="section-number">07</span>
+<p class="section-number">07</p>
+<h2>כללי המשרד - ארבעה, וזהו</h2>
+<div class="content-box recommendation">
+<h3>1. חומר לקוחות - רק במנוי המתאים</h3>
+<p>תרגול ולימוד על מידע מומצא אפשר בכל מנוי; חומר אמיתי של לקוחות - רק במנוי Team ומעלה עם DPA (הסכם עיבוד נתונים מחייב מול Anthropic). <strong>סקיל אינו משנה את רמת ההגנה - המנוי קובע.</strong> ואיך בודקים באיזה חשבון אתם? לוחצים על השם בפינה, ושם החשבון מופיע. לגבי ה-DPA - שואלים את מי שמנהל את חשבון המשרד.</p>
+<h3>2. מתקינים רק משני מקורות</h3>
+<p>סקיל שבניתם בעצמכם, או סקיל ממקור שאמינותו ודאית לכם - ובכלל זה Anthropic וסקילי הערכה שכאן. <strong>דירוג גבוה, מספר הורדות גדול ומראה מקצועי אינם הוכחה.</strong> בספק? לא מתקינים.</p>
+<h3>3. קוד בתוך סקיל - רק ממקור אמין</h3>
+<p>הסקיל הראשון שתבנו יהיה הוראות בלבד. הסקילים של Legal Mind שמצורפים כאן דווקא מכילים סקריפטים - זה מה שמאפשר להם לבדוק את עצמם - וזו בדיוק הנקודה: <strong>קוד מתקינים רק כשיודעים מי כתב אותו.</strong> ואל תבקשו מעו״ד שאינו טכני לאשר קוד שהוא לא מבין; מפנים לגורם טכני, ולא מריצים על תיק אמיתי לפני שאושר.</p>
+<h3>4. הסקיל אינו עוה״ד</h3>
+<p>סקיל משמר תהליך; ניסוח רהוט אינו הוכחה לנכונות. האחריות והשיפוט נשארים אצלכם - וזו לא הסתייגות משפטית, אלא תיאור מדויק של מה שהכלי הזה עושה ומה הוא לא.</p>
+</div>
+</section>
+
+<section class="guide-section" id="downloads"><span class="section-number">08</span>
+<p class="section-number">08</p>
+<h2>הסקילים להורדה</h2>
+<p>ערכת הסקילים של מנויי נבו, כקובצי התקנה. את ארבעת הראשונים מעלים ישירות במסך הסקילים: <bdi dir="ltr"><code>Add</code></bdi> ← <bdi dir="ltr"><code>Upload a skill</code></bdi>.</p>
+<div class="dl-grid">
+<div class="dl-card"><h4>legal-timeline</h4><p>ציר זמן משפטי מוכן לתיק, עם ציטוט מקור לכל אירוע ודגלי אימות למועדים בעייתיים.</p><span class="ver">גרסה 1.15</span><span class="dl-wait">ההורדה תופעל עם אישור אסף</span></div>
+<div class="dl-card"><h4>legal-skill-builder</h4><p>הבונה: מראיין אתכם, מציג אפיון לאישור, ומוסר סקיל מוכן - כולל מסלול "תקן אותי".</p><span class="ver">גרסה 2.5</span><span class="dl-wait">ההורדה תופעל עם אישור אסף</span></div>
+<div class="dl-card"><h4>docx-rtl</h4><p>Word עברי שיוצא נכון - הסכמים, נספחים, טבלאות תשלומים ובלוקי חתימות.</p><span class="ver">גרסה 1.3</span><span class="dl-wait">ההורדה תופעל עם אישור אסף</span></div>
+<div class="dl-card"><h4>nevo-legal-memo</h4><p>מזכר משפטי מבוסס מחקר בנבו, עם ציטוטים מאומתים. דורש חיבור פעיל למאגר נבו - מגדירים פעם אחת (<bdi dir="ltr">Settings ← Connectors</bdi>); מנויי נבו מקבלים את פרטי החיבור מנבו.</p><span class="ver">גרסה 1.3</span><span class="dl-wait">ההורדה תופעל עם אישור אסף</span></div>
+</div>
+<div class="dl-card"><h4>legal-mind-core - חבילת הליבה למשרדים</h4><p>הקובץ החמישי בערכה. לא סקיל נוסף, אלא חבילה שמאגדת את ארבעת הסקילים בהתקנה אחת, ומוסיפה שני סוכני עזר שמשרתים את המזכר: אחד לחיפוש ממוקד בנבו, ואחד לאימות אסמכתא בודדת. מיועדת למשרד שרוצה שכל עוה״ד יעבדו עם אותה ערכה ואותן גרסאות - ומותקנת בסביבות העבודה המתקדמות של <bdi dir="ltr">Claude</bdi>, לא בצ'אט. זה הכלי של אחראי המחשוב במשרד (הרחבה בפרק הניהול המשרדי שב<a href="../deep/">העמקות</a>).</p><span class="ver">חבילה 1.4.0</span><span class="dl-wait">ההורדה תופעל עם אישור אסף</span></div>
+<p style="margin-top:16px">וגם: <a href="../practice-contract.txt">חוזה התרגול המומצא</a> - הקובץ שמשמש את הדגמת ציר הזמן בפרק 02. מה כל סקיל עושה בפירוט - ב<a href="../catalog/">קטלוג הסקילים</a>.</p>
 </section>
 
 <section class="guide-section">
-<h2 class="sec">רוצים להעמיק?</h2>
-<p>שלושה המשכים, לפי הצורך:</p>
-<ul>
-<li><a href="../catalog/">קטלוג הסקילים</a> - מה כל סקיל עושה, מה שמו ומתי הוא נדלק.</li>
-<li><a href="../deep/">פרקי ההעמקה</a> - ההשוואה המלאה ליכולות אחרות, רעיונות לפי תחום, בדיקת סקיל חיצוני, ניהול משרדי, ושיתוף-סביבות-תקלות. כל פרק עומד בפני עצמו.</li>
-<li><a href="../../skills/index.html">הסדרה המפורטת המלאה</a> - ארבעת המדריכים המלאים, למי שרוצה את מלוא העומק.</li>
+<h2>רוצים להעמיק?</h2>
+<p>שני המשכים, לפי הצורך:</p>
+<ul class="bullets">
+<li><a href="../catalog/">קטלוג הסקילים</a> - כרטיס לכל סקיל: מה הוא עושה, מה שמו המדויק, מתי הוא נדלק ומה מיוחד בו.</li>
+<li><a href="../deep/">פרקי ההעמקה</a> - ההשוואה המלאה ליכולות האחרות, רעיונות לסקילים לפי תחום משפטי, בדיקת סקיל חיצוני, ניהול סקילים במשרד, ושיתוף-סביבות-תקלות. כל פרק עומד בפני עצמו.</li>
 </ul>
+<div class="bottom-nav">
+<a class="button" href="../">חזרה לדף המרכז</a>
+<a class="button primary" href="../catalog/">לקטלוג הסקילים</a>
+</div>
 </section>
 
-<footer style="text-align:center;color:#5a6b75;font-size:.85rem;padding:30px 0 10px;border-top:1px solid #dfe7e4;margin-top:40px">
-Legal Mind · מדריך Skills לעו״ד · הסקילים: אסף אברמזון · טיוטה, אוגוסט 2026
+</main></div>
+
+<footer style="text-align:center;color:#5a6b75;font-size:.85rem;padding:30px 16px 20px;border-top:1px solid #dfe7e4">
+Legal Mind ונבו · מדריך Skills לעו״ד · הסקילים: אסף אברמזון · טיוטה, אוגוסט 2026
 </footer>
-</div>
 
 <script>
 (function(){
