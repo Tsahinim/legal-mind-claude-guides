@@ -6,7 +6,7 @@
 <link rel="stylesheet" href="../../skills/assets/site.css?v=20260822">
 <style>
 .draftbar{background:#fff4e5;border-bottom:2px solid #e8b269;padding:10px 16px;text-align:center;font-weight:800;color:#7a4d00}
-.layout{display:block !important;max-width:860px;margin:auto;padding:0 16px 60px}
+
 .skillcard{background:#fff;border:1.5px solid #9ed8b8;border-radius:14px;padding:18px 20px;margin:20px 0}
 .skillcard h2{margin:0 0 4px;color:#0d2740;font-family:Georgia,"Times New Roman",serif;font-size:1.35rem}
 .skillcard .tag{display:inline-block;background:#dff3e7;border:1px solid #9ed8b8;border-radius:7px;padding:2px 10px;font-family:Consolas,monospace;font-size:.85rem;margin-bottom:10px}
@@ -21,58 +21,70 @@
 <div class="skills-brand"><img alt="לוגו Legal Mind - נורה מעל שם המותג" class="skills-logo" decoding="async" src="../../claude-code/assets/legal-mind-logo-tight.png"></div>
 
 <div class="layout">
+<aside class="desktop-toc"><h2>הסקילים בערכה</h2><ol>
+<li><a href="#timeline"><span>01</span>ציר זמן משפטי</a></li>
+<li><a href="#builder"><span>02</span>בונה הסקילים</a></li>
+<li><a href="#memo"><span>03</span>מזכר עם מחקר נבו</a></li>
+<li><a href="#docx"><span>04</span>וורד עברי שיוצא נכון</a></li>
+<li><a href="#core"><span>05</span>חבילת הליבה</a></li>
+</ol></aside>
+<main class="surface" id="main">
+
 <header style="text-align:center;padding:26px 0 6px">
 <h1 style="color:#0d2740;font-family:Georgia,'Times New Roman',serif;font-size:clamp(1.8rem,4.5vw,2.3rem);line-height:1.2;margin:0 0 10px">הסקילים של Legal Mind - מה כל אחד עושה</h1>
 <p class="lead">הקטלוג: ארבעת הסקילים שבנה אסף אברמזון עבור מנויי נבו - שם, תפקיד ומתי כל אחד נדלק - וחבילת הליבה שמאגדת את כולם. כאן גם השמות המדויקים שתראו במסך אחרי ההתקנה.</p>
 </header>
 
-<div class="skillcard">
+<section class="guide-section skillcard" id="timeline">
 <h2>ציר זמן משפטי לתיק</h2>
 <span class="tag">legal-timeline</span>
 <div class="row"><b>מה הוא עושה:</b> מקבל חוזה, כתב טענות או את שניהם - ומחזיר PDF ערוך לתיק בית משפט: טבלה כרונולוגית של כל האירועים והמועדים, עם ציטוט מקור ומראה מקום לכל שורה. תאריכים יחסיים ("תוך 30 יום מהחתימה") מחושבים לתאריך אמיתי.</div>
 <div class="row"><b>נותנים לו:</b> מסמך אחד או יותר (מודבק, PDF, Word). <b>מקבלים:</b> PDF ברוחב A4 עם תמצית התראות וטבלה מלאה - ולפי בחירה גם עמוד ציר זמן גרפי לדיון.</div>
 <div class="row"><b>מתי הוא נדלק:</b> "תעשה לי ציר זמן", "כרונולוגיה", "לוח מועדים", "אילו מועדים עולים מהמסמך".</div>
 <div class="wow"><b>מה מיוחד בו:</b> לפני ההפקה הוא מציג "חשבון שלמות" - כמה ביטויי זמן אותרו, מה חולץ ומה הושמט ולמה - ובמקביל מאמת ברקע כל ציטוט מול המקור. מועדים בעייתיים (התיישנות, מועד שחלף, סתירה) מסומנים כדגלים לאימות ("לאימות: ...") - לעולם לא כמסקנה משפטית.</div>
-</div>
+</section>
 
-<div class="skillcard">
+<section class="guide-section skillcard" id="builder">
 <h2>בונה הסקילים</h2>
 <span class="tag">legal-skill-builder</span>
 <div class="row"><b>מה הוא עושה:</b> בונה לכם סקילים חדשים - בלי שתכתבו שורת קוד. מראיין אתכם בשאלות בחירה קצרות בשפת עו״ד, מזקק את שיטת העבודה של המשרד, מציג אפיון לאישור, בונה, בודק אתכם על דוגמה - ומוסר סקיל מוכן.</div>
 <div class="row"><b>נותנים לו:</b> תיאור של משימה שחוזרת אצלכם (רצוי עם דוגמה של תוצר מוגמר). <b>מקבלים:</b> סקיל מוכן להתקנה, עם הוראות הפעלה של שתי שורות.</div>
 <div class="row"><b>מתי הוא נדלק:</b> "תבנה לי סקיל", "אני רוצה סקיל ש...", "בוא נבנה סקיל".</div>
 <div class="wow"><b>מה מיוחד בו:</b> מסלול "תקן אותי": במקום להסביר איך אתם עובדים - הוא מייצר טיוטה עם טעויות מכוונות, ואתם עוברים עליה בעט אדום. כל תיקון שלכם הופך לכלל קבוע בסקיל. ושער פרטיות מובנה מפריד תבנית משרדית מעובדות תיק - שמות, ת.ז. וסכומים לא נשמרים בסקיל בלי אישורכם המפורש.</div>
-</div>
+</section>
 
-<div class="skillcard">
+<section class="guide-section skillcard" id="memo">
 <h2>מזכר משפטי עם מחקר נבו</h2>
 <span class="tag">nevo-legal-memo</span>
 <div class="row"><b>מה הוא עושה:</b> מכין את התוצר הכתוב שעו״ד מגיש: מזכר בן 7 סעיפים - שאלה, תשובה בקצרה, רקע, ניתוח מעוגן במקורות עם קישורים חיים לנבו, עמדות נגד, מסקנה והמלצות, ורשימת מקורות. מיוצא לקובץ Word בעברית תקינה.</div>
 <div class="row"><b>נותנים לו:</b> שאלה משפטית ועובדות (או מחקר שכבר רץ בשיחה). <b>מקבלים:</b> טיוטת מזכר ערוכה לבדיקתכם. <b>דרישה:</b> חיבור פעיל למאגר נבו - מגדירים פעם אחת (<bdi dir="ltr">Settings ← Connectors</bdi>); מנויי נבו מקבלים את פרטי החיבור מנבו.</div>
 <div class="row"><b>מתי הוא נדלק:</b> "תכין מזכר", "כתוב חוות דעת", "סכם את הדין בכתב", "מסמך מסודר ללקוח".</div>
 <div class="wow"><b>מה מיוחד בו:</b> חיפוש-הנגד הוא חובה מובנית - הוא מחויב לחפש בנבו גם את הטענה ההפוכה למסקנתו, כי מזכר בלי עמדות נגד נותן ביטחון שווא. כל ציטוט מאומת מילה-במילה בבדיקה אוטומטית, ולפני מסירה הוא בודק שהפסקים המרכזיים לא הופכו מאז. מקור בלי קישור אמיתי - מוסר מהטיוטה יחד עם האמירה שנשענה עליו.</div>
-</div>
+</section>
 
-<div class="skillcard">
+<section class="guide-section skillcard" id="docx">
 <h2>וורד עברי שיוצא נכון</h2>
 <span class="tag">docx-rtl</span>
 <div class="row"><b>מה הוא עושה:</b> יוצר ועורך מסמכי Word בעברית שיוצאים תקינים: יישור לימין אמיתי, מספור סעיפים רב-רמות (גם באותיות עבריות), ת.ז./גוש-חלקה/סכומים שלא מתהפכים באמצע משפט, בלוקי חתימות, טבלאות תשלומים ועקוב-אחר-שינויים בעברית.</div>
 <div class="row"><b>נותנים לו:</b> בקשה למסמך חדש, או קובץ Word קיים לתיקון. <b>מקבלים:</b> קובץ .docx תקין שעבר בדיקת כיווניות חובה. קובץ שמסרתם לתיקון לעולם אינו נדרס - התוצר תמיד קובץ חדש.</div>
 <div class="row"><b>מתי הוא נדלק:</b> "תכין מסמך וורד", "הסכם בוורד", "תקן כיווניות", "טבלה בעברית בוורד".</div>
 <div class="wow"><b>מה מיוחד בו:</b> הוא פותר את הבאג המפורסם של וורד עברי - "יישור ימין" שוורד מציג בפועל שמאלה - עם סקריפט תיקון שרץ חובה על כל קובץ, ושער איכות שלא מוסר קובץ שלא עבר. הוא גם שכבת ההפקה של המזכר: כשה-memo מייצא לוורד, זה עובר דרכו.</div>
-</div>
+</section>
 
-<div class="skillcard" style="border-color:#cfe0dd;background:#fbfdfc">
+<section class="guide-section skillcard" id="core" style="border-color:#cfe0dd;background:#fbfdfc">
 <h2>חבילת הליבה - כל הערכה בהתקנה אחת</h2>
 <span class="tag">legal-mind-core</span>
 <div class="row"><b>מה זה:</b> הקובץ החמישי בערכה. לא סקיל חמישי, אלא חבילה שמאגדת את ארבעת הסקילים שלמעלה בהתקנה אחת - ומוסיפה שני סוכני עזר שמשרתים את מזכר נבו: אחד לחיפוש ממוקד במאגר, ואחד לאימות אסמכתא בודדת.</div>
 <div class="row"><b>למי זה מיועד:</b> למשרד שרוצה שכל עוה״ד יעבדו עם אותה ערכה ואותן גרסאות, בלי להעלות סקיל-סקיל בכל חשבון. <b>מי מתקין:</b> אחראי המחשוב או מי שמנהל את חשבון המשרד.</div>
 <div class="row"><b>איפה זה עובד:</b> בסביבות העבודה המתקדמות של <bdi dir="ltr">Claude</bdi> (למשל <bdi dir="ltr">Claude Code</bdi> ו-<bdi dir="ltr">Cowork</bdi>), שם הסקילים מריצים קוד, מפיקים קבצים ומפעילים סוכנים במקביל - ולא בצ'אט הרגיל.</div>
 <div class="wow"><b>מה מיוחד בה:</b> החבילה בנויה לגדול - כל סקיל חדש שאסף בונה נכנס אליה, וכל המשרד מקבל אותו בעדכון אחד. וכדי שסקילים לא "יידרכו" זה על זה, יש בה אכיפה מכנית שמונעת חפיפה בין הטריגרים של הסקילים.</div>
-</div>
+</section>
 
+<div class="bottom-nav"><a class="button" href="../">חזרה לדף המרכז</a><a class="button primary" href="../guide/">למדריך Skills</a></div>
+</main>
 <footer style="text-align:center;color:#5a6b75;font-size:.85rem;padding:30px 0 10px;border-top:1px solid #dfe7e4;margin-top:40px">
 Legal Mind · קטלוג הסקילים · טיוטה, אוגוסט 2026 · <a href="../guide/">חזרה למדריך הסקילים</a>
 </footer>
 </div>
+<script defer src="../../skills/assets/site.js?v=20260822"></script>
 </body></html>

@@ -443,25 +443,5 @@ table.demo td{padding:9px 12px;border:1px solid #e0ede5;vertical-align:top;text-
 Legal Mind ונבו · מדריך Skills לעו״ד · הסקילים: אסף אברמזון · טיוטה, אוגוסט 2026
 </footer>
 
-<script>
-(function(){
-  document.addEventListener("click", function(ev){
-    var btn = ev.target.closest(".copy-button");
-    if(!btn) return;
-    var block = btn.closest(".copy-block");
-    var src = document.getElementById(btn.getAttribute("data-copy-target"));
-    var status = block ? block.querySelector(".copy-status") : null;
-    if(!src) return;
-    var text = src.innerText;
-    function done(ok){
-      if(!status) return;
-      status.textContent = ok ? "הטקסט הועתק - עכשיו מדביקים בשיחה" : "ההעתקה נכשלה - סמנו והעתיקו ידנית";
-      setTimeout(function(){ status.textContent = ""; }, 2600);
-    }
-    if(navigator.clipboard && navigator.clipboard.writeText){
-      navigator.clipboard.writeText(text).then(function(){done(true);}, function(){done(false);});
-    } else { done(false); }
-  });
-})();
-</script>
+<script defer src="../../skills/assets/site.js?v=20260822"></script>
 </body></html>
