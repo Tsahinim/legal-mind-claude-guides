@@ -155,6 +155,19 @@ table.demo td{padding:9px 12px;border:1px solid #e0ede5;vertical-align:top;text-
   pointer-events:none}
 .shot-frame[data-zoom]{cursor:zoom-in}
 .shot--peek .shot-frame[data-zoom]{cursor:zoom-in}
+
+/* the name of a Skill inside a Hebrew sentence: a chip, so the eye lands on it */
+.sk{display:inline-block;padding:2px 10px;border-radius:8px;background:#e8f5ef;
+  border:1px solid #b9dcce;color:#0c4b39;font-weight:800;line-height:1.6;
+  white-space:nowrap}
+.shot-legend .sk,.idcard .sk{font-size:.95em}
+
+/* the comparison table reads as a grid, not as stripes */
+.table-wrap table{border:1.5px solid #c9dcd7;border-radius:11px;overflow:hidden;
+  border-collapse:collapse}
+.table-wrap th,.table-wrap td{border:1px solid #d8e5e1}
+.table-wrap th{border-color:rgba(255,255,255,.28)}
+.table-wrap tr:last-child td{border-bottom:none}
 </style>
 </head><body>
 <a class="skip" href="#main">דילוג לתוכן</a>
@@ -189,10 +202,10 @@ table.demo td{padding:9px 12px;border:1px solid #e0ede5;vertical-align:top;text-
 <p>אפשר להציג ערכת <bdi dir="ltr">Skills</bdi> לפי מה שהיא עושה. זה מדויק, וזה גם משעמם - ובעיקר זה לא עוזר להחליט במה להשתמש. אז ננסה זווית אחרת.</p>
 <p>בערכה ארבעה <bdi dir="ltr">Skills</bdi>, והחמישי - <bdi dir="ltr">legal-mind-core</bdi> - הוא חבילה ולא <bdi dir="ltr">Skill</bdi>. <strong>וארבעתם נבנו על ידי אותם אנשים, ואפשר לזהות את זה בבירור - לא לפי מה שהם עושים, אלא לפי מה שכל אחד מהם מסרב לעשות.</strong></p>
 <ul>
-<li><bdi dir="ltr">legal-timeline</bdi> מסרב להמציא תאריך. אירוע שאין לו מועד שניתן לחשב יסומן "ללא תאריך", גם אם ההשלמה מובנת מאליה.</li>
-<li><bdi dir="ltr">nevo-legal-memo</bdi> מסרב למסור מזכר בלי עמדות נגד - ובודק מילה במילה שכל ציטוט אכן קיים במקור.</li>
-<li><bdi dir="ltr">docx-rtl</bdi> מסרב לתרגם ולתמצת. הוא מפיק מסמך, ולא גרסה מקוצרת של מסמך.</li>
-<li><bdi dir="ltr">legal-skill-builder</bdi> מסרב לבנות משהו לפני שהצגתם לו אפיון ואישרתם אותו.</li>
+<li><span class="sk"><bdi dir="ltr">legal-timeline</bdi></span> מסרב להמציא תאריך. אירוע שאין לו מועד שניתן לחשב יסומן "ללא תאריך", גם אם ההשלמה מובנת מאליה.</li>
+<li><span class="sk"><bdi dir="ltr">nevo-legal-memo</bdi></span> מסרב למסור מזכר בלי עמדות נגד - ובודק מילה במילה שכל ציטוט אכן קיים במקור.</li>
+<li><span class="sk"><bdi dir="ltr">docx-rtl</bdi></span> מסרב לתרגם ולתמצת. הוא מפיק מסמך, ולא גרסה מקוצרת של מסמך.</li>
+<li><span class="sk"><bdi dir="ltr">legal-skill-builder</bdi></span> מסרב לבנות משהו לפני שהצגתם לו אפיון ואישרתם אותו.</li>
 </ul>
 <p>הסירובים האלה אינם מגבלות טכניות. <strong>הם הפרשנות המקצועית שנכתבה לתוך ה-<bdi dir="ltr">Skill</bdi>:</strong> החלטה מפורשת שהמכונה עושה את החלק המבני והחוזר, ועוצרת בדיוק במקום שבו מתחיל שיקול דעת. וזה גם מה שהופך את התוצר שלהם למשהו שאפשר להניח על שולחן, ולא רק להתרשם ממנו.</p>
 <p><strong>ודבר אחד שכדאי לומר מיד:</strong> היכולות שיתוארו כאן אינן תכונות חדשות של <bdi dir="ltr">Claude</bdi>. הן שיטת עבודה שנכתבה פעם אחת בקובץ הוראות - <strong>ומהרגע שהקובץ מותקן, היא זמינה בכל שיחה, בלי שתסבירו אותה שוב.</strong></p>
@@ -200,10 +213,10 @@ table.demo td{padding:9px 12px;border:1px solid #e0ede5;vertical-align:top;text-
 <h3>וכך זה נראה בטבלה אחת</h3>
 <div class="table-wrap"><table>
 <tr><th>ה-<bdi dir="ltr">Skill</bdi></th><th>מה נכנס</th><th>מה יוצא</th></tr>
-<tr><td><bdi dir="ltr">legal-timeline</bdi></td><td>חוזה או כתב טענות</td><td>PDF: ציר זמן עם ציטוט מקור ודגלי אימות</td></tr>
-<tr><td><bdi dir="ltr">docx-rtl</bdi></td><td>תוכן, או קובץ Word קיים</td><td>מסמך Word עברי ערוך - מספור, טבלאות, חתימות</td></tr>
-<tr><td><bdi dir="ltr">nevo-legal-memo</bdi></td><td>שאלה משפטית ועובדות</td><td>מזכר עם מקורות מנבו, עמדות נגד ומסקנה</td></tr>
-<tr><td><bdi dir="ltr">legal-skill-builder</bdi></td><td>תהליך שחוזר אצלכם</td><td><bdi dir="ltr">Skill</bdi> חדש, מותקן ובדוק</td></tr>
+<tr><td><span class="sk"><bdi dir="ltr">legal-timeline</bdi></span></td><td>חוזה או כתב טענות</td><td>PDF: ציר זמן עם ציטוט מקור ודגלי אימות</td></tr>
+<tr><td><span class="sk"><bdi dir="ltr">docx-rtl</bdi></span></td><td>תוכן, או קובץ Word קיים</td><td>מסמך Word עברי ערוך - מספור, טבלאות, חתימות</td></tr>
+<tr><td><span class="sk"><bdi dir="ltr">nevo-legal-memo</bdi></span></td><td>שאלה משפטית ועובדות</td><td>מזכר עם מקורות מנבו, עמדות נגד ומסקנה</td></tr>
+<tr><td><span class="sk"><bdi dir="ltr">legal-skill-builder</bdi></span></td><td>תהליך שחוזר אצלכם</td><td><bdi dir="ltr">Skill</bdi> חדש, מותקן ובדוק</td></tr>
 </table></div>
 <p class="small" style="color:#5a6b75">והחמישי, <bdi dir="ltr">legal-mind-core</bdi>, אינו <bdi dir="ltr">Skill</bdi> נוסף אלא חבילה שמאגדת את ארבעתם - ועליה בפרק 04.</p>
 </aside>
