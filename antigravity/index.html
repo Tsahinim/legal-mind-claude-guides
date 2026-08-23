@@ -4,6 +4,149 @@
 <meta name="description" content="Antigravity של גוגל, לעורכי דין. בלי שורת קוד אחת, ועם גבול ברור מה מותר להכניס לשם.">
 <title>מדריך Antigravity לעורכי דין | Legal Mind</title>
 <link href="assets/site.css" rel="stylesheet">
+<style>
+  .status-panel{margin:26px 0;border-radius:16px;background:var(--navy);
+    color:#fff;padding:22px 26px;display:grid;gap:14px;
+    box-shadow:0 10px 30px rgba(13,39,64,.16)}
+  .status-panel .chip{display:inline-flex;align-items:center;gap:8px;
+    align-self:start;border-radius:999px;padding:5px 14px;
+    background:rgba(43,192,183,.16);color:var(--cyan);
+    font-size:.82rem;font-weight:800;letter-spacing:.08em}
+  .status-panel .chip:before{content:"";width:8px;height:8px;border-radius:50%;
+    background:var(--cyan)}
+  .status-panel p{margin:0;font-size:1.02rem;line-height:1.72;opacity:.94}
+  .status-panel strong{color:#fff}
+  .status-facts{display:grid;gap:10px;margin:2px 0 0;padding:0;list-style:none;
+    grid-template-columns:repeat(auto-fit,minmax(190px,1fr))}
+  .status-facts li{background:rgba(255,255,255,.07);border-radius:10px;
+    padding:11px 14px;font-size:.95rem;line-height:1.5}
+  .status-facts b{display:block;font-size:1.32rem;line-height:1.2;
+    color:var(--cyan);margin-bottom:2px;font-variant-numeric:tabular-nums}
+  /* one band under the title answers "is this guide for me" once */
+  .audience{margin:18px 0 0;border-radius:14px;padding:18px 20px;
+    border:2px solid rgba(20,116,116,.30);background:#fff}
+  .audience b{display:block;margin:0 0 6px;color:var(--teal);
+    font-size:1.12rem;font-weight:900}
+  .audience p{margin:0;line-height:1.75}
+  .audience p + p{margin-top:8px}
+  .who-for{display:inline-block;margin:0 0 1.1rem;border-radius:999px;
+    padding:4px 13px;font-size:.82rem;font-weight:700;line-height:1.5}
+  .who-for.everyone{background:rgba(20,116,116,.10);color:var(--teal)}
+  .who-for.owner{background:rgba(13,39,64,.09);color:var(--navy)}
+  .shot-legend-num li{text-align:start}
+  .shot-legend-num{text-align:start}
+  .shot-hint{display:inline-block;margin:16px 0 4px;padding:7px 14px;
+    border-radius:999px;background:rgba(20,116,116,.09);
+    color:var(--teal);font-size:1.2rem;font-weight:800;line-height:1.4}
+  .shot-hint:before{content:"🔍";margin-inline-end:8px;font-weight:400}
+  .zoomer{position:fixed;inset:0;z-index:70;display:none;overflow:auto;
+    background:rgba(9,20,32,.92);padding:26px}
+  .zoomer.is-open{display:block}
+  /* the way out of a full-size picture has to be found without hunting for
+     it, so it sits centred at the top and wears the brand teal */
+  .zoomer .zoomer-close{position:fixed;top:16px;left:50%;
+    transform:translateX(-50%);z-index:2;
+    border:3px solid var(--teal);border-radius:999px;
+    padding:13px 34px;background:#fff;color:var(--teal);
+    font:inherit;font-size:1.15rem;font-weight:900;cursor:pointer;
+    box-shadow:0 6px 20px rgba(0,0,0,.28)}
+  .zoomer .zoomer-close:hover{background:var(--teal);color:#fff}
+  /* the stage must be the positioned ancestor, or the red boxes measure
+     themselves against the whole overlay and scatter */
+  .zoomer .zoomer-stage{margin:44px auto 0;position:relative}
+  .zoomer .zoomer-stage img{display:block;width:100%;height:auto;
+    border-radius:8px}
+  .zoomer .zoomer-cap{margin:14px auto 0;max-width:760px;color:#fff;
+    text-align:center;font-size:1rem;opacity:.9}
+  .zoomer .zoomer-pan{margin:.4rem 0 0;font-size:.9rem;opacity:.8;display:none}
+  .zoomer .zoomer-cap.is-wide .zoomer-pan{display:block}
+  .shot-frame{position:relative}
+  /* the shared sheet tints every marker box red. over text that wash reads
+     as a smear, so in this series the border and the badge do all the work */
+  .shot-target{background:transparent}
+  /* a defined word is a list entry with a red dot, not a paragraph that
+     happens to start in bold. the word itself carries the brand orange and
+     everything after it stays in the reading ink */
+  /* bare children of the white surface card (the intro note before the
+     first section, and the bottom nav) get the card's inner margins, so
+     no line of text ever touches the border or the rounded corners */
+  main.surface>p{margin:26px 24px 6px}
+  main.surface>p:first-child{margin-top:30px}
+  main.surface>.bottom-nav{margin:20px 24px 28px}
+  .terms{list-style:none;padding:0;margin:1.1rem 0}
+  .terms li{position:relative;padding-inline-start:26px;margin-bottom:.95rem;
+    line-height:1.75;text-align:start}
+  .terms li:before{content:"";position:absolute;inset-inline-start:0;top:.62em;
+    width:9px;height:9px;border-radius:50%;background:#D6323C}
+  .terms .term{color:var(--orange);font-weight:800}
+  /* a term named inside the reading text, not only in the glossary */
+  .guide-section .term{color:var(--orange);font-weight:800}
+  .terms .term-he{color:var(--orange);font-weight:700}
+  /* the sentence that closes a term list is part of it, so it starts
+     where the terms start and not at the edge of the column */
+  .terms + p,.terms + p + p{padding-inline-start:26px}
+  /* the shared sheet sets 1.15rem, and at that size a sub-heading reads as
+     one more bold line. 15% larger, in this series only */
+  .guide-section h3,.sec-body h3{font-size:1.32rem;position:relative}
+  /* the dot lives in the margin, so the heading does not shift right */
+  .guide-section h3:before{content:"";position:absolute;
+    inset-inline-start:-16px;top:.54em;width:8px;height:8px;
+    border-radius:50%;background:var(--navy)}
+  .guide-section .content-box h3:before{display:none}
+  /* a link inside the reading text: the reader has to see that it is one,
+     without it shouting louder than the sentence around it */
+  .guide-section a{color:var(--teal);font-weight:800;
+    text-decoration:underline;text-underline-offset:3px;
+    text-decoration-thickness:2px;
+    text-decoration-color:rgba(20,116,116,.42)}
+  .guide-section a:hover{text-decoration-color:var(--teal)}
+  /* the pill button is not reading text, and must keep its own colours */
+  .guide-section a.shot-full{color:#fff;text-decoration:none}
+  .shot{margin:1.7rem 0}
+  .shot img{display:block;width:100%;height:auto;border-radius:10px;
+    border:1px solid rgba(13,39,64,.14);box-shadow:0 6px 22px rgba(13,39,64,.09)}
+  .shot figcaption{text-align:center;margin:.7rem 0 .5rem;opacity:.8;
+    font-size:.95rem}
+  .shot-full{display:inline-flex;align-items:center;gap:7px;margin:.2rem auto 0;
+    border-radius:999px;padding:8px 18px;background:var(--teal);color:#fff;
+    font-size:.92rem;font-weight:700;text-decoration:none;
+    box-shadow:0 4px 14px rgba(20,116,116,.24)}
+  .shot-full:before{content:"🔍";font-size:1.05rem;line-height:1;
+    animation:shot-full-nudge 1.9s ease-in-out infinite}
+  @keyframes shot-full-nudge{0%,100%{transform:scale(1)}
+                             50%{transform:scale(1.22)}}
+  @media (prefers-reduced-motion:reduce){
+    .shot-full:before{animation:none}}
+  .shot-full:hover{filter:brightness(1.08)}
+  .shot{display:flex;flex-direction:column;align-items:stretch}
+  .shot-hole{margin:1.6rem 0}
+  .shot-hole .frame{border:2px dashed rgba(20,116,116,.42);border-radius:10px;
+    background:rgba(20,116,116,.04);min-height:132px;display:flex;
+    flex-direction:column;align-items:center;justify-content:center;gap:9px;
+    padding:26px}
+  .shot-hole .sid{font-family:ui-monospace,Consolas,monospace;font-size:1rem;
+    font-weight:700;color:var(--teal);letter-spacing:.06em}
+  .shot-hole .wait{font-size:.95rem;opacity:.68}
+  .shot-hole .pins{display:flex;gap:6px;flex-wrap:wrap}
+  .shot-hole .pin{width:26px;height:26px;border-radius:50%;background:#D6323C;
+    color:#fff;display:grid;place-items:center;font-size:.8rem;font-weight:700}
+  .shot-hole figcaption{text-align:center;margin:.7rem 0 .5rem;opacity:.8;
+    font-size:1rem}
+  .shot-legend{list-style:none;padding:0;margin:0;counter-reset:n}
+  .shot-legend li{counter-increment:n;position:relative;padding-inline-start:34px;
+    margin-bottom:.5rem;font-size:1.02rem;line-height:1.65}
+  .shot-legend li:before{content:counter(n);position:absolute;
+    inset-inline-start:0;top:.22em;width:22px;height:22px;border-radius:50%;
+    background:#D6323C;color:#fff;display:grid;place-items:center;
+    font-size:.72rem;font-weight:700}
+  .backbar a:before{content:"↑"}
+  .print-only{display:none}
+  @media print{
+    .backbar,.mobile-toc,.desktop-toc,.skip,.status-panel{display:none!important}
+    .print-only{display:block}
+    body{font-size:11pt}
+  }
+</style>
 </head><body>
 <a class="skip" href="#main">דילוג לתוכן</a>
 <nav class="backbar"><a href="https://tsahinim.github.io/legal-mind-claude-guides/index.html">חזרה למרכז המדריכים</a></nav>
@@ -15,6 +158,7 @@
 </header>
 <div class="layout">
 <main class="surface" id="main">
+<aside class="status-panel"><span class="chip">טיוטה בבנייה</span><p><strong>שלושת הפרקים הראשונים כתובים, והצילומים עוד לא צולמו.</strong> במקום כל צילום עתידי מופיעה בינתיים מסגרת מקווקוות שנושאת את בריף הצילום שלה. כל עובדה בפרקים שכבר כאן נבדקה מול התיעוד הרשמי של גוגל, ומה שלא אומת מסומן ככזה.</p><ul class="status-facts"><li><b>3</b>פרקים כתובים מתוך אחד עשר</li><li><b>3</b>צילומים ממתינים לסבב צילום</li><li><b>11</b>מקורות רשמיים שנקראו</li></ul></aside>
 <section class="guide-section" id="sec-open"><h2>למי מיועד המדריך?</h2>
 <p>מטרת Legal Mind היא להנגיש חומר מקצועי לעורכי דין ולמשרדי עורכי דין. תוכן מדריך זה אינו מהווה בשום פנים ואופן ייעוץ משפטי, ואינו תחליף להתייעצות עם גורם מוסמך בתוך המשרד או מחוצה לו. Legal Mind אינה אחראית להחלטות שיתקבלו על בסיס המדריך.</p>
 <p>המדריך מיועד לעורכי דין ולצוותים משפטיים שכבר עובדים עם קלוד, ורוצים להכיר כלי חדש של גוגל בשם <bdi dir="ltr">Antigravity</bdi>: מה הוא עושה, במה הוא שונה ממה שכבר יש לכם, איך מתקינים אותו, ובאילו סוגי עבודה הוא באמת חוסך זמן.</p>
@@ -62,8 +206,124 @@
 <h3>וזה נכון הרבה מעבר לכלי הזה</h3>
 <p>כל מה שכתוב בפרק הזה נכון גם לכלים אחרים, באחדים במידה פחותה ובאחרים במידה רבה יותר. איננו מזהירים אתכם מגוגל, אנחנו מלמדים שיטת עבודה. מי שיפנים את הפרק הזה יעבוד נכון יותר גם עם קלוד, גם עם <bdi dir="ltr">ChatGPT</bdi>, וגם עם מה שייצא בשנה הבאה.</p>
 <p>ועכשיו, אחרי שהגבול ברור, אפשר להתקין.</p></section>
+<div class="bottom-nav"><a class="button" href="https://tsahinim.github.io/legal-mind-claude-guides/index.html">מרכז המדריכים</a><a class="button primary" href="#main">חזרה לראש המדריך</a></div>
 </main>
 <nav class="desktop-toc"><h2>תוכן המדריך</h2><ol><li><a href="#sec-open"><span>·</span>למי מיועד המדריך?</a></li><li><a href="#sec-01"><span>01</span>מה זה Antigravity ולמה שזה יעניין עורך דין?</a></li><li><a href="#sec-02"><span>02</span>אבטחת מידע: מה חשוב לדעת לפני</a></li></ol></nav>
 </div>
 <footer><p class="source-note">טיוטה בבנייה. נכון ל-23.8.2026.</p></footer>
+<script>
+(function(){
+  "use strict";
+  var frames = [].slice.call(document.querySelectorAll(".shot-frame"));
+  if(!frames.length) return;
+
+  var box = document.createElement("div");
+  box.className = "zoomer";
+  box.setAttribute("role", "dialog");
+  box.setAttribute("aria-modal", "true");
+  box.setAttribute("aria-label", "צילום מסך בגודל מלא");
+  box.innerHTML = '<button type="button" class="zoomer-close">סגירה</button>' +
+                  '<div class="zoomer-stage"></div>' +
+                  '<div class="zoomer-cap"><p class="zoomer-cap-text"></p>' +
+                  '<p class="zoomer-pan">הצילום רחב מהמסך. אפשר לגרור אותו הצידה כדי לראות את כולו.</p></div>';
+  document.body.appendChild(box);
+
+  var stage = box.querySelector(".zoomer-stage");
+  var cap = box.querySelector(".zoomer-cap");
+  var capText = box.querySelector(".zoomer-cap-text");
+  var closeBtn = box.querySelector(".zoomer-close");
+  var opener = null;
+
+  function open(frame){
+    var img = frame.querySelector("img");
+    if(!img) return;
+    stage.innerHTML = frame.innerHTML;
+    /* גודל טבעי, ולא "עד רוחב המסך" - אחרת על טלפון מקבלים שוב תמונה
+       מוקטנת שאי אפשר לקרוא בה, וההגדלה לא עשתה כלום */
+    var nat = img.naturalWidth || img.width;
+    stage.style.width = nat + "px";
+    stage.style.maxWidth = "none";
+    var fig = frame.closest("figure");
+    var c = fig ? fig.querySelector(".shot-caption") : null;
+    capText.textContent = c ? c.textContent : "";
+    cap.classList.toggle("is-wide", nat > (window.innerWidth - 20));
+    opener = frame;
+    box.classList.add("is-open");
+    document.body.style.overflow = "hidden";
+    closeBtn.focus();
+  }
+  function close(){
+    box.classList.remove("is-open");
+    document.body.style.overflow = "";
+    stage.innerHTML = "";
+    if(opener) opener.focus();
+    opener = null;
+  }
+
+  /* ההזמנה להגדיל מופיעה רק על צילום שבאמת מוצג מוקטן. על צילום שממילא
+     בגודלו הטבעי היא הבטחה ריקה, ועשרים שורות כאלה הן רעש */
+  function wire(){
+    frames.forEach(function(frame){
+      var img = frame.querySelector("img");
+      if(!img || !img.naturalWidth) return;
+      var shrunk = img.getBoundingClientRect().width < img.naturalWidth * 0.96;
+      if(!shrunk || frame.dataset.zoom) return;
+      frame.dataset.zoom = "1";
+      frame.setAttribute("tabindex", "0");
+      frame.setAttribute("role", "button");
+      frame.setAttribute("aria-label", "הגדלת הצילום");
+      frame.style.cursor = "zoom-in";
+      frame.addEventListener("click", function(){ open(frame); });
+      frame.addEventListener("keydown", function(ev){
+        if(ev.key === "Enter" || ev.key === " "){ ev.preventDefault(); open(frame); }
+      });
+      var fig = frame.closest("figure");
+      var capEl = fig ? fig.querySelector(".shot-caption") : null;
+      if(capEl && !fig.querySelector(".shot-hint")){
+        var hint = document.createElement("p");
+        hint.className = "shot-hint";
+        hint.innerHTML = "לחיצה על הצילום פותחת אותו בגודל מלא";
+        capEl.insertAdjacentElement("afterend", hint);
+      }
+    });
+  }
+  wire();
+  window.addEventListener("load", wire);
+  window.addEventListener("resize", wire);
+  frames.forEach(function(frame){
+    var img = frame.querySelector("img");
+    if(img && !img.complete) img.addEventListener("load", wire);
+  });
+
+  closeBtn.addEventListener("click", close);
+  box.addEventListener("click", function(ev){
+    if(ev.target === box) close();
+  });
+  document.addEventListener("keydown", function(ev){
+    if(ev.key === "Escape" && box.classList.contains("is-open")) close();
+  });
+})();
+
+
+(function(){
+  document.addEventListener("click", function(ev){
+    var btn = ev.target.closest(".copy-button");
+    if(!btn) return;
+    var block = btn.closest(".copy-block");
+    var src = document.getElementById(btn.getAttribute("data-copy-target"));
+    var status = block ? block.querySelector(".copy-status") : null;
+    if(!src) return;
+    var text = src.innerText;
+    function done(ok){
+      if(!status) return;
+      status.textContent = ok ? "ההוראה הועתקה" : "ההעתקה נכשלה, סמנו והעתיקו ידנית";
+      setTimeout(function(){ status.textContent = ""; }, 2600);
+    }
+    if(navigator.clipboard && navigator.clipboard.writeText){
+      navigator.clipboard.writeText(text).then(function(){done(true);},
+                                              function(){done(false);});
+    } else { done(false); }
+  });
+})();
+</script>
 </body></html>
