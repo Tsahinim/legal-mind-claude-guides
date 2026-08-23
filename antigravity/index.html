@@ -147,6 +147,14 @@
     body{font-size:11pt}
   }
 </style>
+<style>
+  /* the shared sheet hangs a dot 16px outside the heading. that works where
+     the column has room to its start side; here the section padding is only
+     22px, so the dot floated at the card edge, detached from its title.
+     the dot moves inside the heading's own indent instead. */
+  .guide-section h3{position:relative;padding-inline-start:19px}
+  .guide-section h3:before{inset-inline-start:0;top:.58em}
+</style>
 </head><body>
 <a class="skip" href="#main">דילוג לתוכן</a>
 <nav class="backbar"><a href="https://tsahinim.github.io/legal-mind-claude-guides/index.html">חזרה למרכז המדריכים</a></nav>
