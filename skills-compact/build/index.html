@@ -84,14 +84,12 @@ table.demo td{padding:9px 12px;border:1px solid #e0ede5;vertical-align:top;text-
 .filecard ul{margin:4px 0 0;padding-inline-start:20px}
 .filecard li{margin:3px 0}
 
-.mdstep{display:flex;gap:14px;flex-wrap:wrap;align-items:stretch;margin:16px 0}
-.mdstep .pane{flex:1 1 240px;min-width:230px;background:#fff;border:1.5px solid #cfe0dd;border-radius:11px;overflow:hidden;box-shadow:0 3px 12px rgba(13,39,64,.05)}
-.mdstep .bar{background:#f4f7f7;border-bottom:1px solid #e3ebe9;padding:6px 11px;font-size:.78rem;color:#5a6b75;display:flex;justify-content:space-between;align-items:center}
-.mdstep .bar b{font-weight:600;color:#0d2740}
-.mdstep .in{padding:14px 13px;min-height:74px;line-height:1.7}
-.mdstep .fname{font-family:Consolas,Menlo,monospace;font-size:.9rem;color:#147474;background:#f2f8f7;border:1px dashed #bcd8d4;border-radius:7px;padding:5px 9px;display:inline-block;margin-top:8px}
-.mdstep .arrow{align-self:center;color:#9fb3bd;font-size:1.5rem;flex:0 0 auto}
-@media(max-width:640px){.mdstep .arrow{display:none}}
+
+
+
+
+
+
 
 .shot--zoom .shot-frame{cursor:zoom-in}
 .shot-zoomhint{display:flex;align-items:center;gap:7px;margin:0 0 8px;padding:6px 11px;
@@ -151,15 +149,11 @@ table.demo td{padding:9px 12px;border:1px solid #e0ede5;vertical-align:top;text-
 <section class="guide-section" id="anatomy">
 <p class="section-number">01</p>
 <h2>איפה יושבות ההוראות</h2>
-<p>נתחיל מהשאלה הפשוטה ביותר: איפה בכלל נמצאות ההוראות שה-<bdi dir="ltr">Skill</bdi> מבצע? <strong>התשובה מפתיעה בפשטותה - בדף אחד.</strong> כל <bdi dir="ltr">Skill</bdi> הוא בסך הכל דף הוראות כתוב, ו-<bdi dir="ltr">Claude</bdi> - או כל <bdi dir="ltr">Chatbot</bdi> או <bdi dir="ltr">LLM</bdi> אחר - קורא אותו כשה-<bdi dir="ltr">Skill</bdi> נכנס לפעולה. מה שכתוב באותו דף הוא כל מה שה-<bdi dir="ltr">Skill</bdi> יודע לעשות - לא פחות ולא יותר.</p>
-<p>לדף הזה יש סיומת שאולי אינה מוכרת לכם - <bdi dir="ltr"><code>MD</code></bdi> - ומאחוריה מסתתר בדיוק מה שנשמע: <strong>טקסט רגיל.</strong> בדיוק כפי שיש קובץ <bdi dir="ltr">Word</bdi> ויש קובץ <bdi dir="ltr">PDF</bdi>, יש גם קובץ טקסט פשוט - ואפשר לפתוח אותו בכל עורך טקסט שיש במחשב ולקרוא אותו בעברית, בלי שום קוד ובלי שום כלי מיוחד.</p>
-<p><strong>וכדי להוריד מהמונח הזה את שארית ההילה שנותרה בו:</strong> קובץ <bdi dir="ltr"><code>MD</code></bdi> הוא בסך הכל פנקס הרשימות שכולנו מכירים - <bdi dir="ltr">Notepad</bdi> - ששמרו אותו בשם שנגמר בסיומת <bdi dir="ltr"><code>MD</code></bdi> במקום בסיומת הרגילה <bdi dir="ltr"><code>TXT</code></bdi>. אותו חלון, אותו טקסט, אותה עברית. <strong>רק הסיומת השתנתה.</strong></p>
-<div class="mdstep">
-<div class="pane"><div class="bar"><b>Notepad</b><span>לפני השמירה</span></div><div class="in">שלום, אני קובץ.<br>ומכאן והלאה כל מה שאכתוב כאן - ייקרא ויבוצע.</div></div>
-<div class="arrow">←</div>
-<div class="pane"><div class="bar"><b>אותו קובץ בדיוק</b><span>אחרי השמירה</span></div><div class="in">שומרים בשם שמסתיים כך:<br><span class="fname" dir="ltr">payment-reminder.md</span></div></div>
-</div>
-<p>זה הכל מה שקרה כאן. <strong>לא נדרשה שום תוכנה, ולא נפתח שום כלי מיוחד</strong> - ומה שהופך את הקובץ ל-<bdi dir="ltr">Skill</bdi> אינו הסיומת שלו, אלא מה שכתוב בתוכו. <strong>ובדיוק את זה נראה בפרק הבא:</strong> את אותו קובץ פשוט, פתוח לרווחה, עם ההוראות שכתובות בו בעברית.</p>
+<p>נתחיל בשאלה שכדאי לשאול לפני הכל: <strong>איפה בכלל יושבות ההוראות שה-<bdi dir="ltr">Skill</bdi> מבצע?</strong> התשובה פשוטה כמעט עד כדי אכזבה - <strong>בדף אחד.</strong></p>
+<p>לא בתוכנה, לא במנגנון נסתר ולא במקום שצריך גישה מיוחדת כדי להגיע אליו. דף אחד כתוב, שיושב בחשבון שלכם. כשמפעילים <bdi dir="ltr">Skill</bdi>, <bdi dir="ltr">Claude</bdi> - או כל <bdi dir="ltr">Chatbot</bdi> או <bdi dir="ltr">LLM</bdi> אחר - קורא את הדף הזה ופועל לפיו. <strong>מה שכתוב שם מתבצע; מה שלא כתוב שם, פשוט לא קורה.</strong></p>
+<p>וזו גם התשובה לשאלה שנשאלת יותר מכל: "איך הוא יודע לעשות את זה בדיוק ככה?" - <strong>הוא לא יודע. הוא קורא.</strong> וכל מי שיכול לכתוב נוהל למתמחה, יכול לכתוב את הדף הזה.</p>
+<p>ואל תדאגו - <strong>תראו בדיוק איך נראה הדף הזה, ואיך הוא נראה כשפותחים אותו,</strong> ותגלו כמה זה פשוט. נגיע לזה בפרק הבא; כאן נראה רק איפה הוא יושב:</p>
+
 <p class="small" style="color:#5a6b75;margin:14px 0 6px"><strong>איך מגיעים למסך הזה:</strong> בסרגל הצד של <bdi dir="ltr">Claude</bdi> לוחצים על <bdi dir="ltr"><code>Customize</code></bdi> - הפריט השישי מלמעלה. משם נכנסים ל-<bdi dir="ltr"><code>Skills</code></bdi>, וזו הרשימה שכבר הכרתם במדריך הראשון.</p>
 <figure class="shot shot--zoom" style="max-width:800px;">
 <button type="button" class="shot-zoomhint" aria-label="הגדלת הצילום"><span aria-hidden="true">&#128269;</span> לחיצה על התמונה תפתח אותה בגודל מלא</button>
@@ -169,6 +163,9 @@ table.demo td{padding:9px 12px;border:1px solid #e0ede5;vertical-align:top;text-
 </div>
 <ol class="shot-legend"><li><b>1</b><span>הפריט <bdi dir="ltr">Customize</bdi> בסרגל הצד. זו הכניסה לאזור ה-<bdi dir="ltr">Skills</bdi>. בצילום הבא נראה אותו מקרוב.</span></li></ol>
 </figure>
+
+<h2>מה כתוב בתוך הקובץ</h2>
+<p>לדף הזה יש סיומת שאולי אינה מוכרת לכם - <bdi dir="ltr"><code>MD</code></bdi> - ומאחוריה מסתתר בדיוק מה שנשמע: <strong>טקסט רגיל.</strong> כפי שיש קובץ <bdi dir="ltr">Word</bdi> ויש קובץ <bdi dir="ltr">PDF</bdi>, יש גם קובץ טקסט פשוט - ואפשר לקרוא אותו בעברית, בלי שום קוד ובלי שום כלי מיוחד.</p>
 <p><strong>ואת הקובץ הזה אפשר לראות בלי להוריד כלום.</strong> במסך ה-<bdi dir="ltr">Skills</bdi> לוחצים על שם ה-<bdi dir="ltr">Skill</bdi>, ונפתח מסך הפרטים שלו - ובו גם ההוראות עצמן:</p>
 <p class="small" style="color:#5a6b75;margin:14px 0 6px"><strong>איך מגיעים למסך הזה:</strong> לוחצים על <strong>שם ה-<bdi dir="ltr">Skill</bdi></strong> ברשימה - כל שורה ברשימה היא כפתור. המסך שנפתח הוא כרטיס ה-<bdi dir="ltr">Skill</bdi>.</p>
 
@@ -180,7 +177,6 @@ table.demo td{padding:9px 12px;border:1px solid #e0ede5;vertical-align:top;text-
 
 <section class="guide-section" id="inside">
 <p class="section-number">02</p>
-<h2>מה כתוב בתוך הקובץ</h2>
 <p>הקובץ בנוי משני חלקים, ממש כמו מסמך משפטי:</p>
 <ul>
 <li><strong>שתי שורות בראש</strong> - השם של ה-<bdi dir="ltr">Skill</bdi>, והתיאור שלו. בדיוק כמו שכותרת של כתב תביעה מספרת באיזה תיק מדובר, ולא מה נטען בו.</li>
@@ -197,7 +193,7 @@ table.demo td{padding:9px 12px;border:1px solid #e0ede5;vertical-align:top;text-
 <ol class="shot-legend"><li><b>1</b><span>שתי השורות שבראש הקובץ: <strong>השם והתיאור של ה-<bdi dir="ltr">Skill</bdi></strong>. התיאור הוא שקובע מתי ה-<bdi dir="ltr">Skill</bdi> ייטען מעצמו, ולכן הוא הראשון שקוראים.</span></li><li><b>2</b><span>שני הסמלים להחלפת תצוגה, שיושבים בתוך אותו חלון. הסמל השמאלי, <bdi dir="ltr">&lt;/&gt;</bdi>, מחליף לתצוגת המקור. זו הדרך לקרוא את קובץ ההוראות עצמו ולא את התיאור השיווקי שלו.</span></li></ol>
 </figure>
 <p><strong>ומה בדיוק ראיתם כאן?</strong> מה שמוצג במסך הזה הוא באמת מה שכתוב בקובץ - שום דבר לא הוסתר ושום דבר לא נוסח מחדש. עם זאת, זו <strong>התצוגה של <bdi dir="ltr">Claude</bdi></strong>: הוא פותח חלון ומציג בתוכו את תוכן הקובץ, כשם שתצוגה מקדימה מציגה מסמך בלי לפתוח את <bdi dir="ltr">Word</bdi>.</p>
-<p>הקובץ עצמו שמור במחשב כקובץ אחד רגיל, ואפשר לפתוח אותו בכמה דרכים. אחת מהן היא <bdi dir="ltr">Notepad</bdi>, ושם רואים את אותן שורות בדיוק. <strong>את שתי הצורות האלה תראו בתרגיל:</strong> את הקובץ כפי שהוא שמור אצלכם, ואת אותו קובץ פתוח לקריאה.</p><p style="margin:8px 0 0;font-size:.86rem;color:#5a6b75;background:#f4f7f7;border-radius:8px;padding:7px 11px;line-height:1.55">צילום מחשבון הדגמה שלנו: השם והתוכן שבו אינם מהערכה שקיבלתם. אצלכם המסך ייראה בדיוק כך, עם ה-<bdi dir="ltr">Skill</bdi> שלכם.</p>
+<p>ומה שחשוב כאן הוא לא החלון אלא התוכן: <strong>אלה משפטים רגילים, כתובים מראש, שאפשר לקרוא ולהחליט אם מסכימים איתם.</strong></p><p style="margin:8px 0 0;font-size:.86rem;color:#5a6b75;background:#f4f7f7;border-radius:8px;padding:7px 11px;line-height:1.55">צילום מחשבון הדגמה שלנו: השם והתוכן שבו אינם מהערכה שקיבלתם. אצלכם המסך ייראה בדיוק כך, עם ה-<bdi dir="ltr">Skill</bdi> שלכם.</p>
 <h3>וכך נראה <bdi dir="ltr">Skill</bdi> פשוט מבפנים</h3>
 <p><strong>יש <bdi dir="ltr">Skills</bdi> מורכבים מאוד, ויש פשוטים לגמרי.</strong> יש כאלה שכתובים באנגלית, ויש כאלה שכתובים כולם בעברית - וזה עובד בדיוק אותו הדבר. כדי שיהיה קל להיכנס לזה, בחרנו להראות לכם <bdi dir="ltr">Skill</bdi> פשוט יחסית, כתוב כולו בעברית, שמטרתו אחת ומוגדרת: <strong>לנסח מכתב תזכורת ראשון ללקוח שטרם שילם.</strong> זה כל מה שכתוב בקובץ שלו - ואפשר לקרוא את זה כמו כל נוהל משרדי:</p>
 
@@ -311,11 +307,6 @@ table.demo td{padding:9px 12px;border:1px solid #e0ede5;vertical-align:top;text-
 <p>לתרגיל הזה בחרנו בכוונה <strong><bdi dir="ltr">Skill</bdi> שאינו נחשב מורכב, וכתוב כולו בעברית</strong> - למעשה, בדיוק אותו <bdi dir="ltr">Skill</bdi> שקראתם קודם: <strong>מכתב תזכורת ראשון ללקוח שטרם שילם.</strong> יש בבחירה הזאת יתרון אמיתי: אתם כבר יודעים איך ייראה הקובץ שייצא בסוף, כי ראיתם אותו במו עיניכם. אין כאן שום הפתעה שממתינה לכם.</p>
 <p>ונאמר את זה בגלוי, כי זה משנה את כל הדרך שבה כדאי לגשת לזה: <strong>המטרה איננה שתצאו מכאן בוני <bdi dir="ltr">Skills</bdi>.</strong> ממש לא. המטרה היא שתצאו מכאן כמי שמבינים מהו <bdi dir="ltr">Skill</bdi>, איך הוא בנוי, ומה בעצם קורה שם - <strong>ושתוכלו לומר במשפט אחד: "בניתי <bdi dir="ltr">Skill</bdi>, ראיתי איך הוא עשוי, והשד אינו נורא כל כך".</strong> זה הכל, וזה בהחלט מספיק.</p>
 <p>ואם כבר עכשיו עולה בראשכם תהליך משלכם שחוזר על עצמו - <strong>קחו אותו במקום.</strong> הצעדים זהים לחלוטין, ורק התוכן ישתנה.</p>
-<aside class="content-box recommendation">
-<h3>חצי דקה שמורידה את המסתורין - מומלץ, ולא חובה</h3>
-<p>שווה לעשות לפני כן דבר קטן. פתחו <bdi dir="ltr">Notepad</bdi>, כתבו שתי שורות בעברית, ושמרו בשם <bdi dir="ltr"><code>נסיון.md</code></bdi> על שולחן העבודה. <strong>זהו - יצרתם קובץ <bdi dir="ltr"><code>MD</code></bdi>.</strong></p>
-<p>פתחו אותו שוב, ותראו את אותן שתי שורות מחכות לכם. <strong>וזה כל הסיפור:</strong> לא הפורמט ולא הכלי - אלא מה שכתוב בפנים.</p>
-</aside>
 <h3>שלב 1 - להכין את התשובות מראש</h3>
 
 <p><strong>בחרתם בתרגיל שלנו? אז חלק גדול מהעבודה כבר עשוי:</strong> התשובות כתובות בקובץ שקראתם למעלה, ואפשר פשוט להסתמך עליו. ארבע השאלות שכאן שמורות ליום שבו תבנו <bdi dir="ltr">Skill</bdi> משלכם - וכדאי לקרוא אותן גם עכשיו, כי הן מראות איך חושבים על זה.</p>
