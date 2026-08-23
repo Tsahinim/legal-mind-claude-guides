@@ -127,6 +127,10 @@ table.demo td{padding:9px 12px;border:1px solid #9ed8b8;vertical-align:top;text-
 section.guide-section > h3{font-family:Georgia,"Times New Roman",serif;font-size:1.62rem;font-weight:800;color:var(--navy);line-height:1.45;margin:34px 0 12px}
 aside.content-box > h3{font-family:Georgia,"Times New Roman",serif;font-size:1.42rem;font-weight:800;line-height:1.45;margin:0 0 10px}
 @media (max-width:640px){section.guide-section > h3{font-size:1.36rem;margin:26px 0 10px}aside.content-box > h3{font-size:1.26rem}}
+
+/* inline-flex buttons swallow the space beside a bdi;
+   one span means one flex child and normal text flow */
+.btn-label{display:inline;white-space:normal}
 </style>
 </head><body>
 <a class="skip" href="#main">דילוג לתוכן</a>
@@ -513,7 +517,7 @@ aside.content-box > h3{font-family:Georgia,"Times New Roman",serif;font-size:1.4
 <p>ולמען הסר ספק - <strong>לא ביקשנו כאן להפוך אתכם לבוני <bdi dir="ltr">Skills</bdi>,</strong> ואין צורך שתהיו כאלה. ביקשנו משהו צנוע בהרבה: שתדעו מהו <bdi dir="ltr">Skill</bdi>, שתראו במו עיניכם איך הוא בנוי, ושהמילה עצמה תפסיק להישמע כמו משהו ששייך למישהו אחר. <strong>אם יצאתם מכאן עם התחושה הזאת - המדריך עשה את שלו,</strong> ואנחנו מקווים שרק פתחנו לכם את התיאבון לבנות <bdi dir="ltr">Skills</bdi> משלכם, לצרכים שלכם.</p>
 <p>ואם תשאלו במה כדאי להתחיל, יש לנו בדיקה אחת פשוטה שכמעט תמיד קולעת: <strong>המשימה שהכי משעממת אתכם היא בדרך כלל המועמדת הטובה ביותר.</strong> מה שמשעמם - חוזר על עצמו; ומה שחוזר על עצמו - אפשר לכתוב פעם אחת, ולתת לו לעבוד מכאן והלאה.</p>
 <p>ודבר אחרון, ששווה לקחת מכאן: גם ה-<bdi dir="ltr">Skills</bdi> שקיבלתם בערכה נבנו על אותו עיקרון בדיוק - מישהו ישב, כתב את שיטת העבודה שלו במילים פשוטות, ותיקן אותה שוב ושוב עד שהיא עבדה. <strong>ההבדל היחיד בינם לבין ה-<bdi dir="ltr">Skill</bdi> שבניתם היום הוא מספר סבבי התיקון.</strong></p>
-<div class="bottom-nav"><a class="button" href="../">חזרה לדף המרכז</a><a class="button primary" href="../kit/">לערכת ה-<bdi dir="ltr">Skills</bdi> ולהתקנתה ב-<bdi dir="ltr">Claude</bdi></a></div>
+<div class="bottom-nav"><a class="button" href="../">חזרה לדף המרכז</a><a class="button primary" href="../kit/"><span class="btn-label">לערכת ה-<bdi dir="ltr">Skills</bdi> ולהתקנתה ב-<bdi dir="ltr">Claude</bdi></span></a></div>
 </main>
 </div>
 <footer style="text-align:center;color:#5a6b75;font-size:.85rem;padding:30px 0 10px;border-top:1px solid #dfe7e4;margin-top:40px">
