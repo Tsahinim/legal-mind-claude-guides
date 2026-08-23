@@ -153,6 +153,8 @@ table.demo td{padding:9px 12px;border:1px solid #e0ede5;vertical-align:top;text-
 .shot--peek .shot-frame:after{content:"";position:absolute;inset-inline:0;bottom:0;
   height:90px;background:linear-gradient(to bottom,rgba(255,255,255,0),#fff);
   pointer-events:none}
+.shot-frame[data-zoom]{cursor:zoom-in}
+.shot--peek .shot-frame[data-zoom]{cursor:zoom-in}
 </style>
 </head><body>
 <a class="skip" href="#main">דילוג לתוכן</a>
@@ -185,7 +187,7 @@ table.demo td{padding:9px 12px;border:1px solid #e0ede5;vertical-align:top;text-
 <p><strong>וכל חמשת ה-<bdi dir="ltr">Skills</bdi> שיתוארו כאן מצורפים להורדה במסגרת המדריך</strong> - כבונוס, ובמתנה מ-Legal Mind ומנבו. אין כאן רשימת המלצות שצריך לחפש אחריה: כל מה שנתאר בדפים הבאים תוכלו להוריד, להתקין ולהריץ באותו יום.</p>
 
 <p>אפשר להציג ערכת <bdi dir="ltr">Skills</bdi> לפי מה שהיא עושה. זה מדויק, וזה גם משעמם - ובעיקר זה לא עוזר להחליט במה להשתמש. אז ננסה זווית אחרת.</p>
-<p><strong>ארבעת ה-<bdi dir="ltr">Skills</bdi> שבערכה - החמישי, <bdi dir="ltr">legal-mind-core</bdi>, הוא חבילה ולא <bdi dir="ltr">Skill</bdi> - נבנו על ידי אותם אנשים, ואפשר לזהות את זה בבירור - לא לפי מה שהם עושים, אלא לפי מה שכל אחד מהם מסרב לעשות.</strong></p>
+<p>בערכה ארבעה <bdi dir="ltr">Skills</bdi>, והחמישי - <bdi dir="ltr">legal-mind-core</bdi> - הוא חבילה ולא <bdi dir="ltr">Skill</bdi>. <strong>וארבעתם נבנו על ידי אותם אנשים, ואפשר לזהות את זה בבירור - לא לפי מה שהם עושים, אלא לפי מה שכל אחד מהם מסרב לעשות.</strong></p>
 <ul>
 <li><bdi dir="ltr">legal-timeline</bdi> מסרב להמציא תאריך. אירוע שאין לו מועד שניתן לחשב יסומן "ללא תאריך", גם אם ההשלמה מובנת מאליה.</li>
 <li><bdi dir="ltr">nevo-legal-memo</bdi> מסרב למסור מזכר בלי עמדות נגד - ובודק מילה במילה שכל ציטוט אכן קיים במקור.</li>
@@ -449,7 +451,7 @@ Legal Mind ונבו · ערכת ה-<bdi dir="ltr">Skills</bdi> · גרסה עד�
      than its own pixels. on one already at natural size it is an empty
      promise, and twenty such lines are noise */
   function wire(){
-    Array.prototype.forEach.call(document.querySelectorAll('.shot--zoom .shot-frame'),function(frame){
+    Array.prototype.forEach.call(document.querySelectorAll('.shot-frame'),function(frame){
       var img=frame.querySelector('img');
       if(!img||!img.naturalWidth) return;
       var shrunk=img.getBoundingClientRect().width < img.naturalWidth*0.96;
@@ -475,7 +477,7 @@ Legal Mind ונבו · ערכת ה-<bdi dir="ltr">Skills</bdi> · גרסה עד�
   wire();
   window.addEventListener('load',wire);
   window.addEventListener('resize',wire);
-  Array.prototype.forEach.call(document.querySelectorAll('.shot--zoom .shot-frame img'),function(img){
+  Array.prototype.forEach.call(document.querySelectorAll('.shot-frame img'),function(img){
     if(!img.complete) img.addEventListener('load',wire);
   });
   cl.addEventListener('click',close);

@@ -120,6 +120,8 @@ table.demo td{padding:9px 12px;border:1px solid #e0ede5;vertical-align:top;text-
 .wip li:last-child{margin-bottom:0}
 .wip li b{color:#147474}
 .wip .wip-done{color:#146a4f;font-weight:800}
+.shot-frame[data-zoom]{cursor:zoom-in}
+.shot--peek .shot-frame[data-zoom]{cursor:zoom-in}
 </style>
 </head><body>
 <a class="skip" href="#main">דילוג לתוכן</a>
@@ -535,7 +537,7 @@ Legal Mind ונבו · איך <bdi dir="ltr">Skill</bdi> בנוי, ואיך בו
      than its own pixels. on one already at natural size it is an empty
      promise, and twenty such lines are noise */
   function wire(){
-    Array.prototype.forEach.call(document.querySelectorAll('.shot--zoom .shot-frame'),function(frame){
+    Array.prototype.forEach.call(document.querySelectorAll('.shot-frame'),function(frame){
       var img=frame.querySelector('img');
       if(!img||!img.naturalWidth) return;
       var shrunk=img.getBoundingClientRect().width < img.naturalWidth*0.96;
@@ -561,7 +563,7 @@ Legal Mind ונבו · איך <bdi dir="ltr">Skill</bdi> בנוי, ואיך בו
   wire();
   window.addEventListener('load',wire);
   window.addEventListener('resize',wire);
-  Array.prototype.forEach.call(document.querySelectorAll('.shot--zoom .shot-frame img'),function(img){
+  Array.prototype.forEach.call(document.querySelectorAll('.shot-frame img'),function(img){
     if(!img.complete) img.addEventListener('load',wire);
   });
   cl.addEventListener('click',close);
