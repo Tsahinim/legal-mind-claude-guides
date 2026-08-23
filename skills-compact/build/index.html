@@ -74,6 +74,15 @@ table.demo td{padding:9px 12px;border:1px solid #e0ede5;vertical-align:top;text-
 /* פסקאות שיושבות ישירות בחלונית מקבלות את אותם שוליים כמו תוכן הפרקים */
 .surface > p, .surface > h3{padding-inline:22px}
 @media(max-width:700px){.surface > p, .surface > h3{padding-inline:17px}}
+
+.filecard{background:#fff;border:1.5px solid #cfe0dd;border-radius:12px;padding:0;margin:16px 0;overflow:hidden;box-shadow:0 4px 14px rgba(13,39,64,.06)}
+.filecard .fc-top{background:#f4f7f7;border-bottom:1px solid #e3ebe9;padding:8px 14px;font-size:.85rem;color:#5a6b75;display:flex;gap:8px;align-items:center}
+.filecard .fc-body{padding:16px 18px;line-height:1.85}
+.filecard .fc-head{background:#fbfdfc;border-bottom:1px dashed #d8e5e2;padding:12px 18px;line-height:1.8}
+.filecard h4{margin:14px 0 4px;color:#147474;font-size:1rem}
+.filecard h4:first-child{margin-top:0}
+.filecard ul{margin:4px 0 0;padding-inline-start:20px}
+.filecard li{margin:3px 0}
 </style>
 </head><body>
 <a class="skip" href="#main">דילוג לתוכן</a>
@@ -152,7 +161,48 @@ table.demo td{padding:9px 12px;border:1px solid #e0ede5;vertical-align:top;text-
 </div>
 <ol class="shot-legend"><li><b>1</b><span>שתי השורות שבראש הקובץ: <strong>השם והתיאור של הסקיל</strong>. התיאור הוא שקובע מתי הסקיל ייטען מעצמו, ולכן הוא הראשון שקוראים.</span></li><li><b>2</b><span>שני הסמלים להחלפת תצוגה, שיושבים בתוך אותו חלון. הסמל השמאלי, <bdi dir="ltr">&lt;/&gt;</bdi>, מחליף לתצוגת המקור. זו הדרך לקרוא את קובץ ההוראות עצמו ולא את התיאור השיווקי שלו.</span></li></ol>
 </figure><p style="margin:8px 0 0;font-size:.86rem;color:#5a6b75;background:#f4f7f7;border-radius:8px;padding:7px 11px;line-height:1.55">הצילום נלקח מחשבון הדגמה, ולכן שם הסקיל שבו אינו מהערכה. מה שהוא מדגים הוא <b>המבנה</b> - אצלכם ייראה אותו הדבר עם הסקיל שלכם.</p>
-<p>וכך נראות ההוראות עצמן, בגוף הקובץ - <strong>עברית רגילה, משפטים שאתם יכולים לכתוב בעצמכם.</strong> זה כל מה שמפריד בין סקיל טוב לסקיל בינוני: לא תחביר, אלא מה שכתוב שם:</p>
+<h3>וכך נראה סקיל פשוט מבפנים</h3>
+<p><strong>יש סקילים מורכבים מאוד, ויש פשוטים לגמרי.</strong> יש כאלה שכתובים באנגלית, ויש כאלה שכתובים כולם בעברית - וזה עובד בדיוק אותו הדבר. כדי שיהיה קל להיכנס לזה, בחרנו להראות לכם סקיל פשוט יחסית, כתוב כולו בעברית, שמטרתו אחת ומוגדרת: <strong>לנסח מכתב תזכורת ראשון ללקוח שטרם שילם.</strong> זה כל מה שכתוב בקובץ שלו - ואפשר לקרוא את זה כמו כל נוהל משרדי:</p>
+
+<div class="filecard">
+<div class="fc-top">קובץ ההוראות של הסקיל</div>
+<div class="fc-head">
+<p style="margin:0"><strong>שם:</strong> <bdi dir="ltr"><code>payment-reminder</code></bdi></p>
+<p style="margin:4px 0 0"><strong>תיאור:</strong> מנסח מכתב תזכורת ראשון ללקוח שטרם שילם חשבונית. להשתמש כשמבקשים "מכתב תזכורת", "תזכורת תשלום" או "פנייה ללקוח שלא שילם".</p>
+</div>
+<div class="fc-body">
+<h4>מה לעשות</h4>
+<ul>
+<li>בקש ממני את שם הלקוח, מספר החשבונית, הסכום, ותאריך התשלום שחלף.</li>
+<li>נסח מכתב קצר בן שלוש פסקאות: פנייה עניינית, פירוט החוב, ובקשה לתשלום בתוך 14 יום.</li>
+<li>שמור על טון מכבד. זו תזכורת ראשונה, לא התראה לפני הליכים.</li>
+</ul>
+<h4>מה אסור</h4>
+<ul>
+<li>אל תמציא סכום, תאריך או מספר חשבונית שלא מסרתי לך.</li>
+<li>אל תאיים בהליכים משפטיים, ואל תזכיר ריבית פיגורים - אלא אם ביקשתי זאת במפורש.</li>
+</ul>
+<h4>מתי לעצור ולשאול אותי</h4>
+<ul>
+<li>אם חסר אחד הפרטים - שאל לפני שאתה מתחיל לכתוב.</li>
+<li>אם החוב עולה על 50,000 ש״ח - עצור ובקש ממני אישור לפני הניסוח.</li>
+</ul>
+</div>
+</div>
+
+<p><strong>וזה הכל.</strong> שתי שורות בראש שאומרות מה הסקיל ומתי להשתמש בו, ומתחתיהן שיטת העבודה במשפטים רגילים: מה עושים, מה אסור, ומתי עוצרים ושואלים. <strong>אין כאן שום דבר שאתם לא יכולים לכתוב בעצמכם</strong> - זה בדיוק אותו סוג הוראות שהייתם נותנים למתמחה ביום הראשון.</p>
+
+<h3>אז אפשר לכתוב את זה בעברית?</h3>
+<p><strong>כן, וזה בדיוק מה שעשינו כאן.</strong> גוף ההוראות והתיאור נכתבים בעברית רגילה, והמערכת קוראת אותם בלי שום בעיה. הדבר היחיד שנכתב באותיות לטיניות הוא <strong>השם הטכני של הסקיל</strong> - כמו <bdi dir="ltr"><code>payment-reminder</code></bdi> בדוגמה למעלה - וזה בעצם רק שם הקובץ, כמו שקובץ במחשב שלכם צריך שם.</p>
+<p>ואם נדמה לכם שזו הקלה קטנה מדי - שווה לדעת: <strong>גם הסקילים של הערכה שקיבלתם בנויים בדיוק כך.</strong> פתחו את קובץ ההוראות של ציר הזמן המשפטי, ותראו תיאור שלם בעברית מתחת לשם הלטיני.</p>
+
+<aside class="content-box recommendation">
+<h3>ורגע, זה הכל?</h3>
+<p>אם עכשיו אתם חושבים <em>"רגע - זה כל מה שמדברים עליו כל הזמן? זה מה שנקרא לבנות סקיל?"</em> - <strong>אז כן, זה בדיוק זה.</strong></p>
+<p>כל הרעש סביב המילה "סקיל" מתאר בסופו של דבר את הדבר הזה: דף הוראות שאתם מכתיבים פעם אחת. מה שהופך אותו לחזק אינו הטכנולוגיה שמאחוריו - <strong>אלא כמה טוב אתם יודעים להסביר איך אתם עובדים.</strong> וזה, במקרה, הדבר היחיד כאן שאף אחד לא יכול לעשות במקומכם.</p>
+</aside>
+
+<p>ובצילום הבא - <strong>סקיל אחר, מפורט הרבה יותר,</strong> כפי שהוא נראה בפועל על המסך. אין צורך לקרוא אותו כולו; מה שחשוב הוא לראות שגם סקיל מורכב בנוי בדיוק כך - כותרת, ואחריה הוראות בעברית:</p>
 <p class="small" style="color:#5a6b75;margin:14px 0 6px"><strong>איך מגיעים למסך הזה:</strong> באותו מסך פרטים, גוללים מטה בתיבת התוכן - זה ההמשך של אותו קובץ.</p>
 <figure class="shot" style="max-width:620px;">
 <div class="shot-frame" style="aspect-ratio:941/827;">
