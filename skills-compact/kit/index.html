@@ -3,7 +3,7 @@
 <meta content="width=device-width,initial-scale=1" name="viewport">
 <meta name="robots" content="noindex">
 <meta name="description" content="איך Skill בנוי ואיך בונים אחד - מדריך 2 של Legal Mind ונבו: מהו Skill, איך מתקינים ומפעילים, איך בונים Skill משלכם ואיך בודקים שהוא עובד.">
-<title>ערכת ה-Skills לעורכי דין - Legal Mind ונבו</title>
+<title>ערכת ארבעת ה-Skills של Legal Mind ונבו - התקנה, תרגול ובדיקה</title>
 <link rel="stylesheet" href="../../skills/assets/site.css?v=20260822">
 <style>
 .draftbar{background:#fff4e5;border-bottom:2px solid #e8b269;padding:10px 16px;text-align:center;font-weight:800;color:#7a4d00}
@@ -181,6 +181,10 @@ aside.content-box > h3{font-family:Georgia,"Times New Roman",serif;font-size:1.4
 .dl-list .ds{display:block;color:#5a6b75;font-size:.93rem;line-height:1.65;margin-top:4px}
 .dl-list .dl-go{margin:0;white-space:nowrap}
 @media (max-width:640px){.dl-list>li{grid-template-columns:1fr}}
+
+/* a chapter title that carries a download button */
+section.guide-section > h2:has(.dl-mini){display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap}
+section.guide-section > h2 .dl-mini{flex:0 0 auto}
 </style>
 </head><body>
 <a class="skip" href="#main">דילוג לתוכן</a>
@@ -189,8 +193,8 @@ aside.content-box > h3{font-family:Georgia,"Times New Roman",serif;font-size:1.4
 
 <header class="hero"><div>
 <p class="eyebrow">Legal Mind ונבו · מדריך 3</p>
-<h1>ערכת ה-<bdi dir="ltr">Skills</bdi>: מה כל <bdi dir="ltr">Skill</bdi> עושה, ואיך מפעילים אותו</h1>
-<p class="hero-copy">ארבעה <bdi dir="ltr">Skills</bdi>, וכל אחד מהם הוא שיטת עבודה של משרד שנכתבה פעם אחת. במדריך הזה נעבור עליהם אחד-אחד: מה כל <bdi dir="ltr">Skill</bdi> מקבל, מה הוא מחזיר, <strong>ובעיקר - מה הוא מסרב לעשות.</strong> כי שם, ולא ביכולות, מסתתר ההבדל בין <bdi dir="ltr">Skill</bdi> משפטי ל-<bdi dir="ltr">Skill</bdi> כללי.</p>
+<h1>ערכת ארבעת ה-<bdi dir="ltr">Skills</bdi> של Legal Mind ונבו - ותרגול ההתקנה והבדיקה</h1>
+<p class="hero-copy">ארבעה <bdi dir="ltr">Skills</bdi> שנכתבו על ידי Legal Mind בשיתוף נבו, ולכל אחד תפקיד ברור בעבודה השוטפת של עורך דין. <strong>נתחיל במה שכל אחד מהם עושה - בקצרה, עם קובץ ההתקנה שלו ליד השם</strong>, ואחר כך נתקין אותם יחד, שלב אחרי שלב. ההתקנה היא העלאת קובץ ולא התקנת תוכנה, ואין בה שום דבר שיכול להישבר - אז הסירו דאגה מלבכם. ובסוף, הדגמה אמיתית של כל אחד מהם: הבקשה, מה שחזר, ומה שכדאי לבדוק בעין לפני שמגישים.</p>
 </div>
 <dl class="facts">
 <div><dt>מה בערכה</dt><dd>ארבעה <bdi dir="ltr">Skills</bdi>, כולם מצורפים כאן להורדה.</dd></div>
@@ -199,10 +203,10 @@ aside.content-box > h3{font-family:Georgia,"Times New Roman",serif;font-size:1.4
 <div><dt>מה תצטרכו</dt><dd>חשבון מחובר, ומסמך מומצא לתרגול</dd></div>
 </dl></header>
 
-<nav class="mobile-toc"><h2>תוכן המדריך</h2><ol><li><a href="#why"><span>01</span>מה מחבר בין ארבעת ה-<bdi dir="ltr">Skills</bdi></a></li><li><a href="#timeline"><span>02</span>ציר זמן משפטי - <bdi dir="ltr">legal-timeline</bdi></a></li><li><a href="#docx"><span>03</span>מסמכי Word בעברית - <bdi dir="ltr">docx-rtl</bdi></a></li><li><a href="#memo"><span>04</span>מזכר מבוסס מחקר - <bdi dir="ltr">nevo-legal-memo</bdi></a></li><li><a href="#builder"><span>05</span>הבונה - <bdi dir="ltr">legal-skill-builder</bdi></a></li><li><a href="#get"><span>06</span>וממה כדאי להתחיל</a></li></ol></nav>
+<nav class="mobile-toc"><h2>תוכן המדריך</h2><ol><li><a href="#why"><span>01</span>מה מחבר בין ארבעת ה-<bdi dir="ltr">Skills</bdi></a></li><li><a href="#downloads"><span>02</span>ארבעת ה-<bdi dir="ltr">Skills</bdi> וההורדה</a></li><li><a href="#install"><span>03</span>מתקינים - שלב אחרי שלב</a></li><li><a href="#timeline"><span>04</span>ציר זמן משפטי - <bdi dir="ltr">legal-timeline</bdi></a></li><li><a href="#docx"><span>05</span>מסמכי Word בעברית - <bdi dir="ltr">docx-rtl</bdi></a></li><li><a href="#memo"><span>06</span>מזכר מבוסס מחקר - <bdi dir="ltr">nevo-legal-memo</bdi></a></li><li><a href="#builder"><span>07</span>הבונה - <bdi dir="ltr">legal-skill-builder</bdi></a></li><li><a href="#get"><span>08</span>וממה כדאי להתחיל</a></li></ol></nav>
 
 <div class="layout">
-<aside class="desktop-toc"><h2>תוכן המדריך</h2><ol><li><a href="#why"><span>01</span>מה מחבר בין ארבעת ה-<bdi dir="ltr">Skills</bdi></a></li><li><a href="#timeline"><span>02</span>ציר זמן משפטי - <bdi dir="ltr">legal-timeline</bdi></a></li><li><a href="#docx"><span>03</span>מסמכי Word בעברית - <bdi dir="ltr">docx-rtl</bdi></a></li><li><a href="#memo"><span>04</span>מזכר מבוסס מחקר - <bdi dir="ltr">nevo-legal-memo</bdi></a></li><li><a href="#builder"><span>05</span>הבונה - <bdi dir="ltr">legal-skill-builder</bdi></a></li><li><a href="#get"><span>06</span>וממה כדאי להתחיל</a></li></ol></aside>
+<aside class="desktop-toc"><h2>תוכן המדריך</h2><ol><li><a href="#why"><span>01</span>מה מחבר בין ארבעת ה-<bdi dir="ltr">Skills</bdi></a></li><li><a href="#downloads"><span>02</span>ארבעת ה-<bdi dir="ltr">Skills</bdi> וההורדה</a></li><li><a href="#install"><span>03</span>מתקינים - שלב אחרי שלב</a></li><li><a href="#timeline"><span>04</span>ציר זמן משפטי - <bdi dir="ltr">legal-timeline</bdi></a></li><li><a href="#docx"><span>05</span>מסמכי Word בעברית - <bdi dir="ltr">docx-rtl</bdi></a></li><li><a href="#memo"><span>06</span>מזכר מבוסס מחקר - <bdi dir="ltr">nevo-legal-memo</bdi></a></li><li><a href="#builder"><span>07</span>הבונה - <bdi dir="ltr">legal-skill-builder</bdi></a></li><li><a href="#get"><span>08</span>וממה כדאי להתחיל</a></li></ol></aside>
 <main class="surface" id="main">
 <section class="guide-section" id="why"><p class="section-number">01</p>
 <h2>מה מחבר בין ארבעת ה-<bdi dir="ltr">Skills</bdi></h2>
@@ -233,23 +237,10 @@ aside.content-box > h3{font-family:Georgia,"Times New Roman",serif;font-size:1.4
 </table></div>
 
 </aside>
-<aside class="content-box recommendation" id="downloads"><h3>ארבעת ה-<bdi dir="ltr">Skills</bdi> להורדה - כאן</h3><p><strong>ארבעת ה-<bdi dir="ltr">Skills</bdi> שיתוארו במדריך הזה מצורפים כאן להורדה</strong> - כבונוס במסגרת המדריך, מ-Legal Mind ומנבו. אין צורך לקרוא עד הסוף כדי להוריד: הכפתורים כאן, וגם ליד השם של כל <bdi dir="ltr">Skill</bdi> בפרק שלו. מעלים אותם במסך ה-<bdi dir="ltr">Skills</bdi>: <bdi dir="ltr"><code>Add</code></bdi> &#8592; <bdi dir="ltr"><code>Upload a skill</code></bdi> - <strong>והקובץ כמו שהוא, בלי לחלץ אותו קודם.</strong></p><ul class="dl-list">
-<li><div><span class="nm"><bdi dir="ltr">legal-timeline</bdi></span><span class="ds">ציר זמן משפטי כקובץ PDF מוכן לתיק, עם ציטוט מקור לכל אירוע ודגלי אימות למועדים בעייתיים. זה ה-<bdi dir="ltr">Skill</bdi> שמתקינים בתרגיל שבמדריך הראשון.</span></div><a class="dl-go" href="../downloads/skill-legal-timeline.zip" download>להורדת קובץ ה-<bdi dir="ltr">Skill</bdi></a></li>
-<li><div><span class="nm"><bdi dir="ltr">docx-rtl</bdi></span><span class="ds">מסמכי <bdi dir="ltr">Word</bdi> בעברית שיוצאים נכון: מספור סעיפים רב-רמות, ת.ז. וסכומים שאינם מתהפכים, מונחים מוגדרים, בלוק חתימות וטבלאות תשלומים.</span></div><a class="dl-go" href="../downloads/skill-docx-rtl.zip" download>להורדת קובץ ה-<bdi dir="ltr">Skill</bdi></a></li>
-<li><div><span class="nm"><bdi dir="ltr">legal-skill-builder</bdi></span><span class="ds">הבונה: מראיין אתכם בשפה פשוטה, מזקק את שיטת העבודה של המשרד, מציג אפיון לאישור, ובונה ובודק את ה-<bdi dir="ltr">Skill</bdi> יחד איתכם.</span></div><a class="dl-go" href="../downloads/skill-legal-skill-builder.zip" download>להורדת קובץ ה-<bdi dir="ltr">Skill</bdi></a></li>
-<li><div><span class="nm"><bdi dir="ltr">nevo-legal-memo</bdi></span><span class="ds">מזכר משפטי מבוסס מחקר במאגר נבו: שאלה, תשובה קצרה, ניתוח מעוגן במקורות עם קישורים, עמדות נגד ומסקנה. <strong>דורש חיבור פעיל למאגר נבו.</strong></span></div><a class="dl-go" href="../downloads/skill-nevo-legal-memo.zip" download>להורדת קובץ ה-<bdi dir="ltr">Skill</bdi></a></li>
+</section>
+<section class="guide-section" id="downloads"><p class="section-number">02</p><h2>ארבעת ה-<bdi dir="ltr">Skills</bdi>: מה כל אחד עושה, וקובץ להורדה</h2><p><strong>ארבעת הקבצים כאן, ליד השם של כל <bdi dir="ltr">Skill</bdi>.</strong> הם מצורפים כבונוס במסגרת המדריך, מ-Legal Mind ומנבו - אין צורך לקרוא עד הסוף כדי להוריד אותם. תחת כל שם כתוב בקצרה מה ה-<bdi dir="ltr">Skill</bdi> עושה, מתי הוא נדלק, ומה מיוחד בו. ההדגמות המלאות - עם צילומים מהרצה אמיתית - מחכות בפרקים שאחרי ההתקנה.</p><div class="idcard"><h3><bdi dir="ltr">legal-timeline</bdi> &ndash; ציר זמן משפטי לתיק<a class="dl-mini" href="../downloads/skill-legal-timeline.zip" download>הורדת קובץ ה-Skill</a></h3><dl><dt>מה הוא עושה</dt><dd>מקבל חוזה, כתב טענות או את שניהם, ומחזיר PDF ערוך לתיק: טבלה כרונולוגית של כל האירועים והמועדים, עם ציטוט מקור ומראה מקום לכל שורה. תאריכים יחסיים - "תוך 30 יום מהחתימה" - מחושבים לתאריך אמיתי ומסומנים כמחושבים.</dd><dt>מתי הוא נדלק</dt><dd>"תעשה לי ציר זמן", "כרונולוגיה", "לוח מועדים", "אילו מועדים עולים מהמסמך".</dd><dt>ומה מיוחד בו</dt><dd>לפני ההפקה הוא מציג <strong>חשבון שלמות</strong>: כמה ביטויי זמן אותרו, מה חולץ, ומה הושמט ולמה. מועד בעייתי - התיישנות, מועד שחלף, סתירה - מסומן כדגל לאימות, ולא כמסקנה משפטית.</dd></dl></div><div class="idcard"><h3><bdi dir="ltr">docx-rtl</bdi> &ndash; מסמכי Word בעברית שיוצאים נכון<a class="dl-mini" href="../downloads/skill-docx-rtl.zip" download>הורדת קובץ ה-Skill</a></h3><dl><dt>מה הוא עושה</dt><dd>יוצר ועורך מסמכי Word בעברית תקינים: יישור לימין אמיתי, מספור סעיפים רב-רמות (גם באותיות עבריות), ת.ז., גוש-חלקה וסכומים שאינם מתהפכים באמצע משפט, בלוקי חתימות וטבלאות תשלומים.</dd><dt>מתי הוא נדלק</dt><dd>"תכין מסמך Word", "הסכם ב-Word", "תקן כיווניות", "טבלה בעברית ב-Word".</dd><dt>ומה מיוחד בו</dt><dd>הוא פותר את הבאג המפורסם של Word בעברית - יישור ימין שנראה בפועל שמאלה - עם <strong>בדיקת כיווניות שרצה חובה על כל קובץ</strong>, ואינו מוסר קובץ שלא עבר אותה. קובץ שמסרתם לתיקון לא נדרס: התוצר הוא תמיד קובץ חדש.</dd></dl></div><div class="idcard"><h3><bdi dir="ltr">nevo-legal-memo</bdi> &ndash; מזכר משפטי עם מחקר נבו<a class="dl-mini" href="../downloads/skill-nevo-legal-memo.zip" download>הורדת קובץ ה-Skill</a></h3><dl><dt>מה הוא עושה</dt><dd>מכין את התוצר הכתוב שעו״ד מגיש: מזכר בן שבעה סעיפים - שאלה, תשובה בקצרה, רקע, ניתוח מעוגן במקורות עם קישורים חיים לנבו, עמדות נגד, מסקנה והמלצות, ורשימת מקורות - ומייצא אותו ל-Word בעברית תקינה.</dd><dt>מתי הוא נדלק</dt><dd>"תכין מזכר", "כתוב חוות דעת", "סכם את הדין בכתב", "מסמך מסודר ללקוח".</dd><dt>ומה מיוחד בו</dt><dd><strong>חיפוש-נגד הוא חובה מובנית:</strong> הוא מחויב לחפש בנבו גם את הטענה ההפוכה למסקנתו. כל ציטוט מאומת מול המקור, ולפני מסירה הוא בודק שהפסקים המרכזיים לא הופכו מאז. מקור בלי קישור אמיתי - מוסר מהטיוטה יחד עם האמירה שנשענה עליו. <strong>דורש חיבור פעיל למאגר נבו.</strong></dd></dl></div><div class="idcard"><h3><bdi dir="ltr">legal-skill-builder</bdi> &ndash; הבונה - Skills חדשים בלי קוד<a class="dl-mini" href="../downloads/skill-legal-skill-builder.zip" download>הורדת קובץ ה-Skill</a></h3><dl><dt>מה הוא עושה</dt><dd>בונה לכם <bdi dir="ltr">Skills</bdi> חדשים בלי שתכתבו שורת קוד: מראיין אתכם בשאלות בחירה קצרות בשפת עו״ד, מזקק את שיטת העבודה של המשרד, מציג אפיון לאישור, בונה, בודק על דוגמה - ומוסר <bdi dir="ltr">Skill</bdi> מוכן.</dd><dt>מתי הוא נדלק</dt><dd>"תבנה לי Skill", "אני רוצה Skill ש...", "בוא נבנה Skill".</dd><dt>ומה מיוחד בו</dt><dd>מסלול <strong>"תקן אותי"</strong>: במקום שתסבירו איך אתם עובדים, הוא מייצר טיוטה עם טעויות מכוונות ואתם עוברים עליה בעט אדום - וכל תיקון הופך לכלל קבוע. ושער פרטיות מפריד תבנית משרדית מעובדות תיק: שמות, ת.ז. וסכומים אינם נשמרים בתוך ה-<bdi dir="ltr">Skill</bdi> בלי אישורכם.</dd></dl></div></section><section class="guide-section" id="install"><p class="section-number">03</p><h2>מתקינים את ה-<bdi dir="ltr">Skills</bdi> - שלב אחרי שלב</h2><aside class="content-box recommendation"><h3>לפני שמתחילים - שלוש שורות שכדאי לקרוא</h3><p><strong>ההתקנה היא העלאת קובץ, ולא התקנת תוכנה.</strong> אין מה להתקין על המחשב, אין הרשאות מנהל, ואין שום דבר שיכול להישבר. זה לוקח פחות מדקה לכל <bdi dir="ltr">Skill</bdi>.</p><p><strong>ואם משהו לא יסתדר - אין נזק.</strong> <bdi dir="ltr">Skill</bdi> שהועלה ולא עבד פשוט מוסר בלחיצה, ואפשר להעלות אותו שוב. שום דבר בחשבון שלכם, ובשום שיחה קיימת, לא משתנה בגלל ההתקנה.</p><p><strong>ואין צורך להתקין את כל הארבעה.</strong> התחילו באחד - זה שהכי מדבר לעבודה שלכם - וההמלצה על הסדר מחכה <a href="#get">בסוף המדריך</a>.</p></aside><p>וזה כל התהליך:</p><ol class="bullets"><li><strong>מורידים את הקובץ</strong> מהכפתור שליד שם ה-<bdi dir="ltr">Skill</bdi> <a href="#downloads">בפרק שלמעלה</a>. הוא יורד לתיקיית ההורדות כקובץ ZIP.</li><li><strong>ולא מחלצים אותו.</strong> אין צורך ללחוץ עליו ימני ולבחור <bdi dir="ltr"><code>Extract All</code></bdi>: חלון ההעלאה מקבל את ה-ZIP <strong>כמו שהוא</strong>. במחשבי מק, אם הדפדפן חילץ אותו מעצמו - העלו את קובץ ה-ZIP המקורי, לא את התיקייה.</li><li><strong>נכנסים למסך ה-<bdi dir="ltr">Skills</bdi></strong> - בסרגל הצד של <bdi dir="ltr">Claude</bdi> לוחצים על <bdi dir="ltr"><code>Customize</code></bdi>, ומשם על <bdi dir="ltr"><code>Skills</code></bdi>.</li><li><strong>לוחצים <bdi dir="ltr"><code>Add</code></bdi> ואז <bdi dir="ltr"><code>Upload a skill</code></bdi></strong>, ובוחרים את הקובץ מתיקיית ההורדות. וזהו.</li><li><strong>ומוודאים שהוא שם.</strong> ה-<bdi dir="ltr">Skill</bdi> מופיע ברשימה עם המתג דולק ועם <bdi dir="ltr"><code>You</code></bdi> בעמודת המחבר. בדיקה שנייה, של שתי שניות: בשיחה חדשה מקלידים לוכסן - <bdi dir="ltr"><code>/</code></bdi> - והוא מופיע ברשימה שנפתחת.</li></ol><p>את חמשת השלבים האלה, עם צילום לכל מסך ועם התרגיל המלא, עשינו יחד ב<a href="../guide/#install">פרק 02 של המדריך הראשון</a> - ושם גם מה עושים אם אין אצלכם אזור <bdi dir="ltr">Skills</bdi> בכלל.</p></section><section class="guide-section" id="timeline"><p class="section-number">04</p>
+<h2>ציר זמן משפטי - <bdi dir="ltr">legal-timeline</bdi><a class="dl-mini" href="../downloads/skill-legal-timeline.zip" download>הורדת קובץ ה-Skill</a></h2>
 
-</ul></aside></section>
-<section class="guide-section" id="timeline"><p class="section-number">02</p>
-<h2>ציר זמן משפטי - <bdi dir="ltr">legal-timeline</bdi></h2>
-<div class="idcard">
-<h3>תעודת הזהות של ה-Skill: <bdi dir="ltr">legal-timeline</bdi><a class="dl-mini" href="../downloads/skill-legal-timeline.zip" download>הורדת הקובץ</a></h3>
-<dl>
-<dt>שם</dt><dd><bdi dir="ltr">legal-timeline</bdi></dd>
-<dt>מה הוא עושה</dt><dd>מפיק ציר זמן משפטי כקובץ PDF מוכן לתיק, ממסמך ישראלי אחד או מכמה יחד.</dd>
-<dt>ומה זה מקנה ל-<bdi dir="ltr">Claude</bdi></dt><dd><strong>מהרגע שהוא מותקן, Claude יודע</strong> לזהות בעצמו את סוג המסמך, לחלץ ממנו אירועים ומועדים, לפתור תאריכים יחסיים מול עוגן במסמך, ולסמן דגלי אימות - התיישנות, מועדים דחופים, סתירות ופערים. <strong>בלי שתסבירו לו את זה שוב.</strong></dd>
-</dl>
-</div>
 <p>נתחיל ב-<bdi dir="ltr">Skill</bdi> שכבר פגשתם: בתרגיל שבמדריך הראשון התקנתם אותו והרצתם אותו על חוזה שכירות מומצא. כאן נסתכל על מה שיצא - <strong>כי התוצר הזה הוא הדוגמה הטובה ביותר בערכה לשאלה "מה בכלל אפשר להגיש".</strong></p>
 <h3>מה הוא מקבל, ומה הוא מחזיר</h3>
 <p>הוא מקבל מסמך ישראלי אחד או כמה יחד - חוזה, כתב טענות, או צירוף שלהם - מזהה בעצמו את סוג המסמך, ומפיק <strong>קובץ PDF ב-A4 לרוחב, מוכן לתיק.</strong> בפנים: תמצית התראות, ואחריה טבלה כרונולוגית שבה לכל אירוע יש תאריך, צד, סוג, מקור מצוטט ומקום מדויק במסמך.</p>
@@ -272,16 +263,9 @@ aside.content-box > h3{font-family:Georgia,"Times New Roman",serif;font-size:1.4
 <p>מצרפים את המסמך ומבקשים ציר זמן. אם תרצו לכוון אותו, שלוש הבקשות שמשנות את איכות התוצר הן: <strong>מקור לכל אירוע · פתרון תאריכים יחסיים מול מועד החתימה · וסימון מה שחסר במקום השלמה שלו.</strong> ההוראה המלאה, מוכנה להעתקה, נמצאת בתרגיל שבמדריך הראשון.</p>
 </aside>
 </section>
-<section class="guide-section" id="docx"><p class="section-number">03</p>
-<h2>מסמכי Word בעברית - <bdi dir="ltr">docx-rtl</bdi></h2>
-<div class="idcard">
-<h3>תעודת הזהות של ה-Skill: <bdi dir="ltr">docx-rtl</bdi><a class="dl-mini" href="../downloads/skill-docx-rtl.zip" download>הורדת הקובץ</a></h3>
-<dl>
-<dt>שם</dt><dd><bdi dir="ltr">docx-rtl</bdi></dd>
-<dt>מה הוא עושה</dt><dd>יוצר ועורך מסמכי Word בעברית - הסכם, נספח, טבלאות ובלוק חתימות.</dd>
-<dt>ומה זה מקנה ל-<bdi dir="ltr">Claude</bdi></dt><dd><strong>מהרגע שהוא מותקן, Claude יודע</strong> להפיק מסמך שיוצא נכון בעברית: מספור סעיפים רב-רמות, מספרים בתוך משפט עברי שאינם מתהפכים, טבלאות בסדר ימין-לשמאל, ובדיקת כיווניות שהוא מריץ על עצמו לפני שהוא מוסר.</dd>
-</dl>
-</div>
+<section class="guide-section" id="docx"><p class="section-number">05</p>
+<h2>מסמכי Word בעברית - <bdi dir="ltr">docx-rtl</bdi><a class="dl-mini" href="../downloads/skill-docx-rtl.zip" download>הורדת קובץ ה-Skill</a></h2>
+
 <p>יש <bdi dir="ltr">Skills</bdi> שאפשר להתרשם מהם, ויש <bdi dir="ltr">Skills</bdi> שנכנסים לשגרה ולא יוצאים ממנה. <strong>זה השני.</strong> כל משרד מוציא מסמכי Word בעברית, ולכל מי שעשה זאת מוכרים שלושת המקומות שבהם זה נשבר: <strong>מספור סעיפים רב-רמות שמתפרק, מספרים בתוך עברית שמתהפכים - ת.ז., גוש/חלקה, סכומים - וטבלה שמחליפה כיוון.</strong></p>
 <p><bdi dir="ltr"><code>docx-rtl</code></bdi> נבנה בשביל שלושת אלה בלבד. הוא מקבל תוכן, או קובץ Word קיים, ומחזיר מסמך ערוך: תבניות של הסכם ונספח, מספור רב-רמות ובאותיות עבריות, מונחים מוגדרים, הפניות פנימיות, בלוק חתימות וטבלאות תשלומים.</p>
 <p><strong>ומה הוא מסרב לעשות?</strong> לתרגם ולתמצת. הוא מפיק מסמך - לא גרסה מקוצרת של מסמך, ולא תרגום שלו. אם ביקשתם תקציר, ביקשתם מה-<bdi dir="ltr">Skill</bdi> הלא נכון.</p>
@@ -324,16 +308,9 @@ aside.content-box > h3{font-family:Georgia,"Times New Roman",serif;font-size:1.4
 </aside>
 </section>
 
-<section class="guide-section" id="memo"><p class="section-number">04</p>
-<h2>מזכר מבוסס מחקר - <bdi dir="ltr">nevo-legal-memo</bdi></h2>
-<div class="idcard">
-<h3>תעודת הזהות של ה-Skill: <bdi dir="ltr">nevo-legal-memo</bdi><a class="dl-mini" href="../downloads/skill-nevo-legal-memo.zip" download>הורדת הקובץ</a></h3>
-<dl>
-<dt>שם</dt><dd><bdi dir="ltr">nevo-legal-memo</bdi></dd>
-<dt>מה הוא עושה</dt><dd>מכין מזכר משפטי מובנה ומבוסס מקורות, עם מחקר במאגר נבו.</dd>
-<dt>ומה זה מקנה ל-<bdi dir="ltr">Claude</bdi></dt><dd><strong>מהרגע שהוא מותקן, Claude יודע</strong> לבנות מזכר בחמישה חלקים קבועים, לאמת כל ציטוט מילה במילה מול המקור, לחפש גם את הטענה ההפוכה למסקנתו, ולבדוק לפני מסירה שהפסקים שעליהם הוא נשען לא הופכו.</dd>
-</dl>
-</div>
+<section class="guide-section" id="memo"><p class="section-number">06</p>
+<h2>מזכר מבוסס מחקר - <bdi dir="ltr">nevo-legal-memo</bdi><a class="dl-mini" href="../downloads/skill-nevo-legal-memo.zip" download>הורדת קובץ ה-Skill</a></h2>
+
 <p>זה ה-<bdi dir="ltr">Skill</bdi> היחיד בערכה שאינו עובד רק על מה שנתתם לו: <strong>הוא יוצא לחפש.</strong> הוא מיועד לתוצר הכתוב שעורך דין מגיש - מזכר, חוות דעת, סיכום דין - ובנוי בחמישה חלקים קבועים: השאלה, תשובה קצרה, ניתוח מעוגן במקורות מנבו עם קישורים, <strong>עמדות נגד</strong>, ומסקנה עם המלצות.</p>
 <h3>שלוש מחויבויות שכתובות לתוכו</h3>
 <ul>
@@ -348,16 +325,9 @@ aside.content-box > h3{font-family:Georgia,"Times New Roman",serif;font-size:1.4
 <p>ולכן גם בחרנו לא להדגים אותו כאן על מסמך אמיתי: <strong>מזכר עם ציטוטים שאי אפשר לאמת הוא בדיוק מה שה-<bdi dir="ltr">Skill</bdi> הזה נבנה כדי למנוע.</strong></p>
 </aside>
 </section>
-<section class="guide-section" id="builder"><p class="section-number">05</p>
-<h2>הבונה - <bdi dir="ltr">legal-skill-builder</bdi></h2>
-<div class="idcard">
-<h3>תעודת הזהות של ה-Skill: <bdi dir="ltr">legal-skill-builder</bdi><a class="dl-mini" href="../downloads/skill-legal-skill-builder.zip" download>הורדת הקובץ</a></h3>
-<dl>
-<dt>שם</dt><dd><bdi dir="ltr">legal-skill-builder</bdi></dd>
-<dt>מה הוא עושה</dt><dd>בונה <bdi dir="ltr">Skills</bdi> חדשים. מראיין אתכם על משימה משפטית שחוזרת אצלכם, מזקק ממנה את שיטת העבודה של המשרד, מציג אפיון לאישורכם, בונה, בודק יחד איתכם - ומתקין.</dd>
-<dt>ומה זה מקנה ל-<bdi dir="ltr">Claude</bdi></dt><dd><strong>מהרגע שהוא מותקן, Claude יודע לראיין אתכם כמו יועץ</strong> - בשאלות בשפת עורכי דין ולא בשפה טכנית - ולהמיר את התשובות שלכם לקובץ הוראות תקני, עם קווים אדומים ונקודות עצירה. <strong>זה ה-<bdi dir="ltr">Skill</bdi> היחיד בערכה שהתוצר שלו הוא <bdi dir="ltr">Skill</bdi> נוסף.</strong></dd>
-</dl>
-</div>
+<section class="guide-section" id="builder"><p class="section-number">07</p>
+<h2>הבונה - <bdi dir="ltr">legal-skill-builder</bdi><a class="dl-mini" href="../downloads/skill-legal-skill-builder.zip" download>הורדת קובץ ה-Skill</a></h2>
+
 <p>ארבעת ה-<bdi dir="ltr">Skills</bdi> שראינו עד כה עושים משימה. <strong>ה-<bdi dir="ltr">Skill</bdi> הזה עושה <bdi dir="ltr">Skills</bdi></strong> - וזה המקום שבו הערכה מפסיקה להיות רשימה של מה שמישהו אחר בנה, ומתחילה להכיר את שיטת העבודה שלכם.</p>
 <p>ואם קראתם את המדריך השני, אתם כבר יודעים לבנות <bdi dir="ltr">Skill</bdi> בעצמכם: כתבתם דף הוראות ידנית וראיתם אותו עוצר בדיוק במקום שהגדרתם. <strong>הבונה עושה את אותו דבר, אבל הוא זה ששואל את השאלות</strong> - ולכן התוצר שלו מפורט יותר: קווים אדומים מנוסחים, נקודות עצירה, ואפיון שנשמר לתיעוד.</p>
 <h3>ואם הוא כבר מופיע לכם ברשימה</h3>
@@ -424,7 +394,7 @@ aside.content-box > h3{font-family:Georgia,"Times New Roman",serif;font-size:1.4
 </aside>
 </section>
 
-<section class="guide-section" id="get"><p class="section-number">06</p>
+<section class="guide-section" id="get"><p class="section-number">08</p>
 <h2>וממה כדאי להתחיל</h2>
 <p>ארבעת הקבצים מחכים לכם <a href="#downloads">בראש המדריך</a>, וגם ליד השם של כל <bdi dir="ltr">Skill</bdi> בפרק שלו. השאלה היחידה שנשארת היא <strong>במה להתחיל</strong>.</p>
 <h3>ובאיזה סדר</h3>
