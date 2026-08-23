@@ -23,14 +23,14 @@
 
 /* what is still being built is said out loud, in the guide, so nobody has to
    guess whether a gap is an omission or work in progress */
-.wip{margin:22px 0 0;border:2px solid #d8b26a;border-radius:14px;
-  background:#fffaf0;padding:18px 20px}
-.wip>b{display:block;margin:0 0 4px;color:#8a5f10;font-size:1.06rem;font-weight:900}
+.wip{margin:22px 0 0;border:2px solid rgba(20,116,116,.32);border-radius:14px;
+  background:#f6fbfa;padding:18px 20px}
+.wip>b{display:block;margin:0 0 4px;color:#147474;font-size:1.06rem;font-weight:900}
 .wip>p{margin:0 0 12px;line-height:1.7}
 .wip ol{margin:0;padding-inline-start:22px}
 .wip li{margin-bottom:11px;line-height:1.7}
 .wip li:last-child{margin-bottom:0}
-.wip li b{color:#8a5f10}
+.wip li b{color:#147474}
 .wip .wip-done{color:#146a4f;font-weight:800}
 </style>
 </head><body class="center">
@@ -47,16 +47,10 @@
 <aside class="status-panel"><span class="chip">טיוטה - שלב 1 מתוך 3</span><p><strong>מה זה השלב הזה:</strong> לפניכם שני מדריכים וקטלוג - הטקסט מלא וסופי, ועבר בקרת איכות משולשת. <strong>המבנה המלא הוא שלושה מדריכים:</strong> הראשון - להתקין ולהפעיל; השני - איך <bdi dir="ltr">Skill</bdi> בנוי ואיך בונים אחד, כולל תרגיל מלא; <strong>והשלישי, שעוד לא נכתב - ערכת ה-<bdi dir="ltr">Skills</bdi> של נבו</strong>, עם ההתקנות, ההרצות וצילומי המסך של כל אחד מחמשת ה-<bdi dir="ltr">Skills</bdi>. הוא נבנה רק אחרי אישור התוכן שכאן, כדי שהצילומים ישקפו את הגרסה המאושרת ולא תיעשה עבודה כפולה - וכדי שהקורא יגיע אליו כשהוא כבר יודע מה <bdi dir="ltr">Skill</bdi>, איך הוא בנוי ואיך בונים אחד.</p><ul class="status-facts"><li><b>~15</b>דקות קריאה</li><li><b>5</b>קבצים בערכת נבו-Legal Mind</li><li><b>80%</b>צמצום מול הסדרה המפורטת</li></ul></aside>
 <div id="wip-note"></div>
 <aside class="wip">
-<b>מה כבר כאן, ומה עוד בבנייה</b>
-<p>הטיוטה הזאת נמסרת לעיון בזמן שהעבודה נמשכת. כדי שלא תצטרכו לנחש אם משהו חסר בטעות או שעוד לא נכתב - הנה התמונה המלאה, נכון ל-23 באוגוסט 2026.</p>
-<ol>
-<li><b>תרגיל 1 - להתקין <bdi dir="ltr">Skill</bdi> ולהוכיח שהוא עובד (מדריך 1, פרק 04):</b> <span class="wip-done">נכתב ופורסם.</span> הורדה של <bdi dir="ltr"><code>legal-timeline</code></bdi> ושל חוזה התרגול, העלאה דרך <bdi dir="ltr"><code>Add</code></bdi> &#8592; <bdi dir="ltr"><code>Upload a skill</code></bdi>, שתי דרכים לאמת שההתקנה הצליחה, הרצה על החוזה, ותוצר ה-PDF - עם עשרה צילומים מסומנים.</li>
-<li><b>תרגיל 2 - לבנות <bdi dir="ltr">Skill</bdi> משלכם (מדריך 2):</b> משתנה למסלול הפשוט שבממשק - <bdi dir="ltr"><code>Add</code></bdi> ← <bdi dir="ltr"><code>Write skill instructions</code></bdi>, שבו כותבים את ההוראות ישירות ואין קובץ להכין. התלמיד יקליד את אותו קובץ תזכורת שקרא בפרק 02, ויראה אותו מותקן. צילום המסך של השלב הזה עוד לא נעשה.</li>
-<li><b>הבונה <bdi dir="ltr"><code>legal-skill-builder</code></bdi>:</b> עובר לפרק סיום במדריך 2, כדרך המקצועית לבנות <bdi dir="ltr">Skill</bdi> אמיתי למשרד - ולעומק במדריך 3. צילומי הראיון שלו ייעשו על הבונה של Legal Mind; הצילומים שקיימים אצלנו הם של כלי בנייה אחר, ולכן אינם בשימוש.</li>
-<li><b>מדריך 3 - ערכת ה-<bdi dir="ltr">Skills</bdi>:</b> לא נכתב בכוונה. הוא נכתב אחרי אישור השלב הזה, וכולל את ההתקנות, ההרצות וצילומי המסך של כל <bdi dir="ltr">Skill</bdi> בערכה.</li>
-<li><b>ההורדות:</b> <bdi dir="ltr"><code>legal-timeline</code></bdi> וחוזה התרגול פתוחים להורדה ועובדים. שלושת ה-<bdi dir="ltr">Skills</bdi> האחרים מסומנים "ההורדה תופעל עם אישור", כי הפצה פומבית שלהם היא החלטה שאינה שלנו.</li>
-<li><b>הצילומים שמסומנים "מחשבון הדגמה":</b> יוחלפו בהדרגה בצילומים שנעשים על ה-<bdi dir="ltr">Skills</bdi> של הערכה עצמה, כדי שכל דוגמה במדריך תהיה על הכלים שלנו.</li>
-</ol>
+<b>מה יש בחבילה הזאת</b>
+<p><strong>שני מדריכים מלאים וקטלוג</strong>, והכל מוכן לקריאה ולעבודה: מדריך ראשון שבסופו תרגיל שבו מתקינים <bdi dir="ltr">Skill</bdi> ומוכיחים שהוא עובד - עד קובץ PDF מוכן לתיק; ומדריך שני שבסופו תרגיל שבו בונים <bdi dir="ltr">Skill</bdi> משלכם ורואים אותו עוצר בדיוק במקום שהגדרתם. שני התרגילים רצו מקצה לקצה, וכל מסך בהם מופיע בצילום.</p>
+<p><strong>המדריך השלישי - ערכת ה-<bdi dir="ltr">Skills</bdi> של נבו - ייכתב אחרי אישור שני אלה.</strong> הוא מוקדש כולו לכלים עצמם: מה כל אחד עושה, איך מתקינים, ומה מקבלים ממנו בפועל. הסדר הזה מכוון: התלמיד מגיע אליו כשהוא כבר יודע מהו <bdi dir="ltr">Skill</bdi>, איך הוא בנוי, ואיך בונים אחד.</p>
+<p><strong>ושתי הכרעות שממתינות לכם:</strong> אילו מקובצי ההתקנה של הערכה לפרסם להורדה בדף הפומבי (כרגע פתוחים <bdi dir="ltr"><code>legal-timeline</code></bdi> וחוזה התרגול), והאם להוסיף למדריך השני את צילומי הראיון של הבונה.</p>
 </aside>
 
 
