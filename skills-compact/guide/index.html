@@ -42,6 +42,9 @@ table.demo td{padding:9px 12px;border:1px solid #e0ede5;vertical-align:top;text-
     border-radius:999px;background:rgba(20,116,116,.09);
     color:var(--teal);font-size:1.2rem;font-weight:800;line-height:1.4}
   .shot-hint:before{content:"🔍";margin-inline-end:8px;font-weight:400}
+  /* the pill is centred under the legend the way the cowork series shows it,
+     with the same padding, radius and type size */
+  figure .shot-hint{display:block;width:fit-content;margin-inline:auto}
   .zoomer{position:fixed;inset:0;z-index:70;display:none;overflow:auto;
     background:rgba(9,20,32,.92);padding:26px}
   .zoomer.is-open{display:block}
@@ -614,6 +617,63 @@ Legal Mind ונבו · המדריך המקיף על Skills · טיוטה, אוג
                                               function(){done(false);});
     } else { done(false); }
   });
+})();
+</script>
+<div class="zoomer" id="zoomer" role="dialog" aria-modal="true" aria-label="תצוגה מוגדלת">
+<button type="button" class="zoomer-close" id="zoomerClose">סגירה</button>
+<div class="zoomer-stage" id="zoomerStage"></div>
+<p class="zoomer-cap" id="zoomerCap"></p>
+</div>
+<script>
+(function(){
+  var z=document.getElementById('zoomer'),st=document.getElementById('zoomerStage'),
+      cap=document.getElementById('zoomerCap'),cl=document.getElementById('zoomerClose');
+  if(!z||!st) return;
+  function open(frame){
+    st.innerHTML=''; st.appendChild(frame.cloneNode(true));
+    var img=frame.querySelector('img');
+    cap.textContent=img?(img.getAttribute('alt')||''):'';
+    z.classList.add('is-open'); document.body.style.overflow='hidden';
+    z.scrollTop=0; cl.focus();
+  }
+  function close(){ z.classList.remove('is-open'); st.innerHTML=''; document.body.style.overflow=''; }
+  /* the invitation appears only on a screenshot that is really shown smaller
+     than its own pixels. on one already at natural size it is an empty
+     promise, and twenty such lines are noise */
+  function wire(){
+    Array.prototype.forEach.call(document.querySelectorAll('.shot-frame'),function(frame){
+      var img=frame.querySelector('img');
+      if(!img||!img.naturalWidth) return;
+      var shrunk=img.getBoundingClientRect().width < img.naturalWidth*0.96;
+      if(!shrunk||frame.dataset.zoom) return;
+      frame.dataset.zoom='1';
+      frame.setAttribute('tabindex','0');
+      frame.setAttribute('role','button');
+      frame.setAttribute('aria-label','הגדלת הצילום');
+      frame.style.cursor='zoom-in';
+      frame.addEventListener('click',function(){ open(frame); });
+      frame.addEventListener('keydown',function(ev){
+        if(ev.key==='Enter'||ev.key===' '){ ev.preventDefault(); open(frame); }
+      });
+      var fig=frame.closest('figure');
+      if(!fig||fig.querySelector('.shot-hint')) return;
+      var anchor=fig.querySelector('.shot-legend')||fig.querySelector('.shot-caption')||fig.querySelector('figcaption');
+      var hint=document.createElement('p');
+      hint.className='shot-hint';
+      hint.textContent='לחיצה על הצילום פותחת אותו בגודל מלא';
+      if(anchor) anchor.insertAdjacentElement('afterend',hint); else fig.appendChild(hint);
+    });
+  }
+  wire();
+  window.addEventListener('load',wire);
+  window.addEventListener('resize',wire);
+  Array.prototype.forEach.call(document.querySelectorAll('.shot-frame img'),function(img){
+    if(!img.complete) img.addEventListener('load',wire);
+  });
+  cl.addEventListener('click',close);
+  z.addEventListener('click',function(ev){ if(ev.target===z) close(); });
+  document.addEventListener('keydown',function(ev){
+    if(ev.key==='Escape'&&z.classList.contains('is-open')) close(); });
 })();
 </script>
 </body></html>
