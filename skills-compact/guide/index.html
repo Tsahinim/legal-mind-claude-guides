@@ -20,6 +20,8 @@
 .dl-card h4{margin:0 0 6px;color:var(--navy);font-family:Georgia,"Times New Roman",serif;font-size:1.12rem}
 .dl-card p{margin:0 0 8px;line-height:1.65}
 .dl-card .ver{display:inline-block;font-size:.78rem;color:#5a6b75;font-family:ui-monospace,Consolas,monospace;background:#f4f7f7;border-radius:6px;padding:2px 8px}
+.dl-go{display:block;margin-top:10px;padding:9px 14px;border-radius:9px;background:#147474;color:#fff;font-weight:800;font-size:.9rem;text-align:center;text-decoration:none}
+.dl-go:hover{background:#0f5c5c}
 .dl-wait{display:block;margin-top:10px;padding:8px 14px;border-radius:9px;background:#f2f4f4;color:#6b7c85;font-weight:700;font-size:.85rem;text-align:center}
 .term-chip{background:#dff3e7;border:1px solid #9ed8b8;padding:2px 9px;border-radius:7px;font-family:ui-monospace,Consolas,monospace;font-size:.9em;white-space:nowrap}
 .compare{display:grid;gap:16px;margin:18px 0}
@@ -481,7 +483,7 @@ table.demo td{padding:9px 12px;border:1px solid #e0ede5;vertical-align:top;text-
 <h2>ה-<bdi dir="ltr">Skills</bdi> להורדה</h2>
 <p>ערכת ה-Skills של מנויי נבו, כקובצי התקנה. את ארבעת הראשונים מעלים ישירות במסך ה-<bdi dir="ltr">Skills</bdi>: <bdi dir="ltr"><code>Add</code></bdi> ← <bdi dir="ltr"><code>Upload a skill</code></bdi>.</p>
 <div class="dl-grid">
-<div class="dl-card"><h4>legal-timeline</h4><p>ציר זמן משפטי מוכן לתיק, עם ציטוט מקור לכל אירוע ודגלי אימות למועדים בעייתיים.</p><span class="ver">גרסה 1.15</span><span class="dl-wait">ההורדה תופעל עם אישור אסף</span></div>
+<div class="dl-card"><h4>legal-timeline</h4><p>ציר זמן משפטי מוכן לתיק, עם ציטוט מקור לכל אירוע ודגלי אימות למועדים בעייתיים.</p><span class="ver">גרסה 1.15</span><a class="dl-go" href="../downloads/skill-legal-timeline.zip" download>הורדת קובץ ההתקנה</a></div>
 <div class="dl-card"><h4>legal-skill-builder</h4><p>הבונה: מראיין אתכם, מציג אפיון לאישור, ומוסר <bdi dir="ltr">Skill</bdi> מוכן - כולל מסלול "תקן אותי".</p><span class="ver">גרסה 2.5</span><span class="dl-wait">ההורדה תופעל עם אישור אסף</span></div>
 <div class="dl-card"><h4>docx-rtl</h4><p>Word עברי שיוצא נכון - הסכמים, נספחים, טבלאות תשלומים ובלוקי חתימות.</p><span class="ver">גרסה 1.3</span><span class="dl-wait">ההורדה תופעל עם אישור אסף</span></div>
 <div class="dl-card"><h4>nevo-legal-memo</h4><p>מזכר משפטי מבוסס מחקר בנבו, עם ציטוטים מאומתים. דורש חיבור פעיל למאגר נבו - מגדירים פעם אחת (<bdi dir="ltr">Settings ← Connectors</bdi>); מנויי נבו מקבלים את פרטי החיבור מנבו.</p><span class="ver">גרסה 1.3</span><span class="dl-wait">ההורדה תופעל עם אישור אסף</span></div>
@@ -617,63 +619,6 @@ Legal Mind ונבו · המדריך המקיף על Skills · טיוטה, אוג
                                               function(){done(false);});
     } else { done(false); }
   });
-})();
-</script>
-<div class="zoomer" id="zoomer" role="dialog" aria-modal="true" aria-label="תצוגה מוגדלת">
-<button type="button" class="zoomer-close" id="zoomerClose">סגירה</button>
-<div class="zoomer-stage" id="zoomerStage"></div>
-<p class="zoomer-cap" id="zoomerCap"></p>
-</div>
-<script>
-(function(){
-  var z=document.getElementById('zoomer'),st=document.getElementById('zoomerStage'),
-      cap=document.getElementById('zoomerCap'),cl=document.getElementById('zoomerClose');
-  if(!z||!st) return;
-  function open(frame){
-    st.innerHTML=''; st.appendChild(frame.cloneNode(true));
-    var img=frame.querySelector('img');
-    cap.textContent=img?(img.getAttribute('alt')||''):'';
-    z.classList.add('is-open'); document.body.style.overflow='hidden';
-    z.scrollTop=0; cl.focus();
-  }
-  function close(){ z.classList.remove('is-open'); st.innerHTML=''; document.body.style.overflow=''; }
-  /* the invitation appears only on a screenshot that is really shown smaller
-     than its own pixels. on one already at natural size it is an empty
-     promise, and twenty such lines are noise */
-  function wire(){
-    Array.prototype.forEach.call(document.querySelectorAll('.shot--zoom .shot-frame'),function(frame){
-      var img=frame.querySelector('img');
-      if(!img||!img.naturalWidth) return;
-      var shrunk=img.getBoundingClientRect().width < img.naturalWidth*0.96;
-      if(!shrunk||frame.dataset.zoom) return;
-      frame.dataset.zoom='1';
-      frame.setAttribute('tabindex','0');
-      frame.setAttribute('role','button');
-      frame.setAttribute('aria-label','הגדלת הצילום');
-      frame.style.cursor='zoom-in';
-      frame.addEventListener('click',function(){ open(frame); });
-      frame.addEventListener('keydown',function(ev){
-        if(ev.key==='Enter'||ev.key===' '){ ev.preventDefault(); open(frame); }
-      });
-      var fig=frame.closest('figure');
-      if(!fig||fig.querySelector('.shot-hint')) return;
-      var anchor=fig.querySelector('.shot-legend')||fig.querySelector('.shot-caption')||fig.querySelector('figcaption');
-      var hint=document.createElement('p');
-      hint.className='shot-hint';
-      hint.textContent='לחיצה על הצילום פותחת אותו בגודל מלא';
-      if(anchor) anchor.insertAdjacentElement('afterend',hint); else fig.appendChild(hint);
-    });
-  }
-  wire();
-  window.addEventListener('load',wire);
-  window.addEventListener('resize',wire);
-  Array.prototype.forEach.call(document.querySelectorAll('.shot--zoom .shot-frame img'),function(img){
-    if(!img.complete) img.addEventListener('load',wire);
-  });
-  cl.addEventListener('click',close);
-  z.addEventListener('click',function(ev){ if(ev.target===z) close(); });
-  document.addEventListener('keydown',function(ev){
-    if(ev.key==='Escape'&&z.classList.contains('is-open')) close(); });
 })();
 </script>
 </body></html>
