@@ -36,6 +36,12 @@
 /* inline-flex buttons swallow the space beside a bdi;
    one span means one flex child and normal text flow */
 .btn-label{display:inline;white-space:normal}
+
+/* a path shows the capability each stage adds, so each step is a name and a line rather than a title */
+.learning-path li{align-items:flex-start;gap:12px;padding:13px 14px}
+.learning-path li>div{min-width:0}
+.learning-path li b{display:block;color:var(--teal);font-size:1rem;margin-bottom:3px}
+.learning-path li em{display:block;font-style:normal;font-weight:500;color:var(--muted);font-size:.88rem;line-height:1.55}
 </style>
 </head><body class="center">
 <header class="center-head">
@@ -51,10 +57,7 @@
 
 
 
-<section class="learning-path"><h2>מסלול הלימוד</h2>
-<p>מתחילים במדריך הראשון - הוא עומד בפני עצמו ומספיק לרוב הקוראים. השני למי שרוצה לבנות <bdi dir="ltr">Skill</bdi> משלו, והשלישי עובר על הערכה <bdi dir="ltr">Skill</bdi> אחר <bdi dir="ltr">Skill</bdi> - ומשם גם מורידים את ארבעת הקבצים.</p>
-<ol style="grid-template-columns:repeat(3,1fr)"><li><span>1</span>מתקינים <bdi dir="ltr">Skill</bdi> ומוכיחים שהוא עובד</li><li><span>2</span>בונים <bdi dir="ltr">Skill</bdi> משלכם, בלי קוד</li><li><span>3</span>מתקינים את הערכה ומריצים אותה</li></ol>
-</section>
+<section class="learning-path"><h2>מסלול הלימוד</h2><p>שלושה שלבים, וכל אחד מוסיף יכולת אחרת - <strong>המדריך הראשון עומד בפני עצמו ומספיק לרוב הקוראים.</strong></p><ol style="grid-template-columns:repeat(3,1fr)"><li><span>1</span><div><b>מבינים, ומפעילים</b><em>מה <bdi dir="ltr">Skill</bdi> עושה ובמה הוא שונה מפרומפט · מתקינים ומפעילים · ומזהים תוצר שאפשר להגיש</em></div></li><li><span>2</span><div><b>בונים</b><em>לוקחים תהליך שחוזר במשרד ומעגנים אותו בקובץ הוראות משלכם, בלי שורת קוד</em></div></li><li><span>3</span><div><b>מטמיעים</b><em>ארבעת ה-<bdi dir="ltr">Skills</bdi> של Legal Mind ונבו מותקנים ורצים על החומר שלכם</em></div></li></ol></section>
 
 <section><div class="guide-grid">
 
