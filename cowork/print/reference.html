@@ -1,4 +1,19 @@
 <!DOCTYPE html><html dir="rtl" lang="he"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>דף העזר של סדרת Cowork | Legal Mind</title><link rel="stylesheet" href="../../claude-code/assets/site.css?v=20260817"><style>
+  /* tables: the builder used to emit a class nothing styled, so they rendered
+     bare. these ride on .tbl from the locked sheet and only add the header
+     treatment Tzahi asked for - centred, bold, a shade larger. */
+  .tbl-wrap{overflow-x:auto;margin:20px 0}
+  .tbl{width:100%;border-collapse:collapse;background:#fff;
+    border:1px solid var(--line);border-radius:12px;overflow:hidden;
+    box-shadow:0 4px 14px rgba(13,39,64,.05)}
+  .tbl th{background:#dff0e8;color:var(--navy);text-align:center;
+    font-weight:900;font-size:1.06rem;padding:12px 14px;
+    border:1px solid #b9d9cc}
+  .tbl td{background:#fff;text-align:right;padding:11px 14px;
+    border:1px solid var(--line);vertical-align:top;line-height:1.65}
+  .tbl tbody tr:last-child td{border-bottom:1px solid var(--line)}
+  @media print{.tbl{box-shadow:none}.tbl th{background:#eef6f2!important}}
+
   .status-panel{margin:26px 0;border-radius:16px;background:var(--navy);
     color:#fff;padding:22px 26px;display:grid;gap:14px;
     box-shadow:0 10px 30px rgba(13,39,64,.16)}
@@ -154,24 +169,24 @@ body{max-width:52rem;margin:0 auto;padding:18px 22px}h1{color:var(--navy);font-s
 <ol class="steps"><li><strong>כל עובדה חוזרת למקור.</strong> תאריך, סכום, שם וסעיף נבדקים מול המסמך שהתוצר מצביע עליו.</li><li><strong>כלום לא הומצא.</strong> מחפשים עובדה בלי מקור, מספר מעוגל, ניסוח בטוח במקום שהמקור מהוסס.</li><li><strong>התוצר לא מכריע.</strong> המלצה או עמדה בתוך תוצר - חריגה, גם כשהיא נשמעת נכונה.</li></ol>
 <h3>מבנה ארבע התיקיות של תיק:</h3>
 <p>מדריך 2 פרק 02:</p>
-<div class="table-scroll"><table><thead><tr><th>תיקייה</th><th>מה יושב בה</th><th>הכלל</th></tr></thead><tbody><tr><td>01-מקור</td><td>מה שהגיע מבחוץ</td><td>לא נוגעים, וגם קלוד לא</td></tr><tr><td>02-עבודה</td><td>עותקים שאתם עורכים ביד</td><td>חופשי</td></tr><tr><td>03-פלט-קלוד</td><td>כל מה שקלוד יוצר</td><td>טיוטה, תמיד, גם כשנראה מושלם</td></tr><tr><td>04-תוצר-בדוק</td><td>מה שעבר בדיקת עורך דין</td><td>רק מכאן מצטטים ושולחים</td></tr></tbody></table></div>
+<div class="tbl-wrap"><table class="tbl"><thead><tr><th>תיקייה</th><th>מה יושב בה</th><th>הכלל</th></tr></thead><tbody><tr><td>01-מקור</td><td>מה שהגיע מבחוץ</td><td>לא נוגעים, וגם <bdi dir="ltr">Claude</bdi> לא</td></tr><tr><td>02-עבודה</td><td>עותקים שאתם עורכים ביד</td><td>חופשי</td></tr><tr><td>03-פלט-<bdi dir="ltr">Claude</bdi></td><td>כל מה ש<bdi dir="ltr">Claude</bdi> יוצר</td><td>טיוטה, תמיד, גם כשנראה מושלם</td></tr><tr><td>04-תוצר-בדוק</td><td>מה שעבר בדיקת עו"ד</td><td>רק מכאן מצטטים ושולחים</td></tr></tbody></table></div>
 <h3>מה מתזמנים ומה לא:</h3>
 <p>מדריך 3 פרק 01: מתזמנים רק משימה שמכינה טיוטה, ולעולם לא משימה שפועלת כלפי חוץ.</p>
-<div class="table-scroll"><table><thead><tr><th>כן, אחרי הרצה ידנית אחת</th><th>לא, גם לא כשזה מפתה</th></tr></thead><tbody><tr><td>דוח שבועי פנימי</td><td>שליחת מייל או הודעה לכל גורם</td></tr><tr><td>ריכוז מסמכים חדשים בתיק</td><td>עדכון מסמך מקור</td></tr><tr><td>רשימת מועדים מתקרבים</td><td>כל פעולה שיוצרת מחויבות</td></tr><tr><td>רשימת נקודות פתוחות</td><td>פעולה שדורשת הכרעה משפטית</td></tr></tbody></table></div>
+<div class="tbl-wrap"><table class="tbl"><thead><tr><th>כן, אחרי הרצה ידנית אחת</th><th>לא, גם לא כשזה מפתה</th></tr></thead><tbody><tr><td>דוח שבועי פנימי</td><td>שליחת מייל או הודעה לכל גורם</td></tr><tr><td>ריכוז מסמכים חדשים בתיק</td><td>עדכון מסמך מקור</td></tr><tr><td>רשימת מועדים מתקרבים</td><td>כל פעולה שיוצרת מחויבות</td></tr><tr><td>רשימת נקודות פתוחות</td><td>פעולה שדורשת הכרעה משפטית</td></tr></tbody></table></div>
 <h3>מסלול 30 יום להטמעה במשרד:</h3>
 <p>המלצה של Legal Mind, שבוע אחר שבוע:</p>
-<p><strong>שבוע 1 - תרגול בלי סיכון.</strong> כל עורך דין שמצטרף עובר את מדריך 1 במלואו ואת תרגילים 1 עד 4 שבדף הזה. בלי שום חומר אמיתי.</p>
+<p><strong>שבוע 1 - תרגול בלי סיכון.</strong> כל עו"ד שמצטרף עובר את מדריך 1 במלואו ואת תרגילים 1 עד 4 שבדף הזה. בלי שום חומר אמיתי.</p>
 <p><strong>שבוע 2 - תיק אמיתי ראשון, זהיר.</strong> בוחרים תיק אחד שאין בו חומר רגיש, בונים לו ארבע תיקיות ו-Project עם הוראות (מדריך 2 פרקים 02 עד 04), ומריצים משימות קריאה וריכוז בלבד.</p>
 <p><strong>שבוע 3 - תוצרים ובדיקות.</strong> מכינים מסמך, טבלה ומצגת מתוך התיק, ומקפידים על שלוש הבדיקות לפני כל העברה לתיקיית הבדוקים.</p>
 <p><strong>שבוע 4 - שגרה.</strong> משימה מתוזמנת ראשונה על התיק, ושיחת צוות קצרה: מה עבד, מה לא, ומה הכלל המשרדי מכאן והלאה.</p>
 <h3>שאלות מהירות, ואיפה התשובה המלאה:</h3>
 <p><strong>אפשר לעשות את התרגילים האלה בצ'אט הרגיל?</strong> לא. הצ'אט לא נוגע בקבצים שבמחשב - לא שומר, לא עורך ולא מסדר. מדריך 1 פרק 01.</p>
-<p><strong>קלוד רואה את כל המחשב שלי?</strong> לא. רק את התיקייה שחיברתם, ושום דבר מחוץ לה. מדריך 1 פרק 04.</p>
-<p><strong>המסמכים שלי עוברים בשרתים של אנתרופיק?</strong> כן, בסביבה מבודדת, וכל ההשלכות מוסברות במדריך 1 פרק 01, ובהרחבה במדריך על מנוי Team.</p>
+<p><strong><bdi dir="ltr">Claude</bdi> רואה את כל המחשב שלי?</strong> לא. רק את התיקייה שחיברתם, ושום דבר מחוץ לה. מדריך 1 פרק 04.</p>
+<p><strong>המסמכים שלי עוברים בשרתים של <bdi dir="ltr">Anthropic</bdi>?</strong> כן, בסביבה מבודדת, וכל ההשלכות מוסברות במדריך 1 פרק 01, ובהרחבה במדריך על מנוי Team.</p>
 <p><strong>אפשר לסגור את המחשב באמצע משימה?</strong> משימה על תיקייה מקומית - לא, האפליקציה חייבת להישאר פתוחה עד הסיום. מדריך 1 פרק 04.</p>
 <p><strong>איך עוצרים משימה שרצה?</strong> כפתור העצירה בפינת תיבת הכתיבה, או לכתוב "עצור". שום דבר שלא הושלם לא נשמר. מדריך 1 פרק 05.</p>
 <p><strong>איפה מוצאים משימה מאתמול?</strong> ברשימת המשימות בסרגל הצד. משימה היא לא חלון שנעלם. מדריך 1 פרק 05.</p>
-<p><strong>קלוד כתב במסמך עובדה שלא קיימת - מה עושים?</strong> מצביעים על השורה ומבקשים תיקון לפי המסמכים בלבד, דרך קלוד ולא ביד. מדריך 2 פרקים 07 ו-08.</p>
+<p><strong><bdi dir="ltr">Claude</bdi> כתב במסמך עובדה שלא קיימת - מה עושים?</strong> מצביעים על השורה ומבקשים תיקון לפי המסמכים בלבד, דרך <bdi dir="ltr">Claude</bdi> ולא ביד. מדריך 2 פרקים 07 ו-08.</p>
 <p><strong>המשימה המתוזמנת לא רצה - למה?</strong> כמעט תמיד: המחשב היה כבוי או האפליקציה סגורה. מדריך 3 פרק 07.</p>
 <p><strong>מה ההבדל בין Connector, Skill ו-Plugin?</strong> גישה למידע, שיטת עבודה, וחבילה שאורזת כמה יכולות. הטבלה המלאה במדריך 3 פרק 05.</p>
 <p><strong>נגמרה לי המכסה באמצע היום - זה תקין?</strong> כן, משימות Cowork צורכות יותר משיחה רגילה, והמכסה מתחדשת מעצמה. מדריך 1 פרק 08.</p>

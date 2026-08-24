@@ -7,6 +7,21 @@
 <title>מדריך Claude Cowork · דף תרגול | Legal Mind</title>
 <link rel="stylesheet" href="../../claude-code/assets/site.css?v=20260821">
 <style>
+  /* tables: the builder used to emit a class nothing styled, so they rendered
+     bare. these ride on .tbl from the locked sheet and only add the header
+     treatment Tzahi asked for - centred, bold, a shade larger. */
+  .tbl-wrap{overflow-x:auto;margin:20px 0}
+  .tbl{width:100%;border-collapse:collapse;background:#fff;
+    border:1px solid var(--line);border-radius:12px;overflow:hidden;
+    box-shadow:0 4px 14px rgba(13,39,64,.05)}
+  .tbl th{background:#dff0e8;color:var(--navy);text-align:center;
+    font-weight:900;font-size:1.06rem;padding:12px 14px;
+    border:1px solid #b9d9cc}
+  .tbl td{background:#fff;text-align:right;padding:11px 14px;
+    border:1px solid var(--line);vertical-align:top;line-height:1.65}
+  .tbl tbody tr:last-child td{border-bottom:1px solid var(--line)}
+  @media print{.tbl{box-shadow:none}.tbl th{background:#eef6f2!important}}
+
   .status-panel{margin:26px 0;border-radius:16px;background:var(--navy);
     color:#fff;padding:22px 26px;display:grid;gap:14px;
     box-shadow:0 10px 30px rgba(13,39,64,.16)}
@@ -159,14 +174,14 @@
 
 <header class="hero"><div>
 <p class="eyebrow">מדריך Claude Cowork לעורכי דין · דף תרגול</p>
-<h1>דף תרגול Cowork בקלוד דסקטופ = אפליקציית קלוד במחשב</h1>
+<h1>דף תרגול Cowork בClaude Desktop = אפליקציית Claude במחשב</h1>
 <p class="hero-copy">שישה תרגילים קצרים לביצוע מול המסך, מהקל אל המתקדם - עם הוראות שלב אחר שלב ובדיקת הצלחה לכל תרגיל.</p>
-<div class="audience"><b>למי מיועד המדריך הזה</b><p><strong>לכל עורך דין במשרד, בלי יוצא מן הכלל.</strong> אין כאן פעולה שדורשת הרשאת ניהול, וכל התרגול נעשה על חומר מומצא שכתוב בתוך המדריך.</p><p><strong>הדף מיועד למי שסיים את הסדרה</strong> - הוא מזכיר, לא מלמד, וכל שורה בו מפנה לפרק שבו היא נלמדה.</p></div>
+<div class="audience"><b>למי מיועד המדריך הזה</b><p><strong>לכל עו"ד במשרד, בלי יוצא מן הכלל.</strong> אין כאן פעולה שדורשת הרשאת ניהול, וכל התרגול נעשה על חומר מומצא שכתוב בתוך המדריך.</p><p><strong>הדף מיועד למי שסיים את הסדרה</strong> - הוא מזכיר, לא מלמד, וכל שורה בו מפנה לפרק שבו היא נלמדה.</p></div>
 </div><dl class="facts"><div><dt>מה יש בדף</dt><dd>הכנה קצרה · שישה תרגילים עם הוראות שלב-אחר-שלב · בדיקת הצלחה לכל תרגיל · ובסוף חומר עזר לשמירה ליד המחשב.</dd></div><div><dt>איך משתמשים בו</dt><dd>עוברים תרגיל-תרגיל לפי הסדר, או תרגיל אחד בכל פעם. מדפיסים או שומרים כ-PDF בכפתור שבראש הדף.</dd></div><div><dt>כמה זמן זה לוקח</dt><dd>כ-30 דקות לכל ששת התרגילים, ואפשר גם אחד בכל פעם.</dd></div><div><dt>מה צריך כדי להתחיל</dt><dd>לסיים את שלושת מדריכי הסדרה.</dd></div></dl></header>
 
 
 
-<nav class="mobile-toc"><details><summary>תוכן המדריך</summary><ol><li><a href="#cp-ch01"><span>01</span>הכנה לפני שמתחילים לתרגל</a></li><li><a href="#cp-ch02"><span>02</span>דף תרגול Cowork בקלוד דסקטופ = אפליקציית קלוד במחשב</a></li><li><a href="#cp-ch03"><span>03</span>חומר עזר לשמירה ליד המחשב</a></li></ol></details></nav>
+<nav class="mobile-toc"><details><summary>תוכן המדריך</summary><ol><li><a href="#cp-ch01"><span>01</span>הכנה לפני שמתחילים לתרגל</a></li><li><a href="#cp-ch02"><span>02</span>דף תרגול Cowork ב<bdi dir="ltr">Claude Desktop</bdi> = אפליקציית <bdi dir="ltr">Claude</bdi> במחשב</a></li><li><a href="#cp-ch03"><span>03</span>חומר עזר לשמירה ליד המחשב</a></li></ol></details></nav>
 
 <div class="layout">
 <style>main.surface>.printbar{margin:1.6rem 24px}.printbar{text-align:center;margin:1.6rem 0;border:3px solid var(--teal);border-radius:14px;padding:18px 16px;background:rgba(20,116,116,.06)}.printbar .button{font-size:1.35rem;padding:14px 34px}.section-number{display:none!important}.guide-section>h3{font-size:1.7rem}.guide-section>h3:before{top:.62em}.printbar .printnote{margin:.5rem 0 0;font-size:.9rem;opacity:.75}@media print{.backbar,.skip,.printbar,.skills-brand,.mobile-toc,.desktop-toc,.bottom-nav,.status-panel{display:none!important}body{font-size:10.5pt;background:#fff!important}.layout{display:block!important;max-width:none!important;gap:0!important;padding:0!important}main{max-width:100%!important;width:auto!important;padding:0!important;border:none!important;box-shadow:none!important;border-radius:0!important}header.hero{min-height:0!important;padding:0 0 10px!important;background:none!important;box-shadow:none!important;display:block!important}.hero>div{max-width:100%!important}.facts{display:block!important;margin:8px 0 0!important}.facts>div{margin:0 0 6px!important}.guide-section{box-shadow:none!important;break-inside:auto}@page{margin:12mm}}</style><main class="surface" id="main"><div class="printbar"><button class="button primary" type="button" onclick="window.print()">הדפסת דף התרגול או שמירה כקובץ&nbsp;<bdi dir="ltr">PDF</bdi></button><p class="printnote">בחלון ההדפסה שייפתח אפשר לבחור <bdi dir="ltr">Save as PDF</bdi> כדי לשמור את הדף כקובץ.</p></div>
@@ -178,44 +193,44 @@
 <p><strong>מצב האישור הוא <bdi dir="ltr"><code>Manually approve</code></bdi></strong> - מוודאים בכפתור <bdi dir="ltr"><code>Manual</code></bdi> שליד תיבת הכתיבה.</p>
 <p><strong>האפליקציה נשארת פתוחה</strong> בזמן שמשימה רצה - למדנו במדריך 1 פרק 04.</p>
 </section>
-<section class="guide-section" id="cp-ch02"><span class="section-number">02</span><h2>דף תרגול Cowork בקלוד דסקטופ = אפליקציית קלוד במחשב</h2>
+<section class="guide-section" id="cp-ch02"><span class="section-number">02</span><h2>דף תרגול Cowork ב<bdi dir="ltr">Claude Desktop</bdi> = אפליקציית <bdi dir="ltr">Claude</bdi> במחשב</h2>
 <p>עוברים תרגיל-תרגיל, לפי הסדר. בכל תרגיל: מה מתרגלים, ההוראות שלב-אחר-שלב, ואיך יודעים שהצלחתם.</p>
 <p><strong>קדימה, מתחילים.</strong></p>
-<h3>תרגיל 1 - נותנים לקלוד משימה ומקבלים קובץ חדש בתיקייה:</h3>
+<h3>תרגיל 1 - נותנים ל<bdi dir="ltr">Claude</bdi> משימה ומקבלים קובץ חדש בתיקייה:</h3>
 <p><strong>מה מתרגלים כאן:</strong> את המעגל הבסיסי של Cowork - שולחים משימה, מאשרים גישה, וקובץ חדש מחכה בתיקייה. (נלמד במדריך 1, פרקים 04-05.)</p>
 <ol class="steps"><li>פותחים את <bdi dir="ltr"><code>Claude Desktop</code></bdi>.</li><li>בסרגל הצד, תחת <bdi dir="ltr"><code>Projects</code></bdi>, לוחצים על <bdi dir="ltr"><code>תיק אלומה - תרגול</code></bdi>.</li><li>בודקים שבתיבת הכתיבה <bdi dir="ltr"><code>Cowork</code></bdi> נבחר, ושכתוב <bdi dir="ltr"><code>Manual</code></bdi> ליד התיבה.</li><li>מעתיקים את המשימה הזאת, מדביקים בתיבה, ולוחצים <bdi dir="ltr"><code>Enter</code></bdi>:</li></ol>
 <div class="copy-block"><div class="copy-heading"><strong>העתקת משימת התרגיל הראשון</strong><button class="copy-button" data-copy-target="cp-copy-1" type="button">העתקת ההוראה</button></div><div class="copy-body" id="cp-copy-1">צור קובץ טקסט חדש בשם "רשימת-מסמכים.txt" ובו שורה לכל אחד מארבעת
 המסמכים שבתיקייה 01-מקור: שם הקובץ, התאריך שמופיע בו, ומי כתב אותו.
-שמור בתיקייה 03-פלט-קלוד. אל תשנה שום קובץ קיים.</div><span class="copy-status" aria-live="polite" aria-atomic="true"></span></div>
-<ol class="steps"><li>אם נפתח חלון שמבקש גישה לתיקייה - קוראים שכתוב בו שם התיק, ולוחצים <bdi dir="ltr"><code>Allow</code></bdi>.</li><li>מחכים דקה או שתיים. קלוד מדווח על המסך מה הוא עושה.</li><li>כשמופיע דיווח הסיום - קוראים אותו: אילו קבצים הוא קרא, ואיזה קובץ הוא יצר.</li></ol>
-<p><strong>איך יודעים שהצלחתם:</strong> פותחים את סייר הקבצים, נכנסים אל <bdi dir="ltr"><code>Legal-Mind-Aluma</code></bdi> ואז אל <bdi dir="ltr"><code>03-פלט-קלוד</code></bdi> - וקובץ <bdi dir="ltr"><code>רשימת-מסמכים.txt</code></bdi> נמצא שם, עם ארבע שורות, מסמך לכל שורה. <strong>ועין טובה תשים לב לפרט יפה:</strong> ליד סיכום הפגישה קלוד אמור לכתוב שכותב המסמך לא מופיע - כי במסמך הזה באמת אין שורת "מאת". זה לא פספוס, זה בדיוק הכלל "אל תשלים מהראש" עובד.</p>
+שמור בתיקייה 03-פלט-<bdi dir="ltr">Claude</bdi>. אל תשנה שום קובץ קיים.</div><span class="copy-status" aria-live="polite" aria-atomic="true"></span></div>
+<ol class="steps"><li>אם נפתח חלון שמבקש גישה לתיקייה - קוראים שכתוב בו שם התיק, ולוחצים <bdi dir="ltr"><code>Allow</code></bdi>.</li><li>מחכים דקה או שתיים. <bdi dir="ltr">Claude</bdi> מדווח על המסך מה הוא עושה.</li><li>כשמופיע דיווח הסיום - קוראים אותו: אילו קבצים הוא קרא, ואיזה קובץ הוא יצר.</li></ol>
+<p><strong>איך יודעים שהצלחתם:</strong> פותחים את סייר הקבצים, נכנסים אל <bdi dir="ltr"><code>Legal-Mind-Aluma</code></bdi> ואז אל <bdi dir="ltr"><code>03-פלט-<bdi dir="ltr">Claude</bdi></code></bdi> - וקובץ <bdi dir="ltr"><code>רשימת-מסמכים.txt</code></bdi> נמצא שם, עם ארבע שורות, מסמך לכל שורה. <strong>ועין טובה תשים לב לפרט יפה:</strong> ליד סיכום הפגישה <bdi dir="ltr">Claude</bdi> אמור לכתוב שכותב המסמך לא מופיע - כי במסמך הזה באמת אין שורת "מאת". זה לא פספוס, זה בדיוק הכלל "אל תשלים מהראש" עובד.</p>
 <h3>תרגיל 2 - עורכים קובץ קיים בלי לגעת בשום דבר אחר:</h3>
-<p><strong>מה מתרגלים כאן:</strong> עריכה מדויקת - קלוד משנה רק את מה שביקשתם, והדיווח שלו מוכיח את זה. (נלמד במדריך 1, פרק 07.)</p>
+<p><strong>מה מתרגלים כאן:</strong> עריכה מדויקת - <bdi dir="ltr">Claude</bdi> משנה רק את מה שביקשתם, והדיווח שלו מוכיח את זה. (נלמד במדריך 1, פרק 07.)</p>
 <ol class="steps"><li>באותו פרויקט, מדביקים בתיבה ושולחים:</li></ol>
-<div class="copy-block"><div class="copy-heading"><strong>העתקת משימת התרגיל השני</strong><button class="copy-button" data-copy-target="cp-copy-2" type="button">העתקת ההוראה</button></div><div class="copy-body" id="cp-copy-2">פתח את הקובץ "רשימת-מסמכים.txt" שבתיקייה 03-פלט-קלוד והוסף בסופו
+<div class="copy-block"><div class="copy-heading"><strong>העתקת משימת התרגיל השני</strong><button class="copy-button" data-copy-target="cp-copy-2" type="button">העתקת ההוראה</button></div><div class="copy-body" id="cp-copy-2">פתח את הקובץ "רשימת-מסמכים.txt" שבתיקייה 03-פלט-<bdi dir="ltr">Claude</bdi> והוסף בסופו
 בדיוק את השורה: "נבדק בתרגול." אל תשנה שום דבר אחר בקובץ.</div><span class="copy-status" aria-live="polite" aria-atomic="true"></span></div>
-<ol class="steps"><li>כשקלוד מסיים, קוראים בדיווח את השורה שמספרת מה השתנה - הוא בדרך כלל מציין שרק שורה אחת נוספה.</li></ol>
+<ol class="steps"><li>כש<bdi dir="ltr">Claude</bdi> מסיים, קוראים בדיווח את השורה שמספרת מה השתנה - הוא בדרך כלל מציין שרק שורה אחת נוספה.</li></ol>
 <p><strong>איך יודעים שהצלחתם:</strong> פותחים את הקובץ בסייר - השורה "נבדק בתרגול." בסוף, וכל השאר בדיוק כפי שהיה.</p>
-<h3>תרגיל 3 - עונים לקלוד כשהוא עוצר ושואל:</h3>
-<p><strong>מה מתרגלים כאן:</strong> את הרגע שבו קלוד לא מחליט לבד - הוא עוצר, מציג אפשרויות ממוספרות, ומחכה לכם. (נלמד במדריך 1, פרק 05.)</p>
-<ol class="steps"><li>שולחים <strong>שוב</strong> את אותה משימה מתרגיל 1 - בדיוק אותו נוסח (מעתיקים מהתיבה של תרגיל 1).</li><li>הפעם הקובץ כבר קיים, ולכן קלוד אמור לעצור ולשאול: קובץ בשם הזה כבר נמצא בתיקייה - מה לעשות? עם אפשרויות ממוספרות.</li><li>קוראים את האפשרויות לאט. <strong>בוחרים את האפשרות שמציעה לדרוס את הקובץ הקיים</strong> - זה בסדר גמור, זה קובץ תרגול שיצרנו הרגע.</li><li>קלוד ממשיך ומסיים.</li></ol>
-<p><strong>איך יודעים שהצלחתם:</strong> ראיתם את השאלה, בחרתם תשובה, והמשימה המשיכה מאותה נקודה. זה כל התרגיל - לא לפחד מהשאלות של קלוד.</p>
+<h3>תרגיל 3 - עונים ל<bdi dir="ltr">Claude</bdi> כשהוא עוצר ושואל:</h3>
+<p><strong>מה מתרגלים כאן:</strong> את הרגע שבו <bdi dir="ltr">Claude</bdi> לא מחליט לבד - הוא עוצר, מציג אפשרויות ממוספרות, ומחכה לכם. (נלמד במדריך 1, פרק 05.)</p>
+<ol class="steps"><li>שולחים <strong>שוב</strong> את אותה משימה מתרגיל 1 - בדיוק אותו נוסח (מעתיקים מהתיבה של תרגיל 1).</li><li>הפעם הקובץ כבר קיים, ולכן <bdi dir="ltr">Claude</bdi> אמור לעצור ולשאול: קובץ בשם הזה כבר נמצא בתיקייה - מה לעשות? עם אפשרויות ממוספרות.</li><li>קוראים את האפשרויות לאט. <strong>בוחרים את האפשרות שמציעה לדרוס את הקובץ הקיים</strong> - זה בסדר גמור, זה קובץ תרגול שיצרנו הרגע.</li><li><bdi dir="ltr">Claude</bdi> ממשיך ומסיים.</li></ol>
+<p><strong>איך יודעים שהצלחתם:</strong> ראיתם את השאלה, בחרתם תשובה, והמשימה המשיכה מאותה נקודה. זה כל התרגיל - לא לפחד מהשאלות של <bdi dir="ltr">Claude</bdi>.</p>
 <h3>תרגיל 4 - עוצרים משימה באמצע ורואים שלא קרה כלום:</h3>
 <p><strong>מה מתרגלים כאן:</strong> את הביטחון הכי חשוב שיש - לדעת לעצור, ולדעת שעצירה לא מזיקה. (נלמד במדריך 1, פרקים 05 ו-08.)</p>
 <ol class="steps"><li>מדביקים בתיבה ושולחים:</li></ol>
 <div class="copy-block"><div class="copy-heading"><strong>העתקת משימת התרגיל הרביעי</strong><button class="copy-button" data-copy-target="cp-copy-3" type="button">העתקת ההוראה</button></div><div class="copy-body" id="cp-copy-3">קרא את ארבעת המסמכים שבתיקייה 01-מקור והכן סיכום מפורט של כל אחד
-מהם בקובץ חדש בשם "סיכומים.txt" בתיקייה 03-פלט-קלוד.</div><span class="copy-status" aria-live="polite" aria-atomic="true"></span></div>
-<ol class="steps"><li>ברגע שקלוד מתחיל לעבוד - <strong>לוחצים על כפתור העצירה</strong> (הריבוע הקטן בפינת תיבת הכתיבה). לא ממהרים להתרגש: יש כמה שניות טובות.</li><li>קלוד עוצר.</li></ol>
-<p><strong>איך יודעים שהצלחתם:</strong> נכנסים בסייר אל <bdi dir="ltr"><code>03-פלט-קלוד</code></bdi> - <strong>אין שם קובץ <bdi dir="ltr"><code>סיכומים.txt</code></bdi>.</strong> מה שלא הושלם, לא נשמר. זה כל הסיפור.</p>
-<p><strong>וקלוד הספיק לסיים לפני שעצרתם?</strong> קורה, הוא מהיר. מוחקים בסייר את <bdi dir="ltr"><code>סיכומים.txt</code></bdi>, ואם רוצים - מנסים שוב ולוחצים מוקדם יותר. העיקרון שתרגלתם נשאר אותו עיקרון.</p>
+מהם בקובץ חדש בשם "סיכומים.txt" בתיקייה 03-פלט-<bdi dir="ltr">Claude</bdi>.</div><span class="copy-status" aria-live="polite" aria-atomic="true"></span></div>
+<ol class="steps"><li>ברגע ש<bdi dir="ltr">Claude</bdi> מתחיל לעבוד - <strong>לוחצים על כפתור העצירה</strong> (הריבוע הקטן בפינת תיבת הכתיבה). לא ממהרים להתרגש: יש כמה שניות טובות.</li><li><bdi dir="ltr">Claude</bdi> עוצר.</li></ol>
+<p><strong>איך יודעים שהצלחתם:</strong> נכנסים בסייר אל <bdi dir="ltr"><code>03-פלט-<bdi dir="ltr">Claude</bdi></code></bdi> - <strong>אין שם קובץ <bdi dir="ltr"><code>סיכומים.txt</code></bdi>.</strong> מה שלא הושלם, לא נשמר. זה כל הסיפור.</p>
+<p><strong>ו<bdi dir="ltr">Claude</bdi> הספיק לסיים לפני שעצרתם?</strong> קורה, הוא מהיר. מוחקים בסייר את <bdi dir="ltr"><code>סיכומים.txt</code></bdi>, ואם רוצים - מנסים שוב ולוחצים מוקדם יותר. העיקרון שתרגלתם נשאר אותו עיקרון.</p>
 <h3>תרגיל 5 - בודקים תוצר מול המקור ומעבירים אותו לתיקיית הבדוקים:</h3>
-<p><strong>מה מתרגלים כאן:</strong> את שלוש הבדיקות של Legal Mind - הצעד שהופך טיוטה של קלוד למסמך שמותר לצטט. (נלמד במדריך 2, פרק 07.)</p>
-<ol class="steps"><li>פותחים זה לצד זה: את <bdi dir="ltr"><code>רשימת-מסמכים.txt</code></bdi> (מתרגיל 1) ואת ארבעת המסמכים שבתיקייה <bdi dir="ltr"><code>01-מקור</code></bdi>.</li><li><strong>בדיקה ראשונה:</strong> עוברים שורה-שורה ברשימה, ובודקים שכל תאריך וכל שם באמת כתובים במסמך שהשורה מדברת עליו.</li><li><strong>בדיקה שנייה:</strong> מחפשים ברשימה משהו שלא כתוב באף מסמך - עובדה, תאריך או פרט שקלוד הוסיף מעצמו. לא אמור להיות. (השורה "נבדק בתרגול." היא התוספת שלכם מתרגיל 2 - היא לא נחשבת.)</li><li><strong>בדיקה שלישית:</strong> מוודאים שאין ברשימה המלצה או עמדה - רק עובדות.</li><li>עברו שלוש הבדיקות? <strong>גוררים את הקובץ בסייר מהתיקייה <bdi dir="ltr"><code>03-פלט-קלוד</code></bdi> אל התיקייה <bdi dir="ltr"><code>04-תוצר-בדוק</code></bdi>.</strong> ההעברה הזאת ביד היא החתימה שלכם.</li></ol>
+<p><strong>מה מתרגלים כאן:</strong> את שלוש הבדיקות של Legal Mind - הצעד שהופך טיוטה של <bdi dir="ltr">Claude</bdi> למסמך שמותר לצטט. (נלמד במדריך 2, פרק 07.)</p>
+<ol class="steps"><li>פותחים זה לצד זה: את <bdi dir="ltr"><code>רשימת-מסמכים.txt</code></bdi> (מתרגיל 1) ואת ארבעת המסמכים שבתיקייה <bdi dir="ltr"><code>01-מקור</code></bdi>.</li><li><strong>בדיקה ראשונה:</strong> עוברים שורה-שורה ברשימה, ובודקים שכל תאריך וכל שם באמת כתובים במסמך שהשורה מדברת עליו.</li><li><strong>בדיקה שנייה:</strong> מחפשים ברשימה משהו שלא כתוב באף מסמך - עובדה, תאריך או פרט ש<bdi dir="ltr">Claude</bdi> הוסיף מעצמו. לא אמור להיות. (השורה "נבדק בתרגול." היא התוספת שלכם מתרגיל 2 - היא לא נחשבת.)</li><li><strong>בדיקה שלישית:</strong> מוודאים שאין ברשימה המלצה או עמדה - רק עובדות.</li><li>עברו שלוש הבדיקות? <strong>גוררים את הקובץ בסייר מהתיקייה <bdi dir="ltr"><code>03-פלט-<bdi dir="ltr">Claude</bdi></code></bdi> אל התיקייה <bdi dir="ltr"><code>04-תוצר-בדוק</code></bdi>.</strong> ההעברה הזאת ביד היא החתימה שלכם.</li></ol>
 <p><strong>איך יודעים שהצלחתם:</strong> הקובץ יושב ב-<bdi dir="ltr"><code>04-תוצר-בדוק</code></bdi>, ואתם יודעים להגיד למה מותר לו להיות שם.</p>
-<h3>תרגיל 6 - קובעים לקלוד עבודה לשעה קבועה (אחרי מדריך 3):</h3>
-<p><strong>מה מתרגלים כאן:</strong> משימה מתוזמנת - עבודה שרצה בלי שתפתחו את קלוד. (נלמד במדריך 3, פרק 02.)</p>
+<h3>תרגיל 6 - קובעים ל<bdi dir="ltr">Claude</bdi> עבודה לשעה קבועה (אחרי מדריך 3):</h3>
+<p><strong>מה מתרגלים כאן:</strong> משימה מתוזמנת - עבודה שרצה בלי שתפתחו את <bdi dir="ltr">Claude</bdi>. (נלמד במדריך 3, פרק 02.)</p>
 <ol class="steps"><li>בסרגל הצד לוחצים על <bdi dir="ltr"><code>Scheduled</code></bdi>.</li><li>לוחצים <bdi dir="ltr"><code>New task</code></bdi>, ובוחרים <bdi dir="ltr"><code>Set up manually</code></bdi>.</li><li>ממלאים את הטופס בדיוק כמו שמדריך 3 פרק 02 מלמד: <bdi dir="ltr"><code>Name</code></bdi>, <bdi dir="ltr"><code>Description</code></bdi> (חובה, שורה אחת מספיקה), <bdi dir="ltr"><code>Instructions</code></bdi> עם המשימה עצמה, הפרויקט <bdi dir="ltr"><code>תיק אלומה - תרגול</code></bdi>, תדירות שבועית, והמתג <bdi dir="ltr"><code>Run on your computer</code></bdi> <strong>דלוק</strong> - הוא מגיע כבוי.</li><li>שומרים.</li><li><strong>ובודקים את הניסוח בלי לחכות שבוע:</strong> פותחים שיחת Cowork רגילה בתוך אותו פרויקט, ומדביקים בה בדיוק את אותו נוסח משימה. מה שיקרה שם הוא מה שיקרה בריצה המתוזמנת.</li><li>את הדוח שנוצר בודקים בשלוש הבדיקות של תרגיל 5.</li></ol>
-<p><strong>איך יודעים שהצלחתם:</strong> המשימה מופיעה ברשימת <bdi dir="ltr"><code>Scheduled</code></bdi> עם המועד הבא שלה, והדוח הראשון יושב ב-<bdi dir="ltr"><code>03-פלט-קלוד</code></bdi>.</p>
+<p><strong>איך יודעים שהצלחתם:</strong> המשימה מופיעה ברשימת <bdi dir="ltr"><code>Scheduled</code></bdi> עם המועד הבא שלה, והדוח הראשון יושב ב-<bdi dir="ltr"><code>03-פלט-<bdi dir="ltr">Claude</bdi></code></bdi>.</p>
 </section>
 <section class="guide-section" id="cp-ch03"><span class="section-number">03</span><h2>חומר עזר לשמירה ליד המחשב</h2><div class="printbar"><a class="button primary" href="legal-mind-cowork-reference.pdf" download>שמירת דף העזר כקובץ&nbsp;<bdi dir="ltr">PDF</bdi></a><p class="printnote">קובץ קצר עם חומר העזר בלבד - לשמירה ליד המחשב או להדפסה.</p></div>
 <p>עכשיו, אחרי שסיימתם לתרגל, מגיע דף מסוג אחר - וכדאי להבין את ההבדל. <strong>את התרגילים עושים פעם או פעמיים, וזהו. חומר העזר הזה נשאר אתכם הלאה:</strong> תבנית ניסוח המשימה, שלוש הבדיקות, הטבלאות. אלה הדברים שמציצים בהם באמצע עבודה אמיתית - כששוכחים רגע איך מנסחים משימה, או מה בודקים לפני שתוצר עובר לתיקיית הבדוקים.</p>
@@ -231,24 +246,24 @@
 <ol class="steps"><li><strong>כל עובדה חוזרת למקור.</strong> תאריך, סכום, שם וסעיף נבדקים מול המסמך שהתוצר מצביע עליו.</li><li><strong>כלום לא הומצא.</strong> מחפשים עובדה בלי מקור, מספר מעוגל, ניסוח בטוח במקום שהמקור מהוסס.</li><li><strong>התוצר לא מכריע.</strong> המלצה או עמדה בתוך תוצר - חריגה, גם כשהיא נשמעת נכונה.</li></ol>
 <h3>מבנה ארבע התיקיות של תיק:</h3>
 <p>מדריך 2 פרק 02:</p>
-<div class="table-scroll"><table><thead><tr><th>תיקייה</th><th>מה יושב בה</th><th>הכלל</th></tr></thead><tbody><tr><td>01-מקור</td><td>מה שהגיע מבחוץ</td><td>לא נוגעים, וגם קלוד לא</td></tr><tr><td>02-עבודה</td><td>עותקים שאתם עורכים ביד</td><td>חופשי</td></tr><tr><td>03-פלט-קלוד</td><td>כל מה שקלוד יוצר</td><td>טיוטה, תמיד, גם כשנראה מושלם</td></tr><tr><td>04-תוצר-בדוק</td><td>מה שעבר בדיקת עורך דין</td><td>רק מכאן מצטטים ושולחים</td></tr></tbody></table></div>
+<div class="tbl-wrap"><table class="tbl"><thead><tr><th>תיקייה</th><th>מה יושב בה</th><th>הכלל</th></tr></thead><tbody><tr><td>01-מקור</td><td>מה שהגיע מבחוץ</td><td>לא נוגעים, וגם <bdi dir="ltr">Claude</bdi> לא</td></tr><tr><td>02-עבודה</td><td>עותקים שאתם עורכים ביד</td><td>חופשי</td></tr><tr><td>03-פלט-<bdi dir="ltr">Claude</bdi></td><td>כל מה ש<bdi dir="ltr">Claude</bdi> יוצר</td><td>טיוטה, תמיד, גם כשנראה מושלם</td></tr><tr><td>04-תוצר-בדוק</td><td>מה שעבר בדיקת עו"ד</td><td>רק מכאן מצטטים ושולחים</td></tr></tbody></table></div>
 <h3>מה מתזמנים ומה לא:</h3>
 <p>מדריך 3 פרק 01: מתזמנים רק משימה שמכינה טיוטה, ולעולם לא משימה שפועלת כלפי חוץ.</p>
-<div class="table-scroll"><table><thead><tr><th>כן, אחרי הרצה ידנית אחת</th><th>לא, גם לא כשזה מפתה</th></tr></thead><tbody><tr><td>דוח שבועי פנימי</td><td>שליחת מייל או הודעה לכל גורם</td></tr><tr><td>ריכוז מסמכים חדשים בתיק</td><td>עדכון מסמך מקור</td></tr><tr><td>רשימת מועדים מתקרבים</td><td>כל פעולה שיוצרת מחויבות</td></tr><tr><td>רשימת נקודות פתוחות</td><td>פעולה שדורשת הכרעה משפטית</td></tr></tbody></table></div>
+<div class="tbl-wrap"><table class="tbl"><thead><tr><th>כן, אחרי הרצה ידנית אחת</th><th>לא, גם לא כשזה מפתה</th></tr></thead><tbody><tr><td>דוח שבועי פנימי</td><td>שליחת מייל או הודעה לכל גורם</td></tr><tr><td>ריכוז מסמכים חדשים בתיק</td><td>עדכון מסמך מקור</td></tr><tr><td>רשימת מועדים מתקרבים</td><td>כל פעולה שיוצרת מחויבות</td></tr><tr><td>רשימת נקודות פתוחות</td><td>פעולה שדורשת הכרעה משפטית</td></tr></tbody></table></div>
 <h3>מסלול 30 יום להטמעה במשרד:</h3>
 <p>המלצה של Legal Mind, שבוע אחר שבוע:</p>
-<p><strong>שבוע 1 - תרגול בלי סיכון.</strong> כל עורך דין שמצטרף עובר את מדריך 1 במלואו ואת תרגילים 1 עד 4 שבדף הזה. בלי שום חומר אמיתי.</p>
+<p><strong>שבוע 1 - תרגול בלי סיכון.</strong> כל עו"ד שמצטרף עובר את מדריך 1 במלואו ואת תרגילים 1 עד 4 שבדף הזה. בלי שום חומר אמיתי.</p>
 <p><strong>שבוע 2 - תיק אמיתי ראשון, זהיר.</strong> בוחרים תיק אחד שאין בו חומר רגיש, בונים לו ארבע תיקיות ו-Project עם הוראות (מדריך 2 פרקים 02 עד 04), ומריצים משימות קריאה וריכוז בלבד.</p>
 <p><strong>שבוע 3 - תוצרים ובדיקות.</strong> מכינים מסמך, טבלה ומצגת מתוך התיק, ומקפידים על שלוש הבדיקות לפני כל העברה לתיקיית הבדוקים.</p>
 <p><strong>שבוע 4 - שגרה.</strong> משימה מתוזמנת ראשונה על התיק, ושיחת צוות קצרה: מה עבד, מה לא, ומה הכלל המשרדי מכאן והלאה.</p>
 <h3>שאלות מהירות, ואיפה התשובה המלאה:</h3>
 <p><strong>אפשר לעשות את התרגילים האלה בצ'אט הרגיל?</strong> לא. הצ'אט לא נוגע בקבצים שבמחשב - לא שומר, לא עורך ולא מסדר. מדריך 1 פרק 01.</p>
-<p><strong>קלוד רואה את כל המחשב שלי?</strong> לא. רק את התיקייה שחיברתם, ושום דבר מחוץ לה. מדריך 1 פרק 04.</p>
-<p><strong>המסמכים שלי עוברים בשרתים של אנתרופיק?</strong> כן, בסביבה מבודדת, וכל ההשלכות מוסברות במדריך 1 פרק 01, ובהרחבה במדריך על מנוי Team.</p>
+<p><strong><bdi dir="ltr">Claude</bdi> רואה את כל המחשב שלי?</strong> לא. רק את התיקייה שחיברתם, ושום דבר מחוץ לה. מדריך 1 פרק 04.</p>
+<p><strong>המסמכים שלי עוברים בשרתים של <bdi dir="ltr">Anthropic</bdi>?</strong> כן, בסביבה מבודדת, וכל ההשלכות מוסברות במדריך 1 פרק 01, ובהרחבה במדריך על מנוי Team.</p>
 <p><strong>אפשר לסגור את המחשב באמצע משימה?</strong> משימה על תיקייה מקומית - לא, האפליקציה חייבת להישאר פתוחה עד הסיום. מדריך 1 פרק 04.</p>
 <p><strong>איך עוצרים משימה שרצה?</strong> כפתור העצירה בפינת תיבת הכתיבה, או לכתוב "עצור". שום דבר שלא הושלם לא נשמר. מדריך 1 פרק 05.</p>
 <p><strong>איפה מוצאים משימה מאתמול?</strong> ברשימת המשימות בסרגל הצד. משימה היא לא חלון שנעלם. מדריך 1 פרק 05.</p>
-<p><strong>קלוד כתב במסמך עובדה שלא קיימת - מה עושים?</strong> מצביעים על השורה ומבקשים תיקון לפי המסמכים בלבד, דרך קלוד ולא ביד. מדריך 2 פרקים 07 ו-08.</p>
+<p><strong><bdi dir="ltr">Claude</bdi> כתב במסמך עובדה שלא קיימת - מה עושים?</strong> מצביעים על השורה ומבקשים תיקון לפי המסמכים בלבד, דרך <bdi dir="ltr">Claude</bdi> ולא ביד. מדריך 2 פרקים 07 ו-08.</p>
 <p><strong>המשימה המתוזמנת לא רצה - למה?</strong> כמעט תמיד: המחשב היה כבוי או האפליקציה סגורה. מדריך 3 פרק 07.</p>
 <p><strong>מה ההבדל בין Connector, Skill ו-Plugin?</strong> גישה למידע, שיטת עבודה, וחבילה שאורזת כמה יכולות. הטבלה המלאה במדריך 3 פרק 05.</p>
 <p><strong>נגמרה לי המכסה באמצע היום - זה תקין?</strong> כן, משימות Cowork צורכות יותר משיחה רגילה, והמכסה מתחדשת מעצמה. מדריך 1 פרק 08.</p>
@@ -256,7 +271,7 @@
 <div class="bottom-nav"><a class="button" href="../guide-3/index.html">המדריך הקודם: Cowork שעובד גם כשאתם לא שם</a><a class="button primary" href="../index.html">מרכז המדריכים</a></div>
 <div class="printbar"><button class="button primary" type="button" onclick="window.print()">הדפסת דף התרגול או שמירה כקובץ&nbsp;<bdi dir="ltr">PDF</bdi></button><p class="printnote">בחלון ההדפסה שייפתח אפשר לבחור <bdi dir="ltr">Save as PDF</bdi> כדי לשמור את הדף כקובץ.</p></div></main>
 
-<aside class="desktop-toc"><h2>תוכן המדריך</h2><ol><li><a href="#cp-ch01"><span>01</span>הכנה לפני שמתחילים לתרגל</a></li><li><a href="#cp-ch02"><span>02</span>דף תרגול Cowork בקלוד דסקטופ = אפליקציית קלוד במחשב</a></li><li><a href="#cp-ch03"><span>03</span>חומר עזר לשמירה ליד המחשב</a></li></ol></aside>
+<aside class="desktop-toc"><h2>תוכן המדריך</h2><ol><li><a href="#cp-ch01"><span>01</span>הכנה לפני שמתחילים לתרגל</a></li><li><a href="#cp-ch02"><span>02</span>דף תרגול Cowork ב<bdi dir="ltr">Claude Desktop</bdi> = אפליקציית <bdi dir="ltr">Claude</bdi> במחשב</a></li><li><a href="#cp-ch03"><span>03</span>חומר עזר לשמירה ליד המחשב</a></li></ol></aside>
 </div>
 
 <footer><bdi dir="ltr">Legal Mind</bdi> | מדריך Claude Cowork | דף תרגול</footer>
