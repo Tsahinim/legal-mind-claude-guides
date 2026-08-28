@@ -35,8 +35,7 @@
 </head><body><a class="skip" href="#main">דילוג לתוכן</a><nav class="backbar"><a href="../index.html">חזרה למרכז מדריכי Skills</a></nav><div class="skills-brand"><img alt="לוגו Legal Mind" class="skills-logo" decoding="async" src="../assets/legal-mind-logo-tight.png"/></div><header class="hero"><div><p class="eyebrow">מדריך 1 מתוך 4</p><h1>מאיפה מתחילים עם Skills</h1><p class="hero-copy">מדריך הפתיחה לסדרה. מסביר מהו סקיל, מראה מסך אחר מסך איך מגיעים לאזור הסקילים ב-Claude, ומלווה אתכם בהתקנה והפעלה של סקיל מוכן עד שהוא עובד אצלכם.</p></div><dl class="facts"><div><dt>תוצר הלמידה</dt><dd>סקיל מותקן ופועל, ויכולת להגיע אליו ולנהל אותו בעצמכם.</dd></div><div><dt>ידע מוקדם</dt><dd>אין. זהו המדריך הראשון בסדרה.</dd></div><div><dt>מבנה</dt><dd>14 פרקים ו-20 צילומי מסך מודרכים</dd></div><div><dt>זמן משוער</dt><dd>כ-25 דקות קריאה, וכ-15 דקות ביצוע</dd></div></dl></header><nav class="mobile-toc"><details><summary>תוכן המדריך</summary><ol><li><a href="#what"><span>01</span>מהו Skill וכיצד הוא בנוי</a></li><li><a href="#problem"><span>02</span>איזו בעיה Skills פותרים</a></li><li><a href="#load"><span>03</span>כיצד Skill מזוהה ונטען</a></li><li><a href="#notdo"><span>04</span>מה Skill אינו עושה</a></li><li><a href="#three-llms"><span>05</span>Skills בשלושת הצ׳אטבוטים</a></li><li><a href="#dpa"><span>06</span>המנוי שמתאים למשרד</a></li><li><a href="#path"><span>07</span>הדרך לאזור הסקילים</a></li><li><a href="#four-ways"><span>08</span>ארבע דרכים להביא סקיל</a></li><li><a href="#directory"><span>09</span>הספרייה והמסך הריק</a></li><li><a href="#install"><span>10</span>להתקין סקיל מוכן</a></li><li><a href="#run"><span>11</span>להפעיל את הסקיל</a></li><li><a href="#proof"><span>12</span>לראות שהסקיל עשה משהו</a></li><li><a href="#troubleshoot"><span>13</span>כשמשהו לא עובד</a></li><li><a href="#next"><span>14</span>מה למדתם ולאן ממשיכים</a></li></ol></details></nav><div class="layout"><main class="surface" id="main">
 <div class="callout tip"><span class="callout-label">לפני שמתחילים</span><p>העיקרון של סקילים אינו ייחודי ל-Claude: הוא קיים גם ב-ChatGPT וב-Gemini, והידע שתרכשו כאן ישרת אתכם בכולם (פרק 05 מרחיב). עם זאת, כדי לשמור על מדריך ברור ומעשי, כל צילומי המסך וכל שלבי העבודה בסדרה מתייחסים ל-Claude בלבד.</p></div>
 <div class="callout warn"><span class="callout-label">הערה חשובה על ציפיות: עקומת למידה</span><p>גם סקיל שנבנה היטב עובר עקומת למידה. סביר להניח שהסקיל הראשון שתבנו לא ייתן בדיוק את התוצאה שרציתם - וזה חלק תקין מהתהליך, לא סימן לכישלון. העבודה האמיתית מתחילה בשלב השיפור: מריצים, בודקים מה יצא, מתקנים ומריצים שוב. במדריך 4 בסדרה מוסבר בדיוק איך מעדכנים סקיל קיים.</p></div>
-<section class="guide-section" id="what"><span class="section-number">01</span>
-<p class="section-number">01</p>
+<section class="guide-section" id="what"><p class="section-number">01</p>
 <h2>מהו Skill וכיצד הוא בנוי?</h2><p>סקיל (Skill) הוא נוהל עבודה שכותבים פעם אחת, ו-Claude טוען ומפעיל אותו בכל פעם שהמשימה מתאימה לו. במקום להקליד שוב ושוב את אותן הוראות, כותבים אותן פעם אחת כסקיל - והעבודה מתבצעת באותה שיטה בכל פעם. השורה התחתונה: פחות הקלדה, יותר עקביות, והבדיקה המקצועית של התוצאה נשארת אצלכם.</p>
 <h3>מה יכול להיכלל ב-Skill?</h3>
 <div class="comparison-list" role="list">
@@ -51,8 +50,7 @@
 </aside>
 <aside class="content-box legal-example"><h3>דוגמה לסקיל</h3><p>סקיל להכנה לפגישת לקוח: הסקיל מנחה את Claude לנתח את חומרי הרקע שהועלו לתיק מול רשימת דרישות שנקבעה מראש - למשל מסמכי התקשרות, התכתבויות, מועדים, התחייבויות ופרטים שחובה לברר לפני הפגישה. הוא מסמן מסמכים חסרים, פערים בין גרסאות, סתירות לכאורה ותאריכים המחייבים בירור, ומפיק מזכר הכנה מובנה הכולל תמונת מצב, סוגיות פתוחות, שאלות הבהרה והשלמות נדרשות. המזכר מרכז את החומר לקראת הפגישה, אך אינו מחליף את בדיקת עורך הדין או את שיקול דעתו המקצועי.</p></aside>
 <p><strong>שלושת מרכיבי ה-Skill: </strong>ידע - מה המערכת צריכה לדעת; הליך - כיצד לבצע את המשימה; בקרה - כיצד בודקים את הביצוע ומתי נדרשת התערבות אנושית.</p><p>זה כל הרקע שצריך. מכאן המדריך מעשי: איך מגיעים לאזור הסקילים, איך מתקינים סקיל ראשון ואיך רואים אותו עובד.</p></section>
-<section class="guide-section" id="problem"><span class="section-number">02</span>
-<p class="section-number">02</p>
+<section class="guide-section" id="problem"><p class="section-number">02</p>
 <h2>איזו בעיה Skills פותרים בתהליכי עבודה חוזרים?</h2>
 <p>במשרדים רבים קיים פרומפט מוצלח לניתוח מסמך, להכנת דיון, לסיכום חומרי תיק או לבדיקת טיוטת הסכם. אלא שהפרומפט שמור לעיתים בקובץ פרטי, בהתכתבות ישנה או בזיכרונו של מי שניסח אותו.</p>
 <p>כאשר אדם אחר נדרש לבצע את אותה משימה, הוא מתחיל מחדש. הוא מנסח הוראות מעט שונות, אינו מכיר בהכרח את כל הדגשים שנלמדו מניסיון ועלול להשמיט בדיקות שהכותב המקורי כבר הבין שהן חיוניות. התוצאה עשויה להיות טובה, אך היא אינה מבוססת בהכרח על אותה שיטת עבודה.</p>
@@ -87,8 +85,7 @@
 <p>Prompt שמור עוזר לא לכתוב שוב את אותה בקשה. Skill עוזר לא לבנות שוב את אותו תהליך. הוא אינו מבטיח שכל תוצר יהיה נכון, אך הוא מאפשר להפעיל, לבדוק ולשפר שיטה מתועדת.</p>
 </aside>
 </section>
-<section class="guide-section" id="load"><span class="section-number">03</span>
-<p class="section-number">03</p>
+<section class="guide-section" id="load"><p class="section-number">03</p>
 <h2>כיצד Skill מזוהה ונטען בעת הצורך?</h2>
 <p>אין צורך להעתיק את כל תוכנו של ה-Skill לכל שיחה. Claude בוחן את ה-Skills הזמינים, משווה את הבקשה לייעוד שלהם וטוען את ההוראות והמשאבים של Skill שנראה רלוונטי.</p>
 <h3>התהליך בארבעה שלבים</h3>
@@ -110,8 +107,7 @@
 <p>גם לאחר שה-Skill נטען, צריך לבדוק שנעשה שימוש בקלט הנכון, שכל השלבים בוצעו, שנקודות העצירה כובדו ושהעובדות והמקורות אומתו.</p>
 </aside>
 </section>
-<section class="guide-section" id="notdo"><span class="section-number">04</span>
-<p class="section-number">04</p>
+<section class="guide-section" id="notdo"><p class="section-number">04</p>
 <h2>מה Skill אינו עושה?</h2>
 <p>Skill יכול לעגן תהליך ולסייע ל-Claude לפעול באופן עקבי יותר. עצם קיומו אינו הופך את התהליך לנכון, בטוח או מתאים לשימוש מקצועי.</p>
 <h3>1. אינו מחליף שיקול דעת מקצועי</h3>
