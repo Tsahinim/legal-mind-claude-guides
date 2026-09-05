@@ -623,6 +623,8 @@ figure .shot-hint{display:block;width:fit-content;margin-inline:auto}
       if(!img || !img.naturalWidth) return;
       var shrunk = img.getBoundingClientRect().width < img.naturalWidth * 0.96;
       if(!shrunk || frame.dataset.zoom) return;
+      var figNz = frame.closest("figure");
+      if(figNz && figNz.hasAttribute("data-nozoom")) return;
       frame.dataset.zoom = "1";
       frame.setAttribute("tabindex", "0");
       frame.setAttribute("role", "button");
