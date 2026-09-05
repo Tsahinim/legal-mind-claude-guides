@@ -681,6 +681,8 @@ p.section-number{font-size:36px;line-height:1;margin:0 0 6px}
   wire();
   window.addEventListener("load", wire);
   window.addEventListener("resize", wire);
+  var wireT;
+  window.addEventListener("scroll", function(){ clearTimeout(wireT); wireT = setTimeout(wire, 150); }, {passive:true});
   frames.forEach(function(frame){
     var img = frame.querySelector("img");
     if(img && !img.complete) img.addEventListener("load", wire);
