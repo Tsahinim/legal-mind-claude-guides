@@ -30,6 +30,7 @@ h2{font-family:'Frank Ruhl Libre',serif;color:var(--ink);font-size:2.05rem;font-
 .prose b{color:var(--ink)}
 .lede{font-size:1.12rem;color:var(--ink);font-weight:500;max-width:700px;margin-bottom:16px}
 .viz{background:var(--card);border:1px solid var(--hair);border-radius:22px;padding:32px;margin-top:26px;box-shadow:var(--shadow)}
+.floors-note{position:relative;margin:6px 0 20px;padding:16px 20px 14px 18px;background:var(--soft);border:1px dashed #cfc8b6;border-radius:12px;overflow:hidden}.floors-note:before{content:"";position:absolute;top:0;bottom:0;right:0;width:5px;background:linear-gradient(to bottom,var(--claude) 0 33.3%,var(--gpt) 33.3% 66.6%,var(--gem) 66.6% 100%)}.floors-note p{margin:0 0 8px;font-size:.96rem}.floors-note p:last-child{margin-bottom:0}.floors-note .fn-title{font-family:'Frank Ruhl Libre',serif;font-weight:900;font-size:1.18rem;color:var(--ink);margin-bottom:6px}
 .note{margin-top:20px;background:var(--card);border:1px solid var(--hair);border-right:5px solid var(--claude);padding:16px 20px;border-radius:12px;font-size:.94rem;max-width:820px}
 .note b{color:var(--ink)}
 bdi{unicode-bidi:isolate}
@@ -343,6 +344,12 @@ h1.doc-title{font-size:2.9rem;margin-bottom:22px}
   <div class="prose">
     <p class="lede">אם אתם חברי הקהילה של <bdi dir="ltr">LEGAL MIND</bdi>, אתם כנראה כבר עובדים עם <bdi dir="ltr">Claude</bdi>, אבל אז, בפגישה או בכנס, מישהו מזכיר <bdi dir="ltr">Codex</bdi>, מישהי מספרת שבנתה <bdi dir="ltr">Gem</bdi>, ובעיתונות מדווחים על סוכן חדש של <bdi dir="ltr">OpenAI</bdi>. השמות מתרבים מהר מהיכולת לעקוב, וקשה לדעת מה מקביל למה שכבר יש לכם ומה באמת חדש.</p>
     <p>המסמך הזה עושה סדר בדרך אחת פשוטה: <b>הוא מפסיק להשוות מותגים ומתחיל להשוות קומות.</b> שלוש החברות הגדולות, <bdi dir="ltr">Anthropic</bdi>, <bdi dir="ltr">OpenAI</bdi> ו-<bdi dir="ltr">Google</bdi>, בנו כל אחת מגדל של חמש קומות: שיחה, עוזר מותאם אישית, סוכן קוד, סוכן עבודה, ומחקר עמוק. השמות שונים, הקומות זהות. ומרגע שמחזיקים את המפה, כל שם חדש מתיישב במקומו בשנייה.</p>
+    <aside class="floors-note" aria-label="הערה על הקומות">
+      <p class="fn-title">רגע, הקומות האלה רשמיות?</p>
+      <p>לא. את הקומות המצאנו ב-<bdi dir="ltr">Legal Mind</bdi> כדי להמחיש, ואף יצרן לא מחלק את המוצרים שלו ככה. אז אם תהיתם אם מחקר עמוק באמת יושב בקומה החמישית, אפשר להירגע: המספר לא אומר כלום על חשיבות, רק עוזר לראות מה מקביל למה.</p>
+      <p>פעם הייתה לכל פלטפורמה יכולת שרק היא ידעה. היום שלוש הפלטפורמות טובות, משקיעים בהן סכומי עתק, ורוב האפשרויות קיימות אצל כולן, ואם לא בדיוק, אז משהו דומה מאוד.</p>
+      <p><b>ב-<bdi dir="ltr">Legal Mind</bdi> נביע עמדה ברורה על אבטחת מידע ועל סוג מנוי בטוח, אבל לא נמליץ לכם על פלטפורמה.</b> המטרה היא שתתנסו ותמצאו את הפלטפורמה שהכי עונה לצרכים שלכם.</p>
+    </aside>
     <p>מה לא תמצאו כאן: דירוגי "מי חכם יותר", מבחני ביצועים והשוואות מחירים. אלה משתנים בכל חודש, והם כמעט אף פעם לא השאלה הנכונה למשרד. מה שכן תמצאו: מה כל מוצר עושה בפועל, מה המקבילה שלו אצל המתחרים, ומה כן שונה באמת. וכן, כתוב כאן גם מה זמין בחשבון עסקי ומה רק בחשבון יחיד, ומה נמצא בבטא או בתצוגה מקדימה. אלה לא שאלות של מחיר, אלה שאלות של מה יעבוד אצלכם מחר.</p>
   </div>
   <p class="note"><b>עמדת <bdi dir="ltr">Legal Mind</bdi> לגבי חומר של לקוחות:</b> על חומר של לקוחות עובדים רק במנוי עסקי שכולל <bdi dir="ltr">DPA</bdi>, כלומר נספח חוזי שמעגן את התחייבויות היצרן בנוגע למידע שאתם מזינים. ב-<bdi dir="ltr">Claude</bdi> זה מנוי <bdi dir="ltr">Team</bdi> או <bdi dir="ltr">Enterprise</bdi>, וב-<bdi dir="ltr">ChatGPT</bdi> מנוי <bdi dir="ltr">Business</bdi> או <bdi dir="ltr">Enterprise</bdi>. בכל כלי אחר, רק אחרי שבדקתם שהמנוי העסקי שלכם כולל <bdi dir="ltr">DPA</bdi>. בלי מנוי כזה, אל תעלו מסמך או חומר שיש בו מידע רגיש: מספרי זהות, כתובות עם שמות אמיתיים, פרטי חשבון, וכל פרט שמזהה לקוח או תיק. לתרגול, לבדיקה ולניסוי של כל אחד מהכלים במפה, מידע מומצא בלבד. המסמך הוא כלי עזר ולא ייעוץ משפטי, והאחריות המקצועית על השימוש ועל התוצרים נשארת תמיד בידי עו"ד המשתמש.</p>
