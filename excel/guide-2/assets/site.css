@@ -24,7 +24,7 @@
 
 /* Numbered screenshot annotations */
 .shot-frame{position:relative}
-.shot-target{position:absolute;z-index:2;border:3px solid var(--red);border-radius:9px;background:rgba(198,48,48,.07);box-shadow:0 0 0 2px rgba(255,255,255,.82),0 2px 9px rgba(13,39,64,.24);pointer-events:none}
+.shot-target{position:absolute;z-index:2;border:3px solid var(--red);border-radius:9px;background:none;box-shadow:0 0 0 2px rgba(255,255,255,.82),0 2px 9px rgba(13,39,64,.24);pointer-events:none}
 .shot-target.is-circle{border-radius:999px}
 .shot-target-badge{position:absolute;top:0;left:0;z-index:3;display:grid;place-items:center;width:26px;height:26px;border:2px solid #fff;border-radius:50%;background:var(--red);color:#fff;font-size:14px;font-weight:900;line-height:1;box-shadow:0 2px 8px rgba(13,39,64,.35);transform:translate(-45%,-45%)}
 .shot-target.badge-right>.shot-target-badge{right:0;left:auto;transform:translate(45%,-45%)}
@@ -108,3 +108,6 @@
 .fit-tag{display:inline-block;margin:0 0 10px;border:1px solid var(--line);border-radius:999px;padding:3px 11px;background:#fff;color:var(--muted);font-size:12px;font-weight:800;letter-spacing:.02em}
 .fit-tag.is-core{border-color:#9fd3ce;background:#eefaf8;color:var(--teal)}
 @media(max-width:640px){.fit-tag{border-radius:10px;line-height:1.5}}
+
+.shot-target-badge.badge-offset-right{top:50%;left:auto;right:-18px;transform:translate(50%,-50%)}
+@media(max-width:640px){.shot-target-badge.badge-offset-right{right:-13px}}
