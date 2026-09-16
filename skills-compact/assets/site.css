@@ -79,3 +79,6 @@
 .shot-legend li{display:flex;align-items:flex-start;gap:8px;margin:6px 0}
 .shot-legend b{flex:0 0 auto;display:grid;place-items:center;width:22px;height:22px;border-radius:50%;background:var(--red);color:#fff;font-size:12px;font-weight:900;font-style:normal;box-shadow:0 1px 3px rgba(13,39,64,.3)}
 
+
+.guide-section .section-number{margin:0 0 6px;font-family:Arial,"Segoe UI",sans-serif;font-size:24px;font-weight:900;line-height:1;letter-spacing:.06em;font-variant-numeric:lining-nums tabular-nums}
+@supports (-webkit-text-stroke:1px black){.guide-section .section-number{color:transparent;-webkit-text-stroke:1.2px var(--teal)}}
