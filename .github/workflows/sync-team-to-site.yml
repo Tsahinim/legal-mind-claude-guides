@@ -1,0 +1,58 @@
+# Every change to the "מדריך על מנוי Team ב-Claude" series (team/) is rebuilt and published to legalmind.co.il/guides/.
+# Needs the repository secret SITE_TOKEN: a token of the legalmind-il account with write access to Inbal2025/LEGAL-MIND-AI.
+name: Sync Team guide to legalmind.co.il
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'team/**'
+      - 'claude-code/assets/site.css'
+      - 'claude-code/assets/site.js'
+      - 'scripts/site-sync/team_usage.py'
+  workflow_dispatch:
+
+concurrency:
+  group: sync-to-site
+  cancel-in-progress: false
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    env:
+      HAS_TOKEN: ${{ secrets.SITE_TOKEN != '' }}
+    steps:
+      - name: Waiting for SITE_TOKEN
+        if: env.HAS_TOKEN != 'true'
+        run: echo "SITE_TOKEN is not set yet, nothing was published."
+
+      - name: Checkout guides
+        if: env.HAS_TOKEN == 'true'
+        uses: actions/checkout@v4
+
+      - name: Checkout legalmind.co.il
+        if: env.HAS_TOKEN == 'true'
+        uses: actions/checkout@v4
+        with:
+          repository: Inbal2025/LEGAL-MIND-AI
+          ref: main
+          token: ${{ secrets.SITE_TOKEN }}
+          path: site
+
+      - name: Build site pages
+        if: env.HAS_TOKEN == 'true'
+        env:
+          PYTHONIOENCODING: utf-8
+        run: python3 scripts/site-sync/team_usage.py site
+
+      - name: Publish if changed
+        if: env.HAS_TOKEN == 'true'
+        working-directory: site
+        run: |
+          git add guides/claude-team-usage.html guides/claude-team-usage-guide-1.html guides/claude-team-usage-guide-2.html guides/claude-team-usage-practice.html guides/tu
+          if git diff --cached --quiet; then
+            echo "No changes to publish."
+            exit 0
+          fi
+          git -c user.name=legalmind-il -c user.email=info@legalmind.co.il commit -m "guides: sync 'מדריך על מנוי Team ב-Claude' from legal-mind-claude-guides@${GITHUB_SHA::7}"
+          git push origin main
