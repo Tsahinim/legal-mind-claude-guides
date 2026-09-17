@@ -1050,8 +1050,7 @@
   if (!btn || !src) { return; }
   var original = btn.innerHTML;
   btn.addEventListener('click', function () {
-    var text = src.value.replace(/^
-/, '');
+    var text = src.value.replace(/^[\r\n]+/, '');
     function flash(success) {
       btn.textContent = success ? 'הפרומפט הועתק. עכשיו הדביקו אותו בשיחה חדשה ב-Claude' : 'לא הצלחנו להעתיק. נסו שוב';
       btn.setAttribute('data-copied', success ? 'true' : 'false');
