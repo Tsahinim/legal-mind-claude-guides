@@ -1064,9 +1064,14 @@
       finally { src.setAttribute('readonly', 'readonly'); }
       flash(ok);
     }
+    var done = false;
+    try { src.removeAttribute('readonly'); src.select(); src.setSelectionRange(0, src.value.length); done = document.execCommand('copy'); }
+    catch (e) { done = false; }
+    finally { src.setAttribute('readonly', 'readonly'); if (window.getSelection) { window.getSelection().removeAllRanges(); } }
+    if (done) { flash(true); return; }
     if (navigator.clipboard && navigator.clipboard.writeText) {
-      navigator.clipboard.writeText(text).then(function () { flash(true); }, fallbackCopy);
-    } else { fallbackCopy(); }
+      navigator.clipboard.writeText(text).then(function () { flash(true); }, function () { flash(false); });
+    } else { flash(false); }
   });
 })();
 </script>
