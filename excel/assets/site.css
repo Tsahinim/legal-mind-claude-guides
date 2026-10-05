@@ -226,3 +226,34 @@
   .bonus-grid span{font-size:.9rem;color:#bcd6d3}
   .source-note{font-size:14px}
 }
+
+/* Mobile reading, touch navigation and full-resolution screenshot viewing. */
+.guide-section .shot-legend,.guide-section .shot-legend-num{padding:0}
+.shot-legend li>span{min-width:0;overflow-wrap:anywhere}
+.copy-body,.hero-sub,.shot-caption{overflow-wrap:anywhere}
+.lightbox{padding:calc(64px + env(safe-area-inset-top)) max(12px,env(safe-area-inset-right)) calc(48px + env(safe-area-inset-bottom)) max(12px,env(safe-area-inset-left));height:100dvh}
+.lightbox-scroll{direction:ltr;overscroll-behavior:contain;touch-action:pan-x pan-y pinch-zoom}
+.lightbox-scroll img{user-select:none;-webkit-user-drag:none}
+.lightbox-close{top:calc(10px + env(safe-area-inset-top));inset-inline-end:max(14px,env(safe-area-inset-left));min-height:44px;min-width:72px}
+.lightbox-hint{bottom:calc(10px + env(safe-area-inset-bottom));padding-inline:12px;line-height:1.4}
+.shot img.is-zoomable:focus-visible{outline:3px solid var(--orange);outline-offset:4px}
+@media(max-width:820px){
+  .surface,.hero>*,.facts>*,.guide-card,.bonus-grid>*{min-width:0}
+  .guide-section .tbl th,.guide-section .tbl td{overflow-wrap:anywhere}
+  .backbar{padding-block:0}
+  .backbar a{display:inline-block;min-height:44px;padding:10px 4px}
+  .button{display:block;min-height:44px;text-align:center;overflow-wrap:anywhere}
+  .copy-button{min-height:44px}
+}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+.lightbox-frame{position:relative;margin-inline:auto;max-width:none}.lightbox-frame img{margin:0}.lightbox-scroll:focus-visible{outline:3px solid var(--cyan);outline-offset:2px}
+
+/* Three-column reference tables retain their labels on narrow phones. */
+@media(max-width:480px){
+  .tbl.mobile-cards,.tbl.mobile-cards tbody{display:block;width:100%}
+  .tbl.mobile-cards thead{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap}
+  .tbl.mobile-cards tbody tr{display:block;margin:0 0 12px;border:1px solid var(--line);border-radius:10px;overflow:hidden}
+  .guide-section .tbl.mobile-cards td{display:block;width:auto;border:0;border-bottom:1px solid var(--line);padding:10px 12px;background:var(--paper)}
+  .guide-section .tbl.mobile-cards td:last-child{border-bottom:0}
+  .tbl.mobile-cards td:before{content:attr(data-label);display:block;margin-bottom:4px;color:var(--teal);font-weight:800}
+}

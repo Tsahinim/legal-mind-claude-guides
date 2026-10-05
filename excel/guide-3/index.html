@@ -5,8 +5,8 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="description" content="מדריך 3 בסדרת Claude בתוך Excel של Legal Mind: איך לוקחים את ארבעה עשר הפרומפטים לתיק אמיתי, איך בונים את הקובץ, איך זה נראה בכל תחום, ורשימת הבדיקה לפני שמסתמכים על תוצר.">
 <title>עבודה על תיק אמיתי עם Claude ב-Excel | Legal Mind</title>
-<link rel="stylesheet" href="assets/site.css?v=20261005m">
-<script defer src="assets/site.js?v=20260812f"></script>
+<link rel="stylesheet" href="assets/site.css?v=20261005m2">
+<script defer src="assets/site.js?v=20261005m2"></script>
 </head>
 <body>
 <a class="skip" href="#main">דילוג לתוכן</a>
@@ -159,14 +159,14 @@
 <h2>מה לא לבקש מ-<bdi dir="ltr">Claude</bdi> ב-<bdi dir="ltr">Excel</bdi>, ומה לעשות במקום</h2>
 <p>יש דברים ש-<bdi dir="ltr">Claude</bdi> לא יעשה כי הם אינם נתמכים, ויש דברים ש-<bdi dir="ltr">Claude</bdi> כן ינסה לעשות ודווקא שם צריך להיזהר. אלה ואלה.</p>
 <h3>מה שאינו נתמך, לפי התיעוד הרשמי</h3>
-<div class="tbl-wrap"><table class="tbl">
-<thead><tr><th>מה שביקשתם</th><th>למה זה לא יעבוד</th><th>מה לעשות במקום</th></tr></thead>
-<tbody>
-<tr><td>להקליט או להריץ מאקרו</td><td>מאקרו אינו נתמך</td><td>לבקש את הפעולה עצמה במילים, בכל פעם שצריך אותה</td></tr>
-<tr><td>לכתוב או לתקן קוד <bdi dir="ltr">VBA</bdi></td><td>אינו נתמך</td><td>אם יש בקובץ <bdi dir="ltr">VBA</bdi> קיים, לפנות למי שכתב אותו</td></tr>
-<tr><td>לעבוד עם טבלת נתונים של <bdi dir="ltr">Excel</bdi></td><td>אינו נתמך</td><td>לבקש טבלה רגילה עם נוסחאות, כמו לוח תשלומי האיזון בפרומפט 10</td></tr>
-<tr><td>לפתוח או לסגור קובץ אחר</td><td>התיעוד מציין ש-<bdi dir="ltr">Claude</bdi> אינו יכול לפתוח, לסגור או להחליף קבצים מתוך התוסף</td><td>לפתוח את הקובץ בעצמכם ואז לבקש</td></tr>
-<tr><td>להסתכל על קובץ שסגור במחשב</td><td><bdi dir="ltr">Claude</bdi> רואה רק את הקובץ הפתוח</td><td>להעתיק את הנתונים ללשונית בקובץ הפתוח</td></tr>
+<div class="tbl-wrap"><table class="tbl mobile-cards" role="table">
+<thead role="rowgroup"><tr role="row"><th scope="col" role="columnheader">מה שביקשתם</th><th scope="col" role="columnheader">למה זה לא יעבוד</th><th scope="col" role="columnheader">מה לעשות במקום</th></tr></thead>
+<tbody role="rowgroup">
+<tr role="row"><td role="cell" data-label="מה שביקשתם">להקליט או להריץ מאקרו</td><td role="cell" data-label="למה זה לא יעבוד">מאקרו אינו נתמך</td><td role="cell" data-label="מה לעשות במקום">לבקש את הפעולה עצמה במילים, בכל פעם שצריך אותה</td></tr>
+<tr role="row"><td role="cell" data-label="מה שביקשתם">לכתוב או לתקן קוד <bdi dir="ltr">VBA</bdi></td><td role="cell" data-label="למה זה לא יעבוד">אינו נתמך</td><td role="cell" data-label="מה לעשות במקום">אם יש בקובץ <bdi dir="ltr">VBA</bdi> קיים, לפנות למי שכתב אותו</td></tr>
+<tr role="row"><td role="cell" data-label="מה שביקשתם">לעבוד עם טבלת נתונים של <bdi dir="ltr">Excel</bdi></td><td role="cell" data-label="למה זה לא יעבוד">אינו נתמך</td><td role="cell" data-label="מה לעשות במקום">לבקש טבלה רגילה עם נוסחאות, כמו לוח תשלומי האיזון בפרומפט 10</td></tr>
+<tr role="row"><td role="cell" data-label="מה שביקשתם">לפתוח או לסגור קובץ אחר</td><td role="cell" data-label="למה זה לא יעבוד">התיעוד מציין ש-<bdi dir="ltr">Claude</bdi> אינו יכול לפתוח, לסגור או להחליף קבצים מתוך התוסף</td><td role="cell" data-label="מה לעשות במקום">לפתוח את הקובץ בעצמכם ואז לבקש</td></tr>
+<tr role="row"><td role="cell" data-label="מה שביקשתם">להסתכל על קובץ שסגור במחשב</td><td role="cell" data-label="למה זה לא יעבוד"><bdi dir="ltr">Claude</bdi> רואה רק את הקובץ הפתוח</td><td role="cell" data-label="מה לעשות במקום">להעתיק את הנתונים ללשונית בקובץ הפתוח</td></tr>
 </tbody>
 </table></div>
 <h3>ומה ש-<bdi dir="ltr">Claude</bdi> כן ינסה, ושם צריך להיזהר</h3>

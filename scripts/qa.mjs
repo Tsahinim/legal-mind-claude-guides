@@ -16,14 +16,26 @@ walk(root);
 const errors = [];
 const counts = { pages: 0, links: 0, images: 0, anchors: 0 };
 const attr = (tag, name) => {
-  const m = tag.match(new RegExp(`\\b${name}=["']([^"']*)["']`, 'i'));
-  return m ? m[1] : null;
+  const m = tag.match(new RegExp(`(?:^|\\s)${name}\\s*=\\s*(?:"([^"]*)"|'([^']*)'|([^\\s"'=<>]+))`, 'i'));
+  return m ? m[1] ?? m[2] ?? m[3] : null;
 };
 const escapeRegExp = (value) => value.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+// A > inside a quoted attribute is text, not the end of the tag.
+const tags = (html, name) => html.matchAll(new RegExp(`<${name}\\b(?:[^>"']|"[^"]*"|'[^']*')*>`, 'gi'));
+const isRemoteReference = (value) => /^(?:[a-z][a-z\d+.-]*:|\/\/)/i.test(value);
+const resolveReference = (file, value) => {
+  // Use URL semantics: query parameters do not belong to filesystem paths,
+  // and a query-only reference still points to the current document.
+  const base = 'https://qa.invalid/' + path.relative(root, file).split(path.sep).map(encodeURIComponent).join('/');
+  const url = new URL(value, base);
+  const dest = path.join(root, decodeURIComponent(url.pathname));
+  const resolved = fs.existsSync(dest) && fs.statSync(dest).isDirectory() ? path.join(dest, 'index.html') : dest;
+  return { resolved, target: decodeURIComponent(url.hash.slice(1)) };
+};
 
 for (const file of htmlFiles) {
   const rel = path.relative(root, file).replaceAll('\\', '/');
-  const html = fs.readFileSync(file, 'utf8');
+  const html = fs.readFileSync(file, 'utf8').replace(/<!--[\s\S]*?-->/g, '');
   counts.pages++;
 
   if (!/<html[^>]*\blang=["']he["'][^>]*>/i.test(html)) errors.push(`${rel}: lang=he חסר`);
@@ -36,36 +48,37 @@ for (const file of htmlFiles) {
   const duplicateIds = ids.filter((x, i) => ids.indexOf(x) !== i);
   if (duplicateIds.length) errors.push(`${rel}: מזהי עוגן כפולים ${[...new Set(duplicateIds)].join(', ')}`);
 
-  for (const m of html.matchAll(/<a\b[^>]*>/gi)) {
+  for (const m of tags(html, 'a')) {
     counts.links++;
     const href = attr(m[0], 'href');
-    if (!href || /^(https?:|mailto:|tel:|javascript:)/i.test(href)) continue;
-    if (href.startsWith('#')) {
-      if (href.length > 1 && !ids.includes(decodeURIComponent(href.slice(1)))) errors.push(`${rel}: עוגן חסר ${href}`);
-      continue;
-    }
-    const [raw, target] = href.split('#');
-    const dest = path.resolve(path.dirname(file), decodeURIComponent(raw));
-    const resolved = fs.existsSync(dest) && fs.statSync(dest).isDirectory() ? path.join(dest, 'index.html') : dest;
+    if (!href || isRemoteReference(href)) continue;
+    let reference;
+    try { reference = resolveReference(file, href); }
+    catch { errors.push(`${rel}: כתובת קישור לא תקינה ${href}`); continue; }
+    const { resolved, target } = reference;
     if (!fs.existsSync(resolved)) errors.push(`${rel}: קישור מקומי שבור ${href}`);
     else if (target) {
-      const destHtml = fs.readFileSync(resolved, 'utf8');
+      const destHtml = fs.readFileSync(resolved, 'utf8').replace(/<!--[\s\S]*?-->/g, '');
       if (!new RegExp(`\\bid=["']${escapeRegExp(target)}["']`, 'i').test(destHtml)) errors.push(`${rel}: עוגן יעד חסר ${href}`);
     }
   }
 
-  for (const m of html.matchAll(/<img\b[^>]*>/gi)) {
+  for (const m of tags(html, 'img')) {
     counts.images++;
     const src = attr(m[0], 'src');
     const alt = attr(m[0], 'alt');
-    if (!alt?.trim()) errors.push(`${rel}: תמונה ללא alt`);
-    if (src && !/^(data:|https?:)/i.test(src)) {
-      const dest = path.resolve(path.dirname(file), decodeURIComponent(src));
-      if (!fs.existsSync(dest)) errors.push(`${rel}: תמונה חסרה ${src}`);
+    const decorative = attr(m[0], 'aria-hidden') === 'true' || /^(presentation|none)$/i.test(attr(m[0], 'role') || '');
+    if (alt === null || (!alt.trim() && !decorative)) errors.push(`${rel}: תמונה ללא alt`);
+    if (alt && /<\/?[a-z][a-z0-9:-]*(?:\s|>)/i.test(alt)) errors.push(`${rel}: תגיות HTML בתוך alt של תמונה`);
+    if (src && !isRemoteReference(src)) {
+      try {
+        if (!fs.existsSync(resolveReference(file, src).resolved)) errors.push(`${rel}: תמונה חסרה ${src}`);
+      } catch { errors.push(`${rel}: כתובת תמונה לא תקינה ${src}`); }
     }
   }
 
-  for (const m of html.matchAll(/<a\b[^>]*target=["']_blank["'][^>]*>/gi)) {
+  for (const m of tags(html, 'a')) {
+    if (attr(m[0], 'target') !== '_blank') continue;
     const relValue = attr(m[0], 'rel') || '';
     if (!/noopener/i.test(relValue)) errors.push(`${rel}: קישור target=_blank ללא rel=noopener`);
   }
@@ -73,8 +86,10 @@ for (const file of htmlFiles) {
   const prose = html
     .replace(/<style[\s\S]*?<\/style>/gi, '')
     .replace(/<script[\s\S]*?<\/script>/gi, '')
-    .replace(/<code[\s\S]*?<\/code>/gi, '')
     .replace(/<pre[\s\S]*?<\/pre>/gi, '')
+    // Preserve the presence of an inline label without checking code syntax as
+    // prose. Removing it creates false spaces before the punctuation after it.
+    .replace(/<code\b[\s\S]*?<\/code>/gi, 'INLINE_CODE')
     .replace(/<[^>]+>/g, '');
   if (/\s+[,.!?;:](?![A-Za-z])/u.test(prose)) errors.push(`${rel}: נמצא רווח חשוד לפני סימן פיסוק`);
 
@@ -87,6 +102,7 @@ for (const file of htmlFiles) {
 
 // Editorial and pedagogical release gates
 const allText = htmlFiles.map((file) => fs.readFileSync(file, 'utf8')
+  .replace(/<!--[\s\S]*?-->/g, '')
   .replace(/<style[\s\S]*?<\/style>/gi, '')
   .replace(/<script[\s\S]*?<\/script>/gi, '')
   .replace(/<[^>]+>/g, ' ')
