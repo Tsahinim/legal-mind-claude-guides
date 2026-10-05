@@ -165,3 +165,64 @@
 
 .guide-section .section-number{margin:0 0 6px;font-family:Arial,"Segoe UI",sans-serif;font-size:24px;font-weight:900;line-height:1;letter-spacing:.06em;font-variant-numeric:lining-nums tabular-nums}
 @supports (-webkit-text-stroke:1px black){.guide-section .section-number{color:transparent;-webkit-text-stroke:1.2px var(--teal)}}
+/* ===== mobile v1 ===== */
+@media(max-width:1000px){
+  html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
+}
+@media(max-width:820px){
+  /* nothing is pinned to the top */
+  .backbar{position:static;top:auto;z-index:auto}
+  .mobile-toc{position:static;top:auto;z-index:auto;box-shadow:none;margin:12px 14px 16px}
+  .desktop-toc{position:static;top:auto;max-height:none;overflow:visible}
+  .skip{position:absolute}
+  html{scroll-padding-top:12px}
+  .guide-section{scroll-margin-top:12px}
+  /* table of contents */
+  .mobile-toc ol{list-style:none;padding:6px 12px 10px;max-height:none;overflow:visible}
+  .mobile-toc li+li{border-top:1px solid #edf1f0}
+  .mobile-toc a{position:relative;display:block;min-height:44px;padding:9px 2px;padding-inline-start:34px;line-height:1.45;text-decoration:none}
+  .mobile-toc a span:first-child{position:absolute;inset-inline-start:2px;top:9px;font-weight:900;color:var(--navy)}
+  /* tables fit the screen */
+  .guide-section .tbl{min-width:0;width:100%;table-layout:auto}
+  .guide-section .tbl th{white-space:normal}
+  .guide-section .tbl th,.guide-section .tbl td{padding:8px;overflow-wrap:break-word}
+  /* answer headings */
+  .guide-section h3.answer-head{display:block}
+  .guide-section h3.answer-head:before{display:inline-block;vertical-align:-3px;margin-inline-end:9px}
+  /* buttons */
+  .bonus-actions{display:flex;flex-direction:column;gap:10px}
+  .print-checklist{min-height:46px}
+  /* hub: override inline grid styles */
+  .hero .mobile-toc{margin:16px 0 4px}
+  .guide-grid{grid-template-columns:1fr!important}
+  .learning-path ol{grid-template-columns:1fr!important;max-width:none!important}
+}
+@media(max-width:700px){
+  .copy-button{min-height:44px;font-size:.95rem}
+}
+@media(max-width:640px){
+  /* spacing */
+  .layout{padding-inline:10px}
+  .mobile-toc{margin-inline:10px}
+  .hero .mobile-toc{margin-inline:0}
+  .guide-section{padding:20px 14px}
+  .major-subsection{margin:25px -14px 12px!important}   /* goes with the 14px section padding */
+  .callout,.content-box{margin:16px 0;padding:13px 13px}
+  .copy-block{margin:14px 0;padding:12px 10px}
+  .copy-block .copy-body{padding:10px 11px;line-height:1.65}
+  .steps li{padding:11px 44px 11px 10px}
+  .steps li:before{right:8px}
+  .guide-section .tbl{font-size:15px;line-height:1.55}
+  .guide-section .tbl th,.guide-section .tbl td{padding:8px 7px}
+  /* screenshot badges stay inside */
+  .shot-target-badge.badge-offset-left{left:-3px}
+  .shot-target-badge.badge-offset-right{right:-3px}
+  .lightbox-close{min-height:44px;min-width:72px}
+  /* hub */
+  .center-main{padding-inline:16px}
+  .learning-path{padding:16px}
+  .learning-path .path-note{padding:12px 13px}
+  .center-main>.callout.tip{padding:15px!important}
+  .bonus-grid span{font-size:.9rem;color:#bcd6d3}
+  .source-note{font-size:14px}
+}
