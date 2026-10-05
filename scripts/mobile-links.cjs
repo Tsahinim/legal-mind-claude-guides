@@ -3,13 +3,19 @@ const fs=require('node:fs'),path=require('node:path'),assert=require('node:asser
 const {execFileSync,spawnSync}=require('node:child_process');
 const root=process.cwd(),output=path.resolve('../mobile-qa');
 const files=['excel/index.html',...[1,2,3].map(n=>`excel/guide-${n}/index.html`),'excel/bonus/index.html'];
-const prose=html=>html.replace(/<style[\s\S]*?<\/style>/gi,'').replace(/<script[\s\S]*?<\/script>/gi,'').replace(/<[^>]+>/g,'').replace(/\s+/g,' ').trim();
 (async()=>{
  const browser=await chromium.launch({channel:'chrome',headless:true});const page=await browser.newPage();
  let links=0,images=0,downloads=0,anchors=0;const checked=new Set();
  for(const file of files){
   const original=execFileSync('git',['show','HEAD:'+file],{encoding:'utf8',maxBuffer:10*1024*1024});
-  assert.equal(prose(fs.readFileSync(file,'utf8')),prose(original),'Professional content changed: '+file);
+  const texts=await page.evaluate(sources=>sources.map(html=>{
+   const doc=new DOMParser().parseFromString(html,'text/html');
+   // The requested community/footer and repaired image descriptions are checked
+   // separately. All existing teaching text and screenshot legends must remain.
+   doc.querySelectorAll('style,script,.lm-community-area,footer,.shot-frame,img').forEach(e=>e.remove());
+   return doc.body.textContent.replace(/\s+/g,' ').trim();
+  }),[original,fs.readFileSync(file,'utf8')]);
+  assert.equal(texts[0],texts[1],'Professional content changed: '+file);
   await page.goto('http://localhost:4173/'+file);
   const data=await page.evaluate(()=>({ids:[...document.querySelectorAll('[id]')].map(e=>e.id),links:[...document.querySelectorAll('a[href],link[href],script[src],img[src]')].map(e=>({url:e.href||e.src,tag:e.tagName,download:e.hasAttribute('download')}))}));
   assert.equal(data.ids.length,new Set(data.ids).size,'Duplicate IDs: '+file);
@@ -24,18 +30,10 @@ const prose=html=>html.replace(/<style[\s\S]*?<\/style>/gi,'').replace(/<script[
   }
  }
  const qa=spawnSync(process.execPath,['scripts/qa.mjs'],{encoding:'utf8',maxBuffer:20*1024*1024});
- // Re-run the repository gate with HEAD's HTML supplied in memory, so existing
- // failures are distinguished from regressions without rewriting the checkout.
- const baselineCode=`const fs=require('node:fs'),p=require('node:path'),cp=require('node:child_process');
- const originals=new Map(${JSON.stringify(files)}.map(f=>[p.resolve(f),cp.execFileSync('git',['show','HEAD:'+f],{maxBuffer:10*1024*1024})]));
- const read=fs.readFileSync;fs.readFileSync=function(f,opts){const b=originals.get(p.resolve(String(f)));return b?(typeof opts==='string'||opts?.encoding?b.toString(typeof opts==='string'?opts:opts.encoding):b):read.apply(this,arguments)};
- import(require('node:url').pathToFileURL(p.resolve('scripts/qa.mjs')).href);`;
- const baseline=spawnSync(process.execPath,['-e',baselineCode],{encoding:'utf8',maxBuffer:20*1024*1024});
- assert.equal(qa.status,baseline.status,'Repository QA status regressed');
- assert.equal(qa.stderr,baseline.stderr,'Repository QA findings changed');
+ assert.equal(qa.status,0,'Repository QA failed: '+qa.stderr.slice(0,2000));
  const lines=(qa.stdout+'\n'+qa.stderr).split(/\r?\n/).filter(Boolean).map(s=>s.length>600?s.slice(0,600)+' [truncated]':s);
  fs.writeFileSync(path.join(output,'repository-qa.txt'),lines.join('\n'));
- const report={pages:files.length,links,images,downloads,anchors,resources:checked.size,contentUnchanged:true,repositoryQaExitCode:qa.status,repositoryQaMessages:lines.length,repositoryQaIdenticalToHead:true};
+ const report={pages:files.length,links,images,downloads,anchors,resources:checked.size,teachingContentUnchanged:true,repositoryQaExitCode:qa.status,repositoryQaMessages:lines.length};
  fs.writeFileSync(path.join(output,'links.json'),JSON.stringify(report,null,2));console.log(JSON.stringify(report));
  await browser.close();
 })().catch(e=>{console.error(e);process.exit(1)});
