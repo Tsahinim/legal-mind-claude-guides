@@ -1,0 +1,58 @@
+/* Community links match Legal Mind's landing page; scoped to the Excel hub. */
+.lm-community,.lm-community-footer{--community-bg:#06130e;--community-text:#f0f0e8;--community-muted:#b7bfba;--community-accent:#8ed6cd;background:var(--community-bg);color:var(--community-text);font-family:Heebo,Arial,sans-serif}
+.lm-community{padding:58px 24px 52px;background:radial-gradient(ellipse at 85% 0,rgba(61,118,101,.13),transparent 55%),#06130e}
+.lm-community-inner{max-width:1060px;margin-inline:auto}
+.lm-community-heading{text-align:center;margin-bottom:42px}
+.lm-community-eyebrow{display:flex;justify-content:center;align-items:center;gap:12px;margin:0 0 14px;color:var(--community-accent);font-size:19px;font-weight:700;letter-spacing:1px}
+.lm-community-eyebrow:before,.lm-community-eyebrow:after{content:"";height:1px;width:52px;background:#315e56}
+.lm-community-heading h2{margin:0;font-family:inherit;font-size:clamp(1.7rem,3.3vw,2.65rem);font-weight:800;line-height:1.3;color:var(--community-text)}
+.lm-community-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px}
+.lm-community-card{position:relative;display:flex;flex-direction:column;min-width:0;overflow:hidden;padding:32px 34px 34px;border:1px solid #39453e;border-radius:20px;background:linear-gradient(145deg,rgba(255,255,255,.055),rgba(255,255,255,.015))}
+.lm-community-card:before{content:"";position:absolute;inset:0 0 auto;height:2px;background:linear-gradient(to left,#8ed6cd,transparent 65%)}
+.lm-community-whatsapp:before{background:linear-gradient(to left,#20d16b,transparent 65%)}
+.lm-community-card-head{display:flex;align-items:center;flex-wrap:wrap;gap:13px;margin-bottom:18px}
+.lm-community-card h3{margin:0;color:var(--community-text);font-size:24px;line-height:1.35;font-weight:800}
+.lm-community-icon{display:grid;place-items:center;width:50px;height:50px;flex:0 0 50px;border-radius:15px}
+.lm-whatsapp-icon{color:#fff;background:#1dcd63;box-shadow:0 9px 28px #1dcd6322}
+.lm-community-icon svg{width:27px;height:27px}
+.lm-website-icon{border:1px solid #326258;background:#18332c}
+.lm-website-icon img{display:block;max-width:38px;max-height:42px;width:auto;height:auto;object-fit:contain}
+.lm-community-badge{display:inline-flex;gap:8px;align-items:center;margin-inline-start:auto;border:1px solid #237b45;border-radius:99px;padding:8px 12px;color:#e4e8d9;background:#143222;font-size:12px;font-weight:700;line-height:1.5}
+.lm-community-badge i{flex:0 0 7px;height:7px;border-radius:50%;background:#22d86b;box-shadow:0 0 12px #22d86b77}
+.lm-community-card>p{margin:0 0 22px;color:var(--community-muted);line-height:1.85;font-size:15px}
+.lm-community-card strong{color:#e4e7de}
+.lm-community-button{display:flex;align-items:center;justify-content:center;gap:10px;width:100%;min-height:54px;margin-top:auto;padding:12px 16px;border-radius:14px;font-size:15px;font-weight:800;line-height:1.5;text-align:center;text-decoration:none;transition:background-color .15s,box-shadow .15s}
+.lm-community-button svg{width:21px;height:21px;flex:0 0 21px}
+.lm-whatsapp-button{color:#042111;background:#20ce63;border:1px solid #20ce63;box-shadow:0 12px 28px #18c65719}
+.lm-whatsapp-button:hover{background:#42df7e;box-shadow:0 12px 32px #18c65730}
+.lm-website-button{color:var(--community-accent);background:#112923;border:1px solid #43877b}
+.lm-website-button:hover{background:#1b3931}
+.lm-community-footer{padding:58px 24px 30px;border-top:1px solid #243029;text-align:center}
+.lm-community-logo{display:block;width:158px;height:auto;margin:0 auto 20px;object-fit:contain}
+.lm-community-tagline{margin:0 0 26px;color:#a3afa7;font-size:19px}
+.lm-community-social{display:flex;justify-content:center;gap:12px;margin-bottom:22px}
+.lm-community-social a{display:grid;place-items:center;width:44px;height:44px;border:1px solid #32665b;border-radius:12px;background:#10251e;color:#93ddd0;text-decoration:none}
+.lm-community-social svg{width:20px;height:20px}
+.lm-community-social a:hover{background:#1d3b31}
+.lm-community-legal{display:flex;justify-content:center;align-items:center;flex-wrap:wrap;gap:10px;color:var(--community-accent);font-size:13px}
+.lm-community-legal a{display:inline-flex;align-items:center;min-height:44px;text-decoration:none}
+.lm-community-legal a:hover{text-decoration:underline}
+.lm-community-credit{margin:18px 0 0;color:#a3afa7;font-size:12px}
+.lm-community a:focus-visible,.lm-community-footer a:focus-visible{outline:3px solid #b0f0df;outline-offset:4px}
+@media(min-width:1000px){.lm-community-card-head{gap:12px}.lm-community-badge{padding:8px;font-size:11px}.lm-community-card{padding-inline:28px}}
+@media(max-width:760px){
+ .lm-community{padding:40px 16px 32px}
+ .lm-community-heading{margin-bottom:28px}
+ .lm-community-eyebrow{font-size:16px;letter-spacing:.5px;gap:10px}
+ .lm-community-eyebrow:before,.lm-community-eyebrow:after{width:30px}
+ .lm-community-grid{grid-template-columns:minmax(0,1fr);gap:18px}
+ .lm-community-card{padding:24px 20px;border-radius:18px}
+ .lm-community-card-head{gap:12px}
+ .lm-community-card h3{font-size:22px}
+ .lm-community-badge{margin-inline-start:0;font-size:12px}
+ .lm-community-card>p{font-size:16px;line-height:1.8}
+ .lm-community-button{min-height:54px;padding-inline:12px}
+ .lm-community-footer{padding:42px 20px 26px}
+ .lm-community-tagline{font-size:17px}
+}
+@media(prefers-reduced-motion:reduce){.lm-community-button{transition:none}}
