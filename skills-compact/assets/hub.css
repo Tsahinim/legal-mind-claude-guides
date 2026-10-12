@@ -109,8 +109,8 @@ bdi[dir=ltr],[dir=ltr]{unicode-bidi:isolate}
    alt (fixed): לוגו Legal Mind - נורה מעל שם המותג */
 .skills-brand{background:#fff;border-bottom:1px solid var(--line);
   padding:11px 18px;text-align:center}
-.skills-logo{display:inline-block;width:130px;height:auto;object-fit:contain}
-@media(max-width:610px){.skills-logo{width:110px}}
+.skills-logo{display:inline-block;width:300px;max-width:84%;height:auto;object-fit:contain}
+@media(max-width:610px){.skills-logo{width:250px}}
 
 /* ---------------------------------------------------------------------------
    5. GUIDE PAGE — hero, layout, sections
