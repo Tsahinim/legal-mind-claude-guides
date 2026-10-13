@@ -39,4 +39,4 @@ a:focus-visible,button:focus-visible,summary:focus-visible{outline:3px solid #f0
 .hub-logo-block .logo-sub{margin-top:2px}
 @media(max-width:650px){.site-header-inner{align-items:center}.hub-brand-logo{width:154px}.hub-logo-block .logo-sub{font-size:12px}}
 /* Canonical Legal Mind logo: preserve bulb above name and scale the intact mark only */
-.hub-logo-full{display:block;width:126px;height:auto;object-fit:contain;flex:0 0 auto}.site-header{min-height:auto;padding:12px 28px}.logo-wrap{gap:14px}.logo-sub{max-width:235px;line-height:1.35}@media(max-width:650px){.site-header{padding:10px 13px}.site-header-inner{align-items:center}.hub-logo-full{width:108px}.logo-wrap{gap:9px}.logo-sub{font-size:11px;max-width:135px}.hub-chip{align-self:center}}
+.hub-logo-full{display:block;width:200px;height:auto;object-fit:contain;flex:0 0 auto}.site-header{min-height:auto;padding:12px 28px}.logo-wrap{gap:14px}.logo-sub{max-width:235px;line-height:1.35}@media(max-width:650px){.site-header{padding:10px 13px}.site-header-inner{align-items:center}.hub-logo-full{width:170px}.logo-wrap{gap:9px}.logo-sub{font-size:11px;max-width:135px}.hub-chip{align-self:center}}

@@ -148,11 +148,11 @@ code {
 }
 
 .logo-big {
-  width: 124px;
+  width: 300px;
+  max-width: 84%;
   height: auto;
   object-fit: contain;
   display: block;
-  transform: scale(1.15);
 }
 
 /* שער */
@@ -791,7 +791,7 @@ footer {
   }
 
   .logo-big {
-    width: 96px;
+    width: 250px;
   }
 
   .hero {

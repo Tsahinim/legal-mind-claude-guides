@@ -878,7 +878,7 @@ footer {
 /* hero */
 .hero { position: relative; padding: 30px 28px 26px; overflow: hidden; background: var(--paper); }
 .hero-inner { position: relative; max-width: 700px; margin: 0 auto; text-align: center; }
-.hero-inner .logo-big { height: 108px; width: auto; display: block; margin: 0 auto 6px; }
+.hero-inner .logo-big { width: 300px; max-width: 84%; height: auto; display: block; margin: 0 auto 6px; }
 .hero-inner h1 {
   font-family: 'Frank Ruhl', serif;
   font-weight: 700;

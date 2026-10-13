@@ -16,7 +16,7 @@
 .lm-whatsapp-icon{color:#fff;background:#1dcd63;box-shadow:0 9px 28px #1dcd6322}
 .lm-community-icon svg{width:27px;height:27px}
 .lm-website-icon{border:1px solid #326258;background:#18332c}
-.lm-website-icon img{display:block;max-width:38px;max-height:42px;width:auto;height:auto;object-fit:contain}
+.lm-website-icon img{display:block;max-width:36px;max-height:42px;width:auto;height:auto;object-fit:contain}
 .lm-community-badge{display:inline-flex;gap:8px;align-items:center;margin-inline-start:auto;border:1px solid #237b45;border-radius:99px;padding:8px 12px;color:#e4e8d9;background:#143222;font-size:12px;font-weight:700;line-height:1.5}
 .lm-community-badge i{flex:0 0 7px;height:7px;border-radius:50%;background:#22d86b;box-shadow:0 0 12px #22d86b77}
 .lm-community-card>p{margin:0 0 22px;color:var(--community-muted);line-height:1.85;font-size:15px}
@@ -28,7 +28,7 @@
 .lm-website-button{color:var(--community-accent);background:#112923;border:1px solid #43877b}
 .lm-website-button:hover{background:#1b3931}
 .lm-community-footer{padding:58px 24px 30px;border-top:1px solid #243029;text-align:center}
-.lm-community-logo{display:block;width:158px;height:auto;margin:0 auto 20px;object-fit:contain}
+.lm-community-logo{display:block;width:240px;height:auto;margin:0 auto 20px;object-fit:contain}
 .lm-community-tagline{margin:0 0 26px;color:#a3afa7;font-size:19px}
 .lm-community-social{display:flex;justify-content:center;gap:12px;margin-bottom:22px}
 .lm-community-social a{display:grid;place-items:center;width:44px;height:44px;border:1px solid #32665b;border-radius:12px;background:#10251e;color:#93ddd0;text-decoration:none}
