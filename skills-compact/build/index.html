@@ -278,7 +278,25 @@ aside.content-box > h3{font-family:Georgia,"Times New Roman",serif;font-size:1.4
 <aside class="content-box">
 <h3>ולמה <bdi dir="ltr">Skill</bdi> מגיע לפעמים כקובץ דחוס</h3>
 <p><bdi dir="ltr">Skill</bdi> שהוא הוראות בלבד הוא קובץ אחד, ואפשר להעלות אותו כמו שהוא. אבל כשיש לו גם קובצי עזר - תבנית מזכר של המשרד, רשימת בדיקה, דוגמה לתוצר טוב - הוא כבר תיקייה שלמה. וחלון ההעלאה מקבל קובץ אחד, <strong>ולכן אורזים את התיקייה ל-ZIP: זה פשוט קובץ אחד שנושא בתוכו תיקייה.</strong> בפנים יושבים קובץ ההוראות וקובצי העזר, והבונה אורז את הכל בעצמו - אתם לא נוגעים בקבצים.</p>
-<p><strong>ושתי מסקנות מעשיות:</strong> קובץ שהגיע אליכם כ-ZIP - מעלים אותו כמות שהוא, <strong>בלי לחלץ אותו קודם.</strong> וקובץ הוראות בודד אפשר לפתוח ולקרוא לפני שמעלים - וזו הדרך הזולה ביותר לדעת מה אתם מכניסים לחשבון שלכם.</p>
+<p><strong>וכך נראית המעטפה מבפנים</strong>, ב-<bdi dir="ltr">Skill</bdi> שיש לו גם קובץ עזר - למשל אם תצרפו ל-<bdi dir="ltr">payment-reminder</bdi> את תבנית המכתב של המשרד:</p>
+<style>
+.zip-anatomy{margin:6px 0 16px;font-size:.95rem;line-height:1.5}
+.zip-anatomy .za-box{border:2px solid var(--teal);border-radius:12px;background:#fff;padding:10px 12px}
+.zip-anatomy .za-zip{border-style:dashed;background:#f7fbfa}
+.zip-anatomy .za-box .za-box{margin-top:10px}
+.zip-anatomy .za-head,.zip-anatomy .za-file{display:flex;flex-wrap:wrap;align-items:baseline;gap:4px 10px}
+.zip-anatomy .za-head{color:var(--navy);font-weight:900}
+.zip-anatomy .za-file{margin-top:8px;border:1px solid var(--line);border-radius:9px;background:#fbfdfd;padding:8px 10px}
+.zip-anatomy code{font-size:.92rem;font-weight:800;color:var(--teal)}
+.zip-anatomy .za-head span,.zip-anatomy .za-file span{color:var(--muted);font-weight:500}
+</style>
+<div class="zip-anatomy" role="img" aria-label="מבנה קובץ ZIP של Skill: קובץ ה-ZIP, בתוכו תיקייה אחת בשם ה-Skill, ובתוכה SKILL.md ותיקיית קובצי עזר.">
+<div class="za-box za-zip"><div class="za-head"><bdi dir="ltr"><code>payment-reminder.zip</code></bdi><span>המעטפה - הקובץ שמעלים, סגור</span></div>
+<div class="za-box"><div class="za-head"><bdi dir="ltr"><code>payment-reminder</code></bdi><span>תיקייה אחת, בשם ה-<bdi dir="ltr">Skill</bdi></span></div>
+<div class="za-file"><bdi dir="ltr"><code>SKILL.md</code></bdi><span>קובץ ההוראות: שתי שורות בראש, ומתחתיהן גוף ההוראות - בדיוק מה שראיתם למעלה</span></div>
+<div class="za-file"><bdi dir="ltr"><code>templates/</code></bdi><span>קובצי העזר - כאן, תבנית המכתב של המשרד</span></div>
+</div></div></div>
+<p><strong>ושתי מסקנות מעשיות:</strong> קובץ שהגיע אליכם כ-ZIP - מעלים אותו כמות שהוא, <strong>בלי לחלץ אותו קודם</strong> (איך מזהים אותו בתיקיית ההורדות, בצילום, מוסבר במדריך הראשון בפרק 02). וקובץ הוראות בודד אפשר לפתוח ולקרוא לפני שמעלים - וזו הדרך הזולה ביותר לדעת מה אתם מכניסים לחשבון שלכם.</p>
 <p class="small" style="color:#5a6b75">ואם תארזו תיקייה בעצמכם ביום מן הימים: המבנה המסודר הוא תיקייה אחת בשם ה-<bdi dir="ltr">Skill</bdi> ובתוכה הקבצים - כך הבונה מייצר, וכך גם כלי הבדיקה של הערכה מצפה למצוא.</p>
 </aside>
 </section>
