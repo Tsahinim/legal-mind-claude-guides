@@ -886,6 +886,12 @@ figure .shot-real { border-radius: 12px; box-shadow: 0 8px 24px rgba(13,39,64,.0
   table.tbl tr:last-child { border-bottom: 0; }
   table.tbl tr:nth-child(even) td { background: transparent; }
   table.tbl td { padding: 2px 0; border: 0; }
-  table.tbl tr td:first-child { margin-bottom: 4px; }
+  table.tbl tr td:first-child { margin-bottom: 4px; font-weight: 700; color: var(--ink); }
   table.tbl td[data-label]::before { content: attr(data-label) ": "; font-weight: 700; color: var(--brand-strong, var(--brand)); }
 }
+
+/* תמונות בטלפון: בלי השוליים שהדפדפן מוסיף, ואפשר להקיש להגדלה */
+@media (max-width: 600px) {
+  figure { margin: 12px 0 10px; }
+}
+.shot-real { cursor: zoom-in; }
