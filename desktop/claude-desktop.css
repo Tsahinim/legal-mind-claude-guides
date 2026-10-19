@@ -875,3 +875,17 @@ figure .shot-real { border-radius: 12px; box-shadow: 0 8px 24px rgba(13,39,64,.0
 /* toc clears back bar */
 .toc-card { top: 20px; }
 .toc-card a.current { background: var(--brand-wash); border-radius: 6px; }
+
+/* טבלה בטלפון: כל שורה ככרטיס, שתי התשובות זו מתחת לזו */
+@media (max-width: 600px) {
+  .tbl-wrap { overflow: visible; }
+  table.tbl { min-width: 0; }
+  table.tbl thead { display: none; }
+  table.tbl, table.tbl tbody, table.tbl tr, table.tbl td { display: block; width: 100%; }
+  table.tbl tr { padding: 10px 14px; border-bottom: 1px solid var(--line); }
+  table.tbl tr:last-child { border-bottom: 0; }
+  table.tbl tr:nth-child(even) td { background: transparent; }
+  table.tbl td { padding: 2px 0; border: 0; }
+  table.tbl tr td:first-child { margin-bottom: 4px; }
+  table.tbl td[data-label]::before { content: attr(data-label) ": "; font-weight: 700; color: var(--brand-strong, var(--brand)); }
+}
