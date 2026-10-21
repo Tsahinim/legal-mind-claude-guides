@@ -602,7 +602,7 @@ a:focus-visible,button:focus-visible,summary:focus-visible{outline:3px solid #f0
   .mobile-toc{display:block;margin:0 14px 14px;border:1px solid var(--line);
     border-radius:12px;background:#fff}
   .mobile-toc summary{padding:12px 14px;font-weight:900;color:var(--navy)}
-  .mobile-toc ol{margin:0;border-top:1px solid var(--line);padding:8px 32px 12px 12px}
+  .mobile-toc ol{margin:0;border-top:1px solid var(--line);padding:8px 14px 12px;list-style:none}.mobile-toc a span:first-child{display:inline-block;min-width:2em;margin-inline-end:6px;font-weight:900}
   .mobile-toc a{display:block;padding:5px 2px;color:var(--teal)}
   .guide-grid{grid-template-columns:1fr}
   .bottom-nav{flex-direction:column}
